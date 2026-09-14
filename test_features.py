@@ -225,12 +225,70 @@ def test_empty_feature_does_not_kill_the_fit():
           bool((out[cols].to_numpy() >= 0).all()))
 
 
+def test_slate_merge_is_unique():
+    section("THE SLATE MERGE MUST NOT DUPLICATE A COLUMN")
+    import data
+    import model as M
+    import project as P
+
+    raw = fixture(n_players=60, n_weeks=15, seed=5)
+    raw["norm"] = raw["name"].map(data.normalise_name)
+    built = features.build(raw)
+    latest = M.latest_rows(built)
+
+    cols = P.history_columns(latest)
+    # `games_played` is both an identifying column and a member of FEATURES.
+    # Naming it in both lists produced two columns of that name, which pandas
+    # allowed and sklearn refused - the live fit died on `Expected unique
+    # column names` with the slate already loaded and kickoff twenty minutes
+    # away. This is that bug, pinned.
+    check("no column is carried across twice",
+          len(cols) == len(set(cols)),
+          str(sorted({c for c in cols if cols.count(c) > 1})))
+    check("the join key survives the deduplication", "norm" in cols)
+    check("and so does the feature that caused it", "games_played" in cols)
+
+    pool = pd.DataFrame({
+        "name": list(latest["name"].head(40))
+                + ["Some Kicker", "Home Defence", "Third Stringer"],
+        "position": list(latest["position"].head(40)) + ["K", "DST", "WR"],
+        "team": ["T00"] * 43,
+        "salary": list(np.linspace(11000, 3000, 40)) + [4200.0, 3800.0, 200.0],
+    })
+    pool["norm"] = pool["name"].map(data.normalise_name)
+    merged = pool.merge(latest[cols], on="norm", how="left",
+                        suffixes=("", "_hist"))
+    dupes = merged.columns[merged.columns.duplicated()].tolist()
+    check("and the merged frame has unique column names", not dupes, str(dupes))
+
+    cov = P.coverage(pool, merged)
+    # The denominator matters more than the rate. A kicker and a defence can
+    # never match a skill-position history file, so counting them as misses
+    # makes a healthy join look broken.
+    check("kickers and defences are outside the projectable denominator",
+          cov["projectable_n"] == 41, str(cov["projectable_n"]))
+    check("the projectable rate is not dragged down by them",
+          cov["projectable"] > cov["overall"],
+          f'{cov["projectable"]:.3f} vs {cov["overall"]:.3f}')
+    check("a cheap miss barely moves the salary-weighted coverage",
+          cov["by_salary"] > 0.9, f'{cov["by_salary"]:.3f}')
+    check("every miss is reported with its price, most expensive first",
+          [m["name"] for m in cov["misses"]][0] == "Some Kicker",
+          str([m["name"] for m in cov["misses"]]))
+
+    known = merged[merged["player_id"].notna()].copy()
+    out = M.Projections().fit(built).predict(known)
+    check("and the prediction that used to crash now runs",
+          len(out) == 40, str(len(out)))
+
+
 def main():
     print("DFS features - offline checks")
     for fn in (test_no_leakage, test_first_row_is_blank,
                test_usage_tracks_role_change, test_team_context,
                test_target_matches_scoring, test_trainable,
-               test_empty_feature_does_not_kill_the_fit):
+               test_empty_feature_does_not_kill_the_fit,
+               test_slate_merge_is_unique):
         try:
             fn()
         except Exception:

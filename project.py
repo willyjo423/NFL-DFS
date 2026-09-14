@@ -8,20 +8,34 @@ Loads the seasons, builds leak-free features, fits the quantile models, pulls
 the slate's player pool from DraftKings, joins on name, and prints a
 distribution for every player who can be matched.
 
-The join rate is printed and enforced. A silent 90% would drop precisely the
-players who changed teams or were signed last week, and those are the ones a
-projection is most needed for - so below the floor it stops rather than
-quietly handing over a slate with holes in it.
+About the join rate
+-------------------
+The first version of this gated on "matched / everyone on the slate", which is
+the wrong denominator and said so loudly: a DraftKings showdown pool carries a
+kicker, two defences and a tail of minimum-salary special-teamers who have no
+skill-position history and never will. Counting them as misses turns a healthy
+join into a red light.
+
+So three numbers are reported instead of one, and the gate sits on the middle
+of them:
+
+  overall     - every name in the pool, for context
+  projectable - skill positions only, which is what this model can even fit
+  by salary   - the share of the pool's total salary that matched, which is the
+                number that actually says whether anyone who matters is missing
+
+A miss at $200 is a long snapper. A miss at $9,000 is a starting receiver and
+the run should stop. The salary weighting is what tells those apart, and every
+unmatched player is printed WITH his price so a failure diagnoses itself rather
+than leaving the next person to guess.
 """
 from __future__ import annotations
 
 import argparse
-import json
 import logging
 import sys
 from datetime import datetime, timezone
 
-import numpy as np
 import pandas as pd
 
 import config
@@ -31,9 +45,14 @@ import model as M
 
 log = logging.getLogger(__name__)
 
-# Below this share of the slate matched, something structural is wrong and the
-# output should not be used.
+# Below this share of the PROJECTABLE slate matched, something structural is
+# wrong and the output should not be used.
 MIN_JOIN_RATE = 0.85
+
+# And below this share of slate salary, a starter is missing even if the count
+# looks fine - one unmatched $11,000 quarterback is worse than thirty
+# unmatched $200 linemen.
+MIN_SALARY_COVERAGE = 0.90
 
 
 def load_seasons(seasons: list[int]) -> pd.DataFrame:
@@ -65,6 +84,45 @@ def pick_slate(kind: str) -> tuple[int, str]:
     return int(row["draft_group"]), str(row["example"])
 
 
+def history_columns(latest: pd.DataFrame) -> list[str]:
+    """The columns to carry across from history, each exactly once.
+
+    `games_played` is both an identifying column worth keeping and a member of
+    FEATURES. Listing it in both places produced a frame with two columns of
+    that name, which pandas tolerated and sklearn did not - the fit died on
+    `Expected unique column names` with the slate already loaded. Order is
+    preserved so the frame stays readable; `dict.fromkeys` is the deduplication.
+    """
+    wanted = ["norm", "player_id", "position", "team", "games_played"]
+    wanted += list(F.FEATURES)
+    return [c for c in dict.fromkeys(wanted) if c in latest.columns]
+
+
+def coverage(pool: pd.DataFrame, merged: pd.DataFrame) -> dict:
+    """Three views of the join, because one of them is misleading on its own."""
+    matched = merged["player_id"].notna()
+    skill = merged["position"].isin(config.SKILL_POSITIONS)
+
+    salary = pd.to_numeric(merged.get("salary"), errors="coerce").fillna(0.0)
+    total_salary = float(salary.sum())
+
+    missed = merged[~matched][["name", "position", "salary"]].copy()
+    missed = missed.sort_values("salary", ascending=False)
+
+    return {
+        "overall": float(matched.mean()) if len(merged) else 0.0,
+        "projectable": (float(matched[skill].mean()) if int(skill.sum())
+                        else 0.0),
+        "projectable_n": int(skill.sum()),
+        "projectable_matched": int((matched & skill).sum()),
+        "by_salary": (float(salary[matched].sum() / total_salary)
+                      if total_salary else 0.0),
+        "total": int(len(merged)),
+        "matched": int(matched.sum()),
+        "misses": missed.to_dict("records"),
+    }
+
+
 def run(draft_group: int, site: str = "dk",
         seasons: list[int] | None = None) -> dict:
     seasons = seasons or list(range(config.TRAIN_START_SEASON,
@@ -80,14 +138,19 @@ def run(draft_group: int, site: str = "dk",
     latest = M.latest_rows(built)
 
     pool = data.draftables(draft_group)
-    report = data.join_report(latest["norm"], pool["norm"])
-    log.info("join: %d of %d slate players matched (%.1f%%)",
-             report["matched"], report["total"], 100 * report["rate"])
 
-    merged = pool.merge(
-        latest[["norm", "player_id", "position", "team", "games_played"]
-               + [c for c in F.FEATURES if c in latest.columns]],
-        on="norm", how="left", suffixes=("", "_hist"))
+    merged = pool.merge(latest[history_columns(latest)],
+                        on="norm", how="left", suffixes=("", "_hist"))
+    dupes = merged.columns[merged.columns.duplicated()].tolist()
+    if dupes:                       # belt and braces; the guard above is the fix
+        raise SystemExit(f"duplicated columns after merge: {dupes}")
+
+    cov = coverage(pool, merged)
+    log.info("join: %d of %d matched overall; %d of %d projectable (%.1f%%); "
+             "%.1f%% of slate salary",
+             cov["matched"], cov["total"], cov["projectable_matched"],
+             cov["projectable_n"], 100 * cov["projectable"],
+             100 * cov["by_salary"])
 
     known = merged[merged["player_id"].notna()].copy()
     if known.empty:
@@ -102,28 +165,29 @@ def run(draft_group: int, site: str = "dk",
                               / (known["salary"] / 1000.0)).round(2)
     known = known.sort_values("median", ascending=False).reset_index(drop=True)
 
-    unmatched = merged[merged["player_id"].isna()]["name"].tolist()
     return {
         "generated_at": datetime.now(timezone.utc).isoformat(timespec="seconds"),
         "draft_group": draft_group,
         "site": site,
         "trained_rows": proj.trained_rows,
-        "join_rate": round(report["rate"], 4),
+        "coverage": cov,
         "matched": int(len(known)),
         "slate_size": int(len(pool)),
-        "unmatched": unmatched[:40],
         "players": known,
     }
 
 
-def report(out: dict, top: int = 30) -> str:
+def report(out: dict, top: int = 40) -> str:
     df = out["players"]
+    cov = out["coverage"]
     lines = [
         f"PROJECTIONS  draft group {out['draft_group']}  ({out['site'].upper()})",
         "=" * 78,
         f"trained on {out['trained_rows']:,} player-weeks",
-        f"matched {out['matched']} of {out['slate_size']} slate players "
-        f"({out['join_rate'] * 100:.1f}%)",
+        f"join: {cov['projectable_matched']}/{cov['projectable_n']} projectable "
+        f"({cov['projectable'] * 100:.1f}%)   "
+        f"{cov['by_salary'] * 100:.1f}% of slate salary   "
+        f"{cov['matched']}/{cov['total']} overall",
         "",
         f"{'player':<22}{'pos':<5}{'team':<5}{'salary':>8}"
         f"{'median':>8}{'ceiling':>9}{'value':>7}",
@@ -146,10 +210,17 @@ def report(out: dict, top: int = 30) -> str:
         lines.append(f"  {str(r.name)[:24]:<25} ${int(r.salary):>6,}  "
                      f"{r.median:5.1f} median -> {r.ceiling:5.1f} ceiling")
 
-    if out["unmatched"]:
-        lines += ["", f"{len(out['unmatched'])} slate players had no history "
-                      f"and were skipped:",
-                  "  " + ", ".join(out["unmatched"][:12])]
+    if cov["misses"]:
+        lines += ["", f"{len(cov['misses'])} slate players had no history, "
+                      f"most expensive first:"]
+        for m in cov["misses"][:20]:
+            sal = m.get("salary")
+            sal = f"${int(sal):>6,}" if pd.notna(sal) else "     ?"
+            lines.append(f"  {str(m['name'])[:24]:<25} {str(m['position']):<5}"
+                         f"{sal}")
+        lines.append("  (kickers and defences are expected here - this model "
+                     "fits skill positions only)")
+
     lines += ["", "-" * 78,
               "These are projections, not a lineup. No correlation, no field,",
               "no contest objective yet - all of that is what turns a list of",
@@ -163,6 +234,8 @@ def main(argv=None) -> int:
     p.add_argument("--slate", default="showdown")
     p.add_argument("--site", default="dk", choices=["dk", "fd"])
     p.add_argument("--out", default=str(config.PROJECTIONS / "latest.csv"))
+    p.add_argument("--force", action="store_true",
+                   help="write the file even if the join gate fails")
     args = p.parse_args(argv)
     logging.basicConfig(level=logging.INFO, format="%(levelname)s %(message)s")
 
@@ -175,12 +248,17 @@ def main(argv=None) -> int:
     out = run(dg, site=args.site)
     print(report(out))
 
-    if out["join_rate"] < MIN_JOIN_RATE:
-        print(f"\nSTOPPING: only {out['join_rate'] * 100:.0f}% of the slate "
-              f"matched.\nThe players who fail to match are the ones who "
-              f"changed teams or were\nsigned recently - exactly who a "
-              f"projection is most needed for. Fix the\njoin before using "
-              f"any of this.")
+    cov = out["coverage"]
+    bad = (cov["projectable"] < MIN_JOIN_RATE
+           or cov["by_salary"] < MIN_SALARY_COVERAGE)
+    if bad and not args.force:
+        print(f"\nSTOPPING: {cov['projectable'] * 100:.0f}% of projectable "
+              f"players matched (floor {MIN_JOIN_RATE * 100:.0f}%), covering "
+              f"{cov['by_salary'] * 100:.0f}% of slate salary "
+              f"(floor {MIN_SALARY_COVERAGE * 100:.0f}%).\nThe unmatched list "
+              f"above is sorted by price. If the expensive names on it are\n"
+              f"kickers and defences, pass --force. If any of them is a "
+              f"starter, the join\nis broken and nothing here should be used.")
         return 1
 
     df = out["players"]
