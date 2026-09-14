@@ -1,0 +1,68 @@
+name: Project
+
+# Projections for one live slate. Fits from scratch each run - a few minutes,
+# and it means the model always reflects every game played up to now rather
+# than whatever was committed last.
+on:
+  workflow_dispatch:
+    inputs:
+      draft_group:
+        description: "Draft group id (blank = busiest slate of the type below)"
+        required: false
+        default: ""
+      slate:
+        description: "showdown or classic (used only when no draft group given)"
+        required: false
+        default: "showdown"
+      site:
+        description: "dk or fd"
+        required: false
+        default: "dk"
+
+permissions:
+  contents: write
+
+jobs:
+  project:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: pip
+      - name: Install
+        run: pip install -r requirements.txt
+      - name: Offline checks
+        run: |
+          python test_scoring.py
+          python test_features.py
+      - name: Project
+        run: |
+          ARGS="--site ${{ inputs.site }}"
+          if [ -n "${{ inputs.draft_group }}" ]; then
+            ARGS="$ARGS --draft-group ${{ inputs.draft_group }}"
+          else
+            ARGS="$ARGS --slate ${{ inputs.slate }}"
+          fi
+          python project.py $ARGS | tee projections.txt
+      - name: Keep the output
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: projections
+          path: |
+            projections.txt
+            data/projections/latest.csv
+          retention-days: 30
+      - name: Commit
+        if: always()
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -f data/projections/ || true
+          git diff --staged --quiet && exit 0
+          git commit -m "Projections: $(date -u +'%Y-%m-%d %H:%M')"
+          git pull --rebase --autostash origin main || true
+          git push
