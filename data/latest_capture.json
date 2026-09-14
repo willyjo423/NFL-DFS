@@ -1,0 +1,42 @@
+{
+  "captured_at": "2026-09-14T20:50:31+00:00",
+  "day": "2026-09-14",
+  "slates": [
+    {
+      "draft_group": 153428,
+      "game_type": "Classic",
+      "players": 658,
+      "games": 13,
+      "salary_min": 2000,
+      "salary_max": 8200,
+      "starts": "NaT",
+      "contests": 1410,
+      "file": "dg153428_2050.csv"
+    },
+    {
+      "draft_group": 153086,
+      "game_type": "Showdown Captain Mode",
+      "players": 55,
+      "games": 1,
+      "salary_min": 300,
+      "salary_max": 15900,
+      "starts": "NaT",
+      "contests": 1049,
+      "file": "dg153086_2050.csv"
+    },
+    {
+      "draft_group": 153109,
+      "game_type": "Classic",
+      "players": 97,
+      "games": 2,
+      "salary_min": 2500,
+      "salary_max": 8500,
+      "starts": "NaT",
+      "contests": 215,
+      "file": "dg153109_2050.csv"
+    }
+  ],
+  "failed": {},
+  "contests_file": "contests_2050.csv",
+  "contests_kept": 3142
+}
