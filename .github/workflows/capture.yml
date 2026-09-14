@@ -1,0 +1,69 @@
+name: Capture slates
+
+# The only salary history that will ever exist for 2022 onward is the one this
+# job writes down. DraftKings has no historical endpoint and rotoguru stopped
+# in 2021, so a week missed here is permanently lost - which is why this runs
+# on a schedule from the very start, ahead of any of the modelling it feeds.
+on:
+  schedule:
+    # Daily, to catch slates as they are posted and to keep the pool as it was
+    # before late injury news removes players from it.
+    - cron: "0 15 * * *"
+    # And again just before the Sunday main slate locks (17:00 UTC / 1pm ET),
+    # which is the pool that was actually playable.
+    - cron: "40 16 * * 0"
+    # Thursday and Monday night slates lock later in the evening.
+    - cron: "45 23 * * 4,1"
+  workflow_dispatch:
+    inputs:
+      all_types:
+        description: "Also keep in-game and single-stat slates"
+        type: boolean
+        required: false
+        default: false
+
+permissions:
+  contents: write
+
+concurrency:
+  group: capture
+  cancel-in-progress: false
+
+jobs:
+  capture:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: pip
+
+      - name: Install
+        run: pip install -r requirements.txt
+
+      - name: Offline checks
+        run: python test_scoring.py
+
+      - name: Capture
+        run: |
+          if [ "${{ inputs.all_types }}" = "true" ]; then
+            python capture.py --all-types
+          else
+            python capture.py
+          fi
+
+      - name: Commit the archive
+        # always(), because a partial capture is still worth keeping and losing
+        # it to a later failing step would defeat the point of the job.
+        if: always()
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -f data/slates/ data/latest_capture.json
+          git diff --staged --quiet && echo "nothing new" && exit 0
+          git commit -m "Slates: $(date -u +'%Y-%m-%d %H:%M')"
+          git pull --rebase --autostash origin main || true
+          git push
