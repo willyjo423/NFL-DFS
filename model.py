@@ -59,6 +59,31 @@ class Projections:
             X[f"is_{pos}"] = (df["position"] == pos).astype(float)
         return X
 
+    @staticmethod
+    def _usable(X: pd.DataFrame) -> list[str]:
+        """Columns with something in them to learn from.
+
+        A feature that is entirely missing, or that holds a single repeated
+        value, carries no information - and the histogram binner cannot even
+        build a threshold from one distinct value, so it raises rather than
+        ignoring it. That is what killed the first live fit: nflverse's weekly
+        player file has no home/away flag, so `is_home` arrived as a column of
+        NaN and took the whole run down twenty minutes before kickoff.
+
+        Dropping them here rather than pruning the feature list keeps the
+        build tolerant of a source that adds or removes a column, which is a
+        thing these sources demonstrably do.
+        """
+        keep = []
+        for c in X.columns:
+            col = X[c]
+            if col.notna().sum() < 2:
+                continue
+            if col.nunique(dropna=True) < 2:
+                continue
+            keep.append(c)
+        return keep
+
     def fit(self, df: pd.DataFrame) -> "Projections":
         train = F.trainable(df)
         if len(train) < 500:
@@ -66,6 +91,13 @@ class Projections:
                 f"only {len(train)} usable rows; a quantile fit on that little "
                 f"evidence is noise wearing a model's clothes")
         X = self._design(train)
+        dropped = [c for c in X.columns if c not in self._usable(X)]
+        if dropped:
+            log.warning("dropping %d empty or constant features: %s",
+                        len(dropped), ", ".join(dropped))
+        X = X[self._usable(X)]
+        if X.empty or not len(X.columns):
+            raise ValueError("no usable features survived")
         y = train["points"].to_numpy(dtype=float)
         self.columns = list(X.columns)
         self.trained_rows = len(train)
