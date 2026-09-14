@@ -220,6 +220,7 @@ def probe_salaries(seasons: list[int], weeks: list[int]) -> pd.DataFrame:
 
     if not rows:
         print("\n  Nothing came back in the expected form.")
+        _discover_rotoguru_form()
         if _sample:
             url, raw = _sample[0]
             print(f"\n  What the server actually returned for {url}")
@@ -249,6 +250,53 @@ def probe_salaries(seasons: list[int], weeks: list[int]) -> pd.DataFrame:
             if len(v):
                 print(f"  {c}: median {v.median():.1f}, max {v.max():.1f}")
     return sal
+
+
+def _discover_rotoguru_form() -> None:
+    """Read the form instead of guessing at it a fourth time.
+
+    The first two attempts assumed a URL. The dump showed the site answers over
+    HTTP with a page titled "Weekly Football Points" that is byte-for-byte the
+    same length for every week, year and site asked for - which means the
+    parameters are being ignored, not misread. The page is a form. So: print
+    the form's own input names and option values and let it say what it wants.
+    """
+    import re
+    sub("What the form itself asks for")
+    try:
+        raw = _get("http://rotoguru1.com/cgi-bin/fyday.pl").decode(
+            "utf-8", "replace")
+    except Exception as exc:  # noqa: BLE001
+        print(f"  could not read the form page - {str(exc)[:90]}")
+        return
+
+    forms = re.findall(r"<form[^>]*>(.*?)</form>", raw, re.S | re.I)
+    actions = re.findall(r"<form[^>]*action=[\"']?([^\"'\s>]+)", raw, re.I)
+    print(f"  forms on the page: {len(forms)}")
+    for a in actions[:4]:
+        print(f"  action: {a}")
+
+    names = re.findall(r"<(?:input|select)[^>]*name=[\"']?([A-Za-z0-9_]+)",
+                       raw, re.I)
+    print(f"  input names: {sorted(set(names))}")
+
+    for field in sorted(set(names)):
+        block = re.search(rf"<select[^>]*name=[\"']?{field}[\"']?[^>]*>(.*?)"
+                          r"</select>", raw, re.S | re.I)
+        if block:
+            opts = re.findall(r"<option[^>]*value=[\"']?([^\"'>]*)",
+                              block.group(1), re.I)
+            print(f"  {field} options: {opts[:14]}"
+                  f"{' ...' if len(opts) > 14 else ''}")
+
+    links = re.findall(r"fyday\.pl\?([^\"'\s>]+)", raw)
+    if links:
+        print("  example query strings found on the page:")
+        for q in sorted(set(links))[:6]:
+            print(f"    fyday.pl?{q}")
+    print("\n  Whatever those names are, that is the URL to build. If the")
+    print("  options list years and weeks, the parameters are simply spelled")
+    print("  differently from what was tried.")
 
 
 # ---------------------------------------------------------------------- 3
