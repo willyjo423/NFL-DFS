@@ -41,9 +41,22 @@ log = logging.getLogger(__name__)
 UA = {"User-Agent": "Mozilla/5.0 (dfs research)"}
 TIMEOUT = 60
 
-NFLVERSE_PLAYER_STATS = (
-    "https://github.com/nflverse/nflverse-data/releases/download/"
-    "player_stats/player_stats_{season}.csv")
+# nflverse renamed these assets partway through. The old `player_stats_{year}`
+# form covers the deep history; recent seasons live under `stats_player_week`.
+# The probe tries every known pattern per season and reports which answered,
+# rather than pinning one name that will rot - the same failure that froze the
+# stock model's index membership at 2019 for seven years.
+NFLVERSE_PATTERNS = [
+    ("stats_player/stats_player_week_{season}.csv",
+     "https://github.com/nflverse/nflverse-data/releases/download/"
+     "stats_player/stats_player_week_{season}.csv"),
+    ("player_stats/stats_player_week_{season}.csv",
+     "https://github.com/nflverse/nflverse-data/releases/download/"
+     "player_stats/stats_player_week_{season}.csv"),
+    ("player_stats/player_stats_{season}.csv",
+     "https://github.com/nflverse/nflverse-data/releases/download/"
+     "player_stats/player_stats_{season}.csv"),
+]
 NFLVERSE_SNAPS = (
     "https://github.com/nflverse/nflverse-data/releases/download/"
     "snap_counts/snap_counts_{season}.csv")
@@ -57,14 +70,25 @@ NFLVERSE_INJURIES = (
 # rotoguru publishes one page per week per site. The layout has changed over
 # the years, so the probe tries the documented form and reports what it got
 # rather than assuming.
-ROTOGURU = ("http://rotoguru1.com/cgi-bin/fyday.pl"
-            "?week={week}&year={season}&game={game}&scsv=1")
+# Several spellings, because the first run got a 40KB page back with no
+# semicolon table in it - which means the site answered but not in the form
+# expected. Guessing a second time without looking would repeat the mistake, so
+# the probe now prints what it actually received.
+ROTOGURU_FORMS = [
+    "http://rotoguru1.com/cgi-bin/fyday.pl?week={week}&year={season}&game={game}&scsv=1",
+    "https://rotoguru1.com/cgi-bin/fyday.pl?week={week}&year={season}&game={game}&scsv=1",
+    "http://rotoguru1.com/cgi-bin/fyday.pl?game={game}&week={week}&year={season}&scsv=1",
+    "http://rotoguru1.com/cgi-bin/fyday.pl?week={week}&year={season}&game={game}",
+]
 ROTOGURU_GAMES = {"dk": "dk", "fd": "fd"}
 
 DK_CONTESTS = "https://www.draftkings.com/lobby/getcontests?sport=NFL"
 DK_DRAFTABLES = ("https://api.draftkings.com/draftgroups/v1/draftgroups/"
                  "{dg}/draftables")
-FD_MODEL = "https://willyjo423.github.io/nfl-forecast/forecasts.json"
+# The NFL model publishes `predictions.json`, not `forecasts.json` - the first
+# probe guessed and got a 404. It carries market_margin and market_total per
+# game alongside the forecast, so an implied team total is directly derivable.
+FD_MODEL = "https://willyjo423.github.io/nfl-forecast/predictions.json"
 
 
 def head(t):
@@ -93,13 +117,24 @@ def probe_usage(seasons: list[int]) -> pd.DataFrame:
     print("  is there, and whether it is there for enough seasons to train on.")
     frames = []
     for season in seasons:
-        try:
-            df = _csv(NFLVERSE_PLAYER_STATS.format(season=season))
+        got = False
+        for label, pattern in NFLVERSE_PATTERNS:
+            try:
+                df = _csv(pattern.format(season=season))
+            except Exception as exc:  # noqa: BLE001
+                print(f"  {season}: {label.split('/')[-1]:<32} no "
+                      f"({str(exc)[:46]})")
+                continue
             frames.append(df.assign(_season=season))
-            print(f"\n  {season}: {len(df):,} player-weeks, "
-                  f"{df['player_id'].nunique() if 'player_id' in df else '?'} players")
-        except Exception as exc:  # noqa: BLE001
-            print(f"\n  {season}: FAILED - {str(exc)[:110]}")
+            idcol = next((c for c in ("player_id", "gsis_id", "pfr_id")
+                          if c in df.columns), None)
+            print(f"  {season}: {label.split('/')[-1]:<32} YES  "
+                  f"{len(df):,} rows, "
+                  f"{df[idcol].nunique() if idcol else '?'} players")
+            got = True
+            break
+        if not got:
+            print(f"  {season}: no pattern answered")
 
     if not frames:
         print("\n  No player stats at all. Nothing downstream can work.")
@@ -144,33 +179,59 @@ def probe_salaries(seasons: list[int], weeks: list[int]) -> pd.DataFrame:
     print("  graded against what lineups actually scored is a spreadsheet with")
     print("  opinions in it.")
     rows = []
+    _sample: list = []
     for season in seasons:
         for week in weeks:
             for site, game in ROTOGURU_GAMES.items():
-                url = ROTOGURU.format(week=week, season=season, game=game)
-                try:
-                    raw = _get(url).decode("utf-8", "replace")
-                    # The scsv=1 form returns a semicolon table inside the page.
-                    block = [ln for ln in raw.splitlines() if ln.count(";") >= 5]
-                    if len(block) < 5:
-                        print(f"  {season} wk{week:>2} {site}: no table found "
-                              f"({len(raw):,} bytes)")
+                got = None
+                for form in ROTOGURU_FORMS:
+                    url = form.format(week=week, season=season, game=game)
+                    try:
+                        raw = _get(url).decode("utf-8", "replace")
+                    except Exception as exc:  # noqa: BLE001
+                        print(f"  {season} wk{week:>2} {site}: fetch failed "
+                              f"- {str(exc)[:70]}")
                         continue
+                    block = [ln for ln in raw.splitlines()
+                             if ln.count(";") >= 5 and "<" not in ln]
+                    if len(block) >= 5:
+                        got = (block, raw, url)
+                        break
+                    if _sample is not None and not _sample:
+                        _sample.append((url, raw))
+                    time.sleep(0.3)
+
+                if got is None:
+                    print(f"  {season} wk{week:>2} {site}: no semicolon table")
+                    continue
+                block, raw, url = got
+                try:
                     df = pd.read_csv(io.StringIO("\n".join(block)), sep=";")
                     df.columns = [str(c).strip().lower() for c in df.columns]
                     rows.append(df.assign(_season=season, _week=week,
                                           _site=site))
-                    print(f"  {season} wk{week:>2} {site}: {len(df):>4} rows, "
-                          f"columns {list(df.columns)[:6]}")
+                    print(f"  {season} wk{week:>2} {site}: {len(df):>4} rows "
+                          f"via {url.split('?')[0][-24:]}?... "
+                          f"cols {list(df.columns)[:5]}")
                 except Exception as exc:  # noqa: BLE001
-                    print(f"  {season} wk{week:>2} {site}: FAILED - "
-                          f"{str(exc)[:90]}")
+                    print(f"  {season} wk{week:>2} {site}: table found but "
+                          f"unparseable - {str(exc)[:70]}")
                 time.sleep(0.4)
 
     if not rows:
-        print("\n  Nothing came back. rotoguru may have changed or moved;")
-        print("  the fallback is scraping the sites' own archives, which is")
-        print("  slower and less complete. This is a stop-and-rethink result.")
+        print("\n  Nothing came back in the expected form.")
+        if _sample:
+            url, raw = _sample[0]
+            print(f"\n  What the server actually returned for {url}")
+            print(f"  ({len(raw):,} bytes). First 1,200 characters, so the")
+            print("  format can be read rather than guessed at a third time:")
+            print("  " + "-" * 68)
+            for line in raw[:1200].splitlines():
+                print(f"  | {line[:100]}")
+            print("  " + "-" * 68)
+            marks = {m: raw.lower().count(m) for m in
+                     ("<pre", "<table", "<td", "salary", "gid", ";")}
+            print(f"  markers: {marks}")
         return pd.DataFrame()
 
     sal = pd.concat(rows, ignore_index=True)
