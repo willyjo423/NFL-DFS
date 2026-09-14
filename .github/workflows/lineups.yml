@@ -1,0 +1,75 @@
+name: DFS lineups
+
+# The full chain: fit, project, simulate the slate with the players correlated,
+# enumerate legal lineups, and pick between them by contest objective.
+#
+# The solver checks run here and only here - pulp is not installable in every
+# environment, so a green offline run elsewhere does NOT cover the optimiser.
+
+on:
+  workflow_dispatch:
+    inputs:
+      draft_group:
+        description: "DraftKings draft group id (required)"
+        required: true
+      site:
+        description: "dk or fd"
+        required: false
+        default: "dk"
+      classic:
+        description: "Classic roster rules instead of showdown"
+        type: boolean
+        required: false
+        default: false
+      entries:
+        description: "How many lineups per objective (1-5)"
+        required: false
+        default: "1"
+      sims:
+        description: "Simulations (blank = 50,000)"
+        required: false
+        default: ""
+
+jobs:
+  lineups:
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: pip
+
+      - name: Install
+        run: pip install -r requirements.txt
+
+      # Every offline check, including the solver ones that can only run where
+      # pulp exists. A lineup built on an unverified optimiser is worse than no
+      # lineup, because it looks like an answer.
+      - name: Offline checks
+        run: |
+          python test_scoring.py
+          python test_features.py
+          python test_optimise.py
+
+      - name: Build lineups
+        run: |
+          mkdir -p data/lineups
+          ARGS="--draft-group ${{ inputs.draft_group }} --site ${{ inputs.site }}"
+          ARGS="$ARGS --entries ${{ inputs.entries }}"
+          if [ "${{ inputs.classic }}" = "true" ]; then ARGS="$ARGS --classic"; fi
+          if [ -n "${{ inputs.sims }}" ]; then ARGS="$ARGS --sims ${{ inputs.sims }}"; fi
+          echo "EFFECTIVE ARGS: $ARGS"
+          python lineups.py $ARGS | tee lineups.txt
+
+      - name: Keep the output
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: dfs-lineups
+          path: |
+            lineups.txt
+            data/lineups/latest.csv
+          retention-days: 30
+          if-no-files-found: warn
