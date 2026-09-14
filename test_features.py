@@ -196,11 +196,41 @@ def test_trainable():
           bool(tr["points"].notna().all()))
 
 
+def test_empty_feature_does_not_kill_the_fit():
+    section("A DEAD COLUMN MUST NOT TAKE THE RUN DOWN")
+    import model as M
+    built = features.build(fixture(n_players=60, n_weeks=15, seed=5))
+    # This is the live failure, reproduced: nflverse's weekly player file has
+    # no home/away flag, so the column arrived entirely NaN and the histogram
+    # binner raised twenty minutes before kickoff.
+    built["is_home"] = np.nan
+    built["a_constant"] = 1.0
+    try:
+        p = M.Projections().fit(built)
+        check("an all-NaN feature is dropped rather than raising", True)
+    except Exception as exc:
+        check("an all-NaN feature is dropped rather than raising", False,
+              f"{type(exc).__name__}: {exc}")
+        return
+    check("and so is a constant one", "a_constant" not in p.columns)
+    check("the dead column is not in the fitted set", "is_home" not in p.columns)
+    check("real features survive", len(p.columns) > 10, str(len(p.columns)))
+
+    out = p.predict(M.latest_rows(built))
+    cols = [f"q{int(q * 100)}" for q in p.quantiles]
+    check("predictions still come out", len(out) > 0)
+    check("and the quantiles never cross",
+          bool((np.diff(out[cols].to_numpy(), axis=1) >= -1e-9).all()))
+    check("nothing is projected negative",
+          bool((out[cols].to_numpy() >= 0).all()))
+
+
 def main():
     print("DFS features - offline checks")
     for fn in (test_no_leakage, test_first_row_is_blank,
                test_usage_tracks_role_change, test_team_context,
-               test_target_matches_scoring, test_trainable):
+               test_target_matches_scoring, test_trainable,
+               test_empty_feature_does_not_kill_the_fit):
         try:
             fn()
         except Exception:
