@@ -1,0 +1,43 @@
+name: Ownership probe
+
+# Whether the field can be measured or only guessed at. Decides how strong the
+# tournament side can be, so it runs before that part is built. Needs at least
+# one archived contest that has already finished, which means running the
+# capture job first and waiting for a slate to play out.
+on:
+  workflow_dispatch:
+    inputs:
+      contest:
+        description: "A specific finished contest id (blank = pick from the archive)"
+        required: false
+        default: ""
+      limit:
+        description: "How many archived contests to try (blank = 3)"
+        required: false
+        default: ""
+
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: pip
+      - name: Install
+        run: pip install -r requirements.txt
+      - name: Probe
+        run: |
+          ARGS=""
+          if [ -n "${{ inputs.contest }}" ]; then ARGS="$ARGS --contest ${{ inputs.contest }}"; fi
+          if [ -n "${{ inputs.limit }}" ]; then ARGS="$ARGS --limit ${{ inputs.limit }}"; fi
+          python ownership_probe.py $ARGS | tee ownership.txt
+      - name: Keep the output
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: ownership-probe-output
+          path: ownership.txt
+          retention-days: 30
