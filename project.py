@@ -98,28 +98,70 @@ def history_columns(latest: pd.DataFrame) -> list[str]:
     return [c for c in dict.fromkeys(wanted) if c in latest.columns]
 
 
-def coverage(pool: pd.DataFrame, merged: pd.DataFrame) -> dict:
-    """Three views of the join, because one of them is misleading on its own."""
+def near_key(norm: str) -> str:
+    """A deliberately loose key: first initial plus surname.
+
+    Used only to ask "is this unmatched player probably someone the history
+    file already has, under a different spelling?" - which is the question that
+    separates a bug from a rookie. It is too loose to join on (two Smiths with
+    the same initial collide) and exactly right for raising a hand.
+    """
+    parts = str(norm).split()
+    if len(parts) < 2:
+        return str(norm)
+    return f"{parts[0][:1]} {parts[-1]}"
+
+
+def coverage(merged: pd.DataFrame, ever_played: set[str]) -> dict:
+    """What failed to join, and - the part that matters - why.
+
+    A rate on its own cannot answer the only question worth asking, which is
+    whether the join is broken. Two very different things look identical in a
+    count of misses:
+
+      a rookie in week two, who has no NFL history because he has never played
+      a down, and correctly cannot be projected from a history file;
+
+      a five-year starter whose name normalises differently on the two sides,
+      which is a bug, and the kind that silently removes exactly the players a
+      projection is most needed for.
+
+    `ever_played` is every name that appears anywhere in the loaded seasons. A
+    miss found in it is the second kind and stops the run. A miss absent from
+    it is the first kind and is reported, not treated as a defect.
+    """
     matched = merged["player_id"].notna()
     skill = merged["position"].isin(config.SKILL_POSITIONS)
+    salary = pd.to_numeric(merged["salary"], errors="coerce").fillna(0.0)
 
-    salary = pd.to_numeric(merged.get("salary"), errors="coerce").fillna(0.0)
-    total_salary = float(salary.sum())
+    near = {near_key(n) for n in ever_played}
+    missed = merged[~matched].copy()
+    # Exact membership cannot fire here - the merge joined on this very column,
+    # so a name present in history could not have missed. The loose key is what
+    # catches the real failure: same player, different spelling.
+    missed["has_nfl_history"] = missed["norm"].map(near_key).isin(near)
+    broken = missed[missed["has_nfl_history"]
+                    & missed["position"].isin(config.SKILL_POSITIONS)]
 
-    missed = merged[~matched][["name", "position", "salary"]].copy()
-    missed = missed.sort_values("salary", ascending=False)
+    # Salary coverage measured over the players this model can even fit.
+    # A kicker and a defence are structurally unprojectable here, so leaving
+    # them in the denominator would make a healthy join permanently fail.
+    denom = float(salary[skill].sum())
 
+    order = missed.sort_values("salary", ascending=False)
     return {
         "overall": float(matched.mean()) if len(merged) else 0.0,
         "projectable": (float(matched[skill].mean()) if int(skill.sum())
                         else 0.0),
         "projectable_n": int(skill.sum()),
         "projectable_matched": int((matched & skill).sum()),
-        "by_salary": (float(salary[matched].sum() / total_salary)
-                      if total_salary else 0.0),
+        "by_salary": (float(salary[matched & skill].sum() / denom)
+                      if denom else 0.0),
         "total": int(len(merged)),
         "matched": int(matched.sum()),
-        "misses": missed.to_dict("records"),
+        "broken": broken[["name", "position", "salary"]].to_dict("records"),
+        "misses": order[["name", "position", "salary", "has_nfl_history"]]
+                  .to_dict("records"),
     }
 
 
@@ -145,14 +187,21 @@ def run(draft_group: int, site: str = "dk",
     if dupes:                       # belt and braces; the guard above is the fix
         raise SystemExit(f"duplicated columns after merge: {dupes}")
 
-    cov = coverage(pool, merged)
+    ever = set(weeks["norm"].dropna().unique()) if "norm" in weeks.columns \
+        else set(latest["norm"].dropna().unique())
+    cov = coverage(merged, ever)
     log.info("join: %d of %d matched overall; %d of %d projectable (%.1f%%); "
-             "%.1f%% of slate salary",
+             "%.1f%% of projectable salary; %d genuine join failures",
              cov["matched"], cov["total"], cov["projectable_matched"],
              cov["projectable_n"], 100 * cov["projectable"],
-             100 * cov["by_salary"])
+             100 * cov["by_salary"], len(cov["broken"]))
 
-    known = merged[merged["player_id"].notna()].copy()
+    # Kickers and defences join on name but project to zero, because none of
+    # the features describe what they do. A zero is not a missing value - it is
+    # a confident wrong answer, and an optimiser would happily believe it. They
+    # are dropped rather than shown.
+    known = merged[merged["player_id"].notna()
+                   & merged["position"].isin(config.SKILL_POSITIONS)].copy()
     if known.empty:
         raise SystemExit("nothing in this slate matched the history")
 
@@ -211,13 +260,17 @@ def report(out: dict, top: int = 40) -> str:
                      f"{r.median:5.1f} median -> {r.ceiling:5.1f} ceiling")
 
     if cov["misses"]:
-        lines += ["", f"{len(cov['misses'])} slate players had no history, "
+        lines += ["", f"{len(cov['misses'])} slate players not projected, "
                       f"most expensive first:"]
-        for m in cov["misses"][:20]:
+        for m in cov["misses"][:22]:
             sal = m.get("salary")
             sal = f"${int(sal):>6,}" if pd.notna(sal) else "     ?"
+            why = ("JOIN FAILURE - he is in the history file"
+                   if m.get("has_nfl_history")
+                   and m["position"] in config.SKILL_POSITIONS
+                   else "no NFL history")
             lines.append(f"  {str(m['name'])[:24]:<25} {str(m['position']):<5}"
-                         f"{sal}")
+                         f"{sal}   {why}")
         lines.append("  (kickers and defences are expected here - this model "
                      "fits skill positions only)")
 
@@ -249,22 +302,31 @@ def main(argv=None) -> int:
     print(report(out))
 
     cov = out["coverage"]
-    bad = (cov["projectable"] < MIN_JOIN_RATE
-           or cov["by_salary"] < MIN_SALARY_COVERAGE)
-    if bad and not args.force:
-        print(f"\nSTOPPING: {cov['projectable'] * 100:.0f}% of projectable "
-              f"players matched (floor {MIN_JOIN_RATE * 100:.0f}%), covering "
-              f"{cov['by_salary'] * 100:.0f}% of slate salary "
-              f"(floor {MIN_SALARY_COVERAGE * 100:.0f}%).\nThe unmatched list "
-              f"above is sorted by price. If the expensive names on it are\n"
-              f"kickers and defences, pass --force. If any of them is a "
-              f"starter, the join\nis broken and nothing here should be used.")
+    if cov["broken"] and not args.force:
+        print(f"\nSTOPPING: {len(cov['broken'])} slate players have NFL "
+              f"history that failed to join:")
+        for b in cov["broken"][:12]:
+            print(f"  {str(b['name'])[:24]:<25} {str(b['position']):<5}"
+                  f"${int(b['salary']):>6,}")
+        print("These are names the history file contains and the join did not "
+              "find, which\nis a bug in the matching, not a gap in the data. "
+              "Fix it rather than forcing\npast it - the players a name-match "
+              "loses are the ones who changed teams.")
+        return 1
+
+    if cov["by_salary"] < MIN_SALARY_COVERAGE and not args.force:
+        print(f"\nSTOPPING: the projected players cover only "
+              f"{cov['by_salary'] * 100:.0f}% of projectable salary "
+              f"(floor {MIN_SALARY_COVERAGE * 100:.0f}%).\nNo join failures "
+              f"were found, so this is rookies and debutants rather than a "
+              f"bug.\nIf the unmatched list above is all first-year players, "
+              f"pass --force.")
         return 1
 
     df = out["players"]
-    keep = [c for c in ("name", "position", "team", "salary", "q10", "q25",
-                        "q50", "q75", "q90", "q97", "median", "mean",
-                        "ceiling", "spread", "value", "ceiling_value")
+    keep = [c for c in ("name", "position", "team", "salary", "captain_salary",
+                        "q10", "q25", "q50", "q75", "q90", "q97", "median",
+                        "mean", "ceiling", "spread", "value", "ceiling_value")
             if c in df.columns]
     df[keep].to_csv(args.out, index=False)
     print(f"\nwrote {args.out}")

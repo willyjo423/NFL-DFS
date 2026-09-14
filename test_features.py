@@ -261,7 +261,8 @@ def test_slate_merge_is_unique():
     dupes = merged.columns[merged.columns.duplicated()].tolist()
     check("and the merged frame has unique column names", not dupes, str(dupes))
 
-    cov = P.coverage(pool, merged)
+    ever = set(built["norm"].dropna().unique())
+    cov = P.coverage(merged, ever)
     # The denominator matters more than the rate. A kicker and a defence can
     # never match a skill-position history file, so counting them as misses
     # makes a healthy join look broken.
@@ -275,11 +276,70 @@ def test_slate_merge_is_unique():
     check("every miss is reported with its price, most expensive first",
           [m["name"] for m in cov["misses"]][0] == "Some Kicker",
           str([m["name"] for m in cov["misses"]]))
+    check("a debutant is not counted as a broken join",
+          not cov["broken"], str(cov["broken"]))
+
+    # Now the distinction the gate turns on: a player the history file DOES
+    # contain, who failed to join anyway. That is a bug, not a rookie, and it
+    # must be reported as one.
+    hurt = pool.copy()
+    # A spelling variant, which is how this bug actually arrives: DraftKings
+    # writes a middle initial or a suffix the history file does not. Exact
+    # membership cannot see it - the merge already joined on that column - so
+    # the loose surname key has to.
+    hurt.loc[hurt.index[0], "norm"] = "pj " + pool["norm"].iloc[0].split()[-1]
+    bad = hurt.merge(latest[cols], on="norm", how="left", suffixes=("", "_hist"))
+    cov2 = P.coverage(bad, ever)
+    check("a starter under a variant spelling is flagged as a join failure",
+          len(cov2["broken"]) == 1, str(cov2["broken"]))
+    check("while a genuine debutant still is not",
+          all(b["name"] != "Third Stringer" for b in cov2["broken"]),
+          str(cov2["broken"]))
 
     known = merged[merged["player_id"].notna()].copy()
     out = M.Projections().fit(built).predict(known)
     check("and the prediction that used to crash now runs",
           len(out) == 40, str(len(out)))
+
+
+def test_showdown_salary_is_the_flex_price():
+    section("SHOWDOWN: THE CAPTAIN PRICE MUST NOT BECOME THE PRICE")
+    import data
+
+    # DraftKings lists a showdown player twice - once at the flex price, once
+    # in the captain slot at 1.5x for 1.5x the points. The first version
+    # collapsed on roster slot id and kept the CAPTAIN row, so every salary on
+    # the board arrived 1.5x too high with a flex projection attached to it.
+    payload = {"draftables": []}
+    for i, (nm, flex) in enumerate([("Alpha Back", 10600), ("Beta Wide", 8000),
+                                    ("Gamma End", 200)]):
+        for slot, sal in ((511, int(flex * 1.5)), (512, flex)):
+            payload["draftables"].append({
+                "playerId": 900 + i, "draftableId": 1000 + i * 2 + slot % 2,
+                "displayName": nm, "position": "RB", "teamAbbreviation": "KC",
+                "salary": sal, "rosterSlotId": slot, "status": "Available",
+                "competition": {"name": "DEN @ KC",
+                                "startTime": "2026-09-15T00:15:00.0000000Z"},
+            })
+
+    real_get = data._get
+    data._get = lambda *a, **k: payload
+    try:
+        df = data.draftables(1)
+    finally:
+        data._get = real_get
+
+    check("one row per player", len(df) == 3, str(len(df)))
+    check("the salary kept is the flex price, not 1.5x it",
+          sorted(df["salary"].tolist()) == [200, 8000, 10600],
+          str(sorted(df["salary"].tolist())))
+    check("and the captain price is kept alongside it",
+          sorted(df["captain_salary"].tolist()) == [300, 12000, 15900],
+          str(sorted(df["captain_salary"].tolist())))
+    check("the captain price is exactly 1.5x",
+          bool((df["captain_salary"] / df["salary"]).round(2).eq(1.5).all()))
+    check("a min-salary player prices at 200, which is the tell",
+          int(df["salary"].min()) == 200, str(int(df["salary"].min())))
 
 
 def main():
@@ -288,7 +348,8 @@ def main():
                test_usage_tracks_role_change, test_team_context,
                test_target_matches_scoring, test_trainable,
                test_empty_feature_does_not_kill_the_fit,
-               test_slate_merge_is_unique):
+               test_slate_merge_is_unique,
+               test_showdown_salary_is_the_flex_price):
         try:
             fn()
         except Exception:

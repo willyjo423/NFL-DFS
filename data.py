@@ -219,6 +219,18 @@ def draftables(draft_group: int) -> pd.DataFrame:
     row per player is essential: an optimiser fed the raw rows can select the
     same player twice and satisfy the salary cap while fielding an illegal
     lineup.
+
+    Showdown is the exception, and the first version of this got it wrong. On a
+    showdown slate the duplicate rows are NOT the same price: the captain slot
+    costs 1.5x the flex slot and pays 1.5x the points. Collapsing on roster
+    slot id kept the CAPTAIN row, so every salary on the board came out 1.5x
+    too high while the projection attached to it was still a flex projection -
+    a value column wrong in both directions at once, and a salary cap that
+    would have let an optimiser field two-thirds of a legal lineup.
+
+    So the collapse keeps the CHEAPEST row, which is the flex price, and the
+    captain price rides alongside in its own column for the optimiser to use
+    when it decides who wears the C.
     """
     payload = _get(config.DK_DRAFTABLES.format(dg=draft_group), as_json=True)
     rows = payload.get("draftables") or []
@@ -240,13 +252,30 @@ def draftables(draft_group: int) -> pd.DataFrame:
     } for p in rows])
 
     df["norm"] = df["name"].map(normalise_name)
+    df["salary"] = pd.to_numeric(df["salary"], errors="coerce")
+
     slots = df.groupby("dk_player_id")["roster_slot"].nunique()
-    df = (df.sort_values("roster_slot")
+    top = df.groupby("dk_player_id")["salary"].max()
+    base = df.groupby("dk_player_id")["salary"].min()
+
+    df = (df.sort_values(["dk_player_id", "salary"])
             .drop_duplicates("dk_player_id", keep="first")
             .reset_index(drop=True))
     df["flex_eligible"] = df["dk_player_id"].map(slots).gt(1).astype(int)
-    log.info("draft group %s: %d players, salary $%s-$%s",
-             draft_group, len(df), df["salary"].min(), df["salary"].max())
+    df["captain_salary"] = df["dk_player_id"].map(top)
+
+    # A showdown board is the one where the two prices differ. Saying so out
+    # loud is cheap and makes the 1.5x either visible or absent in the log
+    # rather than something to infer from the salary range.
+    priced_twice = int((top > base).sum())
+    if priced_twice:
+        ratio = float((top / base.replace(0, np.nan)).median())
+        log.info("showdown pricing: %d players carry a captain price, "
+                 "median %.2fx the flex price", priced_twice, ratio)
+
+    log.info("draft group %s: %d players, flex salary $%s-$%s",
+             draft_group, len(df), int(df["salary"].min()),
+             int(df["salary"].max()))
     return df
 
 
