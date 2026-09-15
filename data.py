@@ -167,6 +167,39 @@ def join_report(left: pd.Series, right: pd.Series) -> dict:
     }
 
 
+_DOTNET_DATE = re.compile(r"/Date\((-?\d+)(?:[+-]\d{4})?\)/")
+
+
+def start_time(raw) -> pd.Timestamp:
+    """DraftKings' contest start time, in whichever shape it arrives.
+
+    The lobby sends a .NET JSON date - "/Date(1757894400000)/" - and the first
+    version of this passed that straight to `pd.to_datetime(..., unit="ms")`,
+    which cannot read it. With `errors="coerce"` every start time became NaT,
+    silently: nothing raised, the column existed, and the ownership probe's
+    "has this contest started" filter therefore rejected all 3,705 archived
+    contests and reported that none had started. A whole capability sat blocked
+    on a date parse, and the error message pointed at the wrong thing.
+
+    Four shapes are accepted because all four have been seen from this lobby:
+    the .NET wrapper with and without a timezone suffix, a raw epoch in
+    milliseconds, the same as a string of digits, and an ISO timestamp.
+    """
+    if raw is None or (isinstance(raw, float) and pd.isna(raw)):
+        return pd.NaT
+    if isinstance(raw, (int, float)) and not isinstance(raw, bool):
+        return pd.to_datetime(int(raw), unit="ms", utc=True, errors="coerce")
+
+    s = str(raw).strip()
+    m = _DOTNET_DATE.search(s)
+    if m:
+        return pd.to_datetime(int(m.group(1)), unit="ms", utc=True,
+                              errors="coerce")
+    if s.lstrip("-").isdigit():
+        return pd.to_datetime(int(s), unit="ms", utc=True, errors="coerce")
+    return pd.to_datetime(s, utc=True, errors="coerce")
+
+
 # ----------------------------------------------------------- draftkings live
 def contests() -> pd.DataFrame:
     """Every listed NFL contest, one row each, with its slate key."""
@@ -184,13 +217,22 @@ def contests() -> pd.DataFrame:
         "max_entries": c.get("m"),
         "max_per_user": c.get("mec"),
         "prize_pool": c.get("po"),
-        "starts_utc": pd.to_datetime(c.get("sd"), unit="ms", errors="coerce"),
+        "starts_utc": start_time(c.get("sd")),
         "starts_text": c.get("sdstring"),
     } for c in rows])
 
     # Madden Stream slates are simulated video-game contests that sit in the
     # NFL lobby all week. They are not football and must never reach a model
     # trained on football.
+    # A column of NaT is what the old parser produced, and nothing noticed for
+    # a day. Saying it out loud turns the next occurrence into one line of log
+    # rather than a capability that quietly does nothing.
+    if len(df) and df["starts_utc"].isna().all():
+        log.error("every contest start time failed to parse - sample %r. "
+                  "Anything that filters on whether a contest has started will "
+                  "silently match nothing.",
+                  (rows[0] or {}).get("sd"))
+
     simulated = df["name"].astype(str).str.contains("madden", case=False,
                                                     na=False)
     if simulated.any():

@@ -104,12 +104,35 @@ def pick_targets(df: pd.DataFrame, limit: int = 3) -> list[dict]:
     """
     if df.empty:
         return []
-    now = pd.Timestamp.now(tz="UTC")
-    done = df[df["starts_utc"].notna() & (df["starts_utc"] < now)]
-    if done.empty:
-        return []
-    done = done.sort_values("entries", ascending=False)
-    return done.head(limit).to_dict("records")
+
+    # Never conclude from a column that might be empty. The start times in the
+    # archive were written by a parser that could not read DraftKings' .NET
+    # date format, so every one of 3,705 contests came back NaT - and this
+    # function dutifully reported that none had started, which sounded like an
+    # answer about the world and was actually an answer about a regex.
+    #
+    # So when the column is unusable, say so and probe the biggest contests
+    # anyway. The endpoint is the authority on whether a contest has standings;
+    # a start time is only a hint about which ones to try first, and a probe
+    # that refuses to probe has failed at its one job.
+    usable = df["starts_utc"].notna()
+    if not usable.any():
+        log.warning("no archived contest has a readable start time - probing "
+                    "the largest contests regardless, since the endpoint is "
+                    "what actually decides this")
+        candidates = df
+    else:
+        now = pd.Timestamp.now(tz="UTC")
+        candidates = df[usable & (df["starts_utc"] < now)]
+        if candidates.empty:
+            log.warning("no archived contest has started yet; falling back to "
+                        "the largest regardless")
+            candidates = df
+
+    entries = pd.to_numeric(candidates.get("entries"), errors="coerce")
+    candidates = candidates.assign(_n=entries.fillna(0))
+    candidates = candidates.sort_values("_n", ascending=False)
+    return candidates.head(limit).drop(columns="_n").to_dict("records")
 
 
 def try_contest(contest_id: int) -> dict:
@@ -209,12 +232,16 @@ def main(argv=None) -> int:
     else:
         archive = archived_contests()
         print(f"\n  contests in the local archive: {len(archive):,}")
+        readable = int(archive["starts_utc"].notna().sum()) if len(archive) else 0
+        print(f"  of those, with a readable start time: {readable:,}")
+        if len(archive) and not readable:
+            print("  (start times are unreadable in this archive - probing the")
+            print("   largest contests anyway, since the endpoint decides this,")
+            print("   not the timestamp)")
         targets = pick_targets(archive, args.limit)
         if not targets:
-            print("\n  None of the archived contests have started yet, so none")
-            print("  have standings. Run the capture job, wait for a slate to")
-            print("  finish, then run this again - or pass --contest with an")
-            print("  id from a contest you know is over.")
+            print("\n  The archive is empty. Run the capture job first, or pass")
+            print("  --contest with an id from a contest you know is over.")
             return 0
 
     any_csv = False
