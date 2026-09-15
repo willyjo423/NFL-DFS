@@ -435,9 +435,98 @@ def test_inactive_players_are_excluded():
           len(kept2) == 5 and dropped2.empty)
 
 
+def test_market_lines_are_a_feature_not_a_leak():
+    section("THE MARKET LINE: THE ONLY FORWARD-LOOKING INPUT")
+    import features as FT
+
+    raw = fixture()
+    # A closing line exists BEFORE kickoff, so using it is not leakage - it is
+    # the one input that can know about something the history cannot: a new
+    # starting quarterback, an expected blowout, weather.
+    games = raw[["season", "week", "team"]].drop_duplicates().reset_index(drop=True)
+    rng = np.random.default_rng(4)
+    total = 40 + rng.normal(0, 5, len(games))
+    spread = rng.normal(0, 6, len(games))
+    lines = games.assign(game_total=total, team_spread=spread,
+                         implied_total=(total + spread) / 2.0,
+                         is_home=(np.arange(len(games)) % 2).astype(float))
+
+    before = len(raw)
+    joined = FT.attach_market(raw.copy(), lines)
+    check("the join does not duplicate player-weeks", len(joined) == before,
+          f"{before} -> {len(joined)}")
+    check("every market column arrives",
+          {"implied_total", "game_total", "team_spread", "is_home"}
+          <= set(joined.columns))
+    check("and it actually matched", joined["implied_total"].notna().all())
+
+    # Missing must stay missing. A game total of zero is a claim that nobody
+    # will score, which is not what "we have no line" means - and the model
+    # would learn from it.
+    partial = lines.iloc[: len(lines) // 2]
+    half = FT.attach_market(raw.copy(), partial)
+    miss = half["implied_total"].isna()
+    check("an unmatched game leaves a blank, never a zero",
+          bool(miss.any()) and not bool((half.loc[miss, "game_total"] == 0).any()),
+          "zeros here are a claim, not an absence")
+    none = FT.attach_market(raw.copy(), None)
+    check("no lines at all still builds, with the columns blank",
+          bool(none["implied_total"].isna().all()))
+
+    # Calling twice must not leave implied_total_x / implied_total_y behind,
+    # with the real column quietly absent from the feature frame.
+    twice = FT.attach_market(FT.attach_market(raw.copy(), lines), lines)
+    check("joining twice does not produce suffixed duplicates",
+          not any(c.endswith(("_x", "_y")) for c in twice.columns),
+          str([c for c in twice.columns if c.endswith(("_x", "_y"))]))
+
+    built = features.build(raw, lines=lines)
+    check("the implied halves still sum to the game total",
+          float((built["implied_total"] * 2 - built["game_total"]
+                 - built["team_spread"]).abs().max()) < 1e-6)
+    check("is_home is a real split, not a constant",
+          0.2 < float(built["is_home"].mean()) < 0.8,
+          str(built["is_home"].mean()))
+
+    # The bug this fix exists for: _home_flag read the column as a string and
+    # tested membership in ("1","true","home"). A numeric 1.0 stringifies to
+    # "1.0", failed the test, and EVERY row came out 0 - the constant claim
+    # that no team is ever at home, learned from as if it were data.
+    check("a numeric 1.0 reads as home, not as zero",
+          float(FT._home_flag(pd.DataFrame({"is_home": [1.0, 0.0, 1.0]})).mean())
+          == 2 / 3)
+    check("integers work too",
+          list(FT._home_flag(pd.DataFrame({"is_home": [1, 0]}))) == [1.0, 0.0])
+    check("and the old text spellings still work",
+          list(FT._home_flag(pd.DataFrame({"home_away": ["home", "away"]})))
+          == [1.0, 0.0])
+    unknown = FT._home_flag(pd.DataFrame({"location": ["Wembley", "?"]}))
+    check("an unrecognised value is missing, not away",
+          bool(unknown.isna().all()), str(list(unknown)))
+
+    # And the leak test again, this time WITH lines attached - the market
+    # column must not smuggle the future in through a different door.
+    full = features.build(raw, lines=lines)
+    cut = features.build(raw[raw["week"] <= 8], lines=lines)
+    key = ["player_id", "season", "week"]
+    a = full[full["week"] <= 8].set_index(key).sort_index()
+    b = cut.set_index(key).sort_index()
+    worst = 0.0
+    for c in features.FEATURES:
+        if c not in a.columns or c not in b.columns:
+            continue
+        x, y = a[c].to_numpy(dtype=float), b[c].to_numpy(dtype=float)
+        both = ~(np.isnan(x) | np.isnan(y))
+        if both.any():
+            worst = max(worst, float(np.abs(x[both] - y[both]).max()))
+    check("deleting the future still changes nothing, with market data in",
+          worst < 1e-9, f"worst drift {worst:.3g}")
+
+
 def main():
     print("DFS features - offline checks")
-    for fn in (test_no_leakage, test_first_row_is_blank,
+    for fn in (test_market_lines_are_a_feature_not_a_leak,
+               test_no_leakage, test_first_row_is_blank,
                test_usage_tracks_role_change, test_team_context,
                test_target_matches_scoring, test_trainable,
                test_empty_feature_does_not_kill_the_fit,

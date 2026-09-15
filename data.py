@@ -379,6 +379,57 @@ def draftables(draft_group: int) -> pd.DataFrame:
     return df
 
 
+@lru_cache(maxsize=1)
+def schedules() -> pd.DataFrame:
+    """Every game with its closing market line, one row per TEAM.
+
+    Two rows per game, so this joins straight onto player weeks by
+    (season, week, team). The implied team total is the half of the market's
+    total that the spread assigns to each side - the number that says how many
+    points a team is actually expected to score, which is what a player's
+    ceiling is mostly made of.
+
+    This also supplies `is_home`, which nflverse's weekly player file does not
+    carry. That column arriving empty is what killed the very first live fit:
+    an all-NaN feature the histogram binner could not build a threshold from.
+    """
+    raw = _get(config.NFLVERSE_SCHEDULES)
+    df = pd.read_csv(io.BytesIO(raw), low_memory=False)
+    need = {"season", "week", "home_team", "away_team"}
+    if not need <= set(df.columns):
+        raise DataUnavailable(f"schedules lack {need - set(df.columns)}")
+
+    spread = pd.to_numeric(df.get("spread_line"), errors="coerce")
+    total = pd.to_numeric(df.get("total_line"), errors="coerce")
+    # spread_line is from the HOME side, so the home implied total is the
+    # bigger half when the home team is favoured. Getting this backwards would
+    # hand every favourite's players their opponent's expectation, which is a
+    # sign error that looks plausible in aggregate and is wrong every time.
+    home_implied = (total + spread) / 2.0
+    away_implied = total - home_implied
+
+    home = pd.DataFrame({
+        "season": df["season"], "week": df["week"], "team": df["home_team"],
+        "opponent": df["away_team"], "is_home": 1.0,
+        "game_total": total, "team_spread": spread,
+        "implied_total": home_implied})
+    away = pd.DataFrame({
+        "season": df["season"], "week": df["week"], "team": df["away_team"],
+        "opponent": df["home_team"], "is_home": 0.0,
+        "game_total": total, "team_spread": -spread,
+        "implied_total": away_implied})
+
+    out = pd.concat([home, away], ignore_index=True)
+    out["team"] = out["team"].astype(str)
+    cover = float(out["implied_total"].notna().mean())
+    log.info("schedules: %d team-games, %.0f%% carry a market line",
+             len(out), 100 * cover)
+    if cover < 0.5:
+        log.warning("most games have no market line - the implied-total "
+                    "features will be mostly missing and worth little")
+    return out
+
+
 # --------------------------------------------------------------- team model
 def team_context() -> pd.DataFrame:
     """Implied team totals, from the NFL model's published forecast.

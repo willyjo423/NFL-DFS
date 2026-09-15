@@ -58,6 +58,15 @@ DK_DRAFTABLES = ("https://api.draftkings.com/draftgroups/v1/draftgroups/"
 
 # The team model next door. It publishes a market margin and total per game,
 # which is where each side's implied points come from.
+# Historical market lines. The reason this matters more than it looks: the
+# implied team total is the single most informative piece of context a player
+# projection can have, and the version already wired up (`team_context`) only
+# publishes the CURRENT week - so there was nothing to train on and the feature
+# could never be learned, only bolted on afterwards. This file carries the
+# lines back to 1999, which turns it into a real feature.
+NFLVERSE_SCHEDULES = ("https://github.com/nflverse/nflverse-data/releases/"
+                      "download/schedules/games.csv")
+
 TEAM_MODEL_JSON = "https://willyjo423.github.io/nfl-forecast/predictions.json"
 
 # rotoguru's historical salaries, for an optional backfill. The form's own

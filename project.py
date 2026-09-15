@@ -261,7 +261,16 @@ def run(draft_group: int, site: str = "dk",
              int(weeks["season"].max()),
              int(weeks[weeks["season"] == weeks["season"].max()]["week"].max()))
 
-    built = F.build(weeks, site=site)
+    # The market line is the only forward-looking feature in the set, and the
+    # only one that can know about something that has not happened yet.
+    try:
+        lines = data.schedules()
+    except data.DataUnavailable as exc:
+        log.warning("no market lines (%s) - projecting without them, which "
+                    "loses the single most informative piece of game context",
+                    exc)
+        lines = None
+    built = F.build(weeks, site=site, lines=lines)
     proj = M.Projections().fit(built)
     latest = M.latest_rows(built)
 
