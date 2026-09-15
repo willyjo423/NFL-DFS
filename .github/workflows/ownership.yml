@@ -1,43 +1,57 @@
-name: Ownership probe
+name: DFS ownership probe
 
-# Whether the field can be measured or only guessed at. Decides how strong the
-# tournament side can be, so it runs before that part is built. Needs at least
-# one archived contest that has already finished, which means running the
-# capture job first and waiting for a slate to play out.
+# Can we COUNT what the field played, rather than guess it?
+#
+# This has to run against a SETTLED contest - DraftKings publishes standings
+# only after a contest finalises, which is a while after the game ends, not the
+# moment the clock hits zero. Run it the morning after a slate.
+#
+# It decides how good the tournament side can ever be. A GPP is won by being
+# right where the field is wrong, and leverage cannot be computed from
+# projections alone. If this endpoint is open, ownership is measured; if it is
+# closed, the field has to be modelled from priors and everything built on it
+# is weaker. Worth knowing before the GPP optimiser is trusted, not after.
+
 on:
   workflow_dispatch:
     inputs:
       contest:
-        description: "A specific finished contest id (blank = pick from the archive)"
+        description: "Contest id to probe (blank = find recent settled ones)"
         required: false
         default: ""
       limit:
-        description: "How many archived contests to try (blank = 3)"
+        description: "How many contests to try when none is given"
         required: false
-        default: ""
+        default: "3"
 
 jobs:
   probe:
     runs-on: ubuntu-latest
-    timeout-minutes: 20
+    timeout-minutes: 30
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
         with:
           python-version: "3.11"
           cache: pip
+
       - name: Install
         run: pip install -r requirements.txt
+
       - name: Probe
         run: |
-          ARGS=""
-          if [ -n "${{ inputs.contest }}" ]; then ARGS="$ARGS --contest ${{ inputs.contest }}"; fi
-          if [ -n "${{ inputs.limit }}" ]; then ARGS="$ARGS --limit ${{ inputs.limit }}"; fi
+          ARGS="--limit ${{ inputs.limit }}"
+          if [ -n "${{ inputs.contest }}" ]; then
+            ARGS="$ARGS --contest ${{ inputs.contest }}"
+          fi
+          echo "EFFECTIVE ARGS: $ARGS"
           python ownership_probe.py $ARGS | tee ownership.txt
+
       - name: Keep the output
         if: always()
         uses: actions/upload-artifact@v4
         with:
-          name: ownership-probe-output
+          name: dfs-ownership-probe
           path: ownership.txt
           retention-days: 30
+          if-no-files-found: warn
