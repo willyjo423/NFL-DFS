@@ -42,6 +42,7 @@ import config
 import data
 import features as F
 import model as M
+import special
 
 log = logging.getLogger(__name__)
 
@@ -303,6 +304,26 @@ def run(draft_group: int, site: str = "dk",
     q = proj.predict(known)
     for c in q.columns:
         known[c] = q[c].to_numpy()
+
+    # Defences, which the player model cannot touch. nflverse's weekly file has
+    # no defence rows, so every DST was filtered out of the pool - and a classic
+    # lineup requires exactly one. The integer program reported "no legal
+    # lineup" and the only hint was ownership summing to 800% against nine
+    # roster slots. They are projected from the market instead.
+    if lines is not None and len(lines):
+        try:
+            up = special.upcoming_lines(lines)
+            dst = special.project(pool, up, site=site,
+                                  quantiles=config.QUANTILES)
+        except Exception as exc:                      # noqa: BLE001
+            log.warning("defence projection failed (%s: %s) - a classic lineup "
+                        "cannot be built without one", type(exc).__name__, exc)
+            dst = pd.DataFrame()
+        if len(dst):
+            merged_dst = pool.merge(dst.drop(columns=["position", "team"]),
+                                    on="name", how="inner")
+            known = pd.concat([known, merged_dst], ignore_index=True)
+            log.info("added %d defences to the pool", len(merged_dst))
 
     known["value"] = (known["median"] / (known["salary"] / 1000.0)).round(2)
     known["ceiling_value"] = (known["ceiling"]

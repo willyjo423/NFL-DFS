@@ -478,9 +478,107 @@ def test_factors_survive_any_slate_shape():
           factors.MIN_IDIOSYNCRATIC > 0)
 
 
+def test_defences_are_projected_and_classic_is_buildable():
+    section("A CLASSIC LINEUP NEEDS A DEFENCE, AND ONE MUST EXIST")
+    import ownership as OWN
+    import special
+
+    # This is the live failure. nflverse's weekly player file has no defence
+    # rows, so every DST was filtered out of the projectable pool - and a
+    # classic roster requires exactly one. The integer program said "no legal
+    # lineup could be built" and the only hint was ownership totalling 800%
+    # against nine roster slots: the hundred points belonging to the defence
+    # had nowhere to go.
+    classic = config.ROSTERS[("dk", "Classic")]
+    demand = OWN.slot_demand(classic)
+    check("the roster genuinely demands a defence",
+          demand.get("DST", 0) == 1.0, str(demand))
+
+    pool = slate(showdown=False)
+    pool["median"] = pool["q50"]
+    pool["ceiling"] = pool["q97"]
+    no_dst = pool[pool["position"] != "DST"]
+    short = OWN.project(no_dst, classic)
+    check("without defences the board cannot fill the roster",
+          abs(float(short.sum()) - len(classic["slots"])) > 0.5,
+          f"{float(short.sum()):.2f} against {len(classic['slots'])} slots")
+    full = OWN.project(pool, classic)
+    check("with them it fills exactly",
+          abs(float(full.sum()) - len(classic["slots"])) < 1e-6,
+          str(float(full.sum())))
+
+    # The defence model itself. Almost all of what a defence scores is decided
+    # by how many points the OTHER team puts up, so the direction of this is
+    # the thing that must not be wrong - and it is a sign error that would
+    # produce entirely plausible numbers.
+    easy = special.simulate_defence(14.0, "dk", n=30000)
+    hard = special.simulate_defence(31.0, "dk", n=30000)
+    check("a defence facing a weak offence outscores one facing a strong one",
+          easy.mean() > hard.mean() + 2.0,
+          f"{easy.mean():.2f} vs {hard.mean():.2f}")
+    check("and the gap shows up at the ceiling too",
+          np.quantile(easy, 0.9) > np.quantile(hard, 0.9))
+
+    mids = [special.simulate_defence(t, "dk", n=20000).mean()
+            for t in (14, 18, 22, 26, 30)]
+    check("the relationship is monotone across the whole range",
+          all(a > b for a, b in zip(mids, mids[1:])),
+          str([round(m, 2) for m in mids]))
+
+    # The step function is the reason this is simulated rather than averaged.
+    # DraftKings pays ten for a shutout and minus four for conceding 35, so the
+    # value at an implied total of 20.4 is a probability-weighted mix of tiers,
+    # not the tier that 20.4 happens to land in.
+    at20 = special.simulate_defence(20.0, "dk", n=40000)
+    check("a defence has real upside even against an average offence",
+          np.quantile(at20, 0.97) >= np.median(at20) + 8.0,
+          f"median {np.median(at20):.1f}, 97th {np.quantile(at20, 0.97):.1f}")
+    check("and can score negative, which the tiers allow",
+          float(at20.min()) < 0, str(float(at20.min())))
+
+    # The opponent's total, not the team's own. Getting this backwards hands
+    # every defence its own offence's expectation.
+    sched = pd.DataFrame({
+        "season": [2026, 2026], "week": [2, 2],
+        "team": ["AAA", "BBB"], "opponent": ["BBB", "AAA"],
+        "implied_total": [27.5, 17.5], "game_total": [45.0, 45.0],
+        "team_spread": [-10.0, 10.0], "is_home": [1.0, 0.0]})
+    up = special.upcoming_lines(sched)
+    aaa = up[up["team"] == "AAA"].iloc[0]
+    check("the opponent's implied total is the opponent's, not the team's",
+          abs(float(aaa["opponent_implied"]) - 17.5) < 1e-6,
+          str(float(aaa["opponent_implied"])))
+    check("and the two halves still sum to the game total",
+          abs(float(aaa["implied_total"]) + float(aaa["opponent_implied"])
+              - 45.0) < 1e-6)
+
+    dpool = pd.DataFrame({"name": ["AAA D", "BBB D", "CCC D"],
+                          "position": ["DST"] * 3,
+                          "team": ["AAA", "BBB", "CCC"],
+                          "salary": [3200.0, 2800.0, 2600.0]})
+    out = special.project(dpool, up, "dk")
+    check("a defence with a line is projected", len(out) == 2, str(len(out)))
+    check("and one without is left out rather than guessed",
+          "CCC D" not in set(out["name"]))
+    # AAA is the favourite - implied for 27.5 - so AAA's DEFENCE faces the
+    # 17.5 side and is the better play. Written the other way round the first
+    # time, which the code correctly contradicted: it is the opponent's total
+    # that decides a defence, and the team's own is irrelevant to it.
+    check("the defence facing the weaker offence projects higher",
+          float(out[out["team"] == "AAA"]["median"].iloc[0])
+          > float(out[out["team"] == "BBB"]["median"].iloc[0]),
+          out[["team", "opponent_implied", "median"]].to_string(index=False))
+    qcols = [f"q{int(q * 100)}" for q in config.QUANTILES]
+    check("every fitted quantile comes back",
+          all(c in out.columns for c in qcols), str(list(out.columns)))
+    check("and they never cross",
+          bool((np.diff(out[qcols].to_numpy(), axis=1) >= -1e-9).all()))
+
+
 def main():
     print("DFS simulator and optimisers - offline checks")
-    maths = (test_factors_survive_any_slate_shape,
+    maths = (test_defences_are_projected_and_classic_is_buildable,
+             test_factors_survive_any_slate_shape,
              test_ownership_has_to_add_up,
              test_correlation_survives_the_copula,
              test_marginals_are_not_distorted,
