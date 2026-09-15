@@ -1,0 +1,23 @@
+{
+  "updated_at": "2026-09-15T04:19:30+00:00",
+  "slates": [
+    {
+      "kind": "showdown",
+      "sport": "nfl",
+      "site": "dk",
+      "draft_group": 153434,
+      "label": "NFL Showdown $1.5M Thursday Night Showdown [$500K to 1st] (DET @ BUF)",
+      "file": "data/nfl/dk-showdown-153434.json",
+      "players": 31,
+      "generated_at": "2026-09-15T04:19:30+00:00"
+    }
+  ],
+  "failures": [
+    {
+      "kind": "classic",
+      "draft_group": 153428,
+      "label": "NFL $3M Fantasy Football Millionaire [$1M to 1st]",
+      "error": "Infeasible: no legal lineup could be built from this pool"
+    }
+  ]
+}
