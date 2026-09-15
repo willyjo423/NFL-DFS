@@ -1,0 +1,699 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>DFS optimiser</title>
+<style>
+:root{
+  --ground:#f4f6f5; --surface:#fff; --sunken:#eaeeee; --line:#d6dede;
+  --soft:#e4eaea; --ink:#14191b; --muted:#5a696e; --faint:#8a989c;
+  --accent:#0c6f78; --accent-soft:#0c6f7814;
+  --good:#1a7f4b; --warn:#9a6206; --warn-bg:#f6ebd6; --bad:#b3261e;
+  --bar:#c3d3d4;
+}
+@media (prefers-color-scheme: dark){
+  :root{
+    --ground:#0e1315; --surface:#161d20; --sunken:#1c2529; --line:#2a3639;
+    --soft:#222c30; --ink:#e6edee; --muted:#94a6aa; --faint:#6b7d82;
+    --accent:#3eb8c2; --accent-soft:#3eb8c222;
+    --good:#4ec27f; --warn:#d9a441; --warn-bg:#2a2317; --bad:#ef6b62;
+    --bar:#2e3d41;
+  }
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--ground);color:var(--ink);
+  font:15px/1.5 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
+  -webkit-font-smoothing:antialiased}
+.wrap{max-width:1180px;margin:0 auto;padding-inline:20px;
+  padding-block:28px 64px;display:flex;flex-direction:column;gap:22px}
+h1{margin:0;font-size:26px;letter-spacing:-.01em}
+h2{margin:0 0 3px;font-size:19px;font-weight:600}
+.sub{margin:0;color:var(--muted);font-size:14px;max-width:70ch}
+.mono{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;
+  font-variant-numeric:tabular-nums}
+
+.panel{background:var(--surface);border:1px solid var(--line);border-radius:4px}
+.controls{display:flex;flex-wrap:wrap;gap:0;overflow:hidden}
+.ctl{flex:1 1 150px;padding:11px 14px;border-right:1px solid var(--soft);
+  display:flex;flex-direction:column;gap:4px;min-width:0}
+.ctl:last-child{border-right:0}
+.ctl label{font-size:10px;letter-spacing:.1em;text-transform:uppercase;
+  color:var(--faint);font-weight:600}
+.ctl select,.ctl input{width:100%;padding:6px 8px;font-size:14px;
+  background:var(--ground);color:var(--ink);border:1px solid var(--line);
+  border-radius:3px;font-variant-numeric:tabular-nums}
+.ctl select:focus,.ctl input:focus,button:focus-visible{outline:2px solid var(--accent);outline-offset:1px}
+
+button{font:inherit;font-weight:600;padding:9px 18px;border-radius:3px;
+  border:1px solid var(--accent);background:var(--accent);color:#fff;
+  cursor:pointer}
+button.ghost{background:transparent;color:var(--accent)}
+button:disabled{opacity:.5;cursor:default}
+.row{display:flex;gap:10px;flex-wrap:wrap;align-items:center}
+
+.tiles{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px}
+.tile{background:var(--surface);border:1px solid var(--line);border-radius:4px;
+  padding:12px 14px;display:flex;flex-direction:column;gap:2px}
+.tile .k{font-size:10px;letter-spacing:.09em;text-transform:uppercase;color:var(--faint)}
+.tile .v{font-size:22px;font-weight:700;font-variant-numeric:tabular-nums}
+.tile .n{font-size:12px;color:var(--muted)}
+
+.scroll{overflow-x:auto}
+table{width:100%;border-collapse:collapse;font-size:13.5px}
+thead th{position:sticky;top:0;background:var(--surface);text-align:right;
+  padding:9px 10px;border-bottom:1px solid var(--line);font-size:10px;
+  letter-spacing:.08em;text-transform:uppercase;color:var(--faint);
+  font-weight:600;white-space:nowrap;cursor:pointer;user-select:none}
+thead th.l{text-align:left}
+tbody td{padding:7px 10px;border-bottom:1px solid var(--soft);text-align:right;
+  font-variant-numeric:tabular-nums;white-space:nowrap}
+tbody td.l{text-align:left;white-space:normal}
+tbody tr:hover td{background:var(--sunken)}
+tr.locked td{background:var(--accent-soft)}
+tr.excluded td{opacity:.35;text-decoration:line-through}
+.pill{display:inline-block;font-size:9.5px;font-weight:700;letter-spacing:.05em;
+  padding:1px 5px;border-radius:2px;margin-left:5px;vertical-align:1px}
+.pill.q{background:var(--warn-bg);color:var(--warn)}
+.chip{font-size:10px;font-weight:700;padding:2px 5px;border-radius:2px;
+  background:var(--sunken);color:var(--muted)}
+.tog{cursor:pointer;border:1px solid var(--line);background:var(--surface);
+  color:var(--muted);border-radius:3px;padding:1px 7px;font-size:11px;
+  font-weight:600}
+.tog.on{background:var(--accent);border-color:var(--accent);color:#fff}
+.tog.off{background:var(--bad);border-color:var(--bad);color:#fff}
+
+.lineup{border:1px solid var(--line);border-radius:4px;background:var(--surface);
+  padding:14px 16px;display:flex;flex-direction:column;gap:9px}
+.lineup h3{margin:0;font-size:15px;display:flex;gap:9px;align-items:baseline;
+  flex-wrap:wrap}
+.lineup .stats{display:flex;gap:16px;flex-wrap:wrap;font-size:12.5px;
+  color:var(--muted);font-variant-numeric:tabular-nums}
+.lineup .stats b{color:var(--ink)}
+.grid2{display:grid;grid-template-columns:repeat(auto-fit,minmax(330px,1fr));gap:14px}
+
+.note{border:1px solid var(--line);border-left:3px solid var(--warn);
+  background:var(--surface);border-radius:4px;padding:14px 16px;
+  font-size:13.5px;color:var(--muted)}
+.note b{color:var(--ink)}
+.bar{height:5px;background:var(--sunken);border-radius:2px;overflow:hidden;
+  min-width:52px}
+.bar i{display:block;height:100%;background:var(--bar)}
+footer{border-top:1px solid var(--line);padding-top:16px;font-size:12.5px;
+  color:var(--faint)}
+#status{font-size:13px;color:var(--muted)}
+@media (max-width:620px){ .ctl{flex-basis:50%} .wrap{padding-block:20px 48px} }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header>
+    <h1>DFS optimiser</h1>
+    <p class="sub">Quantile projections, correlated slate simulation, and an
+      optimiser that solves for the contest you are actually entering. Pick a
+      slate, lock or fade whoever you like, and it re-solves here in the
+      browser.</p>
+  </header>
+
+  <div class="panel controls">
+    <div class="ctl"><label for="slate">Slate</label>
+      <select id="slate"></select></div>
+    <div class="ctl"><label for="objective">Contest</label>
+      <select id="objective">
+        <option value="gpp">Tournament (GPP)</option>
+        <option value="cash">Cash / double-up</option>
+      </select></div>
+    <div class="ctl"><label for="entries">Entries</label>
+      <input id="entries" type="number" min="1" max="150" value="1"></div>
+    <div class="ctl"><label for="overlap">Max shared players</label>
+      <input id="overlap" type="number" min="0" max="9" value="3"></div>
+    <div class="ctl"><label for="field">Contest size</label>
+      <input id="field" type="number" min="2" step="1000" value="100000"></div>
+    <div class="ctl"><label for="sims">Simulations</label>
+      <select id="sims">
+        <option value="20000">20,000</option>
+        <option value="50000" selected>50,000</option>
+        <option value="100000">100,000</option>
+      </select></div>
+  </div>
+
+  <div class="row">
+    <button id="run">Build lineups</button>
+    <button id="reset" class="ghost">Clear locks and fades</button>
+    <span id="status">Loading slates…</span>
+  </div>
+
+  <div class="tiles" id="tiles"></div>
+
+  <section>
+    <h2>Lineups</h2>
+    <p class="sub" id="lineup-note"></p>
+    <div class="grid2" id="lineups" style="margin-top:12px"></div>
+  </section>
+
+  <section>
+    <h2>The board</h2>
+    <p class="sub">Click <b>L</b> to force a player in, <b>X</b> to force him
+      out. Ownership is modelled, not measured. Leverage is the gap between how
+      much the model likes a player and how much the field will.</p>
+    <div class="panel scroll" style="margin-top:12px">
+      <table id="board">
+        <thead><tr>
+          <th class="l">Player</th><th class="l">Pos</th><th class="l">Team</th>
+          <th>Salary</th><th>Median</th><th>Ceiling</th>
+          <th>Per $1k</th><th>Own%</th><th>Leverage</th><th class="l">Lock</th>
+        </tr></thead>
+        <tbody></tbody>
+      </table>
+    </div>
+  </section>
+
+  <div class="note" id="honesty"></div>
+
+  <footer id="foot"></footer>
+</div>
+
+<script>
+"use strict";
+
+const $ = id => document.getElementById(id);
+const fmt = (v, d = 1) => (v === null || v === undefined || Number.isNaN(v))
+  ? "—" : Number(v).toFixed(d);
+const money = v => "$" + Math.round(v).toLocaleString();
+const esc = s => String(s).replace(/[&<>"]/g, c =>
+  ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
+
+let SLATE = null;           // the loaded slate payload
+const LOCK = new Set();
+const FADE = new Set();
+let SORT = { key: "med", dir: -1 };
+
+/* ---------------------------------------------------------------- loading */
+async function boot() {
+  let manifest;
+  try {
+    manifest = await (await fetch("data/manifest.json?" + Date.now())).json();
+  } catch (e) {
+    $("status").textContent =
+      "No published slates yet. Run the publish job in Actions.";
+    return;
+  }
+  const sel = $("slate");
+  const live = (manifest.slates || []).filter(s => s.file);
+  if (!live.length) {
+    $("status").textContent = "The manifest has no slates in it yet.";
+    return;
+  }
+  sel.innerHTML = live.map((s, i) =>
+    `<option value="${i}">${esc(s.sport.toUpperCase())} · ${esc(s.site.toUpperCase())} ·
+      ${esc(s.kind)} — ${esc(s.label || "")}</option>`).join("");
+  sel.dataset.files = JSON.stringify(live.map(s => s.file));
+  sel.onchange = () => loadSlate(live[sel.value].file);
+  $("foot").textContent =
+    "Manifest updated " + (manifest.updated_at || "unknown") +
+    " · projections and ownership are modelled, nothing here has been graded.";
+  await loadSlate(live[0].file);
+}
+
+async function loadSlate(file) {
+  $("status").textContent = "Loading " + file + "…";
+  SLATE = await (await fetch(file + "?" + Date.now())).json();
+  LOCK.clear(); FADE.clear();
+  $("field").value = SLATE.field_size || 100000;
+  $("overlap").value = Math.max(1, SLATE.roster.slots.length - 3);
+  drawBoard();
+  drawHonesty();
+  showServerLineups();
+  $("status").textContent =
+    SLATE.players.length + " players · generated " + SLATE.generated_at;
+}
+
+/* ------------------------------------------------------- the factor model */
+// Rebuilt here rather than shipped as a matrix. A 200-player pairwise matrix
+// is 40,000 numbers per slate; the loadings are a few dozen, and they produce
+// a correlation that is positive semi-definite by construction - so the
+// browser can simulate without ever needing to repair anything.
+function loadingsFor(pos, kind) {
+  const t = (SLATE.loadings || {})[kind] || {};
+  const dflt = { game: 0.20, team: 0.28, compete: 0.40 }[kind];
+  return t[pos] !== undefined ? t[pos] : dflt;
+}
+
+function buildFactorPlan(players) {
+  const games = new Map(), teams = new Map(), groups = new Map();
+  players.forEach((p, i) => {
+    const g = p.game || "_", t = p.team || "_", k = t + "|" + p.pos;
+    if (!games.has(g)) games.set(g, games.size);
+    if (!teams.has(t)) teams.set(t, teams.size);
+    if (!groups.has(k)) groups.set(k, []);
+    groups.get(k).push(i);
+  });
+  const n = players.length;
+  const members = [...groups.values()];      // index lists, one per group
+  const gi = new Int32Array(n), ti = new Int32Array(n), qi = new Int32Array(n);
+  const gl = new Float64Array(n), tl = new Float64Array(n), cl = new Float64Array(n);
+  const size = new Float64Array(n), idio = new Float64Array(n);
+  const groupIds = [...groups.keys()];
+  players.forEach((p, i) => {
+    gi[i] = games.get(p.game || "_");
+    ti[i] = teams.get(p.team || "_");
+    qi[i] = groupIds.indexOf((p.team || "_") + "|" + p.pos);
+    gl[i] = loadingsFor(p.pos, "game");
+    tl[i] = loadingsFor(p.pos, "team");
+    cl[i] = loadingsFor(p.pos, "compete");
+    size[i] = groups.get((p.team || "_") + "|" + p.pos).length;
+  });
+  for (let i = 0; i < n; i++) {
+    const comp = size[i] > 1 ? cl[i] * cl[i] * (1 - 1 / size[i]) : 0;
+    idio[i] = Math.max(0, 1 - gl[i] * gl[i] - tl[i] * tl[i] - comp);
+  }
+  return { gi, ti, qi, gl, tl, cl, size, idio, members,
+           nGames: games.size, nTeams: teams.size, nGroups: groups.size };
+}
+
+// A fast normal generator. Math.random is fine here - these are simulation
+// draws, not anything that needs to be unguessable.
+function randn() {
+  let u = 0, v = 0;
+  while (u === 0) u = Math.random();
+  while (v === 0) v = Math.random();
+  return Math.sqrt(-2 * Math.log(u)) * Math.cos(2 * Math.PI * v);
+}
+
+function simulate(players, sims, plan, zq) {
+  const n = players.length;
+  const out = new Float32Array(n * sims);
+  const G = new Float64Array(plan.nGames), T = new Float64Array(plan.nTeams);
+  const comp = new Float64Array(n);
+  const curves = players.map(p => p.q);
+
+  for (let s = 0; s < sims; s++) {
+    for (let k = 0; k < G.length; k++) G[k] = randn();
+    for (let k = 0; k < T.length; k++) T[k] = randn();
+
+    // Competition, done properly: within each team-and-position group draw one
+    // normal per member and subtract the mean OF THOSE DRAWS. That is what
+    // makes team-mates pull against each other - cov(e_i - m, e_j - m) is
+    // -1/k, which is negative.
+    //
+    // The first version subtracted a single shared draw instead, and
+    // cov(a - C, b - C) is +var(C): a common term makes two players move
+    // TOGETHER. Same-team receivers came out at +0.75 against the model's
+    // +0.23, and two running backs at +0.50 when they should pull apart. The
+    // sign of the one negative term in the whole model was inverted.
+    for (const idx of plan.members) {
+      const k = idx.length;
+      if (k < 2) { comp[idx[0]] = 0; continue; }
+      let sum = 0;
+      for (let j = 0; j < k; j++) { const e = randn(); comp[idx[j]] = e; sum += e; }
+      const m = sum / k;
+      for (let j = 0; j < k; j++) comp[idx[j]] = plan.cl[idx[j]] * (comp[idx[j]] - m);
+    }
+
+    for (let i = 0; i < n; i++) {
+      const z = plan.gl[i] * G[plan.gi[i]]
+              + plan.tl[i] * T[plan.ti[i]]
+              + comp[i]
+              + Math.sqrt(plan.idio[i]) * randn();
+      out[i * sims + s] = curveAt(zq, curves[i], z);
+    }
+  }
+  return out;
+}
+
+// Interpolate in z-space, and EXTEND the outer segments. Clamping instead
+// would freeze about an eighth of every simulation at exactly the 10th or the
+// 97th percentile, and a constant correlates with nothing - which is what
+// flattened the tournament tail in the first version of this.
+function curveAt(zq, v, z) {
+  const m = zq.length;
+  if (z <= zq[0]) {
+    const slope = (v[1] - v[0]) / (zq[1] - zq[0]);
+    return Math.max(0, v[0] + slope * (z - zq[0]));
+  }
+  if (z >= zq[m - 1]) {
+    const slope = (v[m - 1] - v[m - 2]) / (zq[m - 1] - zq[m - 2]);
+    return Math.max(0, v[m - 1] + slope * (z - zq[m - 1]));
+  }
+  let k = 1;
+  while (k < m - 1 && zq[k] < z) k++;
+  const f = (z - zq[k - 1]) / (zq[k] - zq[k - 1]);
+  return Math.max(0, v[k - 1] + f * (v[k] - v[k - 1]));
+}
+
+function normalQuantile(p) {           // Acklam's inverse normal CDF
+  const a = [-39.69683028665376, 220.9460984245205, -275.9285104469687,
+             138.3577518672690, -30.66479806614716, 2.506628277459239];
+  const b = [-54.47609879822406, 161.5858368580409, -155.6989798598866,
+             66.80131188771972, -13.28068155288572];
+  const c = [-0.007784894002430293, -0.3223964580411365, -2.400758277161838,
+             -2.549732539343734, 4.374664141464968, 2.938163982698783];
+  const d = [0.007784695709041462, 0.3224671290700398, 2.445134137142996,
+             3.754408661907416];
+  const pl = 0.02425;
+  let q, r;
+  if (p < pl) { q = Math.sqrt(-2 * Math.log(p));
+    return (((((c[0]*q+c[1])*q+c[2])*q+c[3])*q+c[4])*q+c[5]) /
+           ((((d[0]*q+d[1])*q+d[2])*q+d[3])*q+1); }
+  if (p > 1 - pl) { q = Math.sqrt(-2 * Math.log(1 - p));
+    return -(((((c[0]*q+c[1])*q+c[2])*q+c[3])*q+c[4])*q+c[5]) /
+            ((((d[0]*q+d[1])*q+d[2])*q+d[3])*q+1); }
+  q = p - 0.5; r = q * q;
+  return (((((a[0]*r+a[1])*r+a[2])*r+a[3])*r+a[4])*r+a[5])*q /
+         (((((b[0]*r+b[1])*r+b[2])*r+b[3])*r+b[4])*r+1);
+}
+
+/* ------------------------------------------------------------- the solver */
+// Randomised greedy with a repair pass and a swap search. Not a provably
+// optimal integer program - the exact one runs on the server and its answer
+// ships with the slate so the two can be compared - but it respects every hard
+// constraint BY CONSTRUCTION, which is the part that must never be wrong: a
+// lineup over the cap or short a position cannot be entered at all.
+function legalLineup(players, roster, weights, rng) {
+  const slots = roster.slots;
+  const showdown = slots.includes("CPT");
+  const cap = roster.salary_cap;
+  const maxTeam = roster.max_per_team || 99;
+  const n = players.length;
+
+  const eligible = i => !FADE.has(i);
+  const order = [...Array(n).keys()].filter(eligible)
+    .sort((a, b) => (weights[b] + rng() * weights[b] * 0.55)
+                  - (weights[a] + rng() * weights[a] * 0.55));
+
+  const need = {};
+  for (const s of slots) if (s !== "FLEX" && s !== "CPT") need[s] = (need[s] || 0) + 1;
+  const flexCount = slots.filter(s => s === "FLEX").length;
+  const flexPos = new Set(roster.flex_positions || []);
+
+  const pick = [], teamCount = {};
+  let spend = 0, flexLeft = showdown ? slots.length - 1 : flexCount;
+  let captain = null;
+
+  // The cheapest anyone on this board costs. Without looking ahead to it, a
+  // greedy build spends the cap on stars and then cannot fill the last two
+  // slots at any price: on a showdown board only three attempts in three
+  // hundred produced a legal six. Reserving the minimum for every slot still
+  // to come is the difference between a search and a dead end.
+  let floorPrice = Infinity;
+  for (let i = 0; i < n; i++) if (eligible(i)) {
+    floorPrice = Math.min(floorPrice, players[i].salary);
+  }
+  if (!Number.isFinite(floorPrice)) floorPrice = 0;
+
+  const tryAdd = (i, asCaptain) => {
+    const p = players[i];
+    const cost = asCaptain
+      ? (p.cpt || Math.round(p.salary * (roster.captain_multiplier || 1.5)))
+      : p.salary;
+    const stillToFill = slots.length - pick.length - 1;
+    if (spend + cost + floorPrice * stillToFill > cap) return false;
+    if ((teamCount[p.team] || 0) + 1 > maxTeam) return false;
+    if (!showdown) {
+      if (need[p.pos] > 0) need[p.pos]--;
+      else if (flexLeft > 0 && flexPos.has(p.pos)) flexLeft--;
+      else return false;
+    } else if (asCaptain) { captain = i; }
+    else { if (flexLeft <= 0) return false; flexLeft--; }
+    pick.push({ i, cpt: !!asCaptain, cost });
+    teamCount[p.team] = (teamCount[p.team] || 0) + 1;
+    spend += cost;
+    return true;
+  };
+
+  // Locks first, always - a lock the solver could drop is not a lock.
+  for (const i of LOCK) if (eligible(i)) tryAdd(i, showdown && captain === null);
+  if (showdown && captain === null) {
+    for (const i of order) if (tryAdd(i, true)) break;
+  }
+  for (const i of order) {
+    if (pick.length >= slots.length) break;
+    if (pick.some(x => x.i === i)) continue;
+    tryAdd(i, false);
+  }
+  if (pick.length !== slots.length) return null;
+  if (!showdown && Object.values(need).some(v => v > 0)) return null;
+  return pick;
+}
+
+function scoreLineup(draws, sims, pick, mult) {
+  const out = new Float64Array(sims);
+  for (const p of pick) {
+    const w = p.cpt ? mult : 1;
+    const base = p.i * sims;
+    for (let s = 0; s < sims; s++) out[s] += w * draws[base + s];
+  }
+  return out;
+}
+
+function quantile(sorted, q) {
+  const i = Math.min(sorted.length - 1,
+                     Math.max(0, Math.floor(q * (sorted.length - 1))));
+  return sorted[i];
+}
+
+function build() {
+  if (!SLATE) return;
+  const t0 = performance.now();
+  const players = SLATE.players;
+  const roster = SLATE.roster;
+  const sims = Math.min(Number($("sims").value),
+                        Math.floor(9e6 / Math.max(players.length, 1)));
+  const entries = Math.max(1, Math.min(150, Number($("entries").value) || 1));
+  const overlap = Math.max(0, Number($("overlap").value));
+  const field = Math.max(2, Number($("field").value) || 100000);
+  const objective = $("objective").value;
+
+  const zq = SLATE.quantiles.map(normalQuantile);
+  const plan = buildFactorPlan(players);
+  $("status").textContent = `simulating ${sims.toLocaleString()} slates…`;
+
+  setTimeout(() => {
+    const draws = simulate(players, sims, plan, zq);
+    const mult = roster.captain_multiplier || 1.5;
+
+    // The two bars a lineup is measured against, from a rough random field.
+    // Understated, because a random field is softer than a real one - but a
+    // bar that is uniformly too low still RANKS candidates correctly, which
+    // is all it is used for.
+    const rough = [];
+    for (let t = 0; t < 1500; t++) {
+      let tot = 0;
+      for (let k = 0; k < roster.slots.length; k++) {
+        const i = Math.floor(Math.random() * players.length);
+        tot += draws[i * sims + Math.floor(Math.random() * sims)];
+      }
+      rough.push(tot);
+    }
+    rough.sort((a, b) => a - b);
+    const cashLine = quantile(rough, 0.5);
+    const gppLine = quantile(rough, 0.999);
+
+    const mean = new Float64Array(players.length);
+    for (let i = 0; i < players.length; i++) {
+      let s = 0; const b = i * sims;
+      for (let k = 0; k < sims; k++) s += draws[b + k];
+      mean[i] = s / sims;
+    }
+
+    let seed = 12345;
+    const rng = () => (seed = (seed * 1103515245 + 12345) & 0x7fffffff) / 0x7fffffff;
+
+    const seen = new Set(), cands = [];
+    for (let k = 0; k < 400 && cands.length < 220; k++) {
+      const w = mean.map(v => Math.max(v, 0.01));
+      const pick = legalLineup(players, roster, w, rng);
+      if (!pick) continue;
+      const key = pick.map(p => p.i).sort((a, b) => a - b).join(",");
+      if (seen.has(key)) continue;
+      seen.add(key);
+
+      const tot = scoreLineup(draws, sims, pick, mult);
+      const sorted = Float64Array.from(tot).sort();
+      let pc = 0, pg = 0;
+      for (let s = 0; s < sims; s++) {
+        if (tot[s] >= cashLine) pc++;
+        if (tot[s] >= gppLine) pg++;
+      }
+      pc /= sims; pg /= sims;
+      let dupes = field;
+      for (const p of pick) dupes *= Math.max(players[p.i].own, 1e-9);
+      cands.push({
+        pick, key,
+        mean: sorted.reduce((a, b) => a + b, 0) / sims,
+        floor: quantile(sorted, 0.10),
+        ceiling: quantile(sorted, 0.99),
+        pc, pg, dupes,
+        edge: pg / (1 + dupes),
+        salary: pick.reduce((a, p) => a + p.cost, 0),
+        own: pick.reduce((a, p) => a + players[p.i].own, 0),
+      });
+    }
+
+    if (!cands.length) {
+      $("status").textContent =
+        "No legal lineup exists under these locks and fades.";
+      $("lineups").innerHTML =
+        '<div class="note"><b>Nothing fits.</b> The locks you have set cannot ' +
+        'be combined into a legal lineup under the salary cap and roster ' +
+        'rules. Release one and try again.</div>';
+      return;
+    }
+
+    const key = objective === "cash" ? "pc" : "edge";
+    cands.sort((a, b) => b[key] - a[key]);
+
+    const chosen = [];
+    for (const c of cands) {
+      const ids = new Set(c.pick.map(p => p.i));
+      if (chosen.some(o => [...ids].filter(i =>
+          o.pick.some(p => p.i === i)).length > overlap)) continue;
+      chosen.push(c);
+      if (chosen.length >= entries) break;
+    }
+
+    render(chosen, { sims, cashLine, gppLine, objective, field,
+                     ms: performance.now() - t0, pool: cands.length });
+  }, 20);
+}
+
+/* ------------------------------------------------------------- rendering */
+function render(chosen, meta) {
+  const players = SLATE.players;
+  const mult = SLATE.roster.captain_multiplier || 1.5;
+
+  $("tiles").innerHTML = [
+    ["Simulations", meta.sims.toLocaleString(), "correlated slate draws"],
+    ["Lineups searched", meta.pool.toLocaleString(), "distinct and legal"],
+    ["Cash bar", fmt(meta.cashLine), "beats a rough half the field"],
+    ["Tournament bar", fmt(meta.gppLine), "top 0.1% of a rough field"],
+    ["Built in", (meta.ms / 1000).toFixed(1) + "s", "in this browser"],
+  ].map(([k, v, n]) =>
+    `<div class="tile"><span class="k">${k}</span><span class="v">${v}</span>
+     <span class="n">${n}</span></div>`).join("");
+
+  $("lineup-note").textContent = meta.objective === "cash"
+    ? "Ranked by how often the lineup beats the cash line. Duplication is "
+    + "ignored on purpose: beating half the field is not a prize anyone splits."
+    : "Ranked by how often the lineup reaches the tournament bar, divided by "
+    + "how many other entries are expected to field the same six players.";
+
+  $("lineups").innerHTML = chosen.map((c, n) => {
+    const rows = c.pick.slice().sort((a, b) => (b.cpt - a.cpt) ||
+      (players[b.i].med - players[a.i].med)).map(p => {
+      const pl = players[p.i];
+      return `<tr><td class="l">${p.cpt ? '<span class="chip">CPT</span> ' : ""}
+        ${esc(pl.name)}</td><td class="l">${esc(pl.pos)}</td>
+        <td class="l">${esc(pl.team)}</td><td>${money(p.cost)}</td>
+        <td>${fmt(pl.med)}</td><td>${fmt(pl.own * 100)}%</td></tr>`;
+    }).join("");
+    return `<div class="lineup">
+      <h3>Entry ${n + 1}<span class="chip">${esc(meta.objective.toUpperCase())}</span></h3>
+      <div class="scroll"><table><tbody>${rows}</tbody></table></div>
+      <div class="stats">
+        <span>salary <b>${money(c.salary)}</b> of ${money(SLATE.roster.salary_cap)}</span>
+        <span>mean <b>${fmt(c.mean)}</b></span>
+        <span>floor <b>${fmt(c.floor)}</b></span>
+        <span>ceiling <b>${fmt(c.ceiling)}</b></span>
+      </div>
+      <div class="stats">
+        <span>beats cash <b>${fmt(c.pc * 100)}%</b></span>
+        <span>reaches the bar <b>${fmt(c.pg * 100, 2)}%</b></span>
+        <span>expected duplicates <b>${c.dupes < 1 ? c.dupes.toFixed(2)
+          : Math.round(c.dupes).toLocaleString()}</b></span>
+      </div></div>`;
+  }).join("");
+
+  $("status").textContent =
+    `${chosen.length} lineup${chosen.length > 1 ? "s" : ""} from ` +
+    `${meta.pool.toLocaleString()} candidates in ${(meta.ms / 1000).toFixed(1)}s`;
+}
+
+function drawBoard() {
+  const tb = document.querySelector("#board tbody");
+  const rows = SLATE.players.map((p, i) => ({ p, i }));
+  const k = SORT.key;
+  rows.sort((a, b) => {
+    const av = k === "name" || k === "pos" || k === "team" ? a.p[k] : Number(a.p[k]);
+    const bv = k === "name" || k === "pos" || k === "team" ? b.p[k] : Number(b.p[k]);
+    return (av < bv ? -1 : av > bv ? 1 : 0) * SORT.dir;
+  });
+  tb.innerHTML = rows.map(({ p, i }) => {
+    const per = p.salary ? p.med / (p.salary / 1000) : 0;
+    const cls = LOCK.has(i) ? "locked" : FADE.has(i) ? "excluded" : "";
+    const q = p.status === "questionable"
+      ? '<span class="pill q">Q</span>' : "";
+    return `<tr class="${cls}">
+      <td class="l">${esc(p.name)}${q}</td><td class="l">${esc(p.pos)}</td>
+      <td class="l">${esc(p.team)}</td><td>${money(p.salary)}</td>
+      <td>${fmt(p.med)}</td><td>${fmt(p.ceil)}</td><td>${fmt(per, 2)}</td>
+      <td>${fmt(p.own * 100)}%</td><td>${fmt(p.lev, 2)}</td>
+      <td class="l">
+        <button class="tog ${LOCK.has(i) ? "on" : ""}" data-lock="${i}">L</button>
+        <button class="tog ${FADE.has(i) ? "off" : ""}" data-fade="${i}">X</button>
+      </td></tr>`;
+  }).join("");
+
+  tb.onclick = e => {
+    const l = e.target.dataset && e.target.dataset.lock;
+    const f = e.target.dataset && e.target.dataset.fade;
+    if (l !== undefined && l !== null) {
+      const i = Number(l);
+      LOCK.has(i) ? LOCK.delete(i) : (LOCK.add(i), FADE.delete(i));
+      drawBoard();
+    } else if (f !== undefined && f !== null) {
+      const i = Number(f);
+      FADE.has(i) ? FADE.delete(i) : (FADE.add(i), LOCK.delete(i));
+      drawBoard();
+    }
+  };
+
+  document.querySelectorAll("#board thead th").forEach((th, n) => {
+    const keys = ["name", "pos", "team", "salary", "med", "ceil", null, "own", "lev"];
+    th.onclick = () => {
+      if (!keys[n]) return;
+      SORT = { key: keys[n], dir: SORT.key === keys[n] ? -SORT.dir : -1 };
+      drawBoard();
+    };
+  });
+}
+
+function showServerLineups() {
+  const s = SLATE.server_lineups || {};
+  const parts = Object.entries(s).map(([k, v]) =>
+    `<b>${k.toUpperCase()}</b> ${v.players.map(esc).join(", ")} — ` +
+    `${money(v.salary)}, ceiling ${fmt(v.ceiling)}`);
+  $("lineups").innerHTML = parts.length
+    ? `<div class="note"><b>From the last scheduled run</b>, solved with the
+        exact integer program.<br><br>${parts.join("<br><br>")}<br><br>
+        Press <b>Build lineups</b> to re-solve here with your own locks,
+        fades and entry count.</div>`
+    : "";
+}
+
+function drawHonesty() {
+  const n = SLATE.notes || {};
+  $("honesty").innerHTML = `
+    <b>Ownership is modelled, not measured.</b> DraftKings' standings sit behind
+    a login, so nothing here counts what the field actually played. The scale is
+    pinned by arithmetic — every entry fields exactly one quarterback, so
+    quarterback ownership sums to 100% — and only the concentration is a guess.
+    Treat leverage and duplication as indicative.
+    <br><br>
+    <b>Nothing here has been graded.</b> No forward-tested result exists for
+    this model yet, so every number on this page is a claim rather than a
+    record.
+    <br><br>
+    <b>The browser search is near-optimal, not provably optimal.</b> It respects
+    every hard constraint by construction — salary cap, roster slots, team
+    limits — but it searches rather than proves. The exact integer program runs
+    on the server and its answer is shown above for comparison.`;
+}
+
+$("run").onclick = build;
+$("reset").onclick = () => { LOCK.clear(); FADE.clear(); drawBoard(); };
+boot();
+</script>
+</body>
+</html>
