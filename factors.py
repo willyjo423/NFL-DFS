@@ -88,6 +88,17 @@ LOADINGS = {
 
 DEFAULT = {"game": 0.20, "team": 0.28, "compete": 0.40}
 
+# Every player keeps at least this much of his variance to himself.
+#
+# Not a safety margin - a modelling claim. A player whose outcome is entirely
+# explained by his game, his team and his team-mates has no individual
+# variation left: no dropped pass, no broken tackle, no goal-line vulture. It
+# is also what keeps the matrix invertible. Capping competition at exactly the
+# available room left idiosyncratic variance at zero, which made a classic
+# slate's correlation matrix singular - eigenvalue -0.00000 and a Cholesky
+# that failed, from a model whose whole promise is that it cannot produce one.
+MIN_IDIOSYNCRATIC = 0.06
+
 
 def _loading(table: dict, kind: str, pos: str) -> float:
     return float(table.get(kind, {}).get(pos, DEFAULT[kind]))
@@ -111,6 +122,38 @@ def build(players: pd.DataFrame, sport: str = "nfl") -> tuple[np.ndarray, dict]:
     g = np.array([_loading(table, "game", p) for p in pos])
     t = np.array([_loading(table, "team", p) for p in pos])
     c = np.array([_loading(table, "compete", p) for p in pos])
+
+    # Group sizes are needed BEFORE the competition loading can be trusted,
+    # because the variance competition consumes grows with the size of the
+    # group: c^2 (1 - 1/k). The loadings were tuned on a showdown board where
+    # a position group is two to four players, and on a classic slate with
+    # twelve receivers on a team the same numbers pushed shared variance past
+    # 1.0 - a player explaining more than all of his own variation, which is
+    # not a distribution. The first version noticed and rescaled the finished
+    # covariance, which destroyed the positive semi-definiteness that is the
+    # entire reason for building it this way, and the Cholesky failed.
+    #
+    # So the cap is applied to the INPUT instead, per player, from the room
+    # actually left: c is at most sqrt((1 - g^2 - t^2) / (1 - 1/k)). Nothing
+    # downstream has to repair anything, because nothing invalid is ever built.
+    counts: dict[tuple[str, str], int] = {}
+    for i in range(n):
+        key = (team[i], pos[i])
+        counts[key] = counts.get(key, 0) + 1
+    sizes = np.array([counts[(team[i], pos[i])] for i in range(n)], dtype=float)
+
+    room = np.clip(1.0 - g ** 2 - t ** 2 - MIN_IDIOSYNCRATIC, 0.0, None)
+    with np.errstate(divide="ignore", invalid="ignore"):
+        ceiling = np.where(sizes > 1,
+                           np.sqrt(room / np.maximum(1.0 - 1.0 / sizes, 1e-9)),
+                           np.inf)
+    capped = np.minimum(c, ceiling)
+    if (capped < c - 1e-9).any():
+        hit = sorted({pos[i] for i in range(n) if capped[i] < c[i] - 1e-9})
+        log.info("competition loading capped for %s - a group of that size "
+                 "cannot support the full value without exceeding unit "
+                 "variance", ", ".join(hit))
+    c = capped
 
     same_game = (game[:, None] == game[None, :]) & (game[:, None] != "")
     same_team = team[:, None] == team[None, :]
@@ -144,16 +187,8 @@ def build(players: pd.DataFrame, sport: str = "nfl") -> tuple[np.ndarray, dict]:
     shared = g ** 2 + t ** 2 + np.where(group_size > 1,
                                         c ** 2 * (1.0 - 1.0 / group_size), 0.0)
     idio = 1.0 - shared
-    if (idio < 0).any():
-        bad = players.loc[idio < 0, "position"].unique().tolist()
-        log.warning("loadings exceed unit variance for %s - scaling them down; "
-                    "the shared factors cannot explain more than all of a "
-                    "player's variation", bad)
-        scale = np.sqrt(np.clip(1.0 / np.maximum(shared, 1e-9), 0, 1))
-        cov *= np.outer(scale, scale)
-        shared = np.minimum(shared, 1.0)
-        idio = 1.0 - shared
-    cov[np.diag_indices(n)] = shared + idio          # exactly 1.0
+    assert (idio >= -1e-9).all(), "competition cap failed to bound the variance"
+    cov[np.diag_indices(n)] = 1.0
 
     info = {"sport": sport, "loadings": table,
             "min_eigenvalue": float(np.linalg.eigvalsh(cov).min())}

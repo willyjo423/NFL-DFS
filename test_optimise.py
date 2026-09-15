@@ -422,9 +422,66 @@ def test_ownership_has_to_add_up():
           "the field will", bool((lev != 0).any()), str(list(lev)))
 
 
+def test_factors_survive_any_slate_shape():
+    section("THE MATRIX MUST BE VALID ON EVERY BOARD, NOT JUST THE TUNED ONE")
+    import factors
+
+    # The loadings were tuned on a showdown, where a position group is two to
+    # four players. Competition consumes c^2 (1 - 1/k) of a player's variance,
+    # which GROWS with the group - so a classic slate with twelve receivers on
+    # a team pushed shared variance past 1.0, a player explaining more than all
+    # of his own variation. The first version rescaled the finished covariance
+    # to cope, which destroyed the positive semi-definiteness that is the whole
+    # reason for the factor model, and the Cholesky raised in CI.
+    for label, pool in (("showdown", slate()), ("classic", slate(showdown=False))):
+        corr, info = factors.build(pool, "nfl")
+        check(f"{label}: positive semi-definite",
+              info["min_eigenvalue"] >= 0, str(info["min_eigenvalue"]))
+        try:
+            np.linalg.cholesky(corr)
+            check(f"{label}: cholesky succeeds, so it can be simulated", True)
+        except np.linalg.LinAlgError as exc:
+            check(f"{label}: cholesky succeeds, so it can be simulated", False,
+                  str(exc))
+        check(f"{label}: the diagonal is exactly one",
+              bool(np.allclose(np.diag(corr), 1.0)))
+        check(f"{label}: every correlation is inside [-1, 1]",
+              bool((np.abs(corr) <= 1.0 + 1e-9).all()))
+
+    # A deliberately extreme board: one team, thirty receivers. Nothing about
+    # the loadings should be able to produce an impossible matrix, however
+    # lopsided the slate is.
+    rows = []
+    for k in range(30):
+        rows.append({"name": f"WR{k}", "position": "WR", "team": "AAA",
+                     "game": "AAA@BBB"})
+    for k in range(2):
+        rows.append({"name": f"QB{k}", "position": "QB", "team": "BBB",
+                     "game": "AAA@BBB"})
+    lop = pd.DataFrame(rows)
+    corr, info = factors.build(lop, "nfl")
+    check("a thirty-deep position group still produces a real distribution",
+          info["min_eigenvalue"] >= 0, str(info["min_eigenvalue"]))
+    check("and it is still simulable",
+          np.linalg.cholesky(corr).shape == (len(lop), len(lop)))
+
+    # And a single player, which is the degenerate end of the same problem.
+    one = pd.DataFrame([{"name": "solo", "position": "QB", "team": "A",
+                         "game": "A@B"}])
+    corr1, info1 = factors.build(one, "nfl")
+    check("a one-player slate does not divide by zero",
+          corr1.shape == (1, 1) and abs(corr1[0, 0] - 1.0) < 1e-9)
+
+    # The floor is a claim, not a fudge: nobody is entirely explained by his
+    # game, his team and his team-mates.
+    check("every player keeps some variance of his own",
+          factors.MIN_IDIOSYNCRATIC > 0)
+
+
 def main():
     print("DFS simulator and optimisers - offline checks")
-    maths = (test_ownership_has_to_add_up,
+    maths = (test_factors_survive_any_slate_shape,
+             test_ownership_has_to_add_up,
              test_correlation_survives_the_copula,
              test_marginals_are_not_distorted,
              test_psd_repair,
