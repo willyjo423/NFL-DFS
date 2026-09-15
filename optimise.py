@@ -36,6 +36,7 @@ import pandas as pd
 import pulp
 
 import config
+import ownership as OWN
 import simulate as S
 
 log = logging.getLogger(__name__)
@@ -192,14 +193,33 @@ def candidates(pool: pd.DataFrame, roster: dict, draws: np.ndarray,
 
 # ------------------------------------------------------------- the choosing
 def score_candidates(cands: list[dict], draws: np.ndarray, roster: dict,
-                     cash_line: float, gpp_line: float) -> pd.DataFrame:
-    """Every candidate's full distribution, against the same simulations."""
+                     cash_line: float, gpp_line: float,
+                     own: pd.Series | None = None,
+                     field_size: int = 100_000) -> pd.DataFrame:
+    """Every candidate's full distribution, against the same simulations.
+
+    `edge` is the number a tournament is actually played for. Reaching the
+    prize is worth nothing on its own - it is worth the prize DIVIDED BY the
+    people who reach it with the same six players. A lineup of chalk that gets
+    there alongside seventeen hundred identical entries is worth a fraction of
+    one that gets there alone, and ranking by p_gpp cannot see the difference.
+    """
     mult = roster.get("captain_multiplier", 1.5)
     rec = []
     for k, cand in enumerate(cands):
         rows = cand["rows"]
         m = [mult if i == cand["captain"] else 1.0 for i in rows]
         total = S.lineup_scores(draws, rows, m)
+        p_gpp = float((total >= gpp_line).mean())
+
+        dupes = float("nan")
+        edge = p_gpp
+        if own is not None:
+            o = own.to_numpy(dtype=float)[rows]
+            dupes = OWN.duplication(o, field_size)
+            # Split the prize with whoever else fielded it. The +1 is you.
+            edge = p_gpp / (1.0 + dupes)
+
         rec.append({
             "candidate": k,
             "mean": float(total.mean()),
@@ -207,7 +227,11 @@ def score_candidates(cands: list[dict], draws: np.ndarray, roster: dict,
             "floor": float(np.quantile(total, 0.10)),
             "ceiling": float(np.quantile(total, 0.99)),
             "p_cash": float((total >= cash_line).mean()),
-            "p_gpp": float((total >= gpp_line).mean()),
+            "p_gpp": p_gpp,
+            "duplicates": dupes,
+            "edge": edge,
+            "own_sum": (float(own.to_numpy(dtype=float)[rows].sum())
+                        if own is not None else float("nan")),
         })
     return pd.DataFrame(rec)
 
@@ -215,7 +239,9 @@ def score_candidates(cands: list[dict], draws: np.ndarray, roster: dict,
 def build(pool: pd.DataFrame, roster: dict, draws: np.ndarray,
           objective: str = "cash", entries: int = 1,
           max_overlap: int | None = None,
-          n_candidates: int = 120) -> pd.DataFrame:
+          n_candidates: int = 120,
+          own: pd.Series | None = None,
+          field_size: int = 100_000) -> pd.DataFrame:
     """Lineups for one contest type.
 
     `objective` is "cash" - maximise the chance of beating the cash line - or
@@ -238,9 +264,15 @@ def build(pool: pd.DataFrame, roster: dict, draws: np.ndarray,
 
     cands = candidates(pool, roster, draws, n_candidates=n_candidates,
                        max_overlap=size - 1)
-    scored = score_candidates(cands, draws, roster, line_cash, line_gpp)
+    scored = score_candidates(cands, draws, roster, line_cash, line_gpp,
+                              own=own, field_size=field_size)
 
-    key = "p_cash" if objective == "cash" else "p_gpp"
+    # Cash pays everyone who clears the line, so duplication is irrelevant
+    # there - beating half the field is not a prize anyone splits with you.
+    # A tournament is the opposite, which is why the two objectives rank on
+    # different columns rather than on the same one with a different threshold.
+    key = "p_cash" if objective == "cash" else (
+        "edge" if own is not None else "p_gpp")
     chosen, used = [], []
     order = scored.sort_values(key, ascending=False)["candidate"].tolist()
     for k in order:
@@ -267,7 +299,8 @@ def build(pool: pd.DataFrame, roster: dict, draws: np.ndarray,
                          for s, i in zip(lu["salary"], cand["rows"])]
         lu["entry"] = rank
         lu["objective"] = objective
-        for c in ("mean", "median", "floor", "ceiling", "p_cash", "p_gpp"):
+        for c in ("mean", "median", "floor", "ceiling", "p_cash", "p_gpp",
+                  "duplicates", "edge", "own_sum"):
             lu[c] = row[c]
         frames.append(lu)
     return pd.concat(frames, ignore_index=True)
@@ -311,5 +344,8 @@ def report(lineups: pd.DataFrame, roster: dict) -> str:
             f"floor {r['floor']:.1f}   ceiling {r['ceiling']:.1f}",
             f"  beats the cash line {r['p_cash'] * 100:.1f}% of sims;  "
             f"reaches the tournament bar {r['p_gpp'] * 100:.2f}%",
+            (f"  projected ownership {r['own_sum'] * 100:.0f}% across six;  "
+             f"about {r['duplicates']:,.0f} other entries field this exact "
+             f"lineup" if r.get('duplicates') == r.get('duplicates') else ""),
         ]
     return "\n".join(lines)

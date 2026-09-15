@@ -326,9 +326,106 @@ def test_lineup_scoring_uses_shared_draws():
           bool((capt >= a - 1e-9).all()) and float(capt.mean()) > float(a.mean()))
 
 
+def test_ownership_has_to_add_up():
+    section("OWNERSHIP IS MODELLED, BUT IT IS NOT FREE TO BE ANYTHING")
+    import ownership as OWN
+
+    # The constraint that stops this being a guess. Every classic entry fields
+    # exactly one quarterback, so across the slate quarterback ownership sums
+    # to exactly 1.0. Not approximately. That is arithmetic, and it pins the
+    # scale of the whole distribution - only the concentration is guessed.
+    classic = config.ROSTERS[("dk", "Classic")]
+    pool = slate(showdown=False)
+    pool["median"] = pool["q50"]
+    pool["ceiling"] = pool["q97"]
+    own = OWN.project(pool, classic)
+    demand = OWN.slot_demand(classic)
+
+    check("the demands sum to the roster size",
+          abs(sum(demand.values()) - len(classic["slots"])) < 1e-9,
+          str(demand))
+    worst = max(abs(float(own[pool["position"] == p].sum()) - w)
+                for p, w in demand.items())
+    check("every position sums to exactly what a lineup demands",
+          worst < 1e-6, f"worst error {worst:.4f}")
+    check("and the whole board sums to the roster size",
+          abs(float(own.sum()) - len(classic["slots"])) < 1e-6,
+          str(float(own.sum())))
+
+    showdown = config.ROSTERS[("dk", "Showdown Captain Mode")]
+    sp = slate()
+    sp["median"] = sp["q50"]
+    sp["ceiling"] = sp["q97"]
+    so = OWN.project(sp, showdown)
+    check("showdown sums to six, since it has no position requirements",
+          abs(float(so.sum()) - 6.0) < 1e-6, str(float(so.sum())))
+    check("nobody is owned by the entire field",
+          float(so.max()) <= OWN.MAX_OWNERSHIP + 1e-9, str(float(so.max())))
+    check("and nobody is owned by nobody",
+          float(so.min()) > 0, str(float(so.min())))
+
+    # The failure that made the first version useless: points-per-dollar is
+    # degenerate at the bottom of a board. A $200 player projected for 2.3
+    # points scores 11.4 per $1,000 against a $9,600 quarterback's 1.82, so
+    # leading with value predicted the field would roster long snappers at 65%.
+    # A real board, not a toy one. Six roster slots drawn from five players
+    # forces everybody to the ownership cap and tests nothing - the pool has to
+    # be bigger than the lineup for any of this to mean anything.
+    real = pd.DataFrame(
+        [("Mahomes", "QB", "KC", 9600.0, 17.5, 33.1),
+         ("Nix", "QB", "DEN", 9800.0, 17.3, 33.7),
+         ("Rice", "WR", "KC", 9400.0, 14.7, 35.7),
+         ("Walker", "RB", "KC", 10600.0, 14.5, 32.9),
+         ("Waddle", "WR", "DEN", 9000.0, 11.1, 31.2),
+         ("Kelce", "TE", "KC", 7000.0, 9.8, 24.7),
+         ("Dobbins", "RB", "DEN", 6400.0, 9.6, 30.0),
+         ("Franklin", "WR", "DEN", 2800.0, 8.0, 25.4),
+         ("Mims", "WR", "DEN", 3000.0, 5.7, 23.6),
+         ("Engram", "TE", "DEN", 3400.0, 3.6, 18.3),
+         ("Gray", "TE", "KC", 2000.0, 2.2, 13.6),
+         ("LongSnapper", "TE", "KC", 200.0, 1.7, 9.0),
+         ("Punter", "TE", "DEN", 200.0, 1.0, 11.4)],
+        columns=["name", "position", "team", "salary", "median", "ceiling"])
+    ro = OWN.project(real, showdown)
+    ranked = real.assign(own=ro).sort_values("own", ascending=False)
+    check("the best player on the board is the most owned",
+          ranked["name"].iloc[0] == "Mahomes", str(ranked["name"].tolist()))
+    check("a minimum-salary non-factor is not top-two owned",
+          "LongSnapper" not in set(ranked["name"].head(2)),
+          str(ranked["name"].tolist()))
+    check("and he is owned less than the cheap player who can actually score",
+          float(ro[real["name"] == "LongSnapper"].iloc[0])
+          < float(ro[real["name"] == "Franklin"].iloc[0]))
+
+    # A player who will not take a snap is owned by nobody, whatever he costs.
+    hurt = real.assign(playing=np.where(real["name"] == "Franklin",
+                                        "out", "clear"))
+    ho = OWN.project(hurt, showdown)
+    check("an inactive player attracts no ownership",
+          float(ho[hurt["name"] == "Franklin"].iloc[0]) < 0.01,
+          str(float(ho[hurt["name"] == "Franklin"].iloc[0])))
+
+    # Duplication is the number a tournament is actually played for.
+    chalk = np.array([0.60, 0.55, 0.50, 0.45, 0.40, 0.35])
+    contrarian = np.array([0.08, 0.07, 0.06, 0.05, 0.04, 0.03])
+    d_chalk = OWN.duplication(chalk, 200_000)
+    d_lev = OWN.duplication(contrarian, 200_000)
+    check("a chalk lineup is fielded by many other entries",
+          d_chalk > 100, f"{d_chalk:,.0f}")
+    check("a contrarian one by almost none",
+          d_lev < 1.0, f"{d_lev:.4f}")
+    check("which is a difference of orders of magnitude, not a rounding",
+          d_chalk / max(d_lev, 1e-9) > 1000, f"{d_chalk / max(d_lev, 1e-9):,.0f}x")
+
+    lev = OWN.leverage(real, ro)
+    check("leverage is positive where the model likes a player more than "
+          "the field will", bool((lev != 0).any()), str(list(lev)))
+
+
 def main():
     print("DFS simulator and optimisers - offline checks")
-    maths = (test_correlation_survives_the_copula,
+    maths = (test_ownership_has_to_add_up,
+             test_correlation_survives_the_copula,
              test_marginals_are_not_distorted,
              test_psd_repair,
              test_lineup_scoring_uses_shared_draws)
