@@ -1,0 +1,47 @@
+dk_player_id,draftable_id,name,position,team,salary,roster_slot,status,disabled,attributes,game,starts_utc,norm,flex_eligible,captain_salary,playing,draft_group,game_type,captured_at
+324,44138450,Bills,DST,BUF,3600,512,None,False,ByeWeek,DET @ BUF,2026-09-18 00:15:00+00:00,bills,1,5400,clear,153434,Showdown Captain Mode,2026-09-15T15:14:47+00:00
+334,44138451,Lions,DST,DET,3400,512,None,False,ByeWeek,DET @ BUF,2026-09-18 00:15:00+00:00,lions,1,5100,clear,153434,Showdown Captain Mode,2026-09-15T15:14:47+00:00
+727837,44138435,Jared Goff,QB,DET,9600,512,None,False,ByeWeek,DET @ BUF,2026-09-18 00:15:00+00:00,jared goff,1,14400,clear,153434,Showdown Captain Mode,2026-09-15T15:14:47+00:00
+741262,44138444,Joshua Dobbs,QB,DET,6000,512,None,False,ByeWeek,DET @ BUF,2026-09-18 00:15:00+00:00,joshua dobbs,1,9000,clear,153434,Showdown Captain Mode,2026-09-15T15:14:47+00:00
+822350,44138442,Kyle Allen,QB,BUF,6000,512,None,False,ByeWeek,DET @ BUF,2026-09-18 00:15:00+00:00,kyle allen,1,9000,clear,153434,Showdown Captain Mode,2026-09-15T15:14:47+00:00
+835861,44138470,Trent Sherfield Sr.,WR,BUF,200,512,None,False,ByeWeek,DET @ BUF,2026-09-18 00:15:00+00:00,trent sherfield,1,300,clear,153434,Showdown Captain Mode,2026-09-15T15:14:47+00:00
+837087,44138460,Tom Kennedy,WR,DET,1200,512,None,False,ByeWeek,DET @ BUF,2026-09-18 00:15:00+00:00,tom kennedy,1,1800,clear,153434,Showdown Captain Mode,2026-09-15T15:14:47+00:00
+861278,44138458,Tyler Conklin,TE,DET,1600,512,None,False,ByeWeek,DET @ BUF,2026-09-18 00:15:00+00:00,tyler conklin,1,2400,clear,153434,Showdown Captain Mode,2026-09-15T15:14:47+00:00
+868199,44138433,Josh Allen,QB,BUF,11400,512,None,False,ByeWeek,DET @ BUF,2026-09-18 00:15:00+00:00,josh allen,1,17100,clear,153434,Showdown Captain Mode,2026-09-15T15:14:47+00:00
+877784,44138456,Ty Johnson,RB,BUF,2000,512,Q,False,ByeWeek,DET @ BUF,2026-09-18 00:15:00+00:00,ty johnson,1,3000,questionable,153434,Showdown Captain Mode,2026-09-15T15:14:47+00:00
+877790,44138437,DJ Moore,WR,BUF,7800,512,None,False,ByeWeek,DET @ BUF,2026-09-18 00:15:00+00:00,dj moore,1,11700,clear,153434,Showdown Captain Mode,2026-09-15T15:14:47+00:00
+881670,44138472,Lucky Jackson,WR,DET,200,512,None,False,ByeWeek,DET @ BUF,2026-09-18 00:15:00+00:00,lucky jackson,1,300,clear,153434,Showdown Captain Mode,2026-09-15T15:14:47+00:00
+884083,44138454,Dawson Knox,TE,BUF,2800,512,None,False,ByeWeek,DET @ BUF,2026-09-18 00:15:00+00:00,dawson knox,1,4200,clear,153434,Showdown Captain Mode,2026-09-15T15:14:47+00:00
+885378,44138446,Tyler Bass,K,BUF,5000,512,None,False,ByeWeek,DET @ BUF,2026-09-18 00:15:00+00:00,tyler bass,1,7500,clear,153434,Showdown Captain Mode,2026-09-15T15:14:47+00:00
+910852,44138461,Greg Dortch,WR,BUF,1000,512,None,False,ByeWeek,DET @ BUF,2026-09-18 00:15:00+00:00,greg dortch,1,1500,clear,153434,Showdown Captain Mode,2026-09-15T15:14:47+00:00
+911619,44138441,Shane Buechele,QB,BUF,6000,512,None,False,ByeWeek,DET @ BUF,2026-09-18 00:15:00+00:00,shane buechele,1,9000,clear,153434,Showdown Captain Mode,2026-09-15T15:14:47+00:00
+973949,44138477,Tyrell Shavers,WR,BUF,200,512,OUT,False,ByeWeek,DET @ BUF,2026-09-18 00:15:00+00:00,tyrell shavers,1,300,out,153434,Showdown Captain Mode,2026-09-15T15:14:47+00:00
+978120,44138457,Brock Wright,TE,DET,1800,512,None,False,ByeWeek,DET @ BUF,2026-09-18 00:15:00+00:00,brock wright,1,2700,clear,153434,Showdown Captain Mode,2026-09-15T15:14:47+00:00
+1059612,44138452,Joshua Palmer,WR,BUF,3200,512,None,False,ByeWeek,DET @ BUF,2026-09-18 00:15:00+00:00,joshua palmer,1,4800,clear,153434,Showdown Captain Mode,2026-09-15T15:14:47+00:00
+1065052,44138462,Tay Martin,WR,DET,800,512,None,False,ByeWeek,DET @ BUF,2026-09-18 00:15:00+00:00,tay martin,1,1200,clear,153434,Showdown Captain Mode,2026-09-15T15:14:47+00:00
+1106832,44138465,Isiah Pacheco,RB,DET,200,512,IR,False,ByeWeek,DET @ BUF,2026-09-18 00:15:00+00:00,isiah pacheco,1,300,out,153434,Showdown Captain Mode,2026-09-15T15:14:47+00:00
+1127106,44138434,Amon-Ra St. Brown,WR,DET,10400,512,None,False,ByeWeek,DET @ BUF,2026-09-18 00:15:00+00:00,amon ra st brown,1,15600,clear,153434,Showdown Captain Mode,2026-09-15T15:14:47+00:00
+1130603,44138440,Khalil Shakir,WR,BUF,6400,512,None,False,ByeWeek,DET @ BUF,2026-09-18 00:15:00+00:00,khalil shakir,1,9600,clear,153434,Showdown Captain Mode,2026-09-15T15:14:47+00:00
+1131012,44138436,James Cook III,RB,BUF,9400,512,None,False,ByeWeek,DET @ BUF,2026-09-18 00:15:00+00:00,james cook,1,14100,clear,153434,Showdown Captain Mode,2026-09-15T15:14:47+00:00
+1131457,44138459,Jacob Saylors,RB,DET,1400,512,None,False,ByeWeek,DET @ BUF,2026-09-18 00:15:00+00:00,jacob saylors,1,2100,clear,153434,Showdown Captain Mode,2026-09-15T15:14:47+00:00
+1135513,44138439,Dalton Kincaid,TE,BUF,6800,512,None,False,ByeWeek,DET @ BUF,2026-09-18 00:15:00+00:00,dalton kincaid,1,10200,clear,153434,Showdown Captain Mode,2026-09-15T15:14:47+00:00
+1165229,44138455,Ray Davis,RB,BUF,2400,512,None,False,ByeWeek,DET @ BUF,2026-09-18 00:15:00+00:00,ray davis,1,3600,clear,153434,Showdown Captain Mode,2026-09-15T15:14:47+00:00
+1168926,44138445,Sam LaPorta,TE,DET,5400,512,None,False,ByeWeek,DET @ BUF,2026-09-18 00:15:00+00:00,sam laporta,1,8100,clear,153434,Showdown Captain Mode,2026-09-15T15:14:47+00:00
+1173254,44138476,Thomas Gordon,TE,DET,200,512,None,False,ByeWeek,DET @ BUF,2026-09-18 00:15:00+00:00,thomas gordon,1,300,clear,153434,Showdown Captain Mode,2026-09-15T15:14:47+00:00
+1175184,44138438,Jameson Williams,WR,DET,7400,512,None,False,ByeWeek,DET @ BUF,2026-09-18 00:15:00+00:00,jameson williams,1,11100,clear,153434,Showdown Captain Mode,2026-09-15T15:14:47+00:00
+1182649,44138463,Jackson Hawes,TE,BUF,600,512,None,False,ByeWeek,DET @ BUF,2026-09-18 00:15:00+00:00,jackson hawes,1,900,clear,153434,Showdown Captain Mode,2026-09-15T15:14:47+00:00
+1213388,44138469,Ja'Mori Maclin,WR,BUF,200,512,None,False,ByeWeek,DET @ BUF,2026-09-18 00:15:00+00:00,jamori maclin,1,300,clear,153434,Showdown Captain Mode,2026-09-15T15:14:47+00:00
+1214154,44138432,Jahmyr Gibbs,RB,DET,12000,512,None,False,ByeWeek,DET @ BUF,2026-09-18 00:15:00+00:00,jahmyr gibbs,1,18000,clear,153434,Showdown Captain Mode,2026-09-15T15:14:47+00:00
+1215078,44138471,Stephen Gosnell,WR,BUF,200,512,None,False,ByeWeek,DET @ BUF,2026-09-18 00:15:00+00:00,stephen gosnell,1,300,clear,153434,Showdown Captain Mode,2026-09-15T15:14:47+00:00
+1232898,44138466,Jabari Small,RB,DET,200,512,None,False,ByeWeek,DET @ BUF,2026-09-18 00:15:00+00:00,jabari small,1,300,clear,153434,Showdown Captain Mode,2026-09-15T15:14:47+00:00
+1233127,44138464,Frank Gore Jr.,RB,BUF,400,512,None,False,ByeWeek,DET @ BUF,2026-09-18 00:15:00+00:00,frank gore,1,600,clear,153434,Showdown Captain Mode,2026-09-15T15:14:47+00:00
+1236651,44138447,Jake Bates,K,DET,4800,512,None,False,ByeWeek,DET @ BUF,2026-09-18 00:15:00+00:00,jake bates,1,7200,clear,153434,Showdown Captain Mode,2026-09-15T15:14:47+00:00
+1285915,44138474,Jackson Meeks,TE,DET,200,512,None,False,ByeWeek,DET @ BUF,2026-09-18 00:15:00+00:00,jackson meeks,1,300,clear,153434,Showdown Captain Mode,2026-09-15T15:14:47+00:00
+1286214,44138443,Luke Altmyer,QB,DET,6000,512,None,False,ByeWeek,DET @ BUF,2026-09-18 00:15:00+00:00,luke altmyer,1,9000,clear,153434,Showdown Captain Mode,2026-09-15T15:14:47+00:00
+1286480,44138473,Dominic Lovett,WR,DET,200,512,None,False,ByeWeek,DET @ BUF,2026-09-18 00:15:00+00:00,dominic lovett,1,300,clear,153434,Showdown Captain Mode,2026-09-15T15:14:47+00:00
+1322431,44138448,Keon Coleman,WR,BUF,4000,512,None,False,ByeWeek,DET @ BUF,2026-09-18 00:15:00+00:00,keon coleman,1,6000,clear,153434,Showdown Captain Mode,2026-09-15T15:14:47+00:00
+1323906,44138475,Keleki Latu,TE,BUF,200,512,None,False,ByeWeek,DET @ BUF,2026-09-18 00:15:00+00:00,keleki latu,1,300,clear,153434,Showdown Captain Mode,2026-09-15T15:14:47+00:00
+1325234,44138467,Skyler Bell,WR,BUF,200,512,None,False,ByeWeek,DET @ BUF,2026-09-18 00:15:00+00:00,skyler bell,1,300,clear,153434,Showdown Captain Mode,2026-09-15T15:14:47+00:00
+1378910,44138468,Kendrick Law,WR,DET,200,512,IR,False,ByeWeek,DET @ BUF,2026-09-18 00:15:00+00:00,kendrick law,1,300,out,153434,Showdown Captain Mode,2026-09-15T15:14:47+00:00
+1381164,44138453,Sione Vaki,RB,DET,3000,512,None,False,ByeWeek,DET @ BUF,2026-09-18 00:15:00+00:00,sione vaki,1,4500,clear,153434,Showdown Captain Mode,2026-09-15T15:14:47+00:00
+1441362,44138449,Isaac TeSlaa,WR,DET,3800,512,None,False,ByeWeek,DET @ BUF,2026-09-18 00:15:00+00:00,isaac teslaa,1,5700,clear,153434,Showdown Captain Mode,2026-09-15T15:14:47+00:00
