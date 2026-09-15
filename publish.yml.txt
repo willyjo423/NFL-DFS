@@ -1,0 +1,102 @@
+name: Publish page
+
+# Builds the JSON the page reads: one file per live slate, plus a manifest.
+#
+# The page then re-simulates and re-solves in the browser, which is why this
+# writes INPUTS - each player's fitted quantiles, his modelled ownership, and
+# the factor loadings - rather than finished lineups. A finished lineup is a
+# dead object the moment you want to lock a player or change the entry count.
+
+on:
+  schedule:
+    # Twice a day. The morning run is the useful one on a Sunday - late enough
+    # that DraftKings has posted the day's slates, early enough to look at
+    # before lock. The evening run picks up primetime showdowns.
+    - cron: "0 13 * * *"
+    - cron: "0 22 * * *"
+  workflow_dispatch:
+    inputs:
+      sims:
+        description: "Simulations for the server's own lineups (blank = 50,000)"
+        required: false
+        default: ""
+      field:
+        description: "Contest size, for the duplication estimate"
+        required: false
+        default: "100000"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: publish
+  cancel-in-progress: false
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: pip
+
+      - name: Install
+        run: pip install -r requirements.txt
+
+      # Everything offline, before anything is published. A page built on an
+      # unverified simulator is worse than no page, because it looks finished.
+      - name: Offline checks
+        run: |
+          python test_scoring.py
+          python test_features.py
+          python test_optimise.py
+
+      - name: Build the slate files
+        id: build
+        continue-on-error: true
+        run: |
+          ARGS=""
+          if [ -n "${{ inputs.sims }}" ]; then ARGS="$ARGS --sims ${{ inputs.sims }}"; fi
+          if [ -n "${{ inputs.field }}" ]; then ARGS="$ARGS --field ${{ inputs.field }}"; fi
+          echo "EFFECTIVE ARGS: $ARGS"
+          python publish.py $ARGS | tee publish.txt
+
+      - name: Say what happened
+        # `continue-on-error` above means the run goes green whatever occurs,
+        # so without this a failed publish is invisible until someone opens the
+        # page and finds yesterday's slates still on it.
+        if: always()
+        run: |
+          if [ "${{ steps.build.outcome }}" = "success" ]; then
+            echo "### Slates published" >> $GITHUB_STEP_SUMMARY
+          else
+            echo "### PUBLISH FAILED - the page still has the last good data" \
+              >> $GITHUB_STEP_SUMMARY
+          fi
+          ls -la docs/data/ 2>/dev/null || echo "docs/data is missing entirely"
+          test -f docs/data/manifest.json \
+            && cat docs/data/manifest.json >> $GITHUB_STEP_SUMMARY \
+            || echo "no manifest - the page will say it has no slates"
+
+      - name: Publish
+        if: always()
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -f docs/
+          git diff --staged --quiet && echo "nothing changed" && exit 0
+          git commit -m "Slates: $(date -u +%Y-%m-%d\ %H:%M)"
+          git pull --rebase --autostash origin main || true
+          git push
+
+      - name: Keep the log
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: publish-log
+          path: publish.txt
+          retention-days: 14
+          if-no-files-found: warn
