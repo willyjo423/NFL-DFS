@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-09-15T04:28:37+00:00",
+  "updated_at": "2026-09-15T04:38:46+00:00",
   "slates": [
     {
       "kind": "classic",
@@ -8,8 +8,8 @@
       "draft_group": 153428,
       "label": "NFL $3M Fantasy Football Millionaire [$1M to 1st]",
       "file": "data/nfl/dk-classic-153428.json",
-      "players": 480,
-      "generated_at": "2026-09-15T04:28:17+00:00"
+      "players": 481,
+      "generated_at": "2026-09-15T04:38:08+00:00"
     },
     {
       "kind": "showdown",
@@ -19,7 +19,7 @@
       "label": "NFL Showdown $1.5M Thursday Night Showdown [$500K to 1st] (DET @ BUF)",
       "file": "data/nfl/dk-showdown-153434.json",
       "players": 33,
-      "generated_at": "2026-09-15T04:28:37+00:00"
+      "generated_at": "2026-09-15T04:38:46+00:00"
     }
   ],
   "failures": []
