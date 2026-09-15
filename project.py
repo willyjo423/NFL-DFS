@@ -89,6 +89,56 @@ def pick_slate(kind: str) -> tuple[int, str]:
     return int(row["draft_group"]), str(row["example"])
 
 
+MARKET_COLUMNS = ["implied_total", "game_total", "team_spread", "is_home"]
+
+
+def refresh_market(latest: pd.DataFrame,
+                   lines: pd.DataFrame | None) -> pd.DataFrame:
+    """Put THIS week's market line on the row a projection is made from.
+
+    The usage features describe a player's most recently completed game, which
+    is correct and deliberate - they are built with a one-week shift so a week
+    can never be inside its own feature. But the market columns were coming
+    along for the ride, and that is wrong in a way the leak test cannot catch:
+    a projection for week two was being made with week one's implied total.
+    Kansas City's defence, its pace, its expected score - all of it a week out
+    of date, on the single input in the whole feature set whose entire purpose
+    is to describe the game that has not happened yet.
+
+    It is also the input most likely to have MOVED. A team implied for 22.5
+    last week can be implied for 31 this week against a different opponent, and
+    that is precisely the information nothing else in the model has access to.
+    """
+    if lines is None or not len(lines) or latest.empty:
+        return latest
+    import special
+    try:
+        up = special.upcoming_lines(lines)
+    except Exception as exc:                          # noqa: BLE001
+        log.warning("could not read the upcoming market lines (%s) - "
+                    "projecting on last week's, which is stale", exc)
+        return latest
+    if up.empty:
+        return latest
+
+    keep = ["team"] + [c for c in MARKET_COLUMNS if c in up.columns]
+    out = latest.drop(columns=[c for c in MARKET_COLUMNS if c in latest.columns],
+                      errors="ignore")
+    out["team"] = out["team"].astype(str)
+    up = up[keep].copy()
+    up["team"] = up["team"].astype(str)
+    out = out.merge(up, on="team", how="left")
+
+    hit = float(out["implied_total"].notna().mean()) if len(out) else 0.0
+    log.info("market refreshed to week %s for %.0f%% of players",
+             int(up.attrs.get("week", 0)) or "upcoming", 100 * hit)
+    if hit < 0.5:
+        log.warning("most players did not pick up this week's line - they will "
+                    "be projected without game context rather than with a "
+                    "stale one")
+    return out
+
+
 def history_columns(latest: pd.DataFrame) -> list[str]:
     """The columns to carry across from history, each exactly once.
 
@@ -274,6 +324,7 @@ def run(draft_group: int, site: str = "dk",
     built = F.build(weeks, site=site, lines=lines)
     proj = M.Projections().fit(built)
     latest = M.latest_rows(built)
+    latest = refresh_market(latest, lines)
 
     pool = data.draftables(draft_group)
     pool, dropped = drop_unavailable(pool)

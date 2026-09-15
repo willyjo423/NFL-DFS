@@ -178,8 +178,15 @@ def upcoming_lines(schedules: pd.DataFrame) -> pd.DataFrame:
     # result column, the latest week carrying a line is the best available
     # proxy and is right during a live week.
     latest = df["week"].max()
-    return (df[df["week"] == latest]
-            [["season", "week", "team", "opponent", "implied_total",
-              "opponent_implied", "game_total"]]
-            .drop_duplicates("team")
-            .reset_index(drop=True))
+    # Every market column travels, not just the ones the defence model needs.
+    # Returning a subset meant the projection refresh DROPPED team_spread and
+    # is_home instead of updating them - two features silently deleted from
+    # the frame at prediction time, which is worse than leaving them stale.
+    want = ["season", "week", "team", "opponent", "implied_total",
+            "opponent_implied", "game_total", "team_spread", "is_home"]
+    out = (df[df["week"] == latest]
+           [[c for c in want if c in df.columns]]
+           .drop_duplicates("team")
+           .reset_index(drop=True))
+    out.attrs["week"] = int(latest) if pd.notna(latest) else 0
+    return out

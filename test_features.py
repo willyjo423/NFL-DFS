@@ -523,9 +523,71 @@ def test_market_lines_are_a_feature_not_a_leak():
           worst < 1e-9, f"worst drift {worst:.3g}")
 
 
+def test_the_market_on_a_projection_is_this_week_not_last():
+    section("A PROJECTION MUST CARRY THE UPCOMING GAME'S LINE")
+    import project as P
+
+    # The usage features describe a player's last COMPLETED game, which is
+    # correct - they are shifted by one week so a week can never be inside its
+    # own feature. But the market columns were riding along on that same row,
+    # so a week-two projection was made with week one's implied total: a team
+    # implied for 22.5 against one opponent, projected as if it faced the same
+    # opponent again. On live data this was wrong for 2,106 of 2,176 players,
+    # with swings up to fifteen points of implied team total.
+    #
+    # The leak test cannot catch this. Using a STALE line is not leakage - it
+    # breaks nothing, raises nothing, and looks entirely reasonable.
+    latest = pd.DataFrame({
+        "name": ["A", "B", "C"], "team": ["KC", "BUF", "ZZZ"],
+        "season": [2026, 2026, 2026], "week": [1, 1, 1],
+        "implied_total": [22.5, 23.0, 20.0],
+        "game_total": [42.5, 44.5, 41.0],
+        "team_spread": [-2.5, -1.5, 0.0], "is_home": [1.0, 0.0, 1.0],
+        "ewm_points": [19.3, 21.0, 8.0]})
+    lines = pd.DataFrame({
+        "season": [2026] * 4, "week": [1, 1, 2, 2],
+        "team": ["KC", "BUF", "KC", "BUF"],
+        "opponent": ["LAC", "BAL", "PHI", "NYJ"],
+        "implied_total": [22.5, 23.0, 27.0, 29.0],
+        "game_total": [42.5, 44.5, 47.5, 53.5],
+        "team_spread": [-2.5, -1.5, -6.0, -7.0],
+        "is_home": [1.0, 0.0, 0.0, 1.0]})
+
+    fresh = P.refresh_market(latest, lines)
+    kc = fresh[fresh["name"] == "A"].iloc[0]
+    check("the projection picks up THIS week's implied total",
+          abs(float(kc["implied_total"]) - 27.0) < 1e-6,
+          str(float(kc["implied_total"])))
+    check("and this week's game total",
+          abs(float(kc["game_total"]) - 47.5) < 1e-6)
+    check("and this week's spread, which flipped",
+          abs(float(kc["team_spread"]) - (-6.0)) < 1e-6)
+    check("and this week's home flag, which also flipped",
+          abs(float(kc["is_home"]) - 0.0) < 1e-6,
+          str(float(kc["is_home"])))
+
+    check("no player is duplicated by the refresh",
+          len(fresh) == len(latest), f"{len(latest)} -> {len(fresh)}")
+    check("the usage features are untouched - only the market moves",
+          abs(float(fresh[fresh["name"] == "A"]["ewm_points"].iloc[0]) - 19.3)
+          < 1e-9)
+
+    # A team with no upcoming line gets a blank, not last week's number. A
+    # stale line is a confident claim about a game that is not being played.
+    zz = fresh[fresh["name"] == "C"].iloc[0]
+    check("a team with no upcoming game is left blank, not left stale",
+          pd.isna(zz["implied_total"]), str(zz["implied_total"]))
+
+    check("no lines at all leaves the frame alone rather than raising",
+          len(P.refresh_market(latest, None)) == len(latest))
+    check("and an empty line table does the same",
+          len(P.refresh_market(latest, lines.iloc[:0])) == len(latest))
+
+
 def main():
     print("DFS features - offline checks")
-    for fn in (test_market_lines_are_a_feature_not_a_leak,
+    for fn in (test_the_market_on_a_projection_is_this_week_not_last,
+               test_market_lines_are_a_feature_not_a_leak,
                test_no_leakage, test_first_row_is_blank,
                test_usage_tracks_role_change, test_team_context,
                test_target_matches_scoring, test_trainable,
