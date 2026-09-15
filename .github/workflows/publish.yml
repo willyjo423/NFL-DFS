@@ -1,0 +1,89 @@
+name: Publish page
+
+on:
+  schedule:
+    - cron: "0 13 * * *"
+    - cron: "0 22 * * *"
+  workflow_dispatch:
+    inputs:
+      sims:
+        description: "Simulations for the server's own lineups (blank = 50,000)"
+        required: false
+        default: ""
+      field:
+        description: "Contest size, for the duplication estimate"
+        required: false
+        default: "100000"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: publish
+  cancel-in-progress: false
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: pip
+
+      - name: Install
+        run: pip install -r requirements.txt
+
+      # Everything offline, before anything is published. A page built on an
+      # unverified simulator is worse than no page, because it looks finished.
+      - name: Offline checks
+        run: |
+          python test_scoring.py
+          python test_features.py
+          python test_optimise.py
+
+      - name: Build the slate files
+        id: build
+        continue-on-error: true
+        run: |
+          ARGS=""
+          if [ -n "${{ inputs.sims }}" ]; then ARGS="$ARGS --sims ${{ inputs.sims }}"; fi
+          if [ -n "${{ inputs.field }}" ]; then ARGS="$ARGS --field ${{ inputs.field }}"; fi
+          echo "EFFECTIVE ARGS: $ARGS"
+          python publish.py $ARGS | tee publish.txt
+
+      - name: Say what happened
+        if: always()
+        run: |
+          if [ "${{ steps.build.outcome }}" = "success" ]; then
+            echo "### Slates published" >> $GITHUB_STEP_SUMMARY
+          else
+            echo "### PUBLISH FAILED - the page still has the last good data" \
+              >> $GITHUB_STEP_SUMMARY
+          fi
+          ls -la docs/data/ 2>/dev/null || echo "docs/data is missing entirely"
+          test -f docs/data/manifest.json \
+            && cat docs/data/manifest.json >> $GITHUB_STEP_SUMMARY \
+            || echo "no manifest - the page will say it has no slates"
+
+      - name: Publish
+        if: always()
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -f docs/
+          git diff --staged --quiet && echo "nothing changed" && exit 0
+          git commit -m "Slates: $(date -u +%Y-%m-%d\ %H:%M)"
+          git pull --rebase --autostash origin main || true
+          git push
+
+      - name: Keep the log
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: publish-log
+          path: publish.txt
+          retention-days: 14
+          if-no-files-found: warn
