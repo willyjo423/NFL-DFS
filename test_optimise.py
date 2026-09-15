@@ -88,52 +88,75 @@ def _z(q: float) -> float:
 
 # ---------------------------------------------------------------- simulator
 def test_correlation_survives_the_copula():
-    section("THE CORRELATION ASKED FOR MUST COME BACK OUT")
+    section("THE CORRELATION ASSUMED MUST COME BACK OUT, NOT TWO-THIRDS OF IT")
+    import factors
     pool = slate()
-    draws = S.simulate(pool, QUANTILES, 6000)
+    draws = S.simulate(pool, QUANTILES, 8000)
 
-    got = S.realised_correlation(draws, pool, "QB", "WR", "same_team")
-    want = config.CORRELATION_PRIORS[("QB", "WR", "same_team")]
-    # Not asserted equal to the prior, and that is deliberate. The priors are
-    # pairwise opinions that cannot all hold at once - six receivers each at
-    # +0.35 with one quarterback must be positively correlated with each other
-    # through him, which contradicts the -0.10 asked for between them. The PSD
-    # repair resolves the contradiction by shrinking everything toward the
-    # nearest possible matrix, and on this pool that costs QB-WR about a third.
-    # Pinning this test to 0.35 would mean deleting the repair to pass it.
-    check("a quarterback and his own receivers are substantially correlated",
-          got > 0.20, f"asked {want:.2f}, delivered {got:.3f}")
-    check("and the delivery is a shrink, never an amplification",
-          got <= want + 0.02, f"asked {want:.2f}, delivered {got:.3f}")
+    corr, info = factors.build(pool, "nfl")
+    # The whole point of the factor model: a sum of positive semi-definite
+    # pieces is positive semi-definite, so nothing is ever repaired and nothing
+    # is ever silently shrunk. The pairwise table it replaced was infeasible -
+    # six receivers at +0.35 to one quarterback cannot be below -0.053 with
+    # each other, the prior said -0.10, and the repair charged every other pair
+    # a third of its size to fix it.
+    check("the matrix is valid by construction, with no repair",
+          info["min_eigenvalue"] >= -1e-9, str(info["min_eigenvalue"]))
+    check("so a Cholesky succeeds on it directly",
+          np.linalg.cholesky(corr).shape == (len(pool), len(pool)))
 
-    neg = S.realised_correlation(draws, pool, "RB", "RB", "same_team")
-    want_neg = config.CORRELATION_PRIORS[("RB", "RB", "same_team")]
-    check("two backs on one team are negatively correlated",
-          neg < -0.10, f"asked {want_neg:.2f}, measured {neg:.3f}")
-
-    across = S.realised_correlation(draws, pool, "QB", "WR", "opponent")
-    check("and the opposing shootout correlation is positive but smaller",
-          0.0 < across < got, f"same team {got:.3f}, opponent {across:.3f}")
-
-    # The negative control. Without this, a simulator that correlates
-    # EVERYTHING would pass every check above.
-    ind = S.simulate(pool, QUANTILES, 6000, priors={})
-    flat = S.realised_correlation(ind, pool, "QB", "WR", "same_team")
-    check("with no priors the same players come out independent",
-          abs(flat) < 0.05, f"measured {flat:.3f}")
-
-    # The shrinkage has to be reported, not merely survived. A simulator that
-    # quietly delivers two-thirds of its stated correlation is a simulator you
-    # will over-trust on exactly the stacks you built it for.
     rep = S.correlation_report(pool, draws)
-    check("every prior is reported with what the sims actually delivered",
-          len(rep) == len(config.CORRELATION_PRIORS)
-          and rep["delivered"].notna().all(), str(rep))
-    qbwr = rep[(rep["pair"] == "QB-WR") & (rep["relationship"] == "same_team")]
-    check("and the report names the shrink honestly",
-          float(qbwr["shrunk_by"].iloc[0]) > 0.05,
-          str(qbwr.to_dict("records")))
-    print(rep.to_string(index=False, float_format=lambda v: f"{v:6.3f}"))
+    worst = rep.reindex(rep["gap"].abs().sort_values(ascending=False).index)
+    check("every pair is delivered as assumed, within sampling noise",
+          bool((worst["gap"].abs() < 0.05).all()),
+          str(worst.head(3).to_dict("records")))
+
+    def pair(a, b, rel):
+        r = rep[(rep["pair"] == f"{a}-{b}") & (rep["relationship"] == rel)]
+        return float(r["delivered"].iloc[0]) if len(r) else float("nan")
+
+    qbwr = pair("QB", "WR", "same_team")
+    check("a quarterback and his own receivers move together, at full size",
+          qbwr > 0.30, f"{qbwr:.3f}")
+    check("an opposing receiver is correlated, but less than a team-mate",
+          0.0 < pair("QB", "WR", "opponent") < qbwr,
+          f'{pair("QB", "WR", "opponent"):.3f} vs {qbwr:.3f}')
+
+    # Same-position team-mates compete for one pool of touches. Getting these
+    # signs wrong is what lets an optimiser roster both of a team's running
+    # backs, or a starting and a backup quarterback, as if they were
+    # independent bets.
+    check("two backs on one team are negatively correlated",
+          pair("RB", "RB", "same_team") < 0,
+          f'{pair("RB", "RB", "same_team"):.3f}')
+    check("and two quarterbacks more so, since only one plays",
+          pair("QB", "QB", "same_team") < pair("RB", "RB", "same_team"),
+          f'{pair("QB", "QB", "same_team"):.3f}')
+
+    # A shootout is good for passers and bad for both defences. A model with
+    # this sign wrong would stack a quarterback with the defence facing him.
+    check("a defence moves against the quarterback it is facing",
+          pair("DST", "QB", "opponent") < 0,
+          f'{pair("DST", "QB", "opponent"):.3f}')
+    check("and with its own offence",
+          pair("DST", "RB", "same_team") > 0,
+          f'{pair("DST", "RB", "same_team"):.3f}')
+
+    # The honest consequence, asserted so nobody later "fixes" it: a shared
+    # cause cannot produce anticorrelated effects. Receivers tied to one
+    # quarterback come out positive with each other, and the old prior that
+    # said otherwise was not achievable.
+    check("same-team receivers come out positive, as the arithmetic forces",
+          pair("WR", "WR", "same_team") > 0,
+          f'{pair("WR", "WR", "same_team"):.3f}')
+
+    # The negative control. Without it, a model that correlated EVERYTHING
+    # would pass every check above.
+    ind = S.simulate(pool, QUANTILES, 8000, priors={})
+    flat = S.realised_correlation(ind, pool, "QB", "WR", "same_team")
+    check("with the factors switched off the same players are independent",
+          abs(flat) < 0.05, f"{flat:.3f}")
+    print(rep.head(12).to_string(index=False))
 
 
 def test_marginals_are_not_distorted():

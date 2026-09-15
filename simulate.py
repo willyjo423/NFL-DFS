@@ -42,6 +42,7 @@ import numpy as np
 import pandas as pd
 
 import config
+import factors
 
 log = logging.getLogger(__name__)
 
@@ -56,35 +57,29 @@ def relationship(team_a: str, team_b: str, game_a: str, game_b: str) -> str:
 
 
 def correlation_matrix(players: pd.DataFrame,
-                       priors: dict | None = None) -> np.ndarray:
-    """Pairwise correlation implied by the priors, repaired to be usable.
+                       priors: dict | None = None,
+                       sport: str = "nfl") -> np.ndarray:
+    """Correlation from the factor model.
 
-    `players` needs `position`, `team` and `game`. Order of the pair does not
-    matter: a QB-WR prior applies to a WR-QB lookup too, which is the kind of
-    asymmetry that produces a matrix that is not symmetric and a Cholesky that
-    fails halfway through a slate.
+    `priors` is kept only so the independence control still works - passing an
+    empty dict returns the identity, which is what a test that wants
+    uncorrelated draws needs. Everything else comes from `factors`, where the
+    matrix is positive semi-definite by construction and so never gets shrunk
+    on the way through.
+
+    The pairwise table this replaced could not be satisfied: six receivers at
+    +0.35 to one quarterback force those receivers above -0.053 with each
+    other, the prior asked for -0.10, and the repair paid for that by pulling
+    every correlation in the matrix down about a third.
     """
-    # `or` would treat an empty dict as "use the defaults", which silently
-    # turns the independence control into a rerun of the correlated case.
-    priors = config.CORRELATION_PRIORS if priors is None else priors
-    lookup: dict[tuple[str, str, str], float] = {}
-    for (pos_a, pos_b, rel), rho in priors.items():
-        lookup[(pos_a, pos_b, rel)] = rho
-        lookup[(pos_b, pos_a, rel)] = rho
-
-    pos = players["position"].astype(str).to_numpy()
-    team = players["team"].astype(str).to_numpy()
-    game = players.get("game", pd.Series([""] * len(players))).astype(str) \
-                  .to_numpy()
-
-    n = len(players)
-    corr = np.eye(n)
-    for i in range(n):
-        for j in range(i + 1, n):
-            rel = relationship(team[i], team[j], game[i], game[j])
-            rho = lookup.get((pos[i], pos[j], rel), 0.0)
-            corr[i, j] = corr[j, i] = rho
-    return nearest_psd(corr)
+    if priors is not None and not priors:
+        return np.eye(len(players))
+    corr, info = factors.build(players, sport)
+    if info["min_eigenvalue"] < -1e-9:        # should be impossible
+        log.warning("factor matrix came out indefinite (%.2e) - repairing",
+                    info["min_eigenvalue"])
+        return nearest_psd(corr)
+    return corr
 
 
 def nearest_psd(corr: np.ndarray) -> np.ndarray:
@@ -114,37 +109,32 @@ def nearest_psd(corr: np.ndarray) -> np.ndarray:
 
 
 def correlation_report(players: pd.DataFrame, draws: np.ndarray,
-                       priors: dict | None = None) -> pd.DataFrame:
-    """What was asked for, what is possible, and what the sims delivered.
+                       priors: dict | None = None,
+                       sport: str = "nfl") -> pd.DataFrame:
+    """What the factor model assumes, and what the sims delivered.
 
-    These three are not the same number and pretending they are is the quiet
-    way to mislead yourself. The priors are a table of pairwise opinions, and a
-    table like that need not describe any joint distribution that exists: if
-    six receivers each correlate +0.35 with their quarterback, then through
-    that shared factor they must correlate positively with EACH OTHER, at
-    roughly 0.35 squared. Asking for -0.10 between them at the same time is not
-    a strong assumption, it is an impossible one, and the repair resolves it by
-    pulling everything toward the nearest matrix that can exist - which on a
-    real showdown pool costs the QB-WR pair about a third of its size.
-
-    That is the correct thing to do and the wrong thing to hide, so it is
-    printed. A factor model - a game-total factor, a team factor, and target
-    competition within the team - expresses both effects without contradiction
-    and is the upgrade this table is standing in for.
+    Two columns that should now agree. Under the old pairwise table they did
+    not and could not: the table was infeasible, the repair shrank it, and the
+    delivered column ran about two-thirds of the asked column with no
+    indication on the page that this was happening. Any gap here now is
+    sampling noise, and a large one is a bug.
     """
-    priors = config.CORRELATION_PRIORS if priors is None else priors
-    rows = []
-    for (pos_a, pos_b, rel), asked in sorted(priors.items()):
-        got = realised_correlation(draws, players, pos_a, pos_b, rel)
-        rows.append({"pair": f"{pos_a}-{pos_b}", "relationship": rel,
-                     "asked": asked, "delivered": got,
-                     "shrunk_by": (asked - got) if got == got else float("nan")})
-    return pd.DataFrame(rows)
+    corr = correlation_matrix(players, priors, sport)
+    implied = factors.implied_pairs(players, corr)
+    got = []
+    for r in implied.itertuples(index=False):
+        a, _, b = r.pair.partition("-")
+        got.append(realised_correlation(draws, players, a, b, r.relationship))
+    out = implied.copy()
+    out["delivered"] = [round(v, 3) if v == v else float("nan") for v in got]
+    out["gap"] = (out["delivered"] - out["correlation"]).round(3)
+    return out.rename(columns={"correlation": "assumed"})
 
 
 def simulate(players: pd.DataFrame, quantiles: list[float], n: int,
              priors: dict | None = None,
-             rng: np.random.Generator | None = None) -> np.ndarray:
+             rng: np.random.Generator | None = None,
+             sport: str = "nfl") -> np.ndarray:
     """Correlated fantasy-point draws: one row per player, one column per sim.
 
     The copula step in three lines: draw correlated standard normals, convert
@@ -162,7 +152,7 @@ def simulate(players: pd.DataFrame, quantiles: list[float], n: int,
     grid = players[cols].to_numpy(dtype=float)
     zq = _z_of(np.asarray(quantiles, dtype=float))
 
-    corr = correlation_matrix(players, priors)
+    corr = correlation_matrix(players, priors, sport)
     chol = np.linalg.cholesky(corr)
     z = chol @ rng.standard_normal((len(players), n))
 
