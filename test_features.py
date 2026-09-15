@@ -261,8 +261,8 @@ def test_slate_merge_is_unique():
     dupes = merged.columns[merged.columns.duplicated()].tolist()
     check("and the merged frame has unique column names", not dupes, str(dupes))
 
-    ever = set(built["norm"].dropna().unique())
-    cov = P.coverage(merged, ever)
+    hist = built[["norm", "position"]].dropna().drop_duplicates()
+    cov = P.coverage(merged, hist)
     # The denominator matters more than the rate. A kicker and a defence can
     # never match a skill-position history file, so counting them as misses
     # makes a healthy join look broken.
@@ -282,19 +282,40 @@ def test_slate_merge_is_unique():
     # Now the distinction the gate turns on: a player the history file DOES
     # contain, who failed to join anyway. That is a bug, not a rookie, and it
     # must be reported as one.
+    # A nickname variant, which is how this bug actually arrives: one side
+    # writes the short form. Same surname, same position, compatible first
+    # name - all three, which is what it takes to raise a hand.
+    first, last = P.name_parts(pool["norm"].iloc[0])
     hurt = pool.copy()
-    # A spelling variant, which is how this bug actually arrives: DraftKings
-    # writes a middle initial or a suffix the history file does not. Exact
-    # membership cannot see it - the merge already joined on that column - so
-    # the loose surname key has to.
-    hurt.loc[hurt.index[0], "norm"] = "pj " + pool["norm"].iloc[0].split()[-1]
+    hurt.loc[hurt.index[0], "norm"] = f"{first}ster {last}"
     bad = hurt.merge(latest[cols], on="norm", how="left", suffixes=("", "_hist"))
-    cov2 = P.coverage(bad, ever)
-    check("a starter under a variant spelling is flagged as a join failure",
+    cov2 = P.coverage(bad, hist)
+    check("a starter under a nickname variant is flagged as a join failure",
           len(cov2["broken"]) == 1, str(cov2["broken"]))
     check("while a genuine debutant still is not",
           all(b["name"] != "Third Stringer" for b in cov2["broken"]),
           str(cov2["broken"]))
+
+    # The false-positive case, which is the one that actually bit. Five rookies
+    # were flagged as join failures because a different player shared their
+    # surname and first initial: Cyrus Allen against Chase Allen, Emmett
+    # Johnson against Eric Johnson. A gate that fires on five rookies trains
+    # you to force past it.
+    check("cyrus is not chase", not P.same_person("cyrus", "chase"))
+    check("emmett is not eric", not P.same_person("emmett", "eric"))
+    check("jonah is not justin", not P.same_person("jonah", "justin"))
+    check("jeff is not jamaree", not P.same_person("jeff", "jamaree"))
+    check("dane is not devon", not P.same_person("dane", "devon"))
+    check("but cam is cameron", P.same_person("cam", "cameron"))
+    check("and chris is christopher", P.same_person("chris", "christopher"))
+    check("a single letter is not a nickname", not P.same_person("c", "chase"))
+
+    rookies = pd.DataFrame({"norm": ["cyrus allen", "emmett johnson"],
+                            "position": ["WR", "RB"]})
+    hist2 = pd.DataFrame({"norm": ["chase allen", "eric johnson"],
+                          "position": ["WR", "RB"]})
+    check("so the live false positives stay silent even at the same position",
+          P.probable_join_failures(rookies, hist2).empty)
 
     known = merged[merged["player_id"].notna()].copy()
     out = M.Projections().fit(built).predict(known)
@@ -342,6 +363,78 @@ def test_showdown_salary_is_the_flex_price():
           int(df["salary"].min()) == 200, str(int(df["salary"].min())))
 
 
+def test_inactive_players_are_excluded():
+    section("AN INACTIVE PLAYER MUST NOT REACH A LINEUP")
+    import data
+    import project as P
+
+    # This is the live failure. Troy Franklin was inactive, DraftKings had him
+    # at $2,800, and because a zero-snap player maximises points-per-dollar he
+    # came back as the best value on the board and went into BOTH lineups.
+    # The status was in the payload the whole time and nothing read it.
+    for raw, want in [
+        ("OUT", "out"), ("Out", "out"), ("O", "out"), ("IR", "out"),
+        ("Inactive", "out"), ("SUSP", "out"), ("PUP", "out"),
+        ("D", "doubtful"), ("Doubtful", "doubtful"),
+        ("Q", "questionable"), ("Questionable", "questionable"),
+        ("GTD", "questionable"),
+        ("", "clear"), ("None", "clear"), (None, "clear"),
+        ("Probable", "clear"), ("-", "clear"),
+    ]:
+        got = data.playing_status(raw)
+        check(f"status {raw!r} reads as {want}", got == want, got)
+
+    check("a disabled flag beats any status string",
+          data.playing_status("None", disabled=True) == "out")
+    check("and an attribute can carry it too",
+          data.playing_status("", attributes="Injured Reserve") == "out")
+    # An unrecognised string must NOT be guessed as out - that would delete a
+    # board the moment DraftKings changed a spelling.
+    check("an unknown status is treated as playable, not guessed out",
+          data.playing_status("Wibble") == "clear")
+
+    pool = pd.DataFrame({
+        "name": ["Starter", "Franklin", "Iffy", "Shaky", "Fine"],
+        "position": ["WR", "WR", "RB", "TE", "QB"],
+        "team": ["KC", "DEN", "KC", "DEN", "KC"],
+        "salary": [9400.0, 2800.0, 5000.0, 4000.0, 9600.0],
+        "status": ["None", "OUT", "Q", "D", ""],
+        "disabled": [False] * 5,
+        "attributes": [""] * 5,
+    })
+    pool["playing"] = [data.playing_status(s, d, a) for s, d, a
+                       in zip(pool["status"], pool["disabled"],
+                              pool["attributes"])]
+    kept, dropped = P.drop_unavailable(pool)
+    check("the out player is gone", "Franklin" not in set(kept["name"]))
+    check("and so is the doubtful one", "Shaky" not in set(kept["name"]))
+    check("questionable is kept, because those players mostly play",
+          "Iffy" in set(kept["name"]))
+    check("the healthy players survive",
+          {"Starter", "Fine"} <= set(kept["name"]))
+    check("and the exclusions are returned, not swallowed",
+          set(dropped["name"]) == {"Franklin", "Shaky"},
+          str(dropped["name"].tolist()))
+
+    # The guard that matters more than the filter: if a parsing change made
+    # every status unreadable, a silent filter would hand back an empty board.
+    broken = pool.copy()
+    broken["playing"] = "out"
+    try:
+        P.drop_unavailable(broken)
+        check("a board that reads as all-out stops the run", False,
+              "it returned a pool instead of raising")
+    except SystemExit as exc:
+        check("a board that reads as all-out stops the run", True)
+        check("and the error shows the statuses it actually saw",
+              "status" in str(exc).lower() or "parsing failure" in str(exc))
+
+    missing = pool.drop(columns=["playing"])
+    kept2, dropped2 = P.drop_unavailable(missing)
+    check("a pool with no availability column passes through, loudly",
+          len(kept2) == 5 and dropped2.empty)
+
+
 def main():
     print("DFS features - offline checks")
     for fn in (test_no_leakage, test_first_row_is_blank,
@@ -349,7 +442,8 @@ def main():
                test_target_matches_scoring, test_trainable,
                test_empty_feature_does_not_kill_the_fit,
                test_slate_merge_is_unique,
-               test_showdown_salary_is_the_flex_price):
+               test_showdown_salary_is_the_flex_price,
+               test_inactive_players_are_excluded):
         try:
             fn()
         except Exception:

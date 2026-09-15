@@ -211,6 +211,51 @@ def slates(df: pd.DataFrame | None = None) -> pd.DataFrame:
     return out.sort_values("contests", ascending=False).reset_index(drop=True)
 
 
+# Statuses that mean the player will not take a snap. Matched as substrings of
+# the lowercased status, so "OUT", "Out", "O" and "Inactive" all land here.
+OUT_MARKERS = ("out", "inactive", " ir", "ir ", "injured reserve", "susp",
+               "pup", "nfi", "dnp", "did not", "covid", "reserve")
+# Genuinely in doubt. Excluded by default because a player who does not play
+# scores zero, and a zero in a six-man showdown lineup is the whole entry.
+DOUBTFUL_MARKERS = ("doubtful",)
+QUESTIONABLE_MARKERS = ("questionable", "gtd", "game time")
+# Statuses that mean nothing is wrong. DraftKings uses several spellings of
+# "no news", and treating an unknown value as OUT would empty the board.
+CLEAR_MARKERS = ("", "none", "null", "active", "probable", "available", "-")
+
+
+def playing_status(status, disabled=False, attributes: str = "") -> str:
+    """One of: out, doubtful, questionable, clear.
+
+    DraftKings hands this over in the same payload as the salaries and the
+    first version of this module captured it and then never read it - which is
+    worse than not having it, because the cheapest player on a board is very
+    often cheap precisely BECAUSE he is not playing. Troy Franklin came back as
+    the best value on the slate at 2.87 points per $1,000 and was inactive; a
+    value column that cannot see a status column will pick him every time, for
+    both objectives, which is exactly what happened.
+
+    Unknown values resolve to "clear" on purpose. Guessing OUT from a string
+    nobody recognises would quietly delete half a slate, and the caller checks
+    how much of the board this filter removes before trusting it.
+    """
+    if disabled:
+        return "out"
+    s = str(status or "").strip().lower()
+    a = str(attributes or "").strip().lower()
+    blob = f"{s} {a}"
+    if any(m in blob for m in OUT_MARKERS):
+        return "out"
+    if any(m in blob for m in DOUBTFUL_MARKERS):
+        return "doubtful"
+    if any(m in blob for m in QUESTIONABLE_MARKERS):
+        return "questionable"
+    if s in CLEAR_MARKERS:
+        return "clear"
+    # A single letter is DraftKings' shorthand; O and D are the ones that bite.
+    return {"o": "out", "d": "doubtful", "q": "questionable"}.get(s, "clear")
+
+
 def draftables(draft_group: int) -> pd.DataFrame:
     """Who is in a slate and what they cost.
 
@@ -246,6 +291,10 @@ def draftables(draft_group: int) -> pd.DataFrame:
         "salary": p.get("salary"),
         "roster_slot": p.get("rosterSlotId"),
         "status": p.get("status"),
+        "disabled": bool(p.get("isDisabled")),
+        "attributes": "|".join(
+            str(a.get("name") or a.get("id") or "")
+            for a in (p.get("playerAttributes") or [])),
         "game": (p.get("competition") or {}).get("name"),
         "starts_utc": pd.to_datetime(
             (p.get("competition") or {}).get("startTime"), errors="coerce"),
@@ -272,6 +321,15 @@ def draftables(draft_group: int) -> pd.DataFrame:
         ratio = float((top / base.replace(0, np.nan)).median())
         log.info("showdown pricing: %d players carry a captain price, "
                  "median %.2fx the flex price", priced_twice, ratio)
+
+    df["playing"] = [playing_status(s, d, a) for s, d, a
+                     in zip(df["status"], df["disabled"], df["attributes"])]
+    counts = df["playing"].value_counts().to_dict()
+    log.info("availability: %s",
+             ", ".join(f"{k}={v}" for k, v in sorted(counts.items())))
+    if set(df["playing"]) == {"clear"} and df["status"].notna().any():
+        log.info("no player carries an injury designation on this board - "
+                 "normal early in a week, suspicious an hour before kickoff")
 
     log.info("draft group %s: %d players, flex salary $%s-$%s",
              draft_group, len(df), int(df["salary"].min()),

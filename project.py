@@ -49,10 +49,14 @@ log = logging.getLogger(__name__)
 # wrong and the output should not be used.
 MIN_JOIN_RATE = 0.85
 
-# And below this share of slate salary, a starter is missing even if the count
-# looks fine - one unmatched $11,000 quarterback is worse than thirty
-# unmatched $200 linemen.
-MIN_SALARY_COVERAGE = 0.90
+# A backstop, not the main gate. The name-level check above is what catches a
+# broken join; this catches the wholesale break it cannot see - DraftKings
+# changing its name format entirely, say, where nothing matches on surname
+# either and so nothing gets flagged. Set low on purpose: in week two a
+# showdown pool is genuinely 10-15% rookies by salary, and a floor tuned to
+# that noise teaches you to force past it, which is how a real break gets
+# waved through.
+MIN_SALARY_COVERAGE = 0.80
 
 
 def load_seasons(seasons: list[int]) -> pd.DataFrame:
@@ -98,21 +102,103 @@ def history_columns(latest: pd.DataFrame) -> list[str]:
     return [c for c in dict.fromkeys(wanted) if c in latest.columns]
 
 
-def near_key(norm: str) -> str:
-    """A deliberately loose key: first initial plus surname.
-
-    Used only to ask "is this unmatched player probably someone the history
-    file already has, under a different spelling?" - which is the question that
-    separates a bug from a rookie. It is too loose to join on (two Smiths with
-    the same initial collide) and exactly right for raising a hand.
-    """
+def name_parts(norm: str) -> tuple[str, str]:
+    """First and last token of a normalised name."""
     parts = str(norm).split()
     if len(parts) < 2:
-        return str(norm)
-    return f"{parts[0][:1]} {parts[-1]}"
+        return str(norm), str(norm)
+    return parts[0], parts[-1]
 
 
-def coverage(merged: pd.DataFrame, ever_played: set[str]) -> dict:
+def same_person(a_first: str, b_first: str) -> bool:
+    """Could these two first names be the same man?
+
+    First initial plus surname was the first attempt and it cried wolf on every
+    rookie on the board: Cyrus Allen was flagged because the history file
+    contains Chase Allen, Emmett Johnson because of Eric Johnson, and three
+    more of the same. A detector that fires on five rookies teaches you to
+    force past it, which is worse than having no detector.
+
+    So the first names have to be compatible, not merely share a letter. Equal,
+    or one a prefix of the other - which is what a nickname looks like
+    (cam/cameron, chris/christopher) and what a rookie sharing a surname does
+    not.
+    """
+    if a_first == b_first:
+        return True
+    lo, hi = sorted((a_first, b_first), key=len)
+    return len(lo) >= 3 and hi.startswith(lo)
+
+
+def probable_join_failures(missed: pd.DataFrame,
+                           history: pd.DataFrame) -> pd.DataFrame:
+    """Unmatched players the history file probably already contains.
+
+    Three things must line up before this raises a hand: the surname, a
+    compatible first name, and the position. Any one of them alone produces
+    noise - the point is to fire on a spelling variant of a real player and
+    stay silent on a rookie who happens to share a surname with one.
+    """
+    if missed.empty:
+        return missed.iloc[:0]
+    idx: dict[str, set[tuple[str, str]]] = {}
+    for norm, pos in zip(history["norm"], history["position"]):
+        first, last = name_parts(norm)
+        idx.setdefault(last, set()).add((first, str(pos)))
+
+    hit = []
+    for norm, pos in zip(missed["norm"], missed["position"]):
+        first, last = name_parts(norm)
+        hit.append(any(same_person(first, f) and p == str(pos)
+                       for f, p in idx.get(last, ())))
+    return missed[pd.Series(hit, index=missed.index)]
+
+
+# If a status filter would remove more than this share of a board, it is not an
+# injury report - it is a parsing failure, and the right answer is to stop
+# rather than to hand over a pool with the starters deleted.
+MAX_UNAVAILABLE_SHARE = 0.40
+
+
+def drop_unavailable(pool: pd.DataFrame,
+                     exclude: tuple[str, ...] = ("out", "doubtful")
+                     ) -> tuple[pd.DataFrame, pd.DataFrame]:
+    """Remove players who will not take a snap, and say who they were.
+
+    The failure this prevents is specific and expensive: a player who is out is
+    still listed, still priced, and - because DraftKings drops the price of a
+    player nobody can use - looks like the best value on the board. Every
+    objective picks him, because points per dollar is exactly the statistic a
+    zero-snap player maximises.
+
+    Questionable is KEPT. Those players mostly play, and dropping them would
+    throw away real leverage; they are flagged instead so the report can say
+    which of the chosen names carry a designation.
+    """
+    if "playing" not in pool.columns:
+        log.warning("this pool carries no availability column - nothing is "
+                    "being filtered, and an inactive player can be rostered")
+        return pool, pool.iloc[:0]
+
+    bad = pool["playing"].isin(exclude)
+    share = float(bad.mean()) if len(pool) else 0.0
+    if share > MAX_UNAVAILABLE_SHARE:
+        raise SystemExit(
+            f"{share * 100:.0f}% of this board reads as {' or '.join(exclude)}, "
+            f"which is not an injury report - it is a parsing failure.\n"
+            f"Statuses seen: "
+            f"{pool['status'].astype(str).value_counts().head(8).to_dict()}\n"
+            f"Fix the status handling before using any of this.")
+
+    dropped = pool[bad].copy()
+    if len(dropped):
+        log.info("excluded %d unavailable: %s", len(dropped),
+                 ", ".join(f"{r['name']} ({r['playing']})"
+                           for _, r in dropped.head(12).iterrows()))
+    return pool[~bad].reset_index(drop=True), dropped
+
+
+def coverage(merged: pd.DataFrame, history: pd.DataFrame) -> dict:
     """What failed to join, and - the part that matters - why.
 
     A rate on its own cannot answer the only question worth asking, which is
@@ -134,14 +220,14 @@ def coverage(merged: pd.DataFrame, ever_played: set[str]) -> dict:
     skill = merged["position"].isin(config.SKILL_POSITIONS)
     salary = pd.to_numeric(merged["salary"], errors="coerce").fillna(0.0)
 
-    near = {near_key(n) for n in ever_played}
     missed = merged[~matched].copy()
     # Exact membership cannot fire here - the merge joined on this very column,
-    # so a name present in history could not have missed. The loose key is what
-    # catches the real failure: same player, different spelling.
-    missed["has_nfl_history"] = missed["norm"].map(near_key).isin(near)
-    broken = missed[missed["has_nfl_history"]
-                    & missed["position"].isin(config.SKILL_POSITIONS)]
+    # so a name present in history could not have missed. Matching on surname,
+    # a compatible first name and position is what catches the real failure:
+    # same player, different spelling.
+    skill_missed = missed[missed["position"].isin(config.SKILL_POSITIONS)]
+    broken = probable_join_failures(skill_missed, history)
+    missed["has_nfl_history"] = missed.index.isin(broken.index)
 
     # Salary coverage measured over the players this model can even fit.
     # A kicker and a defence are structurally unprojectable here, so leaving
@@ -180,6 +266,7 @@ def run(draft_group: int, site: str = "dk",
     latest = M.latest_rows(built)
 
     pool = data.draftables(draft_group)
+    pool, dropped = drop_unavailable(pool)
 
     merged = pool.merge(latest[history_columns(latest)],
                         on="norm", how="left", suffixes=("", "_hist"))
@@ -187,9 +274,8 @@ def run(draft_group: int, site: str = "dk",
     if dupes:                       # belt and braces; the guard above is the fix
         raise SystemExit(f"duplicated columns after merge: {dupes}")
 
-    ever = set(weeks["norm"].dropna().unique()) if "norm" in weeks.columns \
-        else set(latest["norm"].dropna().unique())
-    cov = coverage(merged, ever)
+    history = weeks[["norm", "position"]].dropna().drop_duplicates()
+    cov = coverage(merged, history)
     log.info("join: %d of %d matched overall; %d of %d projectable (%.1f%%); "
              "%.1f%% of projectable salary; %d genuine join failures",
              cov["matched"], cov["total"], cov["projectable_matched"],
@@ -220,6 +306,9 @@ def run(draft_group: int, site: str = "dk",
         "site": site,
         "trained_rows": proj.trained_rows,
         "coverage": cov,
+        "unavailable": dropped[["name", "position", "team", "salary",
+                                "playing"]].to_dict("records")
+                       if len(dropped) else [],
         "matched": int(len(known)),
         "slate_size": int(len(pool)),
         "players": known,
@@ -258,6 +347,14 @@ def report(out: dict, top: int = 40) -> str:
     for r in df.nlargest(10, "ceiling").itertuples(index=False):
         lines.append(f"  {str(r.name)[:24]:<25} ${int(r.salary):>6,}  "
                      f"{r.median:5.1f} median -> {r.ceiling:5.1f} ceiling")
+
+    if out.get("unavailable"):
+        lines += ["", f"{len(out['unavailable'])} players excluded as "
+                      f"unavailable (they would otherwise look like the best "
+                      f"value on the board):"]
+        for u in out["unavailable"][:15]:
+            lines.append(f"  {str(u['name'])[:24]:<25}{str(u['position']):<5}"
+                         f"${int(u['salary']):>6,}   {u['playing'].upper()}")
 
     if cov["misses"]:
         lines += ["", f"{len(cov['misses'])} slate players not projected, "
