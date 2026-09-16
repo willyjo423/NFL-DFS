@@ -148,6 +148,36 @@ def normalise_name(name) -> str:
     return " ".join(s.split())
 
 
+def name_keys(name) -> set[str]:
+    """Every spelling two sources might agree on, not just one.
+
+    `normalise_name` turns a period into a SPACE, which is exactly right for
+    "St.Brown" against "St. Brown" and exactly wrong for initials: DraftKings
+    writes "AJ Brown" and the injury report writes "A.J. Brown", which reduce
+    to "aj brown" and "a j brown" and do not match. Both rules are correct and
+    they contradict each other, so both spellings are carried and a match on
+    either counts.
+
+    This is the same fix the college model needed for Matthew/Matt and
+    A.J./AJ. It lives here as well because an injury report that silently
+    misses A.J. Brown is worse than one that misses nobody - it reports a
+    healthy board while a starter is out.
+    """
+    raw = str(name).strip()
+    if "," in raw:
+        last, _, first = raw.partition(",")
+        raw = f"{first.strip()} {last.strip()}"
+    keys = set()
+    for dot in (" ", ""):
+        t = raw.lower().replace("-", " ").replace(".", dot)
+        t = t.replace("'", "").replace("`", "")
+        t = _SUFFIXES.sub(" ", t)
+        t = " ".join(t.split())
+        if t:
+            keys.add(t)
+    return keys
+
+
 def join_report(left: pd.Series, right: pd.Series) -> dict:
     """How well two name columns match, and what failed.
 
@@ -335,7 +365,8 @@ def _draft_rows(draft_group: int):
     return rows, "lobby"
 
 
-def draftables(draft_group: int) -> pd.DataFrame:
+def draftables(draft_group: int,
+               captain_multiplier: float | None = None) -> pd.DataFrame:
     """Who is in a slate and what they cost.
 
     DraftKings repeats a player once per roster slot he is eligible for, so a
@@ -436,13 +467,30 @@ def draftables(draft_group: int) -> pd.DataFrame:
         log.info("showdown pricing: %d players carry a captain price, "
                  "median %.2fx the flex price", priced_twice, ratio)
     elif dialect == "lobby":
-        # The lobby endpoint lists each player once, so a showdown board
-        # arrives with no captain row to read the 1.5x from. Saying that
-        # plainly beats silently handing the optimiser a captain price equal
-        # to the flex price, which would let it field a captain for free.
-        log.info("no duplicate pricing on this board. On the lobby endpoint "
-                 "that is expected and means captain_salary equals the flex "
-                 "price; a showdown optimiser must apply the 1.5x itself.")
+        # The lobby endpoint lists each player ONCE, so a showdown board
+        # arrives with no captain row to read the multiplier from. The old
+        # api.draftkings.com endpoint returned a second, dearer row per
+        # player and that is where the 1.5x used to come from; losing it left
+        # captain_salary equal to the flex price, which would let an
+        # optimiser field a captain for free and build a lineup DraftKings
+        # would reject on entry.
+        #
+        # So on this dialect the multiplier is applied from the roster rules
+        # rather than read from the payload. It is stated rather than
+        # inferred, and logged, because a silently wrong captain price is
+        # wrong on the single most expensive slot in the lineup.
+        if captain_multiplier:
+            df["captain_salary"] = (df["salary"] * float(captain_multiplier))
+            df["captain_salary"] = df["captain_salary"].round().astype("Int64")
+            log.info("showdown: no captain row on the lobby endpoint, so the "
+                     "captain price is the flex price x%.2f from the roster "
+                     "rules ($%s-$%s)", captain_multiplier,
+                     int(df["captain_salary"].min()),
+                     int(df["captain_salary"].max()))
+        else:
+            log.info("no duplicate pricing on this board, and no captain "
+                     "multiplier was passed - captain_salary equals the flex "
+                     "price. Correct for Classic; WRONG for Showdown.")
 
     df["playing"] = [playing_status(s, d, a) for s, d, a
                      in zip(df["status"], df["disabled"], df["attributes"])]
@@ -564,3 +612,183 @@ def team_context() -> pd.DataFrame:
     if not rows:
         raise DataUnavailable("the team model published no usable games")
     return pd.DataFrame(rows)
+
+
+# ------------------------------------------------------------------ injuries
+# The official injury report, which is the thing the board cannot tell us.
+#
+# DraftKings' lobby endpoint carries no usable status - every player on a live
+# 658-man board read as healthy - so the model has been unable to see who is
+# out. That is not a small gap: an inactive player scores zero, and a zero in
+# a lineup is the whole entry. nflverse republishes the league's own weekly
+# report, free, and it is the correct fix.
+#
+# Several candidate paths because nflverse has renamed release assets before -
+# the deep history and the recent seasons have lived under different tags, and
+# a loader that knows one name silently trains on stale data when it moves.
+INJURY_SOURCES = [
+    ("https://github.com/nflverse/nflverse-data/releases/download/injuries/"
+     "injuries_{season}.csv"),
+    ("https://github.com/nflverse/nflverse-data/releases/download/injuries/"
+     "injuries_{season}.csv.gz"),
+    ("https://github.com/nflverse/nflverse-data/releases/download/"
+     "weekly_injuries/injuries_{season}.csv"),
+]
+
+# What the report says versus what it means for a lineup. The league's own
+# vocabulary, mapped onto the three states the optimiser acts on.
+REPORT_OUT = ("out", "injured reserve", "ir", "pup", "nfi", "suspended",
+              "did not report", "reserve")
+REPORT_DOUBTFUL = ("doubtful",)
+REPORT_QUESTIONABLE = ("questionable", "limited")
+
+
+def injuries(season: int) -> pd.DataFrame:
+    """The weekly injury report, or an empty frame and a loud complaint.
+
+    Returns empty rather than raising: a missing injury feed must degrade the
+    board to "we cannot see injuries", which is where it already was, not take
+    the whole build down an hour before kickoff. But it says so at ERROR, and
+    the caller reports the coverage it achieved, because silently having no
+    injury data is exactly the failure this function exists to end.
+    """
+    for pattern in INJURY_SOURCES:
+        url = pattern.format(season=season)
+        try:
+            raw = _get(url)
+        except DataUnavailable:
+            continue
+        try:
+            df = pd.read_csv(io.BytesIO(raw), low_memory=False)
+        except Exception as exc:                               # noqa: BLE001
+            log.warning("injuries at %s did not parse: %s", url, str(exc)[:70])
+            continue
+        if df.empty:
+            continue
+        log.info("injury report: %d rows from %s", len(df), url.split("/")[-1])
+        return _tidy_injuries(df, season)
+    log.error("NO injury report could be loaded for %s. The board cannot see "
+              "who is inactive, so an out player can reach a lineup. Tried: "
+              "%s", season, [p.split("/")[-2] for p in INJURY_SOURCES])
+    return pd.DataFrame()
+
+
+def _tidy_injuries(df: pd.DataFrame, season: int) -> pd.DataFrame:
+    """One row per player-week with a normalised name and a plain status."""
+    out = df.copy()
+    rename = {}
+    for target, options in (
+            ("name", ["full_name", "player_display_name", "player_name",
+                      "gsis_name", "name"]),
+            ("team", ["team", "club_code", "recent_team"]),
+            ("week", ["week"]),
+            ("season", ["season"]),
+            ("report", ["report_status", "game_status", "status",
+                        "injury_status"]),
+            ("practice", ["practice_status", "practice_primary_injury"]),
+    ):
+        for o in options:
+            if o in out.columns:
+                rename[o] = target
+                break
+    out = out.rename(columns=rename)
+    missing = [c for c in ("name", "week") if c not in out.columns]
+    if missing:
+        log.error("injury report lacks %s; columns were %s", missing,
+                  sorted(df.columns)[:20])
+        return pd.DataFrame()
+
+    if "season" not in out.columns:
+        out["season"] = season
+    out["norm"] = out["name"].map(normalise_name)
+    out["season"] = pd.to_numeric(out["season"], errors="coerce")
+    out["week"] = pd.to_numeric(out["week"], errors="coerce")
+    text = (out.get("report", pd.Series("", index=out.index)).astype(str)
+            + " " + out.get("practice", pd.Series("", index=out.index))
+            .astype(str)).str.lower()
+    out["playing"] = [_injury_state(t) for t in text]
+    keep = ["season", "week", "name", "norm", "team", "playing"]
+    keep += [c for c in ("report", "practice") if c in out.columns]
+    return out[keep].dropna(subset=["week"]).reset_index(drop=True)
+
+
+def _injury_state(text: str) -> str:
+    t = str(text).lower()
+    if any(k in t for k in REPORT_OUT):
+        return "out"
+    if any(k in t for k in REPORT_DOUBTFUL):
+        return "doubtful"
+    if any(k in t for k in REPORT_QUESTIONABLE):
+        return "questionable"
+    return "clear"
+
+
+def attach_injuries(pool: pd.DataFrame, report: pd.DataFrame,
+                    season: int, week: int) -> pd.DataFrame:
+    """Overwrite the board's availability with the official report.
+
+    The report WINS wherever it has an opinion. DraftKings' own field has been
+    empty on every live board we have pulled, so deferring to it would be
+    deferring to nothing; the league's report is the only real evidence in the
+    room. Players it says nothing about keep whatever the board said, which is
+    normally "clear" and is the right default - most players are not on the
+    report at all.
+
+    The coverage is returned in `.attrs` so the caller can refuse to build on
+    a report that matched almost nobody. A join that silently finds two
+    players is indistinguishable from a healthy league, and that is precisely
+    the confusion that let an inactive receiver into a lineup.
+    """
+    out = pool.copy()
+    if report is None or report.empty:
+        out.attrs["injury_matched"] = 0
+        out.attrs["injury_note"] = "no report loaded"
+        return out
+
+    wk = report[(report["season"] == season) & (report["week"] == week)]
+    if wk.empty:
+        log.error("the injury report has no rows for %s week %s - it covers "
+                  "%s. Nothing was applied.", season, week,
+                  sorted(report["week"].dropna().unique())[-5:])
+        out.attrs["injury_matched"] = 0
+        out.attrs["injury_note"] = f"no rows for week {week}"
+        return out
+
+    # Matched on the normalised name only, deliberately. Team codes disagree
+    # between the two sources and a player who was traded on Tuesday is
+    # exactly the player whose status matters most.
+    # Built over BOTH spellings of every reported name, so "A.J. Brown" on
+    # the report reaches "AJ Brown" on the board. Sorted so that when a name
+    # appears twice the more severe status wins - "doubtful" sorts before
+    # "out"... which is the wrong way round, so the order is stated
+    # explicitly rather than left to the alphabet.
+    severity = {"out": 0, "doubtful": 1, "questionable": 2, "clear": 3}
+    state: dict[str, str] = {}
+    for r in wk.itertuples(index=False):
+        for key in name_keys(r.name):
+            if key not in state or severity.get(r.playing, 9) < severity.get(
+                    state[key], 9):
+                state[key] = r.playing
+
+    def look_up(name) -> str | float:
+        for key in sorted(name_keys(name)):
+            if key in state:
+                return state[key]
+        return np.nan
+
+    hit = out["name"].map(look_up)
+    matched = int(hit.notna().sum())
+    out["injury_status"] = hit.fillna("")
+    out["playing"] = np.where(hit.notna(), hit, out.get("playing", "clear"))
+
+    counts = out["playing"].value_counts().to_dict()
+    log.info("injury report matched %d of %d priced players; board now reads "
+             "%s", matched, len(out),
+             ", ".join(f"{k}={v}" for k, v in sorted(counts.items())))
+    if matched == 0:
+        log.error("the injury report matched NOBODY on this board. Either the "
+                  "names do not join or the week is wrong - do not trust the "
+                  "availability column.")
+    out.attrs["injury_matched"] = matched
+    out.attrs["injury_note"] = f"{matched}/{len(out)} matched"
+    return out
