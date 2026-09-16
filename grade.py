@@ -270,7 +270,7 @@ def accuracy(g: pd.DataFrame) -> pd.DataFrame:
                        ("last game", "prior_last"),
                        ("positional average", "prior_position")):
         err = d[col] - d["points"]
-        out.append({"predictor": label, "n": len(d),
+        out.append({"key": col, "predictor": label, "n": len(d),
                     "MAE": round(err.abs().mean(), 3),
                     "RMSE": round(float(np.sqrt((err ** 2).mean())), 3),
                     "bias": round(err.mean(), 3)})
@@ -485,9 +485,28 @@ def main(argv=None) -> int:
 
     sub("IS IT BETTER THAN DOING NOTHING?")
     acc = accuracy(g)
-    print(acc.to_string(index=False))
-    model_mae = acc.loc[acc["predictor"].str.startswith("this"), "MAE"].iloc[0]
-    base_mae = acc.loc[acc["predictor"].str.startswith("season"), "MAE"].iloc[0]
+    print(acc.drop(columns=["key"]).to_string(index=False))
+
+    def mae_of(key: str) -> float:
+        """Look a predictor up by its COLUMN, not by how it is labelled.
+
+        Matching on the printed label is what broke the previous run: the
+        labels were rewritten for the two-part model and a
+        `startswith("this")` lookup quietly selected nothing, so the script
+        died one line after printing the table it had got right. A display
+        string is not an identifier.
+        """
+        hit = acc.loc[acc["key"] == key, "MAE"]
+        if hit.empty:
+            raise SystemExit(
+                f"no predictor keyed {key!r} in the accuracy table; "
+                f"available: {acc['key'].tolist()}")
+        return float(hit.iloc[0])
+
+    # The availability-adjusted mean is the model's headline number - it is
+    # what a lineup is actually built on - so it is what gets compared.
+    model_mae = mae_of("mean")
+    base_mae = mae_of("prior_mean")
     edge = (base_mae - model_mae) / base_mae
     print(f"\n  the model is {edge:+.1%} better than a season average on MAE.")
     if edge <= 0:
