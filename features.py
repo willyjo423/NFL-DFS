@@ -63,7 +63,10 @@ FEATURES = (
        # cannot know about a new starting quarterback, a blowout script, or a
        # game expected to be played in the rain.
        "implied_total", "game_total", "team_spread",
-       "is_home"]
+       "is_home",
+       # Availability history. Cheap, leak-free, and the only evidence the
+       # play/no-play model has in the absence of an injury report.
+       "played_last", "ewm_played", "played_rate"]
 )
 
 
@@ -145,6 +148,27 @@ def build(weeks: pd.DataFrame, site: str = "dk",
     df["sd_points"] = g["points"].transform(
         lambda s: s.shift(1).expanding(min_periods=2).std())
     df["games_played"] = g.cumcount()
+
+    # Availability history, which the feature set had nothing about at all.
+    #
+    # The two-part model needs to estimate whether a player takes the field,
+    # and until now the only evidence it had was usage - which describes the
+    # games he DID play and is therefore nearly identical for a fragile player
+    # and a durable one. Fitted on that, the classifier learned nothing and
+    # returned the base rate for everybody, which is a confident way of saying
+    # "I do not know".
+    #
+    # Whether he suited up last week, and how often he has suited up lately,
+    # are the honest answers available without an injury feed. Both are
+    # shifted, so a week can never be inside its own feature - a player's
+    # availability record must not include the game being predicted.
+    df["_active"] = (df["points"] > 0).astype(float)
+    a = df.groupby("player_id", sort=False)["_active"]
+    df["played_last"] = a.transform(lambda s: s.shift(1))
+    df["ewm_played"] = a.transform(lambda s: _ewm(s, hl))
+    df["played_rate"] = a.transform(
+        lambda s: s.shift(1).expanding(min_periods=1).mean())
+    df = df.drop(columns=["_active"])
 
     df = _team_context(df)
     df["is_home"] = _home_flag(df)
