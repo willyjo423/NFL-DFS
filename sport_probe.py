@@ -29,6 +29,7 @@ import argparse
 import io
 import json
 import logging
+import os
 import sys
 
 import pandas as pd
@@ -111,6 +112,18 @@ LINES = {
 }
 
 
+# Which GitHub data repo belongs to which sport. nflverse is in here as the
+# control: football already works off it, so if its listing comes back empty
+# the problem is the listing code, not the other four repos.
+REPOS = {
+    "nba": "sportsdataverse/hoopR-data",
+    "cfb": "sportsdataverse/cfbfastR-data",
+    "nhl": "sportsdataverse/fastRhockey-data",
+    "mlb": "sportsdataverse/baseballr-data",
+    "nfl": "nflverse/nflverse-data",
+}
+
+
 def head(t):
     print(f"\n{t}\n{'=' * 74}")
 
@@ -141,7 +154,16 @@ def describe(label: str, url: str) -> dict:
         print("       -> HTML, not data. A wall or a redirect, not a source.")
         return {"label": label, "ok": False, "why": "html"}
 
-    if "csv" in ctype or url.endswith(".csv"):
+    # Sniff the CONTENT, do not trust the header. Baseball Savant returns
+    # three megabytes of perfectly good CSV under Content-Type
+    # "application/download", and the first version of this probe dismissed it
+    # as "not JSON and not CSV" - throwing away a working source on the
+    # strength of a header nobody guarantees.
+    head_txt = r.content[:2000].decode("utf-8", "replace")
+    looks_csv = ("csv" in ctype or url.endswith(".csv")
+                 or (head_txt.count(",") > 8 and "\n" in head_txt
+                     and not head_txt.lstrip().startswith(("{", "["))))
+    if looks_csv:
         try:
             df = pd.read_csv(io.BytesIO(r.content), low_memory=False, nrows=4000)
         except Exception as exc:
@@ -165,6 +187,132 @@ def describe(label: str, url: str) -> dict:
     keys = sorted(j)[:12] if isinstance(j, dict) else f"list of {len(j)}"
     print(f"       -> JSON: {keys}")
     return {"label": label, "ok": True, "json": True}
+
+
+def release_assets(repo: str) -> list[tuple[str, str, str]]:
+    """List what a GitHub data repo ACTUALLY publishes.
+
+    Guessing release URLs produced four 404s in the first run, which says
+    nothing except that the guesses were wrong. The releases API says what the
+    tags and asset names really are, which turns guessing into looking - the
+    same move that fixed the stock universe build when a Wikipedia table
+    vanished and the code insisted the data was missing rather than moved.
+
+    Returns (tag, asset_name, download_url) so the caller can probe the real
+    files in the SAME run instead of coming back tomorrow with better guesses.
+    """
+    url = f"https://api.github.com/repos/{repo}/releases?per_page=100"
+    hdr = dict(UA)
+    # Actions hands every run a token. Unauthenticated the releases API allows
+    # sixty calls an hour shared across the whole runner IP, which is the kind
+    # of limit that makes a probe report "no releases" when the truth is "not
+    # right now" - a false negative that would send us building the wrong sport.
+    token = os.environ.get("GITHUB_TOKEN")
+    if token:
+        hdr["Authorization"] = f"Bearer {token}"
+    try:
+        r = requests.get(url, headers=hdr, timeout=TIMEOUT)
+    except requests.RequestException as exc:
+        print(f"  {repo:<38} unreachable {str(exc)[:30]}")
+        return []
+    if r.status_code != 200:
+        note = "rate limited, not empty" if r.status_code in (403, 429) else ""
+        print(f"  {repo:<38} HTTP {r.status_code} - no releases listing {note}")
+        return []
+    rel = r.json()
+    if not rel:
+        print(f"  {repo:<38} no releases published")
+        return []
+
+    out = []
+    print(f"  {repo}  ({len(rel)} release tags)")
+    for entry in rel:
+        tag = entry.get("tag_name", "?")
+        assets = entry.get("assets") or []
+        for a in assets:
+            out.append((tag, a.get("name", ""), a.get("browser_download_url", "")))
+    for entry in rel[:16]:
+        tag = entry.get("tag_name", "?")
+        names = [a.get("name", "") for a in (entry.get("assets") or [])]
+        recent = [n for n in names if "2026" in n or "2025" in n][:3] or names[:3]
+        print(f"     {tag:<30} {len(names):>4} assets  {recent}")
+    if len(rel) > 16:
+        print(f"     ... and {len(rel) - 16} more tags")
+    return out
+
+
+# What each sport needs out of a release listing: a per-player, per-game box
+# score, and a schedule carrying a line. The keywords are deliberately loose -
+# the whole point is that we do not know the naming convention yet.
+WANTED = {
+    "player box": ("player_box", "player-box", "playerbox", "game_logs",
+                   "gamelogs", "box_score", "boxscore"),
+    "schedule": ("schedule", "games"),
+}
+
+
+def resolve(assets: list[tuple[str, str, str]], season_hint=("2025", "2024")):
+    """Pick the real URLs worth probing out of a release listing.
+
+    This is the step that collapses two round trips into one. Without it the
+    probe reports "your guessed URL 404s" and the next run guesses again; with
+    it the probe finds the actual file and reads its columns immediately.
+    """
+    picks = []
+    for kind, keys in WANTED.items():
+        cands = [(t, n, u) for (t, n, u) in assets
+                 if any(k in (t + "/" + n).lower() for k in keys)
+                 and n.lower().endswith((".csv", ".csv.gz", ".parquet", ".rds"))]
+        # Prefer a recent season, and CSV over parquet - pandas reads parquet
+        # only if pyarrow is installed, and a probe that fails on a missing
+        # dependency reports a data problem that is really an install problem.
+        def rank(item):
+            _, name, _ = item
+            season = next((i for i, s in enumerate(season_hint) if s in name), 9)
+            fmt = 0 if name.endswith(".csv") else 1 if name.endswith(".csv.gz") else 2
+            return (fmt, season, name)
+        cands.sort(key=rank)
+        for tag, name, url in cands[:2]:
+            # Label from the ASSET name, not the tag. Truncating "tag/name"
+            # cut off the season and made two different files print under one
+            # identical label - a report where two rows cannot be told apart
+            # is a report that cannot be acted on.
+            picks.append((f"{kind}: {name}"[:34], url))
+    return picks
+
+
+def cfbd(key: str | None) -> None:
+    """College football, which is the one sport already unblocked by a key."""
+    sub("COLLEGE FOOTBALL: WITH THE KEY")
+    if not key:
+        print("  No CFBD_API_KEY secret set. The endpoint answered 401 rather")
+        print("  than refusing the connection, which means it is reachable and")
+        print("  only wants authorisation - add the secret and rerun.")
+        return
+    hdr = dict(UA)
+    hdr["Authorization"] = f"Bearer {key}"
+    for label, url in [
+        ("games", "https://api.collegefootballdata.com/games?year=2025&week=3"),
+        ("player game stats",
+         "https://api.collegefootballdata.com/games/players?year=2025&week=3"),
+        ("betting lines",
+         "https://api.collegefootballdata.com/lines?year=2025&week=3"),
+    ]:
+        try:
+            r = requests.get(url, headers=hdr, timeout=TIMEOUT)
+        except requests.RequestException as exc:
+            print(f"  {label:<22} unreachable {str(exc)[:34]}")
+            continue
+        note = ""
+        if r.status_code == 200:
+            try:
+                j = r.json()
+                note = f"{len(j)} records"
+                if isinstance(j, list) and j:
+                    note += f", keys {sorted(j[0])[:8]}"
+            except Exception:
+                note = f"{len(r.content):,} bytes"
+        print(f"  {label:<22} HTTP {r.status_code:<4} {note}")
 
 
 def draftkings() -> dict:
@@ -206,14 +354,38 @@ def main(argv=None) -> int:
 
     live = draftkings()
 
+    sub("WHAT THESE DATA REPOS ACTUALLY PUBLISH")
+    print("  Four guessed URLs returned 404 in the first run, which says only")
+    print("  that the guesses were wrong. This asks the releases API what the")
+    print("  tags and asset names really are - and then reads the real files,")
+    print("  in this run, rather than coming back tomorrow with better guesses.\n")
+    discovered = {}
+    for sport, repo in REPOS.items():
+        assets = release_assets(repo)
+        discovered[sport] = resolve(assets)
+        print()
+
+    cfbd(os.environ.get("CFBD_API_KEY"))
+
     found = {}
     for sport in args.sports:
         sub(f"{sport.upper()}: HISTORY TO TRAIN ON")
         found[sport] = {"history": [describe(l, u)
                                     for l, u in HISTORY.get(sport, [])]}
+
+        real = discovered.get(sport) or []
+        if real:
+            sub(f"{sport.upper()}: THE FILES THAT ACTUALLY EXIST")
+            print("  Found by listing, not by guessing.\n")
+            for label, url in real:
+                got = describe(label, url)
+                key = "lines" if label.startswith("schedule") else "history"
+                found[sport].setdefault(key, []).append(got)
+
         sub(f"{sport.upper()}: MARKET LINES")
-        found[sport]["lines"] = [describe(l, u)
-                                 for l, u in LINES.get(sport, [])]
+        found[sport].setdefault("lines", [])
+        found[sport]["lines"] += [describe(l, u)
+                                  for l, u in LINES.get(sport, [])]
 
     head("WHAT THIS MEANS")
     for sport in args.sports:
