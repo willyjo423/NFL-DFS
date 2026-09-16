@@ -160,6 +160,25 @@ def simulate(players: pd.DataFrame, quantiles: list[float], n: int,
     for i in range(len(players)):
         out[i] = _quantile_curve(zq, grid[i], z[i])
     np.clip(out, 0.0, None, out=out)
+
+    # The availability gate, applied AFTER the correlated draw.
+    #
+    # The quantile curves are conditional on a player taking the field, so a
+    # simulation that stopped here would field every injured player in every
+    # one of its fifty thousand universes. A Bernoulli draw per player per
+    # simulation puts the zeros back.
+    #
+    # Deliberately drawn INDEPENDENTLY of the correlated normals. Whether a
+    # receiver is active has nothing to do with whether his quarterback throws
+    # for three hundred yards, and forcing the two through the same copula
+    # would invent a dependence nobody asked for. The one real correlation
+    # this ignores - that a team's passing game shifts when its starting
+    # quarterback is out - is second-order and would need a depth chart to
+    # model, so it is left out rather than approximated badly.
+    if "p_play" in players.columns:
+        p = pd.to_numeric(players["p_play"], errors="coerce").to_numpy(float)
+        p = np.clip(np.nan_to_num(p, nan=1.0), 0.0, 1.0)[:, None]
+        out = out * (rng.random(out.shape) < p)
     return out
 
 
