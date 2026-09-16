@@ -50,7 +50,8 @@ def slate_payload(draft_group: int, site: str, showdown: bool,
                   sims: int, field_size: int) -> dict:
     roster = config.ROSTERS[(site, "Showdown Captain Mode" if showdown
                              else "Classic")]
-    out = P.run(draft_group, site=site)
+    out = P.run(draft_group, site=site,
+                captain_multiplier=roster.get("captain_multiplier"))
     pool = out["players"].reset_index(drop=True)
 
     own = OWN.project(pool, roster)
@@ -95,6 +96,15 @@ def slate_payload(draft_group: int, site: str, showdown: bool,
             "own": round(float(r.ownership), 4),
             "lev": round(float(r.leverage), 3),
             "status": str(getattr(r, "playing", "clear")),
+            # The two-part model's other half, published so the page can show
+            # it. A projection of 18 points at a 55% chance of playing is a
+            # completely different bet from 18 points at 99%, and a page that
+            # shows only the first is hiding the more important number.
+            "pplay": (round(float(r.p_play), 3)
+                      if getattr(r, "p_play", None) == getattr(
+                          r, "p_play", None) else None),
+            "mean": round(float(getattr(r, "mean", r.median)), ROUND),
+            "inj": str(getattr(r, "injury_status", "") or ""),
         })
 
     # The loadings, so the browser can rebuild the same correlation. This is
@@ -133,40 +143,94 @@ def roster_name(roster: dict) -> str:
     return "showdown" if "CPT" in roster["slots"] else "classic"
 
 
-def run(kinds: list[str], site: str, sims: int, field_size: int) -> list[dict]:
-    written = []
-    for kind in kinds:
-        try:
-            dg, label = P.pick_slate(kind)
-        except SystemExit as exc:
-            log.warning("no live %s slate (%s)", kind, exc)
+def run(kinds: list[str], site: str, sims: int, field_size: int,
+        max_slates: int = 12, min_contests: int = 1) -> list[dict]:
+    """Build EVERY live slate we have roster rules for, not one per kind.
+
+    The first version took the busiest Classic and the busiest Showdown and
+    stopped. That is why the page's dropdown only ever had two entries while
+    DraftKings was selling twenty-eight: the manifest is the dropdown, and the
+    manifest had two rows in it. The page was never broken - it was faithfully
+    showing everything it had been given.
+
+    Every draft group DraftKings lists is now built, subject to two limits
+    that exist for real reasons rather than tidiness:
+
+    * **Roster rules must exist.** Best Ball, Snake, Tiers and Madden are all
+      in the same lobby and none of them is a salary-cap lineup. Building one
+      with Classic rules would produce a confident, illegal entry. A slate
+      whose game type has no rules is recorded as skipped, with its name, so
+      the gap is visible rather than silent.
+    * **Time.** Each slate is a full fit, fifty thousand correlated draws and
+      two optimisations, so the count is capped and the busiest slates are
+      built first. The cap is a parameter, not a belief.
+    """
+    import project as PR
+    try:
+        table = data.slates()
+    except Exception as exc:                                   # noqa: BLE001
+        log.error("could not list slates: %s", exc)
+        return []
+
+    wanted = {k.lower() for k in kinds} if kinds else set()
+    written, skipped = [], []
+    built = 0
+    for row in table.itertuples(index=False):
+        game_type = str(row.game_type)
+        key = (site, game_type)
+        if key not in config.ROSTERS:
+            skipped.append((game_type, int(row.contests)))
             continue
-        log.info("building %s: %s (draft group %s)", kind, label, dg)
+        kind = "showdown" if "showdown" in game_type.lower() else "classic"
+        if wanted and kind not in wanted:
+            continue
+        if int(row.contests) < min_contests:
+            continue
+        if built >= max_slates:
+            skipped.append((f"{game_type} (over the cap of {max_slates})",
+                            int(row.contests)))
+            continue
+
+        dg = int(row.draft_group)
+        label = str(getattr(row, "example", "") or game_type)
+        log.info("building %s: %s (draft group %s, %d contests)",
+                 kind, label, dg, int(row.contests))
         try:
             payload = slate_payload(dg, site, kind == "showdown", sims,
                                     field_size)
-        except Exception as exc:                      # noqa: BLE001
+        except Exception as exc:                               # noqa: BLE001
             # One dead slate must not take the whole publish down. The page
             # shows what it has, and the manifest records what failed.
-            log.error("%s slate failed: %s: %s", kind, type(exc).__name__, exc)
+            log.error("%s slate %s failed: %s: %s", kind, dg,
+                      type(exc).__name__, exc)
             written.append({"kind": kind, "draft_group": dg, "label": label,
                             "error": f"{type(exc).__name__}: {exc}"})
             continue
         payload["label"] = label
+        payload["contests"] = int(row.contests)
+        payload["starts"] = str(getattr(row, "starts", "") or "")
 
         folder = OUT / payload["sport"]
         folder.mkdir(parents=True, exist_ok=True)
         path = folder / f"{site}-{kind}-{dg}.json"
         path.write_text(json.dumps(payload, separators=(",", ":")))
+        built += 1
         log.info("wrote %s (%.0f KB, %d players)", path,
                  path.stat().st_size / 1024, len(payload["players"]))
         written.append({
             "kind": kind, "sport": payload["sport"], "site": site,
             "draft_group": dg, "label": label,
+            "contests": int(row.contests),
+            "starts": payload["starts"],
             "file": f"data/{payload['sport']}/{path.name}",
             "players": len(payload["players"]),
             "generated_at": payload["generated_at"],
         })
+
+    if skipped:
+        log.info("skipped %d slates with no roster rules: %s", len(skipped),
+                 ", ".join(f"{g} ({n})" for g, n in skipped[:8]))
+    log.info("built %d slates", built)
     return written
 
 
@@ -174,14 +238,19 @@ def main(argv=None) -> int:
     p = argparse.ArgumentParser(description=__doc__)
     p.add_argument("--sport", default="nfl")
     p.add_argument("--site", default="dk", choices=["dk", "fd"])
-    p.add_argument("--kinds", nargs="*", default=["classic", "showdown"])
+    p.add_argument("--kinds", nargs="*", default=[],
+                   help="blank means every kind we have roster rules for")
     p.add_argument("--sims", type=int, default=config.SIMS_GPP)
     p.add_argument("--field", type=int, default=100_000)
+    p.add_argument("--max-slates", type=int, default=12,
+                   help="how many slates to build; each is a full fit plus "
+                        "50k correlated draws, so this is a time budget")
     args = p.parse_args(argv)
     logging.basicConfig(level=logging.INFO, format="%(levelname)s %(message)s")
 
     OUT.mkdir(parents=True, exist_ok=True)
-    written = run(args.kinds, args.site, args.sims, args.field)
+    written = run(args.kinds, args.site, args.sims, args.field,
+                  max_slates=args.max_slates)
 
     manifest = OUT / "manifest.json"
     prior = {}
