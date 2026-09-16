@@ -302,8 +302,28 @@ def coverage(merged: pd.DataFrame, history: pd.DataFrame) -> dict:
     }
 
 
+def upcoming_week(lines, weeks) -> tuple[int, int]:
+    """Which season and week this board is for.
+
+    Taken from the data rather than from the clock. A board pulled on Tuesday
+    is for the coming Sunday, and asking the calendar would match it against
+    last week's injury report - a report that is real, parses cleanly, and is
+    wrong about exactly the players whose status changed.
+    """
+    if lines is not None and len(lines):
+        season = int(pd.to_numeric(lines["season"], errors="coerce").max())
+        wk = lines[pd.to_numeric(lines["season"], errors="coerce") == season]
+        week = int(pd.to_numeric(wk["week"], errors="coerce").max())
+        return season, week
+    season = int(pd.to_numeric(weeks["season"], errors="coerce").max())
+    played = weeks[pd.to_numeric(weeks["season"], errors="coerce") == season]
+    # The next week is one past the last one with results in it.
+    return season, int(pd.to_numeric(played["week"], errors="coerce").max()) + 1
+
+
 def run(draft_group: int, site: str = "dk",
-        seasons: list[int] | None = None) -> dict:
+        seasons: list[int] | None = None,
+        captain_multiplier: float | None = None) -> dict:
     seasons = seasons or list(range(config.TRAIN_START_SEASON,
                                     datetime.now(timezone.utc).year + 1))
     log.info("loading seasons %s-%s", seasons[0], seasons[-1])
@@ -326,7 +346,34 @@ def run(draft_group: int, site: str = "dk",
     latest = M.latest_rows(built)
     latest = refresh_market(latest, lines)
 
-    pool = data.draftables(draft_group)
+    # The captain multiplier travels down from the roster rules, because the
+    # lobby endpoint no longer carries a captain row to read it from.
+    pool = data.draftables(draft_group, captain_multiplier=captain_multiplier)
+
+    # The official injury report, applied BEFORE anyone is dropped.
+    #
+    # DraftKings' lobby endpoint reports every player as healthy - 658 of 658
+    # on a live board - so without this the availability filter below is
+    # filtering nothing, and an inactive player reaches a lineup. The league's
+    # own weekly report is free and is the only real evidence available.
+    #
+    # The week comes from the schedule rather than the calendar, so a board
+    # pulled on a Tuesday is matched against the week it is actually for.
+    season, week = upcoming_week(lines, weeks)
+    try:
+        report = data.injuries(season)
+        pool = data.attach_injuries(pool, report, season, week)
+        matched = pool.attrs.get("injury_matched", 0)
+        if matched == 0:
+            log.error("NO injury information reached this board (%s). Every "
+                      "player will read as available, which is how an "
+                      "inactive player gets rostered - treat the lineups as "
+                      "unfiltered until this is fixed.",
+                      pool.attrs.get("injury_note", ""))
+    except Exception as exc:                                   # noqa: BLE001
+        log.error("injury report unavailable (%s: %s); the board cannot see "
+                  "who is inactive", type(exc).__name__, str(exc)[:80])
+
     pool, dropped = drop_unavailable(pool)
 
     merged = pool.merge(latest[history_columns(latest)],
