@@ -127,8 +127,32 @@ def appeal(pool: pd.DataFrame) -> pd.Series:
     """
     salary = pd.to_numeric(pool["salary"], errors="coerce")
     per_k = salary / 1000.0
-    median = pd.to_numeric(pool.get("median"), errors="coerce")
-    ceiling = pd.to_numeric(pool.get("ceiling"), errors="coerce")
+    # The AVAILABILITY-ADJUSTED projection, not the conditional one. The field
+    # does not roster a player who is not playing, however good he is when he
+    # does - so ownership has to be driven by the unconditional expectation.
+    # Reading the conditional median here would have made a doubtful star look
+    # like the chalk of the slate.
+    def column(name: str) -> pd.Series:
+        """A numeric Series aligned to the pool, whether or not the column
+        exists. `pool.get(name)` returns None for a missing column and
+        `pd.to_numeric(None)` returns a bare scalar, not a Series - which is
+        how the first version of this turned a missing column into an
+        AttributeError two calls later instead of an empty column here."""
+        if name not in pool.columns:
+            return pd.Series(np.nan, index=pool.index, dtype=float)
+        return pd.to_numeric(pool[name], errors="coerce")
+
+    # The AVAILABILITY-ADJUSTED projection, not the conditional one. The field
+    # does not roster a player who is not playing, however good he is when he
+    # does - so ownership has to be driven by the unconditional expectation.
+    # Reading the conditional median here would have made a doubtful star look
+    # like the chalk of the slate.
+    median = column("mean")
+    if median.isna().all():
+        median = column("median")
+    ceiling = column("ceiling")
+    if "p_play" in pool.columns:
+        ceiling = ceiling * column("p_play").fillna(1.0)
     if ceiling.isna().all():
         ceiling = median
 
