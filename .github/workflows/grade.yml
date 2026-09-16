@@ -1,0 +1,62 @@
+name: Grade the model
+
+on:
+  workflow_dispatch:
+    inputs:
+      seasons:
+        description: "Seasons to load (space separated)"
+        required: false
+        default: "2021 2022 2023 2024 2025"
+      test_season:
+        description: "Season to grade"
+        required: false
+        default: "2025"
+      from_week:
+        description: "First week to grade"
+        required: false
+        default: "4"
+      to_week:
+        description: "Last week to grade"
+        required: false
+        default: "17"
+
+jobs:
+  grade:
+    runs-on: ubuntu-latest
+    timeout-minutes: 180
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: pip
+
+      - name: Install
+        run: pip install -r requirements.txt
+
+      - name: Grade
+        run: |
+          python grade.py \
+            --seasons ${{ inputs.seasons }} \
+            --test-season ${{ inputs.test_season }} \
+            --from-week ${{ inputs.from_week }} \
+            --to-week ${{ inputs.to_week }} 2>&1 | tee grade.txt
+
+      - name: Put it on the run page
+        if: always()
+        run: |
+          {
+            echo '## Model grade'
+            echo '```'
+            tail -c 60000 grade.txt || echo "(no output captured)"
+            echo '```'
+          } >> "$GITHUB_STEP_SUMMARY"
+
+      - name: Keep the output
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: model-grade
+          path: grade.txt
+          retention-days: 90
+          if-no-files-found: warn
