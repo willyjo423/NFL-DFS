@@ -234,7 +234,8 @@ def walk(built: pd.DataFrame, test_weeks: list[tuple[int, int]],
                             "prior_position") if c in now.columns]
         out = now[keep].reset_index(drop=True)
         for c in pred.columns:
-            if c.startswith("q") or c in ("median", "mean", "ceiling"):
+            if c.startswith("q") or c in ("median", "mean", "ceiling",
+                                          "cond_mean", "p_play"):
                 out[c] = pred[c].to_numpy()
         out["trained_on"] = len(train)
         rows.append(out)
@@ -263,8 +264,8 @@ def accuracy(g: pd.DataFrame) -> pd.DataFrame:
     # distribution sits below its average. A cash lineup wants expected value
     # and should read `mean`; the median would systematically undersell every
     # player by about a point.
-    for label, col in (("this model (median)", "median"),
-                       ("this model (mean)", "mean"),
+    for label, col in (("model median (if he plays)", "median"),
+                       ("model mean (availability-adjusted)", "mean"),
                        ("season average to date", "prior_mean"),
                        ("last game", "prior_last"),
                        ("positional average", "prior_position")):
@@ -327,6 +328,81 @@ def calibration_split(g: pd.DataFrame, quantiles) -> pd.DataFrame:
     out = pd.DataFrame(rows)
     if len(out):
         out["gap"] = (out["actually"] - out["should be"]).round(3)
+    return out
+
+
+def availability(g: pd.DataFrame) -> pd.DataFrame:
+    """How good the play/no-play half of the model is, on its own terms.
+
+    The quantiles are now conditional on a player taking the field, so the
+    model only works if the OTHER half - the probability he takes it - is
+    worth something. Graded three ways, because a probability can fail three
+    different ways:
+
+    * **Discrimination.** Does it rank the likely-to-play above the
+      unlikely-to-play? Measured by the chance a randomly chosen player who
+      played is given a higher probability than one who did not. A coin flip
+      scores 0.5.
+    * **Calibration.** Of the players it called 80% likely, did 80% play? A
+      model can discriminate perfectly and still be systematically
+      overconfident, and the two errors need different fixes.
+    * **Sharpness.** Is it saying anything at all? A model that returns the
+      base rate for everybody is perfectly calibrated and completely useless,
+      which is exactly the failure the first version of this had before the
+      availability-history features were added.
+    """
+    if "p_play" not in g:
+        return pd.DataFrame()
+    d = g.dropna(subset=["p_play", "points"]).copy()
+    if not len(d):
+        return pd.DataFrame()
+    d["played"] = (d["points"] > 0).astype(int)
+    if d["played"].nunique() < 2:
+        return pd.DataFrame()
+
+    p = d["p_play"].to_numpy(dtype=float)
+    y = d["played"].to_numpy(dtype=int)
+    # Rank-based AUC, computed directly so no extra dependency is needed.
+    order = np.argsort(p, kind="mergesort")
+    ranks = np.empty(len(p), dtype=float)
+    ranks[order] = np.arange(1, len(p) + 1)
+    # Average ranks over ties, or a constant predictor scores 1.0 rather than
+    # the 0.5 it deserves - which would report a useless model as a perfect one.
+    s_p = pd.Series(p)
+    ranks = s_p.rank(method="average").to_numpy()
+    n_pos, n_neg = int(y.sum()), int((1 - y).sum())
+    auc = (ranks[y == 1].sum() - n_pos * (n_pos + 1) / 2) / (n_pos * n_neg)
+    brier = float(np.mean((p - y) ** 2))
+
+    rows = [{"measure": "discrimination (AUC)", "value": round(float(auc), 3),
+             "coin flip is": 0.5},
+            {"measure": "Brier score (lower better)", "value": round(brier, 4),
+             "coin flip is": round(float(np.mean((y.mean() - y) ** 2)), 4)},
+            {"measure": "sharpness (std of p_play)",
+             "value": round(float(p.std()), 4), "coin flip is": 0.0},
+            {"measure": "base rate actually played",
+             "value": round(float(y.mean()), 3), "coin flip is": ""},
+            {"measure": "mean predicted p_play",
+             "value": round(float(p.mean()), 3), "coin flip is": ""}]
+    return pd.DataFrame(rows)
+
+
+def reliability(g: pd.DataFrame, bins: int = 5) -> pd.DataFrame:
+    """Of the players it called X% likely, what share actually played?"""
+    if "p_play" not in g:
+        return pd.DataFrame()
+    d = g.dropna(subset=["p_play", "points"]).copy()
+    if not len(d):
+        return pd.DataFrame()
+    d["played"] = (d["points"] > 0).astype(float)
+    try:
+        d["band"] = pd.qcut(d["p_play"], bins, duplicates="drop")
+    except ValueError:
+        return pd.DataFrame()
+    out = (d.groupby("band", observed=True)
+           .agg(players=("played", "size"), predicted=("p_play", "mean"),
+                actually_played=("played", "mean")).round(3).reset_index())
+    out["gap"] = (out["actually_played"] - out["predicted"]).round(3)
     return out
 
 
@@ -475,6 +551,36 @@ def main(argv=None) -> int:
             print("  -> the ceiling is overstated; boom outcomes are rarer")
             print("     than the model thinks, so GPP lineups are chasing")
             print("     upside that is not there.")
+
+    sub("THE OTHER HALF: DOES IT KNOW WHO WILL PLAY?")
+    av = availability(g)
+    if len(av):
+        print("  The quantiles are conditional on taking the field, so they")
+        print("  are only worth anything if this half is too.\n")
+        print(av.to_string(index=False))
+        rel = reliability(g)
+        if len(rel):
+            print("\n  and of the players it called each likelihood, how many")
+            print("  actually played:\n")
+            print(rel.to_string(index=False))
+        sharp = av.loc[av["measure"].str.startswith("sharpness"),
+                       "value"].iloc[0]
+        auc = av.loc[av["measure"].str.startswith("discrimination"),
+                     "value"].iloc[0]
+        if sharp < 0.02:
+            print("\n  -> it is returning nearly the same number for everyone.")
+            print("     That is a confident way of saying 'I do not know', and")
+            print("     it makes the availability half worthless.")
+        elif auc < 0.6:
+            print("\n  -> it barely separates who plays from who does not. The")
+            print("     conditional quantiles are still honest, but nothing is")
+            print("     being gained by splitting them out.")
+        else:
+            print("\n  -> it separates who plays from who does not, so the")
+            print("     split is earning its keep. An injury feed would raise")
+            print("     this further; this is what history alone can do.")
+    else:
+        print("  No p_play column - the model was fitted before the split.")
 
     sub("DOES IT RANK?")
     print("  The optimiser only ever consumes the ordering, so this is the")
