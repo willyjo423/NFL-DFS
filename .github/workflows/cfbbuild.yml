@@ -1,0 +1,60 @@
+name: CFB build
+
+on:
+  workflow_dispatch:
+    inputs:
+      season:
+        description: "Season year"
+        required: false
+        default: "2026"
+      week:
+        description: "Week (blank = the one holding the next kickoff)"
+        required: false
+        default: ""
+      slate:
+        description: "Draft group id (blank = biggest Classic slate)"
+        required: false
+        default: ""
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: pip
+
+      - name: Install
+        run: pip install -r requirements.txt
+
+      - name: Build
+        env:
+          CFBD_API_KEY: ${{ secrets.CFBD_API_KEY }}
+        run: |
+          ARGS="--season ${{ inputs.season }}"
+          if [ -n "${{ inputs.week }}" ];  then ARGS="$ARGS --week ${{ inputs.week }}"; fi
+          if [ -n "${{ inputs.slate }}" ]; then ARGS="$ARGS --slate ${{ inputs.slate }}"; fi
+          echo "EFFECTIVE ARGS: $ARGS"
+          python cfb_build.py $ARGS 2>&1 | tee cfbbuild.txt
+
+      - name: Put it on the run page
+        if: always()
+        run: |
+          {
+            echo '## CFB build'
+            echo '```'
+            tail -c 60000 cfbbuild.txt || echo "(no output captured)"
+            echo '```'
+          } >> "$GITHUB_STEP_SUMMARY"
+
+      - name: Keep the output
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: cfb-build
+          path: cfbbuild.txt
+          retention-days: 30
+          if-no-files-found: warn
