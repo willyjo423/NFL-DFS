@@ -1,0 +1,49 @@
+name: Sport probe
+
+# Which sports can actually be built, and from what.
+#
+# Run this BEFORE any NBA, MLB, NHL or college football code gets written.
+# Adding a sport is four jobs - a live slate, a per-player history, a market
+# line, and names that join - and three of them can fail independently. This
+# finds out which, in two minutes, instead of after a day of building on a
+# source that turns out not to exist.
+
+on:
+  workflow_dispatch:
+    inputs:
+      sports:
+        description: "Sports to probe, space separated (blank = nba mlb nhl cfb)"
+        required: false
+        default: ""
+
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: pip
+
+      - name: Install
+        run: pip install -r requirements.txt
+
+      - name: Probe
+        run: |
+          ARGS=""
+          if [ -n "${{ inputs.sports }}" ]; then
+            ARGS="--sports ${{ inputs.sports }}"
+          fi
+          echo "EFFECTIVE ARGS: $ARGS"
+          python sport_probe.py $ARGS | tee sportprobe.txt
+
+      - name: Keep the output
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: sport-probe
+          path: sportprobe.txt
+          retention-days: 30
+          if-no-files-found: warn
