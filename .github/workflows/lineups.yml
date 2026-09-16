@@ -1,17 +1,16 @@
 name: DFS lineups
 
-# The full chain: fit, project, simulate the slate with the players correlated,
-# enumerate legal lineups, and pick between them by contest objective.
-#
-# The solver checks run here and only here - pulp is not installable in every
-# environment, so a green offline run elsewhere does NOT cover the optimiser.
-
 on:
   workflow_dispatch:
     inputs:
       draft_group:
-        description: "DraftKings draft group id (required)"
-        required: true
+        description: "Draft group id (blank = pick the busiest slate below)"
+        required: false
+        default: ""
+      slate:
+        description: "showdown or classic - used when draft group is blank"
+        required: false
+        default: "classic"
       site:
         description: "dk or fd"
         required: false
@@ -44,9 +43,6 @@ jobs:
       - name: Install
         run: pip install -r requirements.txt
 
-      # Every offline check, including the solver ones that can only run where
-      # pulp exists. A lineup built on an unverified optimiser is worse than no
-      # lineup, because it looks like an answer.
       - name: Offline checks
         run: |
           python test_scoring.py
@@ -56,8 +52,11 @@ jobs:
       - name: Build lineups
         run: |
           mkdir -p data/lineups
-          ARGS="--draft-group ${{ inputs.draft_group }} --site ${{ inputs.site }}"
-          ARGS="$ARGS --entries ${{ inputs.entries }}"
+          ARGS="--site ${{ inputs.site }} --entries ${{ inputs.entries }}"
+          if [ -n "${{ inputs.draft_group }}" ]; then
+            ARGS="$ARGS --draft-group ${{ inputs.draft_group }}"
+          fi
+          ARGS="$ARGS --slate ${{ inputs.slate }}"
           if [ "${{ inputs.classic }}" = "true" ]; then ARGS="$ARGS --classic"; fi
           if [ -n "${{ inputs.sims }}" ]; then ARGS="$ARGS --sims ${{ inputs.sims }}"; fi
           echo "EFFECTIVE ARGS: $ARGS"
