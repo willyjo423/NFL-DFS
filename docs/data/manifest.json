@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-09-15T22:02:39+00:00",
+  "updated_at": "2026-09-16T13:10:47+00:00",
   "slates": [
     {
       "kind": "classic",
@@ -8,8 +8,8 @@
       "draft_group": 153428,
       "label": "NFL $3M Fantasy Football Millionaire [$1M to 1st]",
       "file": "data/nfl/dk-classic-153428.json",
-      "players": 481,
-      "generated_at": "2026-09-15T13:08:54+00:00"
+      "players": 530,
+      "generated_at": "2026-09-16T13:09:57+00:00"
     },
     {
       "kind": "showdown",
@@ -18,22 +18,9 @@
       "draft_group": 153434,
       "label": "NFL Showdown $1.5M Thursday Night Showdown [$500K to 1st] (DET @ BUF)",
       "file": "data/nfl/dk-showdown-153434.json",
-      "players": 33,
-      "generated_at": "2026-09-15T13:09:30+00:00"
+      "players": 35,
+      "generated_at": "2026-09-16T13:10:47+00:00"
     }
   ],
-  "failures": [
-    {
-      "kind": "classic",
-      "draft_group": 153428,
-      "label": "NFL $3M Fantasy Football Millionaire [$1M to 1st]",
-      "error": "DataUnavailable: https://api.draftkings.com/draftgroups/v1/draftgroups/153428/draftables: 403 Client Error: Forbidden for url: https://api.draftkings.com/draftgroups/v1/draftgroups/153428/draftables"
-    },
-    {
-      "kind": "showdown",
-      "draft_group": 153434,
-      "label": "NFL Showdown $1.5M Thursday Night Showdown [$500K to 1st] (DET @ BUF)",
-      "error": "DataUnavailable: https://api.draftkings.com/draftgroups/v1/draftgroups/153434/draftables: 403 Client Error: Forbidden for url: https://api.draftkings.com/draftgroups/v1/draftgroups/153434/draftables"
-    }
-  ]
+  "failures": []
 }
