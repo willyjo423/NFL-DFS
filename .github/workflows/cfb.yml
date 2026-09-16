@@ -1,0 +1,57 @@
+name: CFB explore
+
+on:
+  workflow_dispatch:
+    inputs:
+      season:
+        description: "Season year"
+        required: false
+        default: "2026"
+      week:
+        description: "Week (blank = find the live one)"
+        required: false
+        default: ""
+
+jobs:
+  explore:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: pip
+
+      - name: Install
+        run: pip install -r requirements.txt
+
+      - name: Explore
+        env:
+          CFBD_API_KEY: ${{ secrets.CFBD_API_KEY }}
+        run: |
+          ARGS="--season ${{ inputs.season }}"
+          if [ -n "${{ inputs.week }}" ]; then
+            ARGS="$ARGS --week ${{ inputs.week }}"
+          fi
+          echo "EFFECTIVE ARGS: $ARGS"
+          python cfb_explore.py $ARGS 2>&1 | tee cfb.txt
+
+      - name: Put it on the run page
+        if: always()
+        run: |
+          {
+            echo '## CFB explore'
+            echo '```'
+            tail -c 60000 cfb.txt || echo "(no output captured)"
+            echo '```'
+          } >> "$GITHUB_STEP_SUMMARY"
+
+      - name: Keep the output
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: cfb-explore
+          path: cfb.txt
+          retention-days: 30
+          if-no-files-found: warn
