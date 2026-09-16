@@ -1,13 +1,5 @@
 name: Sport probe
 
-# Which sports can actually be built, and from what.
-#
-# Run this BEFORE any NBA, MLB, NHL or college football code gets written.
-# Adding a sport is four jobs - a live slate, a per-player history, a market
-# line, and names that join - and three of them can fail independently. This
-# finds out which, in two minutes, instead of after a day of building on a
-# source that turns out not to exist.
-
 on:
   workflow_dispatch:
     inputs:
@@ -31,13 +23,31 @@ jobs:
         run: pip install -r requirements.txt
 
       - name: Probe
+        env:
+          CFBD_API_KEY: ${{ secrets.CFBD_API_KEY }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           ARGS=""
           if [ -n "${{ inputs.sports }}" ]; then
             ARGS="--sports ${{ inputs.sports }}"
           fi
           echo "EFFECTIVE ARGS: $ARGS"
-          python sport_probe.py $ARGS | tee sportprobe.txt
+          if [ -n "$CFBD_API_KEY" ]; then
+            echo "CFBD key: present (${#CFBD_API_KEY} chars)"
+          else
+            echo "CFBD key: NOT SET - college football will come back 401"
+          fi
+          python sport_probe.py $ARGS 2>&1 | tee sportprobe.txt
+
+      - name: Put it on the run page
+        if: always()
+        run: |
+          {
+            echo '## Sport probe'
+            echo '```'
+            tail -c 60000 sportprobe.txt || echo "(no output captured)"
+            echo '```'
+          } >> "$GITHUB_STEP_SUMMARY"
 
       - name: Keep the output
         if: always()
