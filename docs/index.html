@@ -477,8 +477,12 @@ function build() {
     // Understated, because a random field is softer than a real one - but a
     // bar that is uniformly too low still RANKS candidates correctly, which
     // is all it is used for.
+    // Enough draws that the requested quantile is a real number rather than
+    // just the maximum of a small sample. At 1,500, index 1,498 of 1,500 IS
+    // very nearly the max, so the old top-0.1% bar was as much noise as
+    // threshold - and every lineup was being ranked against it.
     const rough = [];
-    for (let t = 0; t < 1500; t++) {
+    for (let t = 0; t < 20000; t++) {
       let tot = 0;
       for (let k = 0; k < roster.slots.length; k++) {
         const i = Math.floor(Math.random() * players.length);
@@ -487,8 +491,20 @@ function build() {
       rough.push(tot);
     }
     rough.sort((a, b) => a - b);
+    // The bar a lineup must clear comes from the contest you entered, not
+    // from a constant.
+    //
+    // This was fixed at the top 0.1% for every build. For a milly-maker that
+    // is about right. For a 135-person tournament it is wrong by an order of
+    // magnitude - winning there needs roughly a top 0.74% score, one in 135 -
+    // and ranking candidates against a one-in-a-thousand bar systematically
+    // over-rewards variance. It prefers the lineup that occasionally goes
+    // enormous over the one that more often clears the only number that
+    // matters, and it does it silently, because the tile still read
+    // "top 0.1%" and looked deliberate.
+    const gppTarget = Math.min(0.999, 1 - 1 / Math.max(field, 2));
     const cashLine = quantile(rough, 0.5);
-    const gppLine = quantile(rough, 0.999);
+    const gppLine = quantile(rough, gppTarget);
 
     const mean = new Float64Array(players.length);
     for (let i = 0; i < players.length; i++) {
@@ -553,7 +569,7 @@ function build() {
       if (chosen.length >= entries) break;
     }
 
-    render(chosen, { sims, cashLine, gppLine, objective, field,
+    render(chosen, { sims, cashLine, gppLine, gppTarget, objective, field,
                      ms: performance.now() - t0, pool: cands.length });
   }, 20);
 }
@@ -567,7 +583,9 @@ function render(chosen, meta) {
     ["Simulations", meta.sims.toLocaleString(), "correlated slate draws"],
     ["Lineups searched", meta.pool.toLocaleString(), "distinct and legal"],
     ["Cash bar", fmt(meta.cashLine), "beats a rough half the field"],
-    ["Tournament bar", fmt(meta.gppLine), "top 0.1% of a rough field"],
+    ["Tournament bar", fmt(meta.gppLine),
+     "top " + (100 * (1 - meta.gppTarget)).toFixed(2) + "% \u2014 one in "
+     + Math.round(1 / (1 - meta.gppTarget)).toLocaleString()],
     ["Built in", (meta.ms / 1000).toFixed(1) + "s", "in this browser"],
   ].map(([k, v, n]) =>
     `<div class="tile"><span class="k">${k}</span><span class="v">${v}</span>
