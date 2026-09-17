@@ -1,0 +1,52 @@
+dk_player_id,draftable_id,name,position,team,salary,roster_slot,status,disabled,attributes,game,starts_utc,norm,flex_eligible,captain_salary,playing,draft_group,game_type,captured_at
+323,0,Falcons,DST,ATL,4000,512,,False,,CAR @ ATL,1970-01-01 00:29:49.923600+00:00,falcons,0,4000,clear,153437,Showdown Captain Mode,2026-09-17T15:15:34+00:00
+364,0,Panthers,DST,CAR,3800,512,,False,,CAR @ ATL,1970-01-01 00:29:49.923600+00:00,panthers,0,3800,clear,153437,Showdown Captain Mode,2026-09-17T15:15:34+00:00
+213781,0,Nick Folk,K,ATL,5000,512,,False,,CAR @ ATL,1970-01-01 00:29:49.923600+00:00,nick folk,0,5000,clear,153437,Showdown Captain Mode,2026-09-17T15:15:34+00:00
+600191,0,Darren Waller,TE,CAR,3600,512,,False,,CAR @ ATL,1970-01-01 00:29:49.923600+00:00,darren waller,0,3600,clear,153437,Showdown Captain Mode,2026-09-17T15:15:34+00:00
+694117,0,Cooper Rush,QB,ATL,8400,512,,False,,CAR @ ATL,1970-01-01 00:29:49.923600+00:00,cooper rush,0,8400,clear,153437,Showdown Captain Mode,2026-09-17T15:15:34+00:00
+739424,0,Austin Hooper,TE,ATL,1600,512,,False,,CAR @ ATL,1970-01-01 00:29:49.923600+00:00,austin hooper,0,1600,clear,153437,Showdown Captain Mode,2026-09-17T15:15:34+00:00
+883976,0,Olamide Zaccheaus,WR,ATL,2600,512,,False,,CAR @ ATL,1970-01-01 00:29:49.923600+00:00,olamide zaccheaus,0,2600,clear,153437,Showdown Captain Mode,2026-09-17T15:15:34+00:00
+910377,0,Feleipe Franks,TE,CAR,200,512,,False,,CAR @ ATL,1970-01-01 00:29:49.923600+00:00,feleipe franks,0,200,clear,153437,Showdown Captain Mode,2026-09-17T15:15:34+00:00
+922040,0,Charlie Woerner,TE,ATL,600,512,,False,,CAR @ ATL,1970-01-01 00:29:49.923600+00:00,charlie woerner,0,600,clear,153437,Showdown Captain Mode,2026-09-17T15:15:34+00:00
+973947,0,Tua Tagovailoa,QB,ATL,8600,512,,False,,CAR @ ATL,1970-01-01 00:29:49.923600+00:00,tua tagovailoa,0,8600,clear,153437,Showdown Captain Mode,2026-09-17T15:15:34+00:00
+973966,0,Brian Robinson Jr.,RB,ATL,3200,512,,False,,CAR @ ATL,1970-01-01 00:29:49.923600+00:00,brian robinson,0,3200,clear,153437,Showdown Captain Mode,2026-09-17T15:15:34+00:00
+976236,0,Trey Sermon,RB,ATL,200,512,,False,,CAR @ ATL,1970-01-01 00:29:49.923600+00:00,trey sermon,0,200,clear,153437,Showdown Captain Mode,2026-09-17T15:15:34+00:00
+976924,0,Kenny Pickett,QB,CAR,6000,512,,False,,CAR @ ATL,1970-01-01 00:29:49.923600+00:00,kenny pickett,0,6000,clear,153437,Showdown Captain Mode,2026-09-17T15:15:34+00:00
+1049792,0,Nick Muse,TE,ATL,200,512,,False,,CAR @ ATL,1970-01-01 00:29:49.923600+00:00,nick muse,0,200,clear,153437,Showdown Captain Mode,2026-09-17T15:15:34+00:00
+1049915,0,David Moore,WR,CAR,200,512,,False,,CAR @ ATL,1970-01-01 00:29:49.923600+00:00,david moore,0,200,clear,153437,Showdown Captain Mode,2026-09-17T15:15:34+00:00
+1060545,0,AJ Dillon,RB,CAR,2400,512,,False,,CAR @ ATL,1970-01-01 00:29:49.923600+00:00,aj dillon,0,2400,clear,153437,Showdown Captain Mode,2026-09-17T15:15:34+00:00
+1062047,0,Chuba Hubbard,RB,CAR,9800,512,,False,,CAR @ ATL,1970-01-01 00:29:49.923600+00:00,chuba hubbard,0,9800,clear,153437,Showdown Captain Mode,2026-09-17T15:15:34+00:00
+1107478,0,Michael Penix Jr.,QB,ATL,8800,512,,False,,CAR @ ATL,1970-01-01 00:29:49.923600+00:00,michael penix,0,8800,clear,153437,Showdown Captain Mode,2026-09-17T15:15:34+00:00
+1108534,0,Dylan Drummond,WR,ATL,200,512,,False,,CAR @ ATL,1970-01-01 00:29:49.923600+00:00,dylan drummond,0,200,clear,153437,Showdown Captain Mode,2026-09-17T15:15:34+00:00
+1120347,0,Chris Blair,WR,ATL,200,512,,False,,CAR @ ATL,1970-01-01 00:29:49.923600+00:00,chris blair,0,200,clear,153437,Showdown Captain Mode,2026-09-17T15:15:34+00:00
+1121878,0,Jahan Dotson,WR,ATL,4400,512,,False,,CAR @ ATL,1970-01-01 00:29:49.923600+00:00,jahan dotson,0,4400,clear,153437,Showdown Captain Mode,2026-09-17T15:15:34+00:00
+1123026,0,Kyle Pitts Sr.,TE,ATL,6400,512,,False,,CAR @ ATL,1970-01-01 00:29:49.923600+00:00,kyle pitts,0,6400,clear,153437,Showdown Captain Mode,2026-09-17T15:15:34+00:00
+1123525,0,Brycen Tremayne,WR,CAR,1000,512,,False,,CAR @ ATL,1970-01-01 00:29:49.923600+00:00,brycen tremayne,0,1000,clear,153437,Showdown Captain Mode,2026-09-17T15:15:34+00:00
+1130555,0,Tommy Tremble,TE,CAR,2200,512,,False,,CAR @ ATL,1970-01-01 00:29:49.923600+00:00,tommy tremble,0,2200,clear,153437,Showdown Captain Mode,2026-09-17T15:15:34+00:00
+1160348,0,John Metchie III,WR,CAR,800,512,,False,,CAR @ ATL,1970-01-01 00:29:49.923600+00:00,john metchie,0,800,clear,153437,Showdown Captain Mode,2026-09-17T15:15:34+00:00
+1168918,0,Tyler Goodson,RB,ATL,200,512,,False,,CAR @ ATL,1970-01-01 00:29:49.923600+00:00,tyler goodson,0,200,clear,153437,Showdown Captain Mode,2026-09-17T15:15:34+00:00
+1176373,0,Ryan Fitzgerald,K,CAR,4800,512,,False,,CAR @ ATL,1970-01-01 00:29:49.923600+00:00,ryan fitzgerald,0,4800,clear,153437,Showdown Captain Mode,2026-09-17T15:15:34+00:00
+1176431,0,Casey Washington,WR,CAR,200,512,,False,,CAR @ ATL,1970-01-01 00:29:49.923600+00:00,casey washington,0,200,clear,153437,Showdown Captain Mode,2026-09-17T15:15:34+00:00
+1178741,0,Drake London,WR,ATL,10000,512,,False,,CAR @ ATL,1970-01-01 00:29:49.923600+00:00,drake london,0,10000,clear,153437,Showdown Captain Mode,2026-09-17T15:15:34+00:00
+1180321,0,Xavier Legette,WR,CAR,3400,512,,False,,CAR @ ATL,1970-01-01 00:29:49.923600+00:00,xavier legette,0,3400,clear,153437,Showdown Captain Mode,2026-09-17T15:15:34+00:00
+1213257,0,Bryce Young,QB,CAR,9400,512,,False,,CAR @ ATL,1970-01-01 00:29:49.923600+00:00,bryce young,0,9400,clear,153437,Showdown Captain Mode,2026-09-17T15:15:34+00:00
+1214289,0,Ahmani Marshall,RB,CAR,200,512,,False,,CAR @ ATL,1970-01-01 00:29:49.923600+00:00,ahmani marshall,0,200,clear,153437,Showdown Captain Mode,2026-09-17T15:15:34+00:00
+1214336,0,Haynes King,QB,CAR,6000,512,,False,,CAR @ ATL,1970-01-01 00:29:49.923600+00:00,haynes king,0,6000,clear,153437,Showdown Captain Mode,2026-09-17T15:15:34+00:00
+1215789,0,Antwane Wells Jr.,WR,ATL,200,512,,False,,CAR @ ATL,1970-01-01 00:29:49.923600+00:00,antwane wells,0,200,clear,153437,Showdown Captain Mode,2026-09-17T15:15:34+00:00
+1218753,0,Jalen Coker,WR,CAR,8200,512,,False,,CAR @ ATL,1970-01-01 00:29:49.923600+00:00,jalen coker,0,8200,clear,153437,Showdown Captain Mode,2026-09-17T15:15:34+00:00
+1228244,0,Bijan Robinson,RB,ATL,12200,512,,False,,CAR @ ATL,1970-01-01 00:29:49.923600+00:00,bijan robinson,0,12200,clear,153437,Showdown Captain Mode,2026-09-17T15:15:34+00:00
+1287705,0,Beaux Collins,WR,ATL,200,512,,False,,CAR @ ATL,1970-01-01 00:29:49.923600+00:00,beaux collins,0,200,clear,153437,Showdown Captain Mode,2026-09-17T15:15:34+00:00
+1287778,0,Anthony Tyus III,RB,CAR,200,512,,False,,CAR @ ATL,1970-01-01 00:29:49.923600+00:00,anthony tyus,0,200,clear,153437,Showdown Captain Mode,2026-09-17T15:15:34+00:00
+1289471,0,Mitchell Evans,TE,CAR,1200,512,,False,,CAR @ ATL,1970-01-01 00:29:49.923600+00:00,mitchell evans,0,1200,clear,153437,Showdown Captain Mode,2026-09-17T15:15:34+00:00
+1322393,0,Jimmy Horn Jr.,WR,CAR,2000,512,,False,,CAR @ ATL,1970-01-01 00:29:49.923600+00:00,jimmy horn,0,2000,clear,153437,Showdown Captain Mode,2026-09-17T15:15:34+00:00
+1322612,0,Ja'seem Reed,WR,CAR,200,512,,False,,CAR @ ATL,1970-01-01 00:29:49.923600+00:00,jaseem reed,0,200,clear,153437,Showdown Captain Mode,2026-09-17T15:15:34+00:00
+1326601,0,Jonathon Brooks,RB,CAR,6800,512,,False,,CAR @ ATL,1970-01-01 00:29:49.923600+00:00,jonathon brooks,0,6800,clear,153437,Showdown Captain Mode,2026-09-17T15:15:34+00:00
+1326628,0,Ja'Tavion Sanders,TE,CAR,200,512,,False,,CAR @ ATL,1970-01-01 00:29:49.923600+00:00,jatavion sanders,0,200,clear,153437,Showdown Captain Mode,2026-09-17T15:15:34+00:00
+1329289,0,Cash Jones,RB,ATL,200,512,,False,,CAR @ ATL,1970-01-01 00:29:49.923600+00:00,cash jones,0,200,clear,153437,Showdown Captain Mode,2026-09-17T15:15:34+00:00
+1380576,0,Tetairoa McMillan,WR,CAR,10200,512,,False,,CAR @ ATL,1970-01-01 00:29:49.923600+00:00,tetairoa mcmillan,0,10200,clear,153437,Showdown Captain Mode,2026-09-17T15:15:34+00:00
+1394803,0,Trevor Etienne,RB,CAR,200,512,,False,,CAR @ ATL,1970-01-01 00:29:49.923600+00:00,trevor etienne,0,200,clear,153437,Showdown Captain Mode,2026-09-17T15:15:34+00:00
+1400788,0,Chris Brazzell II,WR,CAR,200,512,,False,,CAR @ ATL,1970-01-01 00:29:49.923600+00:00,chris brazzell,0,200,clear,153437,Showdown Captain Mode,2026-09-17T15:15:34+00:00
+1401629,0,Vinny Anthony II,WR,ATL,200,512,,False,,CAR @ ATL,1970-01-01 00:29:49.923600+00:00,vinny anthony,0,200,clear,153437,Showdown Captain Mode,2026-09-17T15:15:34+00:00
+1403373,0,Jack Velling,TE,ATL,200,512,,False,,CAR @ ATL,1970-01-01 00:29:49.923600+00:00,jack velling,0,200,clear,153437,Showdown Captain Mode,2026-09-17T15:15:34+00:00
+1441110,0,Zachariah Branch,WR,ATL,2800,512,,False,,CAR @ ATL,1970-01-01 00:29:49.923600+00:00,zachariah branch,0,2800,clear,153437,Showdown Captain Mode,2026-09-17T15:15:34+00:00
+1637700,0,Jack Strand,QB,ATL,6000,512,,False,,CAR @ ATL,1970-01-01 00:29:49.923600+00:00,jack strand,0,6000,clear,153437,Showdown Captain Mode,2026-09-17T15:15:34+00:00

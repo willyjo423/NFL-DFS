@@ -1,0 +1,54 @@
+dk_player_id,draftable_id,name,position,team,salary,roster_slot,status,disabled,attributes,game,starts_utc,norm,flex_eligible,captain_salary,playing,draft_group,game_type,captured_at
+355,0,Cardinals,DST,ARI,3400,512,,False,,SEA @ ARI,1970-01-01 00:29:49.935900+00:00,cardinals,0,3400,clear,153447,Showdown Captain Mode,2026-09-17T15:15:34+00:00
+361,0,Seahawks,DST,SEA,5400,512,,False,,SEA @ ARI,1970-01-01 00:29:49.935900+00:00,seahawks,0,5400,clear,153447,Showdown Captain Mode,2026-09-17T15:15:34+00:00
+518088,0,Jason Myers,K,SEA,5200,512,,False,,SEA @ ARI,1970-01-01 00:29:49.935900+00:00,jason myers,0,5200,clear,153447,Showdown Captain Mode,2026-09-17T15:15:34+00:00
+607047,0,Jacoby Brissett,QB,ARI,9000,512,,False,,SEA @ ARI,1970-01-01 00:29:49.935900+00:00,jacoby brissett,0,9000,clear,153447,Showdown Captain Mode,2026-09-17T15:15:34+00:00
+694931,0,Eric Saubert,TE,SEA,1600,512,,False,,SEA @ ARI,1970-01-01 00:29:49.935900+00:00,eric saubert,0,1600,clear,153447,Showdown Captain Mode,2026-09-17T15:15:34+00:00
+698227,0,Cooper Kupp,WR,SEA,4600,512,,False,,SEA @ ARI,1970-01-01 00:29:49.935900+00:00,cooper kupp,0,4600,clear,153447,Showdown Captain Mode,2026-09-17T15:15:34+00:00
+742390,0,James Conner,RB,ARI,200,512,,False,,SEA @ ARI,1970-01-01 00:29:49.935900+00:00,james conner,0,200,clear,153447,Showdown Captain Mode,2026-09-17T15:15:34+00:00
+754412,0,Kendrick Bourne,WR,ARI,4800,512,,False,,SEA @ ARI,1970-01-01 00:29:49.935900+00:00,kendrick bourne,0,4800,clear,153447,Showdown Captain Mode,2026-09-17T15:15:34+00:00
+867303,0,Gardner Minshew II,QB,ARI,6000,512,,False,,SEA @ ARI,1970-01-01 00:29:49.935900+00:00,gardner minshew,0,6000,clear,153447,Showdown Captain Mode,2026-09-17T15:15:34+00:00
+880026,0,Sam Darnold,QB,SEA,9400,512,,False,,SEA @ ARI,1970-01-01 00:29:49.935900+00:00,sam darnold,0,9400,clear,153447,Showdown Captain Mode,2026-09-17T15:15:34+00:00
+882345,0,Drew Lock,QB,SEA,8400,512,,False,,SEA @ ARI,1970-01-01 00:29:49.935900+00:00,drew lock,0,8400,clear,153447,Showdown Captain Mode,2026-09-17T15:15:34+00:00
+883312,0,Irvin Charles,WR,SEA,200,512,,False,,SEA @ ARI,1970-01-01 00:29:49.935900+00:00,irvin charles,0,200,clear,153447,Showdown Captain Mode,2026-09-17T15:15:34+00:00
+919304,0,Velus Jones Jr.,RB,SEA,200,512,,False,,SEA @ ARI,1970-01-01 00:29:49.935900+00:00,velus jones,0,200,clear,153447,Showdown Captain Mode,2026-09-17T15:15:34+00:00
+920756,0,Devin Duvernay,WR,ARI,200,512,,False,,SEA @ ARI,1970-01-01 00:29:49.935900+00:00,devin duvernay,0,200,clear,153447,Showdown Captain Mode,2026-09-17T15:15:34+00:00
+923412,0,Rashid Shaheed,WR,SEA,5600,512,,False,,SEA @ ARI,1970-01-01 00:29:49.935900+00:00,rashid shaheed,0,5600,clear,153447,Showdown Captain Mode,2026-09-17T15:15:34+00:00
+1058726,0,Julian Hicks,WR,SEA,200,512,,False,,SEA @ ARI,1970-01-01 00:29:49.935900+00:00,julian hicks,0,200,clear,153447,Showdown Captain Mode,2026-09-17T15:15:34+00:00
+1060550,0,Hunter Long,TE,ARI,1200,512,,False,,SEA @ ARI,1970-01-01 00:29:49.935900+00:00,hunter long,0,1200,clear,153447,Showdown Captain Mode,2026-09-17T15:15:34+00:00
+1064955,0,Brady Russell,RB,SEA,400,512,,False,,SEA @ ARI,1970-01-01 00:29:49.935900+00:00,brady russell,0,400,clear,153447,Showdown Captain Mode,2026-09-17T15:15:34+00:00
+1108161,0,Trey McBride,TE,ARI,9800,512,,False,,SEA @ ARI,1970-01-01 00:29:49.935900+00:00,trey mcbride,0,9800,clear,153447,Showdown Captain Mode,2026-09-17T15:15:34+00:00
+1108545,0,Chad Ryland,K,ARI,5000,512,,False,,SEA @ ARI,1970-01-01 00:29:49.935900+00:00,chad ryland,0,5000,clear,153447,Showdown Captain Mode,2026-09-17T15:15:34+00:00
+1112357,0,Shawn Bowman,TE,ARI,200,512,,False,,SEA @ ARI,1970-01-01 00:29:49.935900+00:00,shawn bowman,0,200,clear,153447,Showdown Captain Mode,2026-09-17T15:15:34+00:00
+1121050,0,Jake Bobo,WR,SEA,200,512,,False,,SEA @ ARI,1970-01-01 00:29:49.935900+00:00,jake bobo,0,200,clear,153447,Showdown Captain Mode,2026-09-17T15:15:34+00:00
+1123496,0,Simi Fehoko,WR,ARI,1000,512,,False,,SEA @ ARI,1970-01-01 00:29:49.935900+00:00,simi fehoko,0,1000,clear,153447,Showdown Captain Mode,2026-09-17T15:15:34+00:00
+1123529,0,Michael Wilson,WR,ARI,8000,512,,False,,SEA @ ARI,1970-01-01 00:29:49.935900+00:00,michael wilson,0,8000,clear,153447,Showdown Captain Mode,2026-09-17T15:15:34+00:00
+1128538,0,Teagan Quitoriano,TE,ARI,200,512,,False,,SEA @ ARI,1970-01-01 00:29:49.935900+00:00,teagan quitoriano,0,200,clear,153447,Showdown Captain Mode,2026-09-17T15:15:34+00:00
+1131198,0,Tyler Allgeier,RB,ARI,4000,512,,False,,SEA @ ARI,1970-01-01 00:29:49.935900+00:00,tyler allgeier,0,4000,clear,153447,Showdown Captain Mode,2026-09-17T15:15:34+00:00
+1161853,0,Elijah Higgins,TE,ARI,1800,512,,False,,SEA @ ARI,1970-01-01 00:29:49.935900+00:00,elijah higgins,0,1800,clear,153447,Showdown Captain Mode,2026-09-17T15:15:34+00:00
+1163866,0,Bam Knight,RB,ARI,200,512,,False,,SEA @ ARI,1970-01-01 00:29:49.935900+00:00,bam knight,0,200,clear,153447,Showdown Captain Mode,2026-09-17T15:15:34+00:00
+1164530,0,Zach Charbonnet,RB,SEA,200,512,,False,,SEA @ ARI,1970-01-01 00:29:49.935900+00:00,zach charbonnet,0,200,clear,153447,Showdown Captain Mode,2026-09-17T15:15:34+00:00
+1164736,0,Nick Kallerup,TE,SEA,200,512,,False,,SEA @ ARI,1970-01-01 00:29:49.935900+00:00,nick kallerup,0,200,clear,153447,Showdown Captain Mode,2026-09-17T15:15:34+00:00
+1173266,0,Evan Hull,RB,ARI,200,512,,False,,SEA @ ARI,1970-01-01 00:29:49.935900+00:00,evan hull,0,200,clear,153447,Showdown Captain Mode,2026-09-17T15:15:34+00:00
+1173480,0,Jacardia Wright,RB,SEA,200,512,,False,,SEA @ ARI,1970-01-01 00:29:49.935900+00:00,jacardia wright,0,200,clear,153447,Showdown Captain Mode,2026-09-17T15:15:34+00:00
+1180625,0,George Holani,RB,SEA,3600,512,,False,,SEA @ ARI,1970-01-01 00:29:49.935900+00:00,george holani,0,3600,clear,153447,Showdown Captain Mode,2026-09-17T15:15:34+00:00
+1213340,0,Carson Beck,QB,ARI,6000,512,,False,,SEA @ ARI,1970-01-01 00:29:49.935900+00:00,carson beck,0,6000,clear,153447,Showdown Captain Mode,2026-09-17T15:15:34+00:00
+1214087,0,Jaxon Smith-Njigba,WR,SEA,11000,512,,False,,SEA @ ARI,1970-01-01 00:29:49.935900+00:00,jaxon smith njigba,0,11000,clear,153447,Showdown Captain Mode,2026-09-17T15:15:34+00:00
+1223301,0,Jalen Brooks,WR,ARI,2000,512,,False,,SEA @ ARI,1970-01-01 00:29:49.935900+00:00,jalen brooks,0,2000,clear,153447,Showdown Captain Mode,2026-09-17T15:15:34+00:00
+1223393,0,Tory Horton,WR,SEA,2200,512,,False,,SEA @ ARI,1970-01-01 00:29:49.935900+00:00,tory horton,0,2200,clear,153447,Showdown Captain Mode,2026-09-17T15:15:34+00:00
+1229489,0,Tip Reiman,TE,ARI,200,512,,False,,SEA @ ARI,1970-01-01 00:29:49.935900+00:00,tip reiman,0,200,clear,153447,Showdown Captain Mode,2026-09-17T15:15:34+00:00
+1229503,0,AJ Barner,TE,SEA,4400,512,,False,,SEA @ ARI,1970-01-01 00:29:49.935900+00:00,aj barner,0,4400,clear,153447,Showdown Captain Mode,2026-09-17T15:15:34+00:00
+1229846,0,Ricky White III,WR,SEA,200,512,,False,,SEA @ ARI,1970-01-01 00:29:49.935900+00:00,ricky white,0,200,clear,153447,Showdown Captain Mode,2026-09-17T15:15:34+00:00
+1229869,0,Montorie Foster Jr.,WR,SEA,800,512,,False,,SEA @ ARI,1970-01-01 00:29:49.935900+00:00,montorie foster,0,800,clear,153447,Showdown Captain Mode,2026-09-17T15:15:34+00:00
+1248031,0,Trey Benson,RB,ARI,200,512,,False,,SEA @ ARI,1970-01-01 00:29:49.935900+00:00,trey benson,0,200,clear,153447,Showdown Captain Mode,2026-09-17T15:15:34+00:00
+1285958,0,Robbie Ouzts,RB,SEA,200,512,,False,,SEA @ ARI,1970-01-01 00:29:49.935900+00:00,robbie ouzts,0,200,clear,153447,Showdown Captain Mode,2026-09-17T15:15:34+00:00
+1286840,0,Elijah Arroyo,TE,SEA,600,512,,False,,SEA @ ARI,1970-01-01 00:29:49.935900+00:00,elijah arroyo,0,600,clear,153447,Showdown Captain Mode,2026-09-17T15:15:34+00:00
+1287810,0,Harrison Wallace III,WR,ARI,200,512,,False,,SEA @ ARI,1970-01-01 00:29:49.935900+00:00,harrison wallace,0,200,clear,153447,Showdown Captain Mode,2026-09-17T15:15:34+00:00
+1287828,0,Marvin Harrison Jr.,WR,ARI,7400,512,,False,,SEA @ ARI,1970-01-01 00:29:49.935900+00:00,marvin harrison,0,7400,clear,153447,Showdown Captain Mode,2026-09-17T15:15:34+00:00
+1287920,0,Jameson Geers,TE,ARI,200,512,,False,,SEA @ ARI,1970-01-01 00:29:49.935900+00:00,jameson geers,0,200,clear,153447,Showdown Captain Mode,2026-09-17T15:15:34+00:00
+1290102,0,Jalen Milroe,QB,SEA,6000,512,,False,,SEA @ ARI,1970-01-01 00:29:49.935900+00:00,jalen milroe,0,6000,clear,153447,Showdown Captain Mode,2026-09-17T15:15:34+00:00
+1383791,0,Jadarian Price,RB,SEA,8600,512,,False,,SEA @ ARI,1970-01-01 00:29:49.935900+00:00,jadarian price,0,8600,clear,153447,Showdown Captain Mode,2026-09-17T15:15:34+00:00
+1390939,0,Reggie Virgil,WR,ARI,200,512,,False,,SEA @ ARI,1970-01-01 00:29:49.935900+00:00,reggie virgil,0,200,clear,153447,Showdown Captain Mode,2026-09-17T15:15:34+00:00
+1398511,0,Emmanuel Henderson Jr.,WR,SEA,200,512,,False,,SEA @ ARI,1970-01-01 00:29:49.935900+00:00,emmanuel henderson,0,200,clear,153447,Showdown Captain Mode,2026-09-17T15:15:34+00:00
+1447759,0,Emanuel Wilson,RB,SEA,2600,512,,False,,SEA @ ARI,1970-01-01 00:29:49.935900+00:00,emanuel wilson,0,2600,clear,153447,Showdown Captain Mode,2026-09-17T15:15:34+00:00
+1451501,0,Jeremiyah Love,RB,ARI,8800,512,,False,,SEA @ ARI,1970-01-01 00:29:49.935900+00:00,jeremiyah love,0,8800,clear,153447,Showdown Captain Mode,2026-09-17T15:15:34+00:00
