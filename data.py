@@ -747,12 +747,29 @@ def attach_injuries(pool: pd.DataFrame, report: pd.DataFrame,
 
     wk = report[(report["season"] == season) & (report["week"] == week)]
     if wk.empty:
-        log.error("the injury report has no rows for %s week %s - it covers "
-                  "%s. Nothing was applied.", season, week,
-                  sorted(report["week"].dropna().unique())[-5:])
-        out.attrs["injury_matched"] = 0
-        out.attrs["injury_note"] = f"no rows for week {week}"
-        return out
+        # Asking for a week the report does not cover used to apply NOTHING,
+        # which is the worst of the three options: no filtering, dressed as
+        # filtering. The report always carries the current week, so the latest
+        # week it does have is a far better answer than none - and saying
+        # which week was used makes an off-by-one visible instead of silent.
+        have = sorted(int(w) for w in
+                      report[report["season"] == season]["week"].dropna()
+                      .unique())
+        if not have:
+            log.error("the injury report has no rows at all for %s. The board "
+                      "cannot see who is inactive.", season)
+            out.attrs["injury_matched"] = 0
+            out.attrs["injury_note"] = f"no rows for season {season}"
+            return out
+        fallback = max(w for w in have if w <= week) if any(
+            w <= week for w in have) else have[-1]
+        log.error("the injury report has no rows for %s week %s (it covers "
+                  "%s). FALLING BACK to week %s - check the week derivation, "
+                  "because this is how a board goes out unfiltered.",
+                  season, week, have[-5:], fallback)
+        wk = report[(report["season"] == season)
+                    & (report["week"] == fallback)]
+        out.attrs["injury_week_used"] = fallback
 
     # Matched on the normalised name only, deliberately. Team codes disagree
     # between the two sources and a player who was traded on Tuesday is
