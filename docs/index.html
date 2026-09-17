@@ -620,6 +620,8 @@ function render(chosen, meta) {
         <span>reaches the bar <b>${fmt(c.pg * 100, 2)}%</b></span>
         <span>expected duplicates <b>${c.dupes < 1 ? c.dupes.toFixed(2)
           : Math.round(c.dupes).toLocaleString()}</b></span>
+        ${meta.objective === "cash" ? "" :
+          `<span>ranked on <b>${fmt(c.edge * 100, 3)}</b></span>`}
       </div></div>`;
   }).join("");
 
