@@ -309,21 +309,43 @@ def upcoming_week(lines, weeks) -> tuple[int, int]:
     is for the coming Sunday, and asking the calendar would match it against
     last week's injury report - a report that is real, parses cleanly, and is
     wrong about exactly the players whose status changed.
+
+    The SCHEDULE is the wrong source for this, and used to be the one tried
+    first. `lines` is the whole season - games.csv carries every week including
+    ones not yet played, which is precisely why it is loaded, for the market
+    line on an upcoming game. So its maximum week is 18, not the coming one,
+    and the injury report was being asked for a week that has not happened.
+    It returned nothing, `attach_injuries` therefore applied nothing, and the
+    board reached the optimiser completely unfiltered - every week of the
+    season, with a single ERROR line in a log to show for it. Isaiah Pacheco,
+    hurt, in every showdown lineup.
+
+    Player stats exist only for games that have been played, so the last week
+    present in them plus one IS the upcoming week. That branch was already
+    written, correctly, directly below the broken one, and unreachable.
     """
-    if lines is not None and len(lines):
-        season = int(pd.to_numeric(lines["season"], errors="coerce").max())
-        wk = lines[pd.to_numeric(lines["season"], errors="coerce") == season]
-        week = int(pd.to_numeric(wk["week"], errors="coerce").max())
-        return season, week
     season = int(pd.to_numeric(weeks["season"], errors="coerce").max())
     played = weeks[pd.to_numeric(weeks["season"], errors="coerce") == season]
-    # The next week is one past the last one with results in it.
-    return season, int(pd.to_numeric(played["week"], errors="coerce").max()) + 1
+    week = int(pd.to_numeric(played["week"], errors="coerce").max()) + 1
+
+    # The schedule is a sanity check, not the source: in week one there is
+    # nothing played yet and the arithmetic above needs a ceiling.
+    if lines is not None and len(lines):
+        sched = lines[pd.to_numeric(lines["season"], errors="coerce") == season]
+        last = int(pd.to_numeric(sched["week"], errors="coerce").max())
+        if week > last:
+            log.warning("derived week %d is past the end of the %d schedule "
+                        "(%d weeks); using %d", week, season, last, last)
+            week = last
+    log.info("this board is for %d week %d (last week with results: %d)",
+             season, week, week - 1)
+    return season, week
 
 
 def run(draft_group: int, site: str = "dk",
         seasons: list[int] | None = None,
-        captain_multiplier: float | None = None) -> dict:
+        captain_multiplier: float | None = None,
+        force: bool = False) -> dict:
     seasons = seasons or list(range(config.TRAIN_START_SEASON,
                                     datetime.now(timezone.utc).year + 1))
     log.info("loading seasons %s-%s", seasons[0], seasons[-1])
@@ -364,12 +386,18 @@ def run(draft_group: int, site: str = "dk",
         report = data.injuries(season)
         pool = data.attach_injuries(pool, report, season, week)
         matched = pool.attrs.get("injury_matched", 0)
+        if matched == 0 and not force:
+            raise SystemExit(
+                f"NO injury information reached this board "
+                f"({pool.attrs.get('injury_note', '')}).\n"
+                f"Every player would read as available, which is exactly how "
+                f"an inactive player gets into every lineup.\n"
+                f"A filter that is silently not filtering is worse than no "
+                f"filter, because it is trusted.\n"
+                f"Fix the join, or pass --force to build a board that cannot "
+                f"see who is hurt.")
         if matched == 0:
-            log.error("NO injury information reached this board (%s). Every "
-                      "player will read as available, which is how an "
-                      "inactive player gets rostered - treat the lineups as "
-                      "unfiltered until this is fixed.",
-                      pool.attrs.get("injury_note", ""))
+            log.error("--force: building with NO injury information at all")
     except Exception as exc:                                   # noqa: BLE001
         log.error("injury report unavailable (%s: %s); the board cannot see "
                   "who is inactive", type(exc).__name__, str(exc)[:80])
@@ -523,7 +551,7 @@ def main(argv=None) -> int:
         dg, label = pick_slate(args.slate)
     print(f"slate: {label}\n")
 
-    out = run(dg, site=args.site)
+    out = run(dg, site=args.site, force=args.force)
     print(report(out))
 
     cov = out["coverage"]
