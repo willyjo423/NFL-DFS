@@ -60,6 +60,28 @@ MIN_JOIN_RATE = 0.85
 MIN_SALARY_COVERAGE = 0.80
 
 
+class BoardUnfiltered(RuntimeError):
+    """The board cannot see who is injured, and that is not recoverable here.
+
+    A normal exception rather than SystemExit, and the distinction cost a
+    whole night's publish. `publish.py` builds every slate inside
+
+        try: ... except Exception: log and continue
+
+    so that one dead slate cannot take the page down with it - that is the
+    stated design and there is a comment in publish.py promising it. But
+    SystemExit inherits from BaseException, not Exception, so it walked
+    straight through that handler. On 2026-09-18 a single NYG @ LAR showdown
+    raised it and aborted a run in which fourteen slates had already built
+    correctly; nothing was committed and the page served the previous day's
+    data while reporting success to the eye.
+
+    Raising RuntimeError keeps the slate-level failure loud, keeps it in the
+    manifest as an error row, and lets the other fifteen slates publish.
+    `main` below still turns it into a clean non-zero exit for CLI use.
+    """
+
+
 def load_seasons(seasons: list[int]) -> pd.DataFrame:
     """Player weeks, tolerating a season that has not been published yet."""
     got, missing = [], []
@@ -386,18 +408,42 @@ def run(draft_group: int, site: str = "dk",
         report = data.injuries(season)
         pool = data.attach_injuries(pool, report, season, week)
         matched = pool.attrs.get("injury_matched", 0)
-        if matched == 0 and not force:
-            raise SystemExit(
-                f"NO injury information reached this board "
-                f"({pool.attrs.get('injury_note', '')}).\n"
+        reason = pool.attrs.get("injury_reason", "ok")
+        note = pool.attrs.get("injury_note", "")
+
+        # Zero matches used to mean one thing and now means four, so the
+        # response is chosen by cause rather than by the count.
+        #
+        # "not-published" is the ordinary midweek state: the league's week N
+        # report does not exist yet. Refusing to build on it means refusing
+        # to build for three days a week, which is not a safety property, it
+        # is an outage. The board is built and every player reads "unknown",
+        # which is true.
+        #
+        # "no-match" is the dangerous one and keeps the hard stop: the report
+        # for THIS week exists, and not one name on it reached the board.
+        # That is a join failure, and a join failure is invisible - the board
+        # reads as a league where nobody is hurt.
+        if reason == "not-published":
+            log.error("building WITHOUT injury information: %s. Every player "
+                      "on this board reads UNKNOWN, not clear.", note)
+        elif matched == 0 and not force:
+            raise BoardUnfiltered(
+                f"NO injury information reached this board ({note}).\n"
                 f"Every player would read as available, which is exactly how "
                 f"an inactive player gets into every lineup.\n"
                 f"A filter that is silently not filtering is worse than no "
                 f"filter, because it is trusted.\n"
                 f"Fix the join, or pass --force to build a board that cannot "
                 f"see who is hurt.")
-        if matched == 0:
+        elif matched == 0:
             log.error("--force: building with NO injury information at all")
+    except BoardUnfiltered:
+        # Must escape. This except block exists so that a network hiccup on
+        # the injury feed degrades the board instead of killing it, and the
+        # deliberate refusal above is not a hiccup - swallowing it here would
+        # turn the loudest guard in the file into a log line nobody reads.
+        raise
     except Exception as exc:                                   # noqa: BLE001
         log.error("injury report unavailable (%s: %s); the board cannot see "
                   "who is inactive", type(exc).__name__, str(exc)[:80])
@@ -551,7 +597,14 @@ def main(argv=None) -> int:
         dg, label = pick_slate(args.slate)
     print(f"slate: {label}\n")
 
-    out = run(dg, site=args.site, force=args.force)
+    try:
+        out = run(dg, site=args.site, force=args.force)
+    except BoardUnfiltered as exc:
+        # Same refusal, same exit code as the SystemExit it replaced. The
+        # only thing that changed is that publish.py can now catch it and
+        # keep going with the other slates.
+        print(f"\nSTOPPING: {exc}")
+        return 1
     print(report(out))
 
     cov = out["coverage"]

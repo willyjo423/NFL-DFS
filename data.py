@@ -740,18 +740,37 @@ def attach_injuries(pool: pd.DataFrame, report: pd.DataFrame,
     the confusion that let an inactive receiver into a lineup.
     """
     out = pool.copy()
+    out.attrs["injury_week_used"] = week
+    out.attrs["injury_reason"] = "ok"
     if report is None or report.empty:
         out.attrs["injury_matched"] = 0
+        out.attrs["injury_reason"] = "no-report"
         out.attrs["injury_note"] = "no report loaded"
         return out
 
     wk = report[(report["season"] == season) & (report["week"] == week)]
     if wk.empty:
-        # Asking for a week the report does not cover used to apply NOTHING,
-        # which is the worst of the three options: no filtering, dressed as
-        # filtering. The report always carries the current week, so the latest
-        # week it does have is a far better answer than none - and saying
-        # which week was used makes an off-by-one visible instead of silent.
+        # Three different things can bring us here and they need three
+        # different answers. The version before this one collapsed them into
+        # a single "fall back to the latest week we have", which was wrong in
+        # the most expensive way available, so the reasoning is set out in
+        # full.
+        #
+        # Last week's report is not a stale copy of this week's - it is a
+        # DIFFERENT FACT. It says who was out on Sunday. Applying it to
+        # Thursday's board is wrong in both directions at once: a player who
+        # sat last week and has been cleared reads OUT and is excluded from
+        # every lineup, and a player who got hurt in that game reads CLEAR
+        # and is available in every lineup. The second is exactly the failure
+        # this whole code path exists to prevent.
+        #
+        # It also caused a worse failure than the one it was written to fix.
+        # On 2026-09-18 nflverse carried weeks [1, 2] and the board was for
+        # week 3. The fallback applied week 2 to a NYG @ LAR showdown, where
+        # none of the 53 priced players happened to appear on week 2's
+        # report, so the zero-match guard fired and killed a publish in which
+        # fourteen other slates had already built correctly. The guard was
+        # right that something was wrong; it was wrong about what.
         have = sorted(int(w) for w in
                       report[report["season"] == season]["week"].dropna()
                       .unique())
@@ -759,17 +778,42 @@ def attach_injuries(pool: pd.DataFrame, report: pd.DataFrame,
             log.error("the injury report has no rows at all for %s. The board "
                       "cannot see who is inactive.", season)
             out.attrs["injury_matched"] = 0
+            out.attrs["injury_reason"] = "no-report"
             out.attrs["injury_note"] = f"no rows for season {season}"
             return out
-        fallback = max(w for w in have if w <= week) if any(
-            w <= week for w in have) else have[-1]
-        log.error("the injury report has no rows for %s week %s (it covers "
-                  "%s). FALLING BACK to week %s - check the week derivation, "
-                  "because this is how a board goes out unfiltered.",
-                  season, week, have[-5:], fallback)
-        wk = report[(report["season"] == season)
-                    & (report["week"] == fallback)]
-        out.attrs["injury_week_used"] = fallback
+
+        if week > have[-1]:
+            # The ordinary midweek state. The league's week N report does not
+            # exist yet on Tuesday or Wednesday; it appears as practice
+            # reports are filed. This is missing data, not broken data, and
+            # the honest representation of missing data is "unknown" - not
+            # "clear", which reads as "confirmed healthy" everywhere
+            # downstream, and not last week's answer.
+            log.error("the %s week %s injury report is NOT PUBLISHED YET "
+                      "(nflverse has weeks %s). Availability is set to "
+                      "UNKNOWN for the whole board rather than guessed from "
+                      "week %s - re-run once the report lands.",
+                      season, week, have[-5:], have[-1])
+            out["injury_status"] = ""
+            out["playing"] = "unknown"
+            out.attrs["injury_matched"] = 0
+            out.attrs["injury_week_used"] = None
+            out.attrs["injury_reason"] = "not-published"
+            out.attrs["injury_note"] = (
+                f"week {week} report not published yet "
+                f"(have weeks {have[0]}-{have[-1]})")
+            return out
+
+        # A gap INSIDE the covered range is a different animal - the feed has
+        # weeks 1 and 3 but not 2, which means the file is damaged rather
+        # than merely early. Nothing is applied and the caller is told why.
+        log.error("the injury report covers %s but has no rows for %s week "
+                  "%s - a hole inside the range it claims to cover, so the "
+                  "file itself is suspect.", have[-5:], season, week)
+        out.attrs["injury_matched"] = 0
+        out.attrs["injury_reason"] = "gap"
+        out.attrs["injury_note"] = f"no rows for week {week} inside {have}"
+        return out
 
     # Matched on the normalised name only, deliberately. Team codes disagree
     # between the two sources and a player who was traded on Tuesday is
@@ -803,9 +847,11 @@ def attach_injuries(pool: pd.DataFrame, report: pd.DataFrame,
              "%s", matched, len(out),
              ", ".join(f"{k}={v}" for k, v in sorted(counts.items())))
     if matched == 0:
-        log.error("the injury report matched NOBODY on this board. Either the "
-                  "names do not join or the week is wrong - do not trust the "
-                  "availability column.")
+        log.error("the injury report matched NOBODY on this board, and week "
+                  "%s IS in the report - so this is a name join failure, not "
+                  "a missing week. Do not trust the availability column.",
+                  week)
     out.attrs["injury_matched"] = matched
+    out.attrs["injury_reason"] = "ok" if matched else "no-match"
     out.attrs["injury_note"] = f"{matched}/{len(out)} matched"
     return out
