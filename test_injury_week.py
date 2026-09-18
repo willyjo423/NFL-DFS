@@ -1,15 +1,19 @@
 """The 2026-09-18 publish failure, pinned down as tests.
 
+Runs as a script, in the house style: `python test_injury_week.py`.
+
 What happened: nflverse carried injury weeks [1, 2], the board was for week 3,
 `attach_injuries` fell back to week 2, none of the 53 players on a NYG @ LAR
 showdown appeared on week 2's report, the zero-match guard raised SystemExit,
 SystemExit walked through publish.py's `except Exception`, and a run in which
 fourteen slates had already built correctly committed nothing. The page served
-the previous day's data and the ownership rewrite looked like it had not taken.
+the previous day's data while the run looked fine at a glance.
 
-Three separate defects in that sentence, one test each.
+Three separate defects in that sentence. One section each.
 """
 from __future__ import annotations
+
+import sys
 
 import pandas as pd
 
@@ -22,8 +26,7 @@ def report(weeks, names=("Real Player",), season=2026) -> pd.DataFrame:
     for w in weeks:
         for n in names:
             rows.append({"season": season, "week": w, "name": n,
-                         "norm": data.normalise(n) if hasattr(data, "normalise")
-                         else n.lower(), "team": "BUF", "playing": "out"})
+                         "team": "BUF", "playing": "out"})
     return pd.DataFrame(rows)
 
 
@@ -37,32 +40,29 @@ def pool(names) -> pd.DataFrame:
 # Defect 1: last week's report is a different fact, not a stale copy.
 # ---------------------------------------------------------------------------
 
-def test_a_future_week_does_not_fall_back_to_last_week():
+def a_future_week_does_not_fall_back():
     """Week 3 asked for, weeks [1, 2] available: apply NOTHING.
 
-    The old code applied week 2, which marks a player who has since been
-    cleared as OUT and a player hurt on Sunday as CLEAR - wrong in both
-    directions on the same board.
+    The old code applied week 2, which marks a player since cleared as OUT
+    and a player hurt on Sunday as CLEAR - wrong in both directions on the
+    same board.
     """
     out = data.attach_injuries(pool(["Real Player", "Someone Else"]),
                                report([1, 2]), 2026, 3)
-    assert out.attrs["injury_reason"] == "not-published"
+    assert out.attrs["injury_reason"] == "not-published", out.attrs
     assert out.attrs["injury_week_used"] is None
-    # Real Player is "out" in week 2's report and must NOT be marked out here.
-    assert set(out["playing"]) == {"unknown"}
+    assert set(out["playing"]) == {"unknown"}, (
+        "Real Player is OUT in week 2's report and must not be marked out on "
+        "a week 3 board")
 
 
-def test_missing_data_reads_unknown_not_clear():
-    """"clear" means confirmed healthy everywhere downstream. It is a claim.
-
-    With no report for the week there is no such claim to make, and writing
-    "clear" is how a board goes out looking filtered when it is not.
-    """
+def missing_data_reads_unknown_not_clear():
+    """"clear" is a claim - confirmed healthy - and there is nothing to claim."""
     out = data.attach_injuries(pool(["A", "B", "C"]), report([1, 2]), 2026, 3)
     assert "clear" not in set(out["playing"])
 
 
-def test_a_present_week_is_still_applied_normally():
+def a_present_week_is_still_applied():
     """The fix must not break the ordinary case."""
     out = data.attach_injuries(pool(["Real Player", "Healthy Guy"]),
                                report([1, 2, 3]), 2026, 3)
@@ -72,7 +72,7 @@ def test_a_present_week_is_still_applied_normally():
     assert out.loc[1, "playing"] == "clear"
 
 
-def test_a_hole_inside_the_range_is_not_the_same_as_being_early():
+def a_hole_is_not_the_same_as_being_early():
     """Weeks [1, 3] with week 2 asked for means the file is damaged."""
     out = data.attach_injuries(pool(["A"]), report([1, 3]), 2026, 2)
     assert out.attrs["injury_reason"] == "gap"
@@ -82,12 +82,8 @@ def test_a_hole_inside_the_range_is_not_the_same_as_being_early():
 # Defect 2: a genuine join failure must still stop the board.
 # ---------------------------------------------------------------------------
 
-def test_a_real_join_failure_is_still_a_join_failure():
-    """Week 3 present, nobody matched: that is the dangerous case, kept.
-
-    This is the Pacheco case - the report exists, and not one name on it
-    reached the board, so the board reads as a league where nobody is hurt.
-    """
+def a_real_join_failure_still_stops_the_board():
+    """Week 3 present, nobody matched - the Pacheco case, hard stop kept."""
     out = data.attach_injuries(pool(["Nobody Here", "Nor Here"]),
                                report([3]), 2026, 3)
     assert out.attrs["injury_matched"] == 0
@@ -98,33 +94,24 @@ def test_a_real_join_failure_is_still_a_join_failure():
 # Defect 3: the refusal must not be able to kill the whole publish.
 # ---------------------------------------------------------------------------
 
-def test_the_refusal_is_catchable_by_publish():
+def the_refusal_is_catchable_by_publish():
     """publish.py builds each slate inside `except Exception: continue`.
 
-    SystemExit inherits from BaseException, so it went straight through that
-    handler and took fourteen good slates down with one bad one. This asserts
-    the promise publish.py's comment makes.
+    SystemExit inherits from BaseException, so it went through that handler
+    and took fourteen good slates down with one bad one.
     """
     assert issubclass(P.BoardUnfiltered, Exception)
     assert not issubclass(P.BoardUnfiltered, SystemExit)
-
     caught = False
     try:
-        try:
-            raise P.BoardUnfiltered("board cannot see injuries")
-        except Exception:                                      # noqa: BLE001
-            caught = True
-    except BaseException:                                      # noqa: BLE001
-        caught = False
+        raise P.BoardUnfiltered("board cannot see injuries")
+    except Exception:                                          # noqa: BLE001
+        caught = True
     assert caught, "publish.py's per-slate handler must catch this"
 
 
-def test_systemexit_would_not_have_been_catchable():
-    """The control: prove the old behaviour really did escape.
-
-    Without this the test above passes trivially and proves nothing about
-    what was actually wrong.
-    """
+def systemexit_would_not_have_been_catchable():
+    """The control. Without it the test above proves nothing."""
     escaped = False
     try:
         try:
@@ -134,3 +121,58 @@ def test_systemexit_would_not_have_been_catchable():
     except SystemExit:
         escaped = True
     assert escaped
+
+
+SUITES = [
+    ("LAST WEEK'S INJURY REPORT IS A DIFFERENT FACT, NOT A STALE COPY", [
+        ("a week the report does not reach yet applies nothing",
+         a_future_week_does_not_fall_back),
+        ("and reads UNKNOWN rather than clear",
+         missing_data_reads_unknown_not_clear),
+        ("a week the report does have is applied normally",
+         a_present_week_is_still_applied),
+        ("a hole inside the covered range is a damaged file, not an early one",
+         a_hole_is_not_the_same_as_being_early),
+    ]),
+    ("A SILENT FILTER IS STILL WORSE THAN NO FILTER", [
+        ("this week's report matching nobody still stops the board",
+         a_real_join_failure_still_stops_the_board),
+    ]),
+    ("ONE DEAD SLATE MUST NOT TAKE THE WHOLE PUBLISH DOWN", [
+        ("the refusal is an Exception, so publish.py can catch it",
+         the_refusal_is_catchable_by_publish),
+        ("and SystemExit provably could not be caught",
+         systemexit_would_not_have_been_catchable),
+    ]),
+]
+
+
+def main() -> int:
+    if not hasattr(P, "BoardUnfiltered"):
+        print("\n" + "=" * 66)
+        print("THE OLD project.py IS DEPLOYED.")
+        print("=" * 66)
+        print("There is no BoardUnfiltered, so the injury guard still raises")
+        print("SystemExit - which publish.py cannot catch. One slate with a")
+        print("bad injury join will discard every other slate in the run.")
+        print("\nReplace project.py and data.py in the repo root and re-run.")
+        return 1
+
+    passed = failed = 0
+    for title, cases in SUITES:
+        print(f"\n{title}")
+        print("-" * 66)
+        for name, fn in cases:
+            try:
+                fn()
+                print(f"  ok    {name}")
+                passed += 1
+            except Exception as exc:                           # noqa: BLE001
+                print(f"  FAIL  {name}\n        {exc}")
+                failed += 1
+    print(f"\n{passed} passed, {failed} failed")
+    return 1 if failed else 0
+
+
+if __name__ == "__main__":
+    sys.exit(main())
