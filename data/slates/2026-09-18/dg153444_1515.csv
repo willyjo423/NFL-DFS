@@ -1,0 +1,54 @@
+dk_player_id,draftable_id,name,position,team,salary,roster_slot,status,disabled,attributes,game,starts_utc,norm,flex_eligible,captain_salary,playing,draft_group,game_type,captured_at
+332,0,Broncos,DST,DEN,3800,512,,False,,JAX @ DEN,1970-01-01 00:29:49.934700+00:00,broncos,0,3800,clear,153444,Showdown Captain Mode,2026-09-18T15:15:12+00:00
+365,0,Jaguars,DST,JAX,3400,512,,False,,JAX @ DEN,1970-01-01 00:29:49.934700+00:00,jaguars,0,3400,clear,153444,Showdown Captain Mode,2026-09-18T15:15:12+00:00
+590796,0,Ameer Abdullah,RB,JAX,1000,512,,False,,JAX @ DEN,1970-01-01 00:29:49.934700+00:00,ameer abdullah,0,1000,clear,153444,Showdown Captain Mode,2026-09-18T15:15:12+00:00
+700299,0,Wil Lutz,K,DEN,4800,512,,False,,JAX @ DEN,1970-01-01 00:29:49.934700+00:00,wil lutz,0,4800,clear,153444,Showdown Captain Mode,2026-09-18T15:15:12+00:00
+748309,0,Nick Mullens,QB,JAX,6000,512,,False,,JAX @ DEN,1970-01-01 00:29:49.934700+00:00,nick mullens,0,6000,clear,153444,Showdown Captain Mode,2026-09-18T15:15:12+00:00
+749185,0,Evan Engram,TE,DEN,4000,512,,False,,JAX @ DEN,1970-01-01 00:29:49.934700+00:00,evan engram,0,4000,clear,153444,Showdown Captain Mode,2026-09-18T15:15:12+00:00
+838878,0,Courtland Sutton,WR,DEN,7800,512,,False,,JAX @ DEN,1970-01-01 00:29:49.934700+00:00,courtland sutton,0,7800,clear,153444,Showdown Captain Mode,2026-09-18T15:15:12+00:00
+843733,0,Mitchell Fraboni,TE,DEN,200,512,,False,,JAX @ DEN,1970-01-01 00:29:49.934700+00:00,mitchell fraboni,0,200,clear,153444,Showdown Captain Mode,2026-09-18T15:15:12+00:00
+865868,0,Jarrett Stidham,QB,DEN,6000,512,,False,,JAX @ DEN,1970-01-01 00:29:49.934700+00:00,jarrett stidham,0,6000,clear,153444,Showdown Captain Mode,2026-09-18T15:15:12+00:00
+875444,0,Adam Trautman,TE,DEN,1800,512,,False,,JAX @ DEN,1970-01-01 00:29:49.934700+00:00,adam trautman,0,1800,clear,153444,Showdown Captain Mode,2026-09-18T15:15:12+00:00
+880151,0,Jakobi Meyers,WR,JAX,7400,512,,False,,JAX @ DEN,1970-01-01 00:29:49.934700+00:00,jakobi meyers,0,7400,clear,153444,Showdown Captain Mode,2026-09-18T15:15:12+00:00
+885540,0,Adam Prentice,RB,DEN,200,512,,False,,JAX @ DEN,1970-01-01 00:29:49.934700+00:00,adam prentice,0,200,clear,153444,Showdown Captain Mode,2026-09-18T15:15:12+00:00
+920482,0,Michael Bandy,WR,DEN,200,512,,False,,JAX @ DEN,1970-01-01 00:29:49.934700+00:00,michael bandy,0,200,clear,153444,Showdown Captain Mode,2026-09-18T15:15:12+00:00
+920758,0,Lil'Jordan Humphrey,WR,DEN,1200,512,,False,,JAX @ DEN,1970-01-01 00:29:49.934700+00:00,liljordan humphrey,0,1200,clear,153444,Showdown Captain Mode,2026-09-18T15:15:12+00:00
+975829,0,Sam Ehlinger,QB,DEN,6000,512,,False,,JAX @ DEN,1970-01-01 00:29:49.934700+00:00,sam ehlinger,0,6000,clear,153444,Showdown Captain Mode,2026-09-18T15:15:12+00:00
+976513,0,J.K. Dobbins,RB,DEN,7000,512,,False,,JAX @ DEN,1970-01-01 00:29:49.934700+00:00,j k dobbins,0,7000,clear,153444,Showdown Captain Mode,2026-09-18T15:15:12+00:00
+1056660,0,Austin Trammell,WR,JAX,200,512,,False,,JAX @ DEN,1970-01-01 00:29:49.934700+00:00,austin trammell,0,200,clear,153444,Showdown Captain Mode,2026-09-18T15:15:12+00:00
+1056747,0,Tim Jones,WR,JAX,200,512,,False,,JAX @ DEN,1970-01-01 00:29:49.934700+00:00,tim jones,0,200,clear,153444,Showdown Captain Mode,2026-09-18T15:15:12+00:00
+1059680,0,Quintin Morris,TE,JAX,200,512,,False,,JAX @ DEN,1970-01-01 00:29:49.934700+00:00,quintin morris,0,200,clear,153444,Showdown Captain Mode,2026-09-18T15:15:12+00:00
+1110711,0,Trevor Lawrence,QB,JAX,10400,512,,False,,JAX @ DEN,1970-01-01 00:29:49.934700+00:00,trevor lawrence,0,10400,clear,153444,Showdown Captain Mode,2026-09-18T15:15:12+00:00
+1113403,0,Chris Rodriguez Jr.,RB,JAX,3600,512,,False,,JAX @ DEN,1970-01-01 00:29:49.934700+00:00,chris rodriguez,0,3600,clear,153444,Showdown Captain Mode,2026-09-18T15:15:12+00:00
+1122323,0,Lucas Krull,TE,DEN,200,512,,False,,JAX @ DEN,1970-01-01 00:29:49.934700+00:00,lucas krull,0,200,clear,153444,Showdown Captain Mode,2026-09-18T15:15:12+00:00
+1124338,0,Tyler Badie,RB,DEN,200,512,,False,,JAX @ DEN,1970-01-01 00:29:49.934700+00:00,tyler badie,0,200,clear,153444,Showdown Captain Mode,2026-09-18T15:15:12+00:00
+1125749,0,Jaylen Waddle,WR,DEN,8400,512,,False,,JAX @ DEN,1970-01-01 00:29:49.934700+00:00,jaylen waddle,0,8400,clear,153444,Showdown Captain Mode,2026-09-18T15:15:12+00:00
+1132517,0,Nate Adkins,TE,DEN,600,512,,False,,JAX @ DEN,1970-01-01 00:29:49.934700+00:00,nate adkins,0,600,clear,153444,Showdown Captain Mode,2026-09-18T15:15:12+00:00
+1140248,0,Cody Schrader,RB,DEN,200,512,,False,,JAX @ DEN,1970-01-01 00:29:49.934700+00:00,cody schrader,0,200,clear,153444,Showdown Captain Mode,2026-09-18T15:15:12+00:00
+1161899,0,Bo Nix,QB,DEN,9800,512,,False,,JAX @ DEN,1970-01-01 00:29:49.934700+00:00,bo nix,0,9800,clear,153444,Showdown Captain Mode,2026-09-18T15:15:12+00:00
+1164940,0,Brenton Strange,TE,JAX,4400,512,,False,,JAX @ DEN,1970-01-01 00:29:49.934700+00:00,brenton strange,0,4400,clear,153444,Showdown Captain Mode,2026-09-18T15:15:12+00:00
+1172401,0,RJ Harvey,RB,DEN,7200,512,,False,,JAX @ DEN,1970-01-01 00:29:49.934700+00:00,rj harvey,0,7200,clear,153444,Showdown Captain Mode,2026-09-18T15:15:12+00:00
+1180294,0,Hayden Rucci,TE,JAX,200,512,,False,,JAX @ DEN,1970-01-01 00:29:49.934700+00:00,hayden rucci,0,200,clear,153444,Showdown Captain Mode,2026-09-18T15:15:12+00:00
+1213799,0,Marvin Mims Jr.,WR,DEN,2800,512,,False,,JAX @ DEN,1970-01-01 00:29:49.934700+00:00,marvin mims,0,2800,clear,153444,Showdown Captain Mode,2026-09-18T15:15:12+00:00
+1214003,0,Nate Boerkircher,TE,JAX,1600,512,,False,,JAX @ DEN,1970-01-01 00:29:49.934700+00:00,nate boerkircher,0,1600,clear,153444,Showdown Captain Mode,2026-09-18T15:15:12+00:00
+1228631,0,Trebor Pena,WR,JAX,200,512,,False,,JAX @ DEN,1970-01-01 00:29:49.934700+00:00,trebor pena,0,200,clear,153444,Showdown Captain Mode,2026-09-18T15:15:12+00:00
+1229074,0,Parker Washington,WR,JAX,9000,512,,False,,JAX @ DEN,1970-01-01 00:29:49.934700+00:00,parker washington,0,9000,clear,153444,Showdown Captain Mode,2026-09-18T15:15:12+00:00
+1231431,0,Caleb Lohner,TE,DEN,200,512,,False,,JAX @ DEN,1970-01-01 00:29:49.934700+00:00,caleb lohner,0,200,clear,153444,Showdown Captain Mode,2026-09-18T15:15:12+00:00
+1277947,0,J'Mari Taylor,RB,JAX,200,512,,False,,JAX @ DEN,1970-01-01 00:29:49.934700+00:00,jmari taylor,0,200,clear,153444,Showdown Captain Mode,2026-09-18T15:15:12+00:00
+1286064,0,Brian Thomas Jr.,WR,JAX,6400,512,,False,,JAX @ DEN,1970-01-01 00:29:49.934700+00:00,brian thomas,0,6400,clear,153444,Showdown Captain Mode,2026-09-18T15:15:12+00:00
+1286176,0,Troy Franklin,WR,DEN,3000,512,,False,,JAX @ DEN,1970-01-01 00:29:49.934700+00:00,troy franklin,0,3000,clear,153444,Showdown Captain Mode,2026-09-18T15:15:12+00:00
+1290109,0,Cam Little,K,JAX,5000,512,,False,,JAX @ DEN,1970-01-01 00:29:49.934700+00:00,cam little,0,5000,clear,153444,Showdown Captain Mode,2026-09-18T15:15:12+00:00
+1305866,0,Pat Bryant,WR,DEN,5200,512,,False,,JAX @ DEN,1970-01-01 00:29:49.934700+00:00,pat bryant,0,5200,clear,153444,Showdown Captain Mode,2026-09-18T15:15:12+00:00
+1325475,0,Josh Cameron,WR,JAX,2000,512,,False,,JAX @ DEN,1970-01-01 00:29:49.934700+00:00,josh cameron,0,2000,clear,153444,Showdown Captain Mode,2026-09-18T15:15:12+00:00
+1327169,0,Bhayshul Tuten,RB,JAX,8600,512,,False,,JAX @ DEN,1970-01-01 00:29:49.934700+00:00,bhayshul tuten,0,8600,clear,153444,Showdown Captain Mode,2026-09-18T15:15:12+00:00
+1333868,0,Quinn Ewers,QB,JAX,6000,512,,False,,JAX @ DEN,1970-01-01 00:29:49.934700+00:00,quinn ewers,0,6000,clear,153444,Showdown Captain Mode,2026-09-18T15:15:12+00:00
+1378660,0,Dane Key,WR,DEN,200,512,,False,,JAX @ DEN,1970-01-01 00:29:49.934700+00:00,dane key,0,200,clear,153444,Showdown Captain Mode,2026-09-18T15:15:12+00:00
+1378840,0,LeQuint Allen Jr.,RB,JAX,400,512,,False,,JAX @ DEN,1970-01-01 00:29:49.934700+00:00,lequint allen,0,400,clear,153444,Showdown Captain Mode,2026-09-18T15:15:12+00:00
+1380368,0,Tanner Koziol,TE,JAX,200,512,,False,,JAX @ DEN,1970-01-01 00:29:49.934700+00:00,tanner koziol,0,200,clear,153444,Showdown Captain Mode,2026-09-18T15:15:12+00:00
+1380594,0,Jonah Coleman,RB,DEN,2400,512,,False,,JAX @ DEN,1970-01-01 00:29:49.934700+00:00,jonah coleman,0,2400,clear,153444,Showdown Captain Mode,2026-09-18T15:15:12+00:00
+1381092,0,CJ Williams,WR,JAX,200,512,,False,,JAX @ DEN,1970-01-01 00:29:49.934700+00:00,cj williams,0,200,clear,153444,Showdown Captain Mode,2026-09-18T15:15:12+00:00
+1399275,0,Travis Hunter,WR,JAX,2200,512,,False,,JAX @ DEN,1970-01-01 00:29:49.934700+00:00,travis hunter,0,2200,clear,153444,Showdown Captain Mode,2026-09-18T15:15:12+00:00
+1448305,0,Joey Aguilar,QB,JAX,6000,512,,False,,JAX @ DEN,1970-01-01 00:29:49.934700+00:00,joey aguilar,0,6000,clear,153444,Showdown Captain Mode,2026-09-18T15:15:12+00:00
+1452585,0,Michael Wortham,WR,JAX,200,512,,False,,JAX @ DEN,1970-01-01 00:29:49.934700+00:00,michael wortham,0,200,clear,153444,Showdown Captain Mode,2026-09-18T15:15:12+00:00
+1461173,0,Dallen Bentley,TE,DEN,200,512,,False,,JAX @ DEN,1970-01-01 00:29:49.934700+00:00,dallen bentley,0,200,clear,153444,Showdown Captain Mode,2026-09-18T15:15:12+00:00
+1522347,0,Kolbe Katsis,WR,DEN,200,512,,False,,JAX @ DEN,1970-01-01 00:29:49.934700+00:00,kolbe katsis,0,200,clear,153444,Showdown Captain Mode,2026-09-18T15:15:12+00:00
