@@ -43,6 +43,12 @@ jobs:
           python test_scoring.py
           python test_features.py
           python test_optimise.py
+          # These two print which version of the module is actually deployed.
+          # Without them, "did the fix take?" can only be answered by reading
+          # ownership numbers off the published page and inferring - which
+          # cost three publish rounds on 2026-09-18.
+          python test_ownership.py
+          python test_injury_week.py
 
       - name: Build the slate files
         id: build
