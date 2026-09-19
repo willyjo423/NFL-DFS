@@ -1,0 +1,104 @@
+dk_player_id,draftable_id,name,position,team,salary,roster_slot,status,disabled,attributes,game,starts_utc,norm,flex_eligible,captain_salary,playing,draft_group,game_type,captured_at
+338,0,Colts,DST,IND,2300,71,,False,,IND @ KC,,colts,0,2300,clear,153433,Classic,2026-09-19T15:13:35+00:00
+339,0,Chiefs,DST,KC,3200,71,,False,,IND @ KC,,chiefs,0,3200,clear,153433,Classic,2026-09-19T15:13:35+00:00
+343,0,Rams,DST,LAR,3300,71,,False,,NYG @ LAR,,rams,0,3300,clear,153433,Classic,2026-09-19T15:13:35+00:00
+351,0,Giants,DST,NYG,2200,71,,False,,NYG @ LAR,,giants,0,2200,clear,153433,Classic,2026-09-19T15:13:35+00:00
+323205,0,Matthew Stafford,QB,LAR,6000,66,,False,,NYG @ LAR,,matthew stafford,0,6000,clear,153433,Classic,2026-09-19T15:13:35+00:00
+448240,0,Travis Kelce,TE,KC,4200,69,,False,,IND @ KC,,travis kelce,0,4200,clear,153433,Classic,2026-09-19T15:13:35+00:00
+472623,0,James Winchester,TE,KC,2500,69,,False,,IND @ KC,,james winchester,0,2500,clear,153433,Classic,2026-09-19T15:13:35+00:00
+557210,0,Keenan Allen,WR,IND,4600,68,,False,,IND @ KC,,keenan allen,0,4600,clear,153433,Classic,2026-09-19T15:13:35+00:00
+563293,0,Chris Manhertz,TE,NYG,2500,69,,False,,NYG @ LAR,,chris manhertz,0,2500,clear,153433,Classic,2026-09-19T15:13:35+00:00
+589984,0,Odell Beckham Jr.,WR,NYG,3000,68,,False,,NYG @ LAR,,odell beckham,0,3000,clear,153433,Classic,2026-09-19T15:13:35+00:00
+604176,0,Tyler Higbee,TE,LAR,2900,69,,False,,NYG @ LAR,,tyler higbee,0,2900,clear,153433,Classic,2026-09-19T15:13:35+00:00
+611417,0,Davante Adams,WR,LAR,5900,68,,False,,NYG @ LAR,,davante adams,0,5900,clear,153433,Classic,2026-09-19T15:13:35+00:00
+658389,0,Patrick Ricard,RB,NYG,4000,67,,False,,NYG @ LAR,,patrick ricard,0,4000,clear,153433,Classic,2026-09-19T15:13:35+00:00
+689689,0,Pharaoh Brown,TE,IND,2500,69,,False,,IND @ KC,,pharaoh brown,0,2500,clear,153433,Classic,2026-09-19T15:13:35+00:00
+691536,0,Jameis Winston,QB,NYG,4000,66,,False,,NYG @ LAR,,jameis winston,0,4000,clear,153433,Classic,2026-09-19T15:13:35+00:00
+712506,0,Mo Alie-Cox,TE,IND,2500,69,,False,,IND @ KC,,mo alie cox,0,2500,clear,153433,Classic,2026-09-19T15:13:35+00:00
+748554,0,Laquon Treadwell,WR,IND,3000,68,,False,,IND @ KC,,laquon treadwell,0,3000,clear,153433,Classic,2026-09-19T15:13:35+00:00
+820866,0,Braxton Berrios,WR,NYG,3000,68,,False,,NYG @ LAR,,braxton berrios,0,3000,clear,153433,Classic,2026-09-19T15:13:35+00:00
+839031,0,Patrick Mahomes,QB,KC,5500,66,,False,,IND @ KC,,patrick mahomes,0,5500,clear,153433,Classic,2026-09-19T15:13:35+00:00
+879981,0,Daniel Jones,QB,IND,5200,66,,False,,IND @ KC,,daniel jones,0,5200,clear,153433,Classic,2026-09-19T15:13:35+00:00
+883259,0,Nick Westbrook-Ikhine,WR,IND,3000,68,,False,,IND @ KC,,nick westbrook ikhine,0,3000,clear,153433,Classic,2026-09-19T15:13:35+00:00
+884315,0,Alex Bachman,WR,LAR,3000,68,,False,,NYG @ LAR,,alex bachman,0,3000,clear,153433,Classic,2026-09-19T15:13:35+00:00
+912027,0,Darnell Mooney,WR,NYG,3800,68,,False,,NYG @ LAR,,darnell mooney,0,3800,clear,153433,Classic,2026-09-19T15:13:35+00:00
+916466,0,Devin Singletary,RB,NYG,4100,67,,False,,NYG @ LAR,,devin singletary,0,4100,clear,153433,Classic,2026-09-19T15:13:35+00:00
+973964,0,Najee Harris,RB,NYG,4000,67,,False,,NYG @ LAR,,najee harris,0,4000,clear,153433,Classic,2026-09-19T15:13:35+00:00
+976804,0,Ronnie Rivers,RB,LAR,4000,67,,False,,NYG @ LAR,,ronnie rivers,0,4000,clear,153433,Classic,2026-09-19T15:13:35+00:00
+1049254,0,Jake Haener,QB,NYG,4000,66,,False,,NYG @ LAR,,jake haener,0,4000,clear,153433,Classic,2026-09-19T15:13:35+00:00
+1056981,0,Noah Gray,TE,KC,3200,69,,False,,IND @ KC,,noah gray,0,3200,clear,153433,Classic,2026-09-19T15:13:35+00:00
+1060312,0,Colby Parkinson,TE,LAR,3100,69,,False,,NYG @ LAR,,colby parkinson,0,3100,clear,153433,Classic,2026-09-19T15:13:35+00:00
+1062765,0,Calvin Austin III,WR,NYG,3000,68,,False,,NYG @ LAR,,calvin austin,0,3000,clear,153433,Classic,2026-09-19T15:13:35+00:00
+1063397,0,D.J. Montgomery,WR,IND,3000,68,,False,,IND @ KC,,d j montgomery,0,3000,clear,153433,Classic,2026-09-19T15:13:35+00:00
+1065406,0,Jonathan Taylor,RB,IND,7500,67,,False,,IND @ KC,,jonathan taylor,0,7500,clear,153433,Classic,2026-09-19T15:13:35+00:00
+1067132,0,Charlie Jones,WR,NYG,3000,68,,False,,NYG @ LAR,,charlie jones,0,3000,clear,153433,Classic,2026-09-19T15:13:35+00:00
+1069763,0,Stetson Bennett IV,QB,LAR,4000,66,,False,,NYG @ LAR,,stetson bennett,0,4000,clear,153433,Classic,2026-09-19T15:13:35+00:00
+1106760,0,Tutu Atwell,WR,LAR,3400,68,,False,,NYG @ LAR,,tutu atwell,0,3400,clear,153433,Classic,2026-09-19T15:13:35+00:00
+1107027,0,Alec Pierce,WR,IND,5600,68,,False,,IND @ KC,,alec pierce,0,5600,clear,153433,Classic,2026-09-19T15:13:35+00:00
+1108526,0,Thomas Odukoya,TE,KC,2500,69,,False,,IND @ KC,,thomas odukoya,0,2500,clear,153433,Classic,2026-09-19T15:13:35+00:00
+1109708,0,Tyrone Tracy Jr.,RB,NYG,4400,67,,False,,NYG @ LAR,,tyrone tracy,0,4400,clear,153433,Classic,2026-09-19T15:13:35+00:00
+1110301,0,Tyquan Thornton,WR,KC,3400,68,,False,,IND @ KC,,tyquan thornton,0,3400,clear,153433,Classic,2026-09-19T15:13:35+00:00
+1110681,0,Justin Fields,QB,KC,4500,66,,False,,IND @ KC,,justin fields,0,4500,clear,153433,Classic,2026-09-19T15:13:35+00:00
+1121873,0,Will Mallory,TE,IND,2500,69,,False,,IND @ KC,,will mallory,0,2500,clear,153433,Classic,2026-09-19T15:13:35+00:00
+1125111,0,Isaiah Likely,TE,NYG,4500,69,,False,,NYG @ LAR,,isaiah likely,0,4500,clear,153433,Classic,2026-09-19T15:13:35+00:00
+1127080,0,Nikko Remigio,WR,KC,3000,68,,False,,IND @ KC,,nikko remigio,0,3000,clear,153433,Classic,2026-09-19T15:13:35+00:00
+1130245,0,Ben VanSumeren,RB,KC,4000,67,,False,,IND @ KC,,ben vansumeren,0,4000,clear,153433,Classic,2026-09-19T15:13:35+00:00
+1137635,0,Xavier Smith,WR,LAR,3000,68,,False,,NYG @ LAR,,xavier smith,0,3000,clear,153433,Classic,2026-09-19T15:13:35+00:00
+1161661,0,Anthony Gould,WR,IND,3000,68,,False,,IND @ KC,,anthony gould,0,3000,clear,153433,Classic,2026-09-19T15:13:35+00:00
+1161664,0,Davis Allen,TE,LAR,2500,69,,False,,NYG @ LAR,,davis allen,0,2500,clear,153433,Classic,2026-09-19T15:13:35+00:00
+1162128,0,Puka Nacua,WR,LAR,7900,68,,False,,NYG @ LAR,,puka nacua,0,7900,clear,153433,Classic,2026-09-19T15:13:35+00:00
+1163272,0,Jared Wiley,TE,KC,2500,69,,False,,IND @ KC,,jared wiley,0,2500,clear,153433,Classic,2026-09-19T15:13:35+00:00
+1163273,0,Jordan Whittington,WR,LAR,3200,68,,False,,NYG @ LAR,,jordan whittington,0,3200,clear,153433,Classic,2026-09-19T15:13:35+00:00
+1164402,0,Kenneth Walker III,RB,KC,6500,67,,False,,IND @ KC,,kenneth walker,0,6500,clear,153433,Classic,2026-09-19T15:13:35+00:00
+1166036,0,Ashton Dulin,WR,IND,3000,68,,False,,IND @ KC,,ashton dulin,0,3000,clear,153433,Classic,2026-09-19T15:13:35+00:00
+1167361,0,Kyren Williams,RB,LAR,6400,67,,False,,NYG @ LAR,,kyren williams,0,6400,clear,153433,Classic,2026-09-19T15:13:35+00:00
+1168410,0,Gunner Olszewski,WR,NYG,3000,68,,False,,NYG @ LAR,,gunner olszewski,0,3000,clear,153433,Classic,2026-09-19T15:13:35+00:00
+1173174,0,Jordan Waters,RB,LAR,4000,67,,False,,NYG @ LAR,,jordan waters,0,4000,clear,153433,Classic,2026-09-19T15:13:35+00:00
+1173538,0,Rashee Rice,WR,KC,6400,68,,False,,IND @ KC,,rashee rice,0,6400,clear,153433,Classic,2026-09-19T15:13:35+00:00
+1180329,0,Dalen Cambre,WR,NYG,3000,68,,False,,NYG @ LAR,,dalen cambre,0,3000,clear,153433,Classic,2026-09-19T15:13:35+00:00
+1212622,0,Carson Towt,TE,IND,2500,69,,False,,IND @ KC,,carson towt,0,2500,clear,153433,Classic,2026-09-19T15:13:35+00:00
+1213442,0,Jimmy Holiday,WR,KC,3000,68,,False,,IND @ KC,,jimmy holiday,0,3000,clear,153433,Classic,2026-09-19T15:13:35+00:00
+1213794,0,Seth McGowan,RB,IND,4300,67,,False,,IND @ KC,,seth mcgowan,0,4300,clear,153433,Classic,2026-09-19T15:13:35+00:00
+1214132,0,Nate Carter,RB,KC,4000,67,,False,,IND @ KC,,nate carter,0,4000,clear,153433,Classic,2026-09-19T15:13:35+00:00
+1214414,0,Theo Johnson,TE,NYG,2600,69,,False,,NYG @ LAR,,theo johnson,0,2600,clear,153433,Classic,2026-09-19T15:13:35+00:00
+1215022,0,Anthony Richardson Sr.,QB,IND,4000,66,,False,,IND @ KC,,anthony richardson,0,4000,clear,153433,Classic,2026-09-19T15:13:35+00:00
+1215077,0,Josh Downs,WR,IND,5400,68,,False,,IND @ KC,,josh downs,0,5400,clear,153433,Classic,2026-09-19T15:13:35+00:00
+1226616,0,CJ Daniels,WR,LAR,3000,68,,False,,NYG @ LAR,,cj daniels,0,3000,clear,153433,Classic,2026-09-19T15:13:35+00:00
+1229083,0,Tyler Warren,TE,IND,5200,69,,False,,IND @ KC,,tyler warren,0,5200,clear,153433,Classic,2026-09-19T15:13:35+00:00
+1229386,0,Brennan Presley,WR,LAR,3000,68,,False,,NYG @ LAR,,brennan presley,0,3000,clear,153433,Classic,2026-09-19T15:13:35+00:00
+1229540,0,Blake Corum,RB,LAR,4900,67,,False,,NYG @ LAR,,blake corum,0,4900,clear,153433,Classic,2026-09-19T15:13:35+00:00
+1229542,0,Dan Villari,TE,LAR,2500,69,,False,,NYG @ LAR,,dan villari,0,2500,clear,153433,Classic,2026-09-19T15:13:35+00:00
+1232892,0,Jalin Hyatt,WR,NYG,3000,68,,False,,NYG @ LAR,,jalin hyatt,0,3000,clear,153433,Classic,2026-09-19T15:13:35+00:00
+1233297,0,Anderson Castle,RB,IND,4000,67,,False,,IND @ KC,,anderson castle,0,4000,clear,153433,Classic,2026-09-19T15:13:35+00:00
+1247543,0,Ben Mann,TE,NYG,2500,69,,False,,NYG @ LAR,,ben mann,0,2500,clear,153433,Classic,2026-09-19T15:13:35+00:00
+1271740,0,Drew Ogletree,TE,IND,2500,69,,False,,IND @ KC,,drew ogletree,0,2500,clear,153433,Classic,2026-09-19T15:13:35+00:00
+1280316,0,Cam Skattebo,RB,NYG,5900,67,,False,,NYG @ LAR,,cam skattebo,0,5900,clear,153433,Classic,2026-09-19T15:13:35+00:00
+1286037,0,Garrett Nussmeier,QB,KC,4000,66,,False,,IND @ KC,,garrett nussmeier,0,4000,clear,153433,Classic,2026-09-19T15:13:35+00:00
+1286059,0,Malik Nabers,WR,NYG,6500,68,,False,,NYG @ LAR,,malik nabers,0,6500,clear,153433,Classic,2026-09-19T15:13:35+00:00
+1286179,0,Terrance Ferguson,TE,LAR,2700,69,,False,,NYG @ LAR,,terrance ferguson,0,2700,clear,153433,Classic,2026-09-19T15:13:35+00:00
+1286260,0,Jaxson Dart,QB,NYG,5800,66,,False,,NYG @ LAR,,jaxson dart,0,5800,clear,153433,Classic,2026-09-19T15:13:35+00:00
+1287639,0,Jake Briningstool,TE,KC,2500,69,,False,,IND @ KC,,jake briningstool,0,2500,clear,153433,Classic,2026-09-19T15:13:35+00:00
+1287641,0,Phil Mafah,RB,NYG,4000,67,,False,,NYG @ LAR,,phil mafah,0,4000,clear,153433,Classic,2026-09-19T15:13:35+00:00
+1287655,0,Thomas Fidone II,TE,NYG,2500,69,,False,,NYG @ LAR,,thomas fidone,0,2500,clear,153433,Classic,2026-09-19T15:13:35+00:00
+1287798,0,Deion Burks,WR,IND,3200,68,,False,,IND @ KC,,deion burks,0,3200,clear,153433,Classic,2026-09-19T15:13:35+00:00
+1288387,0,John Michael Gyllenborg,TE,KC,2500,69,,False,,IND @ KC,,john michael gyllenborg,0,2500,clear,153433,Classic,2026-09-19T15:13:35+00:00
+1289332,0,Konata Mumpfield,WR,LAR,3000,68,,False,,NYG @ LAR,,konata mumpfield,0,3000,clear,153433,Classic,2026-09-19T15:13:35+00:00
+1290165,0,Riley Leonard,QB,IND,4000,66,,False,,IND @ KC,,riley leonard,0,4000,clear,153433,Classic,2026-09-19T15:13:35+00:00
+1303569,0,DJ Giddens,RB,IND,4000,67,,False,,IND @ KC,,dj giddens,0,4000,clear,153433,Classic,2026-09-19T15:13:35+00:00
+1313668,0,Brashard Smith,RB,KC,4000,67,,False,,IND @ KC,,brashard smith,0,4000,clear,153433,Classic,2026-09-19T15:13:35+00:00
+1319589,0,Malachi Fields,WR,NYG,4100,68,,False,,NYG @ LAR,,malachi fields,0,4100,clear,153433,Classic,2026-09-19T15:13:35+00:00
+1324519,0,Matthew Caldwell,QB,LAR,4000,66,,False,,NYG @ LAR,,matthew caldwell,0,4000,clear,153433,Classic,2026-09-19T15:13:35+00:00
+1326638,0,Xavier Worthy,WR,KC,4500,68,,False,,IND @ KC,,xavier worthy,0,4500,clear,153433,Classic,2026-09-19T15:13:35+00:00
+1339352,0,Jeff Caldwell,WR,KC,3000,68,,False,,IND @ KC,,jeff caldwell,0,3000,clear,153433,Classic,2026-09-19T15:13:35+00:00
+1377757,0,Jaydn Ott,RB,KC,4000,67,,False,,IND @ KC,,jaydn ott,0,4000,clear,153433,Classic,2026-09-19T15:13:35+00:00
+1378917,0,Ty Simpson,QB,LAR,4000,66,,False,,NYG @ LAR,,ty simpson,0,4000,clear,153433,Classic,2026-09-19T15:13:35+00:00
+1379251,0,Emmett Johnson,RB,KC,4500,67,,False,,IND @ KC,,emmett johnson,0,4500,clear,153433,Classic,2026-09-19T15:13:35+00:00
+1379261,0,Omari Evans,WR,KC,3000,68,,False,,IND @ KC,,omari evans,0,3000,clear,153433,Classic,2026-09-19T15:13:35+00:00
+1380773,0,Kenny Fletcher Jr.,TE,IND,2500,69,,False,,IND @ KC,,kenny fletcher,0,2500,clear,153433,Classic,2026-09-19T15:13:35+00:00
+1381444,0,Dean Connors,RB,LAR,4000,67,,False,,NYG @ LAR,,dean connors,0,4000,clear,153433,Classic,2026-09-19T15:13:35+00:00
+1382670,0,Cyrus Allen,WR,KC,3900,68,,False,,IND @ KC,,cyrus allen,0,3900,clear,153433,Classic,2026-09-19T15:13:35+00:00
+1401683,0,Max Klare,TE,LAR,2500,69,,False,,NYG @ LAR,,max klare,0,2500,clear,153433,Classic,2026-09-19T15:13:35+00:00
+1403491,0,Jalen Royals,WR,KC,3200,68,,False,,IND @ KC,,jalen royals,0,3200,clear,153433,Classic,2026-09-19T15:13:35+00:00
+1405106,0,Andrew Armstrong,WR,KC,3000,68,,False,,IND @ KC,,andrew armstrong,0,3000,clear,153433,Classic,2026-09-19T15:13:35+00:00
+1445256,0,Davon Booth,RB,IND,4000,67,,False,,IND @ KC,,davon booth,0,4000,clear,153433,Classic,2026-09-19T15:13:35+00:00
+1665835,0,Grant Finley,RB,NYG,4000,67,,False,,NYG @ LAR,,grant finley,0,4000,clear,153433,Classic,2026-09-19T15:13:35+00:00
