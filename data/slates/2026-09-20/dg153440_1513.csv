@@ -1,0 +1,54 @@
+dk_player_id,draftable_id,name,position,team,salary,roster_slot,status,disabled,attributes,game,starts_utc,norm,flex_eligible,captain_salary,playing,draft_group,game_type,captured_at
+336,0,Titans,DST,TEN,3200,512,,False,,PHI @ TEN,1970-01-01 00:29:49.923600+00:00,titans,0,3200,clear,153440,Showdown Captain Mode,2026-09-20T15:13:51+00:00
+354,0,Eagles,DST,PHI,5800,512,,False,,PHI @ TEN,1970-01-01 00:29:49.923600+00:00,eagles,0,5800,clear,153440,Showdown Captain Mode,2026-09-20T15:13:51+00:00
+322858,0,Andy Dalton,QB,PHI,6000,512,,False,,PHI @ TEN,1970-01-01 00:29:49.923600+00:00,andy dalton,0,6000,clear,153440,Showdown Captain Mode,2026-09-20T15:13:51+00:00
+728169,0,Mitchell Trubisky,QB,TEN,6000,512,,False,,PHI @ TEN,1970-01-01 00:29:49.923600+00:00,mitchell trubisky,0,6000,clear,153440,Showdown Captain Mode,2026-09-20T15:13:51+00:00
+740704,0,Johnny Mundt,TE,PHI,600,512,,False,,PHI @ TEN,1970-01-01 00:29:49.923600+00:00,johnny mundt,0,600,clear,153440,Showdown Captain Mode,2026-09-20T15:13:51+00:00
+746154,0,Jake Elliott,K,PHI,5000,512,,False,,PHI @ TEN,1970-01-01 00:29:49.923600+00:00,jake elliott,0,5000,clear,153440,Showdown Captain Mode,2026-09-20T15:13:51+00:00
+791365,0,Dallas Goedert,TE,PHI,7800,512,,False,,PHI @ TEN,1970-01-01 00:29:49.923600+00:00,dallas goedert,0,7800,clear,153440,Showdown Captain Mode,2026-09-20T15:13:51+00:00
+836963,0,Joey Slye,K,TEN,4800,512,,False,,PHI @ TEN,1970-01-01 00:29:49.923600+00:00,joey slye,0,4800,clear,153440,Showdown Captain Mode,2026-09-20T15:13:51+00:00
+866149,0,Josiah Deguara,TE,PHI,200,512,,False,,PHI @ TEN,1970-01-01 00:29:49.923600+00:00,josiah deguara,0,200,clear,153440,Showdown Captain Mode,2026-09-20T15:13:51+00:00
+880398,0,Tony Pollard,RB,TEN,8400,512,,False,,PHI @ TEN,1970-01-01 00:29:49.923600+00:00,tony pollard,0,8400,clear,153440,Showdown Captain Mode,2026-09-20T15:13:51+00:00
+881058,0,K.J. Osborn,WR,TEN,200,512,,False,,PHI @ TEN,1970-01-01 00:29:49.923600+00:00,k j osborn,0,200,clear,153440,Showdown Captain Mode,2026-09-20T15:13:51+00:00
+882718,0,Britain Covey,WR,PHI,200,512,,False,,PHI @ TEN,1970-01-01 00:29:49.923600+00:00,britain covey,0,200,clear,153440,Showdown Captain Mode,2026-09-20T15:13:51+00:00
+883302,0,Saquon Barkley,RB,PHI,10000,512,,False,,PHI @ TEN,1970-01-01 00:29:49.923600+00:00,saquon barkley,0,10000,clear,153440,Showdown Captain Mode,2026-09-20T15:13:51+00:00
+884013,0,Calvin Ridley,WR,TEN,4000,512,,False,,PHI @ TEN,1970-01-01 00:29:49.923600+00:00,calvin ridley,0,4000,clear,153440,Showdown Captain Mode,2026-09-20T15:13:51+00:00
+913271,0,Jalen Hurts,QB,PHI,11000,512,,False,,PHI @ TEN,1970-01-01 00:29:49.923600+00:00,jalen hurts,0,11000,clear,153440,Showdown Captain Mode,2026-09-20T15:13:51+00:00
+921050,0,Kylen Granson,TE,TEN,200,512,,False,,PHI @ TEN,1970-01-01 00:29:49.923600+00:00,kylen granson,0,200,clear,153440,Showdown Captain Mode,2026-09-20T15:13:51+00:00
+976220,0,Hollywood Brown,WR,PHI,2600,512,,False,,PHI @ TEN,1970-01-01 00:29:49.923600+00:00,hollywood brown,0,2600,clear,153440,Showdown Captain Mode,2026-09-20T15:13:51+00:00
+976221,0,Grant Calcaterra,TE,PHI,200,512,,False,,PHI @ TEN,1970-01-01 00:29:49.923600+00:00,grant calcaterra,0,200,clear,153440,Showdown Captain Mode,2026-09-20T15:13:51+00:00
+976329,0,Michael Carter,RB,TEN,200,512,,False,,PHI @ TEN,1970-01-01 00:29:49.923600+00:00,michael carter,0,200,clear,153440,Showdown Captain Mode,2026-09-20T15:13:51+00:00
+976966,0,Hendon Hooker,QB,TEN,6000,512,,False,,PHI @ TEN,1970-01-01 00:29:49.923600+00:00,hendon hooker,0,6000,clear,153440,Showdown Captain Mode,2026-09-20T15:13:51+00:00
+1051781,0,E.J. Jenkins,TE,PHI,200,512,,False,,PHI @ TEN,1970-01-01 00:29:49.923600+00:00,e j jenkins,0,200,clear,153440,Showdown Captain Mode,2026-09-20T15:13:51+00:00
+1060262,0,DeVonta Smith,WR,PHI,9800,512,,False,,PHI @ TEN,1970-01-01 00:29:49.923600+00:00,devonta smith,0,9800,clear,153440,Showdown Captain Mode,2026-09-20T15:13:51+00:00
+1108998,0,Dameon Pierce,RB,PHI,200,512,,False,,PHI @ TEN,1970-01-01 00:29:49.923600+00:00,dameon pierce,0,200,clear,153440,Showdown Captain Mode,2026-09-20T15:13:51+00:00
+1122035,0,Daniel Bellinger,TE,TEN,1600,512,,False,,PHI @ TEN,1970-01-01 00:29:49.923600+00:00,daniel bellinger,0,1600,clear,153440,Showdown Captain Mode,2026-09-20T15:13:51+00:00
+1123364,0,Joel Wilson,TE,TEN,200,512,,False,,PHI @ TEN,1970-01-01 00:29:49.923600+00:00,joel wilson,0,200,clear,153440,Showdown Captain Mode,2026-09-20T15:13:51+00:00
+1123521,0,Tanner McKee,QB,PHI,6000,512,,False,,PHI @ TEN,1970-01-01 00:29:49.923600+00:00,tanner mckee,0,6000,clear,153440,Showdown Captain Mode,2026-09-20T15:13:51+00:00
+1124199,0,David Martin-Robinson,TE,TEN,200,512,,False,,PHI @ TEN,1970-01-01 00:29:49.923600+00:00,david martin robinson,0,200,clear,153440,Showdown Captain Mode,2026-09-20T15:13:51+00:00
+1125846,0,Julius Chestnut,RB,TEN,200,512,,False,,PHI @ TEN,1970-01-01 00:29:49.923600+00:00,julius chestnut,0,200,clear,153440,Showdown Captain Mode,2026-09-20T15:13:51+00:00
+1128783,0,Elijah Moore,WR,PHI,200,512,,False,,PHI @ TEN,1970-01-01 00:29:49.923600+00:00,elijah moore,0,200,clear,153440,Showdown Captain Mode,2026-09-20T15:13:51+00:00
+1164875,0,Wan'Dale Robinson,WR,TEN,7600,512,,False,,PHI @ TEN,1970-01-01 00:29:49.923600+00:00,wandale robinson,0,7600,clear,153440,Showdown Captain Mode,2026-09-20T15:13:51+00:00
+1169430,0,Tyjae Spears,RB,TEN,5400,512,,False,,PHI @ TEN,1970-01-01 00:29:49.923600+00:00,tyjae spears,0,5400,clear,153440,Showdown Captain Mode,2026-09-20T15:13:51+00:00
+1172428,0,Dontayvion Wicks,WR,PHI,5200,512,,False,,PHI @ TEN,1970-01-01 00:29:49.923600+00:00,dontayvion wicks,0,5200,clear,153440,Showdown Captain Mode,2026-09-20T15:13:51+00:00
+1177970,0,Xavier Gipson,WR,PHI,200,512,,False,,PHI @ TEN,1970-01-01 00:29:49.923600+00:00,xavier gipson,0,200,clear,153440,Showdown Captain Mode,2026-09-20T15:13:51+00:00
+1213486,0,Johnny Wilson,WR,PHI,200,512,,False,,PHI @ TEN,1970-01-01 00:29:49.923600+00:00,johnny wilson,0,200,clear,153440,Showdown Captain Mode,2026-09-20T15:13:51+00:00
+1214183,0,Xavier Restrepo,WR,TEN,200,512,,False,,PHI @ TEN,1970-01-01 00:29:49.923600+00:00,xavier restrepo,0,200,clear,153440,Showdown Captain Mode,2026-09-20T15:13:51+00:00
+1215035,0,Tank Bigsby,RB,PHI,3000,512,,False,,PHI @ TEN,1970-01-01 00:29:49.923600+00:00,tank bigsby,0,3000,clear,153440,Showdown Captain Mode,2026-09-20T15:13:51+00:00
+1215102,0,Chimere Dike,WR,TEN,1000,512,,False,,PHI @ TEN,1970-01-01 00:29:49.923600+00:00,chimere dike,0,1000,clear,153440,Showdown Captain Mode,2026-09-20T15:13:51+00:00
+1223318,0,Darius Cooper,WR,PHI,200,512,,False,,PHI @ TEN,1970-01-01 00:29:49.923600+00:00,darius cooper,0,200,clear,153440,Showdown Captain Mode,2026-09-20T15:13:51+00:00
+1228691,0,Cam Ward,QB,TEN,9000,512,,False,,PHI @ TEN,1970-01-01 00:29:49.923600+00:00,cam ward,0,9000,clear,153440,Showdown Captain Mode,2026-09-20T15:13:51+00:00
+1229673,0,Kalel Mullings,RB,TEN,200,512,,False,,PHI @ TEN,1970-01-01 00:29:49.923600+00:00,kalel mullings,0,200,clear,153440,Showdown Captain Mode,2026-09-20T15:13:51+00:00
+1286065,0,Eli Stowers,TE,PHI,200,512,,False,,PHI @ TEN,1970-01-01 00:29:49.923600+00:00,eli stowers,0,200,clear,153440,Showdown Captain Mode,2026-09-20T15:13:51+00:00
+1286438,0,Gunnar Helm,TE,TEN,3600,512,,False,,PHI @ TEN,1970-01-01 00:29:49.923600+00:00,gunnar helm,0,3600,clear,153440,Showdown Captain Mode,2026-09-20T15:13:51+00:00
+1287636,0,Will Shipley,RB,PHI,2000,512,,False,,PHI @ TEN,1970-01-01 00:29:49.923600+00:00,will shipley,0,2000,clear,153440,Showdown Captain Mode,2026-09-20T15:13:51+00:00
+1319219,0,Carson Steele,RB,PHI,200,512,,False,,PHI @ TEN,1970-01-01 00:29:49.923600+00:00,carson steele,0,200,clear,153440,Showdown Captain Mode,2026-09-20T15:13:51+00:00
+1322662,0,Rocco Underwood,TE,PHI,200,512,,False,,PHI @ TEN,1970-01-01 00:29:49.923600+00:00,rocco underwood,0,200,clear,153440,Showdown Captain Mode,2026-09-20T15:13:51+00:00
+1324976,0,Cole Payton,QB,PHI,6000,512,,False,,PHI @ TEN,1970-01-01 00:29:49.923600+00:00,cole payton,0,6000,clear,153440,Showdown Captain Mode,2026-09-20T15:13:51+00:00
+1378898,0,Jaydon Blue,RB,PHI,200,512,,False,,PHI @ TEN,1970-01-01 00:29:49.923600+00:00,jaydon blue,0,200,clear,153440,Showdown Captain Mode,2026-09-20T15:13:51+00:00
+1379264,0,Nick Singleton,RB,TEN,1400,512,,False,,PHI @ TEN,1970-01-01 00:29:49.923600+00:00,nick singleton,0,1400,clear,153440,Showdown Captain Mode,2026-09-20T15:13:51+00:00
+1381307,0,Jaren Kanak,TE,TEN,200,512,,False,,PHI @ TEN,1970-01-01 00:29:49.923600+00:00,jaren kanak,0,200,clear,153440,Showdown Captain Mode,2026-09-20T15:13:51+00:00
+1395319,0,Elic Ayomanor,WR,TEN,2400,512,,False,,PHI @ TEN,1970-01-01 00:29:49.923600+00:00,elic ayomanor,0,2400,clear,153440,Showdown Captain Mode,2026-09-20T15:13:51+00:00
+1407491,0,Tyren Montgomery,WR,TEN,200,512,,False,,PHI @ TEN,1970-01-01 00:29:49.923600+00:00,tyren montgomery,0,200,clear,153440,Showdown Captain Mode,2026-09-20T15:13:51+00:00
+1441120,0,Makai Lemon,WR,PHI,4600,512,,False,,PHI @ TEN,1970-01-01 00:29:49.923600+00:00,makai lemon,0,4600,clear,153440,Showdown Captain Mode,2026-09-20T15:13:51+00:00
+1441839,0,Carnell Tate,WR,TEN,8000,512,,False,,PHI @ TEN,1970-01-01 00:29:49.923600+00:00,carnell tate,0,8000,clear,153440,Showdown Captain Mode,2026-09-20T15:13:51+00:00

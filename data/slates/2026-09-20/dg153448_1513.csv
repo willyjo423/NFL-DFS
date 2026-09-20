@@ -1,0 +1,55 @@
+dk_player_id,draftable_id,name,position,team,salary,roster_slot,status,disabled,attributes,game,starts_utc,norm,flex_eligible,captain_salary,playing,draft_group,game_type,captured_at
+338,0,Colts,DST,IND,3200,512,,False,,IND @ KC,1970-01-01 00:29:49.950000+00:00,colts,0,3200,clear,153448,Showdown Captain Mode,2026-09-20T15:13:51+00:00
+339,0,Chiefs,DST,KC,4200,512,,False,,IND @ KC,1970-01-01 00:29:49.950000+00:00,chiefs,0,4200,clear,153448,Showdown Captain Mode,2026-09-20T15:13:51+00:00
+448240,0,Travis Kelce,TE,KC,6200,512,,False,,IND @ KC,1970-01-01 00:29:49.950000+00:00,travis kelce,0,6200,clear,153448,Showdown Captain Mode,2026-09-20T15:13:51+00:00
+472623,0,James Winchester,TE,KC,200,512,,False,,IND @ KC,1970-01-01 00:29:49.950000+00:00,james winchester,0,200,clear,153448,Showdown Captain Mode,2026-09-20T15:13:51+00:00
+557210,0,Keenan Allen,WR,IND,5600,512,,False,,IND @ KC,1970-01-01 00:29:49.950000+00:00,keenan allen,0,5600,clear,153448,Showdown Captain Mode,2026-09-20T15:13:51+00:00
+689689,0,Pharaoh Brown,TE,IND,200,512,,False,,IND @ KC,1970-01-01 00:29:49.950000+00:00,pharaoh brown,0,200,clear,153448,Showdown Captain Mode,2026-09-20T15:13:51+00:00
+712506,0,Mo Alie-Cox,TE,IND,2400,512,,False,,IND @ KC,1970-01-01 00:29:49.950000+00:00,mo alie cox,0,2400,clear,153448,Showdown Captain Mode,2026-09-20T15:13:51+00:00
+748554,0,Laquon Treadwell,WR,IND,2000,512,,False,,IND @ KC,1970-01-01 00:29:49.950000+00:00,laquon treadwell,0,2000,clear,153448,Showdown Captain Mode,2026-09-20T15:13:51+00:00
+748560,0,Harrison Butker,K,KC,5000,512,,False,,IND @ KC,1970-01-01 00:29:49.950000+00:00,harrison butker,0,5000,clear,153448,Showdown Captain Mode,2026-09-20T15:13:51+00:00
+839031,0,Patrick Mahomes,QB,KC,10000,512,,False,,IND @ KC,1970-01-01 00:29:49.950000+00:00,patrick mahomes,0,10000,clear,153448,Showdown Captain Mode,2026-09-20T15:13:51+00:00
+879981,0,Daniel Jones,QB,IND,9200,512,,False,,IND @ KC,1970-01-01 00:29:49.950000+00:00,daniel jones,0,9200,clear,153448,Showdown Captain Mode,2026-09-20T15:13:51+00:00
+883259,0,Nick Westbrook-Ikhine,WR,IND,200,512,,False,,IND @ KC,1970-01-01 00:29:49.950000+00:00,nick westbrook ikhine,0,200,clear,153448,Showdown Captain Mode,2026-09-20T15:13:51+00:00
+1056981,0,Noah Gray,TE,KC,3000,512,,False,,IND @ KC,1970-01-01 00:29:49.950000+00:00,noah gray,0,3000,clear,153448,Showdown Captain Mode,2026-09-20T15:13:51+00:00
+1063397,0,D.J. Montgomery,WR,IND,200,512,,False,,IND @ KC,1970-01-01 00:29:49.950000+00:00,d j montgomery,0,200,clear,153448,Showdown Captain Mode,2026-09-20T15:13:51+00:00
+1065406,0,Jonathan Taylor,RB,IND,11000,512,,False,,IND @ KC,1970-01-01 00:29:49.950000+00:00,jonathan taylor,0,11000,clear,153448,Showdown Captain Mode,2026-09-20T15:13:51+00:00
+1107027,0,Alec Pierce,WR,IND,7600,512,,False,,IND @ KC,1970-01-01 00:29:49.950000+00:00,alec pierce,0,7600,clear,153448,Showdown Captain Mode,2026-09-20T15:13:51+00:00
+1108526,0,Thomas Odukoya,TE,KC,200,512,,False,,IND @ KC,1970-01-01 00:29:49.950000+00:00,thomas odukoya,0,200,clear,153448,Showdown Captain Mode,2026-09-20T15:13:51+00:00
+1110301,0,Tyquan Thornton,WR,KC,3800,512,,False,,IND @ KC,1970-01-01 00:29:49.950000+00:00,tyquan thornton,0,3800,clear,153448,Showdown Captain Mode,2026-09-20T15:13:51+00:00
+1110681,0,Justin Fields,QB,KC,6000,512,,False,,IND @ KC,1970-01-01 00:29:49.950000+00:00,justin fields,0,6000,clear,153448,Showdown Captain Mode,2026-09-20T15:13:51+00:00
+1121873,0,Will Mallory,TE,IND,200,512,,False,,IND @ KC,1970-01-01 00:29:49.950000+00:00,will mallory,0,200,clear,153448,Showdown Captain Mode,2026-09-20T15:13:51+00:00
+1127080,0,Nikko Remigio,WR,KC,800,512,,False,,IND @ KC,1970-01-01 00:29:49.950000+00:00,nikko remigio,0,800,clear,153448,Showdown Captain Mode,2026-09-20T15:13:51+00:00
+1130245,0,Ben VanSumeren,RB,KC,200,512,,False,,IND @ KC,1970-01-01 00:29:49.950000+00:00,ben vansumeren,0,200,clear,153448,Showdown Captain Mode,2026-09-20T15:13:51+00:00
+1161661,0,Anthony Gould,WR,IND,200,512,,False,,IND @ KC,1970-01-01 00:29:49.950000+00:00,anthony gould,0,200,clear,153448,Showdown Captain Mode,2026-09-20T15:13:51+00:00
+1163272,0,Jared Wiley,TE,KC,200,512,,False,,IND @ KC,1970-01-01 00:29:49.950000+00:00,jared wiley,0,200,clear,153448,Showdown Captain Mode,2026-09-20T15:13:51+00:00
+1164402,0,Kenneth Walker III,RB,KC,10600,512,,False,,IND @ KC,1970-01-01 00:29:49.950000+00:00,kenneth walker,0,10600,clear,153448,Showdown Captain Mode,2026-09-20T15:13:51+00:00
+1166036,0,Ashton Dulin,WR,IND,200,512,,False,,IND @ KC,1970-01-01 00:29:49.950000+00:00,ashton dulin,0,200,clear,153448,Showdown Captain Mode,2026-09-20T15:13:51+00:00
+1173538,0,Rashee Rice,WR,KC,9400,512,,False,,IND @ KC,1970-01-01 00:29:49.950000+00:00,rashee rice,0,9400,clear,153448,Showdown Captain Mode,2026-09-20T15:13:51+00:00
+1180533,0,Spencer Shrader,K,IND,4600,512,,False,,IND @ KC,1970-01-01 00:29:49.950000+00:00,spencer shrader,0,4600,clear,153448,Showdown Captain Mode,2026-09-20T15:13:51+00:00
+1212622,0,Carson Towt,TE,IND,200,512,,False,,IND @ KC,1970-01-01 00:29:49.950000+00:00,carson towt,0,200,clear,153448,Showdown Captain Mode,2026-09-20T15:13:51+00:00
+1213442,0,Jimmy Holiday,WR,KC,200,512,,False,,IND @ KC,1970-01-01 00:29:49.950000+00:00,jimmy holiday,0,200,clear,153448,Showdown Captain Mode,2026-09-20T15:13:51+00:00
+1213794,0,Seth McGowan,RB,IND,3400,512,,False,,IND @ KC,1970-01-01 00:29:49.950000+00:00,seth mcgowan,0,3400,clear,153448,Showdown Captain Mode,2026-09-20T15:13:51+00:00
+1214132,0,Nate Carter,RB,KC,200,512,,False,,IND @ KC,1970-01-01 00:29:49.950000+00:00,nate carter,0,200,clear,153448,Showdown Captain Mode,2026-09-20T15:13:51+00:00
+1215022,0,Anthony Richardson Sr.,QB,IND,6000,512,,False,,IND @ KC,1970-01-01 00:29:49.950000+00:00,anthony richardson,0,6000,clear,153448,Showdown Captain Mode,2026-09-20T15:13:51+00:00
+1215077,0,Josh Downs,WR,IND,6600,512,,False,,IND @ KC,1970-01-01 00:29:49.950000+00:00,josh downs,0,6600,clear,153448,Showdown Captain Mode,2026-09-20T15:13:51+00:00
+1229083,0,Tyler Warren,TE,IND,7200,512,,False,,IND @ KC,1970-01-01 00:29:49.950000+00:00,tyler warren,0,7200,clear,153448,Showdown Captain Mode,2026-09-20T15:13:51+00:00
+1233297,0,Anderson Castle,RB,IND,200,512,,False,,IND @ KC,1970-01-01 00:29:49.950000+00:00,anderson castle,0,200,clear,153448,Showdown Captain Mode,2026-09-20T15:13:51+00:00
+1271740,0,Drew Ogletree,TE,IND,600,512,,False,,IND @ KC,1970-01-01 00:29:49.950000+00:00,drew ogletree,0,600,clear,153448,Showdown Captain Mode,2026-09-20T15:13:51+00:00
+1286037,0,Garrett Nussmeier,QB,KC,6000,512,,False,,IND @ KC,1970-01-01 00:29:49.950000+00:00,garrett nussmeier,0,6000,clear,153448,Showdown Captain Mode,2026-09-20T15:13:51+00:00
+1287639,0,Jake Briningstool,TE,KC,1600,512,,False,,IND @ KC,1970-01-01 00:29:49.950000+00:00,jake briningstool,0,1600,clear,153448,Showdown Captain Mode,2026-09-20T15:13:51+00:00
+1287798,0,Deion Burks,WR,IND,1000,512,,False,,IND @ KC,1970-01-01 00:29:49.950000+00:00,deion burks,0,1000,clear,153448,Showdown Captain Mode,2026-09-20T15:13:51+00:00
+1288387,0,John Michael Gyllenborg,TE,KC,200,512,,False,,IND @ KC,1970-01-01 00:29:49.950000+00:00,john michael gyllenborg,0,200,clear,153448,Showdown Captain Mode,2026-09-20T15:13:51+00:00
+1290165,0,Riley Leonard,QB,IND,6000,512,,False,,IND @ KC,1970-01-01 00:29:49.950000+00:00,riley leonard,0,6000,clear,153448,Showdown Captain Mode,2026-09-20T15:13:51+00:00
+1303569,0,DJ Giddens,RB,IND,1400,512,,False,,IND @ KC,1970-01-01 00:29:49.950000+00:00,dj giddens,0,1400,clear,153448,Showdown Captain Mode,2026-09-20T15:13:51+00:00
+1313668,0,Brashard Smith,RB,KC,400,512,,False,,IND @ KC,1970-01-01 00:29:49.950000+00:00,brashard smith,0,400,clear,153448,Showdown Captain Mode,2026-09-20T15:13:51+00:00
+1326638,0,Xavier Worthy,WR,KC,5400,512,,False,,IND @ KC,1970-01-01 00:29:49.950000+00:00,xavier worthy,0,5400,clear,153448,Showdown Captain Mode,2026-09-20T15:13:51+00:00
+1339352,0,Jeff Caldwell,WR,KC,200,512,,False,,IND @ KC,1970-01-01 00:29:49.950000+00:00,jeff caldwell,0,200,clear,153448,Showdown Captain Mode,2026-09-20T15:13:51+00:00
+1377757,0,Jaydn Ott,RB,KC,200,512,,False,,IND @ KC,1970-01-01 00:29:49.950000+00:00,jaydn ott,0,200,clear,153448,Showdown Captain Mode,2026-09-20T15:13:51+00:00
+1379251,0,Emmett Johnson,RB,KC,3600,512,,False,,IND @ KC,1970-01-01 00:29:49.950000+00:00,emmett johnson,0,3600,clear,153448,Showdown Captain Mode,2026-09-20T15:13:51+00:00
+1379261,0,Omari Evans,WR,KC,200,512,,False,,IND @ KC,1970-01-01 00:29:49.950000+00:00,omari evans,0,200,clear,153448,Showdown Captain Mode,2026-09-20T15:13:51+00:00
+1380773,0,Kenny Fletcher Jr.,TE,IND,200,512,,False,,IND @ KC,1970-01-01 00:29:49.950000+00:00,kenny fletcher,0,200,clear,153448,Showdown Captain Mode,2026-09-20T15:13:51+00:00
+1382670,0,Cyrus Allen,WR,KC,2800,512,,False,,IND @ KC,1970-01-01 00:29:49.950000+00:00,cyrus allen,0,2800,clear,153448,Showdown Captain Mode,2026-09-20T15:13:51+00:00
+1403491,0,Jalen Royals,WR,KC,1200,512,,False,,IND @ KC,1970-01-01 00:29:49.950000+00:00,jalen royals,0,1200,clear,153448,Showdown Captain Mode,2026-09-20T15:13:51+00:00
+1405106,0,Andrew Armstrong,WR,KC,200,512,,False,,IND @ KC,1970-01-01 00:29:49.950000+00:00,andrew armstrong,0,200,clear,153448,Showdown Captain Mode,2026-09-20T15:13:51+00:00
+1445256,0,Davon Booth,RB,IND,200,512,,False,,IND @ KC,1970-01-01 00:29:49.950000+00:00,davon booth,0,200,clear,153448,Showdown Captain Mode,2026-09-20T15:13:51+00:00

@@ -1,0 +1,57 @@
+dk_player_id,draftable_id,name,position,team,salary,roster_slot,status,disabled,attributes,game,starts_utc,norm,flex_eligible,captain_salary,playing,draft_group,game_type,captured_at
+345,0,Dolphins,DST,MIA,3000,512,,False,,MIA @ SF,1970-01-01 00:29:49.935900+00:00,dolphins,0,3000,clear,153445,Showdown Captain Mode,2026-09-20T15:13:51+00:00
+359,0,49ers,DST,SF,5800,512,,False,,MIA @ SF,1970-01-01 00:29:49.935900+00:00,49ers,0,5800,clear,153445,Showdown Captain Mode,2026-09-20T15:13:51+00:00
+501150,0,Kyle Juszczyk,RB,SF,1400,512,,False,,MIA @ SF,1970-01-01 00:29:49.935900+00:00,kyle juszczyk,0,1400,clear,153445,Showdown Captain Mode,2026-09-20T15:13:51+00:00
+593587,0,Mike Evans,WR,SF,9600,512,,False,,MIA @ SF,1970-01-01 00:29:49.935900+00:00,mike evans,0,9600,clear,153445,Showdown Captain Mode,2026-09-20T15:13:51+00:00
+727279,0,Demarcus Robinson,WR,SF,6400,512,,False,,MIA @ SF,1970-01-01 00:29:49.935900+00:00,demarcus robinson,0,6400,clear,153445,Showdown Captain Mode,2026-09-20T15:13:51+00:00
+732774,0,Zane Gonzalez,K,MIA,4800,512,,False,,MIA @ SF,1970-01-01 00:29:49.935900+00:00,zane gonzalez,0,4800,clear,153445,Showdown Captain Mode,2026-09-20T15:13:51+00:00
+733672,0,George Kittle,TE,SF,7600,512,,False,,MIA @ SF,1970-01-01 00:29:49.935900+00:00,george kittle,0,7600,clear,153445,Showdown Captain Mode,2026-09-20T15:13:51+00:00
+757521,0,KhaDarel Hodge,WR,SF,200,512,,False,,MIA @ SF,1970-01-01 00:29:49.935900+00:00,khadarel hodge,0,200,clear,153445,Showdown Captain Mode,2026-09-20T15:13:51+00:00
+830517,0,Christian McCaffrey,RB,SF,12000,512,,False,,MIA @ SF,1970-01-01 00:29:49.935900+00:00,christian mccaffrey,0,12000,clear,153445,Showdown Captain Mode,2026-09-20T15:13:51+00:00
+835749,0,Deebo Samuel Sr.,WR,SF,8000,512,,False,,MIA @ SF,1970-01-01 00:29:49.935900+00:00,deebo samuel,0,8000,clear,153445,Showdown Captain Mode,2026-09-20T15:13:51+00:00
+865801,0,Christian Kirk,WR,SF,200,512,,False,,MIA @ SF,1970-01-01 00:29:49.935900+00:00,christian kirk,0,200,clear,153445,Showdown Captain Mode,2026-09-20T15:13:51+00:00
+910383,0,Eddy Pineiro,K,SF,5200,512,,False,,MIA @ SF,1970-01-01 00:29:49.935900+00:00,eddy pineiro,0,5200,clear,153445,Showdown Captain Mode,2026-09-20T15:13:51+00:00
+911985,0,Jack Stoll,TE,SF,200,512,,False,,MIA @ SF,1970-01-01 00:29:49.935900+00:00,jack stoll,0,200,clear,153445,Showdown Captain Mode,2026-09-20T15:13:51+00:00
+946541,0,Luke Farrell,TE,SF,1600,512,,False,,MIA @ SF,1970-01-01 00:29:49.935900+00:00,luke farrell,0,1600,clear,153445,Showdown Captain Mode,2026-09-20T15:13:51+00:00
+973945,0,Mac Jones,QB,SF,6000,512,,False,,MIA @ SF,1970-01-01 00:29:49.935900+00:00,mac jones,0,6000,clear,153445,Showdown Captain Mode,2026-09-20T15:13:51+00:00
+976066,0,Jalen Reagor,WR,MIA,200,512,,False,,MIA @ SF,1970-01-01 00:29:49.935900+00:00,jalen reagor,0,200,clear,153445,Showdown Captain Mode,2026-09-20T15:13:51+00:00
+976323,0,Malik Willis,QB,MIA,9000,512,,False,,MIA @ SF,1970-01-01 00:29:49.935900+00:00,malik willis,0,9000,clear,153445,Showdown Captain Mode,2026-09-20T15:13:51+00:00
+1057725,0,Carlos Washington Jr.,RB,MIA,200,512,,False,,MIA @ SF,1970-01-01 00:29:49.935900+00:00,carlos washington,0,200,clear,153445,Showdown Captain Mode,2026-09-20T15:13:51+00:00
+1061591,0,Cal Adomitis,TE,MIA,200,512,,False,,MIA @ SF,1970-01-01 00:29:49.935900+00:00,cal adomitis,0,200,clear,153445,Showdown Captain Mode,2026-09-20T15:13:51+00:00
+1065025,0,Riley Patterson,K,MIA,4800,512,,False,,MIA @ SF,1970-01-01 00:29:49.935900+00:00,riley patterson,0,4800,clear,153445,Showdown Captain Mode,2026-09-20T15:13:51+00:00
+1066424,0,Jalen Tolbert,WR,MIA,1000,512,,False,,MIA @ SF,1970-01-01 00:29:49.935900+00:00,jalen tolbert,0,1000,clear,153445,Showdown Captain Mode,2026-09-20T15:13:51+00:00
+1068872,0,Jake Tonges,TE,SF,2600,512,,False,,MIA @ SF,1970-01-01 00:29:49.935900+00:00,jake tonges,0,2600,clear,153445,Showdown Captain Mode,2026-09-20T15:13:51+00:00
+1107034,0,Brandon Aiyuk,WR,SF,200,512,,False,,MIA @ SF,1970-01-01 00:29:49.935900+00:00,brandon aiyuk,0,200,clear,153445,Showdown Captain Mode,2026-09-20T15:13:51+00:00
+1118668,0,Ryan Miller,WR,MIA,200,512,,False,,MIA @ SF,1970-01-01 00:29:49.935900+00:00,ryan miller,0,200,clear,153445,Showdown Captain Mode,2026-09-20T15:13:51+00:00
+1121761,0,Brock Purdy,QB,SF,10200,512,,False,,MIA @ SF,1970-01-01 00:29:49.935900+00:00,brock purdy,0,10200,clear,153445,Showdown Captain Mode,2026-09-20T15:13:51+00:00
+1122692,0,Cole Turner,TE,MIA,200,512,,False,,MIA @ SF,1970-01-01 00:29:49.935900+00:00,cole turner,0,200,clear,153445,Showdown Captain Mode,2026-09-20T15:13:51+00:00
+1125589,0,Brayden Willis,TE,SF,200,512,,False,,MIA @ SF,1970-01-01 00:29:49.935900+00:00,brayden willis,0,200,clear,153445,Showdown Captain Mode,2026-09-20T15:13:51+00:00
+1126338,0,Isaac Guerendo,RB,SF,200,512,,False,,MIA @ SF,1970-01-01 00:29:49.935900+00:00,isaac guerendo,0,200,clear,153445,Showdown Captain Mode,2026-09-20T15:13:51+00:00
+1128085,0,Greg Dulcich,TE,MIA,3200,512,,False,,MIA @ SF,1970-01-01 00:29:49.935900+00:00,greg dulcich,0,3200,clear,153445,Showdown Captain Mode,2026-09-20T15:13:51+00:00
+1161416,0,Ricky Pearsall,WR,SF,200,512,,False,,MIA @ SF,1970-01-01 00:29:49.935900+00:00,ricky pearsall,0,200,clear,153445,Showdown Captain Mode,2026-09-20T15:13:51+00:00
+1166235,0,Sincere McCormick,RB,SF,200,512,,False,,MIA @ SF,1970-01-01 00:29:49.935900+00:00,sincere mccormick,0,200,clear,153445,Showdown Captain Mode,2026-09-20T15:13:51+00:00
+1166989,0,Kurtis Rourke,QB,SF,6000,512,,False,,MIA @ SF,1970-01-01 00:29:49.935900+00:00,kurtis rourke,0,6000,clear,153445,Showdown Captain Mode,2026-09-20T15:13:51+00:00
+1173255,0,Malik Washington,WR,MIA,5400,512,,False,,MIA @ SF,1970-01-01 00:29:49.935900+00:00,malik washington,0,5400,clear,153445,Showdown Captain Mode,2026-09-20T15:13:51+00:00
+1181861,0,Jacob Cowing,WR,SF,1800,512,,False,,MIA @ SF,1970-01-01 00:29:49.935900+00:00,jacob cowing,0,1800,clear,153445,Showdown Captain Mode,2026-09-20T15:13:51+00:00
+1213386,0,Brady Cook,QB,MIA,6000,512,,False,,MIA @ SF,1970-01-01 00:29:49.935900+00:00,brady cook,0,6000,clear,153445,Showdown Captain Mode,2026-09-20T15:13:51+00:00
+1215329,0,Will Sheppard,WR,MIA,200,512,,False,,MIA @ SF,1970-01-01 00:29:49.935900+00:00,will sheppard,0,200,clear,153445,Showdown Captain Mode,2026-09-20T15:13:51+00:00
+1215772,0,Kaelon Black,RB,SF,5000,512,,False,,MIA @ SF,1970-01-01 00:29:49.935900+00:00,kaelon black,0,5000,clear,153445,Showdown Captain Mode,2026-09-20T15:13:51+00:00
+1222835,0,Jordan Watkins,WR,SF,800,512,,False,,MIA @ SF,1970-01-01 00:29:49.935900+00:00,jordan watkins,0,800,clear,153445,Showdown Captain Mode,2026-09-20T15:13:51+00:00
+1231820,0,De'Von Achane,RB,MIA,10600,512,,False,,MIA @ SF,1970-01-01 00:29:49.935900+00:00,devon achane,0,10600,clear,153445,Showdown Captain Mode,2026-09-20T15:13:51+00:00
+1286513,0,Jaylen Wright,RB,MIA,3600,512,,False,,MIA @ SF,1970-01-01 00:29:49.935900+00:00,jaylen wright,0,3600,clear,153445,Showdown Captain Mode,2026-09-20T15:13:51+00:00
+1286818,0,De'Zhaun Stribling,WR,SF,200,512,,False,,MIA @ SF,1970-01-01 00:29:49.935900+00:00,dezhaun stribling,0,200,clear,153445,Showdown Captain Mode,2026-09-20T15:13:51+00:00
+1287826,0,Kyle McCord,QB,MIA,6000,512,,False,,MIA @ SF,1970-01-01 00:29:49.935900+00:00,kyle mccord,0,6000,clear,153445,Showdown Captain Mode,2026-09-20T15:13:51+00:00
+1288045,0,Will Pauling,WR,SF,200,512,,False,,MIA @ SF,1970-01-01 00:29:49.935900+00:00,will pauling,0,200,clear,153445,Showdown Captain Mode,2026-09-20T15:13:51+00:00
+1290014,0,Seydou Traore,TE,MIA,400,512,,False,,MIA @ SF,1970-01-01 00:29:49.935900+00:00,seydou traore,0,400,clear,153445,Showdown Captain Mode,2026-09-20T15:13:51+00:00
+1310628,0,Khalil Dinkins,TE,SF,200,512,,False,,MIA @ SF,1970-01-01 00:29:49.935900+00:00,khalil dinkins,0,200,clear,153445,Showdown Captain Mode,2026-09-20T15:13:51+00:00
+1317191,0,Tre Watson,TE,MIA,200,512,,False,,MIA @ SF,1970-01-01 00:29:49.935900+00:00,tre watson,0,200,clear,153445,Showdown Captain Mode,2026-09-20T15:13:51+00:00
+1319185,0,Jarquez Hunter,RB,MIA,200,512,,False,,MIA @ SF,1970-01-01 00:29:49.935900+00:00,jarquez hunter,0,200,clear,153445,Showdown Captain Mode,2026-09-20T15:13:51+00:00
+1322367,0,Will Kacmarek,TE,MIA,600,512,,False,,MIA @ SF,1970-01-01 00:29:49.935900+00:00,will kacmarek,0,600,clear,153445,Showdown Captain Mode,2026-09-20T15:13:51+00:00
+1327875,0,DJ Herman,RB,MIA,200,512,,False,,MIA @ SF,1970-01-01 00:29:49.935900+00:00,dj herman,0,200,clear,153445,Showdown Captain Mode,2026-09-20T15:13:51+00:00
+1377766,0,Ollie Gordon II,RB,MIA,2000,512,,False,,MIA @ SF,1970-01-01 00:29:49.935900+00:00,ollie gordon,0,2000,clear,153445,Showdown Captain Mode,2026-09-20T15:13:51+00:00
+1389700,0,Chris Bell,WR,MIA,4000,512,,False,,MIA @ SF,1970-01-01 00:29:49.935900+00:00,chris bell,0,4000,clear,153445,Showdown Captain Mode,2026-09-20T15:13:51+00:00
+1390913,0,Wesley Grimes,WR,SF,200,512,,False,,MIA @ SF,1970-01-01 00:29:49.935900+00:00,wesley grimes,0,200,clear,153445,Showdown Captain Mode,2026-09-20T15:13:51+00:00
+1394798,0,Caleb Douglas,WR,MIA,4400,512,,False,,MIA @ SF,1970-01-01 00:29:49.935900+00:00,caleb douglas,0,4400,clear,153445,Showdown Captain Mode,2026-09-20T15:13:51+00:00
+1399272,0,Kevin Coleman Jr.,WR,MIA,1200,512,,False,,MIA @ SF,1970-01-01 00:29:49.935900+00:00,kevin coleman,0,1200,clear,153445,Showdown Captain Mode,2026-09-20T15:13:51+00:00
+1400657,0,Jordan James,RB,SF,2400,512,,False,,MIA @ SF,1970-01-01 00:29:49.935900+00:00,jordan james,0,2400,clear,153445,Showdown Captain Mode,2026-09-20T15:13:51+00:00
+1405928,0,Justin Joly,TE,MIA,200,512,,False,,MIA @ SF,1970-01-01 00:29:49.935900+00:00,justin joly,0,200,clear,153445,Showdown Captain Mode,2026-09-20T15:13:51+00:00
