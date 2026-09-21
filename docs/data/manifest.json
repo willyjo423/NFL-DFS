@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-09-21T13:10:09+00:00",
+  "updated_at": "2026-09-21T22:10:54+00:00",
   "slates": [
     {
       "kind": "classic",
@@ -90,12 +90,12 @@
       "sport": "nfl",
       "site": "dk",
       "draft_group": 153468,
-      "label": "NFL $30K Flea Flicker [$10K to 1st] (Mon-Thu)",
-      "contests": 227,
+      "label": "NFL $7.5K Pylon [Single Entry] (Mon-Thu)",
+      "contests": 268,
       "starts": "2026-09-22 00:15:00+00:00",
       "file": "data/nfl/dk-classic-153468.json",
       "players": 81,
-      "generated_at": "2026-09-21T13:06:51+00:00"
+      "generated_at": "2026-09-21T22:06:53+00:00"
     },
     {
       "kind": "classic",
@@ -103,11 +103,23 @@
       "site": "dk",
       "draft_group": 153769,
       "label": "NFL $2.75M Fantasy Football Millionaire [$1M to 1st]",
-      "contests": 20,
+      "contests": 1400,
       "starts": "2026-09-27 17:00:00+00:00",
       "file": "data/nfl/dk-classic-153769.json",
       "players": 539,
-      "generated_at": "2026-09-21T13:09:26+00:00"
+      "generated_at": "2026-09-21T22:04:27+00:00"
+    },
+    {
+      "kind": "classic",
+      "sport": "nfl",
+      "site": "dk",
+      "draft_group": 153768,
+      "label": "NFL $20K Thunderdome [Must Fill] (Thu-Mon)",
+      "contests": 104,
+      "starts": "2026-09-25 00:15:00+00:00",
+      "file": "data/nfl/dk-classic-153768.json",
+      "players": 662,
+      "generated_at": "2026-09-21T22:10:12+00:00"
     },
     {
       "kind": "showdown",
@@ -235,11 +247,11 @@
       "site": "dk",
       "draft_group": 153449,
       "label": "NFL Showdown $1.5M Monday Night Showdown [$500K to 1st] (NYG @ LAR)",
-      "contests": 1102,
+      "contests": 1253,
       "starts": "2026-09-22 00:15:00+00:00",
       "file": "data/nfl/dk-showdown-153449.json",
       "players": 40,
-      "generated_at": "2026-09-21T13:06:02+00:00"
+      "generated_at": "2026-09-21T22:05:16+00:00"
     },
     {
       "kind": "showdown",
@@ -252,6 +264,18 @@
       "file": "data/nfl/dk-showdown-153445.json",
       "players": 41,
       "generated_at": "2026-09-19T13:18:18+00:00"
+    },
+    {
+      "kind": "showdown",
+      "sport": "nfl",
+      "site": "dk",
+      "draft_group": 153775,
+      "label": "$14M 2026 Fantasy Football World Championship Qualifier #38 (ATL @ GB)",
+      "contests": 310,
+      "starts": "2026-09-25 00:15:00+00:00",
+      "file": "data/nfl/dk-showdown-153775.json",
+      "players": 41,
+      "generated_at": "2026-09-21T22:06:04+00:00"
     }
   ],
   "failures": [
