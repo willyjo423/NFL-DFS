@@ -1,0 +1,54 @@
+dk_player_id,draftable_id,name,position,team,salary,roster_slot,status,disabled,attributes,game,starts_utc,norm,flex_eligible,captain_salary,playing,draft_group,game_type,captured_at
+323,0,Falcons,DST,ATL,3400,512,,False,,ATL @ GB,1970-01-01 00:29:50.295300+00:00,falcons,0,3400,clear,153775,Showdown Captain Mode,2026-09-21T23:50:53+00:00
+335,0,Packers,DST,GB,5000,512,,False,,ATL @ GB,1970-01-01 00:29:50.295300+00:00,packers,0,5000,clear,153775,Showdown Captain Mode,2026-09-21T23:50:53+00:00
+213781,0,Nick Folk,K,ATL,4800,512,,False,,ATL @ GB,1970-01-01 00:29:50.295300+00:00,nick folk,0,4800,clear,153775,Showdown Captain Mode,2026-09-21T23:50:53+00:00
+399579,0,Tyrod Taylor,QB,GB,6000,512,,False,,ATL @ GB,1970-01-01 00:29:50.295300+00:00,tyrod taylor,0,6000,clear,153775,Showdown Captain Mode,2026-09-21T23:50:53+00:00
+694117,0,Cooper Rush,QB,ATL,8000,512,,False,,ATL @ GB,1970-01-01 00:29:50.295300+00:00,cooper rush,0,8000,clear,153775,Showdown Captain Mode,2026-09-21T23:50:53+00:00
+739424,0,Austin Hooper,TE,ATL,1600,512,,False,,ATL @ GB,1970-01-01 00:29:50.295300+00:00,austin hooper,0,1600,clear,153775,Showdown Captain Mode,2026-09-21T23:50:53+00:00
+743749,0,Jonnu Smith,TE,GB,2800,512,,False,,ATL @ GB,1970-01-01 00:29:50.295300+00:00,jonnu smith,0,2800,clear,153775,Showdown Captain Mode,2026-09-21T23:50:53+00:00
+883976,0,Olamide Zaccheaus,WR,ATL,2000,512,,False,,ATL @ GB,1970-01-01 00:29:50.295300+00:00,olamide zaccheaus,0,2000,clear,153775,Showdown Captain Mode,2026-09-21T23:50:53+00:00
+912137,0,Jordan Love,QB,GB,10000,512,,False,,ATL @ GB,1970-01-01 00:29:50.295300+00:00,jordan love,0,10000,clear,153775,Showdown Captain Mode,2026-09-21T23:50:53+00:00
+922040,0,Charlie Woerner,TE,ATL,600,512,,False,,ATL @ GB,1970-01-01 00:29:50.295300+00:00,charlie woerner,0,600,clear,153775,Showdown Captain Mode,2026-09-21T23:50:53+00:00
+935104,0,Khalil Herbert,RB,ATL,200,512,,False,,ATL @ GB,1970-01-01 00:29:50.295300+00:00,khalil herbert,0,200,clear,153775,Showdown Captain Mode,2026-09-21T23:50:53+00:00
+944416,0,Josh Jacobs,RB,GB,8400,512,,False,,ATL @ GB,1970-01-01 00:29:50.295300+00:00,josh jacobs,0,8400,clear,153775,Showdown Captain Mode,2026-09-21T23:50:53+00:00
+973947,0,Tua Tagovailoa,QB,ATL,8600,512,,False,,ATL @ GB,1970-01-01 00:29:50.295300+00:00,tua tagovailoa,0,8600,clear,153775,Showdown Captain Mode,2026-09-21T23:50:53+00:00
+973966,0,Brian Robinson Jr.,RB,ATL,4400,512,,False,,ATL @ GB,1970-01-01 00:29:50.295300+00:00,brian robinson,0,4400,clear,153775,Showdown Captain Mode,2026-09-21T23:50:53+00:00
+976236,0,Trey Sermon,RB,ATL,200,512,,False,,ATL @ GB,1970-01-01 00:29:50.295300+00:00,trey sermon,0,200,clear,153775,Showdown Captain Mode,2026-09-21T23:50:53+00:00
+1049792,0,Nick Muse,TE,ATL,200,512,,False,,ATL @ GB,1970-01-01 00:29:50.295300+00:00,nick muse,0,200,clear,153775,Showdown Captain Mode,2026-09-21T23:50:53+00:00
+1050335,0,Pierre Strong Jr.,RB,GB,400,512,,False,,ATL @ GB,1970-01-01 00:29:50.295300+00:00,pierre strong,0,400,clear,153775,Showdown Captain Mode,2026-09-21T23:50:53+00:00
+1067918,0,Christian Watson,WR,GB,9800,512,,False,,ATL @ GB,1970-01-01 00:29:50.295300+00:00,christian watson,0,9800,clear,153775,Showdown Captain Mode,2026-09-21T23:50:53+00:00
+1068803,0,Bo Melton,WR,GB,1200,512,,False,,ATL @ GB,1970-01-01 00:29:50.295300+00:00,bo melton,0,1200,clear,153775,Showdown Captain Mode,2026-09-21T23:50:53+00:00
+1107037,0,Josh Whyle,TE,GB,200,512,,False,,ATL @ GB,1970-01-01 00:29:50.295300+00:00,josh whyle,0,200,clear,153775,Showdown Captain Mode,2026-09-21T23:50:53+00:00
+1107326,0,Thomas Yassmin,TE,GB,200,512,,False,,ATL @ GB,1970-01-01 00:29:50.295300+00:00,thomas yassmin,0,200,clear,153775,Showdown Captain Mode,2026-09-21T23:50:53+00:00
+1107478,0,Michael Penix Jr.,QB,ATL,9000,512,,False,,ATL @ GB,1970-01-01 00:29:50.295300+00:00,michael penix,0,9000,clear,153775,Showdown Captain Mode,2026-09-21T23:50:53+00:00
+1108534,0,Dylan Drummond,WR,ATL,200,512,,False,,ATL @ GB,1970-01-01 00:29:50.295300+00:00,dylan drummond,0,200,clear,153775,Showdown Captain Mode,2026-09-21T23:50:53+00:00
+1120347,0,Chris Blair,WR,ATL,1000,512,,False,,ATL @ GB,1970-01-01 00:29:50.295300+00:00,chris blair,0,1000,clear,153775,Showdown Captain Mode,2026-09-21T23:50:53+00:00
+1121878,0,Jahan Dotson,WR,ATL,3000,512,,False,,ATL @ GB,1970-01-01 00:29:50.295300+00:00,jahan dotson,0,3000,clear,153775,Showdown Captain Mode,2026-09-21T23:50:53+00:00
+1123026,0,Kyle Pitts Sr.,TE,ATL,6600,512,,False,,ATL @ GB,1970-01-01 00:29:50.295300+00:00,kyle pitts,0,6600,clear,153775,Showdown Captain Mode,2026-09-21T23:50:53+00:00
+1123398,0,Jayden Reed,WR,GB,6200,512,,False,,ATL @ GB,1970-01-01 00:29:50.295300+00:00,jayden reed,0,6200,clear,153775,Showdown Captain Mode,2026-09-21T23:50:53+00:00
+1127065,0,Chris Brooks,RB,GB,5400,512,,False,,ATL @ GB,1970-01-01 00:29:50.295300+00:00,chris brooks,0,5400,clear,153775,Showdown Captain Mode,2026-09-21T23:50:53+00:00
+1161818,0,Kedon Slovis,QB,GB,6000,512,,False,,ATL @ GB,1970-01-01 00:29:50.295300+00:00,kedon slovis,0,6000,clear,153775,Showdown Captain Mode,2026-09-21T23:50:53+00:00
+1172746,0,Isaiah Neyor,WR,GB,200,512,,False,,ATL @ GB,1970-01-01 00:29:50.295300+00:00,isaiah neyor,0,200,clear,153775,Showdown Captain Mode,2026-09-21T23:50:53+00:00
+1176730,0,Skyy Moore,WR,GB,2400,512,,False,,ATL @ GB,1970-01-01 00:29:50.295300+00:00,skyy moore,0,2400,clear,153775,Showdown Captain Mode,2026-09-21T23:50:53+00:00
+1178741,0,Drake London,WR,ATL,8800,512,,False,,ATL @ GB,1970-01-01 00:29:50.295300+00:00,drake london,0,8800,clear,153775,Showdown Captain Mode,2026-09-21T23:50:53+00:00
+1179790,0,Luke Musgrave,TE,GB,200,512,,False,,ATL @ GB,1970-01-01 00:29:50.295300+00:00,luke musgrave,0,200,clear,153775,Showdown Captain Mode,2026-09-21T23:50:53+00:00
+1181874,0,Tucker Kraft,TE,GB,7000,512,,False,,ATL @ GB,1970-01-01 00:29:50.295300+00:00,tucker kraft,0,7000,clear,153775,Showdown Captain Mode,2026-09-21T23:50:53+00:00
+1213414,0,MarShawn Lloyd,RB,GB,7400,512,,False,,ATL @ GB,1970-01-01 00:29:50.295300+00:00,marshawn lloyd,0,7400,clear,153775,Showdown Captain Mode,2026-09-21T23:50:53+00:00
+1213730,0,Mark Redman,TE,GB,200,512,,False,,ATL @ GB,1970-01-01 00:29:50.295300+00:00,mark redman,0,200,clear,153775,Showdown Captain Mode,2026-09-21T23:50:53+00:00
+1213872,0,Savion Williams,WR,GB,200,512,,False,,ATL @ GB,1970-01-01 00:29:50.295300+00:00,savion williams,0,200,clear,153775,Showdown Captain Mode,2026-09-21T23:50:53+00:00
+1215789,0,Antwane Wells Jr.,WR,ATL,200,512,,False,,ATL @ GB,1970-01-01 00:29:50.295300+00:00,antwane wells,0,200,clear,153775,Showdown Captain Mode,2026-09-21T23:50:53+00:00
+1228244,0,Bijan Robinson,RB,ATL,11800,512,,False,,ATL @ GB,1970-01-01 00:29:50.295300+00:00,bijan robinson,0,11800,clear,153775,Showdown Captain Mode,2026-09-21T23:50:53+00:00
+1228551,0,Drake Dabney,TE,GB,200,512,,False,,ATL @ GB,1970-01-01 00:29:50.295300+00:00,drake dabney,0,200,clear,153775,Showdown Captain Mode,2026-09-21T23:50:53+00:00
+1270459,0,Damon Bankston,RB,GB,200,512,,False,,ATL @ GB,1970-01-01 00:29:50.295300+00:00,damon bankston,0,200,clear,153775,Showdown Captain Mode,2026-09-21T23:50:53+00:00
+1287705,0,Beaux Collins,WR,ATL,200,512,,False,,ATL @ GB,1970-01-01 00:29:50.295300+00:00,beaux collins,0,200,clear,153775,Showdown Captain Mode,2026-09-21T23:50:53+00:00
+1296464,0,Quincy Skinner Jr.,WR,GB,200,512,,False,,ATL @ GB,1970-01-01 00:29:50.295300+00:00,quincy skinner,0,200,clear,153775,Showdown Captain Mode,2026-09-21T23:50:53+00:00
+1323916,0,J. Michael Sturdivant,WR,GB,800,512,,False,,ATL @ GB,1970-01-01 00:29:50.295300+00:00,j michael sturdivant,0,800,clear,153775,Showdown Captain Mode,2026-09-21T23:50:53+00:00
+1329289,0,Cash Jones,RB,ATL,200,512,,False,,ATL @ GB,1970-01-01 00:29:50.295300+00:00,cash jones,0,200,clear,153775,Showdown Captain Mode,2026-09-21T23:50:53+00:00
+1379267,0,Matthew Golden,WR,GB,7800,512,,False,,ATL @ GB,1970-01-01 00:29:50.295300+00:00,matthew golden,0,7800,clear,153775,Showdown Captain Mode,2026-09-21T23:50:53+00:00
+1381902,0,Kaleb Johnson,RB,GB,4000,512,,False,,ATL @ GB,1970-01-01 00:29:50.295300+00:00,kaleb johnson,0,4000,clear,153775,Showdown Captain Mode,2026-09-21T23:50:53+00:00
+1394826,0,Trey Smack,K,GB,5200,512,,False,,ATL @ GB,1970-01-01 00:29:50.295300+00:00,trey smack,0,5200,clear,153775,Showdown Captain Mode,2026-09-21T23:50:53+00:00
+1401629,0,Vinny Anthony II,WR,ATL,200,512,,False,,ATL @ GB,1970-01-01 00:29:50.295300+00:00,vinny anthony,0,200,clear,153775,Showdown Captain Mode,2026-09-21T23:50:53+00:00
+1403373,0,Jack Velling,TE,ATL,200,512,,False,,ATL @ GB,1970-01-01 00:29:50.295300+00:00,jack velling,0,200,clear,153775,Showdown Captain Mode,2026-09-21T23:50:53+00:00
+1441110,0,Zachariah Branch,WR,ATL,3800,512,,False,,ATL @ GB,1970-01-01 00:29:50.295300+00:00,zachariah branch,0,3800,clear,153775,Showdown Captain Mode,2026-09-21T23:50:53+00:00
+1580184,0,Lenny Krieg,K,GB,5200,512,,False,,ATL @ GB,1970-01-01 00:29:50.295300+00:00,lenny krieg,0,5200,clear,153775,Showdown Captain Mode,2026-09-21T23:50:53+00:00
+1637700,0,Jack Strand,QB,ATL,8200,512,,False,,ATL @ GB,1970-01-01 00:29:50.295300+00:00,jack strand,0,8200,clear,153775,Showdown Captain Mode,2026-09-21T23:50:53+00:00
