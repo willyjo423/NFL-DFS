@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-09-21T22:10:54+00:00",
+  "updated_at": "2026-09-22T13:14:08+00:00",
   "slates": [
     {
       "kind": "classic",
@@ -103,23 +103,23 @@
       "site": "dk",
       "draft_group": 153769,
       "label": "NFL $2.75M Fantasy Football Millionaire [$1M to 1st]",
-      "contests": 1400,
+      "contests": 1565,
       "starts": "2026-09-27 17:00:00+00:00",
       "file": "data/nfl/dk-classic-153769.json",
       "players": 539,
-      "generated_at": "2026-09-21T22:04:27+00:00"
+      "generated_at": "2026-09-22T13:09:08+00:00"
     },
     {
       "kind": "classic",
       "sport": "nfl",
       "site": "dk",
       "draft_group": 153768,
-      "label": "NFL $20K Thunderdome [Must Fill] (Thu-Mon)",
-      "contests": 104,
+      "label": "NFL $30K Screen Pass [$10K to 1st] (Thu-Mon)",
+      "contests": 259,
       "starts": "2026-09-25 00:15:00+00:00",
       "file": "data/nfl/dk-classic-153768.json",
       "players": 662,
-      "generated_at": "2026-09-21T22:10:12+00:00"
+      "generated_at": "2026-09-22T13:13:23+00:00"
     },
     {
       "kind": "showdown",
@@ -270,12 +270,12 @@
       "sport": "nfl",
       "site": "dk",
       "draft_group": 153775,
-      "label": "$14M 2026 Fantasy Football World Championship Qualifier #38 (ATL @ GB)",
-      "contests": 310,
+      "label": "NFL Showdown $1.5M Thursday Night Showdown [$500K to 1st] (ATL @ GB)",
+      "contests": 999,
       "starts": "2026-09-25 00:15:00+00:00",
       "file": "data/nfl/dk-showdown-153775.json",
       "players": 41,
-      "generated_at": "2026-09-21T22:06:04+00:00"
+      "generated_at": "2026-09-22T13:09:59+00:00"
     }
   ],
   "failures": [
