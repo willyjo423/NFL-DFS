@@ -1,0 +1,53 @@
+dk_player_id,draftable_id,name,position,team,salary,roster_slot,status,disabled,attributes,game,starts_utc,norm,flex_eligible,captain_salary,playing,draft_group,game_type,captured_at
+336,0,Titans,DST,TEN,3400,512,,False,,TEN @ NYG,1970-01-01 00:29:50.528400+00:00,titans,0,3400,clear,153782,Showdown Captain Mode,2026-09-23T15:14:30+00:00
+351,0,Giants,DST,NYG,4400,512,,False,,TEN @ NYG,1970-01-01 00:29:50.528400+00:00,giants,0,4400,clear,153782,Showdown Captain Mode,2026-09-23T15:14:30+00:00
+563293,0,Chris Manhertz,TE,NYG,200,512,,False,,TEN @ NYG,1970-01-01 00:29:50.528400+00:00,chris manhertz,0,200,clear,153782,Showdown Captain Mode,2026-09-23T15:14:30+00:00
+589984,0,Odell Beckham Jr.,WR,NYG,1200,512,,False,,TEN @ NYG,1970-01-01 00:29:50.528400+00:00,odell beckham,0,1200,clear,153782,Showdown Captain Mode,2026-09-23T15:14:30+00:00
+658389,0,Patrick Ricard,RB,NYG,400,512,,False,,TEN @ NYG,1970-01-01 00:29:50.528400+00:00,patrick ricard,0,400,clear,153782,Showdown Captain Mode,2026-09-23T15:14:30+00:00
+691536,0,Jameis Winston,QB,NYG,9000,512,,False,,TEN @ NYG,1970-01-01 00:29:50.528400+00:00,jameis winston,0,9000,clear,153782,Showdown Captain Mode,2026-09-23T15:14:30+00:00
+728169,0,Mitchell Trubisky,QB,TEN,6000,512,,False,,TEN @ NYG,1970-01-01 00:29:50.528400+00:00,mitchell trubisky,0,6000,clear,153782,Showdown Captain Mode,2026-09-23T15:14:30+00:00
+820866,0,Braxton Berrios,WR,NYG,200,512,,False,,TEN @ NYG,1970-01-01 00:29:50.528400+00:00,braxton berrios,0,200,clear,153782,Showdown Captain Mode,2026-09-23T15:14:30+00:00
+836963,0,Joey Slye,K,TEN,4600,512,,False,,TEN @ NYG,1970-01-01 00:29:50.528400+00:00,joey slye,0,4600,clear,153782,Showdown Captain Mode,2026-09-23T15:14:30+00:00
+880398,0,Tony Pollard,RB,TEN,9400,512,,False,,TEN @ NYG,1970-01-01 00:29:50.528400+00:00,tony pollard,0,9400,clear,153782,Showdown Captain Mode,2026-09-23T15:14:30+00:00
+881058,0,K.J. Osborn,WR,TEN,200,512,,False,,TEN @ NYG,1970-01-01 00:29:50.528400+00:00,k j osborn,0,200,clear,153782,Showdown Captain Mode,2026-09-23T15:14:30+00:00
+884013,0,Calvin Ridley,WR,TEN,4000,512,,False,,TEN @ NYG,1970-01-01 00:29:50.528400+00:00,calvin ridley,0,4000,clear,153782,Showdown Captain Mode,2026-09-23T15:14:30+00:00
+912027,0,Darnell Mooney,WR,NYG,5000,512,,False,,TEN @ NYG,1970-01-01 00:29:50.528400+00:00,darnell mooney,0,5000,clear,153782,Showdown Captain Mode,2026-09-23T15:14:30+00:00
+916466,0,Devin Singletary,RB,NYG,3200,512,,False,,TEN @ NYG,1970-01-01 00:29:50.528400+00:00,devin singletary,0,3200,clear,153782,Showdown Captain Mode,2026-09-23T15:14:30+00:00
+921050,0,Kylen Granson,TE,TEN,200,512,,False,,TEN @ NYG,1970-01-01 00:29:50.528400+00:00,kylen granson,0,200,clear,153782,Showdown Captain Mode,2026-09-23T15:14:30+00:00
+973964,0,Najee Harris,RB,NYG,2400,512,,False,,TEN @ NYG,1970-01-01 00:29:50.528400+00:00,najee harris,0,2400,clear,153782,Showdown Captain Mode,2026-09-23T15:14:30+00:00
+976329,0,Michael Carter,RB,TEN,200,512,,False,,TEN @ NYG,1970-01-01 00:29:50.528400+00:00,michael carter,0,200,clear,153782,Showdown Captain Mode,2026-09-23T15:14:30+00:00
+976966,0,Hendon Hooker,QB,TEN,6000,512,,False,,TEN @ NYG,1970-01-01 00:29:50.528400+00:00,hendon hooker,0,6000,clear,153782,Showdown Captain Mode,2026-09-23T15:14:30+00:00
+1049254,0,Jake Haener,QB,NYG,6000,512,,False,,TEN @ NYG,1970-01-01 00:29:50.528400+00:00,jake haener,0,6000,clear,153782,Showdown Captain Mode,2026-09-23T15:14:30+00:00
+1062765,0,Calvin Austin III,WR,NYG,200,512,,False,,TEN @ NYG,1970-01-01 00:29:50.528400+00:00,calvin austin,0,200,clear,153782,Showdown Captain Mode,2026-09-23T15:14:30+00:00
+1067132,0,Charlie Jones,WR,NYG,200,512,,False,,TEN @ NYG,1970-01-01 00:29:50.528400+00:00,charlie jones,0,200,clear,153782,Showdown Captain Mode,2026-09-23T15:14:30+00:00
+1109708,0,Tyrone Tracy Jr.,RB,NYG,2000,512,,False,,TEN @ NYG,1970-01-01 00:29:50.528400+00:00,tyrone tracy,0,2000,clear,153782,Showdown Captain Mode,2026-09-23T15:14:30+00:00
+1122035,0,Daniel Bellinger,TE,TEN,600,512,,False,,TEN @ NYG,1970-01-01 00:29:50.528400+00:00,daniel bellinger,0,600,clear,153782,Showdown Captain Mode,2026-09-23T15:14:30+00:00
+1123364,0,Joel Wilson,TE,TEN,200,512,,False,,TEN @ NYG,1970-01-01 00:29:50.528400+00:00,joel wilson,0,200,clear,153782,Showdown Captain Mode,2026-09-23T15:14:30+00:00
+1124199,0,David Martin-Robinson,TE,TEN,200,512,,False,,TEN @ NYG,1970-01-01 00:29:50.528400+00:00,david martin robinson,0,200,clear,153782,Showdown Captain Mode,2026-09-23T15:14:30+00:00
+1125111,0,Isaiah Likely,TE,NYG,7600,512,,False,,TEN @ NYG,1970-01-01 00:29:50.528400+00:00,isaiah likely,0,7600,clear,153782,Showdown Captain Mode,2026-09-23T15:14:30+00:00
+1125846,0,Julius Chestnut,RB,TEN,800,512,,False,,TEN @ NYG,1970-01-01 00:29:50.528400+00:00,julius chestnut,0,800,clear,153782,Showdown Captain Mode,2026-09-23T15:14:30+00:00
+1164875,0,Wan'Dale Robinson,WR,TEN,5600,512,,False,,TEN @ NYG,1970-01-01 00:29:50.528400+00:00,wandale robinson,0,5600,clear,153782,Showdown Captain Mode,2026-09-23T15:14:30+00:00
+1168410,0,Gunner Olszewski,WR,NYG,200,512,,False,,TEN @ NYG,1970-01-01 00:29:50.528400+00:00,gunner olszewski,0,200,clear,153782,Showdown Captain Mode,2026-09-23T15:14:30+00:00
+1169430,0,Tyjae Spears,RB,TEN,7400,512,,False,,TEN @ NYG,1970-01-01 00:29:50.528400+00:00,tyjae spears,0,7400,clear,153782,Showdown Captain Mode,2026-09-23T15:14:30+00:00
+1180329,0,Dalen Cambre,WR,NYG,200,512,,False,,TEN @ NYG,1970-01-01 00:29:50.528400+00:00,dalen cambre,0,200,clear,153782,Showdown Captain Mode,2026-09-23T15:14:30+00:00
+1214183,0,Xavier Restrepo,WR,TEN,200,512,,False,,TEN @ NYG,1970-01-01 00:29:50.528400+00:00,xavier restrepo,0,200,clear,153782,Showdown Captain Mode,2026-09-23T15:14:30+00:00
+1214414,0,Theo Johnson,TE,NYG,1600,512,,False,,TEN @ NYG,1970-01-01 00:29:50.528400+00:00,theo johnson,0,1600,clear,153782,Showdown Captain Mode,2026-09-23T15:14:30+00:00
+1215102,0,Chimere Dike,WR,TEN,1000,512,,False,,TEN @ NYG,1970-01-01 00:29:50.528400+00:00,chimere dike,0,1000,clear,153782,Showdown Captain Mode,2026-09-23T15:14:30+00:00
+1228691,0,Cam Ward,QB,TEN,10200,512,,False,,TEN @ NYG,1970-01-01 00:29:50.528400+00:00,cam ward,0,10200,clear,153782,Showdown Captain Mode,2026-09-23T15:14:30+00:00
+1229673,0,Kalel Mullings,RB,TEN,200,512,,False,,TEN @ NYG,1970-01-01 00:29:50.528400+00:00,kalel mullings,0,200,clear,153782,Showdown Captain Mode,2026-09-23T15:14:30+00:00
+1232892,0,Jalin Hyatt,WR,NYG,200,512,,False,,TEN @ NYG,1970-01-01 00:29:50.528400+00:00,jalin hyatt,0,200,clear,153782,Showdown Captain Mode,2026-09-23T15:14:30+00:00
+1247543,0,Ben Mann,TE,NYG,200,512,,False,,TEN @ NYG,1970-01-01 00:29:50.528400+00:00,ben mann,0,200,clear,153782,Showdown Captain Mode,2026-09-23T15:14:30+00:00
+1280316,0,Cam Skattebo,RB,NYG,10600,512,,False,,TEN @ NYG,1970-01-01 00:29:50.528400+00:00,cam skattebo,0,10600,clear,153782,Showdown Captain Mode,2026-09-23T15:14:30+00:00
+1286059,0,Malik Nabers,WR,NYG,9600,512,,False,,TEN @ NYG,1970-01-01 00:29:50.528400+00:00,malik nabers,0,9600,clear,153782,Showdown Captain Mode,2026-09-23T15:14:30+00:00
+1286260,0,Jaxson Dart,QB,NYG,10000,512,,False,,TEN @ NYG,1970-01-01 00:29:50.528400+00:00,jaxson dart,0,10000,clear,153782,Showdown Captain Mode,2026-09-23T15:14:30+00:00
+1286438,0,Gunnar Helm,TE,TEN,3800,512,,False,,TEN @ NYG,1970-01-01 00:29:50.528400+00:00,gunnar helm,0,3800,clear,153782,Showdown Captain Mode,2026-09-23T15:14:30+00:00
+1287641,0,Phil Mafah,RB,NYG,200,512,,False,,TEN @ NYG,1970-01-01 00:29:50.528400+00:00,phil mafah,0,200,clear,153782,Showdown Captain Mode,2026-09-23T15:14:30+00:00
+1287655,0,Thomas Fidone II,TE,NYG,200,512,,False,,TEN @ NYG,1970-01-01 00:29:50.528400+00:00,thomas fidone,0,200,clear,153782,Showdown Captain Mode,2026-09-23T15:14:30+00:00
+1319589,0,Malachi Fields,WR,NYG,5400,512,,False,,TEN @ NYG,1970-01-01 00:29:50.528400+00:00,malachi fields,0,5400,clear,153782,Showdown Captain Mode,2026-09-23T15:14:30+00:00
+1379264,0,Nick Singleton,RB,TEN,1400,512,,False,,TEN @ NYG,1970-01-01 00:29:50.528400+00:00,nick singleton,0,1400,clear,153782,Showdown Captain Mode,2026-09-23T15:14:30+00:00
+1380799,0,Dominic Zvada,K,NYG,4800,512,,False,,TEN @ NYG,1970-01-01 00:29:50.528400+00:00,dominic zvada,0,4800,clear,153782,Showdown Captain Mode,2026-09-23T15:14:30+00:00
+1381307,0,Jaren Kanak,TE,TEN,200,512,,False,,TEN @ NYG,1970-01-01 00:29:50.528400+00:00,jaren kanak,0,200,clear,153782,Showdown Captain Mode,2026-09-23T15:14:30+00:00
+1395319,0,Elic Ayomanor,WR,TEN,2800,512,,False,,TEN @ NYG,1970-01-01 00:29:50.528400+00:00,elic ayomanor,0,2800,clear,153782,Showdown Captain Mode,2026-09-23T15:14:30+00:00
+1407491,0,Tyren Montgomery,WR,TEN,200,512,,False,,TEN @ NYG,1970-01-01 00:29:50.528400+00:00,tyren montgomery,0,200,clear,153782,Showdown Captain Mode,2026-09-23T15:14:30+00:00
+1441839,0,Carnell Tate,WR,TEN,8000,512,,False,,TEN @ NYG,1970-01-01 00:29:50.528400+00:00,carnell tate,0,8000,clear,153782,Showdown Captain Mode,2026-09-23T15:14:30+00:00
+1665835,0,Grant Finley,RB,NYG,200,512,,False,,TEN @ NYG,1970-01-01 00:29:50.528400+00:00,grant finley,0,200,clear,153782,Showdown Captain Mode,2026-09-23T15:14:30+00:00

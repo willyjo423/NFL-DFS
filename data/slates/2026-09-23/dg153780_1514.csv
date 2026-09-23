@@ -1,0 +1,56 @@
+dk_player_id,draftable_id,name,position,team,salary,roster_slot,status,disabled,attributes,game,starts_utc,norm,flex_eligible,captain_salary,playing,draft_group,game_type,captured_at
+339,0,Chiefs,DST,KC,5600,512,,False,,KC @ MIA,1970-01-01 00:29:50.528400+00:00,chiefs,0,5600,clear,153780,Showdown Captain Mode,2026-09-23T15:14:30+00:00
+345,0,Dolphins,DST,MIA,3000,512,,False,,KC @ MIA,1970-01-01 00:29:50.528400+00:00,dolphins,0,3000,clear,153780,Showdown Captain Mode,2026-09-23T15:14:30+00:00
+448240,0,Travis Kelce,TE,KC,7400,512,,False,,KC @ MIA,1970-01-01 00:29:50.528400+00:00,travis kelce,0,7400,clear,153780,Showdown Captain Mode,2026-09-23T15:14:30+00:00
+472623,0,James Winchester,TE,KC,200,512,,False,,KC @ MIA,1970-01-01 00:29:50.528400+00:00,james winchester,0,200,clear,153780,Showdown Captain Mode,2026-09-23T15:14:30+00:00
+732774,0,Zane Gonzalez,K,MIA,4800,512,,False,,KC @ MIA,1970-01-01 00:29:50.528400+00:00,zane gonzalez,0,4800,clear,153780,Showdown Captain Mode,2026-09-23T15:14:30+00:00
+748560,0,Harrison Butker,K,KC,5000,512,,False,,KC @ MIA,1970-01-01 00:29:50.528400+00:00,harrison butker,0,5000,clear,153780,Showdown Captain Mode,2026-09-23T15:14:30+00:00
+839031,0,Patrick Mahomes,QB,KC,10600,512,,False,,KC @ MIA,1970-01-01 00:29:50.528400+00:00,patrick mahomes,0,10600,clear,153780,Showdown Captain Mode,2026-09-23T15:14:30+00:00
+976066,0,Jalen Reagor,WR,MIA,200,512,,False,,KC @ MIA,1970-01-01 00:29:50.528400+00:00,jalen reagor,0,200,clear,153780,Showdown Captain Mode,2026-09-23T15:14:30+00:00
+976323,0,Malik Willis,QB,MIA,9000,512,,False,,KC @ MIA,1970-01-01 00:29:50.528400+00:00,malik willis,0,9000,clear,153780,Showdown Captain Mode,2026-09-23T15:14:30+00:00
+1056981,0,Noah Gray,TE,KC,2000,512,,False,,KC @ MIA,1970-01-01 00:29:50.528400+00:00,noah gray,0,2000,clear,153780,Showdown Captain Mode,2026-09-23T15:14:30+00:00
+1057725,0,Carlos Washington Jr.,RB,MIA,200,512,,False,,KC @ MIA,1970-01-01 00:29:50.528400+00:00,carlos washington,0,200,clear,153780,Showdown Captain Mode,2026-09-23T15:14:30+00:00
+1061591,0,Cal Adomitis,TE,MIA,200,512,,False,,KC @ MIA,1970-01-01 00:29:50.528400+00:00,cal adomitis,0,200,clear,153780,Showdown Captain Mode,2026-09-23T15:14:30+00:00
+1065025,0,Riley Patterson,K,MIA,4800,512,,False,,KC @ MIA,1970-01-01 00:29:50.528400+00:00,riley patterson,0,4800,clear,153780,Showdown Captain Mode,2026-09-23T15:14:30+00:00
+1066424,0,Jalen Tolbert,WR,MIA,1800,512,,False,,KC @ MIA,1970-01-01 00:29:50.528400+00:00,jalen tolbert,0,1800,clear,153780,Showdown Captain Mode,2026-09-23T15:14:30+00:00
+1108526,0,Thomas Odukoya,TE,KC,200,512,,False,,KC @ MIA,1970-01-01 00:29:50.528400+00:00,thomas odukoya,0,200,clear,153780,Showdown Captain Mode,2026-09-23T15:14:30+00:00
+1110301,0,Tyquan Thornton,WR,KC,3800,512,,False,,KC @ MIA,1970-01-01 00:29:50.528400+00:00,tyquan thornton,0,3800,clear,153780,Showdown Captain Mode,2026-09-23T15:14:30+00:00
+1110681,0,Justin Fields,QB,KC,6000,512,,False,,KC @ MIA,1970-01-01 00:29:50.528400+00:00,justin fields,0,6000,clear,153780,Showdown Captain Mode,2026-09-23T15:14:30+00:00
+1118668,0,Ryan Miller,WR,MIA,2200,512,,False,,KC @ MIA,1970-01-01 00:29:50.528400+00:00,ryan miller,0,2200,clear,153780,Showdown Captain Mode,2026-09-23T15:14:30+00:00
+1122692,0,Cole Turner,TE,MIA,200,512,,False,,KC @ MIA,1970-01-01 00:29:50.528400+00:00,cole turner,0,200,clear,153780,Showdown Captain Mode,2026-09-23T15:14:30+00:00
+1127080,0,Nikko Remigio,WR,KC,200,512,,False,,KC @ MIA,1970-01-01 00:29:50.528400+00:00,nikko remigio,0,200,clear,153780,Showdown Captain Mode,2026-09-23T15:14:30+00:00
+1128085,0,Greg Dulcich,TE,MIA,4000,512,,False,,KC @ MIA,1970-01-01 00:29:50.528400+00:00,greg dulcich,0,4000,clear,153780,Showdown Captain Mode,2026-09-23T15:14:30+00:00
+1130245,0,Ben VanSumeren,RB,KC,200,512,,False,,KC @ MIA,1970-01-01 00:29:50.528400+00:00,ben vansumeren,0,200,clear,153780,Showdown Captain Mode,2026-09-23T15:14:30+00:00
+1163272,0,Jared Wiley,TE,KC,200,512,,False,,KC @ MIA,1970-01-01 00:29:50.528400+00:00,jared wiley,0,200,clear,153780,Showdown Captain Mode,2026-09-23T15:14:30+00:00
+1164402,0,Kenneth Walker III,RB,KC,11400,512,,False,,KC @ MIA,1970-01-01 00:29:50.528400+00:00,kenneth walker,0,11400,clear,153780,Showdown Captain Mode,2026-09-23T15:14:30+00:00
+1173255,0,Malik Washington,WR,MIA,6200,512,,False,,KC @ MIA,1970-01-01 00:29:50.528400+00:00,malik washington,0,6200,clear,153780,Showdown Captain Mode,2026-09-23T15:14:30+00:00
+1173538,0,Rashee Rice,WR,KC,9400,512,,False,,KC @ MIA,1970-01-01 00:29:50.528400+00:00,rashee rice,0,9400,clear,153780,Showdown Captain Mode,2026-09-23T15:14:30+00:00
+1213386,0,Brady Cook,QB,MIA,6000,512,,False,,KC @ MIA,1970-01-01 00:29:50.528400+00:00,brady cook,0,6000,clear,153780,Showdown Captain Mode,2026-09-23T15:14:30+00:00
+1213442,0,Jimmy Holiday,WR,KC,200,512,,False,,KC @ MIA,1970-01-01 00:29:50.528400+00:00,jimmy holiday,0,200,clear,153780,Showdown Captain Mode,2026-09-23T15:14:30+00:00
+1214132,0,Nate Carter,RB,KC,200,512,,False,,KC @ MIA,1970-01-01 00:29:50.528400+00:00,nate carter,0,200,clear,153780,Showdown Captain Mode,2026-09-23T15:14:30+00:00
+1215329,0,Will Sheppard,WR,MIA,200,512,,False,,KC @ MIA,1970-01-01 00:29:50.528400+00:00,will sheppard,0,200,clear,153780,Showdown Captain Mode,2026-09-23T15:14:30+00:00
+1231820,0,De'Von Achane,RB,MIA,10000,512,,False,,KC @ MIA,1970-01-01 00:29:50.528400+00:00,devon achane,0,10000,clear,153780,Showdown Captain Mode,2026-09-23T15:14:30+00:00
+1286037,0,Garrett Nussmeier,QB,KC,6000,512,,False,,KC @ MIA,1970-01-01 00:29:50.528400+00:00,garrett nussmeier,0,6000,clear,153780,Showdown Captain Mode,2026-09-23T15:14:30+00:00
+1286513,0,Jaylen Wright,RB,MIA,2400,512,,False,,KC @ MIA,1970-01-01 00:29:50.528400+00:00,jaylen wright,0,2400,clear,153780,Showdown Captain Mode,2026-09-23T15:14:30+00:00
+1287639,0,Jake Briningstool,TE,KC,600,512,,False,,KC @ MIA,1970-01-01 00:29:50.528400+00:00,jake briningstool,0,600,clear,153780,Showdown Captain Mode,2026-09-23T15:14:30+00:00
+1287826,0,Kyle McCord,QB,MIA,6000,512,,False,,KC @ MIA,1970-01-01 00:29:50.528400+00:00,kyle mccord,0,6000,clear,153780,Showdown Captain Mode,2026-09-23T15:14:30+00:00
+1288387,0,John Michael Gyllenborg,TE,KC,200,512,,False,,KC @ MIA,1970-01-01 00:29:50.528400+00:00,john michael gyllenborg,0,200,clear,153780,Showdown Captain Mode,2026-09-23T15:14:30+00:00
+1290014,0,Seydou Traore,TE,MIA,200,512,,False,,KC @ MIA,1970-01-01 00:29:50.528400+00:00,seydou traore,0,200,clear,153780,Showdown Captain Mode,2026-09-23T15:14:30+00:00
+1313668,0,Brashard Smith,RB,KC,400,512,,False,,KC @ MIA,1970-01-01 00:29:50.528400+00:00,brashard smith,0,400,clear,153780,Showdown Captain Mode,2026-09-23T15:14:30+00:00
+1317191,0,Tre Watson,TE,MIA,200,512,,False,,KC @ MIA,1970-01-01 00:29:50.528400+00:00,tre watson,0,200,clear,153780,Showdown Captain Mode,2026-09-23T15:14:30+00:00
+1319185,0,Jarquez Hunter,RB,MIA,200,512,,False,,KC @ MIA,1970-01-01 00:29:50.528400+00:00,jarquez hunter,0,200,clear,153780,Showdown Captain Mode,2026-09-23T15:14:30+00:00
+1322367,0,Will Kacmarek,TE,MIA,1600,512,,False,,KC @ MIA,1970-01-01 00:29:50.528400+00:00,will kacmarek,0,1600,clear,153780,Showdown Captain Mode,2026-09-23T15:14:30+00:00
+1326638,0,Xavier Worthy,WR,KC,6400,512,,False,,KC @ MIA,1970-01-01 00:29:50.528400+00:00,xavier worthy,0,6400,clear,153780,Showdown Captain Mode,2026-09-23T15:14:30+00:00
+1327875,0,DJ Herman,RB,MIA,200,512,,False,,KC @ MIA,1970-01-01 00:29:50.528400+00:00,dj herman,0,200,clear,153780,Showdown Captain Mode,2026-09-23T15:14:30+00:00
+1339352,0,Jeff Caldwell,WR,KC,200,512,,False,,KC @ MIA,1970-01-01 00:29:50.528400+00:00,jeff caldwell,0,200,clear,153780,Showdown Captain Mode,2026-09-23T15:14:30+00:00
+1377757,0,Jaydn Ott,RB,KC,200,512,,False,,KC @ MIA,1970-01-01 00:29:50.528400+00:00,jaydn ott,0,200,clear,153780,Showdown Captain Mode,2026-09-23T15:14:30+00:00
+1377766,0,Ollie Gordon II,RB,MIA,1400,512,,False,,KC @ MIA,1970-01-01 00:29:50.528400+00:00,ollie gordon,0,1400,clear,153780,Showdown Captain Mode,2026-09-23T15:14:30+00:00
+1379251,0,Emmett Johnson,RB,KC,3400,512,,False,,KC @ MIA,1970-01-01 00:29:50.528400+00:00,emmett johnson,0,3400,clear,153780,Showdown Captain Mode,2026-09-23T15:14:30+00:00
+1379261,0,Omari Evans,WR,KC,200,512,,False,,KC @ MIA,1970-01-01 00:29:50.528400+00:00,omari evans,0,200,clear,153780,Showdown Captain Mode,2026-09-23T15:14:30+00:00
+1382670,0,Cyrus Allen,WR,KC,2600,512,,False,,KC @ MIA,1970-01-01 00:29:50.528400+00:00,cyrus allen,0,2600,clear,153780,Showdown Captain Mode,2026-09-23T15:14:30+00:00
+1389700,0,Chris Bell,WR,MIA,4400,512,,False,,KC @ MIA,1970-01-01 00:29:50.528400+00:00,chris bell,0,4400,clear,153780,Showdown Captain Mode,2026-09-23T15:14:30+00:00
+1394798,0,Caleb Douglas,WR,MIA,5800,512,,False,,KC @ MIA,1970-01-01 00:29:50.528400+00:00,caleb douglas,0,5800,clear,153780,Showdown Captain Mode,2026-09-23T15:14:30+00:00
+1399272,0,Kevin Coleman Jr.,WR,MIA,1200,512,,False,,KC @ MIA,1970-01-01 00:29:50.528400+00:00,kevin coleman,0,1200,clear,153780,Showdown Captain Mode,2026-09-23T15:14:30+00:00
+1403491,0,Jalen Royals,WR,KC,1000,512,,False,,KC @ MIA,1970-01-01 00:29:50.528400+00:00,jalen royals,0,1000,clear,153780,Showdown Captain Mode,2026-09-23T15:14:30+00:00
+1405106,0,Andrew Armstrong,WR,KC,200,512,,False,,KC @ MIA,1970-01-01 00:29:50.528400+00:00,andrew armstrong,0,200,clear,153780,Showdown Captain Mode,2026-09-23T15:14:30+00:00
+1405928,0,Justin Joly,TE,MIA,200,512,,False,,KC @ MIA,1970-01-01 00:29:50.528400+00:00,justin joly,0,200,clear,153780,Showdown Captain Mode,2026-09-23T15:14:30+00:00
