@@ -1,0 +1,56 @@
+dk_player_id,draftable_id,name,position,team,salary,roster_slot,status,disabled,attributes,game,starts_utc,norm,flex_eligible,captain_salary,playing,draft_group,game_type,captured_at
+325,0,Texans,DST,HOU,4200,512,,False,,HOU @ IND,1970-01-01 00:29:50.528400+00:00,texans,0,4200,clear,153779,Showdown Captain Mode,2026-09-24T15:15:59+00:00
+338,0,Colts,DST,IND,3600,512,,False,,HOU @ IND,1970-01-01 00:29:50.528400+00:00,colts,0,3600,clear,153779,Showdown Captain Mode,2026-09-24T15:15:59+00:00
+557210,0,Keenan Allen,WR,IND,6200,512,,False,,HOU @ IND,1970-01-01 00:29:50.528400+00:00,keenan allen,0,6200,clear,153779,Showdown Captain Mode,2026-09-24T15:15:59+00:00
+689689,0,Pharaoh Brown,TE,IND,200,512,,False,,HOU @ IND,1970-01-01 00:29:50.528400+00:00,pharaoh brown,0,200,clear,153779,Showdown Captain Mode,2026-09-24T15:15:59+00:00
+691032,0,Ka'imi Fairbairn,K,HOU,5000,512,,False,,HOU @ IND,1970-01-01 00:29:50.528400+00:00,kaimi fairbairn,0,5000,clear,153779,Showdown Captain Mode,2026-09-24T15:15:59+00:00
+712506,0,Mo Alie-Cox,TE,IND,1000,512,,False,,HOU @ IND,1970-01-01 00:29:50.528400+00:00,mo alie cox,0,1000,clear,153779,Showdown Captain Mode,2026-09-24T15:15:59+00:00
+748554,0,Laquon Treadwell,WR,IND,3000,512,,False,,HOU @ IND,1970-01-01 00:29:50.528400+00:00,laquon treadwell,0,3000,clear,153779,Showdown Captain Mode,2026-09-24T15:15:59+00:00
+830523,0,Dalton Schultz,TE,HOU,7200,512,,False,,HOU @ IND,1970-01-01 00:29:50.528400+00:00,dalton schultz,0,7200,clear,153779,Showdown Captain Mode,2026-09-24T15:15:59+00:00
+865573,0,Foster Moreau,TE,HOU,1600,512,,False,,HOU @ IND,1970-01-01 00:29:50.528400+00:00,foster moreau,0,1600,clear,153779,Showdown Captain Mode,2026-09-24T15:15:59+00:00
+879981,0,Daniel Jones,QB,IND,9000,512,,False,,HOU @ IND,1970-01-01 00:29:50.528400+00:00,daniel jones,0,9000,clear,153779,Showdown Captain Mode,2026-09-24T15:15:59+00:00
+880557,0,Darius Slayton,WR,IND,4000,512,,False,,HOU @ IND,1970-01-01 00:29:50.528400+00:00,darius slayton,0,4000,clear,153779,Showdown Captain Mode,2026-09-24T15:15:59+00:00
+883259,0,Nick Westbrook-Ikhine,WR,IND,200,512,,False,,HOU @ IND,1970-01-01 00:29:50.528400+00:00,nick westbrook ikhine,0,200,clear,153779,Showdown Captain Mode,2026-09-24T15:15:59+00:00
+946739,0,David Montgomery,RB,HOU,9600,512,,False,,HOU @ IND,1970-01-01 00:29:50.528400+00:00,david montgomery,0,9600,clear,153779,Showdown Captain Mode,2026-09-24T15:15:59+00:00
+1060311,0,Davis Mills,QB,HOU,6000,512,,False,,HOU @ IND,1970-01-01 00:29:50.528400+00:00,davis mills,0,6000,clear,153779,Showdown Captain Mode,2026-09-24T15:15:59+00:00
+1063397,0,D.J. Montgomery,WR,IND,200,512,,False,,HOU @ IND,1970-01-01 00:29:50.528400+00:00,d j montgomery,0,200,clear,153779,Showdown Captain Mode,2026-09-24T15:15:59+00:00
+1065406,0,Jonathan Taylor,RB,IND,10600,512,,False,,HOU @ IND,1970-01-01 00:29:50.528400+00:00,jonathan taylor,0,10600,clear,153779,Showdown Captain Mode,2026-09-24T15:15:59+00:00
+1074698,0,Nico Collins,WR,HOU,10000,512,,False,,HOU @ IND,1970-01-01 00:29:50.528400+00:00,nico collins,0,10000,clear,153779,Showdown Captain Mode,2026-09-24T15:15:59+00:00
+1107027,0,Alec Pierce,WR,IND,8600,512,,False,,HOU @ IND,1970-01-01 00:29:50.528400+00:00,alec pierce,0,8600,clear,153779,Showdown Captain Mode,2026-09-24T15:15:59+00:00
+1113398,0,Bryce Oliver,WR,HOU,200,512,,False,,HOU @ IND,1970-01-01 00:29:50.528400+00:00,bryce oliver,0,200,clear,153779,Showdown Captain Mode,2026-09-24T15:15:59+00:00
+1121871,0,Brevin Jordan,TE,HOU,200,512,,False,,HOU @ IND,1970-01-01 00:29:50.528400+00:00,brevin jordan,0,200,clear,153779,Showdown Captain Mode,2026-09-24T15:15:59+00:00
+1121873,0,Will Mallory,TE,IND,200,512,,False,,HOU @ IND,1970-01-01 00:29:50.528400+00:00,will mallory,0,200,clear,153779,Showdown Captain Mode,2026-09-24T15:15:59+00:00
+1128222,0,Tank Dell,WR,HOU,200,512,,False,,HOU @ IND,1970-01-01 00:29:50.528400+00:00,tank dell,0,200,clear,153779,Showdown Captain Mode,2026-09-24T15:15:59+00:00
+1128295,0,British Brooks,RB,HOU,400,512,,False,,HOU @ IND,1970-01-01 00:29:50.528400+00:00,british brooks,0,400,clear,153779,Showdown Captain Mode,2026-09-24T15:15:59+00:00
+1161661,0,Anthony Gould,WR,IND,200,512,,False,,HOU @ IND,1970-01-01 00:29:50.528400+00:00,anthony gould,0,200,clear,153779,Showdown Captain Mode,2026-09-24T15:15:59+00:00
+1164137,0,Jawhar Jordan,RB,HOU,200,512,,False,,HOU @ IND,1970-01-01 00:29:50.528400+00:00,jawhar jordan,0,200,clear,153779,Showdown Captain Mode,2026-09-24T15:15:59+00:00
+1164951,0,Graham Mertz,QB,HOU,6000,512,,False,,HOU @ IND,1970-01-01 00:29:50.528400+00:00,graham mertz,0,6000,clear,153779,Showdown Captain Mode,2026-09-24T15:15:59+00:00
+1166036,0,Ashton Dulin,WR,IND,2800,512,,False,,HOU @ IND,1970-01-01 00:29:50.528400+00:00,ashton dulin,0,2800,clear,153779,Showdown Captain Mode,2026-09-24T15:15:59+00:00
+1170921,0,Josh Kelly,WR,HOU,200,512,,False,,HOU @ IND,1970-01-01 00:29:50.528400+00:00,josh kelly,0,200,clear,153779,Showdown Captain Mode,2026-09-24T15:15:59+00:00
+1175182,0,Cade Stover,TE,HOU,200,512,,False,,HOU @ IND,1970-01-01 00:29:50.528400+00:00,cade stover,0,200,clear,153779,Showdown Captain Mode,2026-09-24T15:15:59+00:00
+1176733,0,Jared Wayne,WR,HOU,2000,512,,False,,HOU @ IND,1970-01-01 00:29:50.528400+00:00,jared wayne,0,2000,clear,153779,Showdown Captain Mode,2026-09-24T15:15:59+00:00
+1180533,0,Spencer Shrader,K,IND,4800,512,,False,,HOU @ IND,1970-01-01 00:29:50.528400+00:00,spencer shrader,0,4800,clear,153779,Showdown Captain Mode,2026-09-24T15:15:59+00:00
+1212622,0,Carson Towt,TE,IND,200,512,,False,,HOU @ IND,1970-01-01 00:29:50.528400+00:00,carson towt,0,200,clear,153779,Showdown Captain Mode,2026-09-24T15:15:59+00:00
+1213362,0,Kayshon Boutte,WR,HOU,6600,512,,False,,HOU @ IND,1970-01-01 00:29:50.528400+00:00,kayshon boutte,0,6600,clear,153779,Showdown Captain Mode,2026-09-24T15:15:59+00:00
+1213636,0,Xavier Hutchinson,WR,HOU,5400,512,,False,,HOU @ IND,1970-01-01 00:29:50.528400+00:00,xavier hutchinson,0,5400,clear,153779,Showdown Captain Mode,2026-09-24T15:15:59+00:00
+1213794,0,Seth McGowan,RB,IND,3200,512,,False,,HOU @ IND,1970-01-01 00:29:50.528400+00:00,seth mcgowan,0,3200,clear,153779,Showdown Captain Mode,2026-09-24T15:15:59+00:00
+1214084,0,C.J. Stroud,QB,HOU,9400,512,,False,,HOU @ IND,1970-01-01 00:29:50.528400+00:00,c j stroud,0,9400,clear,153779,Showdown Captain Mode,2026-09-24T15:15:59+00:00
+1215022,0,Anthony Richardson Sr.,QB,IND,6000,512,,False,,HOU @ IND,1970-01-01 00:29:50.528400+00:00,anthony richardson,0,6000,clear,153779,Showdown Captain Mode,2026-09-24T15:15:59+00:00
+1215077,0,Josh Downs,WR,IND,8800,512,,False,,HOU @ IND,1970-01-01 00:29:50.528400+00:00,josh downs,0,8800,clear,153779,Showdown Captain Mode,2026-09-24T15:15:59+00:00
+1215305,0,Mitch Tinsley,WR,HOU,200,512,,False,,HOU @ IND,1970-01-01 00:29:50.528400+00:00,mitch tinsley,0,200,clear,153779,Showdown Captain Mode,2026-09-24T15:15:59+00:00
+1215306,0,Noah Whittington,RB,HOU,200,512,,False,,HOU @ IND,1970-01-01 00:29:50.528400+00:00,noah whittington,0,200,clear,153779,Showdown Captain Mode,2026-09-24T15:15:59+00:00
+1229083,0,Tyler Warren,TE,IND,8200,512,,False,,HOU @ IND,1970-01-01 00:29:50.528400+00:00,tyler warren,0,8200,clear,153779,Showdown Captain Mode,2026-09-24T15:15:59+00:00
+1231652,0,Woody Marks,RB,HOU,5600,512,,False,,HOU @ IND,1970-01-01 00:29:50.528400+00:00,woody marks,0,5600,clear,153779,Showdown Captain Mode,2026-09-24T15:15:59+00:00
+1233297,0,Anderson Castle,RB,IND,200,512,,False,,HOU @ IND,1970-01-01 00:29:50.528400+00:00,anderson castle,0,200,clear,153779,Showdown Captain Mode,2026-09-24T15:15:59+00:00
+1271740,0,Drew Ogletree,TE,IND,600,512,,False,,HOU @ IND,1970-01-01 00:29:50.528400+00:00,drew ogletree,0,600,clear,153779,Showdown Captain Mode,2026-09-24T15:15:59+00:00
+1274492,0,Jayden Higgins,WR,HOU,200,512,,False,,HOU @ IND,1970-01-01 00:29:50.528400+00:00,jayden higgins,0,200,clear,153779,Showdown Captain Mode,2026-09-24T15:15:59+00:00
+1286370,0,Jaylin Noel,WR,HOU,4600,512,,False,,HOU @ IND,1970-01-01 00:29:50.528400+00:00,jaylin noel,0,4600,clear,153779,Showdown Captain Mode,2026-09-24T15:15:59+00:00
+1286652,0,Lewis Bond,WR,HOU,200,512,,False,,HOU @ IND,1970-01-01 00:29:50.528400+00:00,lewis bond,0,200,clear,153779,Showdown Captain Mode,2026-09-24T15:15:59+00:00
+1287798,0,Deion Burks,WR,IND,2400,512,,False,,HOU @ IND,1970-01-01 00:29:50.528400+00:00,deion burks,0,2400,clear,153779,Showdown Captain Mode,2026-09-24T15:15:59+00:00
+1289220,0,Zaire Mitchell-Paden,TE,HOU,200,512,,False,,HOU @ IND,1970-01-01 00:29:50.528400+00:00,zaire mitchell paden,0,200,clear,153779,Showdown Captain Mode,2026-09-24T15:15:59+00:00
+1290165,0,Riley Leonard,QB,IND,6000,512,,False,,HOU @ IND,1970-01-01 00:29:50.528400+00:00,riley leonard,0,6000,clear,153779,Showdown Captain Mode,2026-09-24T15:15:59+00:00
+1303569,0,DJ Giddens,RB,IND,1400,512,,False,,HOU @ IND,1970-01-01 00:29:50.528400+00:00,dj giddens,0,1400,clear,153779,Showdown Captain Mode,2026-09-24T15:15:59+00:00
+1322238,0,Daniel Sobkowicz,WR,HOU,200,512,,False,,HOU @ IND,1970-01-01 00:29:50.528400+00:00,daniel sobkowicz,0,200,clear,153779,Showdown Captain Mode,2026-09-24T15:15:59+00:00
+1380773,0,Kenny Fletcher Jr.,TE,IND,200,512,,False,,HOU @ IND,1970-01-01 00:29:50.528400+00:00,kenny fletcher,0,200,clear,153779,Showdown Captain Mode,2026-09-24T15:15:59+00:00
+1405857,0,Marlin Klein,TE,HOU,1200,512,,False,,HOU @ IND,1970-01-01 00:29:50.528400+00:00,marlin klein,0,1200,clear,153779,Showdown Captain Mode,2026-09-24T15:15:59+00:00
+1445256,0,Davon Booth,RB,IND,200,512,,False,,HOU @ IND,1970-01-01 00:29:50.528400+00:00,davon booth,0,200,clear,153779,Showdown Captain Mode,2026-09-24T15:15:59+00:00
