@@ -1,0 +1,52 @@
+dk_player_id,draftable_id,name,position,team,salary,roster_slot,status,disabled,attributes,game,starts_utc,norm,flex_eligible,captain_salary,playing,draft_group,game_type,captured_at
+327,0,Bengals,DST,CIN,5000,512,,False,,CIN @ PIT,1970-01-01 00:29:50.528400+00:00,bengals,0,5000,clear,153778,Showdown Captain Mode,2026-09-24T23:50:41+00:00
+356,0,Steelers,DST,PIT,4600,512,,False,,CIN @ PIT,1970-01-01 00:29:50.528400+00:00,steelers,0,4600,clear,153778,Showdown Captain Mode,2026-09-24T23:50:41+00:00
+213957,0,Aaron Rodgers,QB,PIT,8800,512,,False,,CIN @ PIT,1970-01-01 00:29:50.528400+00:00,aaron rodgers,0,8800,clear,153778,Showdown Captain Mode,2026-09-24T23:50:41+00:00
+216342,0,Joe Flacco,QB,CIN,8000,512,,False,,CIN @ PIT,1970-01-01 00:29:50.528400+00:00,joe flacco,0,8000,clear,153778,Showdown Captain Mode,2026-09-24T23:50:41+00:00
+273278,0,Josh Johnson,QB,CIN,6000,512,,False,,CIN @ PIT,1970-01-01 00:29:50.528400+00:00,josh johnson,0,6000,clear,153778,Showdown Captain Mode,2026-09-24T23:50:41+00:00
+504436,0,Chris Boswell,K,PIT,5200,512,,False,,CIN @ PIT,1970-01-01 00:29:50.528400+00:00,chris boswell,0,5200,clear,153778,Showdown Captain Mode,2026-09-24T23:50:41+00:00
+660151,0,Robert Tonyan,TE,PIT,200,512,,False,,CIN @ PIT,1970-01-01 00:29:50.528400+00:00,robert tonyan,0,200,clear,153778,Showdown Captain Mode,2026-09-24T23:50:41+00:00
+820734,0,Samaje Perine,RB,CIN,3600,512,,False,,CIN @ PIT,1970-01-01 00:29:50.528400+00:00,samaje perine,0,3600,clear,153778,Showdown Captain Mode,2026-09-24T23:50:41+00:00
+823220,0,Mason Rudolph,QB,PIT,6000,512,,False,,CIN @ PIT,1970-01-01 00:29:50.528400+00:00,mason rudolph,0,6000,clear,153778,Showdown Captain Mode,2026-09-24T23:50:41+00:00
+836152,0,Mike Gesicki,TE,CIN,4400,512,,False,,CIN @ PIT,1970-01-01 00:29:50.528400+00:00,mike gesicki,0,4400,clear,153778,Showdown Captain Mode,2026-09-24T23:50:41+00:00
+837824,0,Drew Sample,TE,CIN,1600,512,,False,,CIN @ PIT,1970-01-01 00:29:50.528400+00:00,drew sample,0,1600,clear,153778,Showdown Captain Mode,2026-09-24T23:50:41+00:00
+878785,0,Joe Burrow,QB,CIN,10600,512,,False,,CIN @ PIT,1970-01-01 00:29:50.528400+00:00,joe burrow,0,10600,clear,153778,Showdown Captain Mode,2026-09-24T23:50:41+00:00
+911348,0,Michael Pittman Jr.,WR,PIT,7400,512,,False,,CIN @ PIT,1970-01-01 00:29:50.528400+00:00,michael pittman,0,7400,clear,153778,Showdown Captain Mode,2026-09-24T23:50:41+00:00
+920944,0,Ben Skowronek,WR,PIT,1000,512,,False,,CIN @ PIT,1970-01-01 00:29:50.528400+00:00,ben skowronek,0,1000,clear,153778,Showdown Captain Mode,2026-09-24T23:50:41+00:00
+921460,0,Brandon Johnson,WR,PIT,200,512,,False,,CIN @ PIT,1970-01-01 00:29:50.528400+00:00,brandon johnson,0,200,clear,153778,Showdown Captain Mode,2026-09-24T23:50:41+00:00
+922484,0,Travis Homer,RB,PIT,2000,512,,False,,CIN @ PIT,1970-01-01 00:29:50.528400+00:00,travis homer,0,2000,clear,153778,Showdown Captain Mode,2026-09-24T23:50:41+00:00
+933480,0,Rico Dowdle,RB,PIT,7000,512,,False,,CIN @ PIT,1970-01-01 00:29:50.528400+00:00,rico dowdle,0,7000,clear,153778,Showdown Captain Mode,2026-09-24T23:50:41+00:00
+945633,0,DK Metcalf,WR,PIT,8400,512,,False,,CIN @ PIT,1970-01-01 00:29:50.528400+00:00,dk metcalf,0,8400,clear,153778,Showdown Captain Mode,2026-09-24T23:50:41+00:00
+975387,0,Isaiah Hodgins,WR,PIT,200,512,,False,,CIN @ PIT,1970-01-01 00:29:50.528400+00:00,isaiah hodgins,0,200,clear,153778,Showdown Captain Mode,2026-09-24T23:50:41+00:00
+978579,0,Tee Higgins,WR,CIN,9000,512,,False,,CIN @ PIT,1970-01-01 00:29:50.528400+00:00,tee higgins,0,9000,clear,153778,Showdown Captain Mode,2026-09-24T23:50:41+00:00
+1059220,0,Brandon Smith,WR,PIT,200,512,,False,,CIN @ PIT,1970-01-01 00:29:50.528400+00:00,brandon smith,0,200,clear,153778,Showdown Captain Mode,2026-09-24T23:50:41+00:00
+1067089,0,Sean Clifford,QB,CIN,6000,512,,False,,CIN @ PIT,1970-01-01 00:29:50.528400+00:00,sean clifford,0,6000,clear,153778,Showdown Captain Mode,2026-09-24T23:50:41+00:00
+1109979,0,Ja'Marr Chase,WR,CIN,12000,512,,False,,CIN @ PIT,1970-01-01 00:29:50.528400+00:00,jamarr chase,0,12000,clear,153778,Showdown Captain Mode,2026-09-24T23:50:41+00:00
+1115394,0,Tanner Hudson,TE,CIN,400,512,,False,,CIN @ PIT,1970-01-01 00:29:50.528400+00:00,tanner hudson,0,400,clear,153778,Showdown Captain Mode,2026-09-24T23:50:41+00:00
+1116662,0,Pat Freiermuth,TE,PIT,4800,512,,False,,CIN @ PIT,1970-01-01 00:29:50.528400+00:00,pat freiermuth,0,4800,clear,153778,Showdown Captain Mode,2026-09-24T23:50:41+00:00
+1122995,0,Evan McPherson,K,CIN,5400,512,,False,,CIN @ PIT,1970-01-01 00:29:50.528400+00:00,evan mcpherson,0,5400,clear,153778,Showdown Captain Mode,2026-09-24T23:50:41+00:00
+1123379,0,Chase Brown,RB,CIN,10200,512,,False,,CIN @ PIT,1970-01-01 00:29:50.528400+00:00,chase brown,0,10200,clear,153778,Showdown Captain Mode,2026-09-24T23:50:41+00:00
+1124851,0,Andrei Iosivas,WR,CIN,3000,512,,False,,CIN @ PIT,1970-01-01 00:29:50.528400+00:00,andrei iosivas,0,3000,clear,153778,Showdown Captain Mode,2026-09-24T23:50:41+00:00
+1133320,0,Dohnte Meyers,WR,CIN,800,512,,False,,CIN @ PIT,1970-01-01 00:29:50.528400+00:00,dohnte meyers,0,800,clear,153778,Showdown Captain Mode,2026-09-24T23:50:41+00:00
+1164533,0,Erick All Jr.,TE,CIN,600,512,,False,,CIN @ PIT,1970-01-01 00:29:50.528400+00:00,erick all,0,600,clear,153778,Showdown Captain Mode,2026-09-24T23:50:41+00:00
+1166480,0,Lew Nichols,RB,PIT,200,512,,False,,CIN @ PIT,1970-01-01 00:29:50.528400+00:00,lew nichols,0,200,clear,153778,Showdown Captain Mode,2026-09-24T23:50:41+00:00
+1176443,0,Jaylen Warren,RB,PIT,9400,512,,False,,CIN @ PIT,1970-01-01 00:29:50.528400+00:00,jaylen warren,0,9400,clear,153778,Showdown Captain Mode,2026-09-24T23:50:41+00:00
+1181739,0,William Wagner,TE,CIN,200,512,,False,,CIN @ PIT,1970-01-01 00:29:50.528400+00:00,william wagner,0,200,clear,153778,Showdown Captain Mode,2026-09-24T23:50:41+00:00
+1213345,0,Kendall Milton,RB,CIN,200,512,,False,,CIN @ PIT,1970-01-01 00:29:50.528400+00:00,kendall milton,0,200,clear,153778,Showdown Captain Mode,2026-09-24T23:50:41+00:00
+1213782,0,Will Howard,QB,PIT,6000,512,,False,,CIN @ PIT,1970-01-01 00:29:50.528400+00:00,will howard,0,6000,clear,153778,Showdown Captain Mode,2026-09-24T23:50:41+00:00
+1218658,0,Darnell Washington,TE,PIT,2800,512,,False,,CIN @ PIT,1970-01-01 00:29:50.528400+00:00,darnell washington,0,2800,clear,153778,Showdown Captain Mode,2026-09-24T23:50:41+00:00
+1228730,0,Tahj Brooks,RB,CIN,1400,512,,False,,CIN @ PIT,1970-01-01 00:29:50.528400+00:00,tahj brooks,0,1400,clear,153778,Showdown Captain Mode,2026-09-24T23:50:41+00:00
+1229055,0,Kentrel Bullock,RB,CIN,200,512,,False,,CIN @ PIT,1970-01-01 00:29:50.528400+00:00,kentrel bullock,0,200,clear,153778,Showdown Captain Mode,2026-09-24T23:50:41+00:00
+1229669,0,Roman Wilson,WR,PIT,3400,512,,False,,CIN @ PIT,1970-01-01 00:29:50.528400+00:00,roman wilson,0,3400,clear,153778,Showdown Captain Mode,2026-09-24T23:50:41+00:00
+1232057,0,Ke'Shawn Williams,WR,CIN,200,512,,False,,CIN @ PIT,1970-01-01 00:29:50.528400+00:00,keshawn williams,0,200,clear,153778,Showdown Captain Mode,2026-09-24T23:50:41+00:00
+1244224,0,Riley Nowakowski,RB,PIT,200,512,,False,,CIN @ PIT,1970-01-01 00:29:50.528400+00:00,riley nowakowski,0,200,clear,153778,Showdown Captain Mode,2026-09-24T23:50:41+00:00
+1286282,0,Lake McRee,TE,PIT,200,512,,False,,CIN @ PIT,1970-01-01 00:29:50.528400+00:00,lake mcree,0,200,clear,153778,Showdown Captain Mode,2026-09-24T23:50:41+00:00
+1286662,0,Jordan Moore,WR,CIN,200,512,,False,,CIN @ PIT,1970-01-01 00:29:50.528400+00:00,jordan moore,0,200,clear,153778,Showdown Captain Mode,2026-09-24T23:50:41+00:00
+1379258,0,Drew Allar,QB,PIT,6000,512,,False,,CIN @ PIT,1970-01-01 00:29:50.528400+00:00,drew allar,0,6000,clear,153778,Showdown Captain Mode,2026-09-24T23:50:41+00:00
+1380613,0,Germie Bernard,WR,PIT,4000,512,,False,,CIN @ PIT,1970-01-01 00:29:50.528400+00:00,germie bernard,0,4000,clear,153778,Showdown Captain Mode,2026-09-24T23:50:41+00:00
+1383993,0,Kaden Wetjen,WR,PIT,200,512,,False,,CIN @ PIT,1970-01-01 00:29:50.528400+00:00,kaden wetjen,0,200,clear,153778,Showdown Captain Mode,2026-09-24T23:50:41+00:00
+1395874,0,Eli Heidenreich,RB,PIT,2400,512,,False,,CIN @ PIT,1970-01-01 00:29:50.528400+00:00,eli heidenreich,0,2400,clear,153778,Showdown Captain Mode,2026-09-24T23:50:41+00:00
+1400852,0,Jack Endries,TE,CIN,200,512,,False,,CIN @ PIT,1970-01-01 00:29:50.528400+00:00,jack endries,0,200,clear,153778,Showdown Captain Mode,2026-09-24T23:50:41+00:00
+1402692,0,Noah Thomas,WR,CIN,200,512,,False,,CIN @ PIT,1970-01-01 00:29:50.528400+00:00,noah thomas,0,200,clear,153778,Showdown Captain Mode,2026-09-24T23:50:41+00:00
+1406878,0,Colbie Young,WR,CIN,1200,512,,False,,CIN @ PIT,1970-01-01 00:29:50.528400+00:00,colbie young,0,1200,clear,153778,Showdown Captain Mode,2026-09-24T23:50:41+00:00
+1510975,0,Cole Burgess,WR,PIT,200,512,,False,,CIN @ PIT,1970-01-01 00:29:50.528400+00:00,cole burgess,0,200,clear,153778,Showdown Captain Mode,2026-09-24T23:50:41+00:00

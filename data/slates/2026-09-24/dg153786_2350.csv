@@ -1,0 +1,53 @@
+dk_player_id,draftable_id,name,position,team,salary,roster_slot,status,disabled,attributes,game,starts_utc,norm,flex_eligible,captain_salary,playing,draft_group,game_type,captured_at
+347,0,Vikings,DST,MIN,5200,512,,False,,MIN @ TB,1970-01-01 00:29:50.539500+00:00,vikings,0,5200,clear,153786,Showdown Captain Mode,2026-09-24T23:50:41+00:00
+362,0,Buccaneers,DST,TB,3200,512,,False,,MIN @ TB,1970-01-01 00:29:50.539500+00:00,buccaneers,0,3200,clear,153786,Showdown Captain Mode,2026-09-24T23:50:41+00:00
+300580,0,Andrew DePaola,TE,MIN,200,512,,False,,MIN @ TB,1970-01-01 00:29:50.539500+00:00,andrew depaola,0,200,clear,153786,Showdown Captain Mode,2026-09-24T23:50:41+00:00
+613866,0,Carson Wentz,QB,MIN,8600,512,,False,,MIN @ TB,1970-01-01 00:29:50.539500+00:00,carson wentz,0,8600,clear,153786,Showdown Captain Mode,2026-09-24T23:50:41+00:00
+741314,0,Aaron Jones Sr.,RB,MIN,8800,512,,False,,MIN @ TB,1970-01-01 00:29:50.539500+00:00,aaron jones,0,8800,clear,153786,Showdown Captain Mode,2026-09-24T23:50:41+00:00
+748070,0,Baker Mayfield,QB,TB,10000,512,,False,,MIN @ TB,1970-01-01 00:29:50.539500+00:00,baker mayfield,0,10000,clear,153786,Showdown Captain Mode,2026-09-24T23:50:41+00:00
+831007,0,Easton Stick,QB,TB,6000,512,,False,,MIN @ TB,1970-01-01 00:29:50.539500+00:00,easton stick,0,6000,clear,153786,Showdown Captain Mode,2026-09-24T23:50:41+00:00
+835127,0,Chris Godwin Jr.,WR,TB,8200,512,,False,,MIN @ TB,1970-01-01 00:29:50.539500+00:00,chris godwin,0,8200,clear,153786,Showdown Captain Mode,2026-09-24T23:50:41+00:00
+861446,0,Chase McLaughlin,K,TB,4800,512,,False,,MIN @ TB,1970-01-01 00:29:50.539500+00:00,chase mclaughlin,0,4800,clear,153786,Showdown Captain Mode,2026-09-24T23:50:41+00:00
+866973,0,David Sills V,WR,TB,200,512,,False,,MIN @ TB,1970-01-01 00:29:50.539500+00:00,david sills,0,200,clear,153786,Showdown Captain Mode,2026-09-24T23:50:41+00:00
+867009,0,Jauan Jennings,WR,MIN,3600,512,,False,,MIN @ TB,1970-01-01 00:29:50.539500+00:00,jauan jennings,0,3600,clear,153786,Showdown Captain Mode,2026-09-24T23:50:41+00:00
+879799,0,Kyler Murray,QB,MIN,9600,512,,False,,MIN @ TB,1970-01-01 00:29:50.539500+00:00,kyler murray,0,9600,clear,153786,Showdown Captain Mode,2026-09-24T23:50:41+00:00
+881779,0,Josh Oliver,TE,MIN,1600,512,,False,,MIN @ TB,1970-01-01 00:29:50.539500+00:00,josh oliver,0,1600,clear,153786,Showdown Captain Mode,2026-09-24T23:50:41+00:00
+911239,0,Ko Kieft,TE,TB,400,512,,False,,MIN @ TB,1970-01-01 00:29:50.539500+00:00,ko kieft,0,400,clear,153786,Showdown Captain Mode,2026-09-24T23:50:41+00:00
+923915,0,T.J. Hockenson,TE,MIN,5600,512,,False,,MIN @ TB,1970-01-01 00:29:50.539500+00:00,t j hockenson,0,5600,clear,153786,Showdown Captain Mode,2026-09-24T23:50:41+00:00
+976309,0,DeeJay Dallas,RB,MIN,2400,512,,False,,MIN @ TB,1970-01-01 00:29:50.539500+00:00,deejay dallas,0,2400,clear,153786,Showdown Captain Mode,2026-09-24T23:50:41+00:00
+1049263,0,Cade Otton,TE,TB,4000,512,,False,,MIN @ TB,1970-01-01 00:29:50.539500+00:00,cade otton,0,4000,clear,153786,Showdown Captain Mode,2026-09-24T23:50:41+00:00
+1069535,0,Justin Jefferson,WR,MIN,11600,512,,False,,MIN @ TB,1970-01-01 00:29:50.539500+00:00,justin jefferson,0,11600,clear,153786,Showdown Captain Mode,2026-09-24T23:50:41+00:00
+1106382,0,Jeshaun Jones,WR,MIN,200,512,,False,,MIN @ TB,1970-01-01 00:29:50.539500+00:00,jeshaun jones,0,200,clear,153786,Showdown Captain Mode,2026-09-24T23:50:41+00:00
+1108937,0,Jaret Patterson,RB,MIN,200,512,,False,,MIN @ TB,1970-01-01 00:29:50.539500+00:00,jaret patterson,0,200,clear,153786,Showdown Captain Mode,2026-09-24T23:50:41+00:00
+1116001,0,Jordan Mason,RB,MIN,200,512,,False,,MIN @ TB,1970-01-01 00:29:50.539500+00:00,jordan mason,0,200,clear,153786,Showdown Captain Mode,2026-09-24T23:50:41+00:00
+1120499,0,Evan Deckers,TE,TB,200,512,,False,,MIN @ TB,1970-01-01 00:29:50.539500+00:00,evan deckers,0,200,clear,153786,Showdown Captain Mode,2026-09-24T23:50:41+00:00
+1125737,0,Jerome Ford,RB,MIN,200,512,,False,,MIN @ TB,1970-01-01 00:29:50.539500+00:00,jerome ford,0,200,clear,153786,Showdown Captain Mode,2026-09-24T23:50:41+00:00
+1130260,0,Payne Durham,TE,TB,600,512,,False,,MIN @ TB,1970-01-01 00:29:50.539500+00:00,payne durham,0,600,clear,153786,Showdown Captain Mode,2026-09-24T23:50:41+00:00
+1130705,0,Kenny Gainwell,RB,TB,4400,512,,False,,MIN @ TB,1970-01-01 00:29:50.539500+00:00,kenny gainwell,0,4400,clear,153786,Showdown Captain Mode,2026-09-24T23:50:41+00:00
+1160352,0,Will Reichard,K,MIN,5000,512,,False,,MIN @ TB,1970-01-01 00:29:50.539500+00:00,will reichard,0,5000,clear,153786,Showdown Captain Mode,2026-09-24T23:50:41+00:00
+1169329,0,Max Brosmer,QB,MIN,6000,512,,False,,MIN @ TB,1970-01-01 00:29:50.539500+00:00,max brosmer,0,6000,clear,153786,Showdown Captain Mode,2026-09-24T23:50:41+00:00
+1172990,0,Josh Williams,RB,TB,200,512,,False,,MIN @ TB,1970-01-01 00:29:50.539500+00:00,josh williams,0,200,clear,153786,Showdown Captain Mode,2026-09-24T23:50:41+00:00
+1213726,0,Jalen McMillan,WR,TB,4200,512,,False,,MIN @ TB,1970-01-01 00:29:50.539500+00:00,jalen mcmillan,0,4200,clear,153786,Showdown Captain Mode,2026-09-24T23:50:41+00:00
+1213897,0,Garrett Greene,WR,TB,200,512,,False,,MIN @ TB,1970-01-01 00:29:50.539500+00:00,garrett greene,0,200,clear,153786,Showdown Captain Mode,2026-09-24T23:50:41+00:00
+1214250,0,Jordan Addison,WR,MIN,7600,512,,False,,MIN @ TB,1970-01-01 00:29:50.539500+00:00,jordan addison,0,7600,clear,153786,Showdown Captain Mode,2026-09-24T23:50:41+00:00
+1214837,0,Tez Johnson,WR,TB,2000,512,,False,,MIN @ TB,1970-01-01 00:29:50.539500+00:00,tez johnson,0,2000,clear,153786,Showdown Captain Mode,2026-09-24T23:50:41+00:00
+1216808,0,Ben Yurosek,TE,MIN,200,512,,False,,MIN @ TB,1970-01-01 00:29:50.539500+00:00,ben yurosek,0,200,clear,153786,Showdown Captain Mode,2026-09-24T23:50:41+00:00
+1225681,0,Jalon Daniels,QB,TB,6000,512,,False,,MIN @ TB,1970-01-01 00:29:50.539500+00:00,jalon daniels,0,6000,clear,153786,Showdown Captain Mode,2026-09-24T23:50:41+00:00
+1228633,0,Sean Tucker,RB,TB,1400,512,,False,,MIN @ TB,1970-01-01 00:29:50.539500+00:00,sean tucker,0,1400,clear,153786,Showdown Captain Mode,2026-09-24T23:50:41+00:00
+1228728,0,Myles Price,WR,MIN,200,512,,False,,MIN @ TB,1970-01-01 00:29:50.539500+00:00,myles price,0,200,clear,153786,Showdown Captain Mode,2026-09-24T23:50:41+00:00
+1251513,0,Cam Grandy,TE,MIN,200,512,,False,,MIN @ TB,1970-01-01 00:29:50.539500+00:00,cam grandy,0,200,clear,153786,Showdown Captain Mode,2026-09-24T23:50:41+00:00
+1272873,0,Michael Briscoe,WR,MIN,200,512,,False,,MIN @ TB,1970-01-01 00:29:50.539500+00:00,michael briscoe,0,200,clear,153786,Showdown Captain Mode,2026-09-24T23:50:41+00:00
+1287258,0,Gavin Bartholomew,TE,MIN,200,512,,False,,MIN @ TB,1970-01-01 00:29:50.539500+00:00,gavin bartholomew,0,200,clear,153786,Showdown Captain Mode,2026-09-24T23:50:41+00:00
+1287587,0,Tai Felton,WR,MIN,1000,512,,False,,MIN @ TB,1970-01-01 00:29:50.539500+00:00,tai felton,0,1000,clear,153786,Showdown Captain Mode,2026-09-24T23:50:41+00:00
+1287588,0,CJ Dippre,TE,TB,200,512,,False,,MIN @ TB,1970-01-01 00:29:50.539500+00:00,cj dippre,0,200,clear,153786,Showdown Captain Mode,2026-09-24T23:50:41+00:00
+1287599,0,J.J. McCarthy,QB,MIN,6000,512,,False,,MIN @ TB,1970-01-01 00:29:50.539500+00:00,j j mccarthy,0,6000,clear,153786,Showdown Captain Mode,2026-09-24T23:50:41+00:00
+1287825,0,Emeka Egbuka,WR,TB,9200,512,,False,,MIN @ TB,1970-01-01 00:29:50.539500+00:00,emeka egbuka,0,9200,clear,153786,Showdown Captain Mode,2026-09-24T23:50:41+00:00
+1287923,0,Bucky Irving,RB,TB,9400,512,,False,,MIN @ TB,1970-01-01 00:29:50.539500+00:00,bucky irving,0,9400,clear,153786,Showdown Captain Mode,2026-09-24T23:50:41+00:00
+1290418,0,Dean Patterson IV,WR,TB,200,512,,False,,MIN @ TB,1970-01-01 00:29:50.539500+00:00,dean patterson,0,200,clear,153786,Showdown Captain Mode,2026-09-24T23:50:41+00:00
+1325562,0,Max Bredeson,RB,MIN,200,512,,False,,MIN @ TB,1970-01-01 00:29:50.539500+00:00,max bredeson,0,200,clear,153786,Showdown Captain Mode,2026-09-24T23:50:41+00:00
+1326555,0,Bauer Sharp,TE,TB,200,512,,False,,MIN @ TB,1970-01-01 00:29:50.539500+00:00,bauer sharp,0,200,clear,153786,Showdown Captain Mode,2026-09-24T23:50:41+00:00
+1390910,0,Demond Claiborne,RB,MIN,2800,512,,False,,MIN @ TB,1970-01-01 00:29:50.539500+00:00,demond claiborne,0,2800,clear,153786,Showdown Captain Mode,2026-09-24T23:50:41+00:00
+1396942,0,Dillon Bell,WR,MIN,200,512,,False,,MIN @ TB,1970-01-01 00:29:50.539500+00:00,dillon bell,0,200,clear,153786,Showdown Captain Mode,2026-09-24T23:50:41+00:00
+1412326,0,Kameron Johnson,WR,TB,200,512,,False,,MIN @ TB,1970-01-01 00:29:50.539500+00:00,kameron johnson,0,200,clear,153786,Showdown Captain Mode,2026-09-24T23:50:41+00:00
+1446502,0,Eric Rivers Jr.,WR,TB,200,512,,False,,MIN @ TB,1970-01-01 00:29:50.539500+00:00,eric rivers,0,200,clear,153786,Showdown Captain Mode,2026-09-24T23:50:41+00:00
+1521285,0,Ted Hurst III,WR,TB,3000,512,,False,,MIN @ TB,1970-01-01 00:29:50.539500+00:00,ted hurst,0,3000,clear,153786,Showdown Captain Mode,2026-09-24T23:50:41+00:00
