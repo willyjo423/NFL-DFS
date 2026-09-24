@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-09-23T22:19:32+00:00",
+  "updated_at": "2026-09-24T13:21:30+00:00",
   "slates": [
     {
       "kind": "classic",
@@ -103,11 +103,11 @@
       "site": "dk",
       "draft_group": 153769,
       "label": "NFL $2.75M Fantasy Football Millionaire [$1M to 1st]",
-      "contests": 1628,
+      "contests": 1726,
       "starts": "2026-09-27 17:00:00+00:00",
       "file": "data/nfl/dk-classic-153769.json",
-      "players": 539,
-      "generated_at": "2026-09-22T22:03:48+00:00"
+      "players": 542,
+      "generated_at": "2026-09-24T13:09:01+00:00"
     },
     {
       "kind": "classic",
@@ -118,8 +118,8 @@
       "contests": 326,
       "starts": "2026-09-25 00:15:00+00:00",
       "file": "data/nfl/dk-classic-153768.json",
-      "players": 666,
-      "generated_at": "2026-09-23T22:08:07+00:00"
+      "players": 665,
+      "generated_at": "2026-09-24T13:14:44+00:00"
     },
     {
       "kind": "classic",
@@ -127,11 +127,11 @@
       "site": "dk",
       "draft_group": 153770,
       "label": "NFL $300K Early Only Rush [$100K to 1st] (Early Only)",
-      "contests": 379,
+      "contests": 436,
       "starts": "2026-09-27 17:00:00+00:00",
       "file": "data/nfl/dk-classic-153770.json",
-      "players": 367,
-      "generated_at": "2026-09-22T22:05:55+00:00"
+      "players": 369,
+      "generated_at": "2026-09-24T13:11:13+00:00"
     },
     {
       "kind": "classic",
@@ -139,11 +139,23 @@
       "site": "dk",
       "draft_group": 153771,
       "label": "NFL $15K Sun-Mon Special [$5K to 1st] (Sun-Mon)",
-      "contests": 171,
+      "contests": 226,
       "starts": "2026-09-27 17:00:00+00:00",
       "file": "data/nfl/dk-classic-153771.json",
-      "players": 621,
-      "generated_at": "2026-09-22T22:11:01+00:00"
+      "players": 625,
+      "generated_at": "2026-09-24T13:17:12+00:00"
+    },
+    {
+      "kind": "classic",
+      "sport": "nfl",
+      "site": "dk",
+      "draft_group": 153772,
+      "label": "NFL $500K Afternoon Only Rush [$100K to 1st] (Afternoon Only)",
+      "contests": 387,
+      "starts": "2026-09-27 20:05:00+00:00",
+      "file": "data/nfl/dk-classic-153772.json",
+      "players": 176,
+      "generated_at": "2026-09-24T13:12:03+00:00"
     },
     {
       "kind": "showdown",
@@ -295,11 +307,11 @@
       "site": "dk",
       "draft_group": 153775,
       "label": "NFL Showdown $1.5M Thursday Night Showdown [$500K to 1st] (ATL @ GB)",
-      "contests": 1142,
+      "contests": 1189,
       "starts": "2026-09-25 00:15:00+00:00",
       "file": "data/nfl/dk-showdown-153775.json",
-      "players": 41,
-      "generated_at": "2026-09-23T22:03:15+00:00"
+      "players": 40,
+      "generated_at": "2026-09-24T13:09:50+00:00"
     },
     {
       "kind": "showdown",
@@ -307,11 +319,11 @@
       "site": "dk",
       "draft_group": 153777,
       "label": "NFL Showdown $80K Showdown Special [$20K to 1st] (LAC @ BUF)",
-      "contests": 165,
+      "contests": 194,
       "starts": "2026-09-27 17:00:00+00:00",
       "file": "data/nfl/dk-showdown-153777.json",
       "players": 39,
-      "generated_at": "2026-09-22T22:11:45+00:00"
+      "generated_at": "2026-09-24T13:17:55+00:00"
     },
     {
       "kind": "showdown",
@@ -319,11 +331,11 @@
       "site": "dk",
       "draft_group": 153780,
       "label": "NFL Showdown $15K Showdown Special [$5K to 1st] (KC @ MIA)",
-      "contests": 124,
+      "contests": 155,
       "starts": "2026-09-27 17:00:00+00:00",
       "file": "data/nfl/dk-showdown-153780.json",
       "players": 38,
-      "generated_at": "2026-09-22T22:12:29+00:00"
+      "generated_at": "2026-09-24T13:19:22+00:00"
     },
     {
       "kind": "showdown",
@@ -331,11 +343,11 @@
       "site": "dk",
       "draft_group": 153776,
       "label": "NFL Showdown $15K Showdown Special [$5K to 1st] (NE @ JAX)",
-      "contests": 124,
+      "contests": 152,
       "starts": "2026-09-27 17:00:00+00:00",
       "file": "data/nfl/dk-showdown-153776.json",
       "players": 38,
-      "generated_at": "2026-09-22T22:13:11+00:00"
+      "generated_at": "2026-09-24T13:20:04+00:00"
     },
     {
       "kind": "showdown",
@@ -343,11 +355,11 @@
       "site": "dk",
       "draft_group": 153783,
       "label": "NFL Showdown $15K Showdown Special [$5K to 1st] (NYJ @ DET)",
-      "contests": 124,
+      "contests": 150,
       "starts": "2026-09-27 17:00:00+00:00",
       "file": "data/nfl/dk-showdown-153783.json",
-      "players": 37,
-      "generated_at": "2026-09-22T22:13:55+00:00"
+      "players": 38,
+      "generated_at": "2026-09-24T13:21:30+00:00"
     },
     {
       "kind": "showdown",
@@ -384,122 +396,31 @@
       "file": "data/nfl/dk-showdown-153779.json",
       "players": 41,
       "generated_at": "2026-09-22T22:16:04+00:00"
-    }
-  ],
-  "failures": [
-    {
-      "kind": "classic",
-      "draft_group": 153769,
-      "label": "NFL $2.75M Fantasy Football Millionaire [$1M to 1st]",
-      "error": "BoardUnfiltered: NO injury information reached this board (0/662 matched).\nEvery player would read as available, which is exactly how an inactive player gets into every lineup.\nA filter that is silently not filtering is worse than no filter, because it is trusted.\nFix the join, or pass --force to build a board that cannot see who is hurt."
-    },
-    {
-      "kind": "classic",
-      "draft_group": 153770,
-      "label": "NFL $300K Early Only Rush [$100K to 1st] (Early Only)",
-      "error": "BoardUnfiltered: NO injury information reached this board (0/451 matched).\nEvery player would read as available, which is exactly how an inactive player gets into every lineup.\nA filter that is silently not filtering is worse than no filter, because it is trusted.\nFix the join, or pass --force to build a board that cannot see who is hurt."
-    },
-    {
-      "kind": "classic",
-      "draft_group": 153772,
-      "label": "NFL $500K Afternoon Only Rush [$100K to 1st] (Afternoon Only)",
-      "error": "BoardUnfiltered: NO injury information reached this board (0/212 matched).\nEvery player would read as available, which is exactly how an inactive player gets into every lineup.\nA filter that is silently not filtering is worse than no filter, because it is trusted.\nFix the join, or pass --force to build a board that cannot see who is hurt."
-    },
-    {
-      "kind": "classic",
-      "draft_group": 153771,
-      "label": "NFL $15K Sun-Mon Special [$5K to 1st] (Sun-Mon)",
-      "error": "BoardUnfiltered: NO injury information reached this board (0/767 matched).\nEvery player would read as available, which is exactly how an inactive player gets into every lineup.\nA filter that is silently not filtering is worse than no filter, because it is trusted.\nFix the join, or pass --force to build a board that cannot see who is hurt."
     },
     {
       "kind": "showdown",
-      "draft_group": 153777,
-      "label": "NFL Showdown $80K Showdown Special [$20K to 1st] (LAC @ BUF)",
-      "error": "BoardUnfiltered: NO injury information reached this board (0/50 matched).\nEvery player would read as available, which is exactly how an inactive player gets into every lineup.\nA filter that is silently not filtering is worse than no filter, because it is trusted.\nFix the join, or pass --force to build a board that cannot see who is hurt."
-    },
-    {
-      "kind": "showdown",
+      "sport": "nfl",
+      "site": "dk",
       "draft_group": 153788,
       "label": "NFL $100K Showdown Special [$25K to 1st] (BAL vs DAL)",
-      "error": "BoardUnfiltered: NO injury information reached this board (0/53 matched).\nEvery player would read as available, which is exactly how an inactive player gets into every lineup.\nA filter that is silently not filtering is worse than no filter, because it is trusted.\nFix the join, or pass --force to build a board that cannot see who is hurt."
+      "contests": 173,
+      "starts": "2026-09-27 20:25:00+00:00",
+      "file": "data/nfl/dk-showdown-153788.json",
+      "players": 40,
+      "generated_at": "2026-09-24T13:18:39+00:00"
     },
     {
       "kind": "showdown",
-      "draft_group": 153780,
-      "label": "NFL Showdown $15K Showdown Special [$5K to 1st] (KC @ MIA)",
-      "error": "BoardUnfiltered: NO injury information reached this board (0/55 matched).\nEvery player would read as available, which is exactly how an inactive player gets into every lineup.\nA filter that is silently not filtering is worse than no filter, because it is trusted.\nFix the join, or pass --force to build a board that cannot see who is hurt."
-    },
-    {
-      "kind": "showdown",
-      "draft_group": 153776,
-      "label": "NFL Showdown $15K Showdown Special [$5K to 1st] (NE @ JAX)",
-      "error": "BoardUnfiltered: NO injury information reached this board (0/52 matched).\nEvery player would read as available, which is exactly how an inactive player gets into every lineup.\nA filter that is silently not filtering is worse than no filter, because it is trusted.\nFix the join, or pass --force to build a board that cannot see who is hurt."
-    },
-    {
-      "kind": "showdown",
+      "sport": "nfl",
+      "site": "dk",
       "draft_group": 153778,
       "label": "NFL Showdown $20K Thunderdome [Must Fill] (CIN @ PIT)",
-      "error": "BoardUnfiltered: NO injury information reached this board (0/50 matched).\nEvery player would read as available, which is exactly how an inactive player gets into every lineup.\nA filter that is silently not filtering is worse than no filter, because it is trusted.\nFix the join, or pass --force to build a board that cannot see who is hurt."
-    },
-    {
-      "kind": "showdown",
-      "draft_group": 153783,
-      "label": "NFL Showdown $15K Showdown Special [$5K to 1st] (NYJ @ DET)",
-      "error": "BoardUnfiltered: NO injury information reached this board (0/51 matched).\nEvery player would read as available, which is exactly how an inactive player gets into every lineup.\nA filter that is silently not filtering is worse than no filter, because it is trusted.\nFix the join, or pass --force to build a board that cannot see who is hurt."
-    },
-    {
-      "kind": "showdown",
-      "draft_group": 153784,
-      "label": "NFL Showdown $20K Thunderdome [Must Fill] (CAR @ CLE)",
-      "error": "BoardUnfiltered: NO injury information reached this board (0/51 matched).\nEvery player would read as available, which is exactly how an inactive player gets into every lineup.\nA filter that is silently not filtering is worse than no filter, because it is trusted.\nFix the join, or pass --force to build a board that cannot see who is hurt."
-    },
-    {
-      "kind": "showdown",
-      "draft_group": 153781,
-      "label": "NFL Showdown $20K Thunderdome [Must Fill] (SEA @ WAS)",
-      "error": "BoardUnfiltered: NO injury information reached this board (0/55 matched).\nEvery player would read as available, which is exactly how an inactive player gets into every lineup.\nA filter that is silently not filtering is worse than no filter, because it is trusted.\nFix the join, or pass --force to build a board that cannot see who is hurt."
-    },
-    {
-      "kind": "showdown",
-      "draft_group": 153779,
-      "label": "NFL Showdown $20K Thunderdome [Must Fill] (HOU @ IND)",
-      "error": "BoardUnfiltered: NO injury information reached this board (0/55 matched).\nEvery player would read as available, which is exactly how an inactive player gets into every lineup.\nA filter that is silently not filtering is worse than no filter, because it is trusted.\nFix the join, or pass --force to build a board that cannot see who is hurt."
-    },
-    {
-      "kind": "showdown",
-      "draft_group": 153782,
-      "label": "NFL Showdown $20K Thunderdome [Must Fill] (TEN @ NYG)",
-      "error": "BoardUnfiltered: NO injury information reached this board (0/52 matched).\nEvery player would read as available, which is exactly how an inactive player gets into every lineup.\nA filter that is silently not filtering is worse than no filter, because it is trusted.\nFix the join, or pass --force to build a board that cannot see who is hurt."
-    },
-    {
-      "kind": "classic",
-      "draft_group": 153773,
-      "label": "NFL $30K Post Pattern [$10K to 1st] (Afternoon Turbo)",
-      "error": "BoardUnfiltered: NO injury information reached this board (0/107 matched).\nEvery player would read as available, which is exactly how an inactive player gets into every lineup.\nA filter that is silently not filtering is worse than no filter, because it is trusted.\nFix the join, or pass --force to build a board that cannot see who is hurt."
-    },
-    {
-      "kind": "showdown",
-      "draft_group": 153787,
-      "label": "NFL $15K Showdown Special [$5K to 1st] (LV @ NO)",
-      "error": "BoardUnfiltered: NO injury information reached this board (0/61 matched).\nEvery player would read as available, which is exactly how an inactive player gets into every lineup.\nA filter that is silently not filtering is worse than no filter, because it is trusted.\nFix the join, or pass --force to build a board that cannot see who is hurt."
-    },
-    {
-      "kind": "showdown",
-      "draft_group": 153785,
-      "label": "NFL $15K Showdown Special [$5K to 1st] (ARI @ SF)",
-      "error": "BoardUnfiltered: NO injury information reached this board (0/57 matched).\nEvery player would read as available, which is exactly how an inactive player gets into every lineup.\nA filter that is silently not filtering is worse than no filter, because it is trusted.\nFix the join, or pass --force to build a board that cannot see who is hurt."
-    },
-    {
-      "kind": "showdown",
-      "draft_group": 153786,
-      "label": "NFL $15K Showdown Special [$5K to 1st] (MIN @ TB)",
-      "error": "BoardUnfiltered: NO injury information reached this board (0/52 matched).\nEvery player would read as available, which is exactly how an inactive player gets into every lineup.\nA filter that is silently not filtering is worse than no filter, because it is trusted.\nFix the join, or pass --force to build a board that cannot see who is hurt."
-    },
-    {
-      "kind": "classic",
-      "draft_group": 153728,
-      "label": "NFL $6M Midseason Main Event [$1.5M to 1st]",
-      "error": "DataUnavailable: draft group 153728 returned no players from either endpoint (lobby top-level keys: ['draftGroupAlerts', 'playerList', 'teamList'])"
+      "contests": 150,
+      "starts": "2026-09-27 17:00:00+00:00",
+      "file": "data/nfl/dk-showdown-153778.json",
+      "players": 42,
+      "generated_at": "2026-09-24T13:20:47+00:00"
     }
-  ]
+  ],
+  "failures": []
 }
