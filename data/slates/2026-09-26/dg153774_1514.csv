@@ -1,0 +1,106 @@
+dk_player_id,draftable_id,name,position,team,salary,roster_slot,status,disabled,attributes,game,starts_utc,norm,flex_eligible,captain_salary,playing,draft_group,game_type,captured_at
+326,0,Bears,DST,CHI,2500,71,,False,,PHI @ CHI,,bears,0,2500,clear,153774,Classic,2026-09-26T15:14:08+00:00
+332,0,Broncos,DST,DEN,2300,71,,False,,LAR @ DEN,,broncos,0,2300,clear,153774,Classic,2026-09-26T15:14:08+00:00
+343,0,Rams,DST,LAR,3100,71,,False,,LAR @ DEN,,rams,0,3100,clear,153774,Classic,2026-09-26T15:14:08+00:00
+354,0,Eagles,DST,PHI,3200,71,,False,,PHI @ CHI,,eagles,0,3200,clear,153774,Classic,2026-09-26T15:14:08+00:00
+322858,0,Andy Dalton,QB,PHI,4000,66,,False,,PHI @ CHI,,andy dalton,0,4000,clear,153774,Classic,2026-09-26T15:14:08+00:00
+323205,0,Matthew Stafford,QB,LAR,5900,66,,False,,LAR @ DEN,,matthew stafford,0,5900,clear,153774,Classic,2026-09-26T15:14:08+00:00
+338280,0,Case Keenum,QB,CHI,4000,66,,False,,PHI @ CHI,,case keenum,0,4000,clear,153774,Classic,2026-09-26T15:14:08+00:00
+503177,0,Zach Ertz,TE,PHI,3100,69,,False,,PHI @ CHI,,zach ertz,0,3100,clear,153774,Classic,2026-09-26T15:14:08+00:00
+604176,0,Tyler Higbee,TE,LAR,2900,69,,False,,LAR @ DEN,,tyler higbee,0,2900,clear,153774,Classic,2026-09-26T15:14:08+00:00
+611417,0,Davante Adams,WR,LAR,6200,68,,False,,LAR @ DEN,,davante adams,0,6200,clear,153774,Classic,2026-09-26T15:14:08+00:00
+692660,0,Kalif Raymond,WR,CHI,3800,68,,False,,PHI @ CHI,,kalif raymond,0,3800,clear,153774,Classic,2026-09-26T15:14:08+00:00
+740704,0,Johnny Mundt,TE,PHI,2600,69,,False,,PHI @ CHI,,johnny mundt,0,2600,clear,153774,Classic,2026-09-26T15:14:08+00:00
+749185,0,Evan Engram,TE,DEN,3100,69,,False,,LAR @ DEN,,evan engram,0,3100,clear,153774,Classic,2026-09-26T15:14:08+00:00
+791365,0,Dallas Goedert,TE,PHI,4600,69,,False,,PHI @ CHI,,dallas goedert,0,4600,clear,153774,Classic,2026-09-26T15:14:08+00:00
+838878,0,Courtland Sutton,WR,DEN,5200,68,,False,,LAR @ DEN,,courtland sutton,0,5200,clear,153774,Classic,2026-09-26T15:14:08+00:00
+843733,0,Mitchell Fraboni,TE,DEN,2500,69,,False,,LAR @ DEN,,mitchell fraboni,0,2500,clear,153774,Classic,2026-09-26T15:14:08+00:00
+865868,0,Jarrett Stidham,QB,DEN,4000,66,,False,,LAR @ DEN,,jarrett stidham,0,4000,clear,153774,Classic,2026-09-26T15:14:08+00:00
+866149,0,Josiah Deguara,TE,PHI,2500,69,,False,,PHI @ CHI,,josiah deguara,0,2500,clear,153774,Classic,2026-09-26T15:14:08+00:00
+866578,0,Scotty Miller,WR,CHI,3000,68,,False,,PHI @ CHI,,scotty miller,0,3000,clear,153774,Classic,2026-09-26T15:14:08+00:00
+875444,0,Adam Trautman,TE,DEN,2500,69,,False,,LAR @ DEN,,adam trautman,0,2500,clear,153774,Classic,2026-09-26T15:14:08+00:00
+881697,0,Stephen Carlson,TE,CHI,2500,69,,False,,PHI @ CHI,,stephen carlson,0,2500,clear,153774,Classic,2026-09-26T15:14:08+00:00
+882718,0,Britain Covey,WR,PHI,3000,68,,False,,PHI @ CHI,,britain covey,0,3000,clear,153774,Classic,2026-09-26T15:14:08+00:00
+883302,0,Saquon Barkley,RB,PHI,7000,67,,False,,PHI @ CHI,,saquon barkley,0,7000,clear,153774,Classic,2026-09-26T15:14:08+00:00
+884315,0,Alex Bachman,WR,LAR,3000,68,,False,,LAR @ DEN,,alex bachman,0,3000,clear,153774,Classic,2026-09-26T15:14:08+00:00
+885540,0,Adam Prentice,RB,DEN,4000,67,,False,,LAR @ DEN,,adam prentice,0,4000,clear,153774,Classic,2026-09-26T15:14:08+00:00
+913271,0,Jalen Hurts,QB,PHI,6800,66,,False,,PHI @ CHI,,jalen hurts,0,6800,clear,153774,Classic,2026-09-26T15:14:08+00:00
+920482,0,Michael Bandy,WR,DEN,3000,68,,False,,LAR @ DEN,,michael bandy,0,3000,clear,153774,Classic,2026-09-26T15:14:08+00:00
+920758,0,Lil'Jordan Humphrey,WR,DEN,3000,68,,False,,LAR @ DEN,,liljordan humphrey,0,3000,clear,153774,Classic,2026-09-26T15:14:08+00:00
+922451,0,Brittain Brown,RB,CHI,4000,67,,False,,PHI @ CHI,,brittain brown,0,4000,clear,153774,Classic,2026-09-26T15:14:08+00:00
+975829,0,Sam Ehlinger,QB,DEN,4000,66,,False,,LAR @ DEN,,sam ehlinger,0,4000,clear,153774,Classic,2026-09-26T15:14:08+00:00
+976220,0,Hollywood Brown,WR,PHI,3300,68,,False,,PHI @ CHI,,hollywood brown,0,3300,clear,153774,Classic,2026-09-26T15:14:08+00:00
+976221,0,Grant Calcaterra,TE,PHI,2500,69,,False,,PHI @ CHI,,grant calcaterra,0,2500,clear,153774,Classic,2026-09-26T15:14:08+00:00
+976513,0,J.K. Dobbins,RB,DEN,5400,67,,False,,LAR @ DEN,,j k dobbins,0,5400,clear,153774,Classic,2026-09-26T15:14:08+00:00
+976804,0,Ronnie Rivers,RB,LAR,4000,67,,False,,LAR @ DEN,,ronnie rivers,0,4000,clear,153774,Classic,2026-09-26T15:14:08+00:00
+1049246,0,Salvon Ahmed,RB,CHI,4000,67,,False,,PHI @ CHI,,salvon ahmed,0,4000,clear,153774,Classic,2026-09-26T15:14:08+00:00
+1051781,0,E.J. Jenkins,TE,PHI,2500,69,,False,,PHI @ CHI,,e j jenkins,0,2500,clear,153774,Classic,2026-09-26T15:14:08+00:00
+1060262,0,DeVonta Smith,WR,PHI,7100,68,,False,,PHI @ CHI,,devonta smith,0,7100,clear,153774,Classic,2026-09-26T15:14:08+00:00
+1060312,0,Colby Parkinson,TE,LAR,3200,69,,False,,LAR @ DEN,,colby parkinson,0,3200,clear,153774,Classic,2026-09-26T15:14:08+00:00
+1066765,0,Cole Kmet,TE,CHI,3000,69,,False,,PHI @ CHI,,cole kmet,0,3000,clear,153774,Classic,2026-09-26T15:14:08+00:00
+1067309,0,Zavier Scott,RB,CHI,4000,67,,False,,PHI @ CHI,,zavier scott,0,4000,clear,153774,Classic,2026-09-26T15:14:08+00:00
+1069763,0,Stetson Bennett IV,QB,LAR,4000,66,,False,,LAR @ DEN,,stetson bennett,0,4000,clear,153774,Classic,2026-09-26T15:14:08+00:00
+1069808,0,D'Andre Swift,RB,CHI,6200,67,,False,,PHI @ CHI,,dandre swift,0,6200,clear,153774,Classic,2026-09-26T15:14:08+00:00
+1106760,0,Tutu Atwell,WR,LAR,3700,68,,False,,LAR @ DEN,,tutu atwell,0,3700,clear,153774,Classic,2026-09-26T15:14:08+00:00
+1108998,0,Dameon Pierce,RB,PHI,4000,67,,False,,PHI @ CHI,,dameon pierce,0,4000,clear,153774,Classic,2026-09-26T15:14:08+00:00
+1122323,0,Lucas Krull,TE,DEN,2500,69,,False,,LAR @ DEN,,lucas krull,0,2500,clear,153774,Classic,2026-09-26T15:14:08+00:00
+1123521,0,Tanner McKee,QB,PHI,4000,66,,False,,PHI @ CHI,,tanner mckee,0,4000,clear,153774,Classic,2026-09-26T15:14:08+00:00
+1124338,0,Tyler Badie,RB,DEN,4200,67,,False,,LAR @ DEN,,tyler badie,0,4200,clear,153774,Classic,2026-09-26T15:14:08+00:00
+1125749,0,Jaylen Waddle,WR,DEN,6700,68,,False,,LAR @ DEN,,jaylen waddle,0,6700,clear,153774,Classic,2026-09-26T15:14:08+00:00
+1128783,0,Elijah Moore,WR,PHI,3000,68,,False,,PHI @ CHI,,elijah moore,0,3000,clear,153774,Classic,2026-09-26T15:14:08+00:00
+1130004,0,Qadir Ismail,TE,CHI,2500,69,,False,,PHI @ CHI,,qadir ismail,0,2500,clear,153774,Classic,2026-09-26T15:14:08+00:00
+1132517,0,Nate Adkins,TE,DEN,2500,69,,False,,LAR @ DEN,,nate adkins,0,2500,clear,153774,Classic,2026-09-26T15:14:08+00:00
+1137635,0,Xavier Smith,WR,LAR,3000,68,,False,,LAR @ DEN,,xavier smith,0,3000,clear,153774,Classic,2026-09-26T15:14:08+00:00
+1140248,0,Cody Schrader,RB,DEN,4000,67,,False,,LAR @ DEN,,cody schrader,0,4000,clear,153774,Classic,2026-09-26T15:14:08+00:00
+1161664,0,Davis Allen,TE,LAR,2500,69,,False,,LAR @ DEN,,davis allen,0,2500,clear,153774,Classic,2026-09-26T15:14:08+00:00
+1161899,0,Bo Nix,QB,DEN,5500,66,,False,,LAR @ DEN,,bo nix,0,5500,clear,153774,Classic,2026-09-26T15:14:08+00:00
+1162128,0,Puka Nacua,WR,LAR,7700,68,,False,,LAR @ DEN,,puka nacua,0,7700,clear,153774,Classic,2026-09-26T15:14:08+00:00
+1163265,0,Roschon Johnson,RB,CHI,4000,67,,False,,PHI @ CHI,,roschon johnson,0,4000,clear,153774,Classic,2026-09-26T15:14:08+00:00
+1163273,0,Jordan Whittington,WR,LAR,3200,68,,False,,LAR @ DEN,,jordan whittington,0,3200,clear,153774,Classic,2026-09-26T15:14:08+00:00
+1166045,0,Nikola Kalinic,TE,CHI,2500,69,,False,,PHI @ CHI,,nikola kalinic,0,2500,clear,153774,Classic,2026-09-26T15:14:08+00:00
+1167361,0,Kyren Williams,RB,LAR,6100,67,,False,,LAR @ DEN,,kyren williams,0,6100,clear,153774,Classic,2026-09-26T15:14:08+00:00
+1172401,0,RJ Harvey,RB,DEN,5200,67,,False,,LAR @ DEN,,rj harvey,0,5200,clear,153774,Classic,2026-09-26T15:14:08+00:00
+1172428,0,Dontayvion Wicks,WR,PHI,4100,68,,False,,PHI @ CHI,,dontayvion wicks,0,4100,clear,153774,Classic,2026-09-26T15:14:08+00:00
+1173174,0,Jordan Waters,RB,LAR,4000,67,,False,,LAR @ DEN,,jordan waters,0,4000,clear,153774,Classic,2026-09-26T15:14:08+00:00
+1177970,0,Xavier Gipson,WR,PHI,3000,68,,False,,PHI @ CHI,,xavier gipson,0,3000,clear,153774,Classic,2026-09-26T15:14:08+00:00
+1213486,0,Johnny Wilson,WR,PHI,3000,68,,False,,PHI @ CHI,,johnny wilson,0,3000,clear,153774,Classic,2026-09-26T15:14:08+00:00
+1213727,0,Rome Odunze,WR,CHI,5300,68,,False,,PHI @ CHI,,rome odunze,0,5300,clear,153774,Classic,2026-09-26T15:14:08+00:00
+1213799,0,Marvin Mims Jr.,WR,DEN,3700,68,,False,,LAR @ DEN,,marvin mims,0,3700,clear,153774,Classic,2026-09-26T15:14:08+00:00
+1215035,0,Tank Bigsby,RB,PHI,5000,67,,False,,PHI @ CHI,,tank bigsby,0,5000,clear,153774,Classic,2026-09-26T15:14:08+00:00
+1223318,0,Darius Cooper,WR,PHI,3100,68,,False,,PHI @ CHI,,darius cooper,0,3100,clear,153774,Classic,2026-09-26T15:14:08+00:00
+1226616,0,CJ Daniels,WR,LAR,3000,68,,False,,LAR @ DEN,,cj daniels,0,3000,clear,153774,Classic,2026-09-26T15:14:08+00:00
+1229386,0,Brennan Presley,WR,LAR,3000,68,,False,,LAR @ DEN,,brennan presley,0,3000,clear,153774,Classic,2026-09-26T15:14:08+00:00
+1229540,0,Blake Corum,RB,LAR,4600,67,,False,,LAR @ DEN,,blake corum,0,4600,clear,153774,Classic,2026-09-26T15:14:08+00:00
+1229542,0,Dan Villari,TE,LAR,2500,69,,False,,LAR @ DEN,,dan villari,0,2500,clear,153774,Classic,2026-09-26T15:14:08+00:00
+1231431,0,Caleb Lohner,TE,DEN,2500,69,,False,,LAR @ DEN,,caleb lohner,0,2500,clear,153774,Classic,2026-09-26T15:14:08+00:00
+1250886,0,Kyle Monangai,RB,CHI,5200,67,,False,,PHI @ CHI,,kyle monangai,0,5200,clear,153774,Classic,2026-09-26T15:14:08+00:00
+1286065,0,Eli Stowers,TE,PHI,2500,69,,False,,PHI @ CHI,,eli stowers,0,2500,clear,153774,Classic,2026-09-26T15:14:08+00:00
+1286176,0,Troy Franklin,WR,DEN,3500,68,,False,,LAR @ DEN,,troy franklin,0,3500,clear,153774,Classic,2026-09-26T15:14:08+00:00
+1286179,0,Terrance Ferguson,TE,LAR,2700,69,,False,,LAR @ DEN,,terrance ferguson,0,2700,clear,153774,Classic,2026-09-26T15:14:08+00:00
+1286262,0,Miller Moss,QB,CHI,4000,66,,False,,PHI @ CHI,,miller moss,0,4000,clear,153774,Classic,2026-09-26T15:14:08+00:00
+1286417,0,JP Richardson,WR,CHI,3000,68,,False,,PHI @ CHI,,jp richardson,0,3000,clear,153774,Classic,2026-09-26T15:14:08+00:00
+1286445,0,Caleb Williams,QB,CHI,6400,66,,False,,PHI @ CHI,,caleb williams,0,6400,clear,153774,Classic,2026-09-26T15:14:08+00:00
+1287636,0,Will Shipley,RB,PHI,4500,67,,False,,PHI @ CHI,,will shipley,0,4500,clear,153774,Classic,2026-09-26T15:14:08+00:00
+1289332,0,Konata Mumpfield,WR,LAR,3000,68,,False,,LAR @ DEN,,konata mumpfield,0,3000,clear,153774,Classic,2026-09-26T15:14:08+00:00
+1305866,0,Pat Bryant,WR,DEN,4000,68,,False,,LAR @ DEN,,pat bryant,0,4000,clear,153774,Classic,2026-09-26T15:14:08+00:00
+1319219,0,Carson Steele,RB,PHI,4000,67,,False,,PHI @ CHI,,carson steele,0,4000,clear,153774,Classic,2026-09-26T15:14:08+00:00
+1322662,0,Rocco Underwood,TE,PHI,2500,69,,False,,PHI @ CHI,,rocco underwood,0,2500,clear,153774,Classic,2026-09-26T15:14:08+00:00
+1324519,0,Matthew Caldwell,QB,LAR,4000,66,,False,,LAR @ DEN,,matthew caldwell,0,4000,clear,153774,Classic,2026-09-26T15:14:08+00:00
+1324976,0,Cole Payton,QB,PHI,4000,66,,False,,PHI @ CHI,,cole payton,0,4000,clear,153774,Classic,2026-09-26T15:14:08+00:00
+1377732,0,Luther Burden III,WR,CHI,5600,68,,False,,PHI @ CHI,,luther burden,0,5600,clear,153774,Classic,2026-09-26T15:14:08+00:00
+1378156,0,Sam Roush,TE,CHI,2500,69,,False,,PHI @ CHI,,sam roush,0,2500,clear,153774,Classic,2026-09-26T15:14:08+00:00
+1378660,0,Dane Key,WR,DEN,3000,68,,False,,LAR @ DEN,,dane key,0,3000,clear,153774,Classic,2026-09-26T15:14:08+00:00
+1378821,0,Colston Loveland,TE,CHI,5000,69,,False,,PHI @ CHI,,colston loveland,0,5000,clear,153774,Classic,2026-09-26T15:14:08+00:00
+1378898,0,Jaydon Blue,RB,PHI,4000,67,,False,,PHI @ CHI,,jaydon blue,0,4000,clear,153774,Classic,2026-09-26T15:14:08+00:00
+1378917,0,Ty Simpson,QB,LAR,4000,66,,False,,LAR @ DEN,,ty simpson,0,4000,clear,153774,Classic,2026-09-26T15:14:08+00:00
+1380594,0,Jonah Coleman,RB,DEN,5100,67,,False,,LAR @ DEN,,jonah coleman,0,5100,clear,153774,Classic,2026-09-26T15:14:08+00:00
+1381444,0,Dean Connors,RB,LAR,4000,67,,False,,LAR @ DEN,,dean connors,0,4000,clear,153774,Classic,2026-09-26T15:14:08+00:00
+1386002,0,Kaden Davis,WR,CHI,3000,68,,False,,PHI @ CHI,,kaden davis,0,3000,clear,153774,Classic,2026-09-26T15:14:08+00:00
+1398153,0,Zavion Thomas,WR,CHI,3000,68,,False,,PHI @ CHI,,zavion thomas,0,3000,clear,153774,Classic,2026-09-26T15:14:08+00:00
+1401683,0,Max Klare,TE,LAR,2500,69,,False,,LAR @ DEN,,max klare,0,2500,clear,153774,Classic,2026-09-26T15:14:08+00:00
+1441120,0,Makai Lemon,WR,PHI,4300,68,,False,,PHI @ CHI,,makai lemon,0,4300,clear,153774,Classic,2026-09-26T15:14:08+00:00
+1443955,0,Hayden Large,TE,CHI,2500,69,,False,,PHI @ CHI,,hayden large,0,2500,clear,153774,Classic,2026-09-26T15:14:08+00:00
+1444140,0,Tyson Bagent,QB,CHI,4400,66,,False,,PHI @ CHI,,tyson bagent,0,4400,clear,153774,Classic,2026-09-26T15:14:08+00:00
+1461173,0,Dallen Bentley,TE,DEN,2500,69,,False,,LAR @ DEN,,dallen bentley,0,2500,clear,153774,Classic,2026-09-26T15:14:08+00:00
+1465213,0,Jahdae Walker,WR,CHI,3300,68,,False,,PHI @ CHI,,jahdae walker,0,3300,clear,153774,Classic,2026-09-26T15:14:08+00:00
+1522347,0,Kolbe Katsis,WR,DEN,3000,68,,False,,LAR @ DEN,,kolbe katsis,0,3000,clear,153774,Classic,2026-09-26T15:14:08+00:00
