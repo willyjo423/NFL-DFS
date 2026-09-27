@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-09-27T13:20:03+00:00",
+  "updated_at": "2026-09-27T22:06:19+00:00",
   "slates": [
     {
       "kind": "classic",
@@ -162,12 +162,12 @@
       "sport": "nfl",
       "site": "dk",
       "draft_group": 153774,
-      "label": "NFL $60K Post Pattern [$20K to 1st] (Primetime)",
-      "contests": 263,
+      "label": "NFL $30K Wildcat [3 Entry Max, $10K to 1st] (Primetime)",
+      "contests": 310,
       "starts": "2026-09-28 00:20:00+00:00",
       "file": "data/nfl/dk-classic-153774.json",
       "players": 83,
-      "generated_at": "2026-09-27T13:16:49+00:00"
+      "generated_at": "2026-09-27T22:04:08+00:00"
     },
     {
       "kind": "classic",
@@ -451,11 +451,11 @@
       "site": "dk",
       "draft_group": 153790,
       "label": "NFL Showdown $1.5M Monday Night Showdown [$500K to 1st] (PHI @ CHI)",
-      "contests": 987,
+      "contests": 1068,
       "starts": "2026-09-29 00:15:00+00:00",
       "file": "data/nfl/dk-showdown-153790.json",
       "players": 45,
-      "generated_at": "2026-09-27T13:09:23+00:00"
+      "generated_at": "2026-09-27T22:03:17+00:00"
     },
     {
       "kind": "showdown",
@@ -463,12 +463,31 @@
       "site": "dk",
       "draft_group": 153789,
       "label": "NFL Showdown $1M Sunday Night Showdown [$250K to 1st] (LAR @ DEN)",
-      "contests": 1038,
+      "contests": 1160,
       "starts": "2026-09-28 00:20:00+00:00",
       "file": "data/nfl/dk-showdown-153789.json",
       "players": 38,
-      "generated_at": "2026-09-27T13:08:34+00:00"
+      "generated_at": "2026-09-27T22:02:28+00:00"
     }
   ],
-  "failures": []
+  "failures": [
+    {
+      "kind": "classic",
+      "draft_group": 153809,
+      "label": "NFL $30K Flea Flicker [$10K to 1st] (Mon-Thu)",
+      "error": "DataUnavailable: draft group 153809 returned no players from either endpoint (lobby top-level keys: ['draftGroupAlerts', 'playerList', 'teamList'])"
+    },
+    {
+      "kind": "classic",
+      "draft_group": 154078,
+      "label": "NFL $2.75M Fantasy Football Millionaire [$1M to 1st]",
+      "error": "DataUnavailable: draft group 154078 returned no players from either endpoint (lobby top-level keys: ['draftGroupAlerts', 'playerList', 'teamList'])"
+    },
+    {
+      "kind": "classic",
+      "draft_group": 153728,
+      "label": "NFL $6M Midseason Main Event [$1.5M to 1st]",
+      "error": "DataUnavailable: draft group 153728 returned no players from either endpoint (lobby top-level keys: ['draftGroupAlerts', 'playerList', 'teamList'])"
+    }
+  ]
 }
