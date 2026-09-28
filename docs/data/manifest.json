@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-09-28T22:06:36+00:00",
+  "updated_at": "2026-09-28T23:08:38+00:00",
   "slates": [
     {
       "kind": "classic",
@@ -187,11 +187,11 @@
       "site": "dk",
       "draft_group": 153809,
       "label": "NFL $30K Flea Flicker [$10K to 1st] (Mon-Thu)",
-      "contests": 233,
+      "contests": 264,
       "starts": "2026-09-29 00:15:00+00:00",
       "file": "data/nfl/dk-classic-153809.json",
-      "players": 88,
-      "generated_at": "2026-09-28T22:05:55+00:00"
+      "players": 85,
+      "generated_at": "2026-09-28T23:08:08+00:00"
     },
     {
       "kind": "classic",
@@ -199,11 +199,11 @@
       "site": "dk",
       "draft_group": 154078,
       "label": "NFL $2.75M Fantasy Football Millionaire [$1M to 1st]",
-      "contests": 1380,
+      "contests": 1382,
       "starts": "2026-10-04 17:00:00+00:00",
       "file": "data/nfl/dk-classic-154078.json",
-      "players": 510,
-      "generated_at": "2026-09-28T22:04:16+00:00"
+      "players": 496,
+      "generated_at": "2026-09-28T23:06:57+00:00"
     },
     {
       "kind": "showdown",
@@ -474,12 +474,12 @@
       "sport": "nfl",
       "site": "dk",
       "draft_group": 153790,
-      "label": "NFL Showdown $1.5M Monday Night Showdown [$500K to 1st] (PHI @ CHI)",
-      "contests": 1245,
+      "label": "NFL Showdown $600K Wildcat [$150K to 1st] (PHI @ CHI)",
+      "contests": 1188,
       "starts": "2026-09-29 00:15:00+00:00",
       "file": "data/nfl/dk-showdown-153790.json",
-      "players": 45,
-      "generated_at": "2026-09-28T22:05:06+00:00"
+      "players": 43,
+      "generated_at": "2026-09-28T23:07:32+00:00"
     },
     {
       "kind": "showdown",
