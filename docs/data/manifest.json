@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-09-27T22:06:19+00:00",
+  "updated_at": "2026-09-28T13:09:52+00:00",
   "slates": [
     {
       "kind": "classic",
@@ -180,6 +180,30 @@
       "file": "data/nfl/dk-classic-153773.json",
       "players": 91,
       "generated_at": "2026-09-26T22:14:38+00:00"
+    },
+    {
+      "kind": "classic",
+      "sport": "nfl",
+      "site": "dk",
+      "draft_group": 153809,
+      "label": "NFL $30K Flea Flicker [$10K to 1st] (Mon-Thu)",
+      "contests": 203,
+      "starts": "2026-09-29 00:15:00+00:00",
+      "file": "data/nfl/dk-classic-153809.json",
+      "players": 88,
+      "generated_at": "2026-09-28T13:08:19+00:00"
+    },
+    {
+      "kind": "classic",
+      "sport": "nfl",
+      "site": "dk",
+      "draft_group": 154078,
+      "label": "NFL $2.75M Fantasy Football Millionaire [$1M to 1st]",
+      "contests": 15,
+      "starts": "2026-10-04 17:00:00+00:00",
+      "file": "data/nfl/dk-classic-154078.json",
+      "players": 510,
+      "generated_at": "2026-09-28T13:09:26+00:00"
     },
     {
       "kind": "showdown",
@@ -451,11 +475,11 @@
       "site": "dk",
       "draft_group": 153790,
       "label": "NFL Showdown $1.5M Monday Night Showdown [$500K to 1st] (PHI @ CHI)",
-      "contests": 1068,
+      "contests": 1106,
       "starts": "2026-09-29 00:15:00+00:00",
       "file": "data/nfl/dk-showdown-153790.json",
       "players": 45,
-      "generated_at": "2026-09-27T22:03:17+00:00"
+      "generated_at": "2026-09-28T13:07:48+00:00"
     },
     {
       "kind": "showdown",
@@ -471,18 +495,6 @@
     }
   ],
   "failures": [
-    {
-      "kind": "classic",
-      "draft_group": 153809,
-      "label": "NFL $30K Flea Flicker [$10K to 1st] (Mon-Thu)",
-      "error": "DataUnavailable: draft group 153809 returned no players from either endpoint (lobby top-level keys: ['draftGroupAlerts', 'playerList', 'teamList'])"
-    },
-    {
-      "kind": "classic",
-      "draft_group": 154078,
-      "label": "NFL $2.75M Fantasy Football Millionaire [$1M to 1st]",
-      "error": "DataUnavailable: draft group 154078 returned no players from either endpoint (lobby top-level keys: ['draftGroupAlerts', 'playerList', 'teamList'])"
-    },
     {
       "kind": "classic",
       "draft_group": 153728,
