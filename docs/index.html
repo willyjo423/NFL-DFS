@@ -130,6 +130,9 @@ footer{border-top:1px solid var(--line);padding-top:16px;font-size:12.5px;
       <input id="overlap" type="number" min="0" max="9" value="3"></div>
     <div class="ctl"><label for="field">Contest size</label>
       <input id="field" type="number" min="2" step="1000" value="100000"></div>
+    <div class="ctl"><label for="minsal"
+      title="The least a lineup may spend, as a percent of the cap. Unspent salary is points you declined to buy — about 2.0 of them per $1,000 in NFL. 0 turns the floor off.">Min salary %</label>
+      <input id="minsal" type="number" min="0" max="100" step="0.5" value="99"></div>
     <div class="ctl"><label for="sims">Simulations</label>
       <select id="sims">
         <option value="20000">20,000</option>
@@ -189,6 +192,23 @@ const LOCK = new Set();
 const FADE = new Set();
 let SORT = { key: "med", dir: -1 };
 
+// A player's identity, for boards that list him more than once.
+//
+// DraftKings' feed can carry the same man twice - Frank Gore Jr. appeared
+// twice on a live showdown board, both rows at $400 - and every index-based
+// assumption on this page then breaks quietly. Fading one row leaves the
+// other pickable, so a player you deliberately excluded turns up in the
+// lineups anyway and the page looks broken. Worse, nothing stops a lineup
+// taking BOTH rows, which is an entry DraftKings would reject.
+//
+// So locks, fades and roster legality all key on WHO he is rather than on
+// which row he happens to occupy.
+const who = p => `${p.name}|${p.team}|${p.pos}`;
+const sameMan = (players, i) => {
+  const k = who(players[i]);
+  return [...Array(players.length).keys()].filter(j => who(players[j]) === k);
+};
+
 /* ---------------------------------------------------------------- loading */
 async function boot() {
   let manifest;
@@ -222,6 +242,14 @@ async function loadSlate(file) {
   LOCK.clear(); FADE.clear();
   $("field").value = SLATE.field_size || 100000;
   $("overlap").value = Math.max(1, SLATE.roster.slots.length - 3);
+  // Start where the server's own build started, when the slate says so, so
+  // the exact lineup shipped with it and the one this page builds are
+  // answering the same question. Anything else makes the two incomparable
+  // for a reason that is invisible on screen.
+  if (SLATE.roster.min_salary_pct != null) {
+    $("minsal").value = (SLATE.roster.min_salary_pct * 100).toFixed(1)
+      .replace(/\.0$/, "");
+  }
   drawBoard();
   drawHonesty();
   showServerLineups();
@@ -370,12 +398,21 @@ function normalQuantile(p) {           // Acklam's inverse normal CDF
 // ships with the slate so the two can be compared - but it respects every hard
 // constraint BY CONSTRUCTION, which is the part that must never be wrong: a
 // lineup over the cap or short a position cannot be entered at all.
-function legalLineup(players, roster, weights, rng) {
+function legalLineup(players, roster, weights, rng, opts) {
+  opts = opts || {};
   const slots = roster.slots;
   const showdown = slots.includes("CPT");
   const cap = roster.salary_cap;
   const maxTeam = roster.max_per_team || 99;
   const n = players.length;
+  // The least this lineup may spend. Unspent salary is not free - it is
+  // points declined, about 2.0 per $1,000 in NFL, twice what a dollar is
+  // worth in baseball. The usual defence (that leaving money makes you
+  // unique) inverts in a small player pool: the cheap plays you free up
+  // salary for are the ones everybody rosters in order to afford the studs,
+  // so they are chalk, and leaving money can RAISE your duplication while
+  // costing you points.
+  const minSpend = Math.max(0, opts.minSpend || 0);
 
   const eligible = i => !FADE.has(i);
   const order = [...Array(n).keys()].filter(eligible)
@@ -402,6 +439,19 @@ function legalLineup(players, roster, weights, rng) {
   }
   if (!Number.isFinite(floorPrice)) floorPrice = 0;
 
+  // The mirror of floorPrice, for the mirror reason. The cap look-ahead stops
+  // a build spending itself into a dead end; this one stops a build SAVING
+  // itself into one - picking cheap early, then finding that even the
+  // priciest players left cannot lift it over the salary floor. An upper
+  // bound is the right shape: position and team rules can only make the real
+  // ceiling smaller, so this never wrongly rejects a pick that would have
+  // worked.
+  let ceilPrice = 0;
+  for (let i = 0; i < n; i++) if (eligible(i)) {
+    ceilPrice = Math.max(ceilPrice, players[i].salary);
+  }
+  if (showdown) ceilPrice *= (roster.captain_multiplier || 1.5);
+
   const tryAdd = (i, asCaptain) => {
     const p = players[i];
     const cost = asCaptain
@@ -409,6 +459,8 @@ function legalLineup(players, roster, weights, rng) {
       : p.salary;
     const stillToFill = slots.length - pick.length - 1;
     if (spend + cost + floorPrice * stillToFill > cap) return false;
+    if (minSpend > 0
+        && spend + cost + ceilPrice * stillToFill < minSpend) return false;
     if ((teamCount[p.team] || 0) + 1 > maxTeam) return false;
     if (!showdown) {
       if (need[p.pos] > 0) need[p.pos]--;
@@ -416,6 +468,7 @@ function legalLineup(players, roster, weights, rng) {
       else return false;
     } else if (asCaptain) { captain = i; }
     else { if (flexLeft <= 0) return false; flexLeft--; }
+    if (pick.some(x => who(players[x.i]) === who(p))) return false;
     pick.push({ i, cpt: !!asCaptain, cost });
     teamCount[p.team] = (teamCount[p.team] || 0) + 1;
     spend += cost;
@@ -434,6 +487,11 @@ function legalLineup(players, roster, weights, rng) {
   }
   if (pick.length !== slots.length) return null;
   if (!showdown && Object.values(need).some(v => v > 0)) return null;
+  // The look-ahead only ever refused picks that made the floor unreachable; a
+  // build can still finish under it by running out of expensive players it
+  // was allowed to take. Checked here so a lineup that missed the floor is
+  // never returned wearing the label of one that met it.
+  if (minSpend > 0 && spend < minSpend) return null;
   return pick;
 }
 
@@ -464,6 +522,8 @@ function build() {
   const overlap = Math.max(0, Number($("overlap").value));
   const field = Math.max(2, Number($("field").value) || 100000);
   const objective = $("objective").value;
+  const minPct = Math.max(0, Math.min(100, Number($("minsal").value) || 0));
+  const MINSPEND = Math.round(minPct / 100 * roster.salary_cap);
 
   const zq = SLATE.quantiles.map(normalQuantile);
   const plan = buildFactorPlan(players);
@@ -517,14 +577,28 @@ function build() {
     const rng = () => (seed = (seed * 1103515245 + 12345) & 0x7fffffff) / 0x7fffffff;
 
     const seen = new Set(), cands = [];
-    for (let k = 0; k < 400 && cands.length < 220; k++) {
-      const w = mean.map(v => Math.max(v, 0.01));
-      const pick = legalLineup(players, roster, w, rng);
-      if (!pick) continue;
-      const key = pick.map(p => p.i).sort((a, b) => a - b).join(",");
-      if (seen.has(key)) continue;
-      seen.add(key);
+    // The floor is ATTEMPTED, not assumed. If a whole pass produces nothing
+    // that reaches it, the floor is dropped and the pass runs again, and the
+    // page says so. A board built without the floor is worth immensely more
+    // than an empty one, and a constraint quietly emptying the page is the
+    // failure this project has already paid for once.
+    let spendFloor = MINSPEND, floorDropped = false;
+    for (let pass = 0; pass < 2; pass++) {
+      for (let k = 0; k < 400 && cands.length < 220; k++) {
+        const w = mean.map(v => Math.max(v, 0.01));
+        const pick = legalLineup(players, roster, w, rng,
+                                 { minSpend: spendFloor });
+        if (!pick) continue;
+        const key0 = pick.map(p => p.i).sort((a, b) => a - b).join(",");
+        if (seen.has(key0)) continue;
+        seen.add(key0);
+        cands.push(measure(pick, key0));
+      }
+      if (cands.length || !spendFloor) break;
+      spendFloor = 0; floorDropped = true;
+    }
 
+    function measure(pick, key) {
       const tot = scoreLineup(draws, sims, pick, mult);
       const sorted = Float64Array.from(tot).sort();
       let pc = 0, pg = 0;
@@ -535,7 +609,7 @@ function build() {
       pc /= sims; pg /= sims;
       let dupes = field;
       for (const p of pick) dupes *= Math.max(players[p.i].own, 1e-9);
-      cands.push({
+      return {
         pick, key,
         mean: sorted.reduce((a, b) => a + b, 0) / sims,
         floor: quantile(sorted, 0.10),
@@ -544,7 +618,7 @@ function build() {
         edge: pg / (1 + dupes),
         salary: pick.reduce((a, p) => a + p.cost, 0),
         own: pick.reduce((a, p) => a + players[p.i].own, 0),
-      });
+      };
     }
 
     if (!cands.length) {
@@ -570,7 +644,8 @@ function build() {
     }
 
     render(chosen, { sims, cashLine, gppLine, gppTarget, objective, field,
-                     ms: performance.now() - t0, pool: cands.length });
+                     ms: performance.now() - t0, pool: cands.length,
+                     minSpend: MINSPEND, floorDropped });
   }, 20);
 }
 
@@ -627,7 +702,12 @@ function render(chosen, meta) {
 
   $("status").textContent =
     `${chosen.length} lineup${chosen.length > 1 ? "s" : ""} from ` +
-    `${meta.pool.toLocaleString()} candidates in ${(meta.ms / 1000).toFixed(1)}s`;
+    `${meta.pool.toLocaleString()} candidates in ${(meta.ms / 1000).toFixed(1)}s` +
+    (meta.floorDropped
+      ? ` — the $${meta.minSpend.toLocaleString()} salary floor was UNREACHABLE and has been ignored`
+      : meta.minSpend
+        ? ` — every lineup spends at least $${meta.minSpend.toLocaleString()}`
+        : "");
 }
 
 function drawBoard() {
@@ -660,11 +740,17 @@ function drawBoard() {
     const f = e.target.dataset && e.target.dataset.fade;
     if (l !== undefined && l !== null) {
       const i = Number(l);
-      LOCK.has(i) ? LOCK.delete(i) : (LOCK.add(i), FADE.delete(i));
+      const on = LOCK.has(i);
+      for (const j of sameMan(SLATE.players, i)) {
+        on ? LOCK.delete(j) : (LOCK.add(j), FADE.delete(j));
+      }
       drawBoard();
     } else if (f !== undefined && f !== null) {
       const i = Number(f);
-      FADE.has(i) ? FADE.delete(i) : (FADE.add(i), LOCK.delete(i));
+      const on = FADE.has(i);
+      for (const j of sameMan(SLATE.players, i)) {
+        on ? FADE.delete(j) : (FADE.add(j), LOCK.delete(j));
+      }
       drawBoard();
     }
   };
