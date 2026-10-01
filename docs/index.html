@@ -71,10 +71,13 @@ tbody td{padding:7px 10px;border-bottom:1px solid var(--soft);text-align:right;
 tbody td.l{text-align:left;white-space:normal}
 tbody tr:hover td{background:var(--sunken)}
 tr.locked td{background:var(--accent-soft)}
+td.good{color:var(--good);font-weight:600}
+td.bad{color:var(--bad);font-weight:600}
 tr.excluded td{opacity:.35;text-decoration:line-through}
 .pill{display:inline-block;font-size:9.5px;font-weight:700;letter-spacing:.05em;
   padding:1px 5px;border-radius:2px;margin-left:5px;vertical-align:1px}
 .pill.q{background:var(--warn-bg);color:var(--warn)}
+.lev-up{color:var(--good)} .lev-dn{color:var(--warn)}
 .chip{font-size:10px;font-weight:700;padding:2px 5px;border-radius:2px;
   background:var(--sunken);color:var(--muted)}
 .tog{cursor:pointer;border:1px solid var(--line);background:var(--surface);
@@ -133,6 +136,33 @@ footer{border-top:1px solid var(--line);padding-top:16px;font-size:12.5px;
     <div class="ctl"><label for="minsal"
       title="The least a lineup may spend, as a percent of the cap. Unspent salary is points you declined to buy — about 2.0 of them per $1,000 in NFL. 0 turns the floor off.">Min salary %</label>
       <input id="minsal" type="number" min="0" max="100" step="0.5" value="99"></div>
+    <div class="ctl"><label for="stackteam"
+      title="Whose quarterback to build around. Auto tries every team and keeps whatever ranks best.">Stack QB</label>
+      <select id="stackteam"><option value="">Auto (try every team)</option></select></div>
+    <div class="ctl"><label for="stack"
+      title="How many of that quarterback's pass catchers to roster with him. A receiver WITHOUT his quarterback is not a correlation bet - two receivers on one team compete for the same targets.">Pass catchers</label>
+      <select id="stack">
+        <option value="0">No stack</option>
+        <option value="1">QB + 1</option>
+        <option value="2" selected>QB + 2</option>
+        <option value="3">QB + 3</option>
+      </select></div>
+    <div class="ctl"><label for="bringback"
+      title="Players from the OPPOSING team. A shootout lifts both sides, and a game that goes 31-28 pays a bring-back where a 24-6 win does not.">Bring-back</label>
+      <select id="bringback">
+        <option value="0">None</option>
+        <option value="1" selected>1 opponent</option>
+        <option value="2">2 opponents</option>
+      </select></div>
+    <div class="ctl"><label for="levmode"
+      title="Leverage is the model's percentile rank MINUS the field's. Positive means underowned for how good he is - the usual tournament edge. Negative means chalk the model does not rate.">Leverage</label>
+      <select id="levmode">
+        <option value="1">Chase it (underowned)</option>
+        <option value="0.5">Lean toward it</option>
+        <option value="0" selected>Ignore</option>
+        <option value="-0.5">Lean against it</option>
+        <option value="-1">Fade it (prefer chalk)</option>
+      </select></div>
     <div class="ctl"><label for="sims">Simulations</label>
       <select id="sims">
         <option value="20000">20,000</option>
@@ -147,11 +177,17 @@ footer{border-top:1px solid var(--line);padding-top:16px;font-size:12.5px;
     <span id="status">Loading slates…</span>
   </div>
 
+  <div id="stackboard" style="display:flex;flex-wrap:wrap;gap:7px;font-size:12.5px"></div>
   <div class="tiles" id="tiles"></div>
 
   <section>
     <h2>Lineups</h2>
     <p class="sub" id="lineup-note"></p>
+    <div class="note" id="stale" hidden style="margin-top:10px">
+      <b>These lineups are stale.</b> The locks and fades changed after they
+      were solved, so what is on screen is the previous answer with the new
+      marks painted on it. Press <b>Build lineups</b> to solve again.
+    </div>
     <div class="grid2" id="lineups" style="margin-top:12px"></div>
   </section>
 
@@ -188,6 +224,11 @@ const esc = s => String(s).replace(/[&<>"]/g, c =>
   ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
 
 let SLATE = null;           // the loaded slate payload
+// The last solved answer, kept so a lock can repaint the cards without
+// re-running the simulation, and a flag saying the paint is ahead of the
+// solve.
+let LAST = null;
+let STALE = false;
 const LOCK = new Set();
 const FADE = new Set();
 let SORT = { key: "med", dir: -1 };
@@ -250,6 +291,7 @@ async function loadSlate(file) {
     $("minsal").value = (SLATE.roster.min_salary_pct * 100).toFixed(1)
       .replace(/\.0$/, "");
   }
+  drawStackBoard();
   drawBoard();
   drawHonesty();
   showServerLineups();
@@ -398,6 +440,33 @@ function normalQuantile(p) {           // Acklam's inverse normal CDF
 // ships with the slate so the two can be compared - but it respects every hard
 // constraint BY CONSTRUCTION, which is the part that must never be wrong: a
 // lineup over the cap or short a position cannot be entered at all.
+// Who correlates with a quarterback. Receivers and tight ends catch his
+// passes; a running back mostly does not, and two backs on one team are a
+// straight split of the same carries.
+const CATCHER = new Set(["WR", "TE"]);
+
+let NOTES = [];
+
+// What a lineup ACTUALLY ended up with, reported rather than assumed - a
+// stack the salary cap quietly shrank is still a lineup, just not the bet
+// that was asked for.
+function achievedStack(players, pick) {
+  const qb = pick.find(x => isQB(players[x.i]));
+  if (!qb) return null;
+  const t = players[qb.i].team, opp = players[qb.i].opp;
+  const withQb = pick.filter(x => players[x.i].team === t
+    && CATCHER.has(players[x.i].pos)).length;
+  const back = pick.filter(x => players[x.i].team === opp).length;
+  return { team: t, size: withQb, back };
+}
+const isQB = p => p.pos === "QB";
+
+const levWeight = () => Number($("levmode").value) || 0;
+const levOf = p => {
+  const v = Number(p.lev);
+  return Number.isFinite(v) ? v : 0;
+};
+
 function legalLineup(players, roster, weights, rng, opts) {
   opts = opts || {};
   const slots = roster.slots;
@@ -480,6 +549,60 @@ function legalLineup(players, roster, weights, rng, opts) {
   if (showdown && captain === null) {
     for (const i of order) if (tryAdd(i, true)) break;
   }
+
+  // THE STACK GOES IN BEFORE THE REST OF THE BOARD IS PICKED OVER.
+  //
+  // Seeded last it never survives: by then the cap is spent and the slots the
+  // stack needs are filled.
+  //
+  // And it is QB-ANCHORED, which is the part that makes football different
+  // from hockey. A receiver without his quarterback is not a correlation bet
+  // at all - two receivers on one team compete for the same targets, so they
+  // pull APART. The thing that correlates is the pass: one completion scores
+  // for the thrower and the catcher at the same instant. So the quarterback
+  // goes in first and his catchers follow him, never the other way round.
+  const stackTeam = opts.stackTeam || null;
+  const stackSize = opts.stackSize || 0;
+  const bringBack = opts.bringBack || 0;
+  let stackOpp = null;
+  if (!showdown && stackTeam && stackSize > 0) {
+    let qb = pick.find(x => isQB(players[x.i]) && players[x.i].team === stackTeam);
+    if (!qb) {
+      const cand = order.find(i => eligible(i) && isQB(players[i])
+        && players[i].team === stackTeam && !pick.some(x => x.i === i));
+      if (cand === undefined || !tryAdd(cand, false)) return null;
+      qb = pick[pick.length - 1];
+    }
+    stackOpp = players[qb.i].opp || null;
+
+    const mates = [...Array(n).keys()].filter(i =>
+      eligible(i) && players[i].team === stackTeam
+      && CATCHER.has(players[i].pos) && !pick.some(x => x.i === i))
+      .sort((a, b) => weights[b] - weights[a]);
+    let taken = 0;
+    for (const i of mates) {
+      if (taken >= stackSize) break;
+      if (tryAdd(i, false)) taken++;
+    }
+    if (taken < stackSize) return null;
+
+    // The bring-back. A shootout lifts both sides, and a game that finishes
+    // 31-28 pays this where a 24-6 win does not.
+    if (bringBack > 0 && stackOpp) {
+      const other = [...Array(n).keys()].filter(i =>
+        eligible(i) && players[i].team === stackOpp
+        && (CATCHER.has(players[i].pos) || players[i].pos === "RB")
+        && !pick.some(x => x.i === i))
+        .sort((a, b) => weights[b] - weights[a]);
+      let got = 0;
+      for (const i of other) {
+        if (got >= bringBack) break;
+        if (tryAdd(i, false)) got++;
+      }
+      if (got < bringBack) return null;
+    }
+  }
+
   for (const i of order) {
     if (pick.length >= slots.length) break;
     if (pick.some(x => x.i === i)) continue;
@@ -513,6 +636,8 @@ function quantile(sorted, q) {
 
 function build() {
   if (!SLATE) return;
+  // A fresh solve is no longer behind the locks.
+  STALE = false;
   const t0 = performance.now();
   const players = SLATE.players;
   const roster = SLATE.roster;
@@ -522,6 +647,8 @@ function build() {
   const overlap = Math.max(0, Number($("overlap").value));
   const field = Math.max(2, Number($("field").value) || 100000);
   const objective = $("objective").value;
+  NOTES = [];
+  const LEVW = levWeight();
   const minPct = Math.max(0, Math.min(100, Number($("minsal").value) || 0));
   const MINSPEND = Math.round(minPct / 100 * roster.salary_cap);
 
@@ -582,12 +709,46 @@ function build() {
     // page says so. A board built without the floor is worth immensely more
     // than an empty one, and a constraint quietly emptying the page is the
     // failure this project has already paid for once.
+    // Which quarterbacks can anchor a stack, and how hard to try each.
+    //
+    // A cash lineup is not stacked on purpose: beating half the field wants
+    // the steadiest nine players, and correlation widens a distribution
+    // rather than lifting its middle.
+    const STACK = Math.max(0, Math.min(3, Number($("stack").value) || 0));
+    const BACK = Math.max(0, Math.min(2, Number($("bringback").value) || 0));
+    const WANT = $("stackteam").value;
+    const stackable = [];
+    if (objective !== "cash" && STACK > 0) {
+      const teams = new Map();
+      players.forEach((p, i) => {
+        if (FADE.has(i)) return;
+        if (!teams.has(p.team)) teams.set(p.team, { qb: false, catch: 0 });
+        if (isQB(p)) teams.get(p.team).qb = true;
+        else if (CATCHER.has(p.pos)) teams.get(p.team).catch++;
+      });
+      for (const [t, v] of teams) {
+        if (v.qb && v.catch >= STACK) stackable.push(t);
+      }
+    }
+    const plans = (WANT && stackable.includes(WANT))
+      ? [{ stackTeam: WANT, stackSize: STACK, bringBack: BACK }]
+      : stackable.length
+        ? stackable.map(t => ({ stackTeam: t, stackSize: STACK, bringBack: BACK }))
+        : [{}];
+    if (WANT && !stackable.includes(WANT)) {
+      NOTES.push(`${WANT} has no quarterback plus ${STACK} catchers on this board`);
+    }
+
     let spendFloor = MINSPEND, floorDropped = false;
+    const tries = Math.max(400, plans.length * 60);
     for (let pass = 0; pass < 2; pass++) {
-      for (let k = 0; k < 400 && cands.length < 220; k++) {
-        const w = mean.map(v => Math.max(v, 0.01));
+      for (let k = 0; k < tries && cands.length < 220; k++) {
+        // Bias what gets BUILT, not only what gets chosen. Ranking alone can
+        // do nothing about a lineup the search never generated.
+        const w = mean.map((v, i) => Math.max(v, 0.01)
+          * Math.max(0.15, 1 + LEVW * levOf(players[i])));
         const pick = legalLineup(players, roster, w, rng,
-                                 { minSpend: spendFloor });
+          Object.assign({ minSpend: spendFloor }, plans[k % plans.length]));
         if (!pick) continue;
         const key0 = pick.map(p => p.i).sort((a, b) => a - b).join(",");
         if (seen.has(key0)) continue;
@@ -616,6 +777,8 @@ function build() {
         ceiling: quantile(sorted, 0.99),
         pc, pg, dupes,
         edge: pg / (1 + dupes),
+        lev: pick.reduce((a, p) => a + levOf(players[p.i]), 0) / pick.length,
+        stack: achievedStack(players, pick),
         salary: pick.reduce((a, p) => a + p.cost, 0),
         own: pick.reduce((a, p) => a + players[p.i].own, 0),
       };
@@ -632,7 +795,15 @@ function build() {
     }
 
     const key = objective === "cash" ? "pc" : "edge";
-    cands.sort((a, b) => b[key] - a[key]);
+    // A multiplier rather than an added term: `edge` and `pc` are on
+    // completely different scales and anything additive would mean one thing
+    // for a tournament and something else for a cash game. Clamped positive,
+    // because a negative score would sort a faded lineup ABOVE a merely bad
+    // one.
+    for (const c of cands) {
+      c.score = c[key] * Math.max(0.05, 1 + LEVW * c.lev);
+    }
+    cands.sort((a, b) => b.score - a.score);
 
     const chosen = [];
     for (const c of cands) {
@@ -644,6 +815,7 @@ function build() {
     }
 
     render(chosen, { sims, cashLine, gppLine, gppTarget, objective, field,
+                     levw: LEVW,
                      ms: performance.now() - t0, pool: cands.length,
                      minSpend: MINSPEND, floorDropped });
   }, 20);
@@ -666,24 +838,58 @@ function render(chosen, meta) {
     `<div class="tile"><span class="k">${k}</span><span class="v">${v}</span>
      <span class="n">${n}</span></div>`).join("");
 
-  $("lineup-note").textContent = meta.objective === "cash"
+  if (meta.levw) {
+    $("lineup-note").textContent =
+      (meta.levw > 0
+        ? "Steered TOWARD leverage: players the model rates above what the "
+        + "field will own them at. Higher ceiling, fewer duplicate lineups."
+        : "Steered AWAY from leverage: these lineups deliberately prefer "
+        + "chalk the model does not rate. Safe in a small field, expensive "
+        + "in a large one.")
+      + " Set Leverage to Ignore to turn this off.";
+  } else $("lineup-note").textContent = meta.objective === "cash"
     ? "Ranked by how often the lineup beats the cash line. Duplication is "
     + "ignored on purpose: beating half the field is not a prize anyone splits."
     : "Ranked by how often the lineup reaches the tournament bar, divided by "
     + "how many other entries are expected to field the same six players.";
 
+  LAST = { chosen, meta };
+
   $("lineups").innerHTML = chosen.map((c, n) => {
     const rows = c.pick.slice().sort((a, b) => (b.cpt - a.cpt) ||
       (players[b.i].med - players[a.i].med)).map(p => {
       const pl = players[p.i];
-      return `<tr><td class="l">${p.cpt ? '<span class="chip">CPT</span> ' : ""}
+      // Leverage is a gap between two RANKS - how the model rates him against
+      // how the field will - so the sign is the whole story and the colour
+      // says it faster than the number does.
+      const lev = Number(pl.lev);
+      const lcls = !Number.isFinite(lev) ? "" : lev > 0.05 ? "good"
+                 : lev < -0.05 ? "bad" : "";
+      const cls = LOCK.has(p.i) ? "locked" : FADE.has(p.i) ? "excluded" : "";
+      return `<tr class="${cls}"><td class="l">${p.cpt ? '<span class="chip">CPT</span> ' : ""}
         ${esc(pl.name)}</td><td class="l">${esc(pl.pos)}</td>
         <td class="l">${esc(pl.team)}</td><td>${money(p.cost)}</td>
-        <td>${fmt(pl.med)}</td><td>${fmt(pl.own * 100)}%</td></tr>`;
+        <td>${fmt(pl.med)}</td><td>${fmt(pl.own * 100)}%</td>
+        <td class="${lcls}">${Number.isFinite(lev)
+          ? (lev > 0 ? "+" : "") + lev.toFixed(2) : "\u2014"}</td>
+        <td class="l">
+          <button class="tog ${LOCK.has(p.i) ? "on" : ""}" data-lock="${p.i}">L</button>
+          <button class="tog ${FADE.has(p.i) ? "off" : ""}" data-fade="${p.i}">X</button>
+        </td></tr>`;
     }).join("");
     return `<div class="lineup">
-      <h3>Entry ${n + 1}<span class="chip">${esc(meta.objective.toUpperCase())}</span></h3>
-      <div class="scroll"><table><tbody>${rows}</tbody></table></div>
+      <h3>Entry ${n + 1}<span class="chip">${esc(meta.objective.toUpperCase())}</span>
+        ${c.stack && c.stack.size
+          ? `<span class="chip">${esc(c.stack.team)} QB+${c.stack.size}${
+              c.stack.back ? " / " + c.stack.back + " back" : ""}</span>`
+          : ""}</h3>
+      <div class="scroll"><table>
+        <thead><tr>
+          <th class="l">Player</th><th class="l">Pos</th><th class="l">Team</th>
+          <th>Salary</th><th>Median</th><th>Own%</th><th>Lev</th>
+          <th class="l">Lock</th>
+        </tr></thead>
+        <tbody>${rows}</tbody></table></div>
       <div class="stats">
         <span>salary <b>${money(c.salary)}</b> of ${money(SLATE.roster.salary_cap)}</span>
         <span>mean <b>${fmt(c.mean)}</b></span>
@@ -693,12 +899,43 @@ function render(chosen, meta) {
       <div class="stats">
         <span>beats cash <b>${fmt(c.pc * 100)}%</b></span>
         <span>reaches the bar <b>${fmt(c.pg * 100, 2)}%</b></span>
+        <span>leverage <b class="${c.lev > 0.03 ? "lev-up"
+          : c.lev < -0.03 ? "lev-dn" : ""}">${c.lev > 0 ? "+" : ""}${
+          fmt(c.lev, 2)}</b></span>
         <span>expected duplicates <b>${c.dupes < 1 ? c.dupes.toFixed(2)
           : Math.round(c.dupes).toLocaleString()}</b></span>
         ${meta.objective === "cash" ? "" :
           `<span>ranked on <b>${fmt(c.edge * 100, 3)}</b></span>`}
       </div></div>`;
   }).join("");
+
+  // L and X straight off a lineup, using the same two sets the board uses.
+  //
+  // What it deliberately does NOT do is re-solve. A rebuild is twenty
+  // thousand correlated simulations, and locking four players one at a time
+  // would run it four times. So the click updates the sets, repaints, and
+  // SAYS the lineups on screen are stale - a lineup that quietly no longer
+  // reflects its own locks is worse than one that admits it.
+  $("lineups").onclick = e => {
+    const l = e.target.dataset && e.target.dataset.lock;
+    const f = e.target.dataset && e.target.dataset.fade;
+    if (l === undefined && f === undefined) return;
+    const i = Number(l !== undefined ? l : f);
+    const set = l !== undefined ? LOCK : FADE;
+    const other = l !== undefined ? FADE : LOCK;
+    const on = set.has(i);
+    // Every row for the same man: DraftKings lists a multi-position player
+    // once per eligibility, and a lock on one of them is not a lock.
+    for (const j of sameMan(SLATE.players, i)) {
+      on ? set.delete(j) : (set.add(j), other.delete(j));
+    }
+    drawBoard();
+    STALE = true;
+    render(LAST.chosen, LAST.meta);
+  };
+
+  $("stale").hidden = !STALE;
+  if (NOTES.length) $("status").textContent += " — " + NOTES.join("; ");
 
   $("status").textContent =
     `${chosen.length} lineup${chosen.length > 1 ? "s" : ""} from ` +
@@ -708,6 +945,42 @@ function render(chosen, meta) {
       : meta.minSpend
         ? ` — every lineup spends at least $${meta.minSpend.toLocaleString()}`
         : "");
+}
+
+// What a QB stack of each team is projected to score, so "why that team"
+// is answerable by looking rather than by trusting the optimiser.
+function drawStackBoard() {
+  const n = Math.max(1, Number($("stack").value) || 2);
+  const byTeam = new Map();
+  SLATE.players.forEach(p => {
+    if (!byTeam.has(p.team)) byTeam.set(p.team, []);
+    byTeam.get(p.team).push(p);
+  });
+  const rows = [];
+  for (const [t, ps] of byTeam) {
+    const qb = ps.filter(isQB).sort((a, b) => b.med - a.med)[0];
+    if (!qb) continue;
+    const top = ps.filter(p => CATCHER.has(p.pos))
+                  .sort((a, b) => b.med - a.med).slice(0, n);
+    if (top.length < n) continue;
+    const group = [qb, ...top];
+    rows.push({
+      team: t,
+      pts: group.reduce((a, p) => a + (Number(p.med) || 0), 0),
+      own: group.reduce((a, p) => a + (Number(p.own) || 0), 0) / group.length,
+      lev: group.reduce((a, p) => a + levOf(p), 0) / group.length,
+    });
+  }
+  rows.sort((a, b) => b.pts - a.pts);
+  $("stackteam").innerHTML = '<option value="">Auto (try every team)</option>'
+    + rows.map(r => `<option value="${esc(r.team)}">${esc(r.team)} — `
+      + `${r.pts.toFixed(1)} pts</option>`).join("");
+  $("stackboard").innerHTML = rows.length
+    ? `<b>QB + ${n}, by projected points.</b> ` + rows.map(r =>
+        `<span class="chip">${esc(r.team)} <b>${r.pts.toFixed(1)}</b> · own `
+        + `${(100 * r.own).toFixed(0)}% · lev ${r.lev > 0 ? "+" : ""}`
+        + `${r.lev.toFixed(2)}</span>`).join(" ")
+    : "";
 }
 
 function drawBoard() {
@@ -797,6 +1070,7 @@ function drawHonesty() {
     on the server and its answer is shown above for comparison.`;
 }
 
+$("stack").onchange = () => { if (SLATE) drawStackBoard(); };
 $("run").onclick = build;
 $("reset").onclick = () => { LOCK.clear(); FADE.clear(); drawBoard(); };
 boot();
