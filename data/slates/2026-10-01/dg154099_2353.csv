@@ -1,0 +1,57 @@
+dk_player_id,draftable_id,name,position,team,salary,roster_slot,status,disabled,attributes,game,starts_utc,norm,flex_eligible,captain_salary,playing,draft_group,game_type,captured_at
+323,0,Falcons,DST,ATL,3600,512,,False,,ATL @ NO,1970-01-01 00:29:51.245700+00:00,falcons,0,3600,clear,154099,Showdown Captain Mode,2026-10-01T23:53:39+00:00
+350,0,Saints,DST,NO,4200,512,,False,,ATL @ NO,1970-01-01 00:29:51.245700+00:00,saints,0,4200,clear,154099,Showdown Captain Mode,2026-10-01T23:53:39+00:00
+213781,0,Nick Folk,K,ATL,5400,512,,False,,ATL @ NO,1970-01-01 00:29:51.245700+00:00,nick folk,0,5400,clear,154099,Showdown Captain Mode,2026-10-01T23:53:39+00:00
+606799,0,Zach Wood,TE,NO,200,512,,False,,ATL @ NO,1970-01-01 00:29:51.245700+00:00,zach wood,0,200,clear,154099,Showdown Captain Mode,2026-10-01T23:53:39+00:00
+694117,0,Cooper Rush,QB,ATL,6000,512,,False,,ATL @ NO,1970-01-01 00:29:51.245700+00:00,cooper rush,0,6000,clear,154099,Showdown Captain Mode,2026-10-01T23:53:39+00:00
+739424,0,Austin Hooper,TE,ATL,2800,512,,False,,ATL @ NO,1970-01-01 00:29:51.245700+00:00,austin hooper,0,2800,clear,154099,Showdown Captain Mode,2026-10-01T23:53:39+00:00
+744439,0,Daniel Carlson,K,NO,4800,512,,False,,ATL @ NO,1970-01-01 00:29:51.245700+00:00,daniel carlson,0,4800,clear,154099,Showdown Captain Mode,2026-10-01T23:53:39+00:00
+750846,0,Alvin Kamara,RB,NO,7000,512,,False,,ATL @ NO,1970-01-01 00:29:51.245700+00:00,alvin kamara,0,7000,clear,154099,Showdown Captain Mode,2026-10-01T23:53:39+00:00
+883976,0,Olamide Zaccheaus,WR,ATL,2000,512,,False,,ATL @ NO,1970-01-01 00:29:51.245700+00:00,olamide zaccheaus,0,2000,clear,154099,Showdown Captain Mode,2026-10-01T23:53:39+00:00
+884609,0,Juwan Johnson,TE,NO,7400,512,,False,,ATL @ NO,1970-01-01 00:29:51.245700+00:00,juwan johnson,0,7400,clear,154099,Showdown Captain Mode,2026-10-01T23:53:39+00:00
+922040,0,Charlie Woerner,TE,ATL,600,512,,False,,ATL @ NO,1970-01-01 00:29:51.245700+00:00,charlie woerner,0,600,clear,154099,Showdown Captain Mode,2026-10-01T23:53:39+00:00
+923911,0,Noah Fant,TE,NO,4400,512,,False,,ATL @ NO,1970-01-01 00:29:51.245700+00:00,noah fant,0,4400,clear,154099,Showdown Captain Mode,2026-10-01T23:53:39+00:00
+935104,0,Khalil Herbert,RB,ATL,200,512,,False,,ATL @ NO,1970-01-01 00:29:51.245700+00:00,khalil herbert,0,200,clear,154099,Showdown Captain Mode,2026-10-01T23:53:39+00:00
+973947,0,Tua Tagovailoa,QB,ATL,6000,512,,False,,ATL @ NO,1970-01-01 00:29:51.245700+00:00,tua tagovailoa,0,6000,clear,154099,Showdown Captain Mode,2026-10-01T23:53:39+00:00
+973966,0,Brian Robinson Jr.,RB,ATL,3800,512,,False,,ATL @ NO,1970-01-01 00:29:51.245700+00:00,brian robinson,0,3800,clear,154099,Showdown Captain Mode,2026-10-01T23:53:39+00:00
+976236,0,Trey Sermon,RB,ATL,200,512,,False,,ATL @ NO,1970-01-01 00:29:51.245700+00:00,trey sermon,0,200,clear,154099,Showdown Captain Mode,2026-10-01T23:53:39+00:00
+978577,0,Travis Etienne Jr.,RB,NO,8000,512,,False,,ATL @ NO,1970-01-01 00:29:51.245700+00:00,travis etienne,0,8000,clear,154099,Showdown Captain Mode,2026-10-01T23:53:39+00:00
+1049792,0,Nick Muse,TE,ATL,200,512,,False,,ATL @ NO,1970-01-01 00:29:51.245700+00:00,nick muse,0,200,clear,154099,Showdown Captain Mode,2026-10-01T23:53:39+00:00
+1056865,0,Stone Smartt,TE,NO,200,512,,False,,ATL @ NO,1970-01-01 00:29:51.245700+00:00,stone smartt,0,200,clear,154099,Showdown Captain Mode,2026-10-01T23:53:39+00:00
+1059576,0,Ty Chandler,RB,NO,200,512,,False,,ATL @ NO,1970-01-01 00:29:51.245700+00:00,ty chandler,0,200,clear,154099,Showdown Captain Mode,2026-10-01T23:53:39+00:00
+1061591,0,Cal Adomitis,TE,NO,200,512,,False,,ATL @ NO,1970-01-01 00:29:51.245700+00:00,cal adomitis,0,200,clear,154099,Showdown Captain Mode,2026-10-01T23:53:39+00:00
+1107478,0,Michael Penix Jr.,QB,ATL,9000,512,,False,,ATL @ NO,1970-01-01 00:29:51.245700+00:00,michael penix,0,9000,clear,154099,Showdown Captain Mode,2026-10-01T23:53:39+00:00
+1108052,0,Zach Wilson,QB,NO,6000,512,,False,,ATL @ NO,1970-01-01 00:29:51.245700+00:00,zach wilson,0,6000,clear,154099,Showdown Captain Mode,2026-10-01T23:53:39+00:00
+1108534,0,Dylan Drummond,WR,ATL,200,512,,False,,ATL @ NO,1970-01-01 00:29:51.245700+00:00,dylan drummond,0,200,clear,154099,Showdown Captain Mode,2026-10-01T23:53:39+00:00
+1110306,0,Tyler Shough,QB,NO,9600,512,,False,,ATL @ NO,1970-01-01 00:29:51.245700+00:00,tyler shough,0,9600,clear,154099,Showdown Captain Mode,2026-10-01T23:53:39+00:00
+1110697,0,Zamir White,RB,NO,200,512,,False,,ATL @ NO,1970-01-01 00:29:51.245700+00:00,zamir white,0,200,clear,154099,Showdown Captain Mode,2026-10-01T23:53:39+00:00
+1120347,0,Chris Blair,WR,ATL,1000,512,,False,,ATL @ NO,1970-01-01 00:29:51.245700+00:00,chris blair,0,1000,clear,154099,Showdown Captain Mode,2026-10-01T23:53:39+00:00
+1121878,0,Jahan Dotson,WR,ATL,3000,512,,False,,ATL @ NO,1970-01-01 00:29:51.245700+00:00,jahan dotson,0,3000,clear,154099,Showdown Captain Mode,2026-10-01T23:53:39+00:00
+1122592,0,Chris Olave,WR,NO,10800,512,,False,,ATL @ NO,1970-01-01 00:29:51.245700+00:00,chris olave,0,10800,clear,154099,Showdown Captain Mode,2026-10-01T23:53:39+00:00
+1123026,0,Kyle Pitts Sr.,TE,ATL,5800,512,,False,,ATL @ NO,1970-01-01 00:29:51.245700+00:00,kyle pitts,0,5800,clear,154099,Showdown Captain Mode,2026-10-01T23:53:39+00:00
+1124664,0,Cedric Tillman,WR,NO,200,512,,False,,ATL @ NO,1970-01-01 00:29:51.245700+00:00,cedric tillman,0,200,clear,154099,Showdown Captain Mode,2026-10-01T23:53:39+00:00
+1130526,0,Kevin Austin Jr.,WR,NO,800,512,,False,,ATL @ NO,1970-01-01 00:29:51.245700+00:00,kevin austin,0,800,clear,154099,Showdown Captain Mode,2026-10-01T23:53:39+00:00
+1161739,0,Trey Palmer,WR,NO,200,512,,False,,ATL @ NO,1970-01-01 00:29:51.245700+00:00,trey palmer,0,200,clear,154099,Showdown Captain Mode,2026-10-01T23:53:39+00:00
+1164788,0,Devaughn Vele,WR,NO,7800,512,,False,,ATL @ NO,1970-01-01 00:29:51.245700+00:00,devaughn vele,0,7800,clear,154099,Showdown Captain Mode,2026-10-01T23:53:39+00:00
+1170916,0,Jalen Moreno-Cropper,WR,NO,200,512,,False,,ATL @ NO,1970-01-01 00:29:51.245700+00:00,jalen moreno cropper,0,200,clear,154099,Showdown Captain Mode,2026-10-01T23:53:39+00:00
+1172752,0,Treyton Welch,TE,NO,200,512,,False,,ATL @ NO,1970-01-01 00:29:51.245700+00:00,treyton welch,0,200,clear,154099,Showdown Captain Mode,2026-10-01T23:53:39+00:00
+1174752,0,Spencer Rattler,QB,NO,6000,512,,False,,ATL @ NO,1970-01-01 00:29:51.245700+00:00,spencer rattler,0,6000,clear,154099,Showdown Captain Mode,2026-10-01T23:53:39+00:00
+1178741,0,Drake London,WR,ATL,10000,512,,False,,ATL @ NO,1970-01-01 00:29:51.245700+00:00,drake london,0,10000,clear,154099,Showdown Captain Mode,2026-10-01T23:53:39+00:00
+1180557,0,Kyrese Rowan,WR,NO,200,512,,False,,ATL @ NO,1970-01-01 00:29:51.245700+00:00,kyrese rowan,0,200,clear,154099,Showdown Captain Mode,2026-10-01T23:53:39+00:00
+1182695,0,Mason Tipton,WR,NO,200,512,,False,,ATL @ NO,1970-01-01 00:29:51.245700+00:00,mason tipton,0,200,clear,154099,Showdown Captain Mode,2026-10-01T23:53:39+00:00
+1213867,0,Kendre Miller,RB,NO,5000,512,,False,,ATL @ NO,1970-01-01 00:29:51.245700+00:00,kendre miller,0,5000,clear,154099,Showdown Captain Mode,2026-10-01T23:53:39+00:00
+1215789,0,Antwane Wells Jr.,WR,ATL,200,512,,False,,ATL @ NO,1970-01-01 00:29:51.245700+00:00,antwane wells,0,200,clear,154099,Showdown Captain Mode,2026-10-01T23:53:39+00:00
+1228244,0,Bijan Robinson,RB,ATL,11800,512,,False,,ATL @ NO,1970-01-01 00:29:51.245700+00:00,bijan robinson,0,11800,clear,154099,Showdown Captain Mode,2026-10-01T23:53:39+00:00
+1286173,0,Moliki Matavao,TE,NO,200,512,,False,,ATL @ NO,1970-01-01 00:29:51.245700+00:00,moliki matavao,0,200,clear,154099,Showdown Captain Mode,2026-10-01T23:53:39+00:00
+1287705,0,Beaux Collins,WR,ATL,200,512,,False,,ATL @ NO,1970-01-01 00:29:51.245700+00:00,beaux collins,0,200,clear,154099,Showdown Captain Mode,2026-10-01T23:53:39+00:00
+1325016,0,Bryce Lance,WR,NO,1800,512,,False,,ATL @ NO,1970-01-01 00:29:51.245700+00:00,bryce lance,0,1800,clear,154099,Showdown Captain Mode,2026-10-01T23:53:39+00:00
+1329289,0,Cash Jones,RB,ATL,200,512,,False,,ATL @ NO,1970-01-01 00:29:51.245700+00:00,cash jones,0,200,clear,154099,Showdown Captain Mode,2026-10-01T23:53:39+00:00
+1381105,0,Oscar Delp,TE,NO,400,512,,False,,ATL @ NO,1970-01-01 00:29:51.245700+00:00,oscar delp,0,400,clear,154099,Showdown Captain Mode,2026-10-01T23:53:39+00:00
+1394692,0,Jordyn Tyson,WR,NO,200,512,,False,,ATL @ NO,1970-01-01 00:29:51.245700+00:00,jordyn tyson,0,200,clear,154099,Showdown Captain Mode,2026-10-01T23:53:39+00:00
+1395681,0,CJ Donaldson,RB,NO,1400,512,,False,,ATL @ NO,1970-01-01 00:29:51.245700+00:00,cj donaldson,0,1400,clear,154099,Showdown Captain Mode,2026-10-01T23:53:39+00:00
+1395843,0,Barion Brown,WR,NO,1200,512,,False,,ATL @ NO,1970-01-01 00:29:51.245700+00:00,barion brown,0,1200,clear,154099,Showdown Captain Mode,2026-10-01T23:53:39+00:00
+1401629,0,Vinny Anthony II,WR,ATL,200,512,,False,,ATL @ NO,1970-01-01 00:29:51.245700+00:00,vinny anthony,0,200,clear,154099,Showdown Captain Mode,2026-10-01T23:53:39+00:00
+1403373,0,Jack Velling,TE,ATL,200,512,,False,,ATL @ NO,1970-01-01 00:29:51.245700+00:00,jack velling,0,200,clear,154099,Showdown Captain Mode,2026-10-01T23:53:39+00:00
+1441110,0,Zachariah Branch,WR,ATL,2400,512,,False,,ATL @ NO,1970-01-01 00:29:51.245700+00:00,zachariah branch,0,2400,clear,154099,Showdown Captain Mode,2026-10-01T23:53:39+00:00
+1506548,0,Charlie Smyth,K,NO,4800,512,,False,,ATL @ NO,1970-01-01 00:29:51.245700+00:00,charlie smyth,0,4800,clear,154099,Showdown Captain Mode,2026-10-01T23:53:39+00:00
+1637700,0,Jack Strand,QB,ATL,6000,512,,False,,ATL @ NO,1970-01-01 00:29:51.245700+00:00,jack strand,0,6000,clear,154099,Showdown Captain Mode,2026-10-01T23:53:39+00:00

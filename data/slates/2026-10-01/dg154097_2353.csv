@@ -1,0 +1,59 @@
+dk_player_id,draftable_id,name,position,team,salary,roster_slot,status,disabled,attributes,game,starts_utc,norm,flex_eligible,captain_salary,playing,draft_group,game_type,captured_at
+339,0,Chiefs,DST,KC,4000,512,,False,,KC @ LV,1970-01-01 00:29:51.145500+00:00,chiefs,0,4000,clear,154097,Showdown Captain Mode,2026-10-01T23:53:39+00:00
+341,0,Raiders,DST,LV,3400,512,,False,,KC @ LV,1970-01-01 00:29:51.145500+00:00,raiders,0,3400,clear,154097,Showdown Captain Mode,2026-10-01T23:53:39+00:00
+403308,0,Kirk Cousins,QB,LV,9600,512,,False,,KC @ LV,1970-01-01 00:29:51.145500+00:00,kirk cousins,0,9600,clear,154097,Showdown Captain Mode,2026-10-01T23:53:39+00:00
+448240,0,Travis Kelce,TE,KC,8000,512,,False,,KC @ LV,1970-01-01 00:29:51.145500+00:00,travis kelce,0,8000,clear,154097,Showdown Captain Mode,2026-10-01T23:53:39+00:00
+472623,0,James Winchester,TE,KC,200,512,,False,,KC @ LV,1970-01-01 00:29:51.145500+00:00,james winchester,0,200,clear,154097,Showdown Captain Mode,2026-10-01T23:53:39+00:00
+596417,0,Phillip Dorsett II,WR,LV,200,512,,False,,KC @ LV,1970-01-01 00:29:51.145500+00:00,phillip dorsett,0,200,clear,154097,Showdown Captain Mode,2026-10-01T23:53:39+00:00
+748560,0,Harrison Butker,K,KC,5000,512,,False,,KC @ LV,1970-01-01 00:29:51.145500+00:00,harrison butker,0,5000,clear,154097,Showdown Captain Mode,2026-10-01T23:53:39+00:00
+838318,0,Chris Myarick,TE,LV,200,512,,False,,KC @ LV,1970-01-01 00:29:51.145500+00:00,chris myarick,0,200,clear,154097,Showdown Captain Mode,2026-10-01T23:53:39+00:00
+839031,0,Patrick Mahomes,QB,KC,10600,512,,False,,KC @ LV,1970-01-01 00:29:51.145500+00:00,patrick mahomes,0,10600,clear,154097,Showdown Captain Mode,2026-10-01T23:53:39+00:00
+943093,0,Ian Thomas,TE,LV,600,512,,False,,KC @ LV,1970-01-01 00:29:51.145500+00:00,ian thomas,0,600,clear,154097,Showdown Captain Mode,2026-10-01T23:53:39+00:00
+1049797,0,Owen Wright,RB,LV,200,512,,False,,KC @ LV,1970-01-01 00:29:51.145500+00:00,owen wright,0,200,clear,154097,Showdown Captain Mode,2026-10-01T23:53:39+00:00
+1056981,0,Noah Gray,TE,KC,2400,512,,False,,KC @ LV,1970-01-01 00:29:51.145500+00:00,noah gray,0,2400,clear,154097,Showdown Captain Mode,2026-10-01T23:53:39+00:00
+1057457,0,Connor Heyward,RB,LV,200,512,,False,,KC @ LV,1970-01-01 00:29:51.145500+00:00,connor heyward,0,200,clear,154097,Showdown Captain Mode,2026-10-01T23:53:39+00:00
+1057484,0,Cody White,WR,LV,2200,512,,False,,KC @ LV,1970-01-01 00:29:51.145500+00:00,cody white,0,2200,clear,154097,Showdown Captain Mode,2026-10-01T23:53:39+00:00
+1066811,0,Aidan O'Connell,QB,LV,6000,512,,False,,KC @ LV,1970-01-01 00:29:51.145500+00:00,aidan oconnell,0,6000,clear,154097,Showdown Captain Mode,2026-10-01T23:53:39+00:00
+1068998,0,Matt Gay,K,LV,4800,512,,False,,KC @ LV,1970-01-01 00:29:51.145500+00:00,matt gay,0,4800,clear,154097,Showdown Captain Mode,2026-10-01T23:53:39+00:00
+1108526,0,Thomas Odukoya,TE,KC,200,512,,False,,KC @ LV,1970-01-01 00:29:51.145500+00:00,thomas odukoya,0,200,clear,154097,Showdown Captain Mode,2026-10-01T23:53:39+00:00
+1110301,0,Tyquan Thornton,WR,KC,2800,512,,False,,KC @ LV,1970-01-01 00:29:51.145500+00:00,tyquan thornton,0,2800,clear,154097,Showdown Captain Mode,2026-10-01T23:53:39+00:00
+1110681,0,Justin Fields,QB,KC,6000,512,,False,,KC @ LV,1970-01-01 00:29:51.145500+00:00,justin fields,0,6000,clear,154097,Showdown Captain Mode,2026-10-01T23:53:39+00:00
+1122182,0,Dylan Laube,RB,LV,1400,512,,False,,KC @ LV,1970-01-01 00:29:51.145500+00:00,dylan laube,0,1400,clear,154097,Showdown Captain Mode,2026-10-01T23:53:39+00:00
+1126817,0,Jalen Nailor,WR,LV,3600,512,,False,,KC @ LV,1970-01-01 00:29:51.145500+00:00,jalen nailor,0,3600,clear,154097,Showdown Captain Mode,2026-10-01T23:53:39+00:00
+1127080,0,Nikko Remigio,WR,KC,200,512,,False,,KC @ LV,1970-01-01 00:29:51.145500+00:00,nikko remigio,0,200,clear,154097,Showdown Captain Mode,2026-10-01T23:53:39+00:00
+1130245,0,Ben VanSumeren,RB,KC,200,512,,False,,KC @ LV,1970-01-01 00:29:51.145500+00:00,ben vansumeren,0,200,clear,154097,Showdown Captain Mode,2026-10-01T23:53:39+00:00
+1130833,0,Deven Thompkins,WR,LV,200,512,,False,,KC @ LV,1970-01-01 00:29:51.145500+00:00,deven thompkins,0,200,clear,154097,Showdown Captain Mode,2026-10-01T23:53:39+00:00
+1163272,0,Jared Wiley,TE,KC,200,512,,False,,KC @ LV,1970-01-01 00:29:51.145500+00:00,jared wiley,0,200,clear,154097,Showdown Captain Mode,2026-10-01T23:53:39+00:00
+1164402,0,Kenneth Walker III,RB,KC,11200,512,,False,,KC @ LV,1970-01-01 00:29:51.145500+00:00,kenneth walker,0,11200,clear,154097,Showdown Captain Mode,2026-10-01T23:53:39+00:00
+1164979,0,Tre Tucker,WR,LV,7000,512,,False,,KC @ LV,1970-01-01 00:29:51.145500+00:00,tre tucker,0,7000,clear,154097,Showdown Captain Mode,2026-10-01T23:53:39+00:00
+1173538,0,Rashee Rice,WR,KC,9400,512,,False,,KC @ LV,1970-01-01 00:29:51.145500+00:00,rashee rice,0,9400,clear,154097,Showdown Captain Mode,2026-10-01T23:53:39+00:00
+1213442,0,Jimmy Holiday,WR,KC,200,512,,False,,KC @ LV,1970-01-01 00:29:51.145500+00:00,jimmy holiday,0,200,clear,154097,Showdown Captain Mode,2026-10-01T23:53:39+00:00
+1214112,0,Tyler Scott,WR,LV,200,512,,False,,KC @ LV,1970-01-01 00:29:51.145500+00:00,tyler scott,0,200,clear,154097,Showdown Captain Mode,2026-10-01T23:53:39+00:00
+1214132,0,Nate Carter,RB,KC,200,512,,False,,KC @ LV,1970-01-01 00:29:51.145500+00:00,nate carter,0,200,clear,154097,Showdown Captain Mode,2026-10-01T23:53:39+00:00
+1214733,0,Corey Rucker,WR,LV,200,512,,False,,KC @ LV,1970-01-01 00:29:51.145500+00:00,corey rucker,0,200,clear,154097,Showdown Captain Mode,2026-10-01T23:53:39+00:00
+1215974,0,Chris Collier,RB,LV,200,512,,False,,KC @ LV,1970-01-01 00:29:51.145500+00:00,chris collier,0,200,clear,154097,Showdown Captain Mode,2026-10-01T23:53:39+00:00
+1229749,0,Patrick Gurd,TE,LV,200,512,,False,,KC @ LV,1970-01-01 00:29:51.145500+00:00,patrick gurd,0,200,clear,154097,Showdown Captain Mode,2026-10-01T23:53:39+00:00
+1232592,0,Michael Mayer,TE,LV,4400,512,,False,,KC @ LV,1970-01-01 00:29:51.145500+00:00,michael mayer,0,4400,clear,154097,Showdown Captain Mode,2026-10-01T23:53:39+00:00
+1285917,0,Brock Bowers,TE,LV,9800,512,,False,,KC @ LV,1970-01-01 00:29:51.145500+00:00,brock bowers,0,9800,clear,154097,Showdown Captain Mode,2026-10-01T23:53:39+00:00
+1286037,0,Garrett Nussmeier,QB,KC,6000,512,,False,,KC @ LV,1970-01-01 00:29:51.145500+00:00,garrett nussmeier,0,6000,clear,154097,Showdown Captain Mode,2026-10-01T23:53:39+00:00
+1286046,0,Jack Bech,WR,LV,200,512,,False,,KC @ LV,1970-01-01 00:29:51.145500+00:00,jack bech,0,200,clear,154097,Showdown Captain Mode,2026-10-01T23:53:39+00:00
+1286164,0,Dont'e Thornton Jr.,WR,LV,200,512,,False,,KC @ LV,1970-01-01 00:29:51.145500+00:00,donte thornton,0,200,clear,154097,Showdown Captain Mode,2026-10-01T23:53:39+00:00
+1287639,0,Jake Briningstool,TE,KC,200,512,,False,,KC @ LV,1970-01-01 00:29:51.145500+00:00,jake briningstool,0,200,clear,154097,Showdown Captain Mode,2026-10-01T23:53:39+00:00
+1288387,0,John Michael Gyllenborg,TE,KC,200,512,,False,,KC @ LV,1970-01-01 00:29:51.145500+00:00,john michael gyllenborg,0,200,clear,154097,Showdown Captain Mode,2026-10-01T23:53:39+00:00
+1289428,0,Mike Washington Jr.,RB,LV,3000,512,,False,,KC @ LV,1970-01-01 00:29:51.145500+00:00,mike washington,0,3000,clear,154097,Showdown Captain Mode,2026-10-01T23:53:39+00:00
+1313668,0,Brashard Smith,RB,KC,400,512,,False,,KC @ LV,1970-01-01 00:29:51.145500+00:00,brashard smith,0,400,clear,154097,Showdown Captain Mode,2026-10-01T23:53:39+00:00
+1317230,0,Roman Hemby,RB,LV,200,512,,False,,KC @ LV,1970-01-01 00:29:51.145500+00:00,roman hemby,0,200,clear,154097,Showdown Captain Mode,2026-10-01T23:53:39+00:00
+1326638,0,Xavier Worthy,WR,KC,6600,512,,False,,KC @ LV,1970-01-01 00:29:51.145500+00:00,xavier worthy,0,6600,clear,154097,Showdown Captain Mode,2026-10-01T23:53:39+00:00
+1339352,0,Jeff Caldwell,WR,KC,200,512,,False,,KC @ LV,1970-01-01 00:29:51.145500+00:00,jeff caldwell,0,200,clear,154097,Showdown Captain Mode,2026-10-01T23:53:39+00:00
+1377757,0,Jaydn Ott,RB,KC,200,512,,False,,KC @ LV,1970-01-01 00:29:51.145500+00:00,jaydn ott,0,200,clear,154097,Showdown Captain Mode,2026-10-01T23:53:39+00:00
+1379251,0,Emmett Johnson,RB,KC,3200,512,,False,,KC @ LV,1970-01-01 00:29:51.145500+00:00,emmett johnson,0,3200,clear,154097,Showdown Captain Mode,2026-10-01T23:53:39+00:00
+1379261,0,Omari Evans,WR,KC,200,512,,False,,KC @ LV,1970-01-01 00:29:51.145500+00:00,omari evans,0,200,clear,154097,Showdown Captain Mode,2026-10-01T23:53:39+00:00
+1379646,0,Ashton Jeanty,RB,LV,10200,512,,False,,KC @ LV,1970-01-01 00:29:51.145500+00:00,ashton jeanty,0,10200,clear,154097,Showdown Captain Mode,2026-10-01T23:53:39+00:00
+1382670,0,Cyrus Allen,WR,KC,1200,512,,False,,KC @ LV,1970-01-01 00:29:51.145500+00:00,cyrus allen,0,1200,clear,154097,Showdown Captain Mode,2026-10-01T23:53:39+00:00
+1384869,0,Dareke Young,WR,LV,1000,512,,False,,KC @ LV,1970-01-01 00:29:51.145500+00:00,dareke young,0,1000,clear,154097,Showdown Captain Mode,2026-10-01T23:53:39+00:00
+1400786,0,Fernando Mendoza,QB,LV,6000,512,,False,,KC @ LV,1970-01-01 00:29:51.145500+00:00,fernando mendoza,0,6000,clear,154097,Showdown Captain Mode,2026-10-01T23:53:39+00:00
+1403491,0,Jalen Royals,WR,KC,2000,512,,False,,KC @ LV,1970-01-01 00:29:51.145500+00:00,jalen royals,0,2000,clear,154097,Showdown Captain Mode,2026-10-01T23:53:39+00:00
+1405106,0,Andrew Armstrong,WR,KC,200,512,,False,,KC @ LV,1970-01-01 00:29:51.145500+00:00,andrew armstrong,0,200,clear,154097,Showdown Captain Mode,2026-10-01T23:53:39+00:00
+1441191,0,Malik Benson,WR,LV,800,512,,False,,KC @ LV,1970-01-01 00:29:51.145500+00:00,malik benson,0,800,clear,154097,Showdown Captain Mode,2026-10-01T23:53:39+00:00
+1456709,0,Kansei Matsuzawa,K,LV,4800,512,,False,,KC @ LV,1970-01-01 00:29:51.145500+00:00,kansei matsuzawa,0,4800,clear,154097,Showdown Captain Mode,2026-10-01T23:53:39+00:00
+1468632,0,Carter Runyon,TE,LV,200,512,,False,,KC @ LV,1970-01-01 00:29:51.145500+00:00,carter runyon,0,200,clear,154097,Showdown Captain Mode,2026-10-01T23:53:39+00:00
