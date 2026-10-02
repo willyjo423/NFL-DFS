@@ -1,0 +1,59 @@
+dk_player_id,draftable_id,name,position,team,salary,roster_slot,status,disabled,attributes,game,starts_utc,norm,flex_eligible,captain_salary,playing,draft_group,game_type,captured_at
+332,0,Broncos,DST,DEN,3400,512,,False,,DEN @ SF,1970-01-01 00:29:51.145500+00:00,broncos,0,3400,clear,154095,Showdown Captain Mode,2026-10-02T15:17:22+00:00
+359,0,49ers,DST,SF,4000,512,,False,,DEN @ SF,1970-01-01 00:29:51.145500+00:00,49ers,0,4000,clear,154095,Showdown Captain Mode,2026-10-02T15:17:22+00:00
+501150,0,Kyle Juszczyk,RB,SF,1400,512,,False,,DEN @ SF,1970-01-01 00:29:51.145500+00:00,kyle juszczyk,0,1400,clear,154095,Showdown Captain Mode,2026-10-02T15:17:22+00:00
+593587,0,Mike Evans,WR,SF,9000,512,,False,,DEN @ SF,1970-01-01 00:29:51.145500+00:00,mike evans,0,9000,clear,154095,Showdown Captain Mode,2026-10-02T15:17:22+00:00
+607864,0,Brandin Cooks,WR,SF,2600,512,,False,,DEN @ SF,1970-01-01 00:29:51.145500+00:00,brandin cooks,0,2600,clear,154095,Showdown Captain Mode,2026-10-02T15:17:22+00:00
+700299,0,Wil Lutz,K,DEN,4800,512,,False,,DEN @ SF,1970-01-01 00:29:51.145500+00:00,wil lutz,0,4800,clear,154095,Showdown Captain Mode,2026-10-02T15:17:22+00:00
+727279,0,Demarcus Robinson,WR,SF,200,512,,False,,DEN @ SF,1970-01-01 00:29:51.145500+00:00,demarcus robinson,0,200,clear,154095,Showdown Captain Mode,2026-10-02T15:17:22+00:00
+733672,0,George Kittle,TE,SF,8000,512,,False,,DEN @ SF,1970-01-01 00:29:51.145500+00:00,george kittle,0,8000,clear,154095,Showdown Captain Mode,2026-10-02T15:17:22+00:00
+749185,0,Evan Engram,TE,DEN,3000,512,,False,,DEN @ SF,1970-01-01 00:29:51.145500+00:00,evan engram,0,3000,clear,154095,Showdown Captain Mode,2026-10-02T15:17:22+00:00
+757521,0,KhaDarel Hodge,WR,SF,1000,512,,False,,DEN @ SF,1970-01-01 00:29:51.145500+00:00,khadarel hodge,0,1000,clear,154095,Showdown Captain Mode,2026-10-02T15:17:22+00:00
+830517,0,Christian McCaffrey,RB,SF,11600,512,,False,,DEN @ SF,1970-01-01 00:29:51.145500+00:00,christian mccaffrey,0,11600,clear,154095,Showdown Captain Mode,2026-10-02T15:17:22+00:00
+835749,0,Deebo Samuel Sr.,WR,SF,7600,512,,False,,DEN @ SF,1970-01-01 00:29:51.145500+00:00,deebo samuel,0,7600,clear,154095,Showdown Captain Mode,2026-10-02T15:17:22+00:00
+837820,0,Dante Pettis,WR,SF,200,512,,False,,DEN @ SF,1970-01-01 00:29:51.145500+00:00,dante pettis,0,200,clear,154095,Showdown Captain Mode,2026-10-02T15:17:22+00:00
+838878,0,Courtland Sutton,WR,DEN,6200,512,,False,,DEN @ SF,1970-01-01 00:29:51.145500+00:00,courtland sutton,0,6200,clear,154095,Showdown Captain Mode,2026-10-02T15:17:22+00:00
+843733,0,Mitchell Fraboni,TE,DEN,200,512,,False,,DEN @ SF,1970-01-01 00:29:51.145500+00:00,mitchell fraboni,0,200,clear,154095,Showdown Captain Mode,2026-10-02T15:17:22+00:00
+865801,0,Christian Kirk,WR,SF,200,512,,False,,DEN @ SF,1970-01-01 00:29:51.145500+00:00,christian kirk,0,200,clear,154095,Showdown Captain Mode,2026-10-02T15:17:22+00:00
+865868,0,Jarrett Stidham,QB,DEN,6000,512,,False,,DEN @ SF,1970-01-01 00:29:51.145500+00:00,jarrett stidham,0,6000,clear,154095,Showdown Captain Mode,2026-10-02T15:17:22+00:00
+875444,0,Adam Trautman,TE,DEN,600,512,,False,,DEN @ SF,1970-01-01 00:29:51.145500+00:00,adam trautman,0,600,clear,154095,Showdown Captain Mode,2026-10-02T15:17:22+00:00
+885540,0,Adam Prentice,RB,DEN,200,512,,False,,DEN @ SF,1970-01-01 00:29:51.145500+00:00,adam prentice,0,200,clear,154095,Showdown Captain Mode,2026-10-02T15:17:22+00:00
+910383,0,Eddy Pineiro,K,SF,5000,512,,False,,DEN @ SF,1970-01-01 00:29:51.145500+00:00,eddy pineiro,0,5000,clear,154095,Showdown Captain Mode,2026-10-02T15:17:22+00:00
+911985,0,Jack Stoll,TE,SF,200,512,,False,,DEN @ SF,1970-01-01 00:29:51.145500+00:00,jack stoll,0,200,clear,154095,Showdown Captain Mode,2026-10-02T15:17:22+00:00
+920482,0,Michael Bandy,WR,DEN,200,512,,False,,DEN @ SF,1970-01-01 00:29:51.145500+00:00,michael bandy,0,200,clear,154095,Showdown Captain Mode,2026-10-02T15:17:22+00:00
+920758,0,Lil'Jordan Humphrey,WR,DEN,200,512,,False,,DEN @ SF,1970-01-01 00:29:51.145500+00:00,liljordan humphrey,0,200,clear,154095,Showdown Captain Mode,2026-10-02T15:17:22+00:00
+946541,0,Luke Farrell,TE,SF,1200,512,,False,,DEN @ SF,1970-01-01 00:29:51.145500+00:00,luke farrell,0,1200,clear,154095,Showdown Captain Mode,2026-10-02T15:17:22+00:00
+973945,0,Mac Jones,QB,SF,6000,512,,False,,DEN @ SF,1970-01-01 00:29:51.145500+00:00,mac jones,0,6000,clear,154095,Showdown Captain Mode,2026-10-02T15:17:22+00:00
+975829,0,Sam Ehlinger,QB,DEN,6000,512,,False,,DEN @ SF,1970-01-01 00:29:51.145500+00:00,sam ehlinger,0,6000,clear,154095,Showdown Captain Mode,2026-10-02T15:17:22+00:00
+976513,0,J.K. Dobbins,RB,DEN,6600,512,,False,,DEN @ SF,1970-01-01 00:29:51.145500+00:00,j k dobbins,0,6600,clear,154095,Showdown Captain Mode,2026-10-02T15:17:22+00:00
+1068872,0,Jake Tonges,TE,SF,200,512,,False,,DEN @ SF,1970-01-01 00:29:51.145500+00:00,jake tonges,0,200,clear,154095,Showdown Captain Mode,2026-10-02T15:17:22+00:00
+1107034,0,Brandon Aiyuk,WR,SF,200,512,,False,,DEN @ SF,1970-01-01 00:29:51.145500+00:00,brandon aiyuk,0,200,clear,154095,Showdown Captain Mode,2026-10-02T15:17:22+00:00
+1121761,0,Brock Purdy,QB,SF,10600,512,,False,,DEN @ SF,1970-01-01 00:29:51.145500+00:00,brock purdy,0,10600,clear,154095,Showdown Captain Mode,2026-10-02T15:17:22+00:00
+1122323,0,Lucas Krull,TE,DEN,200,512,,False,,DEN @ SF,1970-01-01 00:29:51.145500+00:00,lucas krull,0,200,clear,154095,Showdown Captain Mode,2026-10-02T15:17:22+00:00
+1124338,0,Tyler Badie,RB,DEN,2000,512,,False,,DEN @ SF,1970-01-01 00:29:51.145500+00:00,tyler badie,0,2000,clear,154095,Showdown Captain Mode,2026-10-02T15:17:22+00:00
+1125589,0,Brayden Willis,TE,SF,200,512,,False,,DEN @ SF,1970-01-01 00:29:51.145500+00:00,brayden willis,0,200,clear,154095,Showdown Captain Mode,2026-10-02T15:17:22+00:00
+1125749,0,Jaylen Waddle,WR,DEN,8600,512,,False,,DEN @ SF,1970-01-01 00:29:51.145500+00:00,jaylen waddle,0,8600,clear,154095,Showdown Captain Mode,2026-10-02T15:17:22+00:00
+1126338,0,Isaac Guerendo,RB,SF,200,512,,False,,DEN @ SF,1970-01-01 00:29:51.145500+00:00,isaac guerendo,0,200,clear,154095,Showdown Captain Mode,2026-10-02T15:17:22+00:00
+1132517,0,Nate Adkins,TE,DEN,1600,512,,False,,DEN @ SF,1970-01-01 00:29:51.145500+00:00,nate adkins,0,1600,clear,154095,Showdown Captain Mode,2026-10-02T15:17:22+00:00
+1140248,0,Cody Schrader,RB,DEN,200,512,,False,,DEN @ SF,1970-01-01 00:29:51.145500+00:00,cody schrader,0,200,clear,154095,Showdown Captain Mode,2026-10-02T15:17:22+00:00
+1161416,0,Ricky Pearsall,WR,SF,200,512,,False,,DEN @ SF,1970-01-01 00:29:51.145500+00:00,ricky pearsall,0,200,clear,154095,Showdown Captain Mode,2026-10-02T15:17:22+00:00
+1161899,0,Bo Nix,QB,DEN,9600,512,,False,,DEN @ SF,1970-01-01 00:29:51.145500+00:00,bo nix,0,9600,clear,154095,Showdown Captain Mode,2026-10-02T15:17:22+00:00
+1166235,0,Sincere McCormick,RB,SF,200,512,,False,,DEN @ SF,1970-01-01 00:29:51.145500+00:00,sincere mccormick,0,200,clear,154095,Showdown Captain Mode,2026-10-02T15:17:22+00:00
+1166989,0,Kurtis Rourke,QB,SF,6000,512,,False,,DEN @ SF,1970-01-01 00:29:51.145500+00:00,kurtis rourke,0,6000,clear,154095,Showdown Captain Mode,2026-10-02T15:17:22+00:00
+1172401,0,RJ Harvey,RB,DEN,7000,512,,False,,DEN @ SF,1970-01-01 00:29:51.145500+00:00,rj harvey,0,7000,clear,154095,Showdown Captain Mode,2026-10-02T15:17:22+00:00
+1181861,0,Jacob Cowing,WR,SF,2200,512,,False,,DEN @ SF,1970-01-01 00:29:51.145500+00:00,jacob cowing,0,2200,clear,154095,Showdown Captain Mode,2026-10-02T15:17:22+00:00
+1213799,0,Marvin Mims Jr.,WR,DEN,3800,512,,False,,DEN @ SF,1970-01-01 00:29:51.145500+00:00,marvin mims,0,3800,clear,154095,Showdown Captain Mode,2026-10-02T15:17:22+00:00
+1215772,0,Kaelon Black,RB,SF,3600,512,,False,,DEN @ SF,1970-01-01 00:29:51.145500+00:00,kaelon black,0,3600,clear,154095,Showdown Captain Mode,2026-10-02T15:17:22+00:00
+1222835,0,Jordan Watkins,WR,SF,2400,512,,False,,DEN @ SF,1970-01-01 00:29:51.145500+00:00,jordan watkins,0,2400,clear,154095,Showdown Captain Mode,2026-10-02T15:17:22+00:00
+1231431,0,Caleb Lohner,TE,DEN,200,512,,False,,DEN @ SF,1970-01-01 00:29:51.145500+00:00,caleb lohner,0,200,clear,154095,Showdown Captain Mode,2026-10-02T15:17:22+00:00
+1286176,0,Troy Franklin,WR,DEN,2800,512,,False,,DEN @ SF,1970-01-01 00:29:51.145500+00:00,troy franklin,0,2800,clear,154095,Showdown Captain Mode,2026-10-02T15:17:22+00:00
+1286818,0,De'Zhaun Stribling,WR,SF,200,512,,False,,DEN @ SF,1970-01-01 00:29:51.145500+00:00,dezhaun stribling,0,200,clear,154095,Showdown Captain Mode,2026-10-02T15:17:22+00:00
+1288045,0,Will Pauling,WR,SF,200,512,,False,,DEN @ SF,1970-01-01 00:29:51.145500+00:00,will pauling,0,200,clear,154095,Showdown Captain Mode,2026-10-02T15:17:22+00:00
+1305866,0,Pat Bryant,WR,DEN,5200,512,,False,,DEN @ SF,1970-01-01 00:29:51.145500+00:00,pat bryant,0,5200,clear,154095,Showdown Captain Mode,2026-10-02T15:17:22+00:00
+1310628,0,Khalil Dinkins,TE,SF,200,512,,False,,DEN @ SF,1970-01-01 00:29:51.145500+00:00,khalil dinkins,0,200,clear,154095,Showdown Captain Mode,2026-10-02T15:17:22+00:00
+1378660,0,Dane Key,WR,DEN,200,512,,False,,DEN @ SF,1970-01-01 00:29:51.145500+00:00,dane key,0,200,clear,154095,Showdown Captain Mode,2026-10-02T15:17:22+00:00
+1380594,0,Jonah Coleman,RB,DEN,200,512,,False,,DEN @ SF,1970-01-01 00:29:51.145500+00:00,jonah coleman,0,200,clear,154095,Showdown Captain Mode,2026-10-02T15:17:22+00:00
+1390913,0,Wesley Grimes,WR,SF,200,512,,False,,DEN @ SF,1970-01-01 00:29:51.145500+00:00,wesley grimes,0,200,clear,154095,Showdown Captain Mode,2026-10-02T15:17:22+00:00
+1400657,0,Jordan James,RB,SF,400,512,,False,,DEN @ SF,1970-01-01 00:29:51.145500+00:00,jordan james,0,400,clear,154095,Showdown Captain Mode,2026-10-02T15:17:22+00:00
+1461173,0,Dallen Bentley,TE,DEN,200,512,,False,,DEN @ SF,1970-01-01 00:29:51.145500+00:00,dallen bentley,0,200,clear,154095,Showdown Captain Mode,2026-10-02T15:17:22+00:00
+1522347,0,Kolbe Katsis,WR,DEN,200,512,,False,,DEN @ SF,1970-01-01 00:29:51.145500+00:00,kolbe katsis,0,200,clear,154095,Showdown Captain Mode,2026-10-02T15:17:22+00:00
