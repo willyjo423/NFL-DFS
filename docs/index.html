@@ -194,6 +194,34 @@ footer{border-top:1px solid var(--line);padding-top:16px;font-size:12.5px;
     <span id="status">Loading slates…</span>
   </div>
 
+  <details id="poolwrap" style="margin:10px 0">
+    <summary style="cursor:pointer;font-weight:600;font-size:13px">
+      Restrict the pool and override ownership</summary>
+    <div class="note" style="margin-top:8px">
+      Paste one player per line as
+      <b>name, team, position, salary, ownership%</b> — tabs or commas, a
+      header row is ignored, and the salary is only cross-checked, never used
+      to overwrite the slate. Everyone you paste becomes the <b>entire</b>
+      pool; every other player on the slate is set aside. Ownership replaces
+      what the model guessed, and <b>leverage is recomputed from it</b>
+      (percentile by projection minus percentile by ownership, within
+      position), because the shipped leverage was derived from the old numbers
+      and would otherwise be meaningless.
+      <div style="margin-top:8px">
+        <textarea id="pooltext" rows="8" spellcheck="false"
+          style="width:100%;font:12px ui-monospace,Menlo,Consolas,monospace;
+                 padding:7px;border:1px solid var(--line);border-radius:6px;
+                 background:var(--bg);color:inherit"
+          placeholder="Derrick Henry, BAL, RB, 8400, 47.8"></textarea>
+      </div>
+      <div style="margin-top:7px">
+        <button id="poolapply">Apply pool</button>
+        <button id="poolclear" class="ghost">Use the whole slate again</button>
+      </div>
+      <div id="poolout" style="margin-top:9px;font-size:12.5px"></div>
+    </div>
+  </details>
+
   <div id="stackboard" style="display:flex;flex-wrap:wrap;gap:7px;font-size:12.5px"></div>
   <div class="tiles" id="tiles"></div>
 
@@ -356,6 +384,122 @@ const projOf = p => {
 const isThin = (p, minProj) =>
   evidenceOf(p).thin || projOf(p) < Math.max(minProj, 0);
 
+/* ------------------------------------------------- pool and ownership */
+// WHICH PLAYERS EXIST AT ALL. null means the whole slate; a Set means the
+// build may use nothing outside it.
+//
+// Kept separate from FADE on purpose. A fade is a judgement about one player
+// and belongs to you; a pool is a statement that the published slate covers
+// the wrong games. Mixing them meant "clear locks and fades" quietly put the
+// other sixty players back in.
+let POOL = null;
+
+const normName = s => String(s || "").toLowerCase()
+  .replace(/[.'`’]/g, "")
+  .replace(/\b(jr|sr|ii|iii|iv|v)\b/g, "")
+  .replace(/[^a-z0-9]+/g, " ").trim();
+
+const lastName = s => {
+  const parts = normName(s).split(" ").filter(Boolean);
+  return parts.length ? parts[parts.length - 1] : "";
+};
+
+// Parse the pasted block. Deliberately forgiving about separators and column
+// padding, and deliberately NOT forgiving about a line it cannot read - an
+// unparsed line is reported, never dropped in silence.
+function parsePool(text) {
+  const rows = [], bad = [];
+  for (const raw of String(text || "").split(/\r?\n/)) {
+    // THOUSANDS SEPARATORS ARE STRIPPED BEFORE SPLITTING, or a comma-separated
+    // paste tears "$8,400" into "$8" and "400", every column after it shifts
+    // by one, and the ownership column lands on a salary and reads 400%.
+    const line = raw.trim().replace(/(\d),(?=\d{3}(\D|$))/g, "$1");
+    if (!line) continue;
+    const c = line.split(/\t|,/).map(s => s.trim()).filter(s => s !== "");
+    if (c.length < 4) { bad.push(line); continue; }
+    // A header row names its columns rather than a player.
+    if (/^(player|name)$/i.test(c[0])) continue;
+    const own = Number(String(c[c.length - 1]).replace(/%/g, ""));
+    const sal = Number(String(c[c.length - 2]).replace(/[$,]/g, ""));
+    if (!Number.isFinite(own)) { bad.push(line); continue; }
+    rows.push({ name: c[0], team: String(c[1] || "").toUpperCase(),
+                pos: String(c[2] || "").toUpperCase(),
+                salary: Number.isFinite(sal) ? sal : null,
+                // ALWAYS a percentage. The column is labelled %, and 0.4
+                // there means four tenths of one per cent, not forty. Guessing
+                // from the magnitude turns every genuinely low-owned player
+                // into a 40% chalk play and inverts the whole leverage model.
+                own: own / 100, line });
+  }
+  return { rows, bad };
+}
+
+// Match a pasted row to a slate row. Four passes, each requiring a UNIQUE
+// answer - a guess that lands on the wrong man is worse than an unmatched
+// line, because it silently prices the lineup off somebody else.
+function matchPool(rows, players) {
+  const used = new Set(), hits = [], misses = [];
+  const free = i => !used.has(i);
+  for (const r of rows) {
+    const cands = [...Array(players.length).keys()].filter(free);
+    const byPos = r.pos
+      ? cands.filter(i => String(players[i].pos).toUpperCase() === r.pos)
+      : cands;
+    const pool = byPos.length ? byPos : cands;
+    let found = null;
+    // A defence has no personal name - it IS the team.
+    if (r.pos === "DST" || r.pos === "DEF" || r.pos === "D") {
+      const t = pool.filter(i =>
+        String(players[i].team).toUpperCase() === r.team);
+      if (t.length === 1) found = t[0];
+    }
+    const tries = [
+      i => normName(players[i].name) === normName(r.name)
+           && String(players[i].team).toUpperCase() === r.team,
+      i => normName(players[i].name) === normName(r.name),
+      i => lastName(players[i].name) === lastName(r.name)
+           && String(players[i].team).toUpperCase() === r.team,
+    ];
+    for (const t of tries) {
+      if (found !== null) break;
+      const m = pool.filter(t);
+      if (m.length === 1) found = m[0];
+    }
+    if (found === null) { misses.push(r); continue; }
+    used.add(found);
+    hits.push({ i: found, row: r });
+  }
+  return { hits, misses };
+}
+
+// Leverage, rebuilt from the ownership you just supplied.
+//
+// Within position, because a percentile taken across every player on the
+// board compares a defence to a quarterback and the answer means nothing. The
+// shipped `lev` came from the publisher's own ownership guess, so leaving it
+// alone after replacing ownership would leave the single number the whole
+// tournament objective leans on describing a field that no longer exists.
+function recomputeLeverage(players, idx) {
+  const byPos = new Map();
+  for (const i of idx) {
+    const p = String(players[i].pos).toUpperCase();
+    if (!byPos.has(p)) byPos.set(p, []);
+    byPos.get(p).push(i);
+  }
+  for (const group of byPos.values()) {
+    if (group.length < 2) { for (const i of group) players[i].lev = 0; continue; }
+    const pct = key => {
+      const sorted = group.slice().sort((a, b) =>
+        (Number(players[a][key]) || 0) - (Number(players[b][key]) || 0));
+      const out = new Map();
+      sorted.forEach((i, n) => out.set(i, n / (sorted.length - 1)));
+      return out;
+    };
+    const model = pct("med"), field = pct("own");
+    for (const i of group) players[i].lev = model.get(i) - field.get(i);
+  }
+}
+
 // A player's identity, for boards that list him more than once.
 //
 // DraftKings' feed can carry the same man twice - Frank Gore Jr. appeared
@@ -421,6 +565,8 @@ async function loadSlate(file) {
   }
   SLATE = loaded;
   OPP = buildOppMap(SLATE.players);
+  POOL = null;
+  $("poolout").innerHTML = "";
   LOCK.clear(); FADE.clear();
   LAST = null; STALE = false; $("stale").hidden = true;
   $("field").value = SLATE.field_size || 100000;
@@ -632,6 +778,7 @@ function legalLineup(players, roster, weights, rng, opts) {
   // on purpose, the page does not second-guess you.
   const minProj = Math.max(0, opts.minProj || 0);
   const eligible = i => !FADE.has(i)
+    && (POOL === null || POOL.has(i))
     && (minProj <= 0 || LOCK.has(i) || projOf(players[i]) >= minProj);
   const order = [...Array(n).keys()].filter(eligible)
     .sort((a, b) => (weights[b] + rng() * weights[b] * 0.55)
@@ -1393,7 +1540,10 @@ function drawBoard() {
   });
   tb.innerHTML = rows.map(({ p, i }) => {
     const per = p.salary ? p.med / (p.salary / 1000) : 0;
-    const cls = LOCK.has(i) ? "locked" : FADE.has(i) ? "excluded" : "";
+    // Out-of-pool rows are greyed exactly like a fade, so a restricted
+    // pool is something you can SEE on the board rather than infer.
+    const cls = LOCK.has(i) ? "locked"
+              : (FADE.has(i) || (POOL && !POOL.has(i))) ? "excluded" : "";
     const q = p.status === "questionable"
       ? '<span class="pill q">Q</span>' : "";
     // Marked on the board too, so a thin player is visible BEFORE he turns up
@@ -1489,6 +1639,95 @@ $("stack").onchange = whenLoaded(drawStackBoard);
 // Repaints the board so the ⚠ marks move with the floor you just set, and you
 // can see who it will exclude before spending a build finding out.
 $("minproj").onchange = whenLoaded(drawBoard);
+
+// APPLYING A POOL REPORTS WHAT IT DID, because the failure mode here is silent
+// and expensive: a paste where a third of the names did not match leaves a
+// pool full of holes, and the page would otherwise build confident-looking
+// lineups out of whoever happened to survive.
+function applyPool() {
+  const { rows, bad } = parsePool($("pooltext").value);
+  if (!rows.length) {
+    $("poolout").innerHTML = "<b>Nothing to apply.</b> Paste rows of "
+      + "name, team, position, salary, ownership% first.";
+    return;
+  }
+  const players = SLATE.players;
+  const { hits, misses } = matchPool(rows, players);
+  if (!hits.length) {
+    $("poolout").innerHTML = "<b>Not one name matched this slate.</b> The "
+      + "loaded slate is probably the wrong one — check the slate picker "
+      + "before pasting again. Nothing has been changed.";
+    return;
+  }
+
+  // Ownership first, then leverage derived from it, then the pool itself.
+  const idx = hits.map(h => h.i);
+  const salaryOff = [];
+  for (const { i, row } of hits) {
+    if (players[i]._own0 === undefined) players[i]._own0 = players[i].own;
+    players[i].own = Math.max(0, row.own);
+    if (row.salary && Number(players[i].salary) !== row.salary) {
+      salaryOff.push(`${players[i].name} ${money(players[i].salary)} vs `
+        + `${money(row.salary)}`);
+    }
+  }
+  recomputeLeverage(players, idx);
+  POOL = new Set(idx);
+
+  const byPos = {};
+  for (const i of idx) {
+    const p = String(players[i].pos).toUpperCase();
+    byPos[p] = (byPos[p] || 0) + 1;
+  }
+  // Does each required position have meaningfully more bodies than slots? A
+  // position sitting barely above its own requirement is the signature of a
+  // truncated paste, and it is the one thing worth shouting about.
+  const need = {};
+  for (const s of SLATE.roster.slots) {
+    if (s === "FLEX" || s === "CPT") continue;
+    need[s] = (need[s] || 0) + 1;
+  }
+  const thin = Object.keys(need).filter(p => (byPos[p] || 0) < need[p] + 3);
+
+  const out = [];
+  out.push(`<b>Pool set: ${idx.length} of ${players.length} players</b> — `
+    + Object.keys(byPos).sort().map(p => `${esc(p)} ${byPos[p]}`).join(" · ")
+    + ". Ownership replaced and leverage recomputed from it.");
+  if (thin.length) {
+    out.push(`<b>THIN AT ${esc(thin.join(", "))}.</b> That is barely more `
+      + `bodies than the roster needs, which usually means the paste is cut `
+      + `off. Check you captured the whole position before trusting a lineup.`);
+  }
+  if (misses.length) {
+    out.push(`<b>${misses.length} line${misses.length > 1 ? "s" : ""} matched `
+      + `nobody on this slate</b> and ${misses.length > 1 ? "are" : "is"} not `
+      + `in the pool: ` + misses.map(m => esc(m.name)).join(", "));
+  }
+  if (bad.length) {
+    out.push(`<b>${bad.length} line${bad.length > 1 ? "s" : ""} could not be `
+      + `read:</b> ` + bad.slice(0, 6).map(esc).join(" | "));
+  }
+  if (salaryOff.length) {
+    out.push(`<b>Salary disagrees on ${salaryOff.length}</b> — the slate's `
+      + `number is the one in use: ` + esc(salaryOff.slice(0, 6).join("; ")));
+  }
+  $("poolout").innerHTML = out.map(s => `<div>${s}</div>`).join("");
+  LAST = null; STALE = false; $("stale").hidden = true;
+  $("lineups").innerHTML = "";
+  drawStackBoard(); drawBoard();
+}
+
+$("poolapply").onclick = whenLoaded(applyPool);
+$("poolclear").onclick = whenLoaded(() => {
+  POOL = null;
+  for (const p of SLATE.players) if (p._own0 !== undefined) p.own = p._own0;
+  $("poolout").innerHTML = "<b>Back to the whole slate</b>, with the published "
+    + "ownership restored. Reload the page to restore the published leverage "
+    + "as well.";
+  LAST = null; $("lineups").innerHTML = "";
+  drawStackBoard(); drawBoard();
+});
+
 $("run").onclick = build;
 $("reset").onclick = whenLoaded(() => {
   LOCK.clear(); FADE.clear(); drawBoard();
