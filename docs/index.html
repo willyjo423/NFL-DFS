@@ -240,6 +240,58 @@ const LOCK = new Set();
 const FADE = new Set();
 let SORT = { key: "med", dir: -1 };
 
+// WHO PLAYS WHOM. Rebuilt per slate, from whatever the payload actually
+// carries, because a bring-back is meaningless without it.
+//
+// This existed only as `player.opp`, read straight off the row and guarded as
+// `if (bringBack > 0 && stackOpp)`. On a payload with no `opp` field that
+// condition is false, the whole bring-back block is skipped, and NOTHING SAYS
+// SO - the control still reads "1 opponent" and the lineup comes back with
+// nobody from the other side of the game. It is the exact failure this
+// project keeps paying for: a feature that silently does nothing looks
+// identical to a feature that had nothing to do.
+let OPP = new Map();
+
+function buildOppMap(players) {
+  const map = new Map();
+  // 1. An explicit opponent on the player is the best source there is.
+  for (const p of players || []) {
+    if (p.team && p.opp && !map.has(p.team)) map.set(p.team, p.opp);
+  }
+  // 2. Otherwise pair the teams up by the game they share. EXACTLY two, or it
+  //    says nothing: a game id covering one team is half a fixture, and one
+  //    covering three is not a game id at all.
+  const byGame = new Map();
+  for (const p of players || []) {
+    if (!p.game || !p.team) continue;
+    if (!byGame.has(p.game)) byGame.set(p.game, new Set());
+    byGame.get(p.game).add(p.team);
+  }
+  for (const teams of byGame.values()) {
+    if (teams.size !== 2) continue;
+    const [a, b] = [...teams];
+    if (!map.has(a)) map.set(a, b);
+    if (!map.has(b)) map.set(b, a);
+  }
+  // 3. Last resort: a game LABEL that names both sides, like "LAR@PHI". Only
+  //    accepted when it matches exactly two teams really on this board, so a
+  //    loose substring cannot invent a fixture out of nothing.
+  const known = [...new Set((players || []).map(p => p.team).filter(Boolean))];
+  for (const g of byGame.keys()) {
+    const hit = known.filter(t =>
+      new RegExp(`(^|[^A-Za-z0-9])${t}([^A-Za-z0-9]|$)`, "i").test(String(g)));
+    if (hit.length !== 2) continue;
+    const [a, b] = hit;
+    if (!map.has(a)) map.set(a, b);
+    if (!map.has(b)) map.set(b, a);
+  }
+  return map;
+}
+
+// The map first, then the row - so a direct call made before a slate is
+// loaded still works off whatever the player himself carries.
+const oppOf = p => (p ? (OPP.get(p.team) || p.opp || null) : null);
+
 // A player's identity, for boards that list him more than once.
 //
 // DraftKings' feed can carry the same man twice - Frank Gore Jr. appeared
@@ -304,6 +356,7 @@ async function loadSlate(file) {
     return;
   }
   SLATE = loaded;
+  OPP = buildOppMap(SLATE.players);
   LOCK.clear(); FADE.clear();
   LAST = null; STALE = false; $("stale").hidden = true;
   $("field").value = SLATE.field_size || 100000;
@@ -478,11 +531,11 @@ let NOTES = [];
 function achievedStack(players, pick) {
   const qb = pick.find(x => isQB(players[x.i]));
   if (!qb) return null;
-  const t = players[qb.i].team, opp = players[qb.i].opp;
+  const t = players[qb.i].team, opp = oppOf(players[qb.i]);
   const withQb = pick.filter(x => players[x.i].team === t
     && CATCHER.has(players[x.i].pos)).length;
-  const back = pick.filter(x => players[x.i].team === opp).length;
-  return { team: t, size: withQb, back };
+  const back = opp ? pick.filter(x => players[x.i].team === opp).length : 0;
+  return { team: t, size: withQb, back, opp, oppKnown: !!opp };
 }
 const isQB = p => p.pos === "QB";
 
@@ -705,7 +758,13 @@ function legalLineup(players, roster, weights, rng, opts) {
       if (cand === undefined || !tryAdd(cand, false)) return null;
       qb = pick[pick.length - 1];
     }
-    stackOpp = players[qb.i].opp || null;
+    stackOpp = oppOf(players[qb.i]);
+    // A BRING-BACK THAT CANNOT BE RESOLVED IS REFUSED, NOT SKIPPED. build()
+    // clamps this to zero with a visible note before it ever gets here, so in
+    // practice this never fires - it is the backstop that makes "asked for a
+    // bring-back, silently got none" unrepresentable rather than merely
+    // unlikely.
+    if (bringBack > 0 && !stackOpp) return null;
 
     const mates = [...Array(n).keys()].filter(i =>
       eligible(i) && players[i].team === stackTeam
@@ -778,6 +837,9 @@ function quantile(sorted, q) {
 
 function build() {
   if (!SLATE) return;
+  // Rebuilt here as well as on load, so a slate set by anything other than
+  // loadSlate still has a fixture map rather than an empty one.
+  if (!OPP.size) OPP = buildOppMap(SLATE.players);
   // A fresh solve is no longer behind the locks.
   STALE = false;
   const t0 = performance.now();
@@ -902,11 +964,24 @@ function build() {
         if (v.qb && v.catch >= STACK) stackable.push(t);
       }
     }
+    // A BRING-BACK NEEDS AN OPPONENT, AND IF THE SLATE DOES NOT SAY WHO THAT
+    // IS, THE PAGE SAYS SO. Clamped per stack team rather than globally,
+    // because one unresolved fixture should not disarm the control on every
+    // other team's build.
+    const noOpp = [];
+    const planFor = t => {
+      const known = !!oppOf({ team: t });
+      if (BACK > 0 && !known) noOpp.push(t);
+      return { stackTeam: t, stackSize: STACK, bringBack: known ? BACK : 0 };
+    };
     const plans = (WANT && stackable.includes(WANT))
-      ? [{ stackTeam: WANT, stackSize: STACK, bringBack: BACK }]
-      : stackable.length
-        ? stackable.map(t => ({ stackTeam: t, stackSize: STACK, bringBack: BACK }))
-        : [{}];
+      ? [planFor(WANT)]
+      : stackable.length ? stackable.map(planFor) : [{}];
+    if (noOpp.length) {
+      NOTES.push(`NO BRING-BACK for ${noOpp.join(", ")} — this slate does not `
+        + `say who they play, so the page cannot tell which players are on `
+        + `the other side of that game`);
+    }
     if (WANT && !stackable.includes(WANT)) {
       NOTES.push(`${WANT} has no quarterback plus ${STACK} catchers on this board`);
     }
@@ -1076,9 +1151,11 @@ function render(chosen, meta) {
     }).join("");
     return `<div class="lineup">
       <h3>Entry ${n + 1}<span class="chip">${esc(meta.objective.toUpperCase())}</span>
-        ${c.stack && c.stack.size
-          ? `<span class="chip">${esc(c.stack.team)} QB+${c.stack.size}${
-              c.stack.back ? " / " + c.stack.back + " back" : ""}</span>`
+        ${c.stack
+          ? `<span class="chip">${esc(c.stack.team)} QB+${c.stack.size} · ${
+              c.stack.oppKnown
+                ? c.stack.back + " back"
+                : "opponent unknown"}</span>`
           : ""}</h3>
       <div class="scroll"><table>
         <thead><tr>
@@ -1148,6 +1225,7 @@ function render(chosen, meta) {
 // is answerable by looking rather than by trusting the optimiser.
 function drawStackBoard() {
   if (!SLATE) return;
+  if (!OPP.size) OPP = buildOppMap(SLATE.players);
   // READ THE SAME WAY build() READS IT, or the board describes a bet the
   // builder will not make. Written as `Number(v) || 2`, a control set to "0"
   // became 2.
@@ -1168,6 +1246,9 @@ function drawStackBoard() {
     const group = [qb, ...top];
     rows.push({
       team: t,
+      // Shown so an unresolved fixture is visible BEFORE you build, not
+      // discovered afterwards in a lineup with nobody from the other side.
+      opp: oppOf({ team: t }),
       pts: group.reduce((a, p) => a + (Number(p.med) || 0), 0),
       own: group.reduce((a, p) => a + (Number(p.own) || 0), 0) / group.length,
       lev: group.reduce((a, p) => a + levOf(p), 0) / group.length,
@@ -1175,13 +1256,20 @@ function drawStackBoard() {
   }
   rows.sort((a, b) => b.pts - a.pts);
   $("stackteam").innerHTML = '<option value="">Auto (try every team)</option>'
-    + rows.map(r => `<option value="${esc(r.team)}">${esc(r.team)} — `
-      + `${r.pts.toFixed(1)} pts</option>`).join("");
+    + rows.map(r => `<option value="${esc(r.team)}">${esc(r.team)} v `
+      + `${esc(r.opp || "?")} — ${r.pts.toFixed(1)} pts</option>`).join("");
+  const blind = rows.filter(r => !r.opp).map(r => r.team);
   $("stackboard").innerHTML = rows.length
     ? `<b>QB + ${n}, by projected points.</b> ` + rows.map(r =>
-        `<span class="chip">${esc(r.team)} <b>${r.pts.toFixed(1)}</b> · own `
+        `<span class="chip">${esc(r.team)} v ${esc(r.opp || "?")} `
+        + `<b>${r.pts.toFixed(1)}</b> · own `
         + `${(100 * r.own).toFixed(0)}% · lev ${r.lev > 0 ? "+" : ""}`
         + `${r.lev.toFixed(2)}</span>`).join(" ")
+      + (blind.length
+          ? `<br><b>No fixture for ${esc(blind.join(", "))}.</b> A bring-back `
+            + `needs to know who the other side is, so it will be skipped for `
+            + `those teams and the build will say so.`
+          : "")
     : "<b>No team on this board has a priced quarterback plus enough "
       + "catchers</b>, so there is nothing to anchor a stack on. Set Pass "
       + "catchers to 0 and build unstacked.";
