@@ -1,0 +1,102 @@
+dk_player_id,draftable_id,name,position,team,salary,roster_slot,status,disabled,attributes,game,starts_utc,norm,flex_eligible,captain_salary,playing,draft_group,game_type,captured_at
+323,0,Falcons,DST,ATL,2700,71,,False,,ATL @ NO,,falcons,0,2700,clear,154083,Classic,2026-10-04T20:39:58+00:00
+334,0,Lions,DST,DET,2900,71,,False,,DET @ CAR,,lions,0,2900,clear,154083,Classic,2026-10-04T20:39:58+00:00
+350,0,Saints,DST,NO,3100,71,,False,,ATL @ NO,,saints,0,3100,clear,154083,Classic,2026-10-04T20:39:58+00:00
+364,0,Panthers,DST,CAR,2500,71,,False,,DET @ CAR,,panthers,0,2500,clear,154083,Classic,2026-10-04T20:39:58+00:00
+600191,0,Darren Waller,TE,CAR,3300,69,,False,,DET @ CAR,,darren waller,0,3300,clear,154083,Classic,2026-10-04T20:39:58+00:00
+606799,0,Zach Wood,TE,NO,2500,69,,False,,ATL @ NO,,zach wood,0,2500,clear,154083,Classic,2026-10-04T20:39:58+00:00
+694117,0,Cooper Rush,QB,ATL,4000,66,,False,,ATL @ NO,,cooper rush,0,4000,clear,154083,Classic,2026-10-04T20:39:58+00:00
+727837,0,Jared Goff,QB,DET,6100,66,,False,,DET @ CAR,,jared goff,0,6100,clear,154083,Classic,2026-10-04T20:39:58+00:00
+739424,0,Austin Hooper,TE,ATL,2600,69,,False,,ATL @ NO,,austin hooper,0,2600,clear,154083,Classic,2026-10-04T20:39:58+00:00
+741262,0,Joshua Dobbs,QB,DET,4000,66,,False,,DET @ CAR,,joshua dobbs,0,4000,clear,154083,Classic,2026-10-04T20:39:58+00:00
+750846,0,Alvin Kamara,RB,NO,5000,67,,False,,ATL @ NO,,alvin kamara,0,5000,clear,154083,Classic,2026-10-04T20:39:58+00:00
+837087,0,Tom Kennedy,WR,DET,3000,68,,False,,DET @ CAR,,tom kennedy,0,3000,clear,154083,Classic,2026-10-04T20:39:58+00:00
+861278,0,Tyler Conklin,TE,DET,2500,69,,False,,DET @ CAR,,tyler conklin,0,2500,clear,154083,Classic,2026-10-04T20:39:58+00:00
+881670,0,Lucky Jackson,WR,DET,3000,68,,False,,DET @ CAR,,lucky jackson,0,3000,clear,154083,Classic,2026-10-04T20:39:58+00:00
+883976,0,Olamide Zaccheaus,WR,ATL,3000,68,,False,,ATL @ NO,,olamide zaccheaus,0,3000,clear,154083,Classic,2026-10-04T20:39:58+00:00
+884609,0,Juwan Johnson,TE,NO,4200,69,,False,,ATL @ NO,,juwan johnson,0,4200,clear,154083,Classic,2026-10-04T20:39:58+00:00
+910377,0,Feleipe Franks,TE,CAR,2500,69,,False,,DET @ CAR,,feleipe franks,0,2500,clear,154083,Classic,2026-10-04T20:39:58+00:00
+922040,0,Charlie Woerner,TE,ATL,2500,69,,False,,ATL @ NO,,charlie woerner,0,2500,clear,154083,Classic,2026-10-04T20:39:58+00:00
+923911,0,Noah Fant,TE,NO,3200,69,,False,,ATL @ NO,,noah fant,0,3200,clear,154083,Classic,2026-10-04T20:39:58+00:00
+935104,0,Khalil Herbert,RB,ATL,4000,67,,False,,ATL @ NO,,khalil herbert,0,4000,clear,154083,Classic,2026-10-04T20:39:58+00:00
+973947,0,Tua Tagovailoa,QB,ATL,4000,66,,False,,ATL @ NO,,tua tagovailoa,0,4000,clear,154083,Classic,2026-10-04T20:39:58+00:00
+973966,0,Brian Robinson Jr.,RB,ATL,4700,67,,False,,ATL @ NO,,brian robinson,0,4700,clear,154083,Classic,2026-10-04T20:39:58+00:00
+976236,0,Trey Sermon,RB,ATL,4000,67,,False,,ATL @ NO,,trey sermon,0,4000,clear,154083,Classic,2026-10-04T20:39:58+00:00
+976924,0,Kenny Pickett,QB,CAR,4000,66,,False,,DET @ CAR,,kenny pickett,0,4000,clear,154083,Classic,2026-10-04T20:39:58+00:00
+978120,0,Brock Wright,TE,DET,2500,69,,False,,DET @ CAR,,brock wright,0,2500,clear,154083,Classic,2026-10-04T20:39:58+00:00
+978577,0,Travis Etienne Jr.,RB,NO,5500,67,,False,,ATL @ NO,,travis etienne,0,5500,clear,154083,Classic,2026-10-04T20:39:58+00:00
+1049792,0,Nick Muse,TE,ATL,2500,69,,False,,ATL @ NO,,nick muse,0,2500,clear,154083,Classic,2026-10-04T20:39:58+00:00
+1049915,0,David Moore,WR,CAR,3000,68,,False,,DET @ CAR,,david moore,0,3000,clear,154083,Classic,2026-10-04T20:39:58+00:00
+1056865,0,Stone Smartt,TE,NO,2500,69,,False,,ATL @ NO,,stone smartt,0,2500,clear,154083,Classic,2026-10-04T20:39:58+00:00
+1059576,0,Ty Chandler,RB,NO,4000,67,,False,,ATL @ NO,,ty chandler,0,4000,clear,154083,Classic,2026-10-04T20:39:58+00:00
+1060545,0,AJ Dillon,RB,CAR,4400,67,,False,,DET @ CAR,,aj dillon,0,4400,clear,154083,Classic,2026-10-04T20:39:58+00:00
+1061591,0,Cal Adomitis,TE,NO,2500,69,,False,,ATL @ NO,,cal adomitis,0,2500,clear,154083,Classic,2026-10-04T20:39:58+00:00
+1062047,0,Chuba Hubbard,RB,CAR,6400,67,,False,,DET @ CAR,,chuba hubbard,0,6400,clear,154083,Classic,2026-10-04T20:39:58+00:00
+1065052,0,Tay Martin,WR,DET,3000,68,,False,,DET @ CAR,,tay martin,0,3000,clear,154083,Classic,2026-10-04T20:39:58+00:00
+1106832,0,Isiah Pacheco,RB,DET,4000,67,,False,,DET @ CAR,,isiah pacheco,0,4000,clear,154083,Classic,2026-10-04T20:39:58+00:00
+1107478,0,Michael Penix Jr.,QB,ATL,5000,66,,False,,ATL @ NO,,michael penix,0,5000,clear,154083,Classic,2026-10-04T20:39:58+00:00
+1108052,0,Zach Wilson,QB,NO,4000,66,,False,,ATL @ NO,,zach wilson,0,4000,clear,154083,Classic,2026-10-04T20:39:58+00:00
+1108534,0,Dylan Drummond,WR,ATL,3000,68,,False,,ATL @ NO,,dylan drummond,0,3000,clear,154083,Classic,2026-10-04T20:39:58+00:00
+1110306,0,Tyler Shough,QB,NO,5600,66,,False,,ATL @ NO,,tyler shough,0,5600,clear,154083,Classic,2026-10-04T20:39:58+00:00
+1110697,0,Zamir White,RB,NO,4000,67,,False,,ATL @ NO,,zamir white,0,4000,clear,154083,Classic,2026-10-04T20:39:58+00:00
+1120347,0,Chris Blair,WR,ATL,3000,68,,False,,ATL @ NO,,chris blair,0,3000,clear,154083,Classic,2026-10-04T20:39:58+00:00
+1121878,0,Jahan Dotson,WR,ATL,3000,68,,False,,ATL @ NO,,jahan dotson,0,3000,clear,154083,Classic,2026-10-04T20:39:58+00:00
+1122592,0,Chris Olave,WR,NO,7700,68,,False,,ATL @ NO,,chris olave,0,7700,clear,154083,Classic,2026-10-04T20:39:58+00:00
+1123026,0,Kyle Pitts Sr.,TE,ATL,3900,69,,False,,ATL @ NO,,kyle pitts,0,3900,clear,154083,Classic,2026-10-04T20:39:58+00:00
+1123525,0,Brycen Tremayne,WR,CAR,3100,68,,False,,DET @ CAR,,brycen tremayne,0,3100,clear,154083,Classic,2026-10-04T20:39:58+00:00
+1124664,0,Cedric Tillman,WR,NO,3000,68,,False,,ATL @ NO,,cedric tillman,0,3000,clear,154083,Classic,2026-10-04T20:39:58+00:00
+1127106,0,Amon-Ra St. Brown,WR,DET,8000,68,,False,,DET @ CAR,,amon ra st brown,0,8000,clear,154083,Classic,2026-10-04T20:39:58+00:00
+1130526,0,Kevin Austin Jr.,WR,NO,3000,68,,False,,ATL @ NO,,kevin austin,0,3000,clear,154083,Classic,2026-10-04T20:39:58+00:00
+1130538,0,Lawrence Keys III,WR,DET,3000,68,,False,,DET @ CAR,,lawrence keys,0,3000,clear,154083,Classic,2026-10-04T20:39:58+00:00
+1130555,0,Tommy Tremble,TE,CAR,2500,69,,False,,DET @ CAR,,tommy tremble,0,2500,clear,154083,Classic,2026-10-04T20:39:58+00:00
+1131457,0,Jacob Saylors,RB,DET,4000,67,,False,,DET @ CAR,,jacob saylors,0,4000,clear,154083,Classic,2026-10-04T20:39:58+00:00
+1160348,0,John Metchie III,WR,CAR,3200,68,,False,,DET @ CAR,,john metchie,0,3200,clear,154083,Classic,2026-10-04T20:39:58+00:00
+1161739,0,Trey Palmer,WR,NO,3000,68,,False,,ATL @ NO,,trey palmer,0,3000,clear,154083,Classic,2026-10-04T20:39:58+00:00
+1164788,0,Devaughn Vele,WR,NO,4900,68,,False,,ATL @ NO,,devaughn vele,0,4900,clear,154083,Classic,2026-10-04T20:39:58+00:00
+1168926,0,Sam LaPorta,TE,DET,4100,69,,False,,DET @ CAR,,sam laporta,0,4100,clear,154083,Classic,2026-10-04T20:39:58+00:00
+1170916,0,Jalen Moreno-Cropper,WR,NO,3000,68,,False,,ATL @ NO,,jalen moreno cropper,0,3000,clear,154083,Classic,2026-10-04T20:39:58+00:00
+1172752,0,Treyton Welch,TE,NO,2500,69,,False,,ATL @ NO,,treyton welch,0,2500,clear,154083,Classic,2026-10-04T20:39:58+00:00
+1173254,0,Thomas Gordon,TE,DET,2500,69,,False,,DET @ CAR,,thomas gordon,0,2500,clear,154083,Classic,2026-10-04T20:39:58+00:00
+1174752,0,Spencer Rattler,QB,NO,4000,66,,False,,ATL @ NO,,spencer rattler,0,4000,clear,154083,Classic,2026-10-04T20:39:58+00:00
+1175184,0,Jameson Williams,WR,DET,5500,68,,False,,DET @ CAR,,jameson williams,0,5500,clear,154083,Classic,2026-10-04T20:39:58+00:00
+1176431,0,Casey Washington,WR,CAR,3000,68,,False,,DET @ CAR,,casey washington,0,3000,clear,154083,Classic,2026-10-04T20:39:58+00:00
+1178741,0,Drake London,WR,ATL,6500,68,,False,,ATL @ NO,,drake london,0,6500,clear,154083,Classic,2026-10-04T20:39:58+00:00
+1180321,0,Xavier Legette,WR,CAR,3700,68,,False,,DET @ CAR,,xavier legette,0,3700,clear,154083,Classic,2026-10-04T20:39:58+00:00
+1180557,0,Kyrese Rowan,WR,NO,3000,68,,False,,ATL @ NO,,kyrese rowan,0,3000,clear,154083,Classic,2026-10-04T20:39:58+00:00
+1182695,0,Mason Tipton,WR,NO,3000,68,,False,,ATL @ NO,,mason tipton,0,3000,clear,154083,Classic,2026-10-04T20:39:58+00:00
+1213257,0,Bryce Young,QB,CAR,5900,66,,False,,DET @ CAR,,bryce young,0,5900,clear,154083,Classic,2026-10-04T20:39:58+00:00
+1213867,0,Kendre Miller,RB,NO,4500,67,,False,,ATL @ NO,,kendre miller,0,4500,clear,154083,Classic,2026-10-04T20:39:58+00:00
+1214154,0,Jahmyr Gibbs,RB,DET,9000,67,,False,,DET @ CAR,,jahmyr gibbs,0,9000,clear,154083,Classic,2026-10-04T20:39:58+00:00
+1214289,0,Ahmani Marshall,RB,CAR,4000,67,,False,,DET @ CAR,,ahmani marshall,0,4000,clear,154083,Classic,2026-10-04T20:39:58+00:00
+1214336,0,Haynes King,QB,CAR,4000,66,,False,,DET @ CAR,,haynes king,0,4000,clear,154083,Classic,2026-10-04T20:39:58+00:00
+1215789,0,Antwane Wells Jr.,WR,ATL,3000,68,,False,,ATL @ NO,,antwane wells,0,3000,clear,154083,Classic,2026-10-04T20:39:58+00:00
+1218753,0,Jalen Coker,WR,CAR,5700,68,,False,,DET @ CAR,,jalen coker,0,5700,clear,154083,Classic,2026-10-04T20:39:58+00:00
+1228244,0,Bijan Robinson,RB,ATL,8700,67,,False,,ATL @ NO,,bijan robinson,0,8700,clear,154083,Classic,2026-10-04T20:39:58+00:00
+1232898,0,Jabari Small,RB,DET,4000,67,,False,,DET @ CAR,,jabari small,0,4000,clear,154083,Classic,2026-10-04T20:39:58+00:00
+1285915,0,Jackson Meeks,TE,DET,2500,69,,False,,DET @ CAR,,jackson meeks,0,2500,clear,154083,Classic,2026-10-04T20:39:58+00:00
+1286173,0,Moliki Matavao,TE,NO,2500,69,,False,,ATL @ NO,,moliki matavao,0,2500,clear,154083,Classic,2026-10-04T20:39:58+00:00
+1286214,0,Luke Altmyer,QB,DET,4000,66,,False,,DET @ CAR,,luke altmyer,0,4000,clear,154083,Classic,2026-10-04T20:39:58+00:00
+1286480,0,Dominic Lovett,WR,DET,3000,68,,False,,DET @ CAR,,dominic lovett,0,3000,clear,154083,Classic,2026-10-04T20:39:58+00:00
+1287705,0,Beaux Collins,WR,ATL,3000,68,,False,,ATL @ NO,,beaux collins,0,3000,clear,154083,Classic,2026-10-04T20:39:58+00:00
+1287778,0,Anthony Tyus III,RB,CAR,4000,67,,False,,DET @ CAR,,anthony tyus,0,4000,clear,154083,Classic,2026-10-04T20:39:58+00:00
+1289471,0,Mitchell Evans,TE,CAR,2500,69,,False,,DET @ CAR,,mitchell evans,0,2500,clear,154083,Classic,2026-10-04T20:39:58+00:00
+1322612,0,Ja'seem Reed,WR,CAR,3000,68,,False,,DET @ CAR,,jaseem reed,0,3000,clear,154083,Classic,2026-10-04T20:39:58+00:00
+1325016,0,Bryce Lance,WR,NO,3000,68,,False,,ATL @ NO,,bryce lance,0,3000,clear,154083,Classic,2026-10-04T20:39:58+00:00
+1326601,0,Jonathon Brooks,RB,CAR,4000,67,,False,,DET @ CAR,,jonathon brooks,0,4000,clear,154083,Classic,2026-10-04T20:39:58+00:00
+1326628,0,Ja'Tavion Sanders,TE,CAR,2500,69,,False,,DET @ CAR,,jatavion sanders,0,2500,clear,154083,Classic,2026-10-04T20:39:58+00:00
+1329289,0,Cash Jones,RB,ATL,4000,67,,False,,ATL @ NO,,cash jones,0,4000,clear,154083,Classic,2026-10-04T20:39:58+00:00
+1378910,0,Kendrick Law,WR,DET,3000,68,,False,,DET @ CAR,,kendrick law,0,3000,clear,154083,Classic,2026-10-04T20:39:58+00:00
+1380576,0,Tetairoa McMillan,WR,CAR,6200,68,,False,,DET @ CAR,,tetairoa mcmillan,0,6200,clear,154083,Classic,2026-10-04T20:39:58+00:00
+1381105,0,Oscar Delp,TE,NO,2500,69,,False,,ATL @ NO,,oscar delp,0,2500,clear,154083,Classic,2026-10-04T20:39:58+00:00
+1381164,0,Sione Vaki,RB,DET,4500,67,,False,,DET @ CAR,,sione vaki,0,4500,clear,154083,Classic,2026-10-04T20:39:58+00:00
+1394692,0,Jordyn Tyson,WR,NO,3000,68,,False,,ATL @ NO,,jordyn tyson,0,3000,clear,154083,Classic,2026-10-04T20:39:58+00:00
+1394803,0,Trevor Etienne,RB,CAR,4000,67,,False,,DET @ CAR,,trevor etienne,0,4000,clear,154083,Classic,2026-10-04T20:39:58+00:00
+1395681,0,CJ Donaldson,RB,NO,4000,67,,False,,ATL @ NO,,cj donaldson,0,4000,clear,154083,Classic,2026-10-04T20:39:58+00:00
+1395843,0,Barion Brown,WR,NO,3000,68,,False,,ATL @ NO,,barion brown,0,3000,clear,154083,Classic,2026-10-04T20:39:58+00:00
+1399934,0,Miles Kitselman,TE,DET,2500,69,,False,,DET @ CAR,,miles kitselman,0,2500,clear,154083,Classic,2026-10-04T20:39:58+00:00
+1400788,0,Chris Brazzell II,WR,CAR,3000,68,,False,,DET @ CAR,,chris brazzell,0,3000,clear,154083,Classic,2026-10-04T20:39:58+00:00
+1401629,0,Vinny Anthony II,WR,ATL,3000,68,,False,,ATL @ NO,,vinny anthony,0,3000,clear,154083,Classic,2026-10-04T20:39:58+00:00
+1403373,0,Jack Velling,TE,ATL,2500,69,,False,,ATL @ NO,,jack velling,0,2500,clear,154083,Classic,2026-10-04T20:39:58+00:00
+1441110,0,Zachariah Branch,WR,ATL,3200,68,,False,,ATL @ NO,,zachariah branch,0,3200,clear,154083,Classic,2026-10-04T20:39:58+00:00
+1441362,0,Isaac TeSlaa,WR,DET,3700,68,,False,,DET @ CAR,,isaac teslaa,0,3700,clear,154083,Classic,2026-10-04T20:39:58+00:00
+1637700,0,Jack Strand,QB,ATL,4000,66,,False,,ATL @ NO,,jack strand,0,4000,clear,154083,Classic,2026-10-04T20:39:58+00:00
