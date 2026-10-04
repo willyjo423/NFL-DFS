@@ -78,6 +78,7 @@ tr.excluded td{opacity:.35;text-decoration:line-through}
   padding:1px 5px;border-radius:2px;margin-left:5px;vertical-align:1px}
 .pill.q{background:var(--warn-bg);color:var(--warn)}
 .lev-up{color:var(--good)} .lev-dn{color:var(--warn)}
+b.warn{color:var(--warn);cursor:help}
 .chip{font-size:10px;font-weight:700;padding:2px 5px;border-radius:2px;
   background:var(--sunken);color:var(--muted)}
 .tog{cursor:pointer;border:1px solid var(--line);background:var(--surface);
@@ -175,6 +176,15 @@ footer{border-top:1px solid var(--line);padding-top:16px;font-size:12.5px;
         <option value="20000">20,000</option>
         <option value="50000" selected>50,000</option>
         <option value="100000">100,000</option>
+      </select></div>
+    <div class="ctl"><label for="minproj"
+      title="Refuse to roster anyone projected below this. A near-zero projection on a minimum-salary player is how a man who has barely played ends up in the flex: the optimiser is told he is cheap and is not told the number means nothing. If the floor leaves a position unfillable it is dropped and the build says so.">Minimum projection</label>
+      <select id="minproj">
+        <option value="0">Off — allow anyone</option>
+        <option value="3">3.0 points</option>
+        <option value="4" selected>4.0 points</option>
+        <option value="5">5.0 points</option>
+        <option value="6">6.0 points</option>
       </select></div>
   </div>
 
@@ -291,6 +301,60 @@ function buildOppMap(players) {
 // The map first, then the row - so a direct call made before a slate is
 // loaded still works off whatever the player himself carries.
 const oppOf = p => (p ? (OPP.get(p.team) || p.opp || null) : null);
+
+/* ------------------------------------------------------- thin evidence */
+// HOW MUCH FOOTBALL A PROJECTION IS ACTUALLY STANDING ON.
+//
+// A model asked about a man who has played one snap all year still returns a
+// number, and that number is printed in the same column, in the same font, as
+// one standing on sixteen games. The optimiser cannot tell them apart, so it
+// does the rational thing with what it was told and buys the cheap body to
+// afford the expensive ones. Two consecutive live builds put a $2,500 tight
+// end averaging under one point into the flex for exactly this reason.
+//
+// Nothing here invents evidence. It reports what the slate carries, and where
+// the slate carries nothing it says so rather than assuming the player is
+// fine.
+const EVIDENCE_FIELDS = [
+  ["gp", "games"], ["games", "games"], ["n_games", "games"],
+  ["games_played", "games"], ["g", "games"],
+  ["snaps", "snaps"], ["snap_share", "snap share"],
+  ["p_play", "play chance"], ["ppg", "pts/gm"], ["fppg", "pts/gm"],
+];
+
+// Below these a player has not done enough for a projection to mean much.
+// Deliberately permissive - this is meant to catch the man who has barely
+// taken the field, not to referee a role.
+const THIN = { games: 2, snaps: 30, "snap share": 0.2, "play chance": 0.5 };
+
+function evidenceOf(p) {
+  for (const [key, label] of EVIDENCE_FIELDS) {
+    const v = Number(p[key]);
+    if (!Number.isFinite(v)) continue;
+    const bar = THIN[label];
+    return { known: true, label, value: v,
+             thin: bar !== undefined ? v < bar : false };
+  }
+  return { known: false, label: null, value: null, thin: false };
+}
+
+// Does ANY player on this slate carry playing-time evidence? Asked once, so
+// the page can say plainly that it is flying on the projection floor alone
+// rather than quietly behaving as though everyone checked out.
+function evidenceCarried(players) {
+  return (players || []).some(p => evidenceOf(p).known);
+}
+
+const projOf = p => {
+  const v = Number(p.med);
+  return Number.isFinite(v) ? v : 0;
+};
+
+// A player the page will warn about: either the slate says he has barely
+// played, or his own projection is so low that rostering him is a salary
+// decision rather than a football one.
+const isThin = (p, minProj) =>
+  evidenceOf(p).thin || projOf(p) < Math.max(minProj, 0);
 
 // A player's identity, for boards that list him more than once.
 //
@@ -561,7 +625,14 @@ function legalLineup(players, roster, weights, rng, opts) {
   // costing you points.
   const minSpend = Math.max(0, opts.minSpend || 0);
 
-  const eligible = i => !FADE.has(i);
+  // A PROJECTION FLOOR IS A FILTER ON WHO MAY BE ROSTERED AT ALL, not a
+  // scoring tweak - a man projected for one point does not belong in the
+  // search space, and weighting him down merely makes him the last pick
+  // rather than no pick. An explicit LOCK overrides it: if you put him there
+  // on purpose, the page does not second-guess you.
+  const minProj = Math.max(0, opts.minProj || 0);
+  const eligible = i => !FADE.has(i)
+    && (minProj <= 0 || LOCK.has(i) || projOf(players[i]) >= minProj);
   const order = [...Array(n).keys()].filter(eligible)
     .sort((a, b) => (weights[b] + rng() * weights[b] * 0.55)
                   - (weights[a] + rng() * weights[a] * 0.55));
@@ -855,6 +926,7 @@ function build() {
   const LEVW = levWeight();
   const minPct = Math.max(0, Math.min(100, Number($("minsal").value) || 0));
   const MINSPEND = Math.round(minPct / 100 * roster.salary_cap);
+  const MINPROJ = Math.max(0, Number($("minproj").value) || 0);
 
   const zq = SLATE.quantiles.map(normalQuantile);
   const plan = buildFactorPlan(players);
@@ -986,24 +1058,33 @@ function build() {
       NOTES.push(`${WANT} has no quarterback plus ${STACK} catchers on this board`);
     }
 
+    // BOTH FLOORS ARE ATTEMPTED, NOT ASSUMED, and they are given up in order
+    // of how much they cost you. Leaving salary unspent is a few points; a
+    // man who has barely played is a hole in the lineup, so the salary floor
+    // goes first and the projection floor only if there is no other way to
+    // field nine men. Every drop is reported.
     let spendFloor = MINSPEND, floorDropped = false;
+    let projFloor = MINPROJ, projDropped = false;
     const tries = Math.max(400, plans.length * 60);
-    for (let pass = 0; pass < 2; pass++) {
+    for (let pass = 0; pass < 3; pass++) {
       for (let k = 0; k < tries && cands.length < 220; k++) {
         // Bias what gets BUILT, not only what gets chosen. Ranking alone can
         // do nothing about a lineup the search never generated.
         const w = mean.map((v, i) => Math.max(v, 0.01)
           * Math.max(0.15, 1 + LEVW * levOf(players[i])));
         const pick = legalLineup(players, roster, w, rng,
-          Object.assign({ minSpend: spendFloor }, plans[k % plans.length]));
+          Object.assign({ minSpend: spendFloor, minProj: projFloor },
+                        plans[k % plans.length]));
         if (!pick) continue;
         const key0 = pick.map(p => p.i).sort((a, b) => a - b).join(",");
         if (seen.has(key0)) continue;
         seen.add(key0);
         cands.push(measure(pick, key0));
       }
-      if (cands.length || !spendFloor) break;
-      spendFloor = 0; floorDropped = true;
+      if (cands.length) break;
+      if (spendFloor) { spendFloor = 0; floorDropped = true; continue; }
+      if (projFloor) { projFloor = 0; projDropped = true; continue; }
+      break;
     }
 
     function measure(pick, key) {
@@ -1065,7 +1146,10 @@ function build() {
     render(chosen, { sims, cashLine, gppLine, gppTarget, objective, field,
                      levw: LEVW,
                      ms: performance.now() - t0, pool: cands.length,
-                     minSpend: MINSPEND, floorDropped });
+                     minSpend: MINSPEND, floorDropped,
+                     minProj: projDropped ? 0 : projFloor,
+                     askedProj: MINPROJ, projDropped,
+                     evidence: evidenceCarried(players) });
   }, 20);
 }
 
@@ -1138,8 +1222,21 @@ function render(chosen, meta) {
       const lcls = !Number.isFinite(lev) ? "" : lev > 0.05 ? "good"
                  : lev < -0.05 ? "bad" : "";
       const cls = LOCK.has(p.i) ? "locked" : FADE.has(p.i) ? "excluded" : "";
+      // A THIN PLAYER IS MARKED WHERE YOU WILL SEE HIM - in the lineup, next
+      // to his name - not in a note under the board that nobody reads after
+      // the lineups have rendered.
+      const ev = evidenceOf(pl);
+      const thin = isThin(pl, meta.askedProj);
+      const warn = thin
+        ? ` <b class="warn" title="${esc(ev.known
+            ? `Only ${ev.value} ${ev.label} — this projection is standing on `
+              + `almost no football.`
+            : `Projected ${fmt(pl.med)} points. This slate carries no `
+              + `playing-time evidence, so that number is all there is to go `
+              + `on.`)}">⚠</b>`
+        : "";
       return `<tr class="${cls}"><td class="l">${p.cpt ? '<span class="chip">CPT</span> ' : ""}
-        ${esc(pl.name)}</td><td class="l">${esc(pl.pos)}</td>
+        ${esc(pl.name)}${warn}</td><td class="l">${esc(pl.pos)}</td>
         <td class="l">${esc(pl.team)}</td><td>${money(p.cost)}</td>
         <td>${fmt(pl.med)}</td><td>${fmt(pl.own * 100)}%</td>
         <td class="${lcls}">${Number.isFinite(lev)
@@ -1217,6 +1314,16 @@ function render(chosen, meta) {
       ? ` — the $${meta.minSpend.toLocaleString()} salary floor was UNREACHABLE and has been ignored`
       : meta.minSpend
         ? ` — every lineup spends at least $${meta.minSpend.toLocaleString()}`
+        : "")
+    + (meta.projDropped
+        ? ` — the ${meta.askedProj}-point projection floor left no legal `
+          + `lineup and has been IGNORED, so check the thin players marked ⚠`
+        : meta.minProj
+          ? ` — nobody projected under ${meta.minProj} points`
+          : "")
+    + (meta.askedProj && !meta.evidence
+        ? " — this slate carries no playing-time evidence, so the projection "
+          + "floor is the only guard against a man who has barely played"
         : "");
   if (NOTES.length) $("status").textContent += " — " + NOTES.join("; ");
 }
@@ -1289,8 +1396,18 @@ function drawBoard() {
     const cls = LOCK.has(i) ? "locked" : FADE.has(i) ? "excluded" : "";
     const q = p.status === "questionable"
       ? '<span class="pill q">Q</span>' : "";
+    // Marked on the board too, so a thin player is visible BEFORE he turns up
+    // in a lineup rather than only afterwards.
+    const ev = evidenceOf(p);
+    const warn = isThin(p, Math.max(0, Number($("minproj").value) || 0))
+      ? ` <b class="warn" title="${esc(ev.known
+          ? `Only ${ev.value} ${ev.label} — barely any football behind this `
+            + `projection.`
+          : `Projected ${fmt(p.med)} points, and this slate carries no `
+            + `playing-time evidence.`)}">⚠</b>`
+      : "";
     return `<tr class="${cls}">
-      <td class="l">${esc(p.name)}${q}</td><td class="l">${esc(p.pos)}</td>
+      <td class="l">${esc(p.name)}${q}${warn}</td><td class="l">${esc(p.pos)}</td>
       <td class="l">${esc(p.team)}</td><td>${money(p.salary)}</td>
       <td>${fmt(p.med)}</td><td>${fmt(p.ceil)}</td><td>${fmt(per, 2)}</td>
       <td>${fmt(p.own * 100)}%</td><td>${fmt(p.lev, 2)}</td>
@@ -1369,6 +1486,9 @@ function drawHonesty() {
 const whenLoaded = fn => () => { if (SLATE) fn(); };
 
 $("stack").onchange = whenLoaded(drawStackBoard);
+// Repaints the board so the ⚠ marks move with the floor you just set, and you
+// can see who it will exclude before spending a build finding out.
+$("minproj").onchange = whenLoaded(drawBoard);
 $("run").onclick = build;
 $("reset").onclick = whenLoaded(() => {
   LOCK.clear(); FADE.clear(); drawBoard();
