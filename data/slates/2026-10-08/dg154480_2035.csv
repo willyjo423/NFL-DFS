@@ -1,0 +1,56 @@
+dk_player_id,draftable_id,name,position,team,salary,roster_slot,status,disabled,attributes,game,starts_utc,norm,flex_eligible,captain_salary,playing,draft_group,game_type,captured_at
+329,0,Browns,DST,CLE,4400,512,,False,,CLE @ NYJ,1970-01-01 00:29:51.738000+00:00,browns,0,4400,clear,154480,Showdown Captain Mode,2026-10-08T20:35:24+00:00
+352,0,Jets,DST,NYJ,4000,512,,False,,CLE @ NYJ,1970-01-01 00:29:51.738000+00:00,jets,0,4000,clear,154480,Showdown Captain Mode,2026-10-08T20:35:24+00:00
+513856,0,Geno Smith,QB,NYJ,9000,512,,False,,CLE @ NYJ,1970-01-01 00:29:51.738000+00:00,geno smith,0,9000,clear,154480,Showdown Captain Mode,2026-10-08T20:35:24+00:00
+556483,0,Michael Burton,RB,CLE,200,512,,False,,CLE @ NYJ,1970-01-01 00:29:51.738000+00:00,michael burton,0,200,clear,154480,Showdown Captain Mode,2026-10-08T20:35:24+00:00
+691278,0,Sterling Shepard,WR,NYJ,1000,512,,False,,CLE @ NYJ,1970-01-01 00:29:51.738000+00:00,sterling shepard,0,1000,clear,154480,Showdown Captain Mode,2026-10-08T20:35:24+00:00
+821895,0,Jason Sanders,K,NYJ,4800,512,,False,,CLE @ NYJ,1970-01-01 00:29:51.738000+00:00,jason sanders,0,4800,clear,154480,Showdown Captain Mode,2026-10-08T20:35:24+00:00
+824428,0,Andrew Beck,RB,NYJ,400,512,,False,,CLE @ NYJ,1970-01-01 00:29:51.738000+00:00,andrew beck,0,400,clear,154480,Showdown Captain Mode,2026-10-08T20:35:24+00:00
+828743,0,Deshaun Watson,QB,CLE,9400,512,,False,,CLE @ NYJ,1970-01-01 00:29:51.738000+00:00,deshaun watson,0,9400,clear,154480,Showdown Captain Mode,2026-10-08T20:35:24+00:00
+838179,0,Tim Patrick,WR,NYJ,200,512,,False,,CLE @ NYJ,1970-01-01 00:29:51.738000+00:00,tim patrick,0,200,clear,154480,Showdown Captain Mode,2026-10-08T20:35:24+00:00
+877913,0,James Proche II,WR,CLE,200,512,,False,,CLE @ NYJ,1970-01-01 00:29:51.738000+00:00,james proche,0,200,clear,154480,Showdown Captain Mode,2026-10-08T20:35:24+00:00
+911236,0,Tyler Johnson,WR,NYJ,200,512,,False,,CLE @ NYJ,1970-01-01 00:29:51.738000+00:00,tyler johnson,0,200,clear,154480,Showdown Captain Mode,2026-10-08T20:35:24+00:00
+946748,0,Kene Nwangwu,RB,NYJ,200,512,,False,,CLE @ NYJ,1970-01-01 00:29:51.738000+00:00,kene nwangwu,0,200,clear,154480,Showdown Captain Mode,2026-10-08T20:35:24+00:00
+973935,0,Jerry Jeudy,WR,CLE,5400,512,,False,,CLE @ NYJ,1970-01-01 00:29:51.738000+00:00,jerry jeudy,0,5400,clear,154480,Showdown Captain Mode,2026-10-08T20:35:24+00:00
+975503,0,Jelani Woods,TE,NYJ,600,512,,False,,CLE @ NYJ,1970-01-01 00:29:51.738000+00:00,jelani woods,0,600,clear,154480,Showdown Captain Mode,2026-10-08T20:35:24+00:00
+1062546,0,Tylan Wallace,WR,CLE,800,512,,False,,CLE @ NYJ,1970-01-01 00:29:51.738000+00:00,tylan wallace,0,800,clear,154480,Showdown Captain Mode,2026-10-08T20:35:24+00:00
+1066885,0,Andre Szmyt,K,CLE,5000,512,,False,,CLE @ NYJ,1970-01-01 00:29:51.738000+00:00,andre szmyt,0,5000,clear,154480,Showdown Captain Mode,2026-10-08T20:35:24+00:00
+1073055,0,Blake Grupe,K,NYJ,4800,512,,False,,CLE @ NYJ,1970-01-01 00:29:51.738000+00:00,blake grupe,0,4800,clear,154480,Showdown Captain Mode,2026-10-08T20:35:24+00:00
+1108937,0,Jaret Patterson,RB,CLE,200,512,,False,,CLE @ NYJ,1970-01-01 00:29:51.738000+00:00,jaret patterson,0,200,clear,154480,Showdown Captain Mode,2026-10-08T20:35:24+00:00
+1109731,0,Blake Whiteheart,TE,CLE,1400,512,,False,,CLE @ NYJ,1970-01-01 00:29:51.738000+00:00,blake whiteheart,0,1400,clear,154480,Showdown Captain Mode,2026-10-08T20:35:24+00:00
+1116663,0,Will Levis,QB,NYJ,6000,512,,False,,CLE @ NYJ,1970-01-01 00:29:51.738000+00:00,will levis,0,6000,clear,154480,Showdown Captain Mode,2026-10-08T20:35:24+00:00
+1122596,0,Jeremy Ruckert,TE,NYJ,1800,512,,False,,CLE @ NYJ,1970-01-01 00:29:51.738000+00:00,jeremy ruckert,0,1800,clear,154480,Showdown Captain Mode,2026-10-08T20:35:24+00:00
+1131017,0,John FitzPatrick,TE,CLE,200,512,,False,,CLE @ NYJ,1970-01-01 00:29:51.738000+00:00,john fitzpatrick,0,200,clear,154480,Showdown Captain Mode,2026-10-08T20:35:24+00:00
+1161798,0,Eric Gray,RB,CLE,200,512,,False,,CLE @ NYJ,1970-01-01 00:29:51.738000+00:00,eric gray,0,200,clear,154480,Showdown Captain Mode,2026-10-08T20:35:24+00:00
+1162537,0,Breece Hall,RB,NYJ,9800,512,,False,,CLE @ NYJ,1970-01-01 00:29:51.738000+00:00,breece hall,0,9800,clear,154480,Showdown Captain Mode,2026-10-08T20:35:24+00:00
+1164889,0,Garrett Wilson,WR,NYJ,10600,512,,False,,CLE @ NYJ,1970-01-01 00:29:51.738000+00:00,garrett wilson,0,10600,clear,154480,Showdown Captain Mode,2026-10-08T20:35:24+00:00
+1165333,0,Dillon Gabriel,QB,CLE,6000,512,,False,,CLE @ NYJ,1970-01-01 00:29:51.738000+00:00,dillon gabriel,0,6000,clear,154480,Showdown Captain Mode,2026-10-08T20:35:24+00:00
+1172080,0,Bub Means,WR,CLE,200,512,,False,,CLE @ NYJ,1970-01-01 00:29:51.738000+00:00,bub means,0,200,clear,154480,Showdown Captain Mode,2026-10-08T20:35:24+00:00
+1176432,0,Isaiah Williams,WR,NYJ,5800,512,,False,,CLE @ NYJ,1970-01-01 00:29:51.738000+00:00,isaiah williams,0,5800,clear,154480,Showdown Captain Mode,2026-10-08T20:35:24+00:00
+1213478,0,Chip Trayanum,RB,NYJ,200,512,,False,,CLE @ NYJ,1970-01-01 00:29:51.738000+00:00,chip trayanum,0,200,clear,154480,Showdown Captain Mode,2026-10-08T20:35:24+00:00
+1215291,0,Malachi Corley,WR,CLE,1200,512,,False,,CLE @ NYJ,1970-01-01 00:29:51.738000+00:00,malachi corley,0,1200,clear,154480,Showdown Captain Mode,2026-10-08T20:35:24+00:00
+1218653,0,Arian Smith,WR,NYJ,200,512,,False,,CLE @ NYJ,1970-01-01 00:29:51.738000+00:00,arian smith,0,200,clear,154480,Showdown Captain Mode,2026-10-08T20:35:24+00:00
+1229756,0,Joe Royer,TE,CLE,200,512,,False,,CLE @ NYJ,1970-01-01 00:29:51.738000+00:00,joe royer,0,200,clear,154480,Showdown Captain Mode,2026-10-08T20:35:24+00:00
+1271609,0,Isaiah Davis,RB,NYJ,3200,512,,False,,CLE @ NYJ,1970-01-01 00:29:51.738000+00:00,isaiah davis,0,3200,clear,154480,Showdown Captain Mode,2026-10-08T20:35:24+00:00
+1271738,0,Jaleel McLaughlin,RB,CLE,2400,512,,False,,CLE @ NYJ,1970-01-01 00:29:51.738000+00:00,jaleel mclaughlin,0,2400,clear,154480,Showdown Captain Mode,2026-10-08T20:35:24+00:00
+1272321,0,Shedeur Sanders,QB,CLE,6000,512,,False,,CLE @ NYJ,1970-01-01 00:29:51.738000+00:00,shedeur sanders,0,6000,clear,154480,Showdown Captain Mode,2026-10-08T20:35:24+00:00
+1285895,0,Raheim Sanders,RB,CLE,3600,512,,False,,CLE @ NYJ,1970-01-01 00:29:51.738000+00:00,raheim sanders,0,3600,clear,154480,Showdown Captain Mode,2026-10-08T20:35:24+00:00
+1285908,0,Adonai Mitchell,WR,NYJ,7000,512,,False,,CLE @ NYJ,1970-01-01 00:29:51.738000+00:00,adonai mitchell,0,7000,clear,154480,Showdown Captain Mode,2026-10-08T20:35:24+00:00
+1286854,0,Malik McClain,WR,NYJ,200,512,,False,,CLE @ NYJ,1970-01-01 00:29:51.738000+00:00,malik mcclain,0,200,clear,154480,Showdown Captain Mode,2026-10-08T20:35:24+00:00
+1288113,0,Taylen Green,QB,CLE,6000,512,,False,,CLE @ NYJ,1970-01-01 00:29:51.738000+00:00,taylen green,0,6000,clear,154480,Showdown Captain Mode,2026-10-08T20:35:24+00:00
+1289436,0,Al-Jay Henderson,RB,NYJ,200,512,,False,,CLE @ NYJ,1970-01-01 00:29:51.738000+00:00,al jay henderson,0,200,clear,154480,Showdown Captain Mode,2026-10-08T20:35:24+00:00
+1322393,0,Jimmy Horn Jr.,WR,CLE,200,512,,False,,CLE @ NYJ,1970-01-01 00:29:51.738000+00:00,jimmy horn,0,200,clear,154480,Showdown Captain Mode,2026-10-08T20:35:24+00:00
+1325231,0,Braelon Allen,RB,NYJ,8800,512,,False,,CLE @ NYJ,1970-01-01 00:29:51.738000+00:00,braelon allen,0,8800,clear,154480,Showdown Captain Mode,2026-10-08T20:35:24+00:00
+1378287,0,Cade Klubnik,QB,NYJ,6000,512,,False,,CLE @ NYJ,1970-01-01 00:29:51.738000+00:00,cade klubnik,0,6000,clear,154480,Showdown Captain Mode,2026-10-08T20:35:24+00:00
+1379904,0,Denzel Boston,WR,CLE,8200,512,,False,,CLE @ NYJ,1970-01-01 00:29:51.738000+00:00,denzel boston,0,8200,clear,154480,Showdown Captain Mode,2026-10-08T20:35:24+00:00
+1381263,0,Mason Taylor,TE,NYJ,2800,512,,False,,CLE @ NYJ,1970-01-01 00:29:51.738000+00:00,mason taylor,0,2800,clear,154480,Showdown Captain Mode,2026-10-08T20:35:24+00:00
+1382993,0,Jamaal Pritchett,WR,NYJ,200,512,,False,,CLE @ NYJ,1970-01-01 00:29:51.738000+00:00,jamaal pritchett,0,200,clear,154480,Showdown Captain Mode,2026-10-08T20:35:24+00:00
+1383807,0,Quinshon Judkins,RB,CLE,9600,512,,False,,CLE @ NYJ,1970-01-01 00:29:51.738000+00:00,quinshon judkins,0,9600,clear,154480,Showdown Captain Mode,2026-10-08T20:35:24+00:00
+1384626,0,Carsen Ryan,TE,CLE,200,512,,False,,CLE @ NYJ,1970-01-01 00:29:51.738000+00:00,carsen ryan,0,200,clear,154480,Showdown Captain Mode,2026-10-08T20:35:24+00:00
+1393863,0,Cody Hardy,TE,NYJ,200,512,,False,,CLE @ NYJ,1970-01-01 00:29:51.738000+00:00,cody hardy,0,200,clear,154480,Showdown Captain Mode,2026-10-08T20:35:24+00:00
+1394752,0,Harold Fannin Jr.,TE,CLE,7400,512,,False,,CLE @ NYJ,1970-01-01 00:29:51.738000+00:00,harold fannin,0,7400,clear,154480,Showdown Captain Mode,2026-10-08T20:35:24+00:00
+1394825,0,Omar Cooper Jr.,WR,NYJ,200,512,,False,,CLE @ NYJ,1970-01-01 00:29:51.738000+00:00,omar cooper,0,200,clear,154480,Showdown Captain Mode,2026-10-08T20:35:24+00:00
+1398503,0,Isaiah Bond,WR,CLE,2000,512,,False,,CLE @ NYJ,1970-01-01 00:29:51.738000+00:00,isaiah bond,0,2000,clear,154480,Showdown Captain Mode,2026-10-08T20:35:24+00:00
+1399910,0,Dylan Sampson,RB,CLE,200,512,,False,,CLE @ NYJ,1970-01-01 00:29:51.738000+00:00,dylan sampson,0,200,clear,154480,Showdown Captain Mode,2026-10-08T20:35:24+00:00
+1441576,0,KC Concepcion Jr.,WR,CLE,7200,512,,False,,CLE @ NYJ,1970-01-01 00:29:51.738000+00:00,kc concepcion,0,7200,clear,154480,Showdown Captain Mode,2026-10-08T20:35:24+00:00
+1444547,0,Kenyon Sadiq,TE,NYJ,6400,512,,False,,CLE @ NYJ,1970-01-01 00:29:51.738000+00:00,kenyon sadiq,0,6400,clear,154480,Showdown Captain Mode,2026-10-08T20:35:24+00:00
