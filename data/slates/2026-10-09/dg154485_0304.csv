@@ -1,0 +1,61 @@
+dk_player_id,draftable_id,name,position,team,salary,roster_slot,status,disabled,attributes,game,starts_utc,norm,flex_eligible,captain_salary,playing,draft_group,game_type,captured_at
+359,0,49ers,DST,SF,3400,512,,False,,SF @ SEA,1970-01-01 00:29:51.750300+00:00,49ers,0,3400,clear,154485,Showdown Captain Mode,2026-10-09T03:04:59+00:00
+361,0,Seahawks,DST,SEA,3800,512,,False,,SF @ SEA,1970-01-01 00:29:51.750300+00:00,seahawks,0,3800,clear,154485,Showdown Captain Mode,2026-10-09T03:04:59+00:00
+501150,0,Kyle Juszczyk,RB,SF,1400,512,,False,,SF @ SEA,1970-01-01 00:29:51.750300+00:00,kyle juszczyk,0,1400,clear,154485,Showdown Captain Mode,2026-10-09T03:04:59+00:00
+518088,0,Jason Myers,K,SEA,5400,512,,False,,SF @ SEA,1970-01-01 00:29:51.750300+00:00,jason myers,0,5400,clear,154485,Showdown Captain Mode,2026-10-09T03:04:59+00:00
+593587,0,Mike Evans,WR,SF,9000,512,,False,,SF @ SEA,1970-01-01 00:29:51.750300+00:00,mike evans,0,9000,clear,154485,Showdown Captain Mode,2026-10-09T03:04:59+00:00
+607864,0,Brandin Cooks,WR,SF,2800,512,,False,,SF @ SEA,1970-01-01 00:29:51.750300+00:00,brandin cooks,0,2800,clear,154485,Showdown Captain Mode,2026-10-09T03:04:59+00:00
+694931,0,Eric Saubert,TE,SEA,1600,512,,False,,SF @ SEA,1970-01-01 00:29:51.750300+00:00,eric saubert,0,1600,clear,154485,Showdown Captain Mode,2026-10-09T03:04:59+00:00
+698227,0,Cooper Kupp,WR,SEA,4800,512,,False,,SF @ SEA,1970-01-01 00:29:51.750300+00:00,cooper kupp,0,4800,clear,154485,Showdown Captain Mode,2026-10-09T03:04:59+00:00
+727279,0,Demarcus Robinson,WR,SF,200,512,,False,,SF @ SEA,1970-01-01 00:29:51.750300+00:00,demarcus robinson,0,200,clear,154485,Showdown Captain Mode,2026-10-09T03:04:59+00:00
+733672,0,George Kittle,TE,SF,7200,512,,False,,SF @ SEA,1970-01-01 00:29:51.750300+00:00,george kittle,0,7200,clear,154485,Showdown Captain Mode,2026-10-09T03:04:59+00:00
+830517,0,Christian McCaffrey,RB,SF,11400,512,,False,,SF @ SEA,1970-01-01 00:29:51.750300+00:00,christian mccaffrey,0,11400,clear,154485,Showdown Captain Mode,2026-10-09T03:04:59+00:00
+830686,0,Malik Turner,WR,SF,200,512,,False,,SF @ SEA,1970-01-01 00:29:51.750300+00:00,malik turner,0,200,clear,154485,Showdown Captain Mode,2026-10-09T03:04:59+00:00
+835749,0,Deebo Samuel Sr.,WR,SF,8000,512,,False,,SF @ SEA,1970-01-01 00:29:51.750300+00:00,deebo samuel,0,8000,clear,154485,Showdown Captain Mode,2026-10-09T03:04:59+00:00
+837820,0,Dante Pettis,WR,SF,200,512,,False,,SF @ SEA,1970-01-01 00:29:51.750300+00:00,dante pettis,0,200,clear,154485,Showdown Captain Mode,2026-10-09T03:04:59+00:00
+865801,0,Christian Kirk,WR,SF,2400,512,,False,,SF @ SEA,1970-01-01 00:29:51.750300+00:00,christian kirk,0,2400,clear,154485,Showdown Captain Mode,2026-10-09T03:04:59+00:00
+880026,0,Sam Darnold,QB,SEA,9400,512,,False,,SF @ SEA,1970-01-01 00:29:51.750300+00:00,sam darnold,0,9400,clear,154485,Showdown Captain Mode,2026-10-09T03:04:59+00:00
+882345,0,Drew Lock,QB,SEA,6000,512,,False,,SF @ SEA,1970-01-01 00:29:51.750300+00:00,drew lock,0,6000,clear,154485,Showdown Captain Mode,2026-10-09T03:04:59+00:00
+883312,0,Irvin Charles,WR,SEA,200,512,,False,,SF @ SEA,1970-01-01 00:29:51.750300+00:00,irvin charles,0,200,clear,154485,Showdown Captain Mode,2026-10-09T03:04:59+00:00
+910383,0,Eddy Pineiro,K,SF,5200,512,,False,,SF @ SEA,1970-01-01 00:29:51.750300+00:00,eddy pineiro,0,5200,clear,154485,Showdown Captain Mode,2026-10-09T03:04:59+00:00
+911985,0,Jack Stoll,TE,SF,200,512,,False,,SF @ SEA,1970-01-01 00:29:51.750300+00:00,jack stoll,0,200,clear,154485,Showdown Captain Mode,2026-10-09T03:04:59+00:00
+919304,0,Velus Jones Jr.,RB,SEA,1000,512,,False,,SF @ SEA,1970-01-01 00:29:51.750300+00:00,velus jones,0,1000,clear,154485,Showdown Captain Mode,2026-10-09T03:04:59+00:00
+923412,0,Rashid Shaheed,WR,SEA,5000,512,,False,,SF @ SEA,1970-01-01 00:29:51.750300+00:00,rashid shaheed,0,5000,clear,154485,Showdown Captain Mode,2026-10-09T03:04:59+00:00
+946541,0,Luke Farrell,TE,SF,1200,512,,False,,SF @ SEA,1970-01-01 00:29:51.750300+00:00,luke farrell,0,1200,clear,154485,Showdown Captain Mode,2026-10-09T03:04:59+00:00
+973945,0,Mac Jones,QB,SF,6000,512,,False,,SF @ SEA,1970-01-01 00:29:51.750300+00:00,mac jones,0,6000,clear,154485,Showdown Captain Mode,2026-10-09T03:04:59+00:00
+1064955,0,Brady Russell,RB,SEA,400,512,,False,,SF @ SEA,1970-01-01 00:29:51.750300+00:00,brady russell,0,400,clear,154485,Showdown Captain Mode,2026-10-09T03:04:59+00:00
+1068872,0,Jake Tonges,TE,SF,200,512,,False,,SF @ SEA,1970-01-01 00:29:51.750300+00:00,jake tonges,0,200,clear,154485,Showdown Captain Mode,2026-10-09T03:04:59+00:00
+1107034,0,Brandon Aiyuk,WR,SF,200,512,,False,,SF @ SEA,1970-01-01 00:29:51.750300+00:00,brandon aiyuk,0,200,clear,154485,Showdown Captain Mode,2026-10-09T03:04:59+00:00
+1121050,0,Jake Bobo,WR,SEA,200,512,,False,,SF @ SEA,1970-01-01 00:29:51.750300+00:00,jake bobo,0,200,clear,154485,Showdown Captain Mode,2026-10-09T03:04:59+00:00
+1121761,0,Brock Purdy,QB,SF,10000,512,,False,,SF @ SEA,1970-01-01 00:29:51.750300+00:00,brock purdy,0,10000,clear,154485,Showdown Captain Mode,2026-10-09T03:04:59+00:00
+1125589,0,Brayden Willis,TE,SF,200,512,,False,,SF @ SEA,1970-01-01 00:29:51.750300+00:00,brayden willis,0,200,clear,154485,Showdown Captain Mode,2026-10-09T03:04:59+00:00
+1126338,0,Isaac Guerendo,RB,SF,200,512,,False,,SF @ SEA,1970-01-01 00:29:51.750300+00:00,isaac guerendo,0,200,clear,154485,Showdown Captain Mode,2026-10-09T03:04:59+00:00
+1137635,0,Xavier Smith,WR,SF,200,512,,False,,SF @ SEA,1970-01-01 00:29:51.750300+00:00,xavier smith,0,200,clear,154485,Showdown Captain Mode,2026-10-09T03:04:59+00:00
+1161416,0,Ricky Pearsall,WR,SF,200,512,,False,,SF @ SEA,1970-01-01 00:29:51.750300+00:00,ricky pearsall,0,200,clear,154485,Showdown Captain Mode,2026-10-09T03:04:59+00:00
+1164530,0,Zach Charbonnet,RB,SEA,7000,512,,False,,SF @ SEA,1970-01-01 00:29:51.750300+00:00,zach charbonnet,0,7000,clear,154485,Showdown Captain Mode,2026-10-09T03:04:59+00:00
+1164736,0,Nick Kallerup,TE,SEA,200,512,,False,,SF @ SEA,1970-01-01 00:29:51.750300+00:00,nick kallerup,0,200,clear,154485,Showdown Captain Mode,2026-10-09T03:04:59+00:00
+1166235,0,Sincere McCormick,RB,SF,200,512,,False,,SF @ SEA,1970-01-01 00:29:51.750300+00:00,sincere mccormick,0,200,clear,154485,Showdown Captain Mode,2026-10-09T03:04:59+00:00
+1166989,0,Kurtis Rourke,QB,SF,6000,512,,False,,SF @ SEA,1970-01-01 00:29:51.750300+00:00,kurtis rourke,0,6000,clear,154485,Showdown Captain Mode,2026-10-09T03:04:59+00:00
+1168745,0,Dontae McMillan,RB,SEA,200,512,,False,,SF @ SEA,1970-01-01 00:29:51.750300+00:00,dontae mcmillan,0,200,clear,154485,Showdown Captain Mode,2026-10-09T03:04:59+00:00
+1180625,0,George Holani,RB,SEA,4400,512,,False,,SF @ SEA,1970-01-01 00:29:51.750300+00:00,george holani,0,4400,clear,154485,Showdown Captain Mode,2026-10-09T03:04:59+00:00
+1181861,0,Jacob Cowing,WR,SF,200,512,,False,,SF @ SEA,1970-01-01 00:29:51.750300+00:00,jacob cowing,0,200,clear,154485,Showdown Captain Mode,2026-10-09T03:04:59+00:00
+1214087,0,Jaxon Smith-Njigba,WR,SEA,11800,512,,False,,SF @ SEA,1970-01-01 00:29:51.750300+00:00,jaxon smith njigba,0,11800,clear,154485,Showdown Captain Mode,2026-10-09T03:04:59+00:00
+1215772,0,Kaelon Black,RB,SF,3200,512,,False,,SF @ SEA,1970-01-01 00:29:51.750300+00:00,kaelon black,0,3200,clear,154485,Showdown Captain Mode,2026-10-09T03:04:59+00:00
+1222835,0,Jordan Watkins,WR,SF,2000,512,,False,,SF @ SEA,1970-01-01 00:29:51.750300+00:00,jordan watkins,0,2000,clear,154485,Showdown Captain Mode,2026-10-09T03:04:59+00:00
+1223393,0,Tory Horton,WR,SEA,3000,512,,False,,SF @ SEA,1970-01-01 00:29:51.750300+00:00,tory horton,0,3000,clear,154485,Showdown Captain Mode,2026-10-09T03:04:59+00:00
+1229089,0,Malick Meiga,WR,SEA,200,512,,False,,SF @ SEA,1970-01-01 00:29:51.750300+00:00,malick meiga,0,200,clear,154485,Showdown Captain Mode,2026-10-09T03:04:59+00:00
+1229503,0,AJ Barner,TE,SEA,4200,512,,False,,SF @ SEA,1970-01-01 00:29:51.750300+00:00,aj barner,0,4200,clear,154485,Showdown Captain Mode,2026-10-09T03:04:59+00:00
+1229846,0,Ricky White III,WR,SEA,200,512,,False,,SF @ SEA,1970-01-01 00:29:51.750300+00:00,ricky white,0,200,clear,154485,Showdown Captain Mode,2026-10-09T03:04:59+00:00
+1229869,0,Montorie Foster Jr.,WR,SEA,200,512,,False,,SF @ SEA,1970-01-01 00:29:51.750300+00:00,montorie foster,0,200,clear,154485,Showdown Captain Mode,2026-10-09T03:04:59+00:00
+1285958,0,Robbie Ouzts,RB,SEA,200,512,,False,,SF @ SEA,1970-01-01 00:29:51.750300+00:00,robbie ouzts,0,200,clear,154485,Showdown Captain Mode,2026-10-09T03:04:59+00:00
+1286818,0,De'Zhaun Stribling,WR,SF,200,512,,False,,SF @ SEA,1970-01-01 00:29:51.750300+00:00,dezhaun stribling,0,200,clear,154485,Showdown Captain Mode,2026-10-09T03:04:59+00:00
+1286840,0,Elijah Arroyo,TE,SEA,600,512,,False,,SF @ SEA,1970-01-01 00:29:51.750300+00:00,elijah arroyo,0,600,clear,154485,Showdown Captain Mode,2026-10-09T03:04:59+00:00
+1288045,0,Will Pauling,WR,SF,200,512,,False,,SF @ SEA,1970-01-01 00:29:51.750300+00:00,will pauling,0,200,clear,154485,Showdown Captain Mode,2026-10-09T03:04:59+00:00
+1290102,0,Jalen Milroe,QB,SEA,6000,512,,False,,SF @ SEA,1970-01-01 00:29:51.750300+00:00,jalen milroe,0,6000,clear,154485,Showdown Captain Mode,2026-10-09T03:04:59+00:00
+1310628,0,Khalil Dinkins,TE,SF,200,512,,False,,SF @ SEA,1970-01-01 00:29:51.750300+00:00,khalil dinkins,0,200,clear,154485,Showdown Captain Mode,2026-10-09T03:04:59+00:00
+1383791,0,Jadarian Price,RB,SEA,200,512,,False,,SF @ SEA,1970-01-01 00:29:51.750300+00:00,jadarian price,0,200,clear,154485,Showdown Captain Mode,2026-10-09T03:04:59+00:00
+1390913,0,Wesley Grimes,WR,SF,200,512,,False,,SF @ SEA,1970-01-01 00:29:51.750300+00:00,wesley grimes,0,200,clear,154485,Showdown Captain Mode,2026-10-09T03:04:59+00:00
+1398511,0,Emmanuel Henderson Jr.,WR,SEA,200,512,,False,,SF @ SEA,1970-01-01 00:29:51.750300+00:00,emmanuel henderson,0,200,clear,154485,Showdown Captain Mode,2026-10-09T03:04:59+00:00
+1400657,0,Jordan James,RB,SF,800,512,,False,,SF @ SEA,1970-01-01 00:29:51.750300+00:00,jordan james,0,800,clear,154485,Showdown Captain Mode,2026-10-09T03:04:59+00:00
+1443998,0,Robert Henry Jr.,RB,SEA,200,512,,False,,SF @ SEA,1970-01-01 00:29:51.750300+00:00,robert henry,0,200,clear,154485,Showdown Captain Mode,2026-10-09T03:04:59+00:00
+1447759,0,Emanuel Wilson,RB,SEA,7400,512,,False,,SF @ SEA,1970-01-01 00:29:51.750300+00:00,emanuel wilson,0,7400,clear,154485,Showdown Captain Mode,2026-10-09T03:04:59+00:00

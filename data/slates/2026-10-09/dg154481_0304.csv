@@ -1,0 +1,60 @@
+dk_player_id,draftable_id,name,position,team,salary,roster_slot,status,disabled,attributes,game,starts_utc,norm,flex_eligible,captain_salary,playing,draft_group,game_type,captured_at
+347,0,Vikings,DST,MIN,5200,512,,False,,MIN @ NO,1970-01-01 00:29:51.738000+00:00,vikings,0,5200,clear,154481,Showdown Captain Mode,2026-10-09T03:04:59+00:00
+350,0,Saints,DST,NO,3600,512,,False,,MIN @ NO,1970-01-01 00:29:51.738000+00:00,saints,0,3600,clear,154481,Showdown Captain Mode,2026-10-09T03:04:59+00:00
+300580,0,Andrew DePaola,TE,MIN,200,512,,False,,MIN @ NO,1970-01-01 00:29:51.738000+00:00,andrew depaola,0,200,clear,154481,Showdown Captain Mode,2026-10-09T03:04:59+00:00
+589984,0,Odell Beckham Jr.,WR,MIN,2200,512,,False,,MIN @ NO,1970-01-01 00:29:51.738000+00:00,odell beckham,0,2200,clear,154481,Showdown Captain Mode,2026-10-09T03:04:59+00:00
+606799,0,Zach Wood,TE,NO,200,512,,False,,MIN @ NO,1970-01-01 00:29:51.738000+00:00,zach wood,0,200,clear,154481,Showdown Captain Mode,2026-10-09T03:04:59+00:00
+613866,0,Carson Wentz,QB,MIN,6000,512,,False,,MIN @ NO,1970-01-01 00:29:51.738000+00:00,carson wentz,0,6000,clear,154481,Showdown Captain Mode,2026-10-09T03:04:59+00:00
+741314,0,Aaron Jones Sr.,RB,MIN,10000,512,,False,,MIN @ NO,1970-01-01 00:29:51.738000+00:00,aaron jones,0,10000,clear,154481,Showdown Captain Mode,2026-10-09T03:04:59+00:00
+744439,0,Daniel Carlson,K,NO,4600,512,,False,,MIN @ NO,1970-01-01 00:29:51.738000+00:00,daniel carlson,0,4600,clear,154481,Showdown Captain Mode,2026-10-09T03:04:59+00:00
+750846,0,Alvin Kamara,RB,NO,8000,512,,False,,MIN @ NO,1970-01-01 00:29:51.738000+00:00,alvin kamara,0,8000,clear,154481,Showdown Captain Mode,2026-10-09T03:04:59+00:00
+867009,0,Jauan Jennings,WR,MIN,5000,512,,False,,MIN @ NO,1970-01-01 00:29:51.738000+00:00,jauan jennings,0,5000,clear,154481,Showdown Captain Mode,2026-10-09T03:04:59+00:00
+879799,0,Kyler Murray,QB,MIN,9600,512,,False,,MIN @ NO,1970-01-01 00:29:51.738000+00:00,kyler murray,0,9600,clear,154481,Showdown Captain Mode,2026-10-09T03:04:59+00:00
+881779,0,Josh Oliver,TE,MIN,200,512,,False,,MIN @ NO,1970-01-01 00:29:51.738000+00:00,josh oliver,0,200,clear,154481,Showdown Captain Mode,2026-10-09T03:04:59+00:00
+884609,0,Juwan Johnson,TE,NO,6400,512,,False,,MIN @ NO,1970-01-01 00:29:51.738000+00:00,juwan johnson,0,6400,clear,154481,Showdown Captain Mode,2026-10-09T03:04:59+00:00
+923911,0,Noah Fant,TE,NO,3400,512,,False,,MIN @ NO,1970-01-01 00:29:51.738000+00:00,noah fant,0,3400,clear,154481,Showdown Captain Mode,2026-10-09T03:04:59+00:00
+923915,0,T.J. Hockenson,TE,MIN,6800,512,,False,,MIN @ NO,1970-01-01 00:29:51.738000+00:00,t j hockenson,0,6800,clear,154481,Showdown Captain Mode,2026-10-09T03:04:59+00:00
+976309,0,DeeJay Dallas,RB,MIN,2400,512,,False,,MIN @ NO,1970-01-01 00:29:51.738000+00:00,deejay dallas,0,2400,clear,154481,Showdown Captain Mode,2026-10-09T03:04:59+00:00
+978577,0,Travis Etienne Jr.,RB,NO,200,512,,False,,MIN @ NO,1970-01-01 00:29:51.738000+00:00,travis etienne,0,200,clear,154481,Showdown Captain Mode,2026-10-09T03:04:59+00:00
+1056865,0,Stone Smartt,TE,NO,200,512,,False,,MIN @ NO,1970-01-01 00:29:51.738000+00:00,stone smartt,0,200,clear,154481,Showdown Captain Mode,2026-10-09T03:04:59+00:00
+1059576,0,Ty Chandler,RB,NO,200,512,,False,,MIN @ NO,1970-01-01 00:29:51.738000+00:00,ty chandler,0,200,clear,154481,Showdown Captain Mode,2026-10-09T03:04:59+00:00
+1061591,0,Cal Adomitis,TE,NO,200,512,,False,,MIN @ NO,1970-01-01 00:29:51.738000+00:00,cal adomitis,0,200,clear,154481,Showdown Captain Mode,2026-10-09T03:04:59+00:00
+1069535,0,Justin Jefferson,WR,MIN,10800,512,,False,,MIN @ NO,1970-01-01 00:29:51.738000+00:00,justin jefferson,0,10800,clear,154481,Showdown Captain Mode,2026-10-09T03:04:59+00:00
+1106382,0,Jeshaun Jones,WR,MIN,200,512,,False,,MIN @ NO,1970-01-01 00:29:51.738000+00:00,jeshaun jones,0,200,clear,154481,Showdown Captain Mode,2026-10-09T03:04:59+00:00
+1108052,0,Zach Wilson,QB,NO,6000,512,,False,,MIN @ NO,1970-01-01 00:29:51.738000+00:00,zach wilson,0,6000,clear,154481,Showdown Captain Mode,2026-10-09T03:04:59+00:00
+1110306,0,Tyler Shough,QB,NO,10600,512,,False,,MIN @ NO,1970-01-01 00:29:51.738000+00:00,tyler shough,0,10600,clear,154481,Showdown Captain Mode,2026-10-09T03:04:59+00:00
+1110697,0,Zamir White,RB,NO,200,512,,False,,MIN @ NO,1970-01-01 00:29:51.738000+00:00,zamir white,0,200,clear,154481,Showdown Captain Mode,2026-10-09T03:04:59+00:00
+1116001,0,Jordan Mason,RB,MIN,200,512,,False,,MIN @ NO,1970-01-01 00:29:51.738000+00:00,jordan mason,0,200,clear,154481,Showdown Captain Mode,2026-10-09T03:04:59+00:00
+1122592,0,Chris Olave,WR,NO,11200,512,,False,,MIN @ NO,1970-01-01 00:29:51.738000+00:00,chris olave,0,11200,clear,154481,Showdown Captain Mode,2026-10-09T03:04:59+00:00
+1124664,0,Cedric Tillman,WR,NO,200,512,,False,,MIN @ NO,1970-01-01 00:29:51.738000+00:00,cedric tillman,0,200,clear,154481,Showdown Captain Mode,2026-10-09T03:04:59+00:00
+1130526,0,Kevin Austin Jr.,WR,NO,800,512,,False,,MIN @ NO,1970-01-01 00:29:51.738000+00:00,kevin austin,0,800,clear,154481,Showdown Captain Mode,2026-10-09T03:04:59+00:00
+1160352,0,Will Reichard,K,MIN,4800,512,,False,,MIN @ NO,1970-01-01 00:29:51.738000+00:00,will reichard,0,4800,clear,154481,Showdown Captain Mode,2026-10-09T03:04:59+00:00
+1161739,0,Trey Palmer,WR,NO,200,512,,False,,MIN @ NO,1970-01-01 00:29:51.738000+00:00,trey palmer,0,200,clear,154481,Showdown Captain Mode,2026-10-09T03:04:59+00:00
+1164788,0,Devaughn Vele,WR,NO,7200,512,,False,,MIN @ NO,1970-01-01 00:29:51.738000+00:00,devaughn vele,0,7200,clear,154481,Showdown Captain Mode,2026-10-09T03:04:59+00:00
+1169329,0,Max Brosmer,QB,MIN,6000,512,,False,,MIN @ NO,1970-01-01 00:29:51.738000+00:00,max brosmer,0,6000,clear,154481,Showdown Captain Mode,2026-10-09T03:04:59+00:00
+1170916,0,Jalen Moreno-Cropper,WR,NO,200,512,,False,,MIN @ NO,1970-01-01 00:29:51.738000+00:00,jalen moreno cropper,0,200,clear,154481,Showdown Captain Mode,2026-10-09T03:04:59+00:00
+1172752,0,Treyton Welch,TE,NO,200,512,,False,,MIN @ NO,1970-01-01 00:29:51.738000+00:00,treyton welch,0,200,clear,154481,Showdown Captain Mode,2026-10-09T03:04:59+00:00
+1173485,0,Ulysses Bentley IV,RB,NO,200,512,,False,,MIN @ NO,1970-01-01 00:29:51.738000+00:00,ulysses bentley,0,200,clear,154481,Showdown Captain Mode,2026-10-09T03:04:59+00:00
+1174752,0,Spencer Rattler,QB,NO,6000,512,,False,,MIN @ NO,1970-01-01 00:29:51.738000+00:00,spencer rattler,0,6000,clear,154481,Showdown Captain Mode,2026-10-09T03:04:59+00:00
+1180557,0,Kyrese Rowan,WR,NO,200,512,,False,,MIN @ NO,1970-01-01 00:29:51.738000+00:00,kyrese rowan,0,200,clear,154481,Showdown Captain Mode,2026-10-09T03:04:59+00:00
+1182695,0,Mason Tipton,WR,NO,200,512,,False,,MIN @ NO,1970-01-01 00:29:51.738000+00:00,mason tipton,0,200,clear,154481,Showdown Captain Mode,2026-10-09T03:04:59+00:00
+1213867,0,Kendre Miller,RB,NO,4000,512,,False,,MIN @ NO,1970-01-01 00:29:51.738000+00:00,kendre miller,0,4000,clear,154481,Showdown Captain Mode,2026-10-09T03:04:59+00:00
+1214250,0,Jordan Addison,WR,MIN,8800,512,,False,,MIN @ NO,1970-01-01 00:29:51.738000+00:00,jordan addison,0,8800,clear,154481,Showdown Captain Mode,2026-10-09T03:04:59+00:00
+1216808,0,Ben Yurosek,TE,MIN,200,512,,False,,MIN @ NO,1970-01-01 00:29:51.738000+00:00,ben yurosek,0,200,clear,154481,Showdown Captain Mode,2026-10-09T03:04:59+00:00
+1228728,0,Myles Price,WR,MIN,1000,512,,False,,MIN @ NO,1970-01-01 00:29:51.738000+00:00,myles price,0,1000,clear,154481,Showdown Captain Mode,2026-10-09T03:04:59+00:00
+1251513,0,Cam Grandy,TE,MIN,200,512,,False,,MIN @ NO,1970-01-01 00:29:51.738000+00:00,cam grandy,0,200,clear,154481,Showdown Captain Mode,2026-10-09T03:04:59+00:00
+1272873,0,Michael Briscoe,WR,MIN,200,512,,False,,MIN @ NO,1970-01-01 00:29:51.738000+00:00,michael briscoe,0,200,clear,154481,Showdown Captain Mode,2026-10-09T03:04:59+00:00
+1286173,0,Moliki Matavao,TE,NO,200,512,,False,,MIN @ NO,1970-01-01 00:29:51.738000+00:00,moliki matavao,0,200,clear,154481,Showdown Captain Mode,2026-10-09T03:04:59+00:00
+1287258,0,Gavin Bartholomew,TE,MIN,600,512,,False,,MIN @ NO,1970-01-01 00:29:51.738000+00:00,gavin bartholomew,0,600,clear,154481,Showdown Captain Mode,2026-10-09T03:04:59+00:00
+1287587,0,Tai Felton,WR,MIN,1200,512,,False,,MIN @ NO,1970-01-01 00:29:51.738000+00:00,tai felton,0,1200,clear,154481,Showdown Captain Mode,2026-10-09T03:04:59+00:00
+1293066,0,Devin Neal,RB,MIN,200,512,,False,,MIN @ NO,1970-01-01 00:29:51.738000+00:00,devin neal,0,200,clear,154481,Showdown Captain Mode,2026-10-09T03:04:59+00:00
+1321291,0,Audric Estime,RB,MIN,400,512,,False,,MIN @ NO,1970-01-01 00:29:51.738000+00:00,audric estime,0,400,clear,154481,Showdown Captain Mode,2026-10-09T03:04:59+00:00
+1325016,0,Bryce Lance,WR,NO,3000,512,,False,,MIN @ NO,1970-01-01 00:29:51.738000+00:00,bryce lance,0,3000,clear,154481,Showdown Captain Mode,2026-10-09T03:04:59+00:00
+1325562,0,Max Bredeson,RB,MIN,200,512,,False,,MIN @ NO,1970-01-01 00:29:51.738000+00:00,max bredeson,0,200,clear,154481,Showdown Captain Mode,2026-10-09T03:04:59+00:00
+1381105,0,Oscar Delp,TE,NO,1600,512,,False,,MIN @ NO,1970-01-01 00:29:51.738000+00:00,oscar delp,0,1600,clear,154481,Showdown Captain Mode,2026-10-09T03:04:59+00:00
+1390910,0,Demond Claiborne,RB,MIN,1400,512,,False,,MIN @ NO,1970-01-01 00:29:51.738000+00:00,demond claiborne,0,1400,clear,154481,Showdown Captain Mode,2026-10-09T03:04:59+00:00
+1394692,0,Jordyn Tyson,WR,NO,8400,512,,False,,MIN @ NO,1970-01-01 00:29:51.738000+00:00,jordyn tyson,0,8400,clear,154481,Showdown Captain Mode,2026-10-09T03:04:59+00:00
+1395681,0,CJ Donaldson,RB,NO,2000,512,,False,,MIN @ NO,1970-01-01 00:29:51.738000+00:00,cj donaldson,0,2000,clear,154481,Showdown Captain Mode,2026-10-09T03:04:59+00:00
+1395843,0,Barion Brown,WR,NO,200,512,,False,,MIN @ NO,1970-01-01 00:29:51.738000+00:00,barion brown,0,200,clear,154481,Showdown Captain Mode,2026-10-09T03:04:59+00:00
+1396942,0,Dillon Bell,WR,MIN,200,512,,False,,MIN @ NO,1970-01-01 00:29:51.738000+00:00,dillon bell,0,200,clear,154481,Showdown Captain Mode,2026-10-09T03:04:59+00:00
+1506548,0,Charlie Smyth,K,NO,4600,512,,False,,MIN @ NO,1970-01-01 00:29:51.738000+00:00,charlie smyth,0,4600,clear,154481,Showdown Captain Mode,2026-10-09T03:04:59+00:00
