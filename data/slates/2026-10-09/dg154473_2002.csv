@@ -1,0 +1,98 @@
+dk_player_id,draftable_id,name,position,team,salary,roster_slot,status,disabled,attributes,game,starts_utc,norm,flex_eligible,captain_salary,playing,draft_group,game_type,captured_at
+323,0,Falcons,DST,ATL,2400,71,,False,,BAL @ ATL,,falcons,0,2400,clear,154473,Classic,2026-10-09T20:02:35+00:00
+324,0,Bills,DST,BUF,2300,71,,False,,BUF @ LAR,,bills,0,2300,clear,154473,Classic,2026-10-09T20:02:35+00:00
+343,0,Rams,DST,LAR,3100,71,,False,,BUF @ LAR,,rams,0,3100,clear,154473,Classic,2026-10-09T20:02:35+00:00
+366,0,Ravens,DST,BAL,3300,71,,False,,BAL @ ATL,,ravens,0,3300,clear,154473,Classic,2026-10-09T20:02:35+00:00
+323205,0,Matthew Stafford,QB,LAR,6000,66,,False,,BUF @ LAR,,matthew stafford,0,6000,clear,154473,Classic,2026-10-09T20:02:35+00:00
+604176,0,Tyler Higbee,TE,LAR,3300,69,,False,,BUF @ LAR,,tyler higbee,0,3300,clear,154473,Classic,2026-10-09T20:02:35+00:00
+606488,0,Nick Vannett,TE,BAL,2500,69,,False,,BAL @ ATL,,nick vannett,0,2500,clear,154473,Classic,2026-10-09T20:02:35+00:00
+606551,0,Chris Moore,WR,BAL,3000,68,,False,,BAL @ ATL,,chris moore,0,3000,clear,154473,Classic,2026-10-09T20:02:35+00:00
+611417,0,Davante Adams,WR,LAR,6800,68,,False,,BUF @ LAR,,davante adams,0,6800,clear,154473,Classic,2026-10-09T20:02:35+00:00
+694117,0,Cooper Rush,QB,ATL,4000,66,,False,,BAL @ ATL,,cooper rush,0,4000,clear,154473,Classic,2026-10-09T20:02:35+00:00
+732145,0,Derrick Henry,RB,BAL,8000,67,,False,,BAL @ ATL,,derrick henry,0,8000,clear,154473,Classic,2026-10-09T20:02:35+00:00
+739424,0,Austin Hooper,TE,ATL,2500,69,,False,,BAL @ ATL,,austin hooper,0,2500,clear,154473,Classic,2026-10-09T20:02:35+00:00
+749968,0,Durham Smythe,TE,BAL,2500,69,,False,,BAL @ ATL,,durham smythe,0,2500,clear,154473,Classic,2026-10-09T20:02:35+00:00
+820699,0,Mark Andrews,TE,BAL,4000,69,,False,,BAL @ ATL,,mark andrews,0,4000,clear,154473,Classic,2026-10-09T20:02:35+00:00
+822350,0,Kyle Allen,QB,BUF,4000,66,,False,,BUF @ LAR,,kyle allen,0,4000,clear,154473,Classic,2026-10-09T20:02:35+00:00
+835861,0,Trent Sherfield Sr.,WR,BUF,3000,68,,False,,BUF @ LAR,,trent sherfield,0,3000,clear,154473,Classic,2026-10-09T20:02:35+00:00
+868199,0,Josh Allen,QB,BUF,7400,66,,False,,BUF @ LAR,,josh allen,0,7400,clear,154473,Classic,2026-10-09T20:02:35+00:00
+877745,0,Lamar Jackson,QB,BAL,6800,66,,False,,BAL @ ATL,,lamar jackson,0,6800,clear,154473,Classic,2026-10-09T20:02:35+00:00
+877784,0,Ty Johnson,RB,BUF,4100,67,,False,,BUF @ LAR,,ty johnson,0,4100,clear,154473,Classic,2026-10-09T20:02:35+00:00
+877790,0,DJ Moore,WR,BUF,5600,68,,False,,BUF @ LAR,,dj moore,0,5600,clear,154473,Classic,2026-10-09T20:02:35+00:00
+883976,0,Olamide Zaccheaus,WR,ATL,3000,68,,False,,BAL @ ATL,,olamide zaccheaus,0,3000,clear,154473,Classic,2026-10-09T20:02:35+00:00
+884083,0,Dawson Knox,TE,BUF,2600,69,,False,,BUF @ LAR,,dawson knox,0,2600,clear,154473,Classic,2026-10-09T20:02:35+00:00
+884315,0,Alex Bachman,WR,LAR,3000,68,,False,,BUF @ LAR,,alex bachman,0,3000,clear,154473,Classic,2026-10-09T20:02:35+00:00
+910852,0,Greg Dortch,WR,BUF,3000,68,,False,,BUF @ LAR,,greg dortch,0,3000,clear,154473,Classic,2026-10-09T20:02:35+00:00
+911619,0,Shane Buechele,QB,BUF,4000,66,,False,,BUF @ LAR,,shane buechele,0,4000,clear,154473,Classic,2026-10-09T20:02:35+00:00
+912553,0,Jonathan Ward,RB,BAL,4000,67,,False,,BAL @ ATL,,jonathan ward,0,4000,clear,154473,Classic,2026-10-09T20:02:35+00:00
+913163,0,Tyler Huntley,QB,BAL,4800,66,,False,,BAL @ ATL,,tyler huntley,0,4800,clear,154473,Classic,2026-10-09T20:02:35+00:00
+913829,0,Skylar Thompson,QB,BAL,4000,66,,False,,BAL @ ATL,,skylar thompson,0,4000,clear,154473,Classic,2026-10-09T20:02:35+00:00
+922040,0,Charlie Woerner,TE,ATL,2500,69,,False,,BAL @ ATL,,charlie woerner,0,2500,clear,154473,Classic,2026-10-09T20:02:35+00:00
+923109,0,Justice Hill,RB,BAL,4200,67,,False,,BAL @ ATL,,justice hill,0,4200,clear,154473,Classic,2026-10-09T20:02:35+00:00
+935104,0,Khalil Herbert,RB,ATL,4000,67,,False,,BAL @ ATL,,khalil herbert,0,4000,clear,154473,Classic,2026-10-09T20:02:35+00:00
+973947,0,Tua Tagovailoa,QB,ATL,4000,66,,False,,BAL @ ATL,,tua tagovailoa,0,4000,clear,154473,Classic,2026-10-09T20:02:35+00:00
+973949,0,Tyrell Shavers,WR,BUF,3000,68,,False,,BUF @ LAR,,tyrell shavers,0,3000,clear,154473,Classic,2026-10-09T20:02:35+00:00
+973966,0,Brian Robinson Jr.,RB,ATL,4700,67,,False,,BAL @ ATL,,brian robinson,0,4700,clear,154473,Classic,2026-10-09T20:02:35+00:00
+976236,0,Trey Sermon,RB,ATL,4000,67,,False,,BAL @ ATL,,trey sermon,0,4000,clear,154473,Classic,2026-10-09T20:02:35+00:00
+976804,0,Ronnie Rivers,RB,LAR,4000,67,,False,,BUF @ LAR,,ronnie rivers,0,4000,clear,154473,Classic,2026-10-09T20:02:35+00:00
+1049792,0,Nick Muse,TE,ATL,2500,69,,False,,BAL @ ATL,,nick muse,0,2500,clear,154473,Classic,2026-10-09T20:02:35+00:00
+1059612,0,Joshua Palmer,WR,BUF,3500,68,,False,,BUF @ LAR,,joshua palmer,0,3500,clear,154473,Classic,2026-10-09T20:02:35+00:00
+1060312,0,Colby Parkinson,TE,LAR,2900,69,,False,,BUF @ LAR,,colby parkinson,0,2900,clear,154473,Classic,2026-10-09T20:02:35+00:00
+1069763,0,Stetson Bennett IV,QB,LAR,4000,66,,False,,BUF @ LAR,,stetson bennett,0,4000,clear,154473,Classic,2026-10-09T20:02:35+00:00
+1106760,0,Tutu Atwell,WR,LAR,3000,68,,False,,BUF @ LAR,,tutu atwell,0,3000,clear,154473,Classic,2026-10-09T20:02:35+00:00
+1107478,0,Michael Penix Jr.,QB,ATL,4900,66,,False,,BAL @ ATL,,michael penix,0,4900,clear,154473,Classic,2026-10-09T20:02:35+00:00
+1108208,0,Rashod Bateman,WR,BAL,4100,68,,False,,BAL @ ATL,,rashod bateman,0,4100,clear,154473,Classic,2026-10-09T20:02:35+00:00
+1108534,0,Dylan Drummond,WR,ATL,3000,68,,False,,BAL @ ATL,,dylan drummond,0,3000,clear,154473,Classic,2026-10-09T20:02:35+00:00
+1120347,0,Chris Blair,WR,ATL,3000,68,,False,,BAL @ ATL,,chris blair,0,3000,clear,154473,Classic,2026-10-09T20:02:35+00:00
+1121878,0,Jahan Dotson,WR,ATL,3200,68,,False,,BAL @ ATL,,jahan dotson,0,3200,clear,154473,Classic,2026-10-09T20:02:35+00:00
+1123026,0,Kyle Pitts Sr.,TE,ATL,3700,69,,False,,BAL @ ATL,,kyle pitts,0,3700,clear,154473,Classic,2026-10-09T20:02:35+00:00
+1130603,0,Khalil Shakir,WR,BUF,5000,68,,False,,BUF @ LAR,,khalil shakir,0,5000,clear,154473,Classic,2026-10-09T20:02:35+00:00
+1131012,0,James Cook III,RB,BUF,7100,67,,False,,BUF @ LAR,,james cook,0,7100,clear,154473,Classic,2026-10-09T20:02:35+00:00
+1135513,0,Dalton Kincaid,TE,BUF,5100,69,,False,,BUF @ LAR,,dalton kincaid,0,5100,clear,154473,Classic,2026-10-09T20:02:35+00:00
+1161664,0,Davis Allen,TE,LAR,2500,69,,False,,BUF @ LAR,,davis allen,0,2500,clear,154473,Classic,2026-10-09T20:02:35+00:00
+1162128,0,Puka Nacua,WR,LAR,7800,68,,False,,BUF @ LAR,,puka nacua,0,7800,clear,154473,Classic,2026-10-09T20:02:35+00:00
+1163273,0,Jordan Whittington,WR,LAR,3000,68,,False,,BUF @ LAR,,jordan whittington,0,3000,clear,154473,Classic,2026-10-09T20:02:35+00:00
+1165229,0,Ray Davis,RB,BUF,4000,67,,False,,BUF @ LAR,,ray davis,0,4000,clear,154473,Classic,2026-10-09T20:02:35+00:00
+1167361,0,Kyren Williams,RB,LAR,6400,67,,False,,BUF @ LAR,,kyren williams,0,6400,clear,154473,Classic,2026-10-09T20:02:35+00:00
+1169299,0,Joe Fagnano,QB,BAL,4000,66,,False,,BAL @ ATL,,joe fagnano,0,4000,clear,154473,Classic,2026-10-09T20:02:35+00:00
+1173174,0,Jordan Waters,RB,LAR,4000,67,,False,,BUF @ LAR,,jordan waters,0,4000,clear,154473,Classic,2026-10-09T20:02:35+00:00
+1177053,0,Zay Flowers,WR,BAL,7000,68,,False,,BAL @ ATL,,zay flowers,0,7000,clear,154473,Classic,2026-10-09T20:02:35+00:00
+1178741,0,Drake London,WR,ATL,6700,68,,False,,BAL @ ATL,,drake london,0,6700,clear,154473,Classic,2026-10-09T20:02:35+00:00
+1182649,0,Jackson Hawes,TE,BUF,2500,69,,False,,BUF @ LAR,,jackson hawes,0,2500,clear,154473,Classic,2026-10-09T20:02:35+00:00
+1213388,0,Ja'Mori Maclin,WR,BUF,3000,68,,False,,BUF @ LAR,,jamori maclin,0,3000,clear,154473,Classic,2026-10-09T20:02:35+00:00
+1215078,0,Stephen Gosnell,WR,BUF,3000,68,,False,,BUF @ LAR,,stephen gosnell,0,3000,clear,154473,Classic,2026-10-09T20:02:35+00:00
+1215379,0,Xavier Guillory,WR,BAL,3000,68,,False,,BAL @ ATL,,xavier guillory,0,3000,clear,154473,Classic,2026-10-09T20:02:35+00:00
+1215789,0,Antwane Wells Jr.,WR,ATL,3000,68,,False,,BAL @ ATL,,antwane wells,0,3000,clear,154473,Classic,2026-10-09T20:02:35+00:00
+1226616,0,CJ Daniels,WR,LAR,3000,68,,False,,BUF @ LAR,,cj daniels,0,3000,clear,154473,Classic,2026-10-09T20:02:35+00:00
+1228244,0,Bijan Robinson,RB,ATL,8700,67,,False,,BAL @ ATL,,bijan robinson,0,8700,clear,154473,Classic,2026-10-09T20:02:35+00:00
+1229133,0,Rasheen Ali,RB,BAL,4000,67,,False,,BAL @ ATL,,rasheen ali,0,4000,clear,154473,Classic,2026-10-09T20:02:35+00:00
+1229386,0,Brennan Presley,WR,LAR,3000,68,,False,,BUF @ LAR,,brennan presley,0,3000,clear,154473,Classic,2026-10-09T20:02:35+00:00
+1229540,0,Blake Corum,RB,LAR,4900,67,,False,,BUF @ LAR,,blake corum,0,4900,clear,154473,Classic,2026-10-09T20:02:35+00:00
+1229542,0,Dan Villari,TE,LAR,2500,69,,False,,BUF @ LAR,,dan villari,0,2500,clear,154473,Classic,2026-10-09T20:02:35+00:00
+1229693,0,Matt Hibner,TE,BAL,2500,69,,False,,BAL @ ATL,,matt hibner,0,2500,clear,154473,Classic,2026-10-09T20:02:35+00:00
+1231033,0,LaJohntay Wester,WR,BAL,3000,68,,False,,BAL @ ATL,,lajohntay wester,0,3000,clear,154473,Classic,2026-10-09T20:02:35+00:00
+1233127,0,Frank Gore Jr.,RB,BUF,4000,67,,False,,BUF @ LAR,,frank gore,0,4000,clear,154473,Classic,2026-10-09T20:02:35+00:00
+1277914,0,Devontez Walker,WR,BAL,3000,68,,False,,BAL @ ATL,,devontez walker,0,3000,clear,154473,Classic,2026-10-09T20:02:35+00:00
+1286179,0,Terrance Ferguson,TE,LAR,2500,69,,False,,BUF @ LAR,,terrance ferguson,0,2500,clear,154473,Classic,2026-10-09T20:02:35+00:00
+1287705,0,Beaux Collins,WR,ATL,3000,68,,False,,BAL @ ATL,,beaux collins,0,3000,clear,154473,Classic,2026-10-09T20:02:35+00:00
+1289332,0,Konata Mumpfield,WR,LAR,3100,68,,False,,BUF @ LAR,,konata mumpfield,0,3100,clear,154473,Classic,2026-10-09T20:02:35+00:00
+1317287,0,Brock Lampe,RB,BUF,4000,67,,False,,BUF @ LAR,,brock lampe,0,4000,clear,154473,Classic,2026-10-09T20:02:35+00:00
+1319948,0,Josh Cuevas,TE,BAL,2500,69,,False,,BAL @ ATL,,josh cuevas,0,2500,clear,154473,Classic,2026-10-09T20:02:35+00:00
+1322431,0,Keon Coleman,WR,BUF,4600,68,,False,,BUF @ LAR,,keon coleman,0,4600,clear,154473,Classic,2026-10-09T20:02:35+00:00
+1323007,0,Gage Larvadain,WR,BAL,3000,68,,False,,BAL @ ATL,,gage larvadain,0,3000,clear,154473,Classic,2026-10-09T20:02:35+00:00
+1323906,0,Keleki Latu,TE,BUF,2500,69,,False,,BUF @ LAR,,keleki latu,0,2500,clear,154473,Classic,2026-10-09T20:02:35+00:00
+1324519,0,Matthew Caldwell,QB,LAR,4000,66,,False,,BUF @ LAR,,matthew caldwell,0,4000,clear,154473,Classic,2026-10-09T20:02:35+00:00
+1325234,0,Skyler Bell,WR,BUF,3000,68,,False,,BUF @ LAR,,skyler bell,0,3000,clear,154473,Classic,2026-10-09T20:02:35+00:00
+1325830,0,Lucas Scott,RB,BAL,4000,67,,False,,BAL @ ATL,,lucas scott,0,4000,clear,154473,Classic,2026-10-09T20:02:35+00:00
+1378284,0,Adam Randall,RB,BAL,4000,67,,False,,BAL @ ATL,,adam randall,0,4000,clear,154473,Classic,2026-10-09T20:02:35+00:00
+1378911,0,Jam Miller,RB,ATL,4000,67,,False,,BAL @ ATL,,jam miller,0,4000,clear,154473,Classic,2026-10-09T20:02:35+00:00
+1378917,0,Ty Simpson,QB,LAR,4000,66,,False,,BUF @ LAR,,ty simpson,0,4000,clear,154473,Classic,2026-10-09T20:02:35+00:00
+1381444,0,Dean Connors,RB,LAR,4000,67,,False,,BUF @ LAR,,dean connors,0,4000,clear,154473,Classic,2026-10-09T20:02:35+00:00
+1392584,0,Elijah Sarratt,WR,BAL,3000,68,,False,,BAL @ ATL,,elijah sarratt,0,3000,clear,154473,Classic,2026-10-09T20:02:35+00:00
+1401629,0,Vinny Anthony II,WR,ATL,3000,68,,False,,BAL @ ATL,,vinny anthony,0,3000,clear,154473,Classic,2026-10-09T20:02:35+00:00
+1401683,0,Max Klare,TE,LAR,2500,69,,False,,BUF @ LAR,,max klare,0,2500,clear,154473,Classic,2026-10-09T20:02:35+00:00
+1403373,0,Jack Velling,TE,ATL,2500,69,,False,,BAL @ ATL,,jack velling,0,2500,clear,154473,Classic,2026-10-09T20:02:35+00:00
+1404295,0,Ty Pezza,TE,BAL,2500,69,,False,,BAL @ ATL,,ty pezza,0,2500,clear,154473,Classic,2026-10-09T20:02:35+00:00
+1441110,0,Zachariah Branch,WR,ATL,3000,68,,False,,BAL @ ATL,,zachariah branch,0,3000,clear,154473,Classic,2026-10-09T20:02:35+00:00
+1458888,0,Ja'Kobi Lane,WR,BAL,3000,68,,False,,BAL @ ATL,,jakobi lane,0,3000,clear,154473,Classic,2026-10-09T20:02:35+00:00
+1637700,0,Jack Strand,QB,ATL,4000,66,,False,,BAL @ ATL,,jack strand,0,4000,clear,154473,Classic,2026-10-09T20:02:35+00:00
