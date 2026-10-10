@@ -1,0 +1,55 @@
+dk_player_id,draftable_id,name,position,team,salary,roster_slot,status,disabled,attributes,game,starts_utc,norm,flex_eligible,captain_salary,playing,draft_group,game_type,captured_at
+327,0,Bengals,DST,CIN,5400,512,,False,,CIN @ MIA,1970-01-01 00:29:51.738000+00:00,bengals,0,5400,clear,154476,Showdown Captain Mode,2026-10-10T19:11:14+00:00
+345,0,Dolphins,DST,MIA,3000,512,,False,,CIN @ MIA,1970-01-01 00:29:51.738000+00:00,dolphins,0,3000,clear,154476,Showdown Captain Mode,2026-10-10T19:11:14+00:00
+216342,0,Joe Flacco,QB,CIN,8000,512,,False,,CIN @ MIA,1970-01-01 00:29:51.738000+00:00,joe flacco,0,8000,clear,154476,Showdown Captain Mode,2026-10-10T19:11:14+00:00
+273278,0,Josh Johnson,QB,CIN,6000,512,,False,,CIN @ MIA,1970-01-01 00:29:51.738000+00:00,josh johnson,0,6000,clear,154476,Showdown Captain Mode,2026-10-10T19:11:14+00:00
+732774,0,Zane Gonzalez,K,MIA,4800,512,,False,,CIN @ MIA,1970-01-01 00:29:51.738000+00:00,zane gonzalez,0,4800,clear,154476,Showdown Captain Mode,2026-10-10T19:11:14+00:00
+820734,0,Samaje Perine,RB,CIN,3400,512,,False,,CIN @ MIA,1970-01-01 00:29:51.738000+00:00,samaje perine,0,3400,clear,154476,Showdown Captain Mode,2026-10-10T19:11:14+00:00
+836152,0,Mike Gesicki,TE,CIN,7000,512,,False,,CIN @ MIA,1970-01-01 00:29:51.738000+00:00,mike gesicki,0,7000,clear,154476,Showdown Captain Mode,2026-10-10T19:11:14+00:00
+837824,0,Drew Sample,TE,CIN,2600,512,,False,,CIN @ MIA,1970-01-01 00:29:51.738000+00:00,drew sample,0,2600,clear,154476,Showdown Captain Mode,2026-10-10T19:11:14+00:00
+878785,0,Joe Burrow,QB,CIN,10800,512,,False,,CIN @ MIA,1970-01-01 00:29:51.738000+00:00,joe burrow,0,10800,clear,154476,Showdown Captain Mode,2026-10-10T19:11:14+00:00
+976066,0,Jalen Reagor,WR,MIA,200,512,,False,,CIN @ MIA,1970-01-01 00:29:51.738000+00:00,jalen reagor,0,200,clear,154476,Showdown Captain Mode,2026-10-10T19:11:14+00:00
+976323,0,Malik Willis,QB,MIA,8600,512,,False,,CIN @ MIA,1970-01-01 00:29:51.738000+00:00,malik willis,0,8600,clear,154476,Showdown Captain Mode,2026-10-10T19:11:14+00:00
+978579,0,Tee Higgins,WR,CIN,10000,512,,False,,CIN @ MIA,1970-01-01 00:29:51.738000+00:00,tee higgins,0,10000,clear,154476,Showdown Captain Mode,2026-10-10T19:11:14+00:00
+1057725,0,Carlos Washington Jr.,RB,MIA,200,512,,False,,CIN @ MIA,1970-01-01 00:29:51.738000+00:00,carlos washington,0,200,clear,154476,Showdown Captain Mode,2026-10-10T19:11:14+00:00
+1065025,0,Riley Patterson,K,MIA,4800,512,,False,,CIN @ MIA,1970-01-01 00:29:51.738000+00:00,riley patterson,0,4800,clear,154476,Showdown Captain Mode,2026-10-10T19:11:14+00:00
+1066424,0,Jalen Tolbert,WR,MIA,800,512,,False,,CIN @ MIA,1970-01-01 00:29:51.738000+00:00,jalen tolbert,0,800,clear,154476,Showdown Captain Mode,2026-10-10T19:11:14+00:00
+1067089,0,Sean Clifford,QB,CIN,6000,512,,False,,CIN @ MIA,1970-01-01 00:29:51.738000+00:00,sean clifford,0,6000,clear,154476,Showdown Captain Mode,2026-10-10T19:11:14+00:00
+1109979,0,Ja'Marr Chase,WR,CIN,11000,512,,False,,CIN @ MIA,1970-01-01 00:29:51.738000+00:00,jamarr chase,0,11000,clear,154476,Showdown Captain Mode,2026-10-10T19:11:14+00:00
+1115394,0,Tanner Hudson,TE,CIN,1600,512,,False,,CIN @ MIA,1970-01-01 00:29:51.738000+00:00,tanner hudson,0,1600,clear,154476,Showdown Captain Mode,2026-10-10T19:11:14+00:00
+1118668,0,Ryan Miller,WR,MIA,1000,512,,False,,CIN @ MIA,1970-01-01 00:29:51.738000+00:00,ryan miller,0,1000,clear,154476,Showdown Captain Mode,2026-10-10T19:11:14+00:00
+1122692,0,Cole Turner,TE,MIA,200,512,,False,,CIN @ MIA,1970-01-01 00:29:51.738000+00:00,cole turner,0,200,clear,154476,Showdown Captain Mode,2026-10-10T19:11:14+00:00
+1122995,0,Evan McPherson,K,CIN,5000,512,,False,,CIN @ MIA,1970-01-01 00:29:51.738000+00:00,evan mcpherson,0,5000,clear,154476,Showdown Captain Mode,2026-10-10T19:11:14+00:00
+1123379,0,Chase Brown,RB,CIN,10400,512,,False,,CIN @ MIA,1970-01-01 00:29:51.738000+00:00,chase brown,0,10400,clear,154476,Showdown Captain Mode,2026-10-10T19:11:14+00:00
+1124851,0,Andrei Iosivas,WR,CIN,200,512,,False,,CIN @ MIA,1970-01-01 00:29:51.738000+00:00,andrei iosivas,0,200,clear,154476,Showdown Captain Mode,2026-10-10T19:11:14+00:00
+1128085,0,Greg Dulcich,TE,MIA,3200,512,,False,,CIN @ MIA,1970-01-01 00:29:51.738000+00:00,greg dulcich,0,3200,clear,154476,Showdown Captain Mode,2026-10-10T19:11:14+00:00
+1133320,0,Dohnte Meyers,WR,CIN,4400,512,,False,,CIN @ MIA,1970-01-01 00:29:51.738000+00:00,dohnte meyers,0,4400,clear,154476,Showdown Captain Mode,2026-10-10T19:11:14+00:00
+1164533,0,Erick All Jr.,TE,CIN,600,512,,False,,CIN @ MIA,1970-01-01 00:29:51.738000+00:00,erick all,0,600,clear,154476,Showdown Captain Mode,2026-10-10T19:11:14+00:00
+1173255,0,Malik Washington,WR,MIA,7600,512,,False,,CIN @ MIA,1970-01-01 00:29:51.738000+00:00,malik washington,0,7600,clear,154476,Showdown Captain Mode,2026-10-10T19:11:14+00:00
+1181739,0,William Wagner,TE,CIN,200,512,,False,,CIN @ MIA,1970-01-01 00:29:51.738000+00:00,william wagner,0,200,clear,154476,Showdown Captain Mode,2026-10-10T19:11:14+00:00
+1213345,0,Kendall Milton,RB,CIN,200,512,,False,,CIN @ MIA,1970-01-01 00:29:51.738000+00:00,kendall milton,0,200,clear,154476,Showdown Captain Mode,2026-10-10T19:11:14+00:00
+1213386,0,Brady Cook,QB,MIA,6000,512,,False,,CIN @ MIA,1970-01-01 00:29:51.738000+00:00,brady cook,0,6000,clear,154476,Showdown Captain Mode,2026-10-10T19:11:14+00:00
+1215305,0,Mitch Tinsley,WR,CIN,4000,512,,False,,CIN @ MIA,1970-01-01 00:29:51.738000+00:00,mitch tinsley,0,4000,clear,154476,Showdown Captain Mode,2026-10-10T19:11:14+00:00
+1215329,0,Will Sheppard,WR,MIA,200,512,,False,,CIN @ MIA,1970-01-01 00:29:51.738000+00:00,will sheppard,0,200,clear,154476,Showdown Captain Mode,2026-10-10T19:11:14+00:00
+1228730,0,Tahj Brooks,RB,CIN,1400,512,,False,,CIN @ MIA,1970-01-01 00:29:51.738000+00:00,tahj brooks,0,1400,clear,154476,Showdown Captain Mode,2026-10-10T19:11:14+00:00
+1229055,0,Kentrel Bullock,RB,CIN,200,512,,False,,CIN @ MIA,1970-01-01 00:29:51.738000+00:00,kentrel bullock,0,200,clear,154476,Showdown Captain Mode,2026-10-10T19:11:14+00:00
+1229541,0,AJ Henning,WR,MIA,200,512,,False,,CIN @ MIA,1970-01-01 00:29:51.738000+00:00,aj henning,0,200,clear,154476,Showdown Captain Mode,2026-10-10T19:11:14+00:00
+1231820,0,De'Von Achane,RB,MIA,200,512,,False,,CIN @ MIA,1970-01-01 00:29:51.738000+00:00,devon achane,0,200,clear,154476,Showdown Captain Mode,2026-10-10T19:11:14+00:00
+1232057,0,Ke'Shawn Williams,WR,CIN,200,512,,False,,CIN @ MIA,1970-01-01 00:29:51.738000+00:00,keshawn williams,0,200,clear,154476,Showdown Captain Mode,2026-10-10T19:11:14+00:00
+1286513,0,Jaylen Wright,RB,MIA,6400,512,,False,,CIN @ MIA,1970-01-01 00:29:51.738000+00:00,jaylen wright,0,6400,clear,154476,Showdown Captain Mode,2026-10-10T19:11:14+00:00
+1286662,0,Jordan Moore,WR,CIN,200,512,,False,,CIN @ MIA,1970-01-01 00:29:51.738000+00:00,jordan moore,0,200,clear,154476,Showdown Captain Mode,2026-10-10T19:11:14+00:00
+1287826,0,Kyle McCord,QB,MIA,6000,512,,False,,CIN @ MIA,1970-01-01 00:29:51.738000+00:00,kyle mccord,0,6000,clear,154476,Showdown Captain Mode,2026-10-10T19:11:14+00:00
+1290014,0,Seydou Traore,TE,MIA,200,512,,False,,CIN @ MIA,1970-01-01 00:29:51.738000+00:00,seydou traore,0,200,clear,154476,Showdown Captain Mode,2026-10-10T19:11:14+00:00
+1317191,0,Tre Watson,TE,MIA,200,512,,False,,CIN @ MIA,1970-01-01 00:29:51.738000+00:00,tre watson,0,200,clear,154476,Showdown Captain Mode,2026-10-10T19:11:14+00:00
+1319185,0,Jarquez Hunter,RB,MIA,200,512,,False,,CIN @ MIA,1970-01-01 00:29:51.738000+00:00,jarquez hunter,0,200,clear,154476,Showdown Captain Mode,2026-10-10T19:11:14+00:00
+1322367,0,Will Kacmarek,TE,MIA,1200,512,,False,,CIN @ MIA,1970-01-01 00:29:51.738000+00:00,will kacmarek,0,1200,clear,154476,Showdown Captain Mode,2026-10-10T19:11:14+00:00
+1327875,0,DJ Herman,RB,MIA,400,512,,False,,CIN @ MIA,1970-01-01 00:29:51.738000+00:00,dj herman,0,400,clear,154476,Showdown Captain Mode,2026-10-10T19:11:14+00:00
+1377766,0,Ollie Gordon II,RB,MIA,8400,512,,False,,CIN @ MIA,1970-01-01 00:29:51.738000+00:00,ollie gordon,0,8400,clear,154476,Showdown Captain Mode,2026-10-10T19:11:14+00:00
+1379259,0,Kaytron Allen,RB,MIA,2400,512,,False,,CIN @ MIA,1970-01-01 00:29:51.738000+00:00,kaytron allen,0,2400,clear,154476,Showdown Captain Mode,2026-10-10T19:11:14+00:00
+1389700,0,Chris Bell,WR,MIA,3600,512,,False,,CIN @ MIA,1970-01-01 00:29:51.738000+00:00,chris bell,0,3600,clear,154476,Showdown Captain Mode,2026-10-10T19:11:14+00:00
+1394798,0,Caleb Douglas,WR,MIA,5800,512,,False,,CIN @ MIA,1970-01-01 00:29:51.738000+00:00,caleb douglas,0,5800,clear,154476,Showdown Captain Mode,2026-10-10T19:11:14+00:00
+1399272,0,Kevin Coleman Jr.,WR,MIA,2000,512,,False,,CIN @ MIA,1970-01-01 00:29:51.738000+00:00,kevin coleman,0,2000,clear,154476,Showdown Captain Mode,2026-10-10T19:11:14+00:00
+1400852,0,Jack Endries,TE,CIN,200,512,,False,,CIN @ MIA,1970-01-01 00:29:51.738000+00:00,jack endries,0,200,clear,154476,Showdown Captain Mode,2026-10-10T19:11:14+00:00
+1402692,0,Noah Thomas,WR,CIN,200,512,,False,,CIN @ MIA,1970-01-01 00:29:51.738000+00:00,noah thomas,0,200,clear,154476,Showdown Captain Mode,2026-10-10T19:11:14+00:00
+1405928,0,Justin Joly,TE,MIA,200,512,,False,,CIN @ MIA,1970-01-01 00:29:51.738000+00:00,justin joly,0,200,clear,154476,Showdown Captain Mode,2026-10-10T19:11:14+00:00
+1406878,0,Colbie Young,WR,CIN,4600,512,,False,,CIN @ MIA,1970-01-01 00:29:51.738000+00:00,colbie young,0,4600,clear,154476,Showdown Captain Mode,2026-10-10T19:11:14+00:00
