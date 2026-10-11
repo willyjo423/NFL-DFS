@@ -1606,9 +1606,11 @@ function render(chosen, meta) {
       <div class="stats">
         <span>beats cash <b>${fmt(c.pc * 100)}%</b></span>
         <span>reaches the bar <b>${fmt(c.pg * 100, 2)}%</b></span>
-        <span title="The expected number of your nine that a random rival entry also rosters - the sum of this lineup's ownership. THIS is the number the ranking divides by, so it is the one worth reading. Two real entries from the same contest last week: the winner 1.34, the entry that came 236th 1.76. It replaced the two numbers that used to sit here - 'leverage', which no longer affects anything, and 'expected duplicates', which read 0.00 on virtually every lineup and was the measure this build was changed to stop using.">field overlap <b class="${
-          c.overlap < 0.9 ? "lev-up" : c.overlap > 2.0 ? "lev-dn" : ""
-          }">${fmt(c.overlap, 2)}</b> of ${c.pick.length}</span>
+        <span title="The expected number of your nine that a random rival entry also rosters - the sum of this lineup's ownership, and the number the ranking divides by. READ IT AS THE MULTIPLE, not the raw figure: a pool's ownership always sums to about 100% per roster spot, so a deep board puts the average lineup far lower than a short one and the raw number does not carry between slates. 1.00x is an ordinary nine off this board.">field overlap <b class="${
+          meta.ownbase && c.overlap / meta.ownbase < 0.55 ? "lev-up"
+          : meta.ownbase && c.overlap / meta.ownbase > 1.9 ? "lev-dn" : ""
+          }">${fmt(c.overlap, 2)}</b>${meta.ownbase
+          ? ` · <b>${fmt(c.overlap / meta.ownbase, 2)}x</b> a random nine` : ""}</span>
         ${meta.objective === "cash" ? "" :
           `<span>ranked on <b>${fmt(c.edge * 100, 3)}</b></span>`}
       </div></div>`;
