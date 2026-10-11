@@ -427,17 +427,49 @@ function parsePool(text) {
     if (c.length < 4) { bad.push(line); continue; }
     // A header row names its columns rather than a player.
     if (/^(player|name)$/i.test(c[0])) continue;
-    const own = Number(String(c[c.length - 1]).replace(/%/g, ""));
-    const sal = Number(String(c[c.length - 2]).replace(/[$,]/g, ""));
-    if (!Number.isFinite(own)) { bad.push(line); continue; }
+    let own = Number(String(c[c.length - 1]).replace(/%/g, ""));
+    let sal = Number(String(c[c.length - 2]).replace(/[$,]/g, ""));
+    // A PASTE WITH NO OWNERSHIP COLUMN AT ALL.
+    //
+    // `Name,Team,Pos,Salary` used to parse as a disaster in silence: the
+    // last column is read as ownership, so a $9,800 back arrived at 9,800%
+    // owned and his salary - read from the position column - came back NaN.
+    // Four columns where the second-to-last is not a number means the last
+    // one IS the salary and ownership was never supplied. Say so later
+    // rather than inventing zeros, because zero ownership is not "unknown",
+    // it is a claim that nobody in the contest is on him.
+    if (!Number.isFinite(sal) && Number.isFinite(own)) { sal = own; own = null; }
+    if (own !== null && !Number.isFinite(own)) { bad.push(line); continue; }
+    if (own === null && !Number.isFinite(sal)) { bad.push(line); continue; }
+    // INJURY STATUS, FROM ANY COLUMN BETWEEN POSITION AND SALARY.
+    //
+    // The field that mattered most and was not here. A back went into a
+    // slate tagged questionable, the tag was read off the source by eye,
+    // written down in a chat message, and then dropped on the way into this
+    // format - which had nowhere to put it. The optimiser bought him at
+    // $7,200 and he managed 3.40. Everything built afterwards to catch that
+    // - evidence floors, ownership-against-price - was machinery to infer a
+    // fact that was printed on the screenshot.
+    //
+    // Read from the middle, so salary and ownership keep being taken from
+    // the END and a five-column paste still parses exactly as before.
+    let status = "";
+    for (let k = 3; k <= c.length - 3; k++) {
+      const t = String(c[k]).toUpperCase().replace(/[^A-Z]/g, "");
+      if (/^(O|OUT|IR|NA)$/.test(t)) { status = "OUT"; break; }
+      if (/^(D|DOUBT|DOUBTFUL)$/.test(t)) { status = "DOUBTFUL"; break; }
+      if (/^(Q|QUE|QTN|GTD|QUESTIONABLE)$/.test(t)) { status = "QUESTIONABLE"; break; }
+      if (/^(P|PROB|PROBABLE)$/.test(t)) { status = "PROBABLE"; break; }
+    }
     rows.push({ name: c[0], team: String(c[1] || "").toUpperCase(),
                 pos: String(c[2] || "").toUpperCase(),
-                salary: Number.isFinite(sal) ? sal : null,
+                salary: Number.isFinite(sal) ? sal : null, status,
+                hasOwn: own !== null,
                 // ALWAYS a percentage. The column is labelled %, and 0.4
                 // there means four tenths of one per cent, not forty. Guessing
                 // from the magnitude turns every genuinely low-owned player
                 // into a 40% chalk play and inverts the whole leverage model.
-                own: own / 100, line });
+                own: own === null ? null : own / 100, line });
   }
   return { rows, bad };
 }
@@ -844,7 +876,12 @@ function achievedStack(players, pick) {
   const t = players[qb.i].team, opp = oppOf(players[qb.i]);
   const withQb = pick.filter(x => players[x.i].team === t
     && CATCHER.has(players[x.i].pos)).length;
-  const back = opp ? pick.filter(x => players[x.i].team === opp).length : 0;
+  // A DEFENCE IS NOT A BRING-BACK, IT IS THE OPPOSITE OF ONE. This counted
+  // anyone from the other side, so an opposing DST made the badge read
+  // "2 back" on a lineup holding none. A quarterback stack needs his team
+  // moving the ball; the facing defence is paid when they do not.
+  const back = opp ? pick.filter(x => players[x.i].team === opp
+    && (CATCHER.has(players[x.i].pos) || players[x.i].pos === "RB")).length : 0;
   return { team: t, size: withQb, back, opp, oppKnown: !!opp };
 }
 const isQB = p => p.pos === "QB";
@@ -877,8 +914,10 @@ function legalLineup(players, roster, weights, rng, opts) {
   // rather than no pick. An explicit LOCK overrides it: if you put him there
   // on purpose, the page does not second-guess you.
   const minProj = Math.max(0, opts.minProj || 0);
+  const blocked = opts.block || null;
   const eligible = i => !FADE.has(i)
     && (POOL === null || POOL.has(i))
+    && (!blocked || LOCK.has(i) || !blocked.has(i))
     && (minProj <= 0 || LOCK.has(i) || projOf(players[i]) >= minProj);
   const order = [...Array(n).keys()].filter(eligible)
     .sort((a, b) => (weights[b] + rng() * weights[b] * 0.55)
@@ -1108,7 +1147,12 @@ function legalLineup(players, roster, weights, rng, opts) {
         && (CATCHER.has(players[i].pos) || players[i].pos === "RB")
         && !pick.some(x => x.i === i))
         .sort((a, b) => weights[b] - weights[a]);
-      let got = pick.filter(x => players[x.i].team === stackOpp).length;
+      // Counted more loosely than it ADDS - the loop above only takes a
+      // catcher or a back, but this credited anything already picked from
+      // that team, so an opposing DST silently paid for a bring-back the
+      // lineup never made. Same rule both sides now.
+      let got = pick.filter(x => players[x.i].team === stackOpp
+        && (CATCHER.has(players[x.i].pos) || players[x.i].pos === "RB")).length;
       for (const i of other) {
         if (got >= bringBack) break;
         if (tryAdd(i, false)) got++;
@@ -1174,6 +1218,77 @@ function build() {
   const minPct = Math.max(0, Math.min(100, Number($("minsal").value) || 0));
   const MINSPEND = Math.round(minPct / 100 * roster.salary_cap);
   const MINPROJ = Math.max(0, Number($("minproj").value) || 0);
+
+  // WHO THE BUILD REFUSES TO BUY, AND WHY IT IS NOT THE PROJECTION FLOOR.
+  //
+  // A $7,200 back who had barely played was rostered over a $6,700 one the
+  // field had at 36%. The expensive one managed 3.40 by half; the cheap one
+  // passed 30. The only guard touching selection was `minProj`, a floor on
+  // the PROJECTION - and the projection is the one number you cannot trust
+  // for a man who has barely been on the field. It checked the symptom.
+  //
+  // Two filters, both already available, neither previously used:
+  //
+  //   1. THIN EVIDENCE. `evidenceOf` has been in this page all along,
+  //      reading games played and snap share off the slate. It ran at
+  //      DISPLAY time only - it annotated a table and never changed a build.
+  //
+  //   2. A PRICE THE FIELD WILL NOT PAY. Ownership against the median
+  //      ownership of everyone priced within $700. Expensive players are
+  //      normally well owned; one who is not means the field knows about a
+  //      carry split or a late downgrade that this morning's projection does
+  //      not. On the board that caused this, the back in question sat at
+  //      0.21x his price peers and the one who went off sat at 1.48x.
+  //
+  // THE COST, STATED PLAINLY: a player can be cheap in ownership because of
+  // news OR because he is overlooked, and this cannot tell them apart. It
+  // gives up some real leverage to avoid being last to hear. The bar is low
+  // on purpose, so only the extremes are caught.
+  const BLOCKED = new Set();
+  const BLOCK_WHY = [];
+  {
+    const SKILL = new Set(["QB", "RB", "WR", "TE"]);
+    const BAND = 700, MIN_PEERS = 3, SHARE = 0.35, FROM = 5000;
+    const sal = q => Number(q.salary) || 0;
+    players.forEach((q, i) => {
+      if (LOCK.has(i)) return;              // an explicit lock always wins
+      // STATUS FIRST, BECAUSE IT IS THE ONLY ONE OF THESE THAT IS A FACT.
+      // Everything else here is inference from numbers; this is the team
+      // saying he might not play. A projection is unconditional - it is
+      // what he scores IF he plays - so nothing downstream knows to
+      // discount it.
+      const st = String(q.status || "").toUpperCase();
+      if (st === "OUT" || st === "DOUBTFUL" || st === "QUESTIONABLE") {
+        BLOCKED.add(i);
+        BLOCK_WHY.push(`${q.name} (${st.toLowerCase()})`);
+        return;
+      }
+      if (evidenceOf(q).thin) {
+        BLOCKED.add(i); BLOCK_WHY.push(`${q.name} (barely played)`); return;
+      }
+      if (!SKILL.has(q.pos) || sal(q) < FROM) return;
+      const own = Number(q.own) || 0;
+      const peers = players
+        .filter(z => z !== q && SKILL.has(z.pos) && Math.abs(sal(z) - sal(q)) <= BAND)
+        .map(z => Number(z.own) || 0).sort((a, b) => a - b);
+      if (peers.length < MIN_PEERS) return;
+      const med = peers[Math.floor(peers.length / 2)];
+      if (med > 0 && own < SHARE * med) {
+        BLOCKED.add(i);
+        BLOCK_WHY.push(`${q.name} ${(100 * own).toFixed(1)}% owned against `
+          + `${(100 * med).toFixed(1)}% for his price`);
+      }
+    });
+  }
+
+  // What overlap a RANDOM lineup off this pool would carry. Raw overlap does
+  // not transfer between slates: every entrant fields the same number of
+  // players, so a pool's ownership always sums to about 100% per roster
+  // spot, and the average lineup's overlap therefore falls as the pool gets
+  // deeper. The number to judge is the ratio to this pool's own average.
+  const ownSum = players.reduce((a, q) => a + (Number(q.own) || 0), 0);
+  const OWNBASE = players.length
+    ? roster.slots.length * ownSum / players.length : 0;
 
   const zq = SLATE.quantiles.map(normalQuantile);
   const plan = buildFactorPlan(players);
@@ -1348,14 +1463,16 @@ function build() {
     let spendFloor = MINSPEND, floorDropped = false;
     let projFloor = MINPROJ, projDropped = false;
     const tries = Math.max(400, plans.length * 60);
-    for (let pass = 0; pass < 3; pass++) {
+    let blockOn = BLOCKED.size > 0, blockDropped = false;
+    for (let pass = 0; pass < 4; pass++) {
       for (let k = 0; k < tries && cands.length < 220; k++) {
         // Bias what gets BUILT, not only what gets chosen. Ranking alone can
         // do nothing about a lineup the search never generated.
         const w = mean.map((v, i) => Math.max(v, 0.01)
           * Math.max(0.15, 1 + LEVW * levOf(players[i])));
         const pick = legalLineup(players, roster, w, rng,
-          Object.assign({ minSpend: spendFloor, minProj: projFloor },
+          Object.assign({ minSpend: spendFloor, minProj: projFloor,
+                          block: blockOn ? BLOCKED : null },
                         plans[k % plans.length]));
         if (!pick) continue;
         const key0 = pick.map(p => p.i).sort((a, b) => a - b).join(",");
@@ -1364,8 +1481,12 @@ function build() {
         cands.push(measure(pick, key0));
       }
       if (cands.length) break;
+      // Given up in order of what it costs you. Unspent salary is a few
+      // points; a projection floor is a guess; buying a man the field has
+      // abandoned is how last week happened. The block goes last.
       if (spendFloor) { spendFloor = 0; floorDropped = true; continue; }
       if (projFloor) { projFloor = 0; projDropped = true; continue; }
+      if (blockOn) { blockOn = false; blockDropped = true; continue; }
       break;
     }
 
@@ -1459,7 +1580,8 @@ function build() {
     }
 
     render(chosen, { sims, cashLine, gppLine, gppTarget, objective, field,
-                     levw: LEVW,
+                     levw: LEVW, ownbase: OWNBASE,
+                     blocked: blockDropped ? [] : BLOCK_WHY, blockDropped,
                      ms: performance.now() - t0, pool: cands.length,
                      minSpend: MINSPEND, floorDropped,
                      minProj: projDropped ? 0 : projFloor,
@@ -1518,16 +1640,29 @@ function render(chosen, meta) {
   // they are set either side of the only two real lineups on record, 1.34
   // (won) and 1.76 (236th), and exist to make an extreme build visible
   // rather than to forbid one.
+  if ((meta.blocked || []).length) {
+    NOTES.push(`not bought: ${meta.blocked.slice(0, 6).join("; ")}`
+      + (meta.blocked.length > 6
+         ? ` and ${meta.blocked.length - 6} more` : ""));
+  }
+  if (meta.blockDropped) {
+    NOTES.push("no legal lineup existed without the players the field has "
+      + "abandoned, so that filter was dropped for this build");
+  }
   const ov = chosen.length ? chosen[0].overlap : null;
-  if (ov != null && meta.objective !== "cash") {
-    if (ov < 0.9) {
-      NOTES.push(`field overlap ${ov.toFixed(2)} — this lineup is built `
-        + `almost entirely from players the field is ignoring. Low ownership `
-        + `is usually the field being right, not an edge: check these `
-        + `projections are standing on real playing time before you trust it`);
-    } else if (ov > 2.2) {
-      NOTES.push(`field overlap ${ov.toFixed(2)} — this lineup moves with `
-        + `the field. When its players hit, most of the contest hits too`);
+  const obase = meta.ownbase || 0;
+  if (ov != null && obase > 0 && meta.objective !== "cash") {
+    const xr = ov / obase;
+    if (xr < 0.55) {
+      NOTES.push(`field overlap ${ov.toFixed(2)} is ${xr.toFixed(2)}x what a `
+        + `random nine off this board carries (${obase.toFixed(2)}) — built `
+        + `almost entirely from players the field is ignoring, and low `
+        + `ownership is usually the field being right rather than an edge`);
+    } else if (xr > 1.9) {
+      NOTES.push(`field overlap ${ov.toFixed(2)} is ${xr.toFixed(2)}x what a `
+        + `random nine off this board carries (${obase.toFixed(2)}) — this `
+        + `lineup moves with the field, so when its players hit most of the `
+        + `contest hits with it`);
     }
   }
   if (meta.levw) {
@@ -1854,7 +1989,8 @@ function applyPool() {
   const salaryOff = [];
   for (const { i, row } of hits) {
     if (players[i]._own0 === undefined) players[i]._own0 = players[i].own;
-    players[i].own = Math.max(0, row.own);
+    if (row.hasOwn) players[i].own = Math.max(0, row.own);
+    players[i].status = row.status || "";
     if (row.salary && Number(players[i].salary) !== row.salary) {
       salaryOff.push(`${players[i].name} ${money(players[i].salary)} vs `
         + `${money(row.salary)}`);
@@ -1862,6 +1998,21 @@ function applyPool() {
   }
   recomputeLeverage(players, idx);
   POOL = new Set(idx);
+  const withOwn = hits.filter(h => h.row.hasOwn).length;
+  if (!withOwn) {
+    NOTES.push("this pool carries NO ownership column, so the slate's own "
+      + "modelled ownership is still in use — field overlap and everything "
+      + "derived from it are estimates, not what you pasted");
+  }
+  // A POOL WITH NO STATUS COLUMN IS NOT A CLEAN POOL, IT IS AN UNKNOWN ONE,
+  // and the difference has already cost a slate. Say it out loud rather
+  // than letting a silent absence read as "everybody is fit".
+  const withStatus = hits.filter(h => h.row.status).length;
+  if (!withStatus) {
+    NOTES.push("this pool carries NO injury column — nothing here knows who "
+      + "is questionable or out. Add a status between position and salary "
+      + "(Name,Team,Pos,QUE,Salary,Own%) and they will be excluded");
+  }
 
   const byPos = {};
   for (const i of idx) {
