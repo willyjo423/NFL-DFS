@@ -1509,6 +1509,27 @@ function render(chosen, meta) {
     `<div class="tile"><span class="k">${k}</span><span class="v">${v}</span>
      <span class="n">${n}</span></div>`).join("");
 
+  // THE OBJECTIVE'S OWN FAILURE MODE, NAMED ON THE PAGE.
+  //
+  // `edge = pg / (1 + overlap)` rewards low ownership, and nothing in it
+  // knows that low ownership is usually the field being CORRECT. Last week's
+  // entry carried three players under 7% owned and they returned 23.2 points
+  // across three roster spots between them. The bounds below are not tuned -
+  // they are set either side of the only two real lineups on record, 1.34
+  // (won) and 1.76 (236th), and exist to make an extreme build visible
+  // rather than to forbid one.
+  const ov = chosen.length ? chosen[0].overlap : null;
+  if (ov != null && meta.objective !== "cash") {
+    if (ov < 0.9) {
+      NOTES.push(`field overlap ${ov.toFixed(2)} — this lineup is built `
+        + `almost entirely from players the field is ignoring. Low ownership `
+        + `is usually the field being right, not an edge: check these `
+        + `projections are standing on real playing time before you trust it`);
+    } else if (ov > 2.2) {
+      NOTES.push(`field overlap ${ov.toFixed(2)} — this lineup moves with `
+        + `the field. When its players hit, most of the contest hits too`);
+    }
+  }
   if (meta.levw) {
     $("lineup-note").textContent =
       (meta.levw > 0
@@ -1585,11 +1606,9 @@ function render(chosen, meta) {
       <div class="stats">
         <span>beats cash <b>${fmt(c.pc * 100)}%</b></span>
         <span>reaches the bar <b>${fmt(c.pg * 100, 2)}%</b></span>
-        <span>leverage <b class="${c.lev > 0.03 ? "lev-up"
-          : c.lev < -0.03 ? "lev-dn" : ""}">${c.lev > 0 ? "+" : ""}${
-          fmt(c.lev, 2)}</b></span>
-        <span>expected duplicates <b>${c.dupes < 1 ? c.dupes.toFixed(2)
-          : Math.round(c.dupes).toLocaleString()}</b></span>
+        <span title="The expected number of your nine that a random rival entry also rosters - the sum of this lineup's ownership. THIS is the number the ranking divides by, so it is the one worth reading. Two real entries from the same contest last week: the winner 1.34, the entry that came 236th 1.76. It replaced the two numbers that used to sit here - 'leverage', which no longer affects anything, and 'expected duplicates', which read 0.00 on virtually every lineup and was the measure this build was changed to stop using.">field overlap <b class="${
+          c.overlap < 0.9 ? "lev-up" : c.overlap > 2.0 ? "lev-dn" : ""
+          }">${fmt(c.overlap, 2)}</b> of ${c.pick.length}</span>
         ${meta.objective === "cash" ? "" :
           `<span>ranked on <b>${fmt(c.edge * 100, 3)}</b></span>`}
       </div></div>`;
