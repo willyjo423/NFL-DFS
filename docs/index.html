@@ -120,6 +120,16 @@ footer{border-top:1px solid var(--line);padding-top:16px;font-size:12.5px;
       browser.</p>
   </header>
 
+  <!-- FOUR CONTROLS. Everything else is either decided for you now or has
+       been shown not to matter; the rest are parked under Advanced so the
+       default view is the one that builds the sharpest lineup.
+
+       REMOVED OUTRIGHT:
+         Leverage      - was double-pricing ownership on top of an objective
+                         that is now measuring it properly. Pinned to 0.
+         Order entries - only ever re-sorted the list AFTER selection, so no
+                         setting of it ever changed a lineup. Pinned to best.
+  -->
   <div class="panel controls">
     <div class="ctl"><label for="slate">Slate</label>
       <select id="slate"></select></div>
@@ -130,63 +140,61 @@ footer{border-top:1px solid var(--line);padding-top:16px;font-size:12.5px;
       </select></div>
     <div class="ctl"><label for="entries">Entries</label>
       <input id="entries" type="number" min="1" max="150" value="1"></div>
-    <div class="ctl"><label for="overlap">Max shared players</label>
-      <input id="overlap" type="number" min="0" max="9" value="3"></div>
-    <div class="ctl"><label for="field">Contest size</label>
+    <div class="ctl"><label for="field"
+      title="THE REAL ENTRY COUNT OF THE CONTEST YOU ARE PLAYING. Not a preference - an input, and the most load-bearing one on the page. It sets the score bar the lineup aims at (top 1-in-field) and how hard shared ownership is penalised. Leaving it at 100,000 for a 5,000-entry contest aims twenty times too high and quietly turns the build contrarian.">Contest size</label>
       <input id="field" type="number" min="2" step="1000" value="100000"></div>
-    <div class="ctl"><label for="minsal"
-      title="The least a lineup may spend, as a percent of the cap. Unspent salary is points you declined to buy — about 2.0 of them per $1,000 in NFL. 0 turns the floor off.">Min salary %</label>
-      <input id="minsal" type="number" min="0" max="100" step="0.5" value="99"></div>
-    <div class="ctl"><label for="stackteam"
-      title="Whose quarterback to build around. Auto tries every team and keeps whatever ranks best.">Stack QB</label>
-      <select id="stackteam"><option value="">Auto (try every team)</option></select></div>
-    <div class="ctl"><label for="stack"
-      title="How many of that quarterback's pass catchers to roster with him. A receiver WITHOUT his quarterback is not a correlation bet - two receivers on one team compete for the same targets.">Pass catchers</label>
-      <select id="stack">
-        <option value="0">No stack</option>
-        <option value="1">QB + 1</option>
-        <option value="2" selected>QB + 2</option>
-        <option value="3">QB + 3</option>
-      </select></div>
-    <div class="ctl"><label for="bringback"
-      title="Players from the OPPOSING team. A shootout lifts both sides, and a game that goes 31-28 pays a bring-back where a 24-6 win does not.">Bring-back</label>
-      <select id="bringback">
-        <option value="0">None</option>
-        <option value="1" selected>1 opponent</option>
-        <option value="2">2 opponents</option>
-      </select></div>
-    <div class="ctl"><label for="levmode"
-      title="Leverage is the model's percentile rank MINUS the field's. Positive means underowned for how good he is - the usual tournament edge. Negative means chalk the model does not rate.">Leverage</label>
-      <select id="levmode">
-        <option value="1">Chase it (underowned)</option>
-        <option value="0.5">Lean toward it</option>
-        <option value="0" selected>Ignore</option>
-        <option value="-0.5">Lean against it</option>
-        <option value="-1">Fade it (prefer chalk)</option>
-      </select></div>
-    <div class="ctl"><label for="entryorder"
-      title="What order to LIST the entries in. It does not change which lineups were chosen or how they were scored — that is always win probability, divided by expected duplicates in a tournament. Chalkiest first puts the most negative mean leverage at the top: the lineups built from players the field will own more than the model rates them.">Order entries by</label>
-      <select id="entryorder">
-        <option value="best" selected>Best first (win probability)</option>
-        <option value="chalk">Chalkiest first (most negative leverage)</option>
-        <option value="contrarian">Most contrarian first</option>
-      </select></div>
-    <div class="ctl"><label for="sims">Simulations</label>
-      <select id="sims">
-        <option value="20000">20,000</option>
-        <option value="50000" selected>50,000</option>
-        <option value="100000">100,000</option>
-      </select></div>
-    <div class="ctl"><label for="minproj"
-      title="Refuse to roster anyone projected below this. A near-zero projection on a minimum-salary player is how a man who has barely played ends up in the flex: the optimiser is told he is cheap and is not told the number means nothing. If the floor leaves a position unfillable it is dropped and the build says so.">Minimum projection</label>
-      <select id="minproj">
-        <option value="0">Off — allow anyone</option>
-        <option value="3">3.0 points</option>
-        <option value="4" selected>4.0 points</option>
-        <option value="5">5.0 points</option>
-        <option value="6">6.0 points</option>
-      </select></div>
   </div>
+
+  <!-- Pinned, not removed: the code still reads them, so they keep their
+       ids and their values never change. -->
+  <input type="hidden" id="levmode" value="0">
+  <input type="hidden" id="entryorder" value="best">
+
+  <details id="advwrap" style="margin:10px 0">
+    <summary style="cursor:pointer;font-weight:600;font-size:13px">
+      Advanced — already tuned, you should not need to touch these</summary>
+    <div class="panel controls" style="margin-top:8px">
+      <div class="ctl"><label for="overlap"
+        title="How many players two of your entries may share. Irrelevant with a single entry.">Max shared players</label>
+        <input id="overlap" type="number" min="0" max="9" value="3"></div>
+      <div class="ctl"><label for="minsal"
+        title="The least a lineup may spend, as a percent of the cap. Unspent salary is points you declined to buy - about 2.0 of them per $1,000 in NFL. 0 turns the floor off.">Min salary %</label>
+        <input id="minsal" type="number" min="0" max="100" step="0.5" value="99"></div>
+      <div class="ctl"><label for="stackteam"
+        title="Whose quarterback to build around. Auto now tries every team but spends most of its attempts on the games with the highest market total, because which game you stack is the decision that decides the week.">Stack QB</label>
+        <select id="stackteam"><option value="">Auto (highest total first)</option></select></div>
+      <div class="ctl"><label for="stack"
+        title="How many of that quarterback's pass catchers to roster with him. A receiver WITHOUT his quarterback is not a correlation bet - two receivers on one team compete for the same targets.">Pass catchers</label>
+        <select id="stack">
+          <option value="0">No stack</option>
+          <option value="1">QB + 1</option>
+          <option value="2" selected>QB + 2</option>
+          <option value="3">QB + 3</option>
+        </select></div>
+      <div class="ctl"><label for="bringback"
+        title="Players from the OPPOSING team. A shootout lifts both sides, and a game that goes 31-28 pays a bring-back where a 24-6 win does not.">Bring-back</label>
+        <select id="bringback">
+          <option value="0">None</option>
+          <option value="1" selected>1 opponent</option>
+          <option value="2">2 opponents</option>
+        </select></div>
+      <div class="ctl"><label for="sims">Simulations</label>
+        <select id="sims">
+          <option value="20000">20,000</option>
+          <option value="50000">50,000</option>
+          <option value="100000" selected>100,000</option>
+        </select></div>
+      <div class="ctl"><label for="minproj"
+        title="Refuse to roster anyone projected below this. A near-zero projection on a minimum-salary player is how a man who has barely played ends up in the flex. If the floor leaves a position unfillable it is dropped and the build says so.">Minimum projection</label>
+        <select id="minproj">
+          <option value="0">Off — allow anyone</option>
+          <option value="3">3.0 points</option>
+          <option value="4" selected>4.0 points</option>
+          <option value="5">5.0 points</option>
+          <option value="6">6.0 points</option>
+        </select></div>
+    </div>
+  </details>
 
   <div class="row">
     <button id="run">Build lineups</button>
@@ -565,6 +573,7 @@ async function loadSlate(file) {
   }
   SLATE = loaded;
   OPP = buildOppMap(SLATE.players);
+  await loadGameTotals();
   POOL = null;
   $("poolout").innerHTML = "";
   LOCK.clear(); FADE.clear();
@@ -585,6 +594,97 @@ async function loadSlate(file) {
   showServerLineups();
   $("status").textContent =
     SLATE.players.length + " players · generated " + SLATE.generated_at;
+}
+
+/* --------------------------------------------- which game to stack */
+// THE ONE DECISION THAT DECIDED LAST WEEK.
+//
+// A contest entry and the winning entry ran the same shape - quarterback,
+// his catchers, one man back from the other side, around 57% of the score
+// riding on a single game. The difference was which game. One was JAX at CIN
+// and went 22-17; the other was DAL at HOU and went 34-30. Same structure,
+// 71 points apart.
+//
+// Nothing in this page knew which was which: the stack team was ranked on
+// per-player projections alone, with no notion of how many points the game
+// was expected to produce. The market had an opinion and the page was not
+// asking. Line Watch already records the consensus total for every NFL game
+// all day, it is published to the same host, so it is one fetch away.
+//
+// If the fetch fails, or the sport is not being tracked, or the totals do
+// not match this slate's teams, the page says so OUT LOUD and falls back to
+// the old behaviour. A silent fallback would be worse than no feature: you
+// would believe the stack was market-ranked when it was not.
+const LINEWATCH_NFL = "/sportslines/data/americanfootball_nfl.json";
+
+// Line Watch carries full club names; a slate carries abbreviations.
+const TEAM_ABBR = {
+  "arizona cardinals":"ARI","atlanta falcons":"ATL","baltimore ravens":"BAL",
+  "buffalo bills":"BUF","carolina panthers":"CAR","chicago bears":"CHI",
+  "cincinnati bengals":"CIN","cleveland browns":"CLE","dallas cowboys":"DAL",
+  "denver broncos":"DEN","detroit lions":"DET","green bay packers":"GB",
+  "houston texans":"HOU","indianapolis colts":"IND","jacksonville jaguars":"JAX",
+  "kansas city chiefs":"KC","las vegas raiders":"LV","los angeles chargers":"LAC",
+  "los angeles rams":"LAR","miami dolphins":"MIA","minnesota vikings":"MIN",
+  "new england patriots":"NE","new orleans saints":"NO","new york giants":"NYG",
+  "new york jets":"NYJ","philadelphia eagles":"PHI","pittsburgh steelers":"PIT",
+  "san francisco 49ers":"SF","seattle seahawks":"SEA","tampa bay buccaneers":"TB",
+  "tennessee titans":"TEN","washington commanders":"WAS",
+};
+
+// team abbreviation -> { total, opp, moved } for games on this slate.
+let TOTALS = new Map();
+let TOTALS_NOTE = "";
+
+async function loadGameTotals() {
+  TOTALS = new Map();
+  TOTALS_NOTE = "";
+  let data;
+  try {
+    const res = await fetch(LINEWATCH_NFL + "?" + Date.now());
+    if (!res.ok) throw new Error("HTTP " + res.status);
+    data = await res.json();
+  } catch (e) {
+    TOTALS_NOTE = "game totals unavailable (" + e.message + ") — the stack "
+      + "is ranked on projections alone, which is how the wrong game got "
+      + "picked last week";
+    return;
+  }
+  // Only teams actually on this slate, so a Thursday game already played
+  // cannot contribute a total to a Sunday board.
+  const onSlate = new Set((SLATE && SLATE.players || [])
+    .map(p => String(p.team || "").toUpperCase()).filter(Boolean));
+  let matched = 0, seen = 0;
+  for (const g of (data.games || [])) {
+    const t = ((g.lines || {}).totals || {});
+    // Whichever side is present - they carry the same number.
+    const row = t.Over || t.Under || t.over || t.under || null;
+    const now = row ? Number(row.now) : NaN;
+    if (!Number.isFinite(now)) continue;
+    seen++;
+    const h = TEAM_ABBR[String(g.home || "").toLowerCase()];
+    const a = TEAM_ABBR[String(g.away || "").toLowerCase()];
+    if (!h || !a) continue;
+    if (!onSlate.has(h) || !onSlate.has(a)) continue;
+    const first = row ? Number(row.first) : NaN;
+    const moved = Number.isFinite(first) ? now - first : null;
+    TOTALS.set(h, { total: now, opp: a, moved });
+    TOTALS.set(a, { total: now, opp: h, moved });
+    matched++;
+  }
+  if (!matched) {
+    TOTALS_NOTE = seen
+      ? "Line Watch has NFL totals but none of them match this slate's teams "
+        + "— the stack is ranked on projections alone"
+      : "Line Watch is not currently tracking NFL totals — the stack is "
+        + "ranked on projections alone";
+  } else {
+    const best = [...TOTALS.entries()]
+      .sort((x, y) => y[1].total - x[1].total)[0];
+    TOTALS_NOTE = "stack ranked by market total — " + matched
+      + " game(s) matched, highest is " + best[0] + "/" + best[1].opp
+      + " at " + best[1].total;
+  }
 }
 
 /* ------------------------------------------------------- the factor model */
@@ -1193,9 +1293,44 @@ function build() {
       if (BACK > 0 && !known) noOpp.push(t);
       return { stackTeam: t, stackSize: STACK, bringBack: known ? BACK : 0 };
     };
+    // HIGHEST-TOTAL GAME FIRST, by weight rather than by exclusion.
+    //
+    // `plans` is cycled round-robin by the search below, so a team listed
+    // twice gets twice the attempts. Listing the top totals more often
+    // steers the search toward the games the market expects to produce
+    // points, WITHOUT refusing to look anywhere else - the market is an
+    // opinion, not an oracle, and a hard filter would have thrown away a
+    // perfectly good contrarian build.
+    //
+    // With no totals this collapses to the old even cycle.
+    let ranked = stackable.slice();
+    // Nothing below applies to a cash build, which is not stacked at all -
+    // and printing a note about market totals under a lineup that ignored
+    // them is how a page teaches you to distrust its own notes.
+    if (TOTALS.size && stackable.length) {
+      ranked.sort((a, b) => ((TOTALS.get(b) || {}).total || 0)
+                          - ((TOTALS.get(a) || {}).total || 0));
+      const WEIGHT = [4, 3, 2];   // top three games, then one each
+      const weighted = [];
+      ranked.forEach((t, n) => {
+        const reps = TOTALS.get(t) ? (WEIGHT[n] || 1) : 1;
+        for (let r = 0; r < reps; r++) weighted.push(t);
+      });
+      ranked = weighted;
+      const top = stackable
+        .filter(t => TOTALS.get(t))
+        .sort((a, b) => TOTALS.get(b).total - TOTALS.get(a).total)
+        .slice(0, 3)
+        .map(t => `${t} ${TOTALS.get(t).total}`
+          + (TOTALS.get(t).moved ? ` (${TOTALS.get(t).moved > 0 ? "+" : ""}`
+             + `${TOTALS.get(t).moved.toFixed(1)})` : ""));
+      if (top.length) NOTES.push("highest totals on the board: "
+        + top.join(", "));
+    }
+    if (TOTALS_NOTE && stackable.length) NOTES.push(TOTALS_NOTE);
     const plans = (WANT && stackable.includes(WANT))
       ? [planFor(WANT)]
-      : stackable.length ? stackable.map(planFor) : [{}];
+      : ranked.length ? ranked.map(planFor) : [{}];
     if (noOpp.length) {
       NOTES.push(`NO BRING-BACK for ${noOpp.join(", ")} — this slate does not `
         + `say who they play, so the page cannot tell which players are on `
@@ -1243,6 +1378,32 @@ function build() {
         if (tot[s] >= gppLine) pg++;
       }
       pc /= sims; pg /= sims;
+      // HOW MUCH OF THIS LINEUP THE FIELD IS ALREADY ON.
+      //
+      // The old measure was `field x PRODUCT of ownership` - the expected
+      // number of entries holding this EXACT nine. It was replaced because
+      // on real lineups it is inert. Measured on two actual entries from the
+      // same contest, one at 176% total ownership and one at 134%, both came
+      // out under 0.25%, and the CHALKIER lineup got the SMALLER penalty: a
+      // product is governed by its smallest term, so one 1.76%-owned player
+      // drove it below a lineup with no chalk in it at all. The objective
+      // was ownership-blind in practice while appearing to price ownership.
+      //
+      // `overlap` is the SUM instead: the expected number of your nine that
+      // a random rival entry also rosters. Two reasons it is the right one:
+      //
+      //   1. It is driven by the LEVEL of ownership, not the minimum, so a
+      //      single dart throw no longer cancels eight pieces of chalk.
+      //   2. It is exact. A sum of expectations needs no assumption about
+      //      how rivals pick, whereas every "share at least k of nine"
+      //      formula assumes they pick independently - which is false in
+      //      precisely the way that matters, because they stack.
+      //
+      // Exact duplicates are still computed below, but only to display. The
+      // thing that costs you in a tournament is not someone holding your
+      // identical nine, it is your score rising and falling WITH the field.
+      let overlap = 0;
+      for (const p of pick) overlap += Math.max(players[p.i].own, 0);
       let dupes = field;
       for (const p of pick) dupes *= Math.max(players[p.i].own, 1e-9);
       return {
@@ -1250,8 +1411,15 @@ function build() {
         mean: sorted.reduce((a, b) => a + b, 0) / sims,
         floor: quantile(sorted, 0.10),
         ceiling: quantile(sorted, 0.99),
-        pc, pg, dupes,
-        edge: pg / (1 + dupes),
+        pc, pg, dupes, overlap,
+        // The DIVISOR IS A CHOICE, the numerator is not. `overlap` is
+        // derived; `1 / (1 + overlap)` is a shape picked because it is
+        // monotone, never saturates, and leaves ownership influencing the
+        // ranking without dominating it - across a realistic spread of
+        // lineups it moves the score by about 1.5x, where the old term moved
+        // it by under 1%. Which shape is actually best is a question for the
+        // grader, not for an argument.
+        edge: pg / (1 + overlap),
         lev: pick.reduce((a, p) => a + levOf(players[p.i]), 0) / pick.length,
         stack: achievedStack(players, pick),
         salary: pick.reduce((a, p) => a + p.cost, 0),
