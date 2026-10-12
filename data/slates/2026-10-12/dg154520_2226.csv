@@ -1,0 +1,102 @@
+dk_player_id,draftable_id,name,position,team,salary,roster_slot,status,disabled,attributes,game,starts_utc,norm,flex_eligible,captain_salary,playing,draft_group,game_type,captured_at
+324,0,Bills,DST,BUF,2300,71,,False,,BUF @ LAR,,bills,0,2300,clear,154520,Classic,2026-10-12T22:26:34+00:00
+332,0,Broncos,DST,DEN,2700,71,,False,,SEA @ DEN,,broncos,0,2700,clear,154520,Classic,2026-10-12T22:26:34+00:00
+343,0,Rams,DST,LAR,3100,71,,False,,BUF @ LAR,,rams,0,3100,clear,154520,Classic,2026-10-12T22:26:34+00:00
+361,0,Seahawks,DST,SEA,3300,71,,False,,SEA @ DEN,,seahawks,0,3300,clear,154520,Classic,2026-10-12T22:26:34+00:00
+323205,0,Matthew Stafford,QB,LAR,6000,66,,False,,BUF @ LAR,,matthew stafford,0,6000,clear,154520,Classic,2026-10-12T22:26:34+00:00
+604176,0,Tyler Higbee,TE,LAR,3300,69,,False,,BUF @ LAR,,tyler higbee,0,3300,clear,154520,Classic,2026-10-12T22:26:34+00:00
+611417,0,Davante Adams,WR,LAR,6800,68,,False,,BUF @ LAR,,davante adams,0,6800,clear,154520,Classic,2026-10-12T22:26:34+00:00
+694931,0,Eric Saubert,TE,SEA,2500,69,,False,,SEA @ DEN,,eric saubert,0,2500,clear,154520,Classic,2026-10-12T22:26:34+00:00
+698227,0,Cooper Kupp,WR,SEA,3600,68,,False,,SEA @ DEN,,cooper kupp,0,3600,clear,154520,Classic,2026-10-12T22:26:34+00:00
+749185,0,Evan Engram,TE,DEN,3000,69,,False,,SEA @ DEN,,evan engram,0,3000,clear,154520,Classic,2026-10-12T22:26:34+00:00
+822350,0,Kyle Allen,QB,BUF,4000,66,,False,,BUF @ LAR,,kyle allen,0,4000,clear,154520,Classic,2026-10-12T22:26:34+00:00
+835861,0,Trent Sherfield Sr.,WR,BUF,3000,68,,False,,BUF @ LAR,,trent sherfield,0,3000,clear,154520,Classic,2026-10-12T22:26:34+00:00
+838878,0,Courtland Sutton,WR,DEN,4900,68,,False,,SEA @ DEN,,courtland sutton,0,4900,clear,154520,Classic,2026-10-12T22:26:34+00:00
+843733,0,Mitchell Fraboni,TE,DEN,2500,69,,False,,SEA @ DEN,,mitchell fraboni,0,2500,clear,154520,Classic,2026-10-12T22:26:34+00:00
+865868,0,Jarrett Stidham,QB,DEN,4000,66,,False,,SEA @ DEN,,jarrett stidham,0,4000,clear,154520,Classic,2026-10-12T22:26:34+00:00
+868199,0,Josh Allen,QB,BUF,7400,66,,False,,BUF @ LAR,,josh allen,0,7400,clear,154520,Classic,2026-10-12T22:26:34+00:00
+875444,0,Adam Trautman,TE,DEN,2500,69,,False,,SEA @ DEN,,adam trautman,0,2500,clear,154520,Classic,2026-10-12T22:26:34+00:00
+877784,0,Ty Johnson,RB,BUF,4100,67,,False,,BUF @ LAR,,ty johnson,0,4100,clear,154520,Classic,2026-10-12T22:26:34+00:00
+877790,0,DJ Moore,WR,BUF,5600,68,,False,,BUF @ LAR,,dj moore,0,5600,clear,154520,Classic,2026-10-12T22:26:34+00:00
+880026,0,Sam Darnold,QB,SEA,5300,66,,False,,SEA @ DEN,,sam darnold,0,5300,clear,154520,Classic,2026-10-12T22:26:34+00:00
+882345,0,Drew Lock,QB,SEA,4000,66,,False,,SEA @ DEN,,drew lock,0,4000,clear,154520,Classic,2026-10-12T22:26:34+00:00
+883312,0,Irvin Charles,WR,SEA,3000,68,,False,,SEA @ DEN,,irvin charles,0,3000,clear,154520,Classic,2026-10-12T22:26:34+00:00
+884083,0,Dawson Knox,TE,BUF,2600,69,,False,,BUF @ LAR,,dawson knox,0,2600,clear,154520,Classic,2026-10-12T22:26:34+00:00
+884315,0,Alex Bachman,WR,LAR,3000,68,,False,,BUF @ LAR,,alex bachman,0,3000,clear,154520,Classic,2026-10-12T22:26:34+00:00
+885540,0,Adam Prentice,RB,DEN,4000,67,,False,,SEA @ DEN,,adam prentice,0,4000,clear,154520,Classic,2026-10-12T22:26:34+00:00
+910852,0,Greg Dortch,WR,BUF,3000,68,,False,,BUF @ LAR,,greg dortch,0,3000,clear,154520,Classic,2026-10-12T22:26:34+00:00
+911619,0,Shane Buechele,QB,BUF,4000,66,,False,,BUF @ LAR,,shane buechele,0,4000,clear,154520,Classic,2026-10-12T22:26:34+00:00
+919304,0,Velus Jones Jr.,RB,SEA,4000,67,,False,,SEA @ DEN,,velus jones,0,4000,clear,154520,Classic,2026-10-12T22:26:34+00:00
+920482,0,Michael Bandy,WR,DEN,3000,68,,False,,SEA @ DEN,,michael bandy,0,3000,clear,154520,Classic,2026-10-12T22:26:34+00:00
+920758,0,Lil'Jordan Humphrey,WR,DEN,3000,68,,False,,SEA @ DEN,,liljordan humphrey,0,3000,clear,154520,Classic,2026-10-12T22:26:34+00:00
+923412,0,Rashid Shaheed,WR,SEA,3900,68,,False,,SEA @ DEN,,rashid shaheed,0,3900,clear,154520,Classic,2026-10-12T22:26:34+00:00
+973949,0,Tyrell Shavers,WR,BUF,3000,68,,False,,BUF @ LAR,,tyrell shavers,0,3000,clear,154520,Classic,2026-10-12T22:26:34+00:00
+975829,0,Sam Ehlinger,QB,DEN,4000,66,,False,,SEA @ DEN,,sam ehlinger,0,4000,clear,154520,Classic,2026-10-12T22:26:34+00:00
+976513,0,J.K. Dobbins,RB,DEN,5200,67,,False,,SEA @ DEN,,j k dobbins,0,5200,clear,154520,Classic,2026-10-12T22:26:34+00:00
+976804,0,Ronnie Rivers,RB,LAR,4000,67,,False,,BUF @ LAR,,ronnie rivers,0,4000,clear,154520,Classic,2026-10-12T22:26:34+00:00
+1059612,0,Joshua Palmer,WR,BUF,3500,68,,False,,BUF @ LAR,,joshua palmer,0,3500,clear,154520,Classic,2026-10-12T22:26:34+00:00
+1060312,0,Colby Parkinson,TE,LAR,2900,69,,False,,BUF @ LAR,,colby parkinson,0,2900,clear,154520,Classic,2026-10-12T22:26:34+00:00
+1064955,0,Brady Russell,RB,SEA,4000,67,,False,,SEA @ DEN,,brady russell,0,4000,clear,154520,Classic,2026-10-12T22:26:34+00:00
+1069763,0,Stetson Bennett IV,QB,LAR,4000,66,,False,,BUF @ LAR,,stetson bennett,0,4000,clear,154520,Classic,2026-10-12T22:26:34+00:00
+1106760,0,Tutu Atwell,WR,LAR,3000,68,,False,,BUF @ LAR,,tutu atwell,0,3000,clear,154520,Classic,2026-10-12T22:26:34+00:00
+1121050,0,Jake Bobo,WR,SEA,3000,68,,False,,SEA @ DEN,,jake bobo,0,3000,clear,154520,Classic,2026-10-12T22:26:34+00:00
+1122323,0,Lucas Krull,TE,DEN,2500,69,,False,,SEA @ DEN,,lucas krull,0,2500,clear,154520,Classic,2026-10-12T22:26:34+00:00
+1124338,0,Tyler Badie,RB,DEN,4000,67,,False,,SEA @ DEN,,tyler badie,0,4000,clear,154520,Classic,2026-10-12T22:26:34+00:00
+1125749,0,Jaylen Waddle,WR,DEN,5900,68,,False,,SEA @ DEN,,jaylen waddle,0,5900,clear,154520,Classic,2026-10-12T22:26:34+00:00
+1130603,0,Khalil Shakir,WR,BUF,5000,68,,False,,BUF @ LAR,,khalil shakir,0,5000,clear,154520,Classic,2026-10-12T22:26:34+00:00
+1131012,0,James Cook III,RB,BUF,7100,67,,False,,BUF @ LAR,,james cook,0,7100,clear,154520,Classic,2026-10-12T22:26:34+00:00
+1132517,0,Nate Adkins,TE,DEN,2500,69,,False,,SEA @ DEN,,nate adkins,0,2500,clear,154520,Classic,2026-10-12T22:26:34+00:00
+1135513,0,Dalton Kincaid,TE,BUF,5100,69,,False,,BUF @ LAR,,dalton kincaid,0,5100,clear,154520,Classic,2026-10-12T22:26:34+00:00
+1140248,0,Cody Schrader,RB,DEN,4000,67,,False,,SEA @ DEN,,cody schrader,0,4000,clear,154520,Classic,2026-10-12T22:26:34+00:00
+1161664,0,Davis Allen,TE,LAR,2500,69,,False,,BUF @ LAR,,davis allen,0,2500,clear,154520,Classic,2026-10-12T22:26:34+00:00
+1161899,0,Bo Nix,QB,DEN,5100,66,,False,,SEA @ DEN,,bo nix,0,5100,clear,154520,Classic,2026-10-12T22:26:34+00:00
+1162128,0,Puka Nacua,WR,LAR,7800,68,,False,,BUF @ LAR,,puka nacua,0,7800,clear,154520,Classic,2026-10-12T22:26:34+00:00
+1163273,0,Jordan Whittington,WR,LAR,3000,68,,False,,BUF @ LAR,,jordan whittington,0,3000,clear,154520,Classic,2026-10-12T22:26:34+00:00
+1164530,0,Zach Charbonnet,RB,SEA,5500,67,,False,,SEA @ DEN,,zach charbonnet,0,5500,clear,154520,Classic,2026-10-12T22:26:34+00:00
+1164736,0,Nick Kallerup,TE,SEA,2500,69,,False,,SEA @ DEN,,nick kallerup,0,2500,clear,154520,Classic,2026-10-12T22:26:34+00:00
+1165229,0,Ray Davis,RB,BUF,4000,67,,False,,BUF @ LAR,,ray davis,0,4000,clear,154520,Classic,2026-10-12T22:26:34+00:00
+1167361,0,Kyren Williams,RB,LAR,6400,67,,False,,BUF @ LAR,,kyren williams,0,6400,clear,154520,Classic,2026-10-12T22:26:34+00:00
+1168745,0,Dontae McMillan,RB,SEA,4000,67,,False,,SEA @ DEN,,dontae mcmillan,0,4000,clear,154520,Classic,2026-10-12T22:26:34+00:00
+1172401,0,RJ Harvey,RB,DEN,5000,67,,False,,SEA @ DEN,,rj harvey,0,5000,clear,154520,Classic,2026-10-12T22:26:34+00:00
+1172637,0,Cameron Ross,WR,DEN,3000,68,,False,,SEA @ DEN,,cameron ross,0,3000,clear,154520,Classic,2026-10-12T22:26:34+00:00
+1173174,0,Jordan Waters,RB,LAR,4000,67,,False,,BUF @ LAR,,jordan waters,0,4000,clear,154520,Classic,2026-10-12T22:26:34+00:00
+1180625,0,George Holani,RB,SEA,4300,67,,False,,SEA @ DEN,,george holani,0,4300,clear,154520,Classic,2026-10-12T22:26:34+00:00
+1182649,0,Jackson Hawes,TE,BUF,2500,69,,False,,BUF @ LAR,,jackson hawes,0,2500,clear,154520,Classic,2026-10-12T22:26:34+00:00
+1213388,0,Ja'Mori Maclin,WR,BUF,3000,68,,False,,BUF @ LAR,,jamori maclin,0,3000,clear,154520,Classic,2026-10-12T22:26:34+00:00
+1213799,0,Marvin Mims Jr.,WR,DEN,3200,68,,False,,SEA @ DEN,,marvin mims,0,3200,clear,154520,Classic,2026-10-12T22:26:34+00:00
+1214087,0,Jaxon Smith-Njigba,WR,SEA,8600,68,,False,,SEA @ DEN,,jaxon smith njigba,0,8600,clear,154520,Classic,2026-10-12T22:26:34+00:00
+1215078,0,Stephen Gosnell,WR,BUF,3000,68,,False,,BUF @ LAR,,stephen gosnell,0,3000,clear,154520,Classic,2026-10-12T22:26:34+00:00
+1223393,0,Tory Horton,WR,SEA,3000,68,,False,,SEA @ DEN,,tory horton,0,3000,clear,154520,Classic,2026-10-12T22:26:34+00:00
+1226616,0,CJ Daniels,WR,LAR,3000,68,,False,,BUF @ LAR,,cj daniels,0,3000,clear,154520,Classic,2026-10-12T22:26:34+00:00
+1229089,0,Malick Meiga,WR,SEA,3000,68,,False,,SEA @ DEN,,malick meiga,0,3000,clear,154520,Classic,2026-10-12T22:26:34+00:00
+1229386,0,Brennan Presley,WR,LAR,3000,68,,False,,BUF @ LAR,,brennan presley,0,3000,clear,154520,Classic,2026-10-12T22:26:34+00:00
+1229503,0,AJ Barner,TE,SEA,3100,69,,False,,SEA @ DEN,,aj barner,0,3100,clear,154520,Classic,2026-10-12T22:26:34+00:00
+1229540,0,Blake Corum,RB,LAR,4900,67,,False,,BUF @ LAR,,blake corum,0,4900,clear,154520,Classic,2026-10-12T22:26:34+00:00
+1229542,0,Dan Villari,TE,LAR,2500,69,,False,,BUF @ LAR,,dan villari,0,2500,clear,154520,Classic,2026-10-12T22:26:34+00:00
+1229846,0,Ricky White III,WR,SEA,3000,68,,False,,SEA @ DEN,,ricky white,0,3000,clear,154520,Classic,2026-10-12T22:26:34+00:00
+1229869,0,Montorie Foster Jr.,WR,SEA,3000,68,,False,,SEA @ DEN,,montorie foster,0,3000,clear,154520,Classic,2026-10-12T22:26:34+00:00
+1231431,0,Caleb Lohner,TE,DEN,2500,69,,False,,SEA @ DEN,,caleb lohner,0,2500,clear,154520,Classic,2026-10-12T22:26:34+00:00
+1233127,0,Frank Gore Jr.,RB,BUF,4000,67,,False,,BUF @ LAR,,frank gore,0,4000,clear,154520,Classic,2026-10-12T22:26:34+00:00
+1285958,0,Robbie Ouzts,RB,SEA,4000,67,,False,,SEA @ DEN,,robbie ouzts,0,4000,clear,154520,Classic,2026-10-12T22:26:34+00:00
+1286176,0,Troy Franklin,WR,DEN,3400,68,,False,,SEA @ DEN,,troy franklin,0,3400,clear,154520,Classic,2026-10-12T22:26:34+00:00
+1286179,0,Terrance Ferguson,TE,LAR,2500,69,,False,,BUF @ LAR,,terrance ferguson,0,2500,clear,154520,Classic,2026-10-12T22:26:34+00:00
+1286840,0,Elijah Arroyo,TE,SEA,2500,69,,False,,SEA @ DEN,,elijah arroyo,0,2500,clear,154520,Classic,2026-10-12T22:26:34+00:00
+1289332,0,Konata Mumpfield,WR,LAR,3100,68,,False,,BUF @ LAR,,konata mumpfield,0,3100,clear,154520,Classic,2026-10-12T22:26:34+00:00
+1290102,0,Jalen Milroe,QB,SEA,4000,66,,False,,SEA @ DEN,,jalen milroe,0,4000,clear,154520,Classic,2026-10-12T22:26:34+00:00
+1305866,0,Pat Bryant,WR,DEN,3000,68,,False,,SEA @ DEN,,pat bryant,0,3000,clear,154520,Classic,2026-10-12T22:26:34+00:00
+1317287,0,Brock Lampe,RB,BUF,4000,67,,False,,BUF @ LAR,,brock lampe,0,4000,clear,154520,Classic,2026-10-12T22:26:34+00:00
+1322431,0,Keon Coleman,WR,BUF,4600,68,,False,,BUF @ LAR,,keon coleman,0,4600,clear,154520,Classic,2026-10-12T22:26:34+00:00
+1323906,0,Keleki Latu,TE,BUF,2500,69,,False,,BUF @ LAR,,keleki latu,0,2500,clear,154520,Classic,2026-10-12T22:26:34+00:00
+1324519,0,Matthew Caldwell,QB,LAR,4000,66,,False,,BUF @ LAR,,matthew caldwell,0,4000,clear,154520,Classic,2026-10-12T22:26:34+00:00
+1325234,0,Skyler Bell,WR,BUF,3000,68,,False,,BUF @ LAR,,skyler bell,0,3000,clear,154520,Classic,2026-10-12T22:26:34+00:00
+1378660,0,Dane Key,WR,DEN,3000,68,,False,,SEA @ DEN,,dane key,0,3000,clear,154520,Classic,2026-10-12T22:26:34+00:00
+1378917,0,Ty Simpson,QB,LAR,4000,66,,False,,BUF @ LAR,,ty simpson,0,4000,clear,154520,Classic,2026-10-12T22:26:34+00:00
+1380594,0,Jonah Coleman,RB,DEN,4000,67,,False,,SEA @ DEN,,jonah coleman,0,4000,clear,154520,Classic,2026-10-12T22:26:34+00:00
+1381444,0,Dean Connors,RB,LAR,4000,67,,False,,BUF @ LAR,,dean connors,0,4000,clear,154520,Classic,2026-10-12T22:26:34+00:00
+1383791,0,Jadarian Price,RB,SEA,4000,67,,False,,SEA @ DEN,,jadarian price,0,4000,clear,154520,Classic,2026-10-12T22:26:34+00:00
+1398511,0,Emmanuel Henderson Jr.,WR,SEA,3000,68,,False,,SEA @ DEN,,emmanuel henderson,0,3000,clear,154520,Classic,2026-10-12T22:26:34+00:00
+1401683,0,Max Klare,TE,LAR,2500,69,,False,,BUF @ LAR,,max klare,0,2500,clear,154520,Classic,2026-10-12T22:26:34+00:00
+1443998,0,Robert Henry Jr.,RB,SEA,4000,67,,False,,SEA @ DEN,,robert henry,0,4000,clear,154520,Classic,2026-10-12T22:26:34+00:00
+1447759,0,Emanuel Wilson,RB,SEA,5800,67,,False,,SEA @ DEN,,emanuel wilson,0,5800,clear,154520,Classic,2026-10-12T22:26:34+00:00
+1461173,0,Dallen Bentley,TE,DEN,2500,69,,False,,SEA @ DEN,,dallen bentley,0,2500,clear,154520,Classic,2026-10-12T22:26:34+00:00
+1522347,0,Kolbe Katsis,WR,DEN,3000,68,,False,,SEA @ DEN,,kolbe katsis,0,3000,clear,154520,Classic,2026-10-12T22:26:34+00:00
