@@ -1,0 +1,62 @@
+dk_player_id,draftable_id,name,position,team,salary,roster_slot,status,disabled,attributes,game,starts_utc,norm,flex_eligible,captain_salary,playing,draft_group,game_type,captured_at
+350,0,Saints,DST,NO,3600,512,,False,,NO @ NYG,1970-01-01 00:29:52.342800+00:00,saints,0,3600,clear,154953,Showdown Captain Mode,2026-10-15T18:58:45+00:00
+351,0,Giants,DST,NYG,3800,512,,False,,NO @ NYG,1970-01-01 00:29:52.342800+00:00,giants,0,3800,clear,154953,Showdown Captain Mode,2026-10-15T18:58:45+00:00
+563293,0,Chris Manhertz,TE,NYG,200,512,,False,,NO @ NYG,1970-01-01 00:29:52.342800+00:00,chris manhertz,0,200,clear,154953,Showdown Captain Mode,2026-10-15T18:58:45+00:00
+606799,0,Zach Wood,TE,NO,200,512,,False,,NO @ NYG,1970-01-01 00:29:52.342800+00:00,zach wood,0,200,clear,154953,Showdown Captain Mode,2026-10-15T18:58:45+00:00
+658389,0,Patrick Ricard,RB,NYG,400,512,,False,,NO @ NYG,1970-01-01 00:29:52.342800+00:00,patrick ricard,0,400,clear,154953,Showdown Captain Mode,2026-10-15T18:58:45+00:00
+691536,0,Jameis Winston,QB,NYG,9000,512,,False,,NO @ NYG,1970-01-01 00:29:52.342800+00:00,jameis winston,0,9000,clear,154953,Showdown Captain Mode,2026-10-15T18:58:45+00:00
+744439,0,Daniel Carlson,K,NO,4800,512,,False,,NO @ NYG,1970-01-01 00:29:52.342800+00:00,daniel carlson,0,4800,clear,154953,Showdown Captain Mode,2026-10-15T18:58:45+00:00
+750846,0,Alvin Kamara,RB,NO,7000,512,,False,,NO @ NYG,1970-01-01 00:29:52.342800+00:00,alvin kamara,0,7000,clear,154953,Showdown Captain Mode,2026-10-15T18:58:45+00:00
+820866,0,Braxton Berrios,WR,NYG,200,512,,False,,NO @ NYG,1970-01-01 00:29:52.342800+00:00,braxton berrios,0,200,clear,154953,Showdown Captain Mode,2026-10-15T18:58:45+00:00
+884609,0,Juwan Johnson,TE,NO,6400,512,,False,,NO @ NYG,1970-01-01 00:29:52.342800+00:00,juwan johnson,0,6400,clear,154953,Showdown Captain Mode,2026-10-15T18:58:45+00:00
+912027,0,Darnell Mooney,WR,NYG,4400,512,,False,,NO @ NYG,1970-01-01 00:29:52.342800+00:00,darnell mooney,0,4400,clear,154953,Showdown Captain Mode,2026-10-15T18:58:45+00:00
+916466,0,Devin Singletary,RB,NYG,1400,512,,False,,NO @ NYG,1970-01-01 00:29:52.342800+00:00,devin singletary,0,1400,clear,154953,Showdown Captain Mode,2026-10-15T18:58:45+00:00
+923911,0,Noah Fant,TE,NO,3000,512,,False,,NO @ NYG,1970-01-01 00:29:52.342800+00:00,noah fant,0,3000,clear,154953,Showdown Captain Mode,2026-10-15T18:58:45+00:00
+973964,0,Najee Harris,RB,NYG,3400,512,,False,,NO @ NYG,1970-01-01 00:29:52.342800+00:00,najee harris,0,3400,clear,154953,Showdown Captain Mode,2026-10-15T18:58:45+00:00
+978577,0,Travis Etienne Jr.,RB,NO,200,512,,False,,NO @ NYG,1970-01-01 00:29:52.342800+00:00,travis etienne,0,200,clear,154953,Showdown Captain Mode,2026-10-15T18:58:45+00:00
+1049254,0,Jake Haener,QB,NYG,6000,512,,False,,NO @ NYG,1970-01-01 00:29:52.342800+00:00,jake haener,0,6000,clear,154953,Showdown Captain Mode,2026-10-15T18:58:45+00:00
+1056865,0,Stone Smartt,TE,NO,200,512,,False,,NO @ NYG,1970-01-01 00:29:52.342800+00:00,stone smartt,0,200,clear,154953,Showdown Captain Mode,2026-10-15T18:58:45+00:00
+1059576,0,Ty Chandler,RB,NO,200,512,,False,,NO @ NYG,1970-01-01 00:29:52.342800+00:00,ty chandler,0,200,clear,154953,Showdown Captain Mode,2026-10-15T18:58:45+00:00
+1061591,0,Cal Adomitis,TE,NO,200,512,,False,,NO @ NYG,1970-01-01 00:29:52.342800+00:00,cal adomitis,0,200,clear,154953,Showdown Captain Mode,2026-10-15T18:58:45+00:00
+1062765,0,Calvin Austin III,WR,NYG,200,512,,False,,NO @ NYG,1970-01-01 00:29:52.342800+00:00,calvin austin,0,200,clear,154953,Showdown Captain Mode,2026-10-15T18:58:45+00:00
+1067132,0,Charlie Jones,WR,NYG,800,512,,False,,NO @ NYG,1970-01-01 00:29:52.342800+00:00,charlie jones,0,800,clear,154953,Showdown Captain Mode,2026-10-15T18:58:45+00:00
+1108052,0,Zach Wilson,QB,NO,6000,512,,False,,NO @ NYG,1970-01-01 00:29:52.342800+00:00,zach wilson,0,6000,clear,154953,Showdown Captain Mode,2026-10-15T18:58:45+00:00
+1109708,0,Tyrone Tracy Jr.,RB,NYG,2800,512,,False,,NO @ NYG,1970-01-01 00:29:52.342800+00:00,tyrone tracy,0,2800,clear,154953,Showdown Captain Mode,2026-10-15T18:58:45+00:00
+1110306,0,Tyler Shough,QB,NO,9600,512,,False,,NO @ NYG,1970-01-01 00:29:52.342800+00:00,tyler shough,0,9600,clear,154953,Showdown Captain Mode,2026-10-15T18:58:45+00:00
+1110697,0,Zamir White,RB,NO,200,512,,False,,NO @ NYG,1970-01-01 00:29:52.342800+00:00,zamir white,0,200,clear,154953,Showdown Captain Mode,2026-10-15T18:58:45+00:00
+1122592,0,Chris Olave,WR,NO,11200,512,,False,,NO @ NYG,1970-01-01 00:29:52.342800+00:00,chris olave,0,11200,clear,154953,Showdown Captain Mode,2026-10-15T18:58:45+00:00
+1124664,0,Cedric Tillman,WR,NO,200,512,,False,,NO @ NYG,1970-01-01 00:29:52.342800+00:00,cedric tillman,0,200,clear,154953,Showdown Captain Mode,2026-10-15T18:58:45+00:00
+1125111,0,Isaiah Likely,TE,NYG,7400,512,,False,,NO @ NYG,1970-01-01 00:29:52.342800+00:00,isaiah likely,0,7400,clear,154953,Showdown Captain Mode,2026-10-15T18:58:45+00:00
+1130526,0,Kevin Austin Jr.,WR,NO,200,512,,False,,NO @ NYG,1970-01-01 00:29:52.342800+00:00,kevin austin,0,200,clear,154953,Showdown Captain Mode,2026-10-15T18:58:45+00:00
+1161739,0,Trey Palmer,WR,NO,200,512,,False,,NO @ NYG,1970-01-01 00:29:52.342800+00:00,trey palmer,0,200,clear,154953,Showdown Captain Mode,2026-10-15T18:58:45+00:00
+1164788,0,Devaughn Vele,WR,NO,8200,512,,False,,NO @ NYG,1970-01-01 00:29:52.342800+00:00,devaughn vele,0,8200,clear,154953,Showdown Captain Mode,2026-10-15T18:58:45+00:00
+1168410,0,Gunner Olszewski,WR,NYG,200,512,,False,,NO @ NYG,1970-01-01 00:29:52.342800+00:00,gunner olszewski,0,200,clear,154953,Showdown Captain Mode,2026-10-15T18:58:45+00:00
+1170916,0,Jalen Moreno-Cropper,WR,NO,200,512,,False,,NO @ NYG,1970-01-01 00:29:52.342800+00:00,jalen moreno cropper,0,200,clear,154953,Showdown Captain Mode,2026-10-15T18:58:45+00:00
+1172752,0,Treyton Welch,TE,NO,200,512,,False,,NO @ NYG,1970-01-01 00:29:52.342800+00:00,treyton welch,0,200,clear,154953,Showdown Captain Mode,2026-10-15T18:58:45+00:00
+1173485,0,Ulysses Bentley IV,RB,NO,200,512,,False,,NO @ NYG,1970-01-01 00:29:52.342800+00:00,ulysses bentley,0,200,clear,154953,Showdown Captain Mode,2026-10-15T18:58:45+00:00
+1174752,0,Spencer Rattler,QB,NO,6000,512,,False,,NO @ NYG,1970-01-01 00:29:52.342800+00:00,spencer rattler,0,6000,clear,154953,Showdown Captain Mode,2026-10-15T18:58:45+00:00
+1180329,0,Dalen Cambre,WR,NYG,200,512,,False,,NO @ NYG,1970-01-01 00:29:52.342800+00:00,dalen cambre,0,200,clear,154953,Showdown Captain Mode,2026-10-15T18:58:45+00:00
+1180557,0,Kyrese Rowan,WR,NO,200,512,,False,,NO @ NYG,1970-01-01 00:29:52.342800+00:00,kyrese rowan,0,200,clear,154953,Showdown Captain Mode,2026-10-15T18:58:45+00:00
+1182695,0,Mason Tipton,WR,NO,1800,512,,False,,NO @ NYG,1970-01-01 00:29:52.342800+00:00,mason tipton,0,1800,clear,154953,Showdown Captain Mode,2026-10-15T18:58:45+00:00
+1213867,0,Kendre Miller,RB,NO,4000,512,,False,,NO @ NYG,1970-01-01 00:29:52.342800+00:00,kendre miller,0,4000,clear,154953,Showdown Captain Mode,2026-10-15T18:58:45+00:00
+1214414,0,Theo Johnson,TE,NYG,2400,512,,False,,NO @ NYG,1970-01-01 00:29:52.342800+00:00,theo johnson,0,2400,clear,154953,Showdown Captain Mode,2026-10-15T18:58:45+00:00
+1222139,0,Dontae Fleming,WR,NYG,200,512,,False,,NO @ NYG,1970-01-01 00:29:52.342800+00:00,dontae fleming,0,200,clear,154953,Showdown Captain Mode,2026-10-15T18:58:45+00:00
+1232892,0,Jalin Hyatt,WR,NYG,200,512,,False,,NO @ NYG,1970-01-01 00:29:52.342800+00:00,jalin hyatt,0,200,clear,154953,Showdown Captain Mode,2026-10-15T18:58:45+00:00
+1247543,0,Ben Mann,TE,NYG,200,512,,False,,NO @ NYG,1970-01-01 00:29:52.342800+00:00,ben mann,0,200,clear,154953,Showdown Captain Mode,2026-10-15T18:58:45+00:00
+1280316,0,Cam Skattebo,RB,NYG,8800,512,,False,,NO @ NYG,1970-01-01 00:29:52.342800+00:00,cam skattebo,0,8800,clear,154953,Showdown Captain Mode,2026-10-15T18:58:45+00:00
+1286059,0,Malik Nabers,WR,NYG,10000,512,,False,,NO @ NYG,1970-01-01 00:29:52.342800+00:00,malik nabers,0,10000,clear,154953,Showdown Captain Mode,2026-10-15T18:58:45+00:00
+1286173,0,Moliki Matavao,TE,NO,200,512,,False,,NO @ NYG,1970-01-01 00:29:52.342800+00:00,moliki matavao,0,200,clear,154953,Showdown Captain Mode,2026-10-15T18:58:45+00:00
+1286260,0,Jaxson Dart,QB,NYG,6000,512,,False,,NO @ NYG,1970-01-01 00:29:52.342800+00:00,jaxson dart,0,6000,clear,154953,Showdown Captain Mode,2026-10-15T18:58:45+00:00
+1287599,0,J.J. McCarthy,QB,NYG,8600,512,,False,,NO @ NYG,1970-01-01 00:29:52.342800+00:00,j j mccarthy,0,8600,clear,154953,Showdown Captain Mode,2026-10-15T18:58:45+00:00
+1287641,0,Phil Mafah,RB,NYG,200,512,,False,,NO @ NYG,1970-01-01 00:29:52.342800+00:00,phil mafah,0,200,clear,154953,Showdown Captain Mode,2026-10-15T18:58:45+00:00
+1287655,0,Thomas Fidone II,TE,NYG,200,512,,False,,NO @ NYG,1970-01-01 00:29:52.342800+00:00,thomas fidone,0,200,clear,154953,Showdown Captain Mode,2026-10-15T18:58:45+00:00
+1319185,0,Jarquez Hunter,RB,NO,200,512,,False,,NO @ NYG,1970-01-01 00:29:52.342800+00:00,jarquez hunter,0,200,clear,154953,Showdown Captain Mode,2026-10-15T18:58:45+00:00
+1319589,0,Malachi Fields,WR,NYG,5200,512,,False,,NO @ NYG,1970-01-01 00:29:52.342800+00:00,malachi fields,0,5200,clear,154953,Showdown Captain Mode,2026-10-15T18:58:45+00:00
+1325016,0,Bryce Lance,WR,NO,1200,512,,False,,NO @ NYG,1970-01-01 00:29:52.342800+00:00,bryce lance,0,1200,clear,154953,Showdown Captain Mode,2026-10-15T18:58:45+00:00
+1380799,0,Dominic Zvada,K,NYG,5000,512,,False,,NO @ NYG,1970-01-01 00:29:52.342800+00:00,dominic zvada,0,5000,clear,154953,Showdown Captain Mode,2026-10-15T18:58:45+00:00
+1381105,0,Oscar Delp,TE,NO,600,512,,False,,NO @ NYG,1970-01-01 00:29:52.342800+00:00,oscar delp,0,600,clear,154953,Showdown Captain Mode,2026-10-15T18:58:45+00:00
+1394692,0,Jordyn Tyson,WR,NO,8400,512,,False,,NO @ NYG,1970-01-01 00:29:52.342800+00:00,jordyn tyson,0,8400,clear,154953,Showdown Captain Mode,2026-10-15T18:58:45+00:00
+1395681,0,CJ Donaldson,RB,NO,2000,512,,False,,NO @ NYG,1970-01-01 00:29:52.342800+00:00,cj donaldson,0,2000,clear,154953,Showdown Captain Mode,2026-10-15T18:58:45+00:00
+1395843,0,Barion Brown,WR,NO,1000,512,,False,,NO @ NYG,1970-01-01 00:29:52.342800+00:00,barion brown,0,1000,clear,154953,Showdown Captain Mode,2026-10-15T18:58:45+00:00
+1506548,0,Charlie Smyth,K,NO,4800,512,,False,,NO @ NYG,1970-01-01 00:29:52.342800+00:00,charlie smyth,0,4800,clear,154953,Showdown Captain Mode,2026-10-15T18:58:45+00:00
+1665835,0,Grant Finley,RB,NYG,200,512,,False,,NO @ NYG,1970-01-01 00:29:52.342800+00:00,grant finley,0,200,clear,154953,Showdown Captain Mode,2026-10-15T18:58:45+00:00
