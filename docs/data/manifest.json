@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-15T17:42:46+00:00",
+  "updated_at": "2026-10-16T00:09:35+00:00",
   "slates": [
     {
       "kind": "classic",
@@ -378,12 +378,12 @@
       "sport": "nfl",
       "site": "dk",
       "draft_group": 154941,
-      "label": "NFL $2.5M Fantasy Football Millionaire [$1M to 1st]",
-      "contests": 1671,
+      "label": "NFL $2.75M Fantasy Football Millionaire [$1M to 1st, $100K Leaderboard Eligible]",
+      "contests": 1681,
       "starts": "2026-10-18 17:00:00+00:00",
       "file": "data/nfl/dk-classic-154941.json",
-      "players": 436,
-      "generated_at": "2026-10-15T17:33:38+00:00"
+      "players": 441,
+      "generated_at": "2026-10-15T23:58:41+00:00"
     },
     {
       "kind": "classic",
@@ -403,11 +403,11 @@
       "site": "dk",
       "draft_group": 154940,
       "label": "NFL $30K Thu-Mon Special [$10K to 1st] (Thu-Mon)",
-      "contests": 350,
+      "contests": 298,
       "starts": "2026-10-16 00:15:00+00:00",
       "file": "data/nfl/dk-classic-154940.json",
-      "players": 621,
-      "generated_at": "2026-10-15T17:37:36+00:00"
+      "players": 620,
+      "generated_at": "2026-10-16T00:03:31+00:00"
     },
     {
       "kind": "classic",
@@ -415,11 +415,11 @@
       "site": "dk",
       "draft_group": 154942,
       "label": "NFL $200K Early Only Rush [$50K to 1st] (Early Only)",
-      "contests": 451,
+      "contests": 461,
       "starts": "2026-10-18 17:00:00+00:00",
       "file": "data/nfl/dk-classic-154942.json",
       "players": 314,
-      "generated_at": "2026-10-15T17:35:09+00:00"
+      "generated_at": "2026-10-16T00:00:30+00:00"
     },
     {
       "kind": "classic",
@@ -427,11 +427,11 @@
       "site": "dk",
       "draft_group": 154943,
       "label": "NFL $15K Sun-Mon Special [$5K to 1st] (Sun-Mon)",
-      "contests": 288,
+      "contests": 289,
       "starts": "2026-10-18 17:00:00+00:00",
       "file": "data/nfl/dk-classic-154943.json",
-      "players": 533,
-      "generated_at": "2026-10-15T17:39:08+00:00"
+      "players": 532,
+      "generated_at": "2026-10-16T00:05:22+00:00"
     },
     {
       "kind": "classic",
@@ -439,11 +439,11 @@
       "site": "dk",
       "draft_group": 154944,
       "label": "NFL $500K Afternoon Only Rush [$100K to 1st] (Afternoon Only)",
-      "contests": 422,
+      "contests": 431,
       "starts": "2026-10-18 20:05:00+00:00",
       "file": "data/nfl/dk-classic-154944.json",
       "players": 125,
-      "generated_at": "2026-10-15T17:35:49+00:00"
+      "generated_at": "2026-10-16T00:01:16+00:00"
     },
     {
       "kind": "classic",
@@ -451,11 +451,11 @@
       "site": "dk",
       "draft_group": 154945,
       "label": "NFL $30K Post Pattern [$10K to 1st] (Afternoon Turbo)",
-      "contests": 167,
+      "contests": 165,
       "starts": "2026-10-18 20:25:00+00:00",
       "file": "data/nfl/dk-classic-154945.json",
       "players": 86,
-      "generated_at": "2026-10-15T17:41:34+00:00"
+      "generated_at": "2026-10-16T00:08:12+00:00"
     },
     {
       "kind": "showdown",
@@ -1111,11 +1111,11 @@
       "site": "dk",
       "draft_group": 154947,
       "label": "NFL Showdown $1.5M Thursday Night Showdown [$500K to 1st] (SEA @ DEN)",
-      "contests": 1234,
+      "contests": 1008,
       "starts": "2026-10-16 00:15:00+00:00",
       "file": "data/nfl/dk-showdown-154947.json",
       "players": 44,
-      "generated_at": "2026-10-15T17:34:14+00:00"
+      "generated_at": "2026-10-15T23:59:22+00:00"
     },
     {
       "kind": "showdown",
@@ -1123,11 +1123,11 @@
       "site": "dk",
       "draft_group": 154948,
       "label": "NFL Showdown $400K Showdown Special [$100K to 1st] (HOU vs JAX)",
-      "contests": 282,
+      "contests": 281,
       "starts": "2026-10-18 13:30:00+00:00",
       "file": "data/nfl/dk-showdown-154948.json",
       "players": 42,
-      "generated_at": "2026-10-15T17:39:43+00:00"
+      "generated_at": "2026-10-16T00:06:04+00:00"
     },
     {
       "kind": "showdown",
@@ -1139,7 +1139,7 @@
       "starts": "2026-10-18 17:00:00+00:00",
       "file": "data/nfl/dk-showdown-154949.json",
       "players": 41,
-      "generated_at": "2026-10-15T17:40:57+00:00"
+      "generated_at": "2026-10-16T00:07:29+00:00"
     },
     {
       "kind": "showdown",
@@ -1147,11 +1147,11 @@
       "site": "dk",
       "draft_group": 154951,
       "label": "NFL Showdown $15K Showdown Special [$5K to 1st] (CAR @ PHI)",
-      "contests": 161,
+      "contests": 162,
       "starts": "2026-10-18 17:00:00+00:00",
       "file": "data/nfl/dk-showdown-154951.json",
-      "players": 45,
-      "generated_at": "2026-10-15T17:42:10+00:00"
+      "players": 44,
+      "generated_at": "2026-10-16T00:08:54+00:00"
     },
     {
       "kind": "showdown",
@@ -1211,7 +1211,7 @@
       "starts": "2026-10-18 17:00:00+00:00",
       "file": "data/nfl/dk-showdown-154955.json",
       "players": 43,
-      "generated_at": "2026-10-15T17:42:46+00:00"
+      "generated_at": "2026-10-16T00:09:35+00:00"
     },
     {
       "kind": "showdown",
@@ -1223,7 +1223,7 @@
       "starts": "2026-10-18 20:25:00+00:00",
       "file": "data/nfl/dk-showdown-154957.json",
       "players": 44,
-      "generated_at": "2026-10-15T17:40:20+00:00"
+      "generated_at": "2026-10-16T00:06:47+00:00"
     }
   ],
   "failures": []
