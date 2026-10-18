@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-18T16:26:22+00:00",
+  "updated_at": "2026-10-18T23:50:30+00:00",
   "slates": [
     {
       "kind": "classic",
@@ -463,11 +463,23 @@
       "site": "dk",
       "draft_group": 154946,
       "label": "NFL $60K Post Pattern [$20K to 1st] (Primetime)",
-      "contests": 256,
+      "contests": 283,
       "starts": "2026-10-19 00:20:00+00:00",
       "file": "data/nfl/dk-classic-154946.json",
+      "players": 89,
+      "generated_at": "2026-10-18T23:48:17+00:00"
+    },
+    {
+      "kind": "classic",
+      "sport": "nfl",
+      "site": "dk",
+      "draft_group": 154981,
+      "label": "NFL $30K Flea Flicker [$10K to 1st] (Mon-Thu)",
+      "contests": 20,
+      "starts": "2026-10-20 00:15:00+00:00",
+      "file": "data/nfl/dk-classic-154981.json",
       "players": 88,
-      "generated_at": "2026-10-18T16:23:54+00:00"
+      "generated_at": "2026-10-18T23:49:06+00:00"
     },
     {
       "kind": "showdown",
@@ -1243,11 +1255,11 @@
       "site": "dk",
       "draft_group": 154959,
       "label": "NFL Showdown $1M Sunday Night Showdown [$250K to 1st] (DAL @ GB)",
-      "contests": 1075,
+      "contests": 1154,
       "starts": "2026-10-19 00:20:00+00:00",
       "file": "data/nfl/dk-showdown-154959.json",
-      "players": 41,
-      "generated_at": "2026-10-18T16:18:44+00:00"
+      "players": 42,
+      "generated_at": "2026-10-18T23:46:39+00:00"
     },
     {
       "kind": "showdown",
@@ -1255,12 +1267,25 @@
       "site": "dk",
       "draft_group": 154960,
       "label": "NFL Showdown $1.5M Monday Night Showdown [$500K to 1st] (WAS @ SF)",
-      "contests": 1019,
+      "contests": 1098,
       "starts": "2026-10-20 00:15:00+00:00",
       "file": "data/nfl/dk-showdown-154960.json",
       "players": 47,
-      "generated_at": "2026-10-18T16:19:21+00:00"
+      "generated_at": "2026-10-18T23:47:27+00:00"
     }
   ],
-  "failures": []
+  "failures": [
+    {
+      "kind": "classic",
+      "draft_group": 155198,
+      "label": "NFL $2.5M Fantasy Football Millionaire [$1M to 1st, [$1M to 1st, $100K Leaderboard Eligible]",
+      "error": "DataUnavailable: draft group 155198 returned no players from either endpoint (lobby top-level keys: ['draftGroupAlerts', 'playerList', 'teamList'])"
+    },
+    {
+      "kind": "classic",
+      "draft_group": 153728,
+      "label": "NFL $6M Midseason Main Event [$1.5M to 1st]",
+      "error": "DataUnavailable: draft group 153728 returned no players from either endpoint (lobby top-level keys: ['draftGroupAlerts', 'playerList', 'teamList'])"
+    }
+  ]
 }
