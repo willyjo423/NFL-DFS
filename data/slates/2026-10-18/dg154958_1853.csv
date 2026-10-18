@@ -1,0 +1,59 @@
+dk_player_id,draftable_id,name,position,team,salary,roster_slot,status,disabled,attributes,game,starts_utc,norm,flex_eligible,captain_salary,playing,draft_group,game_type,captured_at
+339,0,Chiefs,DST,KC,5600,512,,False,,LAC @ KC,1970-01-01 00:29:52.355100+00:00,chiefs,0,5600,clear,154958,Showdown Captain Mode,2026-10-18T18:53:04+00:00
+357,0,Chargers,DST,LAC,3000,512,,False,,LAC @ KC,1970-01-01 00:29:52.355100+00:00,chargers,0,3000,clear,154958,Showdown Captain Mode,2026-10-18T18:53:04+00:00
+448240,0,Travis Kelce,TE,KC,8400,512,,False,,LAC @ KC,1970-01-01 00:29:52.355100+00:00,travis kelce,0,8400,clear,154958,Showdown Captain Mode,2026-10-18T18:53:04+00:00
+472623,0,James Winchester,TE,KC,200,512,,False,,LAC @ KC,1970-01-01 00:29:52.355100+00:00,james winchester,0,200,clear,154958,Showdown Captain Mode,2026-10-18T18:53:04+00:00
+742382,0,Marquez Valdes-Scantling,WR,LAC,3600,512,,False,,LAC @ KC,1970-01-01 00:29:52.355100+00:00,marquez valdes scantling,0,3600,clear,154958,Showdown Captain Mode,2026-10-18T18:53:04+00:00
+748560,0,Harrison Butker,K,KC,5200,512,,False,,LAC @ KC,1970-01-01 00:29:52.355100+00:00,harrison butker,0,5200,clear,154958,Showdown Captain Mode,2026-10-18T18:53:04+00:00
+832098,0,David Njoku,TE,LAC,200,512,,False,,LAC @ KC,1970-01-01 00:29:52.355100+00:00,david njoku,0,200,clear,154958,Showdown Captain Mode,2026-10-18T18:53:04+00:00
+832220,0,Justin Watson,WR,KC,200,512,,False,,LAC @ KC,1970-01-01 00:29:52.355100+00:00,justin watson,0,200,clear,154958,Showdown Captain Mode,2026-10-18T18:53:04+00:00
+839031,0,Patrick Mahomes,QB,KC,10600,512,,False,,LAC @ KC,1970-01-01 00:29:52.355100+00:00,patrick mahomes,0,10600,clear,154958,Showdown Captain Mode,2026-10-18T18:53:04+00:00
+865844,0,Jake Browning,QB,LAC,6000,512,,False,,LAC @ KC,1970-01-01 00:29:52.355100+00:00,jake browning,0,6000,clear,154958,Showdown Captain Mode,2026-10-18T18:53:04+00:00
+877654,0,Gary Jennings,WR,LAC,200,512,,False,,LAC @ KC,1970-01-01 00:29:52.355100+00:00,gary jennings,0,200,clear,154958,Showdown Captain Mode,2026-10-18T18:53:04+00:00
+880322,0,Alec Ingold,RB,LAC,400,512,,False,,LAC @ KC,1970-01-01 00:29:52.355100+00:00,alec ingold,0,400,clear,154958,Showdown Captain Mode,2026-10-18T18:53:04+00:00
+910562,0,Justin Herbert,QB,LAC,9000,512,,False,,LAC @ KC,1970-01-01 00:29:52.355100+00:00,justin herbert,0,9000,clear,154958,Showdown Captain Mode,2026-10-18T18:53:04+00:00
+1056981,0,Noah Gray,TE,KC,2600,512,,False,,LAC @ KC,1970-01-01 00:29:52.355100+00:00,noah gray,0,2600,clear,154958,Showdown Captain Mode,2026-10-18T18:53:04+00:00
+1058648,0,Charlie Kolar,TE,LAC,1600,512,,False,,LAC @ KC,1970-01-01 00:29:52.355100+00:00,charlie kolar,0,1600,clear,154958,Showdown Captain Mode,2026-10-18T18:53:04+00:00
+1108526,0,Thomas Odukoya,TE,KC,200,512,,False,,LAC @ KC,1970-01-01 00:29:52.355100+00:00,thomas odukoya,0,200,clear,154958,Showdown Captain Mode,2026-10-18T18:53:04+00:00
+1110301,0,Tyquan Thornton,WR,KC,200,512,,False,,LAC @ KC,1970-01-01 00:29:52.355100+00:00,tyquan thornton,0,200,clear,154958,Showdown Captain Mode,2026-10-18T18:53:04+00:00
+1110681,0,Justin Fields,QB,KC,6000,512,,False,,LAC @ KC,1970-01-01 00:29:52.355100+00:00,justin fields,0,6000,clear,154958,Showdown Captain Mode,2026-10-18T18:53:04+00:00
+1113477,0,Derius Davis,WR,LAC,800,512,,False,,LAC @ KC,1970-01-01 00:29:52.355100+00:00,derius davis,0,800,clear,154958,Showdown Captain Mode,2026-10-18T18:53:04+00:00
+1125872,0,Cameron Dicker,K,LAC,5000,512,,False,,LAC @ KC,1970-01-01 00:29:52.355100+00:00,cameron dicker,0,5000,clear,154958,Showdown Captain Mode,2026-10-18T18:53:04+00:00
+1127080,0,Nikko Remigio,WR,KC,2000,512,,False,,LAC @ KC,1970-01-01 00:29:52.355100+00:00,nikko remigio,0,2000,clear,154958,Showdown Captain Mode,2026-10-18T18:53:04+00:00
+1130245,0,Ben VanSumeren,RB,KC,200,512,,False,,LAC @ KC,1970-01-01 00:29:52.355100+00:00,ben vansumeren,0,200,clear,154958,Showdown Captain Mode,2026-10-18T18:53:04+00:00
+1130595,0,Scott Matlock,RB,LAC,200,512,,False,,LAC @ KC,1970-01-01 00:29:52.355100+00:00,scott matlock,0,200,clear,154958,Showdown Captain Mode,2026-10-18T18:53:04+00:00
+1130975,0,Trey Lance,QB,LAC,6000,512,,False,,LAC @ KC,1970-01-01 00:29:52.355100+00:00,trey lance,0,6000,clear,154958,Showdown Captain Mode,2026-10-18T18:53:04+00:00
+1162602,0,Theo Wease Jr.,WR,LAC,1000,512,,False,,LAC @ KC,1970-01-01 00:29:52.355100+00:00,theo wease,0,1000,clear,154958,Showdown Captain Mode,2026-10-18T18:53:04+00:00
+1163272,0,Jared Wiley,TE,KC,200,512,,False,,LAC @ KC,1970-01-01 00:29:52.355100+00:00,jared wiley,0,200,clear,154958,Showdown Captain Mode,2026-10-18T18:53:04+00:00
+1164402,0,Kenneth Walker III,RB,KC,12400,512,,False,,LAC @ KC,1970-01-01 00:29:52.355100+00:00,kenneth walker,0,12400,clear,154958,Showdown Captain Mode,2026-10-18T18:53:04+00:00
+1168753,0,Patrick Herbert,TE,LAC,200,512,,False,,LAC @ KC,1970-01-01 00:29:52.355100+00:00,patrick herbert,0,200,clear,154958,Showdown Captain Mode,2026-10-18T18:53:04+00:00
+1173538,0,Rashee Rice,WR,KC,9400,512,,False,,LAC @ KC,1970-01-01 00:29:52.355100+00:00,rashee rice,0,9400,clear,154958,Showdown Captain Mode,2026-10-18T18:53:04+00:00
+1180294,0,Hayden Rucci,TE,LAC,600,512,,False,,LAC @ KC,1970-01-01 00:29:52.355100+00:00,hayden rucci,0,600,clear,154958,Showdown Captain Mode,2026-10-18T18:53:04+00:00
+1213442,0,Jimmy Holiday,WR,KC,200,512,,False,,LAC @ KC,1970-01-01 00:29:52.355100+00:00,jimmy holiday,0,200,clear,154958,Showdown Captain Mode,2026-10-18T18:53:04+00:00
+1213865,0,Quentin Johnston,WR,LAC,7000,512,,False,,LAC @ KC,1970-01-01 00:29:52.355100+00:00,quentin johnston,0,7000,clear,154958,Showdown Captain Mode,2026-10-18T18:53:04+00:00
+1213928,0,DJ Uiagalelei,QB,LAC,6000,512,,False,,LAC @ KC,1970-01-01 00:29:52.355100+00:00,dj uiagalelei,0,6000,clear,154958,Showdown Captain Mode,2026-10-18T18:53:04+00:00
+1214132,0,Nate Carter,RB,KC,200,512,,False,,LAC @ KC,1970-01-01 00:29:52.355100+00:00,nate carter,0,200,clear,154958,Showdown Captain Mode,2026-10-18T18:53:04+00:00
+1214405,0,KeAndre Lambert-Smith,WR,LAC,200,512,,False,,LAC @ KC,1970-01-01 00:29:52.355100+00:00,keandre lambert smith,0,200,clear,154958,Showdown Captain Mode,2026-10-18T18:53:04+00:00
+1214633,0,Tre' Harris,WR,LAC,6800,512,,False,,LAC @ KC,1970-01-01 00:29:52.355100+00:00,tre harris,0,6800,clear,154958,Showdown Captain Mode,2026-10-18T18:53:04+00:00
+1214824,0,Kimani Vidal,RB,LAC,4400,512,,False,,LAC @ KC,1970-01-01 00:29:52.355100+00:00,kimani vidal,0,4400,clear,154958,Showdown Captain Mode,2026-10-18T18:53:04+00:00
+1218643,0,Ladd McConkey,WR,LAC,7600,512,,False,,LAC @ KC,1970-01-01 00:29:52.355100+00:00,ladd mcconkey,0,7600,clear,154958,Showdown Captain Mode,2026-10-18T18:53:04+00:00
+1222789,0,Keaton Mitchell,RB,LAC,4000,512,,False,,LAC @ KC,1970-01-01 00:29:52.355100+00:00,keaton mitchell,0,4000,clear,154958,Showdown Captain Mode,2026-10-18T18:53:04+00:00
+1225702,0,Luke Grimm,WR,LAC,200,512,,False,,LAC @ KC,1970-01-01 00:29:52.355100+00:00,luke grimm,0,200,clear,154958,Showdown Captain Mode,2026-10-18T18:53:04+00:00
+1286037,0,Garrett Nussmeier,QB,KC,6000,512,,False,,LAC @ KC,1970-01-01 00:29:52.355100+00:00,garrett nussmeier,0,6000,clear,154958,Showdown Captain Mode,2026-10-18T18:53:04+00:00
+1286701,0,Gregory Desrosiers,RB,LAC,200,512,,False,,LAC @ KC,1970-01-01 00:29:52.355100+00:00,gregory desrosiers,0,200,clear,154958,Showdown Captain Mode,2026-10-18T18:53:04+00:00
+1287639,0,Jake Briningstool,TE,KC,200,512,,False,,LAC @ KC,1970-01-01 00:29:52.355100+00:00,jake briningstool,0,200,clear,154958,Showdown Captain Mode,2026-10-18T18:53:04+00:00
+1288387,0,John Michael Gyllenborg,TE,KC,200,512,,False,,LAC @ KC,1970-01-01 00:29:52.355100+00:00,john michael gyllenborg,0,200,clear,154958,Showdown Captain Mode,2026-10-18T18:53:04+00:00
+1313668,0,Brashard Smith,RB,KC,1400,512,,False,,LAC @ KC,1970-01-01 00:29:52.355100+00:00,brashard smith,0,1400,clear,154958,Showdown Captain Mode,2026-10-18T18:53:04+00:00
+1325624,0,Oronde Gadsden II,TE,LAC,4800,512,,False,,LAC @ KC,1970-01-01 00:29:52.355100+00:00,oronde gadsden,0,4800,clear,154958,Showdown Captain Mode,2026-10-18T18:53:04+00:00
+1326638,0,Xavier Worthy,WR,KC,6600,512,,False,,LAC @ KC,1970-01-01 00:29:52.355100+00:00,xavier worthy,0,6600,clear,154958,Showdown Captain Mode,2026-10-18T18:53:04+00:00
+1332922,0,Amar Johnson,RB,LAC,200,512,,False,,LAC @ KC,1970-01-01 00:29:52.355100+00:00,amar johnson,0,200,clear,154958,Showdown Captain Mode,2026-10-18T18:53:04+00:00
+1339352,0,Jeff Caldwell,WR,KC,200,512,,False,,LAC @ KC,1970-01-01 00:29:52.355100+00:00,jeff caldwell,0,200,clear,154958,Showdown Captain Mode,2026-10-18T18:53:04+00:00
+1377757,0,Jaydn Ott,RB,KC,200,512,,False,,LAC @ KC,1970-01-01 00:29:52.355100+00:00,jaydn ott,0,200,clear,154958,Showdown Captain Mode,2026-10-18T18:53:04+00:00
+1379251,0,Emmett Johnson,RB,KC,3400,512,,False,,LAC @ KC,1970-01-01 00:29:52.355100+00:00,emmett johnson,0,3400,clear,154958,Showdown Captain Mode,2026-10-18T18:53:04+00:00
+1379261,0,Omari Evans,WR,KC,200,512,,False,,LAC @ KC,1970-01-01 00:29:52.355100+00:00,omari evans,0,200,clear,154958,Showdown Captain Mode,2026-10-18T18:53:04+00:00
+1379995,0,Evan Svoboda,TE,LAC,200,512,,False,,LAC @ KC,1970-01-01 00:29:52.355100+00:00,evan svoboda,0,200,clear,154958,Showdown Captain Mode,2026-10-18T18:53:04+00:00
+1382670,0,Cyrus Allen,WR,KC,2400,512,,False,,LAC @ KC,1970-01-01 00:29:52.355100+00:00,cyrus allen,0,2400,clear,154958,Showdown Captain Mode,2026-10-18T18:53:04+00:00
+1398572,0,Omarion Hampton,RB,LAC,6400,512,,False,,LAC @ KC,1970-01-01 00:29:52.355100+00:00,omarion hampton,0,6400,clear,154958,Showdown Captain Mode,2026-10-18T18:53:04+00:00
+1399132,0,Brenen Thompson,WR,LAC,1200,512,,False,,LAC @ KC,1970-01-01 00:29:52.355100+00:00,brenen thompson,0,1200,clear,154958,Showdown Captain Mode,2026-10-18T18:53:04+00:00
+1403491,0,Jalen Royals,WR,KC,2200,512,,False,,LAC @ KC,1970-01-01 00:29:52.355100+00:00,jalen royals,0,2200,clear,154958,Showdown Captain Mode,2026-10-18T18:53:04+00:00
+1405106,0,Andrew Armstrong,WR,KC,200,512,,False,,LAC @ KC,1970-01-01 00:29:52.355100+00:00,andrew armstrong,0,200,clear,154958,Showdown Captain Mode,2026-10-18T18:53:04+00:00
