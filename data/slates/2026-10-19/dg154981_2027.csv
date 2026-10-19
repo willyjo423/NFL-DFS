@@ -1,0 +1,111 @@
+dk_player_id,draftable_id,name,position,team,salary,roster_slot,status,disabled,attributes,game,starts_utc,norm,flex_eligible,captain_salary,playing,draft_group,game_type,captured_at
+326,0,Bears,DST,CHI,3000,71,,False,,NE @ CHI,,bears,0,3000,clear,154981,Classic,2026-10-19T20:27:45+00:00
+348,0,Patriots,DST,NE,2700,71,,False,,NE @ CHI,,patriots,0,2700,clear,154981,Classic,2026-10-19T20:27:45+00:00
+359,0,49ers,DST,SF,3400,71,,False,,WAS @ SF,,49ers,0,3400,clear,154981,Classic,2026-10-19T20:27:45+00:00
+363,0,Commanders,DST,WAS,2400,71,,False,,WAS @ SF,,commanders,0,2400,clear,154981,Classic,2026-10-19T20:27:45+00:00
+338280,0,Case Keenum,QB,CHI,4000,66,,False,,NE @ CHI,,case keenum,0,4000,clear,154981,Classic,2026-10-19T20:27:45+00:00
+501150,0,Kyle Juszczyk,RB,SF,4000,67,,False,,WAS @ SF,,kyle juszczyk,0,4000,clear,154981,Classic,2026-10-19T20:27:45+00:00
+553024,0,Tyler Ott,TE,WAS,2500,69,,False,,WAS @ SF,,tyler ott,0,2500,clear,154981,Classic,2026-10-19T20:27:45+00:00
+593587,0,Mike Evans,WR,SF,6500,68,,False,,WAS @ SF,,mike evans,0,6500,clear,154981,Classic,2026-10-19T20:27:45+00:00
+607843,0,Marcus Mariota,QB,WAS,4000,66,,False,,WAS @ SF,,marcus mariota,0,4000,clear,154981,Classic,2026-10-19T20:27:45+00:00
+607864,0,Brandin Cooks,WR,SF,4000,68,,False,,WAS @ SF,,brandin cooks,0,4000,clear,154981,Classic,2026-10-19T20:27:45+00:00
+692660,0,Kalif Raymond,WR,CHI,3700,68,,False,,NE @ CHI,,kalif raymond,0,3700,clear,154981,Classic,2026-10-19T20:27:45+00:00
+694041,0,Stefon Diggs,WR,WAS,5300,68,,False,,WAS @ SF,,stefon diggs,0,5300,clear,154981,Classic,2026-10-19T20:27:45+00:00
+702808,0,Mack Hollins,WR,NE,3000,68,,False,,NE @ CHI,,mack hollins,0,3000,clear,154981,Classic,2026-10-19T20:27:45+00:00
+727279,0,Demarcus Robinson,WR,SF,3000,68,,False,,WAS @ SF,,demarcus robinson,0,3000,clear,154981,Classic,2026-10-19T20:27:45+00:00
+733672,0,George Kittle,TE,SF,5200,69,,False,,WAS @ SF,,george kittle,0,5200,clear,154981,Classic,2026-10-19T20:27:45+00:00
+744425,0,Hunter Henry,TE,NE,4100,69,,False,,NE @ CHI,,hunter henry,0,4100,clear,154981,Classic,2026-10-19T20:27:45+00:00
+749681,0,River Cracraft,WR,WAS,3000,68,,False,,WAS @ SF,,river cracraft,0,3000,clear,154981,Classic,2026-10-19T20:27:45+00:00
+790004,0,Austin Ekeler,RB,WAS,4200,67,,False,,WAS @ SF,,austin ekeler,0,4200,clear,154981,Classic,2026-10-19T20:27:45+00:00
+830517,0,Christian McCaffrey,RB,SF,7900,67,,False,,WAS @ SF,,christian mccaffrey,0,7900,clear,154981,Classic,2026-10-19T20:27:45+00:00
+830686,0,Malik Turner,WR,SF,3000,68,,False,,WAS @ SF,,malik turner,0,3000,clear,154981,Classic,2026-10-19T20:27:45+00:00
+835749,0,Deebo Samuel Sr.,WR,SF,5500,68,,False,,WAS @ SF,,deebo samuel,0,5500,clear,154981,Classic,2026-10-19T20:27:45+00:00
+836116,0,Terry McLaurin,WR,WAS,5100,68,,False,,WAS @ SF,,terry mclaurin,0,5100,clear,154981,Classic,2026-10-19T20:27:45+00:00
+837594,0,Jeremy McNichols,RB,WAS,4000,67,,False,,WAS @ SF,,jeremy mcnichols,0,4000,clear,154981,Classic,2026-10-19T20:27:45+00:00
+865801,0,Christian Kirk,WR,SF,3500,68,,False,,WAS @ SF,,christian kirk,0,3500,clear,154981,Classic,2026-10-19T20:27:45+00:00
+866578,0,Scotty Miller,WR,CHI,3000,68,,False,,NE @ CHI,,scotty miller,0,3000,clear,154981,Classic,2026-10-19T20:27:45+00:00
+881697,0,Stephen Carlson,TE,CHI,2500,69,,False,,NE @ CHI,,stephen carlson,0,2500,clear,154981,Classic,2026-10-19T20:27:45+00:00
+884080,0,Van Jefferson,WR,WAS,3000,68,,False,,WAS @ SF,,van jefferson,0,3000,clear,154981,Classic,2026-10-19T20:27:45+00:00
+911985,0,Jack Stoll,TE,SF,2500,69,,False,,WAS @ SF,,jack stoll,0,2500,clear,154981,Classic,2026-10-19T20:27:45+00:00
+915066,0,Reggie Gilliam,RB,NE,4000,67,,False,,NE @ CHI,,reggie gilliam,0,4000,clear,154981,Classic,2026-10-19T20:27:45+00:00
+922451,0,Brittain Brown,RB,CHI,4000,67,,False,,NE @ CHI,,brittain brown,0,4000,clear,154981,Classic,2026-10-19T20:27:45+00:00
+944038,0,John Bates,TE,WAS,2500,69,,False,,WAS @ SF,,john bates,0,2500,clear,154981,Classic,2026-10-19T20:27:45+00:00
+944826,0,A.J. Brown,WR,NE,6000,68,,False,,NE @ CHI,,a j brown,0,6000,clear,154981,Classic,2026-10-19T20:27:45+00:00
+946261,0,Tanner Conner,TE,NE,2500,69,,False,,NE @ CHI,,tanner conner,0,2500,clear,154981,Classic,2026-10-19T20:27:45+00:00
+946541,0,Luke Farrell,TE,SF,2500,69,,False,,WAS @ SF,,luke farrell,0,2500,clear,154981,Classic,2026-10-19T20:27:45+00:00
+973945,0,Mac Jones,QB,SF,4000,66,,False,,WAS @ SF,,mac jones,0,4000,clear,154981,Classic,2026-10-19T20:27:45+00:00
+1049246,0,Salvon Ahmed,RB,CHI,4000,67,,False,,NE @ CHI,,salvon ahmed,0,4000,clear,154981,Classic,2026-10-19T20:27:45+00:00
+1060671,0,Tommy DeVito,QB,NE,4000,66,,False,,NE @ CHI,,tommy devito,0,4000,clear,154981,Classic,2026-10-19T20:27:45+00:00
+1066765,0,Cole Kmet,TE,CHI,2700,69,,False,,NE @ CHI,,cole kmet,0,2700,clear,154981,Classic,2026-10-19T20:27:45+00:00
+1067309,0,Zavier Scott,RB,CHI,4000,67,,False,,NE @ CHI,,zavier scott,0,4000,clear,154981,Classic,2026-10-19T20:27:45+00:00
+1068872,0,Jake Tonges,TE,SF,2500,69,,False,,WAS @ SF,,jake tonges,0,2500,clear,154981,Classic,2026-10-19T20:27:45+00:00
+1069808,0,D'Andre Swift,RB,CHI,6900,67,,False,,NE @ CHI,,dandre swift,0,6900,clear,154981,Classic,2026-10-19T20:27:45+00:00
+1106374,0,Chig Okonkwo,TE,WAS,3300,69,,False,,WAS @ SF,,chig okonkwo,0,3300,clear,154981,Classic,2026-10-19T20:27:45+00:00
+1107034,0,Brandon Aiyuk,WR,SF,3000,68,,False,,WAS @ SF,,brandon aiyuk,0,3000,clear,154981,Classic,2026-10-19T20:27:45+00:00
+1107232,0,Colson Yankoff,TE,WAS,2500,69,,False,,WAS @ SF,,colson yankoff,0,2500,clear,154981,Classic,2026-10-19T20:27:45+00:00
+1107878,0,Dyami Brown,WR,WAS,3000,68,,False,,WAS @ SF,,dyami brown,0,3000,clear,154981,Classic,2026-10-19T20:27:45+00:00
+1109711,0,Sam Hartman,QB,WAS,4000,66,,False,,WAS @ SF,,sam hartman,0,4000,clear,154981,Classic,2026-10-19T20:27:45+00:00
+1121761,0,Brock Purdy,QB,SF,6800,66,,False,,WAS @ SF,,brock purdy,0,6800,clear,154981,Classic,2026-10-19T20:27:45+00:00
+1121863,0,Jack Westover,TE,WAS,2500,69,,False,,WAS @ SF,,jack westover,0,2500,clear,154981,Classic,2026-10-19T20:27:45+00:00
+1122653,0,Romeo Doubs,WR,NE,5000,68,,False,,NE @ CHI,,romeo doubs,0,5000,clear,154981,Classic,2026-10-19T20:27:45+00:00
+1123630,0,Julian Hill,TE,NE,2500,69,,False,,NE @ CHI,,julian hill,0,2500,clear,154981,Classic,2026-10-19T20:27:45+00:00
+1125589,0,Brayden Willis,TE,SF,2500,69,,False,,WAS @ SF,,brayden willis,0,2500,clear,154981,Classic,2026-10-19T20:27:45+00:00
+1125739,0,Cameron Latu,TE,NE,2500,69,,False,,NE @ CHI,,cameron latu,0,2500,clear,154981,Classic,2026-10-19T20:27:45+00:00
+1126338,0,Isaac Guerendo,RB,SF,4000,67,,False,,WAS @ SF,,isaac guerendo,0,4000,clear,154981,Classic,2026-10-19T20:27:45+00:00
+1130004,0,Qadir Ismail,TE,CHI,2500,69,,False,,NE @ CHI,,qadir ismail,0,2500,clear,154981,Classic,2026-10-19T20:27:45+00:00
+1137635,0,Xavier Smith,WR,SF,3000,68,,False,,WAS @ SF,,xavier smith,0,3000,clear,154981,Classic,2026-10-19T20:27:45+00:00
+1161228,0,Jayden Daniels,QB,WAS,6000,66,,False,,WAS @ SF,,jayden daniels,0,6000,clear,154981,Classic,2026-10-19T20:27:45+00:00
+1161416,0,Ricky Pearsall,WR,SF,3000,68,,False,,WAS @ SF,,ricky pearsall,0,3000,clear,154981,Classic,2026-10-19T20:27:45+00:00
+1163265,0,Roschon Johnson,RB,CHI,4700,67,,False,,NE @ CHI,,roschon johnson,0,4700,clear,154981,Classic,2026-10-19T20:27:45+00:00
+1164846,0,Luke McCaffrey,WR,WAS,3000,68,,False,,WAS @ SF,,luke mccaffrey,0,3000,clear,154981,Classic,2026-10-19T20:27:45+00:00
+1166045,0,Nikola Kalinic,TE,CHI,2500,69,,False,,NE @ CHI,,nikola kalinic,0,2500,clear,154981,Classic,2026-10-19T20:27:45+00:00
+1166235,0,Sincere McCormick,RB,SF,4000,67,,False,,WAS @ SF,,sincere mccormick,0,4000,clear,154981,Classic,2026-10-19T20:27:45+00:00
+1166989,0,Kurtis Rourke,QB,SF,4000,66,,False,,WAS @ SF,,kurtis rourke,0,4000,clear,154981,Classic,2026-10-19T20:27:45+00:00
+1167356,0,Craig Reynolds,RB,WAS,4000,67,,False,,WAS @ SF,,craig reynolds,0,4000,clear,154981,Classic,2026-10-19T20:27:45+00:00
+1169263,0,Chandler Brayboy,WR,NE,3000,68,,False,,NE @ CHI,,chandler brayboy,0,3000,clear,154981,Classic,2026-10-19T20:27:45+00:00
+1172024,0,Treylon Burks,WR,WAS,3100,68,,False,,WAS @ SF,,treylon burks,0,3100,clear,154981,Classic,2026-10-19T20:27:45+00:00
+1174682,0,Rhamondre Stevenson,RB,NE,5800,67,,False,,NE @ CHI,,rhamondre stevenson,0,5800,clear,154981,Classic,2026-10-19T20:27:45+00:00
+1175693,0,DeMario Douglas,WR,NE,4600,68,,False,,NE @ CHI,,demario douglas,0,4600,clear,154981,Classic,2026-10-19T20:27:45+00:00
+1181861,0,Jacob Cowing,WR,SF,3000,68,,False,,WAS @ SF,,jacob cowing,0,3000,clear,154981,Classic,2026-10-19T20:27:45+00:00
+1183008,0,Jeremiah Webb,WR,NE,3000,68,,False,,NE @ CHI,,jeremiah webb,0,3000,clear,154981,Classic,2026-10-19T20:27:45+00:00
+1191186,0,Jacory Croskey-Merritt,RB,WAS,5100,67,,False,,WAS @ SF,,jacory croskey merritt,0,5100,clear,154981,Classic,2026-10-19T20:27:45+00:00
+1213727,0,Rome Odunze,WR,CHI,4700,68,,False,,NE @ CHI,,rome odunze,0,4700,clear,154981,Classic,2026-10-19T20:27:45+00:00
+1214689,0,Jaylin Lane,WR,WAS,3000,68,,False,,WAS @ SF,,jaylin lane,0,3000,clear,154981,Classic,2026-10-19T20:27:45+00:00
+1215658,0,Lan Larison,RB,NE,4000,67,,False,,NE @ CHI,,lan larison,0,4000,clear,154981,Classic,2026-10-19T20:27:45+00:00
+1215772,0,Kaelon Black,RB,SF,4400,67,,False,,WAS @ SF,,kaelon black,0,4400,clear,154981,Classic,2026-10-19T20:27:45+00:00
+1216288,0,Efton Chism III,WR,NE,3300,68,,False,,NE @ CHI,,efton chism,0,3300,clear,154981,Classic,2026-10-19T20:27:45+00:00
+1222835,0,Jordan Watkins,WR,SF,3000,68,,False,,WAS @ SF,,jordan watkins,0,3000,clear,154981,Classic,2026-10-19T20:27:45+00:00
+1226344,0,Nick DeGennaro,WR,WAS,3000,68,,False,,WAS @ SF,,nick degennaro,0,3000,clear,154981,Classic,2026-10-19T20:27:45+00:00
+1227157,0,Kyle Williams,WR,NE,3200,68,,False,,NE @ CHI,,kyle williams,0,3200,clear,154981,Classic,2026-10-19T20:27:45+00:00
+1228920,0,Ben Sinnott,TE,WAS,2500,69,,False,,WAS @ SF,,ben sinnott,0,2500,clear,154981,Classic,2026-10-19T20:27:45+00:00
+1229343,0,Rachaad White,RB,WAS,4600,67,,False,,WAS @ SF,,rachaad white,0,4600,clear,154981,Classic,2026-10-19T20:27:45+00:00
+1250886,0,Kyle Monangai,RB,CHI,5200,67,,False,,NE @ CHI,,kyle monangai,0,5200,clear,154981,Classic,2026-10-19T20:27:45+00:00
+1286050,0,Corey Kiner,RB,NE,4300,67,,False,,NE @ CHI,,corey kiner,0,4300,clear,154981,Classic,2026-10-19T20:27:45+00:00
+1286262,0,Miller Moss,QB,CHI,4000,66,,False,,NE @ CHI,,miller moss,0,4000,clear,154981,Classic,2026-10-19T20:27:45+00:00
+1286388,0,Behren Morton,QB,NE,4000,66,,False,,NE @ CHI,,behren morton,0,4000,clear,154981,Classic,2026-10-19T20:27:45+00:00
+1286417,0,JP Richardson,WR,CHI,3000,68,,False,,NE @ CHI,,jp richardson,0,3000,clear,154981,Classic,2026-10-19T20:27:45+00:00
+1286445,0,Caleb Williams,QB,CHI,6300,66,,False,,NE @ CHI,,caleb williams,0,6300,clear,154981,Classic,2026-10-19T20:27:45+00:00
+1286803,0,Drake Maye,QB,NE,6500,66,,False,,NE @ CHI,,drake maye,0,6500,clear,154981,Classic,2026-10-19T20:27:45+00:00
+1286818,0,De'Zhaun Stribling,WR,SF,3000,68,,False,,WAS @ SF,,dezhaun stribling,0,3000,clear,154981,Classic,2026-10-19T20:27:45+00:00
+1287837,0,TreVeyon Henderson,RB,NE,4800,67,,False,,NE @ CHI,,treveyon henderson,0,4800,clear,154981,Classic,2026-10-19T20:27:45+00:00
+1287925,0,Athan Kaliakmanis,QB,WAS,4000,66,,False,,WAS @ SF,,athan kaliakmanis,0,4000,clear,154981,Classic,2026-10-19T20:27:45+00:00
+1288045,0,Will Pauling,WR,SF,3000,68,,False,,WAS @ SF,,will pauling,0,3000,clear,154981,Classic,2026-10-19T20:27:45+00:00
+1288074,0,Myles Montgomery,RB,NE,4000,67,,False,,NE @ CHI,,myles montgomery,0,4000,clear,154981,Classic,2026-10-19T20:27:45+00:00
+1293066,0,Devin Neal,RB,WAS,4000,67,,False,,WAS @ SF,,devin neal,0,4000,clear,154981,Classic,2026-10-19T20:27:45+00:00
+1310628,0,Khalil Dinkins,TE,SF,2500,69,,False,,WAS @ SF,,khalil dinkins,0,2500,clear,154981,Classic,2026-10-19T20:27:45+00:00
+1321090,0,Tanner Arkin,TE,NE,2500,69,,False,,NE @ CHI,,tanner arkin,0,2500,clear,154981,Classic,2026-10-19T20:27:45+00:00
+1321260,0,Jaden Bradley,WR,WAS,3000,68,,False,,WAS @ SF,,jaden bradley,0,3000,clear,154981,Classic,2026-10-19T20:27:45+00:00
+1377732,0,Luther Burden III,WR,CHI,5700,68,,False,,NE @ CHI,,luther burden,0,5700,clear,154981,Classic,2026-10-19T20:27:45+00:00
+1378156,0,Sam Roush,TE,CHI,2500,69,,False,,NE @ CHI,,sam roush,0,2500,clear,154981,Classic,2026-10-19T20:27:45+00:00
+1378290,0,Antonio Williams,WR,WAS,4100,68,,False,,WAS @ SF,,antonio williams,0,4100,clear,154981,Classic,2026-10-19T20:27:45+00:00
+1378821,0,Colston Loveland,TE,CHI,4400,69,,False,,NE @ CHI,,colston loveland,0,4400,clear,154981,Classic,2026-10-19T20:27:45+00:00
+1386002,0,Kaden Davis,WR,CHI,3000,68,,False,,NE @ CHI,,kaden davis,0,3000,clear,154981,Classic,2026-10-19T20:27:45+00:00
+1390913,0,Wesley Grimes,WR,SF,3000,68,,False,,WAS @ SF,,wesley grimes,0,3000,clear,154981,Classic,2026-10-19T20:27:45+00:00
+1398153,0,Zavion Thomas,WR,CHI,3000,68,,False,,NE @ CHI,,zavion thomas,0,3000,clear,154981,Classic,2026-10-19T20:27:45+00:00
+1400657,0,Jordan James,RB,SF,4000,67,,False,,WAS @ SF,,jordan james,0,4000,clear,154981,Classic,2026-10-19T20:27:45+00:00
+1403969,0,Eli Raridon,TE,NE,2600,69,,False,,NE @ CHI,,eli raridon,0,2600,clear,154981,Classic,2026-10-19T20:27:45+00:00
+1443955,0,Hayden Large,TE,CHI,2500,69,,False,,NE @ CHI,,hayden large,0,2500,clear,154981,Classic,2026-10-19T20:27:45+00:00
+1444140,0,Tyson Bagent,QB,CHI,4000,66,,False,,NE @ CHI,,tyson bagent,0,4000,clear,154981,Classic,2026-10-19T20:27:45+00:00
+1465213,0,Jahdae Walker,WR,CHI,3000,68,,False,,NE @ CHI,,jahdae walker,0,3000,clear,154981,Classic,2026-10-19T20:27:45+00:00
+1585808,0,Cameron Dorner,WR,NE,3000,68,,False,,NE @ CHI,,cameron dorner,0,3000,clear,154981,Classic,2026-10-19T20:27:45+00:00
+1637701,0,Kyle Dixon,WR,NE,3000,68,,False,,NE @ CHI,,kyle dixon,0,3000,clear,154981,Classic,2026-10-19T20:27:45+00:00
