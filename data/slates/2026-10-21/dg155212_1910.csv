@@ -1,0 +1,53 @@
+dk_player_id,draftable_id,name,position,team,salary,roster_slot,status,disabled,attributes,game,starts_utc,norm,flex_eligible,captain_salary,playing,draft_group,game_type,captured_at
+345,0,Dolphins,DST,MIA,3400,512,,False,,MIA @ NYJ,1970-01-01 00:29:52.947600+00:00,dolphins,0,3400,clear,155212,Showdown Captain Mode,2026-10-21T19:10:24+00:00
+352,0,Jets,DST,NYJ,4000,512,,False,,MIA @ NYJ,1970-01-01 00:29:52.947600+00:00,jets,0,4000,clear,155212,Showdown Captain Mode,2026-10-21T19:10:24+00:00
+513856,0,Geno Smith,QB,NYJ,10200,512,,False,,MIA @ NYJ,1970-01-01 00:29:52.947600+00:00,geno smith,0,10200,clear,155212,Showdown Captain Mode,2026-10-21T19:10:24+00:00
+691278,0,Sterling Shepard,WR,NYJ,800,512,,False,,MIA @ NYJ,1970-01-01 00:29:52.947600+00:00,sterling shepard,0,800,clear,155212,Showdown Captain Mode,2026-10-21T19:10:24+00:00
+732774,0,Zane Gonzalez,K,MIA,4800,512,,False,,MIA @ NYJ,1970-01-01 00:29:52.947600+00:00,zane gonzalez,0,4800,clear,155212,Showdown Captain Mode,2026-10-21T19:10:24+00:00
+821895,0,Jason Sanders,K,NYJ,5000,512,,False,,MIA @ NYJ,1970-01-01 00:29:52.947600+00:00,jason sanders,0,5000,clear,155212,Showdown Captain Mode,2026-10-21T19:10:24+00:00
+824428,0,Andrew Beck,RB,NYJ,200,512,,False,,MIA @ NYJ,1970-01-01 00:29:52.947600+00:00,andrew beck,0,200,clear,155212,Showdown Captain Mode,2026-10-21T19:10:24+00:00
+838179,0,Tim Patrick,WR,NYJ,2000,512,,False,,MIA @ NYJ,1970-01-01 00:29:52.947600+00:00,tim patrick,0,2000,clear,155212,Showdown Captain Mode,2026-10-21T19:10:24+00:00
+946748,0,Kene Nwangwu,RB,NYJ,200,512,,False,,MIA @ NYJ,1970-01-01 00:29:52.947600+00:00,kene nwangwu,0,200,clear,155212,Showdown Captain Mode,2026-10-21T19:10:24+00:00
+975503,0,Jelani Woods,TE,NYJ,400,512,,False,,MIA @ NYJ,1970-01-01 00:29:52.947600+00:00,jelani woods,0,400,clear,155212,Showdown Captain Mode,2026-10-21T19:10:24+00:00
+976066,0,Jalen Reagor,WR,MIA,200,512,,False,,MIA @ NYJ,1970-01-01 00:29:52.947600+00:00,jalen reagor,0,200,clear,155212,Showdown Captain Mode,2026-10-21T19:10:24+00:00
+976323,0,Malik Willis,QB,MIA,9200,512,,False,,MIA @ NYJ,1970-01-01 00:29:52.947600+00:00,malik willis,0,9200,clear,155212,Showdown Captain Mode,2026-10-21T19:10:24+00:00
+1057725,0,Carlos Washington Jr.,RB,MIA,200,512,,False,,MIA @ NYJ,1970-01-01 00:29:52.947600+00:00,carlos washington,0,200,clear,155212,Showdown Captain Mode,2026-10-21T19:10:24+00:00
+1065025,0,Riley Patterson,K,MIA,4800,512,,False,,MIA @ NYJ,1970-01-01 00:29:52.947600+00:00,riley patterson,0,4800,clear,155212,Showdown Captain Mode,2026-10-21T19:10:24+00:00
+1066424,0,Jalen Tolbert,WR,MIA,1000,512,,False,,MIA @ NYJ,1970-01-01 00:29:52.947600+00:00,jalen tolbert,0,1000,clear,155212,Showdown Captain Mode,2026-10-21T19:10:24+00:00
+1116663,0,Will Levis,QB,NYJ,6000,512,,False,,MIA @ NYJ,1970-01-01 00:29:52.947600+00:00,will levis,0,6000,clear,155212,Showdown Captain Mode,2026-10-21T19:10:24+00:00
+1122596,0,Jeremy Ruckert,TE,NYJ,1600,512,,False,,MIA @ NYJ,1970-01-01 00:29:52.947600+00:00,jeremy ruckert,0,1600,clear,155212,Showdown Captain Mode,2026-10-21T19:10:24+00:00
+1122692,0,Cole Turner,TE,MIA,200,512,,False,,MIA @ NYJ,1970-01-01 00:29:52.947600+00:00,cole turner,0,200,clear,155212,Showdown Captain Mode,2026-10-21T19:10:24+00:00
+1128085,0,Greg Dulcich,TE,MIA,3200,512,,False,,MIA @ NYJ,1970-01-01 00:29:52.947600+00:00,greg dulcich,0,3200,clear,155212,Showdown Captain Mode,2026-10-21T19:10:24+00:00
+1162537,0,Breece Hall,RB,NYJ,10000,512,,False,,MIA @ NYJ,1970-01-01 00:29:52.947600+00:00,breece hall,0,10000,clear,155212,Showdown Captain Mode,2026-10-21T19:10:24+00:00
+1164889,0,Garrett Wilson,WR,NYJ,10600,512,,False,,MIA @ NYJ,1970-01-01 00:29:52.947600+00:00,garrett wilson,0,10600,clear,155212,Showdown Captain Mode,2026-10-21T19:10:24+00:00
+1173255,0,Malik Washington,WR,MIA,7800,512,,False,,MIA @ NYJ,1970-01-01 00:29:52.947600+00:00,malik washington,0,7800,clear,155212,Showdown Captain Mode,2026-10-21T19:10:24+00:00
+1176432,0,Isaiah Williams,WR,NYJ,1200,512,,False,,MIA @ NYJ,1970-01-01 00:29:52.947600+00:00,isaiah williams,0,1200,clear,155212,Showdown Captain Mode,2026-10-21T19:10:24+00:00
+1176733,0,Jared Wayne,WR,MIA,200,512,,False,,MIA @ NYJ,1970-01-01 00:29:52.947600+00:00,jared wayne,0,200,clear,155212,Showdown Captain Mode,2026-10-21T19:10:24+00:00
+1213386,0,Brady Cook,QB,MIA,6000,512,,False,,MIA @ NYJ,1970-01-01 00:29:52.947600+00:00,brady cook,0,6000,clear,155212,Showdown Captain Mode,2026-10-21T19:10:24+00:00
+1213478,0,Chip Trayanum,RB,NYJ,200,512,,False,,MIA @ NYJ,1970-01-01 00:29:52.947600+00:00,chip trayanum,0,200,clear,155212,Showdown Captain Mode,2026-10-21T19:10:24+00:00
+1215329,0,Will Sheppard,WR,MIA,200,512,,False,,MIA @ NYJ,1970-01-01 00:29:52.947600+00:00,will sheppard,0,200,clear,155212,Showdown Captain Mode,2026-10-21T19:10:24+00:00
+1218653,0,Arian Smith,WR,NYJ,200,512,,False,,MIA @ NYJ,1970-01-01 00:29:52.947600+00:00,arian smith,0,200,clear,155212,Showdown Captain Mode,2026-10-21T19:10:24+00:00
+1229541,0,AJ Henning,WR,MIA,200,512,,False,,MIA @ NYJ,1970-01-01 00:29:52.947600+00:00,aj henning,0,200,clear,155212,Showdown Captain Mode,2026-10-21T19:10:24+00:00
+1231820,0,De'Von Achane,RB,MIA,200,512,,False,,MIA @ NYJ,1970-01-01 00:29:52.947600+00:00,devon achane,0,200,clear,155212,Showdown Captain Mode,2026-10-21T19:10:24+00:00
+1271609,0,Isaiah Davis,RB,NYJ,2800,512,,False,,MIA @ NYJ,1970-01-01 00:29:52.947600+00:00,isaiah davis,0,2800,clear,155212,Showdown Captain Mode,2026-10-21T19:10:24+00:00
+1285908,0,Adonai Mitchell,WR,NYJ,7400,512,,False,,MIA @ NYJ,1970-01-01 00:29:52.947600+00:00,adonai mitchell,0,7400,clear,155212,Showdown Captain Mode,2026-10-21T19:10:24+00:00
+1286513,0,Jaylen Wright,RB,MIA,4400,512,,False,,MIA @ NYJ,1970-01-01 00:29:52.947600+00:00,jaylen wright,0,4400,clear,155212,Showdown Captain Mode,2026-10-21T19:10:24+00:00
+1286854,0,Malik McClain,WR,NYJ,200,512,,False,,MIA @ NYJ,1970-01-01 00:29:52.947600+00:00,malik mcclain,0,200,clear,155212,Showdown Captain Mode,2026-10-21T19:10:24+00:00
+1287826,0,Kyle McCord,QB,MIA,6000,512,,False,,MIA @ NYJ,1970-01-01 00:29:52.947600+00:00,kyle mccord,0,6000,clear,155212,Showdown Captain Mode,2026-10-21T19:10:24+00:00
+1289436,0,Al-Jay Henderson,RB,NYJ,200,512,,False,,MIA @ NYJ,1970-01-01 00:29:52.947600+00:00,al jay henderson,0,200,clear,155212,Showdown Captain Mode,2026-10-21T19:10:24+00:00
+1290014,0,Seydou Traore,TE,MIA,200,512,,False,,MIA @ NYJ,1970-01-01 00:29:52.947600+00:00,seydou traore,0,200,clear,155212,Showdown Captain Mode,2026-10-21T19:10:24+00:00
+1317191,0,Tre Watson,TE,MIA,200,512,,False,,MIA @ NYJ,1970-01-01 00:29:52.947600+00:00,tre watson,0,200,clear,155212,Showdown Captain Mode,2026-10-21T19:10:24+00:00
+1322367,0,Will Kacmarek,TE,MIA,600,512,,False,,MIA @ NYJ,1970-01-01 00:29:52.947600+00:00,will kacmarek,0,600,clear,155212,Showdown Captain Mode,2026-10-21T19:10:24+00:00
+1325231,0,Braelon Allen,RB,NYJ,9800,512,,False,,MIA @ NYJ,1970-01-01 00:29:52.947600+00:00,braelon allen,0,9800,clear,155212,Showdown Captain Mode,2026-10-21T19:10:24+00:00
+1327875,0,DJ Herman,RB,MIA,200,512,,False,,MIA @ NYJ,1970-01-01 00:29:52.947600+00:00,dj herman,0,200,clear,155212,Showdown Captain Mode,2026-10-21T19:10:24+00:00
+1377766,0,Ollie Gordon II,RB,MIA,8400,512,,False,,MIA @ NYJ,1970-01-01 00:29:52.947600+00:00,ollie gordon,0,8400,clear,155212,Showdown Captain Mode,2026-10-21T19:10:24+00:00
+1378287,0,Cade Klubnik,QB,NYJ,6000,512,,False,,MIA @ NYJ,1970-01-01 00:29:52.947600+00:00,cade klubnik,0,6000,clear,155212,Showdown Captain Mode,2026-10-21T19:10:24+00:00
+1379259,0,Kaytron Allen,RB,MIA,2400,512,,False,,MIA @ NYJ,1970-01-01 00:29:52.947600+00:00,kaytron allen,0,2400,clear,155212,Showdown Captain Mode,2026-10-21T19:10:24+00:00
+1381263,0,Mason Taylor,TE,NYJ,3600,512,,False,,MIA @ NYJ,1970-01-01 00:29:52.947600+00:00,mason taylor,0,3600,clear,155212,Showdown Captain Mode,2026-10-21T19:10:24+00:00
+1382993,0,Jamaal Pritchett,WR,NYJ,200,512,,False,,MIA @ NYJ,1970-01-01 00:29:52.947600+00:00,jamaal pritchett,0,200,clear,155212,Showdown Captain Mode,2026-10-21T19:10:24+00:00
+1389700,0,Chris Bell,WR,MIA,5400,512,,False,,MIA @ NYJ,1970-01-01 00:29:52.947600+00:00,chris bell,0,5400,clear,155212,Showdown Captain Mode,2026-10-21T19:10:24+00:00
+1394798,0,Caleb Douglas,WR,MIA,6400,512,,False,,MIA @ NYJ,1970-01-01 00:29:52.947600+00:00,caleb douglas,0,6400,clear,155212,Showdown Captain Mode,2026-10-21T19:10:24+00:00
+1394825,0,Omar Cooper Jr.,WR,NYJ,7000,512,,False,,MIA @ NYJ,1970-01-01 00:29:52.947600+00:00,omar cooper,0,7000,clear,155212,Showdown Captain Mode,2026-10-21T19:10:24+00:00
+1399272,0,Kevin Coleman Jr.,WR,MIA,3000,512,,False,,MIA @ NYJ,1970-01-01 00:29:52.947600+00:00,kevin coleman,0,3000,clear,155212,Showdown Captain Mode,2026-10-21T19:10:24+00:00
+1405928,0,Justin Joly,TE,MIA,200,512,,False,,MIA @ NYJ,1970-01-01 00:29:52.947600+00:00,justin joly,0,200,clear,155212,Showdown Captain Mode,2026-10-21T19:10:24+00:00
+1444547,0,Kenyon Sadiq,TE,NYJ,5600,512,,False,,MIA @ NYJ,1970-01-01 00:29:52.947600+00:00,kenyon sadiq,0,5600,clear,155212,Showdown Captain Mode,2026-10-21T19:10:24+00:00

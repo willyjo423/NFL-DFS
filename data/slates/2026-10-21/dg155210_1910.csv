@@ -1,0 +1,55 @@
+dk_player_id,draftable_id,name,position,team,salary,roster_slot,status,disabled,attributes,game,starts_utc,norm,flex_eligible,captain_salary,playing,draft_group,game_type,captured_at
+327,0,Bengals,DST,CIN,3400,512,,False,,CIN @ BAL,1970-01-01 00:29:52.947600+00:00,bengals,0,3400,clear,155210,Showdown Captain Mode,2026-10-21T19:10:24+00:00
+366,0,Ravens,DST,BAL,3800,512,,False,,CIN @ BAL,1970-01-01 00:29:52.947600+00:00,ravens,0,3800,clear,155210,Showdown Captain Mode,2026-10-21T19:10:24+00:00
+216342,0,Joe Flacco,QB,CIN,6000,512,,False,,CIN @ BAL,1970-01-01 00:29:52.947600+00:00,joe flacco,0,6000,clear,155210,Showdown Captain Mode,2026-10-21T19:10:24+00:00
+273278,0,Josh Johnson,QB,CIN,6000,512,,False,,CIN @ BAL,1970-01-01 00:29:52.947600+00:00,josh johnson,0,6000,clear,155210,Showdown Captain Mode,2026-10-21T19:10:24+00:00
+606488,0,Nick Vannett,TE,BAL,200,512,,False,,CIN @ BAL,1970-01-01 00:29:52.947600+00:00,nick vannett,0,200,clear,155210,Showdown Captain Mode,2026-10-21T19:10:24+00:00
+606551,0,Chris Moore,WR,BAL,2000,512,,False,,CIN @ BAL,1970-01-01 00:29:52.947600+00:00,chris moore,0,2000,clear,155210,Showdown Captain Mode,2026-10-21T19:10:24+00:00
+732145,0,Derrick Henry,RB,BAL,10800,512,,False,,CIN @ BAL,1970-01-01 00:29:52.947600+00:00,derrick henry,0,10800,clear,155210,Showdown Captain Mode,2026-10-21T19:10:24+00:00
+749968,0,Durham Smythe,TE,BAL,200,512,,False,,CIN @ BAL,1970-01-01 00:29:52.947600+00:00,durham smythe,0,200,clear,155210,Showdown Captain Mode,2026-10-21T19:10:24+00:00
+820699,0,Mark Andrews,TE,BAL,6800,512,,False,,CIN @ BAL,1970-01-01 00:29:52.947600+00:00,mark andrews,0,6800,clear,155210,Showdown Captain Mode,2026-10-21T19:10:24+00:00
+820734,0,Samaje Perine,RB,CIN,3600,512,,False,,CIN @ BAL,1970-01-01 00:29:52.947600+00:00,samaje perine,0,3600,clear,155210,Showdown Captain Mode,2026-10-21T19:10:24+00:00
+836152,0,Mike Gesicki,TE,CIN,6400,512,,False,,CIN @ BAL,1970-01-01 00:29:52.947600+00:00,mike gesicki,0,6400,clear,155210,Showdown Captain Mode,2026-10-21T19:10:24+00:00
+837824,0,Drew Sample,TE,CIN,1200,512,,False,,CIN @ BAL,1970-01-01 00:29:52.947600+00:00,drew sample,0,1200,clear,155210,Showdown Captain Mode,2026-10-21T19:10:24+00:00
+877745,0,Lamar Jackson,QB,BAL,9800,512,,False,,CIN @ BAL,1970-01-01 00:29:52.947600+00:00,lamar jackson,0,9800,clear,155210,Showdown Captain Mode,2026-10-21T19:10:24+00:00
+878785,0,Joe Burrow,QB,CIN,10000,512,,False,,CIN @ BAL,1970-01-01 00:29:52.947600+00:00,joe burrow,0,10000,clear,155210,Showdown Captain Mode,2026-10-21T19:10:24+00:00
+912553,0,Jonathan Ward,RB,BAL,200,512,,False,,CIN @ BAL,1970-01-01 00:29:52.947600+00:00,jonathan ward,0,200,clear,155210,Showdown Captain Mode,2026-10-21T19:10:24+00:00
+913163,0,Tyler Huntley,QB,BAL,8800,512,,False,,CIN @ BAL,1970-01-01 00:29:52.947600+00:00,tyler huntley,0,8800,clear,155210,Showdown Captain Mode,2026-10-21T19:10:24+00:00
+913829,0,Skylar Thompson,QB,BAL,6000,512,,False,,CIN @ BAL,1970-01-01 00:29:52.947600+00:00,skylar thompson,0,6000,clear,155210,Showdown Captain Mode,2026-10-21T19:10:24+00:00
+923109,0,Justice Hill,RB,BAL,4000,512,,False,,CIN @ BAL,1970-01-01 00:29:52.947600+00:00,justice hill,0,4000,clear,155210,Showdown Captain Mode,2026-10-21T19:10:24+00:00
+978579,0,Tee Higgins,WR,CIN,9000,512,,False,,CIN @ BAL,1970-01-01 00:29:52.947600+00:00,tee higgins,0,9000,clear,155210,Showdown Captain Mode,2026-10-21T19:10:24+00:00
+1067089,0,Sean Clifford,QB,CIN,6000,512,,False,,CIN @ BAL,1970-01-01 00:29:52.947600+00:00,sean clifford,0,6000,clear,155210,Showdown Captain Mode,2026-10-21T19:10:24+00:00
+1108208,0,Rashod Bateman,WR,BAL,5800,512,,False,,CIN @ BAL,1970-01-01 00:29:52.947600+00:00,rashod bateman,0,5800,clear,155210,Showdown Captain Mode,2026-10-21T19:10:24+00:00
+1109979,0,Ja'Marr Chase,WR,CIN,11000,512,,False,,CIN @ BAL,1970-01-01 00:29:52.947600+00:00,jamarr chase,0,11000,clear,155210,Showdown Captain Mode,2026-10-21T19:10:24+00:00
+1115394,0,Tanner Hudson,TE,CIN,200,512,,False,,CIN @ BAL,1970-01-01 00:29:52.947600+00:00,tanner hudson,0,200,clear,155210,Showdown Captain Mode,2026-10-21T19:10:24+00:00
+1122995,0,Evan McPherson,K,CIN,5000,512,,False,,CIN @ BAL,1970-01-01 00:29:52.947600+00:00,evan mcpherson,0,5000,clear,155210,Showdown Captain Mode,2026-10-21T19:10:24+00:00
+1123379,0,Chase Brown,RB,CIN,8600,512,,False,,CIN @ BAL,1970-01-01 00:29:52.947600+00:00,chase brown,0,8600,clear,155210,Showdown Captain Mode,2026-10-21T19:10:24+00:00
+1124851,0,Andrei Iosivas,WR,CIN,200,512,,False,,CIN @ BAL,1970-01-01 00:29:52.947600+00:00,andrei iosivas,0,200,clear,155210,Showdown Captain Mode,2026-10-21T19:10:24+00:00
+1130237,0,Jake Moody,K,BAL,4800,512,,False,,CIN @ BAL,1970-01-01 00:29:52.947600+00:00,jake moody,0,4800,clear,155210,Showdown Captain Mode,2026-10-21T19:10:24+00:00
+1133320,0,Dohnte Meyers,WR,CIN,2800,512,,False,,CIN @ BAL,1970-01-01 00:29:52.947600+00:00,dohnte meyers,0,2800,clear,155210,Showdown Captain Mode,2026-10-21T19:10:24+00:00
+1164533,0,Erick All Jr.,TE,CIN,1600,512,,False,,CIN @ BAL,1970-01-01 00:29:52.947600+00:00,erick all,0,1600,clear,155210,Showdown Captain Mode,2026-10-21T19:10:24+00:00
+1169299,0,Joe Fagnano,QB,BAL,6000,512,,False,,CIN @ BAL,1970-01-01 00:29:52.947600+00:00,joe fagnano,0,6000,clear,155210,Showdown Captain Mode,2026-10-21T19:10:24+00:00
+1177053,0,Zay Flowers,WR,BAL,9400,512,,False,,CIN @ BAL,1970-01-01 00:29:52.947600+00:00,zay flowers,0,9400,clear,155210,Showdown Captain Mode,2026-10-21T19:10:24+00:00
+1181739,0,William Wagner,TE,CIN,200,512,,False,,CIN @ BAL,1970-01-01 00:29:52.947600+00:00,william wagner,0,200,clear,155210,Showdown Captain Mode,2026-10-21T19:10:24+00:00
+1213345,0,Kendall Milton,RB,CIN,200,512,,False,,CIN @ BAL,1970-01-01 00:29:52.947600+00:00,kendall milton,0,200,clear,155210,Showdown Captain Mode,2026-10-21T19:10:24+00:00
+1215305,0,Mitch Tinsley,WR,CIN,2200,512,,False,,CIN @ BAL,1970-01-01 00:29:52.947600+00:00,mitch tinsley,0,2200,clear,155210,Showdown Captain Mode,2026-10-21T19:10:24+00:00
+1228730,0,Tahj Brooks,RB,CIN,1400,512,,False,,CIN @ BAL,1970-01-01 00:29:52.947600+00:00,tahj brooks,0,1400,clear,155210,Showdown Captain Mode,2026-10-21T19:10:24+00:00
+1229055,0,Kentrel Bullock,RB,CIN,200,512,,False,,CIN @ BAL,1970-01-01 00:29:52.947600+00:00,kentrel bullock,0,200,clear,155210,Showdown Captain Mode,2026-10-21T19:10:24+00:00
+1229133,0,Rasheen Ali,RB,BAL,400,512,,False,,CIN @ BAL,1970-01-01 00:29:52.947600+00:00,rasheen ali,0,400,clear,155210,Showdown Captain Mode,2026-10-21T19:10:24+00:00
+1229693,0,Matt Hibner,TE,BAL,600,512,,False,,CIN @ BAL,1970-01-01 00:29:52.947600+00:00,matt hibner,0,600,clear,155210,Showdown Captain Mode,2026-10-21T19:10:24+00:00
+1231033,0,LaJohntay Wester,WR,BAL,1000,512,,False,,CIN @ BAL,1970-01-01 00:29:52.947600+00:00,lajohntay wester,0,1000,clear,155210,Showdown Captain Mode,2026-10-21T19:10:24+00:00
+1232057,0,Ke'Shawn Williams,WR,CIN,200,512,,False,,CIN @ BAL,1970-01-01 00:29:52.947600+00:00,keshawn williams,0,200,clear,155210,Showdown Captain Mode,2026-10-21T19:10:24+00:00
+1239342,0,Tyler Loop,K,BAL,4800,512,,False,,CIN @ BAL,1970-01-01 00:29:52.947600+00:00,tyler loop,0,4800,clear,155210,Showdown Captain Mode,2026-10-21T19:10:24+00:00
+1277914,0,Devontez Walker,WR,BAL,2400,512,,False,,CIN @ BAL,1970-01-01 00:29:52.947600+00:00,devontez walker,0,2400,clear,155210,Showdown Captain Mode,2026-10-21T19:10:24+00:00
+1286662,0,Jordan Moore,WR,CIN,200,512,,False,,CIN @ BAL,1970-01-01 00:29:52.947600+00:00,jordan moore,0,200,clear,155210,Showdown Captain Mode,2026-10-21T19:10:24+00:00
+1319948,0,Josh Cuevas,TE,BAL,1800,512,,False,,CIN @ BAL,1970-01-01 00:29:52.947600+00:00,josh cuevas,0,1800,clear,155210,Showdown Captain Mode,2026-10-21T19:10:24+00:00
+1323007,0,Gage Larvadain,WR,BAL,200,512,,False,,CIN @ BAL,1970-01-01 00:29:52.947600+00:00,gage larvadain,0,200,clear,155210,Showdown Captain Mode,2026-10-21T19:10:24+00:00
+1325830,0,Lucas Scott,RB,BAL,200,512,,False,,CIN @ BAL,1970-01-01 00:29:52.947600+00:00,lucas scott,0,200,clear,155210,Showdown Captain Mode,2026-10-21T19:10:24+00:00
+1378284,0,Adam Randall,RB,BAL,200,512,,False,,CIN @ BAL,1970-01-01 00:29:52.947600+00:00,adam randall,0,200,clear,155210,Showdown Captain Mode,2026-10-21T19:10:24+00:00
+1392584,0,Elijah Sarratt,WR,BAL,800,512,,False,,CIN @ BAL,1970-01-01 00:29:52.947600+00:00,elijah sarratt,0,800,clear,155210,Showdown Captain Mode,2026-10-21T19:10:24+00:00
+1395857,0,Josh Kattus,TE,CIN,200,512,,False,,CIN @ BAL,1970-01-01 00:29:52.947600+00:00,josh kattus,0,200,clear,155210,Showdown Captain Mode,2026-10-21T19:10:24+00:00
+1400852,0,Jack Endries,TE,CIN,200,512,,False,,CIN @ BAL,1970-01-01 00:29:52.947600+00:00,jack endries,0,200,clear,155210,Showdown Captain Mode,2026-10-21T19:10:24+00:00
+1402692,0,Noah Thomas,WR,CIN,200,512,,False,,CIN @ BAL,1970-01-01 00:29:52.947600+00:00,noah thomas,0,200,clear,155210,Showdown Captain Mode,2026-10-21T19:10:24+00:00
+1404295,0,Ty Pezza,TE,BAL,200,512,,False,,CIN @ BAL,1970-01-01 00:29:52.947600+00:00,ty pezza,0,200,clear,155210,Showdown Captain Mode,2026-10-21T19:10:24+00:00
+1406878,0,Colbie Young,WR,CIN,3000,512,,False,,CIN @ BAL,1970-01-01 00:29:52.947600+00:00,colbie young,0,3000,clear,155210,Showdown Captain Mode,2026-10-21T19:10:24+00:00
+1458888,0,Ja'Kobi Lane,WR,BAL,4400,512,,False,,CIN @ BAL,1970-01-01 00:29:52.947600+00:00,jakobi lane,0,4400,clear,155210,Showdown Captain Mode,2026-10-21T19:10:24+00:00
