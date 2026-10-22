@@ -1,0 +1,55 @@
+dk_player_id,draftable_id,name,position,team,salary,roster_slot,status,disabled,attributes,game,starts_utc,norm,flex_eligible,captain_salary,playing,draft_group,game_type,captured_at
+334,0,Lions,DST,DET,3400,512,,False,,GB @ DET,1970-01-01 00:29:52.959900+00:00,lions,0,3400,clear,155214,Showdown Captain Mode,2026-10-22T19:05:59+00:00
+335,0,Packers,DST,GB,3200,512,,False,,GB @ DET,1970-01-01 00:29:52.959900+00:00,packers,0,3200,clear,155214,Showdown Captain Mode,2026-10-22T19:05:59+00:00
+399579,0,Tyrod Taylor,QB,GB,6000,512,,False,,GB @ DET,1970-01-01 00:29:52.959900+00:00,tyrod taylor,0,6000,clear,155214,Showdown Captain Mode,2026-10-22T19:05:59+00:00
+612512,0,DeAndre Carter,WR,DET,200,512,,False,,GB @ DET,1970-01-01 00:29:52.959900+00:00,deandre carter,0,200,clear,155214,Showdown Captain Mode,2026-10-22T19:05:59+00:00
+727837,0,Jared Goff,QB,DET,10800,512,,False,,GB @ DET,1970-01-01 00:29:52.959900+00:00,jared goff,0,10800,clear,155214,Showdown Captain Mode,2026-10-22T19:05:59+00:00
+741262,0,Joshua Dobbs,QB,DET,6000,512,,False,,GB @ DET,1970-01-01 00:29:52.959900+00:00,joshua dobbs,0,6000,clear,155214,Showdown Captain Mode,2026-10-22T19:05:59+00:00
+743749,0,Jonnu Smith,TE,GB,1600,512,,False,,GB @ DET,1970-01-01 00:29:52.959900+00:00,jonnu smith,0,1600,clear,155214,Showdown Captain Mode,2026-10-22T19:05:59+00:00
+837087,0,Tom Kennedy,WR,DET,200,512,,False,,GB @ DET,1970-01-01 00:29:52.959900+00:00,tom kennedy,0,200,clear,155214,Showdown Captain Mode,2026-10-22T19:05:59+00:00
+861278,0,Tyler Conklin,TE,DET,800,512,,False,,GB @ DET,1970-01-01 00:29:52.959900+00:00,tyler conklin,0,800,clear,155214,Showdown Captain Mode,2026-10-22T19:05:59+00:00
+881670,0,Lucky Jackson,WR,DET,200,512,,False,,GB @ DET,1970-01-01 00:29:52.959900+00:00,lucky jackson,0,200,clear,155214,Showdown Captain Mode,2026-10-22T19:05:59+00:00
+912137,0,Jordan Love,QB,GB,10000,512,,False,,GB @ DET,1970-01-01 00:29:52.959900+00:00,jordan love,0,10000,clear,155214,Showdown Captain Mode,2026-10-22T19:05:59+00:00
+944416,0,Josh Jacobs,RB,GB,8400,512,,False,,GB @ DET,1970-01-01 00:29:52.959900+00:00,josh jacobs,0,8400,clear,155214,Showdown Captain Mode,2026-10-22T19:05:59+00:00
+978120,0,Brock Wright,TE,DET,1800,512,,False,,GB @ DET,1970-01-01 00:29:52.959900+00:00,brock wright,0,1800,clear,155214,Showdown Captain Mode,2026-10-22T19:05:59+00:00
+1050335,0,Pierre Strong Jr.,RB,GB,4400,512,,False,,GB @ DET,1970-01-01 00:29:52.959900+00:00,pierre strong,0,4400,clear,155214,Showdown Captain Mode,2026-10-22T19:05:59+00:00
+1065052,0,Tay Martin,WR,DET,1000,512,,False,,GB @ DET,1970-01-01 00:29:52.959900+00:00,tay martin,0,1000,clear,155214,Showdown Captain Mode,2026-10-22T19:05:59+00:00
+1067918,0,Christian Watson,WR,GB,9000,512,,False,,GB @ DET,1970-01-01 00:29:52.959900+00:00,christian watson,0,9000,clear,155214,Showdown Captain Mode,2026-10-22T19:05:59+00:00
+1068803,0,Bo Melton,WR,GB,2000,512,,False,,GB @ DET,1970-01-01 00:29:52.959900+00:00,bo melton,0,2000,clear,155214,Showdown Captain Mode,2026-10-22T19:05:59+00:00
+1106832,0,Isiah Pacheco,RB,DET,200,512,,False,,GB @ DET,1970-01-01 00:29:52.959900+00:00,isiah pacheco,0,200,clear,155214,Showdown Captain Mode,2026-10-22T19:05:59+00:00
+1107037,0,Josh Whyle,TE,GB,200,512,,False,,GB @ DET,1970-01-01 00:29:52.959900+00:00,josh whyle,0,200,clear,155214,Showdown Captain Mode,2026-10-22T19:05:59+00:00
+1107326,0,Thomas Yassmin,TE,GB,200,512,,False,,GB @ DET,1970-01-01 00:29:52.959900+00:00,thomas yassmin,0,200,clear,155214,Showdown Captain Mode,2026-10-22T19:05:59+00:00
+1123398,0,Jayden Reed,WR,GB,200,512,,False,,GB @ DET,1970-01-01 00:29:52.959900+00:00,jayden reed,0,200,clear,155214,Showdown Captain Mode,2026-10-22T19:05:59+00:00
+1127065,0,Chris Brooks,RB,GB,200,512,,False,,GB @ DET,1970-01-01 00:29:52.959900+00:00,chris brooks,0,200,clear,155214,Showdown Captain Mode,2026-10-22T19:05:59+00:00
+1127106,0,Amon-Ra St. Brown,WR,DET,9800,512,,False,,GB @ DET,1970-01-01 00:29:52.959900+00:00,amon ra st brown,0,9800,clear,155214,Showdown Captain Mode,2026-10-22T19:05:59+00:00
+1130538,0,Lawrence Keys III,WR,DET,200,512,,False,,GB @ DET,1970-01-01 00:29:52.959900+00:00,lawrence keys,0,200,clear,155214,Showdown Captain Mode,2026-10-22T19:05:59+00:00
+1131457,0,Jacob Saylors,RB,DET,400,512,,False,,GB @ DET,1970-01-01 00:29:52.959900+00:00,jacob saylors,0,400,clear,155214,Showdown Captain Mode,2026-10-22T19:05:59+00:00
+1161818,0,Kedon Slovis,QB,GB,6000,512,,False,,GB @ DET,1970-01-01 00:29:52.959900+00:00,kedon slovis,0,6000,clear,155214,Showdown Captain Mode,2026-10-22T19:05:59+00:00
+1168926,0,Sam LaPorta,TE,DET,6800,512,,False,,GB @ DET,1970-01-01 00:29:52.959900+00:00,sam laporta,0,6800,clear,155214,Showdown Captain Mode,2026-10-22T19:05:59+00:00
+1172746,0,Isaiah Neyor,WR,GB,200,512,,False,,GB @ DET,1970-01-01 00:29:52.959900+00:00,isaiah neyor,0,200,clear,155214,Showdown Captain Mode,2026-10-22T19:05:59+00:00
+1173254,0,Thomas Gordon,TE,DET,200,512,,False,,GB @ DET,1970-01-01 00:29:52.959900+00:00,thomas gordon,0,200,clear,155214,Showdown Captain Mode,2026-10-22T19:05:59+00:00
+1175184,0,Jameson Williams,WR,DET,7800,512,,False,,GB @ DET,1970-01-01 00:29:52.959900+00:00,jameson williams,0,7800,clear,155214,Showdown Captain Mode,2026-10-22T19:05:59+00:00
+1176730,0,Skyy Moore,WR,GB,200,512,,False,,GB @ DET,1970-01-01 00:29:52.959900+00:00,skyy moore,0,200,clear,155214,Showdown Captain Mode,2026-10-22T19:05:59+00:00
+1179790,0,Luke Musgrave,TE,GB,200,512,,False,,GB @ DET,1970-01-01 00:29:52.959900+00:00,luke musgrave,0,200,clear,155214,Showdown Captain Mode,2026-10-22T19:05:59+00:00
+1181874,0,Tucker Kraft,TE,GB,6600,512,,False,,GB @ DET,1970-01-01 00:29:52.959900+00:00,tucker kraft,0,6600,clear,155214,Showdown Captain Mode,2026-10-22T19:05:59+00:00
+1184233,0,Coleman Owen,WR,GB,200,512,,False,,GB @ DET,1970-01-01 00:29:52.959900+00:00,coleman owen,0,200,clear,155214,Showdown Captain Mode,2026-10-22T19:05:59+00:00
+1213414,0,MarShawn Lloyd,RB,GB,5400,512,,False,,GB @ DET,1970-01-01 00:29:52.959900+00:00,marshawn lloyd,0,5400,clear,155214,Showdown Captain Mode,2026-10-22T19:05:59+00:00
+1213730,0,Mark Redman,TE,GB,600,512,,False,,GB @ DET,1970-01-01 00:29:52.959900+00:00,mark redman,0,600,clear,155214,Showdown Captain Mode,2026-10-22T19:05:59+00:00
+1213872,0,Savion Williams,WR,GB,4000,512,,False,,GB @ DET,1970-01-01 00:29:52.959900+00:00,savion williams,0,4000,clear,155214,Showdown Captain Mode,2026-10-22T19:05:59+00:00
+1214154,0,Jahmyr Gibbs,RB,DET,11800,512,,False,,GB @ DET,1970-01-01 00:29:52.959900+00:00,jahmyr gibbs,0,11800,clear,155214,Showdown Captain Mode,2026-10-22T19:05:59+00:00
+1228551,0,Drake Dabney,TE,GB,200,512,,False,,GB @ DET,1970-01-01 00:29:52.959900+00:00,drake dabney,0,200,clear,155214,Showdown Captain Mode,2026-10-22T19:05:59+00:00
+1232898,0,Jabari Small,RB,DET,200,512,,False,,GB @ DET,1970-01-01 00:29:52.959900+00:00,jabari small,0,200,clear,155214,Showdown Captain Mode,2026-10-22T19:05:59+00:00
+1236651,0,Jake Bates,K,DET,5000,512,,False,,GB @ DET,1970-01-01 00:29:52.959900+00:00,jake bates,0,5000,clear,155214,Showdown Captain Mode,2026-10-22T19:05:59+00:00
+1285915,0,Jackson Meeks,TE,DET,200,512,,False,,GB @ DET,1970-01-01 00:29:52.959900+00:00,jackson meeks,0,200,clear,155214,Showdown Captain Mode,2026-10-22T19:05:59+00:00
+1286214,0,Luke Altmyer,QB,DET,6000,512,,False,,GB @ DET,1970-01-01 00:29:52.959900+00:00,luke altmyer,0,6000,clear,155214,Showdown Captain Mode,2026-10-22T19:05:59+00:00
+1286480,0,Dominic Lovett,WR,DET,200,512,,False,,GB @ DET,1970-01-01 00:29:52.959900+00:00,dominic lovett,0,200,clear,155214,Showdown Captain Mode,2026-10-22T19:05:59+00:00
+1296464,0,Quincy Skinner Jr.,WR,GB,200,512,,False,,GB @ DET,1970-01-01 00:29:52.959900+00:00,quincy skinner,0,200,clear,155214,Showdown Captain Mode,2026-10-22T19:05:59+00:00
+1323916,0,J. Michael Sturdivant,WR,GB,1200,512,,False,,GB @ DET,1970-01-01 00:29:52.959900+00:00,j michael sturdivant,0,1200,clear,155214,Showdown Captain Mode,2026-10-22T19:05:59+00:00
+1378910,0,Kendrick Law,WR,DET,200,512,,False,,GB @ DET,1970-01-01 00:29:52.959900+00:00,kendrick law,0,200,clear,155214,Showdown Captain Mode,2026-10-22T19:05:59+00:00
+1379267,0,Matthew Golden,WR,GB,8000,512,,False,,GB @ DET,1970-01-01 00:29:52.959900+00:00,matthew golden,0,8000,clear,155214,Showdown Captain Mode,2026-10-22T19:05:59+00:00
+1381164,0,Sione Vaki,RB,DET,2800,512,,False,,GB @ DET,1970-01-01 00:29:52.959900+00:00,sione vaki,0,2800,clear,155214,Showdown Captain Mode,2026-10-22T19:05:59+00:00
+1381902,0,Kaleb Johnson,RB,GB,2400,512,,False,,GB @ DET,1970-01-01 00:29:52.959900+00:00,kaleb johnson,0,2400,clear,155214,Showdown Captain Mode,2026-10-22T19:05:59+00:00
+1394826,0,Trey Smack,K,GB,4600,512,,False,,GB @ DET,1970-01-01 00:29:52.959900+00:00,trey smack,0,4600,clear,155214,Showdown Captain Mode,2026-10-22T19:05:59+00:00
+1399934,0,Miles Kitselman,TE,DET,200,512,,False,,GB @ DET,1970-01-01 00:29:52.959900+00:00,miles kitselman,0,200,clear,155214,Showdown Captain Mode,2026-10-22T19:05:59+00:00
+1441362,0,Isaac TeSlaa,WR,DET,3800,512,,False,,GB @ DET,1970-01-01 00:29:52.959900+00:00,isaac teslaa,0,3800,clear,155214,Showdown Captain Mode,2026-10-22T19:05:59+00:00
+1580184,0,Lenny Krieg,K,GB,4600,512,,False,,GB @ DET,1970-01-01 00:29:52.959900+00:00,lenny krieg,0,4600,clear,155214,Showdown Captain Mode,2026-10-22T19:05:59+00:00

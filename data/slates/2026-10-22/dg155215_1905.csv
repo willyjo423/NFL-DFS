@@ -1,0 +1,55 @@
+dk_player_id,draftable_id,name,position,team,salary,roster_slot,status,disabled,attributes,game,starts_utc,norm,flex_eligible,captain_salary,playing,draft_group,game_type,captured_at
+341,0,Raiders,DST,LV,3000,512,,False,,LAR @ LV,1970-01-01 00:29:52.959900+00:00,raiders,0,3000,clear,155215,Showdown Captain Mode,2026-10-22T19:05:59+00:00
+343,0,Rams,DST,LAR,4200,512,,False,,LAR @ LV,1970-01-01 00:29:52.959900+00:00,rams,0,4200,clear,155215,Showdown Captain Mode,2026-10-22T19:05:59+00:00
+323205,0,Matthew Stafford,QB,LAR,10400,512,,False,,LAR @ LV,1970-01-01 00:29:52.959900+00:00,matthew stafford,0,10400,clear,155215,Showdown Captain Mode,2026-10-22T19:05:59+00:00
+403308,0,Kirk Cousins,QB,LV,9800,512,,False,,LAR @ LV,1970-01-01 00:29:52.959900+00:00,kirk cousins,0,9800,clear,155215,Showdown Captain Mode,2026-10-22T19:05:59+00:00
+513098,0,Brandon McManus,K,LAR,4600,512,,False,,LAR @ LV,1970-01-01 00:29:52.959900+00:00,brandon mcmanus,0,4600,clear,155215,Showdown Captain Mode,2026-10-22T19:05:59+00:00
+596417,0,Phillip Dorsett II,WR,LV,200,512,,False,,LAR @ LV,1970-01-01 00:29:52.959900+00:00,phillip dorsett,0,200,clear,155215,Showdown Captain Mode,2026-10-22T19:05:59+00:00
+604176,0,Tyler Higbee,TE,LAR,5000,512,,False,,LAR @ LV,1970-01-01 00:29:52.959900+00:00,tyler higbee,0,5000,clear,155215,Showdown Captain Mode,2026-10-22T19:05:59+00:00
+611417,0,Davante Adams,WR,LAR,200,512,,False,,LAR @ LV,1970-01-01 00:29:52.959900+00:00,davante adams,0,200,clear,155215,Showdown Captain Mode,2026-10-22T19:05:59+00:00
+884315,0,Alex Bachman,WR,LAR,200,512,,False,,LAR @ LV,1970-01-01 00:29:52.959900+00:00,alex bachman,0,200,clear,155215,Showdown Captain Mode,2026-10-22T19:05:59+00:00
+943093,0,Ian Thomas,TE,LV,600,512,,False,,LAR @ LV,1970-01-01 00:29:52.959900+00:00,ian thomas,0,600,clear,155215,Showdown Captain Mode,2026-10-22T19:05:59+00:00
+976804,0,Ronnie Rivers,RB,LAR,200,512,,False,,LAR @ LV,1970-01-01 00:29:52.959900+00:00,ronnie rivers,0,200,clear,155215,Showdown Captain Mode,2026-10-22T19:05:59+00:00
+1049797,0,Owen Wright,RB,LV,200,512,,False,,LAR @ LV,1970-01-01 00:29:52.959900+00:00,owen wright,0,200,clear,155215,Showdown Captain Mode,2026-10-22T19:05:59+00:00
+1057457,0,Connor Heyward,RB,LV,400,512,,False,,LAR @ LV,1970-01-01 00:29:52.959900+00:00,connor heyward,0,400,clear,155215,Showdown Captain Mode,2026-10-22T19:05:59+00:00
+1057484,0,Cody White,WR,LV,2000,512,,False,,LAR @ LV,1970-01-01 00:29:52.959900+00:00,cody white,0,2000,clear,155215,Showdown Captain Mode,2026-10-22T19:05:59+00:00
+1060312,0,Colby Parkinson,TE,LAR,4000,512,,False,,LAR @ LV,1970-01-01 00:29:52.959900+00:00,colby parkinson,0,4000,clear,155215,Showdown Captain Mode,2026-10-22T19:05:59+00:00
+1066811,0,Aidan O'Connell,QB,LV,6000,512,,False,,LAR @ LV,1970-01-01 00:29:52.959900+00:00,aidan oconnell,0,6000,clear,155215,Showdown Captain Mode,2026-10-22T19:05:59+00:00
+1068998,0,Matt Gay,K,LV,4800,512,,False,,LAR @ LV,1970-01-01 00:29:52.959900+00:00,matt gay,0,4800,clear,155215,Showdown Captain Mode,2026-10-22T19:05:59+00:00
+1069763,0,Stetson Bennett IV,QB,LAR,6000,512,,False,,LAR @ LV,1970-01-01 00:29:52.959900+00:00,stetson bennett,0,6000,clear,155215,Showdown Captain Mode,2026-10-22T19:05:59+00:00
+1073055,0,Blake Grupe,K,LAR,4600,512,,False,,LAR @ LV,1970-01-01 00:29:52.959900+00:00,blake grupe,0,4600,clear,155215,Showdown Captain Mode,2026-10-22T19:05:59+00:00
+1106760,0,Tutu Atwell,WR,LAR,2400,512,,False,,LAR @ LV,1970-01-01 00:29:52.959900+00:00,tutu atwell,0,2400,clear,155215,Showdown Captain Mode,2026-10-22T19:05:59+00:00
+1122182,0,Dylan Laube,RB,LV,1400,512,,False,,LAR @ LV,1970-01-01 00:29:52.959900+00:00,dylan laube,0,1400,clear,155215,Showdown Captain Mode,2026-10-22T19:05:59+00:00
+1126817,0,Jalen Nailor,WR,LV,3600,512,,False,,LAR @ LV,1970-01-01 00:29:52.959900+00:00,jalen nailor,0,3600,clear,155215,Showdown Captain Mode,2026-10-22T19:05:59+00:00
+1130833,0,Deven Thompkins,WR,LV,200,512,,False,,LAR @ LV,1970-01-01 00:29:52.959900+00:00,deven thompkins,0,200,clear,155215,Showdown Captain Mode,2026-10-22T19:05:59+00:00
+1161664,0,Davis Allen,TE,LAR,1600,512,,False,,LAR @ LV,1970-01-01 00:29:52.959900+00:00,davis allen,0,1600,clear,155215,Showdown Captain Mode,2026-10-22T19:05:59+00:00
+1162128,0,Puka Nacua,WR,LAR,11400,512,,False,,LAR @ LV,1970-01-01 00:29:52.959900+00:00,puka nacua,0,11400,clear,155215,Showdown Captain Mode,2026-10-22T19:05:59+00:00
+1163273,0,Jordan Whittington,WR,LAR,2800,512,,False,,LAR @ LV,1970-01-01 00:29:52.959900+00:00,jordan whittington,0,2800,clear,155215,Showdown Captain Mode,2026-10-22T19:05:59+00:00
+1164979,0,Tre Tucker,WR,LV,8200,512,,False,,LAR @ LV,1970-01-01 00:29:52.959900+00:00,tre tucker,0,8200,clear,155215,Showdown Captain Mode,2026-10-22T19:05:59+00:00
+1167361,0,Kyren Williams,RB,LAR,9600,512,,False,,LAR @ LV,1970-01-01 00:29:52.959900+00:00,kyren williams,0,9600,clear,155215,Showdown Captain Mode,2026-10-22T19:05:59+00:00
+1173174,0,Jordan Waters,RB,LAR,200,512,,False,,LAR @ LV,1970-01-01 00:29:52.959900+00:00,jordan waters,0,200,clear,155215,Showdown Captain Mode,2026-10-22T19:05:59+00:00
+1178628,0,Jamari Thrash,WR,LV,200,512,,False,,LAR @ LV,1970-01-01 00:29:52.959900+00:00,jamari thrash,0,200,clear,155215,Showdown Captain Mode,2026-10-22T19:05:59+00:00
+1215974,0,Chris Collier,RB,LV,200,512,,False,,LAR @ LV,1970-01-01 00:29:52.959900+00:00,chris collier,0,200,clear,155215,Showdown Captain Mode,2026-10-22T19:05:59+00:00
+1226616,0,CJ Daniels,WR,LAR,1200,512,,False,,LAR @ LV,1970-01-01 00:29:52.959900+00:00,cj daniels,0,1200,clear,155215,Showdown Captain Mode,2026-10-22T19:05:59+00:00
+1229386,0,Brennan Presley,WR,LAR,200,512,,False,,LAR @ LV,1970-01-01 00:29:52.959900+00:00,brennan presley,0,200,clear,155215,Showdown Captain Mode,2026-10-22T19:05:59+00:00
+1229540,0,Blake Corum,RB,LAR,6600,512,,False,,LAR @ LV,1970-01-01 00:29:52.959900+00:00,blake corum,0,6600,clear,155215,Showdown Captain Mode,2026-10-22T19:05:59+00:00
+1229542,0,Dan Villari,TE,LAR,200,512,,False,,LAR @ LV,1970-01-01 00:29:52.959900+00:00,dan villari,0,200,clear,155215,Showdown Captain Mode,2026-10-22T19:05:59+00:00
+1229749,0,Patrick Gurd,TE,LV,200,512,,False,,LAR @ LV,1970-01-01 00:29:52.959900+00:00,patrick gurd,0,200,clear,155215,Showdown Captain Mode,2026-10-22T19:05:59+00:00
+1232592,0,Michael Mayer,TE,LV,5800,512,,False,,LAR @ LV,1970-01-01 00:29:52.959900+00:00,michael mayer,0,5800,clear,155215,Showdown Captain Mode,2026-10-22T19:05:59+00:00
+1285917,0,Brock Bowers,TE,LV,10800,512,,False,,LAR @ LV,1970-01-01 00:29:52.959900+00:00,brock bowers,0,10800,clear,155215,Showdown Captain Mode,2026-10-22T19:05:59+00:00
+1286046,0,Jack Bech,WR,LV,200,512,,False,,LAR @ LV,1970-01-01 00:29:52.959900+00:00,jack bech,0,200,clear,155215,Showdown Captain Mode,2026-10-22T19:05:59+00:00
+1286164,0,Dont'e Thornton Jr.,WR,LV,200,512,,False,,LAR @ LV,1970-01-01 00:29:52.959900+00:00,donte thornton,0,200,clear,155215,Showdown Captain Mode,2026-10-22T19:05:59+00:00
+1286179,0,Terrance Ferguson,TE,LAR,200,512,,False,,LAR @ LV,1970-01-01 00:29:52.959900+00:00,terrance ferguson,0,200,clear,155215,Showdown Captain Mode,2026-10-22T19:05:59+00:00
+1289332,0,Konata Mumpfield,WR,LAR,3200,512,,False,,LAR @ LV,1970-01-01 00:29:52.959900+00:00,konata mumpfield,0,3200,clear,155215,Showdown Captain Mode,2026-10-22T19:05:59+00:00
+1289428,0,Mike Washington Jr.,RB,LV,3400,512,,False,,LAR @ LV,1970-01-01 00:29:52.959900+00:00,mike washington,0,3400,clear,155215,Showdown Captain Mode,2026-10-22T19:05:59+00:00
+1317230,0,Roman Hemby,RB,LV,200,512,,False,,LAR @ LV,1970-01-01 00:29:52.959900+00:00,roman hemby,0,200,clear,155215,Showdown Captain Mode,2026-10-22T19:05:59+00:00
+1324519,0,Matthew Caldwell,QB,LAR,6000,512,,False,,LAR @ LV,1970-01-01 00:29:52.959900+00:00,matthew caldwell,0,6000,clear,155215,Showdown Captain Mode,2026-10-22T19:05:59+00:00
+1378917,0,Ty Simpson,QB,LAR,6000,512,,False,,LAR @ LV,1970-01-01 00:29:52.959900+00:00,ty simpson,0,6000,clear,155215,Showdown Captain Mode,2026-10-22T19:05:59+00:00
+1379646,0,Ashton Jeanty,RB,LV,9400,512,,False,,LAR @ LV,1970-01-01 00:29:52.959900+00:00,ashton jeanty,0,9400,clear,155215,Showdown Captain Mode,2026-10-22T19:05:59+00:00
+1381444,0,Dean Connors,RB,LAR,200,512,,False,,LAR @ LV,1970-01-01 00:29:52.959900+00:00,dean connors,0,200,clear,155215,Showdown Captain Mode,2026-10-22T19:05:59+00:00
+1384869,0,Dareke Young,WR,LV,1000,512,,False,,LAR @ LV,1970-01-01 00:29:52.959900+00:00,dareke young,0,1000,clear,155215,Showdown Captain Mode,2026-10-22T19:05:59+00:00
+1400786,0,Fernando Mendoza,QB,LV,6000,512,,False,,LAR @ LV,1970-01-01 00:29:52.959900+00:00,fernando mendoza,0,6000,clear,155215,Showdown Captain Mode,2026-10-22T19:05:59+00:00
+1401683,0,Max Klare,TE,LAR,200,512,,False,,LAR @ LV,1970-01-01 00:29:52.959900+00:00,max klare,0,200,clear,155215,Showdown Captain Mode,2026-10-22T19:05:59+00:00
+1441191,0,Malik Benson,WR,LV,800,512,,False,,LAR @ LV,1970-01-01 00:29:52.959900+00:00,malik benson,0,800,clear,155215,Showdown Captain Mode,2026-10-22T19:05:59+00:00
+1456709,0,Kansei Matsuzawa,K,LV,4800,512,,False,,LAR @ LV,1970-01-01 00:29:52.959900+00:00,kansei matsuzawa,0,4800,clear,155215,Showdown Captain Mode,2026-10-22T19:05:59+00:00
+1468632,0,Carter Runyon,TE,LV,200,512,,False,,LAR @ LV,1970-01-01 00:29:52.959900+00:00,carter runyon,0,200,clear,155215,Showdown Captain Mode,2026-10-22T19:05:59+00:00
