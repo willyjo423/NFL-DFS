@@ -1,0 +1,57 @@
+dk_player_id,draftable_id,name,position,team,salary,roster_slot,status,disabled,attributes,game,starts_utc,norm,flex_eligible,captain_salary,playing,draft_group,game_type,captured_at
+323,0,Falcons,DST,ATL,3200,512,,False,,SF @ ATL,1970-01-01 00:29:52.947600+00:00,falcons,0,3200,clear,155211,Showdown Captain Mode,2026-10-23T18:57:52+00:00
+359,0,49ers,DST,SF,4200,512,,False,,SF @ ATL,1970-01-01 00:29:52.947600+00:00,49ers,0,4200,clear,155211,Showdown Captain Mode,2026-10-23T18:57:52+00:00
+213781,0,Nick Folk,K,ATL,4800,512,,False,,SF @ ATL,1970-01-01 00:29:52.947600+00:00,nick folk,0,4800,clear,155211,Showdown Captain Mode,2026-10-23T18:57:52+00:00
+322858,0,Andy Dalton,QB,ATL,6000,512,,False,,SF @ ATL,1970-01-01 00:29:52.947600+00:00,andy dalton,0,6000,clear,155211,Showdown Captain Mode,2026-10-23T18:57:52+00:00
+501150,0,Kyle Juszczyk,RB,SF,1400,512,,False,,SF @ ATL,1970-01-01 00:29:52.947600+00:00,kyle juszczyk,0,1400,clear,155211,Showdown Captain Mode,2026-10-23T18:57:52+00:00
+593587,0,Mike Evans,WR,SF,9600,512,,False,,SF @ ATL,1970-01-01 00:29:52.947600+00:00,mike evans,0,9600,clear,155211,Showdown Captain Mode,2026-10-23T18:57:52+00:00
+607864,0,Brandin Cooks,WR,SF,6600,512,,False,,SF @ ATL,1970-01-01 00:29:52.947600+00:00,brandin cooks,0,6600,clear,155211,Showdown Captain Mode,2026-10-23T18:57:52+00:00
+727279,0,Demarcus Robinson,WR,SF,5000,512,,False,,SF @ ATL,1970-01-01 00:29:52.947600+00:00,demarcus robinson,0,5000,clear,155211,Showdown Captain Mode,2026-10-23T18:57:52+00:00
+733672,0,George Kittle,TE,SF,8800,512,,False,,SF @ ATL,1970-01-01 00:29:52.947600+00:00,george kittle,0,8800,clear,155211,Showdown Captain Mode,2026-10-23T18:57:52+00:00
+739424,0,Austin Hooper,TE,ATL,1600,512,,False,,SF @ ATL,1970-01-01 00:29:52.947600+00:00,austin hooper,0,1600,clear,155211,Showdown Captain Mode,2026-10-23T18:57:52+00:00
+830517,0,Christian McCaffrey,RB,SF,11600,512,,False,,SF @ ATL,1970-01-01 00:29:52.947600+00:00,christian mccaffrey,0,11600,clear,155211,Showdown Captain Mode,2026-10-23T18:57:52+00:00
+830686,0,Malik Turner,WR,SF,800,512,,False,,SF @ ATL,1970-01-01 00:29:52.947600+00:00,malik turner,0,800,clear,155211,Showdown Captain Mode,2026-10-23T18:57:52+00:00
+835749,0,Deebo Samuel Sr.,WR,SF,7000,512,,False,,SF @ ATL,1970-01-01 00:29:52.947600+00:00,deebo samuel,0,7000,clear,155211,Showdown Captain Mode,2026-10-23T18:57:52+00:00
+865801,0,Christian Kirk,WR,SF,5600,512,,False,,SF @ ATL,1970-01-01 00:29:52.947600+00:00,christian kirk,0,5600,clear,155211,Showdown Captain Mode,2026-10-23T18:57:52+00:00
+883976,0,Olamide Zaccheaus,WR,ATL,1800,512,,False,,SF @ ATL,1970-01-01 00:29:52.947600+00:00,olamide zaccheaus,0,1800,clear,155211,Showdown Captain Mode,2026-10-23T18:57:52+00:00
+910383,0,Eddy Pineiro,K,SF,5200,512,,False,,SF @ ATL,1970-01-01 00:29:52.947600+00:00,eddy pineiro,0,5200,clear,155211,Showdown Captain Mode,2026-10-23T18:57:52+00:00
+911985,0,Jack Stoll,TE,SF,200,512,,False,,SF @ ATL,1970-01-01 00:29:52.947600+00:00,jack stoll,0,200,clear,155211,Showdown Captain Mode,2026-10-23T18:57:52+00:00
+922040,0,Charlie Woerner,TE,ATL,600,512,,False,,SF @ ATL,1970-01-01 00:29:52.947600+00:00,charlie woerner,0,600,clear,155211,Showdown Captain Mode,2026-10-23T18:57:52+00:00
+935104,0,Khalil Herbert,RB,ATL,200,512,,False,,SF @ ATL,1970-01-01 00:29:52.947600+00:00,khalil herbert,0,200,clear,155211,Showdown Captain Mode,2026-10-23T18:57:52+00:00
+946541,0,Luke Farrell,TE,SF,1200,512,,False,,SF @ ATL,1970-01-01 00:29:52.947600+00:00,luke farrell,0,1200,clear,155211,Showdown Captain Mode,2026-10-23T18:57:52+00:00
+973945,0,Mac Jones,QB,SF,6000,512,,False,,SF @ ATL,1970-01-01 00:29:52.947600+00:00,mac jones,0,6000,clear,155211,Showdown Captain Mode,2026-10-23T18:57:52+00:00
+973947,0,Tua Tagovailoa,QB,ATL,8200,512,,False,,SF @ ATL,1970-01-01 00:29:52.947600+00:00,tua tagovailoa,0,8200,clear,155211,Showdown Captain Mode,2026-10-23T18:57:52+00:00
+973966,0,Brian Robinson Jr.,RB,ATL,4000,512,,False,,SF @ ATL,1970-01-01 00:29:52.947600+00:00,brian robinson,0,4000,clear,155211,Showdown Captain Mode,2026-10-23T18:57:52+00:00
+976236,0,Trey Sermon,RB,ATL,200,512,,False,,SF @ ATL,1970-01-01 00:29:52.947600+00:00,trey sermon,0,200,clear,155211,Showdown Captain Mode,2026-10-23T18:57:52+00:00
+1049792,0,Nick Muse,TE,ATL,200,512,,False,,SF @ ATL,1970-01-01 00:29:52.947600+00:00,nick muse,0,200,clear,155211,Showdown Captain Mode,2026-10-23T18:57:52+00:00
+1068872,0,Jake Tonges,TE,SF,200,512,,False,,SF @ ATL,1970-01-01 00:29:52.947600+00:00,jake tonges,0,200,clear,155211,Showdown Captain Mode,2026-10-23T18:57:52+00:00
+1107034,0,Brandon Aiyuk,WR,SF,200,512,,False,,SF @ ATL,1970-01-01 00:29:52.947600+00:00,brandon aiyuk,0,200,clear,155211,Showdown Captain Mode,2026-10-23T18:57:52+00:00
+1107478,0,Michael Penix Jr.,QB,ATL,9200,512,,False,,SF @ ATL,1970-01-01 00:29:52.947600+00:00,michael penix,0,9200,clear,155211,Showdown Captain Mode,2026-10-23T18:57:52+00:00
+1108534,0,Dylan Drummond,WR,ATL,200,512,,False,,SF @ ATL,1970-01-01 00:29:52.947600+00:00,dylan drummond,0,200,clear,155211,Showdown Captain Mode,2026-10-23T18:57:52+00:00
+1120347,0,Chris Blair,WR,ATL,1000,512,,False,,SF @ ATL,1970-01-01 00:29:52.947600+00:00,chris blair,0,1000,clear,155211,Showdown Captain Mode,2026-10-23T18:57:52+00:00
+1121761,0,Brock Purdy,QB,SF,10600,512,,False,,SF @ ATL,1970-01-01 00:29:52.947600+00:00,brock purdy,0,10600,clear,155211,Showdown Captain Mode,2026-10-23T18:57:52+00:00
+1121878,0,Jahan Dotson,WR,ATL,4400,512,,False,,SF @ ATL,1970-01-01 00:29:52.947600+00:00,jahan dotson,0,4400,clear,155211,Showdown Captain Mode,2026-10-23T18:57:52+00:00
+1123026,0,Kyle Pitts Sr.,TE,ATL,6800,512,,False,,SF @ ATL,1970-01-01 00:29:52.947600+00:00,kyle pitts,0,6800,clear,155211,Showdown Captain Mode,2026-10-23T18:57:52+00:00
+1125589,0,Brayden Willis,TE,SF,200,512,,False,,SF @ ATL,1970-01-01 00:29:52.947600+00:00,brayden willis,0,200,clear,155211,Showdown Captain Mode,2026-10-23T18:57:52+00:00
+1126338,0,Isaac Guerendo,RB,SF,200,512,,False,,SF @ ATL,1970-01-01 00:29:52.947600+00:00,isaac guerendo,0,200,clear,155211,Showdown Captain Mode,2026-10-23T18:57:52+00:00
+1137635,0,Xavier Smith,WR,SF,200,512,,False,,SF @ ATL,1970-01-01 00:29:52.947600+00:00,xavier smith,0,200,clear,155211,Showdown Captain Mode,2026-10-23T18:57:52+00:00
+1161416,0,Ricky Pearsall,WR,SF,200,512,,False,,SF @ ATL,1970-01-01 00:29:52.947600+00:00,ricky pearsall,0,200,clear,155211,Showdown Captain Mode,2026-10-23T18:57:52+00:00
+1166235,0,Sincere McCormick,RB,SF,200,512,,False,,SF @ ATL,1970-01-01 00:29:52.947600+00:00,sincere mccormick,0,200,clear,155211,Showdown Captain Mode,2026-10-23T18:57:52+00:00
+1166989,0,Kurtis Rourke,QB,SF,6000,512,,False,,SF @ ATL,1970-01-01 00:29:52.947600+00:00,kurtis rourke,0,6000,clear,155211,Showdown Captain Mode,2026-10-23T18:57:52+00:00
+1178741,0,Drake London,WR,ATL,11000,512,,False,,SF @ ATL,1970-01-01 00:29:52.947600+00:00,drake london,0,11000,clear,155211,Showdown Captain Mode,2026-10-23T18:57:52+00:00
+1181861,0,Jacob Cowing,WR,SF,2400,512,,False,,SF @ ATL,1970-01-01 00:29:52.947600+00:00,jacob cowing,0,2400,clear,155211,Showdown Captain Mode,2026-10-23T18:57:52+00:00
+1215772,0,Kaelon Black,RB,SF,3600,512,,False,,SF @ ATL,1970-01-01 00:29:52.947600+00:00,kaelon black,0,3600,clear,155211,Showdown Captain Mode,2026-10-23T18:57:52+00:00
+1215789,0,Antwane Wells Jr.,WR,ATL,200,512,,False,,SF @ ATL,1970-01-01 00:29:52.947600+00:00,antwane wells,0,200,clear,155211,Showdown Captain Mode,2026-10-23T18:57:52+00:00
+1222835,0,Jordan Watkins,WR,SF,2800,512,,False,,SF @ ATL,1970-01-01 00:29:52.947600+00:00,jordan watkins,0,2800,clear,155211,Showdown Captain Mode,2026-10-23T18:57:52+00:00
+1228244,0,Bijan Robinson,RB,ATL,12000,512,,False,,SF @ ATL,1970-01-01 00:29:52.947600+00:00,bijan robinson,0,12000,clear,155211,Showdown Captain Mode,2026-10-23T18:57:52+00:00
+1286818,0,De'Zhaun Stribling,WR,SF,200,512,,False,,SF @ ATL,1970-01-01 00:29:52.947600+00:00,dezhaun stribling,0,200,clear,155211,Showdown Captain Mode,2026-10-23T18:57:52+00:00
+1287705,0,Beaux Collins,WR,ATL,200,512,,False,,SF @ ATL,1970-01-01 00:29:52.947600+00:00,beaux collins,0,200,clear,155211,Showdown Captain Mode,2026-10-23T18:57:52+00:00
+1288045,0,Will Pauling,WR,SF,200,512,,False,,SF @ ATL,1970-01-01 00:29:52.947600+00:00,will pauling,0,200,clear,155211,Showdown Captain Mode,2026-10-23T18:57:52+00:00
+1310628,0,Khalil Dinkins,TE,SF,200,512,,False,,SF @ ATL,1970-01-01 00:29:52.947600+00:00,khalil dinkins,0,200,clear,155211,Showdown Captain Mode,2026-10-23T18:57:52+00:00
+1378911,0,Jam Miller,RB,ATL,200,512,,False,,SF @ ATL,1970-01-01 00:29:52.947600+00:00,jam miller,0,200,clear,155211,Showdown Captain Mode,2026-10-23T18:57:52+00:00
+1390913,0,Wesley Grimes,WR,SF,200,512,,False,,SF @ ATL,1970-01-01 00:29:52.947600+00:00,wesley grimes,0,200,clear,155211,Showdown Captain Mode,2026-10-23T18:57:52+00:00
+1400657,0,Jordan James,RB,SF,400,512,,False,,SF @ ATL,1970-01-01 00:29:52.947600+00:00,jordan james,0,400,clear,155211,Showdown Captain Mode,2026-10-23T18:57:52+00:00
+1401629,0,Vinny Anthony II,WR,ATL,200,512,,False,,SF @ ATL,1970-01-01 00:29:52.947600+00:00,vinny anthony,0,200,clear,155211,Showdown Captain Mode,2026-10-23T18:57:52+00:00
+1403373,0,Jack Velling,TE,ATL,200,512,,False,,SF @ ATL,1970-01-01 00:29:52.947600+00:00,jack velling,0,200,clear,155211,Showdown Captain Mode,2026-10-23T18:57:52+00:00
+1441110,0,Zachariah Branch,WR,ATL,2000,512,,False,,SF @ ATL,1970-01-01 00:29:52.947600+00:00,zachariah branch,0,2000,clear,155211,Showdown Captain Mode,2026-10-23T18:57:52+00:00
+1637700,0,Jack Strand,QB,ATL,6000,512,,False,,SF @ ATL,1970-01-01 00:29:52.947600+00:00,jack strand,0,6000,clear,155211,Showdown Captain Mode,2026-10-23T18:57:52+00:00
