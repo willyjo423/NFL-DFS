@@ -1,0 +1,102 @@
+dk_player_id,draftable_id,name,position,team,salary,roster_slot,status,disabled,attributes,game,starts_utc,norm,flex_eligible,captain_salary,playing,draft_group,game_type,captured_at
+334,0,Lions,DST,DET,2500,71,,False,,GB @ DET,,lions,0,2500,clear,155202,Classic,2026-10-23T01:59:22+00:00
+335,0,Packers,DST,GB,2300,71,,False,,GB @ DET,,packers,0,2300,clear,155202,Classic,2026-10-23T01:59:22+00:00
+341,0,Raiders,DST,LV,2000,71,,False,,LAR @ LV,,raiders,0,2000,clear,155202,Classic,2026-10-23T01:59:22+00:00
+343,0,Rams,DST,LAR,3100,71,,False,,LAR @ LV,,rams,0,3100,clear,155202,Classic,2026-10-23T01:59:22+00:00
+323205,0,Matthew Stafford,QB,LAR,6400,66,,False,,LAR @ LV,,matthew stafford,0,6400,clear,155202,Classic,2026-10-23T01:59:22+00:00
+399579,0,Tyrod Taylor,QB,GB,4000,66,,False,,GB @ DET,,tyrod taylor,0,4000,clear,155202,Classic,2026-10-23T01:59:22+00:00
+403308,0,Kirk Cousins,QB,LV,5800,66,,False,,LAR @ LV,,kirk cousins,0,5800,clear,155202,Classic,2026-10-23T01:59:22+00:00
+596417,0,Phillip Dorsett II,WR,LV,3000,68,,False,,LAR @ LV,,phillip dorsett,0,3000,clear,155202,Classic,2026-10-23T01:59:22+00:00
+604176,0,Tyler Higbee,TE,LAR,3500,69,,False,,LAR @ LV,,tyler higbee,0,3500,clear,155202,Classic,2026-10-23T01:59:22+00:00
+611417,0,Davante Adams,WR,LAR,6400,68,,False,,LAR @ LV,,davante adams,0,6400,clear,155202,Classic,2026-10-23T01:59:22+00:00
+612512,0,DeAndre Carter,WR,DET,3000,68,,False,,GB @ DET,,deandre carter,0,3000,clear,155202,Classic,2026-10-23T01:59:22+00:00
+727837,0,Jared Goff,QB,DET,6800,66,,False,,GB @ DET,,jared goff,0,6800,clear,155202,Classic,2026-10-23T01:59:22+00:00
+741262,0,Joshua Dobbs,QB,DET,4000,66,,False,,GB @ DET,,joshua dobbs,0,4000,clear,155202,Classic,2026-10-23T01:59:22+00:00
+743749,0,Jonnu Smith,TE,GB,2500,69,,False,,GB @ DET,,jonnu smith,0,2500,clear,155202,Classic,2026-10-23T01:59:22+00:00
+837087,0,Tom Kennedy,WR,DET,3000,68,,False,,GB @ DET,,tom kennedy,0,3000,clear,155202,Classic,2026-10-23T01:59:22+00:00
+861278,0,Tyler Conklin,TE,DET,2500,69,,False,,GB @ DET,,tyler conklin,0,2500,clear,155202,Classic,2026-10-23T01:59:22+00:00
+881670,0,Lucky Jackson,WR,DET,3000,68,,False,,GB @ DET,,lucky jackson,0,3000,clear,155202,Classic,2026-10-23T01:59:22+00:00
+884315,0,Alex Bachman,WR,LAR,3000,68,,False,,LAR @ LV,,alex bachman,0,3000,clear,155202,Classic,2026-10-23T01:59:22+00:00
+912137,0,Jordan Love,QB,GB,6000,66,,False,,GB @ DET,,jordan love,0,6000,clear,155202,Classic,2026-10-23T01:59:22+00:00
+943093,0,Ian Thomas,TE,LV,2500,69,,False,,LAR @ LV,,ian thomas,0,2500,clear,155202,Classic,2026-10-23T01:59:22+00:00
+944416,0,Josh Jacobs,RB,GB,6300,67,,False,,GB @ DET,,josh jacobs,0,6300,clear,155202,Classic,2026-10-23T01:59:22+00:00
+976804,0,Ronnie Rivers,RB,LAR,4000,67,,False,,LAR @ LV,,ronnie rivers,0,4000,clear,155202,Classic,2026-10-23T01:59:22+00:00
+978120,0,Brock Wright,TE,DET,2500,69,,False,,GB @ DET,,brock wright,0,2500,clear,155202,Classic,2026-10-23T01:59:22+00:00
+1049797,0,Owen Wright,RB,LV,4000,67,,False,,LAR @ LV,,owen wright,0,4000,clear,155202,Classic,2026-10-23T01:59:22+00:00
+1050335,0,Pierre Strong Jr.,RB,GB,4300,67,,False,,GB @ DET,,pierre strong,0,4300,clear,155202,Classic,2026-10-23T01:59:22+00:00
+1057457,0,Connor Heyward,RB,LV,4000,67,,False,,LAR @ LV,,connor heyward,0,4000,clear,155202,Classic,2026-10-23T01:59:22+00:00
+1057484,0,Cody White,WR,LV,3000,68,,False,,LAR @ LV,,cody white,0,3000,clear,155202,Classic,2026-10-23T01:59:22+00:00
+1060312,0,Colby Parkinson,TE,LAR,3000,69,,False,,LAR @ LV,,colby parkinson,0,3000,clear,155202,Classic,2026-10-23T01:59:22+00:00
+1065052,0,Tay Martin,WR,DET,3000,68,,False,,GB @ DET,,tay martin,0,3000,clear,155202,Classic,2026-10-23T01:59:22+00:00
+1066811,0,Aidan O'Connell,QB,LV,4000,66,,False,,LAR @ LV,,aidan oconnell,0,4000,clear,155202,Classic,2026-10-23T01:59:22+00:00
+1067918,0,Christian Watson,WR,GB,7000,68,,False,,GB @ DET,,christian watson,0,7000,clear,155202,Classic,2026-10-23T01:59:22+00:00
+1068803,0,Bo Melton,WR,GB,3000,68,,False,,GB @ DET,,bo melton,0,3000,clear,155202,Classic,2026-10-23T01:59:22+00:00
+1069763,0,Stetson Bennett IV,QB,LAR,4000,66,,False,,LAR @ LV,,stetson bennett,0,4000,clear,155202,Classic,2026-10-23T01:59:22+00:00
+1106760,0,Tutu Atwell,WR,LAR,3000,68,,False,,LAR @ LV,,tutu atwell,0,3000,clear,155202,Classic,2026-10-23T01:59:22+00:00
+1106832,0,Isiah Pacheco,RB,DET,4000,67,,False,,GB @ DET,,isiah pacheco,0,4000,clear,155202,Classic,2026-10-23T01:59:22+00:00
+1107037,0,Josh Whyle,TE,GB,2500,69,,False,,GB @ DET,,josh whyle,0,2500,clear,155202,Classic,2026-10-23T01:59:22+00:00
+1107326,0,Thomas Yassmin,TE,GB,2500,69,,False,,GB @ DET,,thomas yassmin,0,2500,clear,155202,Classic,2026-10-23T01:59:22+00:00
+1122182,0,Dylan Laube,RB,LV,4000,67,,False,,LAR @ LV,,dylan laube,0,4000,clear,155202,Classic,2026-10-23T01:59:22+00:00
+1123398,0,Jayden Reed,WR,GB,3000,68,,False,,GB @ DET,,jayden reed,0,3000,clear,155202,Classic,2026-10-23T01:59:22+00:00
+1126817,0,Jalen Nailor,WR,LV,3500,68,,False,,LAR @ LV,,jalen nailor,0,3500,clear,155202,Classic,2026-10-23T01:59:22+00:00
+1127065,0,Chris Brooks,RB,GB,4000,67,,False,,GB @ DET,,chris brooks,0,4000,clear,155202,Classic,2026-10-23T01:59:22+00:00
+1127106,0,Amon-Ra St. Brown,WR,DET,7800,68,,False,,GB @ DET,,amon ra st brown,0,7800,clear,155202,Classic,2026-10-23T01:59:22+00:00
+1130538,0,Lawrence Keys III,WR,DET,3000,68,,False,,GB @ DET,,lawrence keys,0,3000,clear,155202,Classic,2026-10-23T01:59:22+00:00
+1130833,0,Deven Thompkins,WR,LV,3000,68,,False,,LAR @ LV,,deven thompkins,0,3000,clear,155202,Classic,2026-10-23T01:59:22+00:00
+1131457,0,Jacob Saylors,RB,DET,4000,67,,False,,GB @ DET,,jacob saylors,0,4000,clear,155202,Classic,2026-10-23T01:59:22+00:00
+1161664,0,Davis Allen,TE,LAR,2500,69,,False,,LAR @ LV,,davis allen,0,2500,clear,155202,Classic,2026-10-23T01:59:22+00:00
+1161818,0,Kedon Slovis,QB,GB,4000,66,,False,,GB @ DET,,kedon slovis,0,4000,clear,155202,Classic,2026-10-23T01:59:22+00:00
+1162128,0,Puka Nacua,WR,LAR,8400,68,,False,,LAR @ LV,,puka nacua,0,8400,clear,155202,Classic,2026-10-23T01:59:22+00:00
+1163273,0,Jordan Whittington,WR,LAR,3000,68,,False,,LAR @ LV,,jordan whittington,0,3000,clear,155202,Classic,2026-10-23T01:59:22+00:00
+1164979,0,Tre Tucker,WR,LV,5200,68,,False,,LAR @ LV,,tre tucker,0,5200,clear,155202,Classic,2026-10-23T01:59:22+00:00
+1167361,0,Kyren Williams,RB,LAR,7000,67,,False,,LAR @ LV,,kyren williams,0,7000,clear,155202,Classic,2026-10-23T01:59:22+00:00
+1168926,0,Sam LaPorta,TE,DET,4800,69,,False,,GB @ DET,,sam laporta,0,4800,clear,155202,Classic,2026-10-23T01:59:22+00:00
+1172746,0,Isaiah Neyor,WR,GB,3000,68,,False,,GB @ DET,,isaiah neyor,0,3000,clear,155202,Classic,2026-10-23T01:59:22+00:00
+1173174,0,Jordan Waters,RB,LAR,4000,67,,False,,LAR @ LV,,jordan waters,0,4000,clear,155202,Classic,2026-10-23T01:59:22+00:00
+1173254,0,Thomas Gordon,TE,DET,2500,69,,False,,GB @ DET,,thomas gordon,0,2500,clear,155202,Classic,2026-10-23T01:59:22+00:00
+1175184,0,Jameson Williams,WR,DET,5800,68,,False,,GB @ DET,,jameson williams,0,5800,clear,155202,Classic,2026-10-23T01:59:22+00:00
+1176730,0,Skyy Moore,WR,GB,3000,68,,False,,GB @ DET,,skyy moore,0,3000,clear,155202,Classic,2026-10-23T01:59:22+00:00
+1178628,0,Jamari Thrash,WR,LV,3000,68,,False,,LAR @ LV,,jamari thrash,0,3000,clear,155202,Classic,2026-10-23T01:59:22+00:00
+1179790,0,Luke Musgrave,TE,GB,2500,69,,False,,GB @ DET,,luke musgrave,0,2500,clear,155202,Classic,2026-10-23T01:59:22+00:00
+1181874,0,Tucker Kraft,TE,GB,4700,69,,False,,GB @ DET,,tucker kraft,0,4700,clear,155202,Classic,2026-10-23T01:59:22+00:00
+1184233,0,Coleman Owen,WR,GB,3000,68,,False,,GB @ DET,,coleman owen,0,3000,clear,155202,Classic,2026-10-23T01:59:22+00:00
+1213414,0,MarShawn Lloyd,RB,GB,4900,67,,False,,GB @ DET,,marshawn lloyd,0,4900,clear,155202,Classic,2026-10-23T01:59:22+00:00
+1213730,0,Mark Redman,TE,GB,2500,69,,False,,GB @ DET,,mark redman,0,2500,clear,155202,Classic,2026-10-23T01:59:22+00:00
+1213872,0,Savion Williams,WR,GB,3200,68,,False,,GB @ DET,,savion williams,0,3200,clear,155202,Classic,2026-10-23T01:59:22+00:00
+1214154,0,Jahmyr Gibbs,RB,DET,9800,67,,False,,GB @ DET,,jahmyr gibbs,0,9800,clear,155202,Classic,2026-10-23T01:59:22+00:00
+1215974,0,Chris Collier,RB,LV,4000,67,,False,,LAR @ LV,,chris collier,0,4000,clear,155202,Classic,2026-10-23T01:59:22+00:00
+1226616,0,CJ Daniels,WR,LAR,3000,68,,False,,LAR @ LV,,cj daniels,0,3000,clear,155202,Classic,2026-10-23T01:59:22+00:00
+1228551,0,Drake Dabney,TE,GB,2500,69,,False,,GB @ DET,,drake dabney,0,2500,clear,155202,Classic,2026-10-23T01:59:22+00:00
+1229386,0,Brennan Presley,WR,LAR,3000,68,,False,,LAR @ LV,,brennan presley,0,3000,clear,155202,Classic,2026-10-23T01:59:22+00:00
+1229540,0,Blake Corum,RB,LAR,5000,67,,False,,LAR @ LV,,blake corum,0,5000,clear,155202,Classic,2026-10-23T01:59:22+00:00
+1229542,0,Dan Villari,TE,LAR,2500,69,,False,,LAR @ LV,,dan villari,0,2500,clear,155202,Classic,2026-10-23T01:59:22+00:00
+1229749,0,Patrick Gurd,TE,LV,2500,69,,False,,LAR @ LV,,patrick gurd,0,2500,clear,155202,Classic,2026-10-23T01:59:22+00:00
+1232592,0,Michael Mayer,TE,LV,3700,69,,False,,LAR @ LV,,michael mayer,0,3700,clear,155202,Classic,2026-10-23T01:59:22+00:00
+1232898,0,Jabari Small,RB,DET,4000,67,,False,,GB @ DET,,jabari small,0,4000,clear,155202,Classic,2026-10-23T01:59:22+00:00
+1285915,0,Jackson Meeks,TE,DET,2500,69,,False,,GB @ DET,,jackson meeks,0,2500,clear,155202,Classic,2026-10-23T01:59:22+00:00
+1285917,0,Brock Bowers,TE,LV,7700,69,,False,,LAR @ LV,,brock bowers,0,7700,clear,155202,Classic,2026-10-23T01:59:22+00:00
+1286046,0,Jack Bech,WR,LV,3000,68,,False,,LAR @ LV,,jack bech,0,3000,clear,155202,Classic,2026-10-23T01:59:22+00:00
+1286164,0,Dont'e Thornton Jr.,WR,LV,3000,68,,False,,LAR @ LV,,donte thornton,0,3000,clear,155202,Classic,2026-10-23T01:59:22+00:00
+1286179,0,Terrance Ferguson,TE,LAR,2500,69,,False,,LAR @ LV,,terrance ferguson,0,2500,clear,155202,Classic,2026-10-23T01:59:22+00:00
+1286214,0,Luke Altmyer,QB,DET,4000,66,,False,,GB @ DET,,luke altmyer,0,4000,clear,155202,Classic,2026-10-23T01:59:22+00:00
+1286480,0,Dominic Lovett,WR,DET,3000,68,,False,,GB @ DET,,dominic lovett,0,3000,clear,155202,Classic,2026-10-23T01:59:22+00:00
+1289332,0,Konata Mumpfield,WR,LAR,3200,68,,False,,LAR @ LV,,konata mumpfield,0,3200,clear,155202,Classic,2026-10-23T01:59:22+00:00
+1289428,0,Mike Washington Jr.,RB,LV,4700,67,,False,,LAR @ LV,,mike washington,0,4700,clear,155202,Classic,2026-10-23T01:59:22+00:00
+1296464,0,Quincy Skinner Jr.,WR,GB,3000,68,,False,,GB @ DET,,quincy skinner,0,3000,clear,155202,Classic,2026-10-23T01:59:22+00:00
+1317230,0,Roman Hemby,RB,LV,4000,67,,False,,LAR @ LV,,roman hemby,0,4000,clear,155202,Classic,2026-10-23T01:59:22+00:00
+1323916,0,J. Michael Sturdivant,WR,GB,3000,68,,False,,GB @ DET,,j michael sturdivant,0,3000,clear,155202,Classic,2026-10-23T01:59:22+00:00
+1324519,0,Matthew Caldwell,QB,LAR,4000,66,,False,,LAR @ LV,,matthew caldwell,0,4000,clear,155202,Classic,2026-10-23T01:59:22+00:00
+1378910,0,Kendrick Law,WR,DET,3000,68,,False,,GB @ DET,,kendrick law,0,3000,clear,155202,Classic,2026-10-23T01:59:22+00:00
+1378917,0,Ty Simpson,QB,LAR,4000,66,,False,,LAR @ LV,,ty simpson,0,4000,clear,155202,Classic,2026-10-23T01:59:22+00:00
+1379267,0,Matthew Golden,WR,GB,6000,68,,False,,GB @ DET,,matthew golden,0,6000,clear,155202,Classic,2026-10-23T01:59:22+00:00
+1379646,0,Ashton Jeanty,RB,LV,6500,67,,False,,LAR @ LV,,ashton jeanty,0,6500,clear,155202,Classic,2026-10-23T01:59:22+00:00
+1381164,0,Sione Vaki,RB,DET,4300,67,,False,,GB @ DET,,sione vaki,0,4300,clear,155202,Classic,2026-10-23T01:59:22+00:00
+1381444,0,Dean Connors,RB,LAR,4000,67,,False,,LAR @ LV,,dean connors,0,4000,clear,155202,Classic,2026-10-23T01:59:22+00:00
+1381902,0,Kaleb Johnson,RB,GB,4100,67,,False,,GB @ DET,,kaleb johnson,0,4100,clear,155202,Classic,2026-10-23T01:59:22+00:00
+1384869,0,Dareke Young,WR,LV,3000,68,,False,,LAR @ LV,,dareke young,0,3000,clear,155202,Classic,2026-10-23T01:59:22+00:00
+1399934,0,Miles Kitselman,TE,DET,2500,69,,False,,GB @ DET,,miles kitselman,0,2500,clear,155202,Classic,2026-10-23T01:59:22+00:00
+1400786,0,Fernando Mendoza,QB,LV,4000,66,,False,,LAR @ LV,,fernando mendoza,0,4000,clear,155202,Classic,2026-10-23T01:59:22+00:00
+1401683,0,Max Klare,TE,LAR,2500,69,,False,,LAR @ LV,,max klare,0,2500,clear,155202,Classic,2026-10-23T01:59:22+00:00
+1441191,0,Malik Benson,WR,LV,3000,68,,False,,LAR @ LV,,malik benson,0,3000,clear,155202,Classic,2026-10-23T01:59:22+00:00
+1441362,0,Isaac TeSlaa,WR,DET,3400,68,,False,,GB @ DET,,isaac teslaa,0,3400,clear,155202,Classic,2026-10-23T01:59:22+00:00
+1468632,0,Carter Runyon,TE,LV,2500,69,,False,,LAR @ LV,,carter runyon,0,2500,clear,155202,Classic,2026-10-23T01:59:22+00:00
