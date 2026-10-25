@@ -1,5 +1,5 @@
 {
-  "captured_at": "2026-10-25T18:16:15+00:00",
+  "captured_at": "2026-10-25T19:14:21+00:00",
   "day": "2026-10-25",
   "slates": [
     {
@@ -10,8 +10,8 @@
       "salary_min": 200,
       "salary_max": 12000,
       "starts": "2026-10-26 00:20:00+00:00",
-      "contests": 1058,
-      "file": "dg155216_1816.csv"
+      "contests": 1059,
+      "file": "dg155216_1914.csv"
     },
     {
       "draft_group": 155217,
@@ -22,7 +22,7 @@
       "salary_max": 11000,
       "starts": "2026-10-27 00:15:00+00:00",
       "contests": 974,
-      "file": "dg155217_1816.csv"
+      "file": "dg155217_1914.csv"
     },
     {
       "draft_group": 155201,
@@ -32,8 +32,8 @@
       "salary_min": 2000,
       "salary_max": 9800,
       "starts": "2026-10-25 20:05:00+00:00",
-      "contests": 527,
-      "file": "dg155201_1816.csv"
+      "contests": 505,
+      "file": "dg155201_1914.csv"
     },
     {
       "draft_group": 155214,
@@ -43,8 +43,8 @@
       "salary_min": 200,
       "salary_max": 11800,
       "starts": "2026-10-25 20:25:00+00:00",
-      "contests": 275,
-      "file": "dg155214_1816.csv"
+      "contests": 314,
+      "file": "dg155214_1914.csv"
     },
     {
       "draft_group": 155203,
@@ -55,7 +55,7 @@
       "salary_max": 9000,
       "starts": "2026-10-26 00:20:00+00:00",
       "contests": 248,
-      "file": "dg155203_1816.csv"
+      "file": "dg155203_1914.csv"
     },
     {
       "draft_group": 155202,
@@ -65,8 +65,8 @@
       "salary_min": 2000,
       "salary_max": 9800,
       "starts": "2026-10-25 20:25:00+00:00",
-      "contests": 194,
-      "file": "dg155202_1816.csv"
+      "contests": 224,
+      "file": "dg155202_1914.csv"
     },
     {
       "draft_group": 155215,
@@ -76,8 +76,8 @@
       "salary_min": 200,
       "salary_max": 11400,
       "starts": "2026-10-25 20:25:00+00:00",
-      "contests": 191,
-      "file": "dg155215_1816.csv"
+      "contests": 223,
+      "file": "dg155215_1914.csv"
     },
     {
       "draft_group": 155213,
@@ -87,14 +87,14 @@
       "salary_min": 200,
       "salary_max": 10400,
       "starts": "2026-10-25 20:05:00+00:00",
-      "contests": 182,
-      "file": "dg155213_1816.csv"
+      "contests": 216,
+      "file": "dg155213_1914.csv"
     }
   ],
   "failed": {
     "155252": "draft group 155252 returned no players from either endpoint (lobby top-level keys: ['draftGroupAlerts', 'playerList', 'teamList'])",
     "153728": "draft group 153728 returned no players from either endpoint (lobby top-level keys: ['draftGroupAlerts', 'playerList', 'teamList'])"
   },
-  "contests_file": "contests_1816.csv",
-  "contests_kept": 4677
+  "contests_file": "contests_1914.csv",
+  "contests_kept": 4821
 }
