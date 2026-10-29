@@ -1,17 +1,17 @@
 {
-  "captured_at": "2026-10-28T20:09:34+00:00",
-  "day": "2026-10-28",
+  "captured_at": "2026-10-29T20:07:15+00:00",
+  "day": "2026-10-29",
   "slates": [
     {
       "draft_group": 153728,
       "game_type": "Classic",
-      "players": 554,
+      "players": 562,
       "games": 11,
       "salary_min": 2000,
       "salary_max": 9500,
       "starts": "2026-11-01 18:00:00+00:00",
-      "contests": 1610,
-      "file": "dg153728_2009.csv"
+      "contests": 1654,
+      "file": "dg153728_2007.csv"
     },
     {
       "draft_group": 155596,
@@ -21,19 +21,19 @@
       "salary_min": 200,
       "salary_max": 10000,
       "starts": "2026-10-30 00:15:00+00:00",
-      "contests": 1096,
-      "file": "dg155596_2009.csv"
+      "contests": 1212,
+      "file": "dg155596_2007.csv"
     },
     {
       "draft_group": 155591,
       "game_type": "Classic",
-      "players": 398,
+      "players": 404,
       "games": 8,
       "salary_min": 2100,
       "salary_max": 9500,
       "starts": "2026-11-01 18:00:00+00:00",
-      "contests": 421,
-      "file": "dg155591_2009.csv"
+      "contests": 431,
+      "file": "dg155591_2007.csv"
     },
     {
       "draft_group": 155593,
@@ -43,30 +43,30 @@
       "salary_min": 2000,
       "salary_max": 8800,
       "starts": "2026-11-01 21:05:00+00:00",
-      "contests": 384,
-      "file": "dg155593_2009.csv"
+      "contests": 408,
+      "file": "dg155593_2007.csv"
     },
     {
       "draft_group": 155589,
       "game_type": "Classic",
-      "players": 712,
+      "players": 724,
       "games": 14,
       "salary_min": 2000,
       "salary_max": 9500,
       "starts": "2026-10-30 00:15:00+00:00",
-      "contests": 292,
-      "file": "dg155589_2009.csv"
+      "contests": 309,
+      "file": "dg155589_2007.csv"
     },
     {
       "draft_group": 155592,
       "game_type": "Classic",
-      "players": 662,
+      "players": 674,
       "games": 13,
       "salary_min": 2000,
       "salary_max": 9500,
       "starts": "2026-11-01 18:00:00+00:00",
-      "contests": 231,
-      "file": "dg155592_2009.csv"
+      "contests": 243,
+      "file": "dg155592_2007.csv"
     },
     {
       "draft_group": 155607,
@@ -76,8 +76,8 @@
       "salary_min": 200,
       "salary_max": 11800,
       "starts": "2026-11-01 21:25:00+00:00",
-      "contests": 170,
-      "file": "dg155607_2009.csv"
+      "contests": 173,
+      "file": "dg155607_2007.csv"
     },
     {
       "draft_group": 155599,
@@ -87,8 +87,8 @@
       "salary_min": 200,
       "salary_max": 11800,
       "starts": "2026-11-01 18:00:00+00:00",
-      "contests": 160,
-      "file": "dg155599_2009.csv"
+      "contests": 163,
+      "file": "dg155599_2007.csv"
     },
     {
       "draft_group": 155594,
@@ -98,52 +98,52 @@
       "salary_min": 2300,
       "salary_max": 8800,
       "starts": "2026-11-01 21:25:00+00:00",
-      "contests": 124,
-      "file": "dg155594_2009.csv"
+      "contests": 129,
+      "file": "dg155594_2007.csv"
     },
     {
       "draft_group": 155602,
       "game_type": "Showdown Captain Mode",
-      "players": 51,
+      "players": 53,
       "games": 1,
       "salary_min": 200,
       "salary_max": 12000,
       "starts": "2026-11-01 18:00:00+00:00",
-      "contests": 122,
-      "file": "dg155602_2009.csv"
+      "contests": 123,
+      "file": "dg155602_2007.csv"
     },
     {
       "draft_group": 155601,
       "game_type": "Showdown Captain Mode",
-      "players": 55,
+      "players": 56,
       "games": 1,
       "salary_min": 200,
       "salary_max": 10800,
       "starts": "2026-11-01 18:00:00+00:00",
-      "contests": 122,
-      "file": "dg155601_2009.csv"
+      "contests": 123,
+      "file": "dg155601_2007.csv"
     },
     {
       "draft_group": 155598,
       "game_type": "Showdown Captain Mode",
-      "players": 51,
+      "players": 52,
       "games": 1,
       "salary_min": 200,
       "salary_max": 10600,
       "starts": "2026-11-01 18:00:00+00:00",
-      "contests": 121,
-      "file": "dg155598_2009.csv"
+      "contests": 123,
+      "file": "dg155598_2007.csv"
     },
     {
       "draft_group": 155600,
       "game_type": "Showdown Captain Mode",
-      "players": 51,
+      "players": 52,
       "games": 1,
       "salary_min": 200,
       "salary_max": 11400,
       "starts": "2026-11-01 18:00:00+00:00",
       "contests": 120,
-      "file": "dg155600_2009.csv"
+      "file": "dg155600_2007.csv"
     },
     {
       "draft_group": 155597,
@@ -154,7 +154,7 @@
       "salary_max": 10800,
       "starts": "2026-11-01 18:00:00+00:00",
       "contests": 120,
-      "file": "dg155597_2009.csv"
+      "file": "dg155597_2007.csv"
     },
     {
       "draft_group": 155604,
@@ -165,29 +165,29 @@
       "salary_max": 10600,
       "starts": "2026-11-01 18:00:00+00:00",
       "contests": 119,
-      "file": "dg155604_2009.csv"
+      "file": "dg155604_2007.csv"
+    },
+    {
+      "draft_group": 155605,
+      "game_type": "Showdown Captain Mode",
+      "players": 54,
+      "games": 1,
+      "salary_min": 200,
+      "salary_max": 11600,
+      "starts": "2026-11-01 21:05:00+00:00",
+      "contests": 119,
+      "file": "dg155605_2007.csv"
     },
     {
       "draft_group": 155603,
       "game_type": "Showdown Captain Mode",
-      "players": 52,
+      "players": 54,
       "games": 1,
       "salary_min": 200,
       "salary_max": 11600,
       "starts": "2026-11-01 18:00:00+00:00",
       "contests": 119,
-      "file": "dg155603_2009.csv"
-    },
-    {
-      "draft_group": 155605,
-      "game_type": "Showdown Captain Mode",
-      "players": 53,
-      "games": 1,
-      "salary_min": 200,
-      "salary_max": 11600,
-      "starts": "2026-11-01 21:05:00+00:00",
-      "contests": 117,
-      "file": "dg155605_2009.csv"
+      "file": "dg155603_2007.csv"
     },
     {
       "draft_group": 155606,
@@ -197,11 +197,33 @@
       "salary_min": 200,
       "salary_max": 11000,
       "starts": "2026-11-01 21:25:00+00:00",
-      "contests": 117,
-      "file": "dg155606_2009.csv"
+      "contests": 119,
+      "file": "dg155606_2007.csv"
+    },
+    {
+      "draft_group": 155609,
+      "game_type": "Showdown Captain Mode",
+      "players": 55,
+      "games": 1,
+      "salary_min": 200,
+      "salary_max": 12000,
+      "starts": "2026-11-03 01:15:00+00:00",
+      "contests": 4,
+      "file": "dg155609_2007.csv"
+    },
+    {
+      "draft_group": 155951,
+      "game_type": "Showdown Captain Mode",
+      "players": 58,
+      "games": 1,
+      "salary_min": 200,
+      "salary_max": 10400,
+      "starts": "2026-11-02 01:20:00+00:00",
+      "contests": 2,
+      "file": "dg155951_2007.csv"
     }
   ],
   "failed": {},
-  "contests_file": "contests_2009.csv",
-  "contests_kept": 6555
+  "contests_file": "contests_2007.csv",
+  "contests_kept": 6822
 }

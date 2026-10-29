@@ -1,0 +1,54 @@
+dk_player_id,draftable_id,name,position,team,salary,roster_slot,status,disabled,attributes,game,starts_utc,norm,flex_eligible,captain_salary,playing,draft_group,game_type,captured_at
+345,0,Dolphins,DST,MIA,3200,512,,False,,NE @ MIA,1970-01-01 00:29:53.568300+00:00,dolphins,0,3200,clear,155606,Showdown Captain Mode,2026-10-29T20:07:15+00:00
+348,0,Patriots,DST,NE,5600,512,,False,,NE @ MIA,1970-01-01 00:29:53.568300+00:00,patriots,0,5600,clear,155606,Showdown Captain Mode,2026-10-29T20:07:15+00:00
+702808,0,Mack Hollins,WR,NE,200,512,,False,,NE @ MIA,1970-01-01 00:29:53.568300+00:00,mack hollins,0,200,clear,155606,Showdown Captain Mode,2026-10-29T20:07:15+00:00
+732774,0,Zane Gonzalez,K,MIA,4800,512,,False,,NE @ MIA,1970-01-01 00:29:53.568300+00:00,zane gonzalez,0,4800,clear,155606,Showdown Captain Mode,2026-10-29T20:07:15+00:00
+744425,0,Hunter Henry,TE,NE,7400,512,,False,,NE @ MIA,1970-01-01 00:29:53.568300+00:00,hunter henry,0,7400,clear,155606,Showdown Captain Mode,2026-10-29T20:07:15+00:00
+915066,0,Reggie Gilliam,RB,NE,200,512,,False,,NE @ MIA,1970-01-01 00:29:53.568300+00:00,reggie gilliam,0,200,clear,155606,Showdown Captain Mode,2026-10-29T20:07:15+00:00
+944826,0,A.J. Brown,WR,NE,9800,512,,False,,NE @ MIA,1970-01-01 00:29:53.568300+00:00,a j brown,0,9800,clear,155606,Showdown Captain Mode,2026-10-29T20:07:15+00:00
+946261,0,Tanner Conner,TE,NE,200,512,,False,,NE @ MIA,1970-01-01 00:29:53.568300+00:00,tanner conner,0,200,clear,155606,Showdown Captain Mode,2026-10-29T20:07:15+00:00
+976066,0,Jalen Reagor,WR,MIA,200,512,,False,,NE @ MIA,1970-01-01 00:29:53.568300+00:00,jalen reagor,0,200,clear,155606,Showdown Captain Mode,2026-10-29T20:07:15+00:00
+976323,0,Malik Willis,QB,MIA,9400,512,,False,,NE @ MIA,1970-01-01 00:29:53.568300+00:00,malik willis,0,9400,clear,155606,Showdown Captain Mode,2026-10-29T20:07:15+00:00
+1057725,0,Carlos Washington Jr.,RB,MIA,200,512,,False,,NE @ MIA,1970-01-01 00:29:53.568300+00:00,carlos washington,0,200,clear,155606,Showdown Captain Mode,2026-10-29T20:07:15+00:00
+1060671,0,Tommy DeVito,QB,NE,6000,512,,False,,NE @ MIA,1970-01-01 00:29:53.568300+00:00,tommy devito,0,6000,clear,155606,Showdown Captain Mode,2026-10-29T20:07:15+00:00
+1066424,0,Jalen Tolbert,WR,MIA,1200,512,,False,,NE @ MIA,1970-01-01 00:29:53.568300+00:00,jalen tolbert,0,1200,clear,155606,Showdown Captain Mode,2026-10-29T20:07:15+00:00
+1118668,0,Ryan Miller,WR,NE,800,512,,False,,NE @ MIA,1970-01-01 00:29:53.568300+00:00,ryan miller,0,800,clear,155606,Showdown Captain Mode,2026-10-29T20:07:15+00:00
+1122653,0,Romeo Doubs,WR,NE,200,512,,False,,NE @ MIA,1970-01-01 00:29:53.568300+00:00,romeo doubs,0,200,clear,155606,Showdown Captain Mode,2026-10-29T20:07:15+00:00
+1122692,0,Cole Turner,TE,MIA,200,512,,False,,NE @ MIA,1970-01-01 00:29:53.568300+00:00,cole turner,0,200,clear,155606,Showdown Captain Mode,2026-10-29T20:07:15+00:00
+1123630,0,Julian Hill,TE,NE,200,512,,False,,NE @ MIA,1970-01-01 00:29:53.568300+00:00,julian hill,0,200,clear,155606,Showdown Captain Mode,2026-10-29T20:07:15+00:00
+1125739,0,Cameron Latu,TE,NE,200,512,,False,,NE @ MIA,1970-01-01 00:29:53.568300+00:00,cameron latu,0,200,clear,155606,Showdown Captain Mode,2026-10-29T20:07:15+00:00
+1128085,0,Greg Dulcich,TE,MIA,4200,512,,False,,NE @ MIA,1970-01-01 00:29:53.568300+00:00,greg dulcich,0,4200,clear,155606,Showdown Captain Mode,2026-10-29T20:07:15+00:00
+1169263,0,Chandler Brayboy,WR,NE,200,512,,False,,NE @ MIA,1970-01-01 00:29:53.568300+00:00,chandler brayboy,0,200,clear,155606,Showdown Captain Mode,2026-10-29T20:07:15+00:00
+1173255,0,Malik Washington,WR,MIA,7000,512,,False,,NE @ MIA,1970-01-01 00:29:53.568300+00:00,malik washington,0,7000,clear,155606,Showdown Captain Mode,2026-10-29T20:07:15+00:00
+1174682,0,Rhamondre Stevenson,RB,NE,9600,512,,False,,NE @ MIA,1970-01-01 00:29:53.568300+00:00,rhamondre stevenson,0,9600,clear,155606,Showdown Captain Mode,2026-10-29T20:07:15+00:00
+1175693,0,DeMario Douglas,WR,NE,6800,512,,False,,NE @ MIA,1970-01-01 00:29:53.568300+00:00,demario douglas,0,6800,clear,155606,Showdown Captain Mode,2026-10-29T20:07:15+00:00
+1176733,0,Jared Wayne,WR,MIA,1000,512,,False,,NE @ MIA,1970-01-01 00:29:53.568300+00:00,jared wayne,0,1000,clear,155606,Showdown Captain Mode,2026-10-29T20:07:15+00:00
+1213386,0,Brady Cook,QB,MIA,6000,512,,False,,NE @ MIA,1970-01-01 00:29:53.568300+00:00,brady cook,0,6000,clear,155606,Showdown Captain Mode,2026-10-29T20:07:15+00:00
+1215329,0,Will Sheppard,WR,MIA,200,512,,False,,NE @ MIA,1970-01-01 00:29:53.568300+00:00,will sheppard,0,200,clear,155606,Showdown Captain Mode,2026-10-29T20:07:15+00:00
+1215658,0,Lan Larison,RB,NE,400,512,,False,,NE @ MIA,1970-01-01 00:29:53.568300+00:00,lan larison,0,400,clear,155606,Showdown Captain Mode,2026-10-29T20:07:15+00:00
+1216288,0,Efton Chism III,WR,NE,2800,512,,False,,NE @ MIA,1970-01-01 00:29:53.568300+00:00,efton chism,0,2800,clear,155606,Showdown Captain Mode,2026-10-29T20:07:15+00:00
+1227157,0,Kyle Williams,WR,NE,1800,512,,False,,NE @ MIA,1970-01-01 00:29:53.568300+00:00,kyle williams,0,1800,clear,155606,Showdown Captain Mode,2026-10-29T20:07:15+00:00
+1229541,0,AJ Henning,WR,MIA,200,512,,False,,NE @ MIA,1970-01-01 00:29:53.568300+00:00,aj henning,0,200,clear,155606,Showdown Captain Mode,2026-10-29T20:07:15+00:00
+1231820,0,De'Von Achane,RB,MIA,200,512,,False,,NE @ MIA,1970-01-01 00:29:53.568300+00:00,devon achane,0,200,clear,155606,Showdown Captain Mode,2026-10-29T20:07:15+00:00
+1286050,0,Corey Kiner,RB,NE,1400,512,,False,,NE @ MIA,1970-01-01 00:29:53.568300+00:00,corey kiner,0,1400,clear,155606,Showdown Captain Mode,2026-10-29T20:07:15+00:00
+1286388,0,Behren Morton,QB,NE,6000,512,,False,,NE @ MIA,1970-01-01 00:29:53.568300+00:00,behren morton,0,6000,clear,155606,Showdown Captain Mode,2026-10-29T20:07:15+00:00
+1286513,0,Jaylen Wright,RB,MIA,4000,512,,False,,NE @ MIA,1970-01-01 00:29:53.568300+00:00,jaylen wright,0,4000,clear,155606,Showdown Captain Mode,2026-10-29T20:07:15+00:00
+1286803,0,Drake Maye,QB,NE,11000,512,,False,,NE @ MIA,1970-01-01 00:29:53.568300+00:00,drake maye,0,11000,clear,155606,Showdown Captain Mode,2026-10-29T20:07:15+00:00
+1286810,0,Andy Borregales,K,NE,5000,512,,False,,NE @ MIA,1970-01-01 00:29:53.568300+00:00,andy borregales,0,5000,clear,155606,Showdown Captain Mode,2026-10-29T20:07:15+00:00
+1287826,0,Kyle McCord,QB,MIA,6000,512,,False,,NE @ MIA,1970-01-01 00:29:53.568300+00:00,kyle mccord,0,6000,clear,155606,Showdown Captain Mode,2026-10-29T20:07:15+00:00
+1287837,0,TreVeyon Henderson,RB,NE,4600,512,,False,,NE @ MIA,1970-01-01 00:29:53.568300+00:00,treveyon henderson,0,4600,clear,155606,Showdown Captain Mode,2026-10-29T20:07:15+00:00
+1288074,0,Myles Montgomery,RB,NE,200,512,,False,,NE @ MIA,1970-01-01 00:29:53.568300+00:00,myles montgomery,0,200,clear,155606,Showdown Captain Mode,2026-10-29T20:07:15+00:00
+1290014,0,Seydou Traore,TE,MIA,200,512,,False,,NE @ MIA,1970-01-01 00:29:53.568300+00:00,seydou traore,0,200,clear,155606,Showdown Captain Mode,2026-10-29T20:07:15+00:00
+1317191,0,Tre Watson,TE,MIA,200,512,,False,,NE @ MIA,1970-01-01 00:29:53.568300+00:00,tre watson,0,200,clear,155606,Showdown Captain Mode,2026-10-29T20:07:15+00:00
+1321090,0,Tanner Arkin,TE,NE,200,512,,False,,NE @ MIA,1970-01-01 00:29:53.568300+00:00,tanner arkin,0,200,clear,155606,Showdown Captain Mode,2026-10-29T20:07:15+00:00
+1322367,0,Will Kacmarek,TE,MIA,600,512,,False,,NE @ MIA,1970-01-01 00:29:53.568300+00:00,will kacmarek,0,600,clear,155606,Showdown Captain Mode,2026-10-29T20:07:15+00:00
+1327875,0,DJ Herman,RB,MIA,200,512,,False,,NE @ MIA,1970-01-01 00:29:53.568300+00:00,dj herman,0,200,clear,155606,Showdown Captain Mode,2026-10-29T20:07:15+00:00
+1377766,0,Ollie Gordon II,RB,MIA,9000,512,,False,,NE @ MIA,1970-01-01 00:29:53.568300+00:00,ollie gordon,0,9000,clear,155606,Showdown Captain Mode,2026-10-29T20:07:15+00:00
+1379259,0,Kaytron Allen,RB,MIA,2400,512,,False,,NE @ MIA,1970-01-01 00:29:53.568300+00:00,kaytron allen,0,2400,clear,155606,Showdown Captain Mode,2026-10-29T20:07:15+00:00
+1389700,0,Chris Bell,WR,MIA,3600,512,,False,,NE @ MIA,1970-01-01 00:29:53.568300+00:00,chris bell,0,3600,clear,155606,Showdown Captain Mode,2026-10-29T20:07:15+00:00
+1394798,0,Caleb Douglas,WR,MIA,6600,512,,False,,NE @ MIA,1970-01-01 00:29:53.568300+00:00,caleb douglas,0,6600,clear,155606,Showdown Captain Mode,2026-10-29T20:07:15+00:00
+1399272,0,Kevin Coleman Jr.,WR,MIA,2000,512,,False,,NE @ MIA,1970-01-01 00:29:53.568300+00:00,kevin coleman,0,2000,clear,155606,Showdown Captain Mode,2026-10-29T20:07:15+00:00
+1403969,0,Eli Raridon,TE,NE,4400,512,,False,,NE @ MIA,1970-01-01 00:29:53.568300+00:00,eli raridon,0,4400,clear,155606,Showdown Captain Mode,2026-10-29T20:07:15+00:00
+1405928,0,Justin Joly,TE,MIA,200,512,,False,,NE @ MIA,1970-01-01 00:29:53.568300+00:00,justin joly,0,200,clear,155606,Showdown Captain Mode,2026-10-29T20:07:15+00:00
+1585808,0,Cameron Dorner,WR,NE,200,512,,False,,NE @ MIA,1970-01-01 00:29:53.568300+00:00,cameron dorner,0,200,clear,155606,Showdown Captain Mode,2026-10-29T20:07:15+00:00
+1637701,0,Kyle Dixon,WR,NE,200,512,,False,,NE @ MIA,1970-01-01 00:29:53.568300+00:00,kyle dixon,0,200,clear,155606,Showdown Captain Mode,2026-10-29T20:07:15+00:00
