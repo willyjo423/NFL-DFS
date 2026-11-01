@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-01T00:44:37+00:00",
+  "updated_at": "2026-11-01T18:18:26+00:00",
   "slates": [
     {
       "kind": "classic",
@@ -631,11 +631,11 @@
       "site": "dk",
       "draft_group": 155593,
       "label": "NFL $500K Afternoon Only Rush [$100K to 1st] (Afternoon Only)",
-      "contests": 499,
+      "contests": 498,
       "starts": "2026-11-01 21:05:00+00:00",
       "file": "data/nfl/dk-classic-155593.json",
       "players": 121,
-      "generated_at": "2026-11-01T00:35:38+00:00"
+      "generated_at": "2026-11-01T18:14:49+00:00"
     },
     {
       "kind": "classic",
@@ -643,11 +643,11 @@
       "site": "dk",
       "draft_group": 155594,
       "label": "NFL $30K Post Pattern [$10K to 1st] (Afternoon Turbo)",
-      "contests": 130,
+      "contests": 186,
       "starts": "2026-11-01 21:25:00+00:00",
       "file": "data/nfl/dk-classic-155594.json",
-      "players": 83,
-      "generated_at": "2026-10-30T01:34:54+00:00"
+      "players": 84,
+      "generated_at": "2026-11-01T18:16:27+00:00"
     },
     {
       "kind": "classic",
@@ -655,11 +655,11 @@
       "site": "dk",
       "draft_group": 155595,
       "label": "NFL $50K Post Pattern [$10K to 1st] (Primetime)",
-      "contests": 232,
+      "contests": 238,
       "starts": "2026-11-02 01:20:00+00:00",
       "file": "data/nfl/dk-classic-155595.json",
-      "players": 91,
-      "generated_at": "2026-11-01T00:40:26+00:00"
+      "players": 88,
+      "generated_at": "2026-11-01T18:15:21+00:00"
     },
     {
       "kind": "showdown",
@@ -1699,11 +1699,11 @@
       "site": "dk",
       "draft_group": 155607,
       "label": "NFL $100K Showdown Special [$25K to 1st] (KC @ DEN)",
-      "contests": 214,
+      "contests": 222,
       "starts": "2026-11-01 21:25:00+00:00",
       "file": "data/nfl/dk-showdown-155607.json",
       "players": 43,
-      "generated_at": "2026-11-01T00:41:17+00:00"
+      "generated_at": "2026-11-01T18:15:54+00:00"
     },
     {
       "kind": "showdown",
@@ -1711,11 +1711,11 @@
       "site": "dk",
       "draft_group": 155951,
       "label": "NFL Showdown $1M Sunday Night Showdown [$250K to 1st] (PHI @ WAS)",
-      "contests": 922,
+      "contests": 930,
       "starts": "2026-11-02 01:20:00+00:00",
       "file": "data/nfl/dk-showdown-155951.json",
       "players": 47,
-      "generated_at": "2026-11-01T00:34:45+00:00"
+      "generated_at": "2026-11-01T18:14:15+00:00"
     },
     {
       "kind": "showdown",
@@ -1723,12 +1723,49 @@
       "site": "dk",
       "draft_group": 155609,
       "label": "NFL Showdown $1.25M Monday Night Showdown [$300K to 1st] (CHI @ SEA)",
-      "contests": 927,
+      "contests": 931,
       "starts": "2026-11-03 01:15:00+00:00",
       "file": "data/nfl/dk-showdown-155609.json",
-      "players": 44,
-      "generated_at": "2026-11-01T00:33:55+00:00"
+      "players": 41,
+      "generated_at": "2026-11-01T18:13:42+00:00"
+    },
+    {
+      "kind": "showdown",
+      "sport": "nfl",
+      "site": "dk",
+      "draft_group": 155606,
+      "label": "NFL Showdown $15K Showdown Special [$5K to 1st] (NE @ MIA)",
+      "contests": 173,
+      "starts": "2026-11-01 21:25:00+00:00",
+      "file": "data/nfl/dk-showdown-155606.json",
+      "players": 41,
+      "generated_at": "2026-11-01T18:16:59+00:00"
+    },
+    {
+      "kind": "showdown",
+      "sport": "nfl",
+      "site": "dk",
+      "draft_group": 155605,
+      "label": "NFL Showdown $15K Showdown Special [$5K to 1st] (LAC @ LAR)",
+      "contests": 163,
+      "starts": "2026-11-01 21:05:00+00:00",
+      "file": "data/nfl/dk-showdown-155605.json",
+      "players": 37,
+      "generated_at": "2026-11-01T18:17:30+00:00"
     }
   ],
-  "failures": []
+  "failures": [
+    {
+      "kind": "classic",
+      "draft_group": 155649,
+      "label": "NFL $30K Flea Flicker [$10K to 1st] (Mon-Thu)",
+      "error": "DataUnavailable: draft group 155649 returned no players from either endpoint (lobby top-level keys: ['draftGroupAlerts', 'playerList', 'teamList'])"
+    },
+    {
+      "kind": "classic",
+      "draft_group": 155989,
+      "label": "NFL $12M Ultimate Main Event Millionaire [$2.5M to 1st]",
+      "error": "DataUnavailable: draft group 155989 returned no players from either endpoint (lobby top-level keys: ['draftGroupAlerts', 'playerList', 'teamList'])"
+    }
+  ]
 }
