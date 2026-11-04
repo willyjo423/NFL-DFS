@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-04T01:53:13+00:00",
+  "updated_at": "2026-11-04T20:28:01+00:00",
   "slates": [
     {
       "kind": "classic",
@@ -691,11 +691,11 @@
       "site": "dk",
       "draft_group": 155993,
       "label": "NFL $20K Thu-Mon Special [$5K to 1st] (Thu-Mon)",
-      "contests": 253,
+      "contests": 318,
       "starts": "2026-11-06 01:15:00+00:00",
       "file": "data/nfl/dk-classic-155993.json",
-      "players": 653,
-      "generated_at": "2026-11-04T01:48:34+00:00"
+      "players": 649,
+      "generated_at": "2026-11-04T20:17:39+00:00"
     },
     {
       "kind": "classic",
@@ -1819,11 +1819,11 @@
       "site": "dk",
       "draft_group": 156000,
       "label": "NFL Showdown $1.25M Thursday Night Showdown [$300K to 1st] (JAX @ BAL)",
-      "contests": 971,
+      "contests": 1047,
       "starts": "2026-11-06 01:15:00+00:00",
       "file": "data/nfl/dk-showdown-156000.json",
-      "players": 42,
-      "generated_at": "2026-11-04T01:46:30+00:00"
+      "players": 41,
+      "generated_at": "2026-11-04T20:13:27+00:00"
     },
     {
       "kind": "showdown",
@@ -1922,5 +1922,114 @@
       "generated_at": "2026-11-04T01:53:13+00:00"
     }
   ],
-  "failures": []
+  "failures": [
+    {
+      "kind": "classic",
+      "draft_group": 155994,
+      "label": "NFL $2.5M Fantasy Football Millionaire [$1M to 1st]",
+      "error": "BoardUnfiltered: NO injury information reached this board (0/570 matched).\nEvery player would read as available, which is exactly how an inactive player gets into every lineup.\nA filter that is silently not filtering is worse than no filter, because it is trusted.\nFix the join, or pass --force to build a board that cannot see who is hurt."
+    },
+    {
+      "kind": "classic",
+      "draft_group": 155995,
+      "label": "NFL $200K Early Only Rush [$50K to 1st] (Early Only)",
+      "error": "BoardUnfiltered: NO injury information reached this board (0/358 matched).\nEvery player would read as available, which is exactly how an inactive player gets into every lineup.\nA filter that is silently not filtering is worse than no filter, because it is trusted.\nFix the join, or pass --force to build a board that cannot see who is hurt."
+    },
+    {
+      "kind": "classic",
+      "draft_group": 155997,
+      "label": "NFL $500K Afternoon Only Rush [$100K to 1st] (Afternoon Only)",
+      "error": "BoardUnfiltered: NO injury information reached this board (0/213 matched).\nEvery player would read as available, which is exactly how an inactive player gets into every lineup.\nA filter that is silently not filtering is worse than no filter, because it is trusted.\nFix the join, or pass --force to build a board that cannot see who is hurt."
+    },
+    {
+      "kind": "classic",
+      "draft_group": 155996,
+      "label": "NFL $20K Thunderdome [Must Fill] (Sun-Mon)",
+      "error": "BoardUnfiltered: NO injury information reached this board (0/670 matched).\nEvery player would read as available, which is exactly how an inactive player gets into every lineup.\nA filter that is silently not filtering is worse than no filter, because it is trusted.\nFix the join, or pass --force to build a board that cannot see who is hurt."
+    },
+    {
+      "kind": "showdown",
+      "draft_group": 156001,
+      "label": "NFL Showdown $400K Showdown Special [$100K to 1st!] (CIN vs ATL)",
+      "error": "BoardUnfiltered: NO injury information reached this board (0/53 matched).\nEvery player would read as available, which is exactly how an inactive player gets into every lineup.\nA filter that is silently not filtering is worse than no filter, because it is trusted.\nFix the join, or pass --force to build a board that cannot see who is hurt."
+    },
+    {
+      "kind": "showdown",
+      "draft_group": 156011,
+      "label": "NFL $80K Showdown Special [$20K to 1st] (GB @ NE)",
+      "error": "BoardUnfiltered: NO injury information reached this board (0/55 matched).\nEvery player would read as available, which is exactly how an inactive player gets into every lineup.\nA filter that is silently not filtering is worse than no filter, because it is trusted.\nFix the join, or pass --force to build a board that cannot see who is hurt."
+    },
+    {
+      "kind": "showdown",
+      "draft_group": 156005,
+      "label": "NFL Showdown $60K Showdown Special [$20K to 1st] (DAL @ IND)",
+      "error": "BoardUnfiltered: NO injury information reached this board (0/50 matched).\nEvery player would read as available, which is exactly how an inactive player gets into every lineup.\nA filter that is silently not filtering is worse than no filter, because it is trusted.\nFix the join, or pass --force to build a board that cannot see who is hurt."
+    },
+    {
+      "kind": "classic",
+      "draft_group": 156363,
+      "label": "NFL $30K Chain-Mover [$10K to 1st] (Afternoon Turbo)",
+      "error": "BoardUnfiltered: NO injury information reached this board (0/161 matched).\nEvery player would read as available, which is exactly how an inactive player gets into every lineup.\nA filter that is silently not filtering is worse than no filter, because it is trusted.\nFix the join, or pass --force to build a board that cannot see who is hurt."
+    },
+    {
+      "kind": "showdown",
+      "draft_group": 156009,
+      "label": "NFL Showdown $20K Thunderdome [Must Fill] (HOU @ LAC)",
+      "error": "BoardUnfiltered: NO injury information reached this board (0/54 matched).\nEvery player would read as available, which is exactly how an inactive player gets into every lineup.\nA filter that is silently not filtering is worse than no filter, because it is trusted.\nFix the join, or pass --force to build a board that cannot see who is hurt."
+    },
+    {
+      "kind": "showdown",
+      "draft_group": 156010,
+      "label": "NFL $15K Showdown Special [$5K to 1st] (LV @ SF)",
+      "error": "BoardUnfiltered: NO injury information reached this board (0/58 matched).\nEvery player would read as available, which is exactly how an inactive player gets into every lineup.\nA filter that is silently not filtering is worse than no filter, because it is trusted.\nFix the join, or pass --force to build a board that cannot see who is hurt."
+    },
+    {
+      "kind": "showdown",
+      "draft_group": 156366,
+      "label": "NFL Showdown $20K Thunderdome [Must Fill] (ARI @ SEA)",
+      "error": "BoardUnfiltered: NO injury information reached this board (0/56 matched).\nEvery player would read as available, which is exactly how an inactive player gets into every lineup.\nA filter that is silently not filtering is worse than no filter, because it is trusted.\nFix the join, or pass --force to build a board that cannot see who is hurt."
+    },
+    {
+      "kind": "showdown",
+      "draft_group": 156007,
+      "label": "NFL Showdown $20K Thunderdome [Must Fill] (DEN @ CAR)",
+      "error": "BoardUnfiltered: NO injury information reached this board (0/54 matched).\nEvery player would read as available, which is exactly how an inactive player gets into every lineup.\nA filter that is silently not filtering is worse than no filter, because it is trusted.\nFix the join, or pass --force to build a board that cannot see who is hurt."
+    },
+    {
+      "kind": "showdown",
+      "draft_group": 156002,
+      "label": "NFL Showdown $20K Thunderdome [Must Fill] (NYG @ PHI)",
+      "error": "BoardUnfiltered: NO injury information reached this board (0/58 matched).\nEvery player would read as available, which is exactly how an inactive player gets into every lineup.\nA filter that is silently not filtering is worse than no filter, because it is trusted.\nFix the join, or pass --force to build a board that cannot see who is hurt."
+    },
+    {
+      "kind": "showdown",
+      "draft_group": 156004,
+      "label": "NFL Showdown $20K Thunderdome [Must Fill] (CLE @ NO)",
+      "error": "BoardUnfiltered: NO injury information reached this board (0/52 matched).\nEvery player would read as available, which is exactly how an inactive player gets into every lineup.\nA filter that is silently not filtering is worse than no filter, because it is trusted.\nFix the join, or pass --force to build a board that cannot see who is hurt."
+    },
+    {
+      "kind": "showdown",
+      "draft_group": 156006,
+      "label": "NFL Showdown $20K Thunderdome [Must Fill] (LAR @ WAS)",
+      "error": "BoardUnfiltered: NO injury information reached this board (0/56 matched).\nEvery player would read as available, which is exactly how an inactive player gets into every lineup.\nA filter that is silently not filtering is worse than no filter, because it is trusted.\nFix the join, or pass --force to build a board that cannot see who is hurt."
+    },
+    {
+      "kind": "showdown",
+      "draft_group": 156003,
+      "label": "NFL Showdown $20K Thunderdome [Must Fill] (NYJ @ KC)",
+      "error": "BoardUnfiltered: NO injury information reached this board (0/55 matched).\nEvery player would read as available, which is exactly how an inactive player gets into every lineup.\nA filter that is silently not filtering is worse than no filter, because it is trusted.\nFix the join, or pass --force to build a board that cannot see who is hurt."
+    },
+    {
+      "kind": "showdown",
+      "draft_group": 156008,
+      "label": "NFL Showdown $20K Thunderdome [Must Fill] (DET @ MIA)",
+      "error": "BoardUnfiltered: NO injury information reached this board (0/51 matched).\nEvery player would read as available, which is exactly how an inactive player gets into every lineup.\nA filter that is silently not filtering is worse than no filter, because it is trusted.\nFix the join, or pass --force to build a board that cannot see who is hurt."
+    },
+    {
+      "kind": "classic",
+      "draft_group": 155989,
+      "label": "NFL $12M Ultimate Main Event Millionaire [$2.5M to 1st]",
+      "error": "DataUnavailable: draft group 155989 returned no players from either endpoint (lobby top-level keys: ['draftGroupAlerts', 'playerList', 'teamList'])"
+    }
+  ]
 }
