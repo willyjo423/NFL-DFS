@@ -1,0 +1,217 @@
+dk_player_id,draftable_id,name,position,team,salary,roster_slot,status,disabled,attributes,game,starts_utc,norm,flex_eligible,captain_salary,playing,draft_group,game_type,captured_at
+325,0,Texans,DST,HOU,3500,71,,False,,HOU @ LAC,,texans,0,3500,clear,155997,Classic,2026-11-06T03:40:24+00:00
+335,0,Packers,DST,GB,2400,71,,False,,GB @ NE,,packers,0,2400,clear,155997,Classic,2026-11-06T03:40:24+00:00
+341,0,Raiders,DST,LV,2200,71,,False,,LV @ SF,,raiders,0,2200,clear,155997,Classic,2026-11-06T03:40:24+00:00
+348,0,Patriots,DST,NE,3100,71,,False,,GB @ NE,,patriots,0,3100,clear,155997,Classic,2026-11-06T03:40:24+00:00
+355,0,Cardinals,DST,ARI,2000,71,,False,,ARI @ SEA,,cardinals,0,2000,clear,155997,Classic,2026-11-06T03:40:24+00:00
+357,0,Chargers,DST,LAC,2400,71,,False,,HOU @ LAC,,chargers,0,2400,clear,155997,Classic,2026-11-06T03:40:24+00:00
+359,0,49ers,DST,SF,3600,71,,False,,LV @ SF,,49ers,0,3600,clear,155997,Classic,2026-11-06T03:40:24+00:00
+361,0,Seahawks,DST,SEA,3800,71,,False,,ARI @ SEA,,seahawks,0,3800,clear,155997,Classic,2026-11-06T03:40:24+00:00
+399579,0,Tyrod Taylor,QB,GB,4000,66,,False,,GB @ NE,,tyrod taylor,0,4000,clear,155997,Classic,2026-11-06T03:40:24+00:00
+403308,0,Kirk Cousins,QB,LV,5300,66,,False,,LV @ SF,,kirk cousins,0,5300,clear,155997,Classic,2026-11-06T03:40:24+00:00
+501150,0,Kyle Juszczyk,RB,SF,4000,67,,False,,LV @ SF,,kyle juszczyk,0,4000,clear,155997,Classic,2026-11-06T03:40:24+00:00
+593587,0,Mike Evans,WR,SF,6500,68,,False,,LV @ SF,,mike evans,0,6500,clear,155997,Classic,2026-11-06T03:40:24+00:00
+596417,0,Phillip Dorsett II,WR,LV,3000,68,,False,,LV @ SF,,phillip dorsett,0,3000,clear,155997,Classic,2026-11-06T03:40:24+00:00
+607047,0,Jacoby Brissett,QB,ARI,5000,66,,False,,ARI @ SEA,,jacoby brissett,0,5000,clear,155997,Classic,2026-11-06T03:40:24+00:00
+607864,0,Brandin Cooks,WR,SF,3900,68,,False,,LV @ SF,,brandin cooks,0,3900,clear,155997,Classic,2026-11-06T03:40:24+00:00
+694931,0,Eric Saubert,TE,SEA,2600,69,,False,,ARI @ SEA,,eric saubert,0,2600,clear,155997,Classic,2026-11-06T03:40:24+00:00
+698227,0,Cooper Kupp,WR,SEA,3800,68,,False,,ARI @ SEA,,cooper kupp,0,3800,clear,155997,Classic,2026-11-06T03:40:24+00:00
+702808,0,Mack Hollins,WR,NE,3800,68,,False,,GB @ NE,,mack hollins,0,3800,clear,155997,Classic,2026-11-06T03:40:24+00:00
+703015,0,Dare Ogunbowale,RB,HOU,4000,67,,False,,HOU @ LAC,,dare ogunbowale,0,4000,clear,155997,Classic,2026-11-06T03:40:24+00:00
+727279,0,Demarcus Robinson,WR,SF,4300,68,,False,,LV @ SF,,demarcus robinson,0,4300,clear,155997,Classic,2026-11-06T03:40:24+00:00
+733672,0,George Kittle,TE,SF,6000,69,,False,,LV @ SF,,george kittle,0,6000,clear,155997,Classic,2026-11-06T03:40:24+00:00
+742390,0,James Conner,RB,ARI,4400,67,,False,,ARI @ SEA,,james conner,0,4400,clear,155997,Classic,2026-11-06T03:40:24+00:00
+743749,0,Jonnu Smith,TE,GB,2500,69,,False,,GB @ NE,,jonnu smith,0,2500,clear,155997,Classic,2026-11-06T03:40:24+00:00
+744425,0,Hunter Henry,TE,NE,4500,69,,False,,GB @ NE,,hunter henry,0,4500,clear,155997,Classic,2026-11-06T03:40:24+00:00
+746491,0,Zay Jones,WR,ARI,3000,68,,False,,ARI @ SEA,,zay jones,0,3000,clear,155997,Classic,2026-11-06T03:40:24+00:00
+754412,0,Kendrick Bourne,WR,ARI,3900,68,,False,,ARI @ SEA,,kendrick bourne,0,3900,clear,155997,Classic,2026-11-06T03:40:24+00:00
+757521,0,KhaDarel Hodge,WR,SF,3000,68,,False,,LV @ SF,,khadarel hodge,0,3000,clear,155997,Classic,2026-11-06T03:40:24+00:00
+830517,0,Christian McCaffrey,RB,SF,8000,67,,False,,LV @ SF,,christian mccaffrey,0,8000,clear,155997,Classic,2026-11-06T03:40:24+00:00
+830523,0,Dalton Schultz,TE,HOU,3200,69,,False,,HOU @ LAC,,dalton schultz,0,3200,clear,155997,Classic,2026-11-06T03:40:24+00:00
+832098,0,David Njoku,TE,LAC,3000,69,,False,,HOU @ LAC,,david njoku,0,3000,clear,155997,Classic,2026-11-06T03:40:24+00:00
+835749,0,Deebo Samuel Sr.,WR,SF,5300,68,,False,,LV @ SF,,deebo samuel,0,5300,clear,155997,Classic,2026-11-06T03:40:24+00:00
+865573,0,Foster Moreau,TE,HOU,2500,69,,False,,HOU @ LAC,,foster moreau,0,2500,clear,155997,Classic,2026-11-06T03:40:24+00:00
+865801,0,Christian Kirk,WR,SF,3400,68,,False,,LV @ SF,,christian kirk,0,3400,clear,155997,Classic,2026-11-06T03:40:24+00:00
+865844,0,Jake Browning,QB,LAC,4000,66,,False,,HOU @ LAC,,jake browning,0,4000,clear,155997,Classic,2026-11-06T03:40:24+00:00
+867303,0,Gardner Minshew II,QB,ARI,4500,66,,False,,ARI @ SEA,,gardner minshew,0,4500,clear,155997,Classic,2026-11-06T03:40:24+00:00
+877654,0,Gary Jennings,WR,LAC,3000,68,,False,,HOU @ LAC,,gary jennings,0,3000,clear,155997,Classic,2026-11-06T03:40:24+00:00
+877913,0,James Proche II,WR,ARI,3000,68,,False,,ARI @ SEA,,james proche,0,3000,clear,155997,Classic,2026-11-06T03:40:24+00:00
+880026,0,Sam Darnold,QB,SEA,5600,66,,False,,ARI @ SEA,,sam darnold,0,5600,clear,155997,Classic,2026-11-06T03:40:24+00:00
+880322,0,Alec Ingold,RB,LAC,4000,67,,False,,HOU @ LAC,,alec ingold,0,4000,clear,155997,Classic,2026-11-06T03:40:24+00:00
+882345,0,Drew Lock,QB,SEA,4000,66,,False,,ARI @ SEA,,drew lock,0,4000,clear,155997,Classic,2026-11-06T03:40:24+00:00
+883312,0,Irvin Charles,WR,SEA,3000,68,,False,,ARI @ SEA,,irvin charles,0,3000,clear,155997,Classic,2026-11-06T03:40:24+00:00
+910562,0,Justin Herbert,QB,LAC,5000,66,,False,,HOU @ LAC,,justin herbert,0,5000,clear,155997,Classic,2026-11-06T03:40:24+00:00
+911985,0,Jack Stoll,TE,SF,2500,69,,False,,LV @ SF,,jack stoll,0,2500,clear,155997,Classic,2026-11-06T03:40:24+00:00
+912137,0,Jordan Love,QB,GB,6300,66,,False,,GB @ NE,,jordan love,0,6300,clear,155997,Classic,2026-11-06T03:40:24+00:00
+915066,0,Reggie Gilliam,RB,NE,4000,67,,False,,GB @ NE,,reggie gilliam,0,4000,clear,155997,Classic,2026-11-06T03:40:24+00:00
+919304,0,Velus Jones Jr.,RB,SEA,4000,67,,False,,ARI @ SEA,,velus jones,0,4000,clear,155997,Classic,2026-11-06T03:40:24+00:00
+920756,0,Devin Duvernay,WR,ARI,3200,68,,False,,ARI @ SEA,,devin duvernay,0,3200,clear,155997,Classic,2026-11-06T03:40:24+00:00
+923412,0,Rashid Shaheed,WR,SEA,4100,68,,False,,ARI @ SEA,,rashid shaheed,0,4100,clear,155997,Classic,2026-11-06T03:40:24+00:00
+943093,0,Ian Thomas,TE,LV,2500,69,,False,,LV @ SF,,ian thomas,0,2500,clear,155997,Classic,2026-11-06T03:40:24+00:00
+944416,0,Josh Jacobs,RB,GB,6800,67,,False,,GB @ NE,,josh jacobs,0,6800,clear,155997,Classic,2026-11-06T03:40:24+00:00
+944826,0,A.J. Brown,WR,NE,5800,68,,False,,GB @ NE,,a j brown,0,5800,clear,155997,Classic,2026-11-06T03:40:24+00:00
+946261,0,Tanner Conner,TE,NE,2500,69,,False,,GB @ NE,,tanner conner,0,2500,clear,155997,Classic,2026-11-06T03:40:24+00:00
+946541,0,Luke Farrell,TE,SF,2500,69,,False,,LV @ SF,,luke farrell,0,2500,clear,155997,Classic,2026-11-06T03:40:24+00:00
+946739,0,David Montgomery,RB,HOU,5700,67,,False,,HOU @ LAC,,david montgomery,0,5700,clear,155997,Classic,2026-11-06T03:40:24+00:00
+973945,0,Mac Jones,QB,SF,4000,66,,False,,LV @ SF,,mac jones,0,4000,clear,155997,Classic,2026-11-06T03:40:24+00:00
+1049797,0,Owen Wright,RB,LV,4000,67,,False,,LV @ SF,,owen wright,0,4000,clear,155997,Classic,2026-11-06T03:40:24+00:00
+1050335,0,Pierre Strong Jr.,RB,GB,4000,67,,False,,GB @ NE,,pierre strong,0,4000,clear,155997,Classic,2026-11-06T03:40:24+00:00
+1057457,0,Connor Heyward,RB,LV,4000,67,,False,,LV @ SF,,connor heyward,0,4000,clear,155997,Classic,2026-11-06T03:40:24+00:00
+1057484,0,Cody White,WR,LV,3000,68,,False,,LV @ SF,,cody white,0,3000,clear,155997,Classic,2026-11-06T03:40:24+00:00
+1058648,0,Charlie Kolar,TE,LAC,2500,69,,False,,HOU @ LAC,,charlie kolar,0,2500,clear,155997,Classic,2026-11-06T03:40:24+00:00
+1059221,0,Ihmir Smith-Marsette,WR,ARI,3000,68,,False,,ARI @ SEA,,ihmir smith marsette,0,3000,clear,155997,Classic,2026-11-06T03:40:24+00:00
+1060311,0,Davis Mills,QB,HOU,4000,66,,False,,HOU @ LAC,,davis mills,0,4000,clear,155997,Classic,2026-11-06T03:40:24+00:00
+1060550,0,Hunter Long,TE,ARI,2500,69,,False,,ARI @ SEA,,hunter long,0,2500,clear,155997,Classic,2026-11-06T03:40:24+00:00
+1060671,0,Tommy DeVito,QB,NE,4000,66,,False,,GB @ NE,,tommy devito,0,4000,clear,155997,Classic,2026-11-06T03:40:24+00:00
+1064955,0,Brady Russell,RB,SEA,4000,67,,False,,ARI @ SEA,,brady russell,0,4000,clear,155997,Classic,2026-11-06T03:40:24+00:00
+1066811,0,Aidan O'Connell,QB,LV,4000,66,,False,,LV @ SF,,aidan oconnell,0,4000,clear,155997,Classic,2026-11-06T03:40:24+00:00
+1067918,0,Christian Watson,WR,GB,7500,68,,False,,GB @ NE,,christian watson,0,7500,clear,155997,Classic,2026-11-06T03:40:24+00:00
+1068803,0,Bo Melton,WR,GB,3000,68,,False,,GB @ NE,,bo melton,0,3000,clear,155997,Classic,2026-11-06T03:40:24+00:00
+1068872,0,Jake Tonges,TE,SF,2500,69,,False,,LV @ SF,,jake tonges,0,2500,clear,155997,Classic,2026-11-06T03:40:24+00:00
+1074698,0,Nico Collins,WR,HOU,7200,68,,False,,HOU @ LAC,,nico collins,0,7200,clear,155997,Classic,2026-11-06T03:40:24+00:00
+1107034,0,Brandon Aiyuk,WR,SF,3000,68,,False,,LV @ SF,,brandon aiyuk,0,3000,clear,155997,Classic,2026-11-06T03:40:24+00:00
+1107037,0,Josh Whyle,TE,GB,2500,69,,False,,GB @ NE,,josh whyle,0,2500,clear,155997,Classic,2026-11-06T03:40:24+00:00
+1107326,0,Thomas Yassmin,TE,GB,2500,69,,False,,GB @ NE,,thomas yassmin,0,2500,clear,155997,Classic,2026-11-06T03:40:24+00:00
+1108161,0,Trey McBride,TE,ARI,7700,69,,False,,ARI @ SEA,,trey mcbride,0,7700,clear,155997,Classic,2026-11-06T03:40:24+00:00
+1112357,0,Shawn Bowman,TE,ARI,2500,69,,False,,ARI @ SEA,,shawn bowman,0,2500,clear,155997,Classic,2026-11-06T03:40:24+00:00
+1113398,0,Bryce Oliver,WR,HOU,3000,68,,False,,HOU @ LAC,,bryce oliver,0,3000,clear,155997,Classic,2026-11-06T03:40:24+00:00
+1113477,0,Derius Davis,WR,LAC,3000,68,,False,,HOU @ LAC,,derius davis,0,3000,clear,155997,Classic,2026-11-06T03:40:24+00:00
+1114364,0,Shedrick Jackson,WR,ARI,3000,68,,False,,ARI @ SEA,,shedrick jackson,0,3000,clear,155997,Classic,2026-11-06T03:40:24+00:00
+1116817,0,Emari Demercado,RB,HOU,4000,67,,False,,HOU @ LAC,,emari demercado,0,4000,clear,155997,Classic,2026-11-06T03:40:24+00:00
+1118668,0,Ryan Miller,WR,NE,3000,68,,False,,GB @ NE,,ryan miller,0,3000,clear,155997,Classic,2026-11-06T03:40:24+00:00
+1121050,0,Jake Bobo,WR,SEA,3000,68,,False,,ARI @ SEA,,jake bobo,0,3000,clear,155997,Classic,2026-11-06T03:40:24+00:00
+1121761,0,Brock Purdy,QB,SF,6800,66,,False,,LV @ SF,,brock purdy,0,6800,clear,155997,Classic,2026-11-06T03:40:24+00:00
+1121871,0,Brevin Jordan,TE,HOU,2500,69,,False,,HOU @ LAC,,brevin jordan,0,2500,clear,155997,Classic,2026-11-06T03:40:24+00:00
+1122182,0,Dylan Laube,RB,LV,4000,67,,False,,LV @ SF,,dylan laube,0,4000,clear,155997,Classic,2026-11-06T03:40:24+00:00
+1122653,0,Romeo Doubs,WR,NE,3000,68,,False,,GB @ NE,,romeo doubs,0,3000,clear,155997,Classic,2026-11-06T03:40:24+00:00
+1123398,0,Jayden Reed,WR,GB,3000,68,,False,,GB @ NE,,jayden reed,0,3000,clear,155997,Classic,2026-11-06T03:40:24+00:00
+1123496,0,Simi Fehoko,WR,ARI,3300,68,,False,,ARI @ SEA,,simi fehoko,0,3300,clear,155997,Classic,2026-11-06T03:40:24+00:00
+1123529,0,Michael Wilson,WR,ARI,6700,68,,False,,ARI @ SEA,,michael wilson,0,6700,clear,155997,Classic,2026-11-06T03:40:24+00:00
+1123630,0,Julian Hill,TE,NE,2500,69,,False,,GB @ NE,,julian hill,0,2500,clear,155997,Classic,2026-11-06T03:40:24+00:00
+1125589,0,Brayden Willis,TE,SF,2500,69,,False,,LV @ SF,,brayden willis,0,2500,clear,155997,Classic,2026-11-06T03:40:24+00:00
+1125737,0,Jerome Ford,RB,ARI,4000,67,,False,,ARI @ SEA,,jerome ford,0,4000,clear,155997,Classic,2026-11-06T03:40:24+00:00
+1125739,0,Cameron Latu,TE,NE,2500,69,,False,,GB @ NE,,cameron latu,0,2500,clear,155997,Classic,2026-11-06T03:40:24+00:00
+1126338,0,Isaac Guerendo,RB,SF,4000,67,,False,,LV @ SF,,isaac guerendo,0,4000,clear,155997,Classic,2026-11-06T03:40:24+00:00
+1126817,0,Jalen Nailor,WR,LV,3400,68,,False,,LV @ SF,,jalen nailor,0,3400,clear,155997,Classic,2026-11-06T03:40:24+00:00
+1127065,0,Chris Brooks,RB,GB,4000,67,,False,,GB @ NE,,chris brooks,0,4000,clear,155997,Classic,2026-11-06T03:40:24+00:00
+1128222,0,Tank Dell,WR,HOU,3500,68,,False,,HOU @ LAC,,tank dell,0,3500,clear,155997,Classic,2026-11-06T03:40:24+00:00
+1128295,0,British Brooks,RB,HOU,4000,67,,False,,HOU @ LAC,,british brooks,0,4000,clear,155997,Classic,2026-11-06T03:40:24+00:00
+1128527,0,Jermar Jefferson,RB,ARI,4000,67,,False,,ARI @ SEA,,jermar jefferson,0,4000,clear,155997,Classic,2026-11-06T03:40:24+00:00
+1128538,0,Teagan Quitoriano,TE,ARI,2500,69,,False,,ARI @ SEA,,teagan quitoriano,0,2500,clear,155997,Classic,2026-11-06T03:40:24+00:00
+1129452,0,Ben Sims,TE,SEA,2500,69,,False,,ARI @ SEA,,ben sims,0,2500,clear,155997,Classic,2026-11-06T03:40:24+00:00
+1130595,0,Scott Matlock,RB,LAC,4000,67,,False,,HOU @ LAC,,scott matlock,0,4000,clear,155997,Classic,2026-11-06T03:40:24+00:00
+1130833,0,Deven Thompkins,WR,LV,3000,68,,False,,LV @ SF,,deven thompkins,0,3000,clear,155997,Classic,2026-11-06T03:40:24+00:00
+1130975,0,Trey Lance,QB,LAC,4000,66,,False,,HOU @ LAC,,trey lance,0,4000,clear,155997,Classic,2026-11-06T03:40:24+00:00
+1131198,0,Tyler Allgeier,RB,ARI,5400,67,,False,,ARI @ SEA,,tyler allgeier,0,5400,clear,155997,Classic,2026-11-06T03:40:24+00:00
+1137635,0,Xavier Smith,WR,SF,3000,68,,False,,LV @ SF,,xavier smith,0,3000,clear,155997,Classic,2026-11-06T03:40:24+00:00
+1161416,0,Ricky Pearsall,WR,SF,3000,68,,False,,LV @ SF,,ricky pearsall,0,3000,clear,155997,Classic,2026-11-06T03:40:24+00:00
+1161853,0,Elijah Higgins,TE,ARI,2500,69,,False,,ARI @ SEA,,elijah higgins,0,2500,clear,155997,Classic,2026-11-06T03:40:24+00:00
+1162602,0,Theo Wease Jr.,WR,LAC,3000,68,,False,,HOU @ LAC,,theo wease,0,3000,clear,155997,Classic,2026-11-06T03:40:24+00:00
+1163866,0,Bam Knight,RB,ARI,4700,67,,False,,ARI @ SEA,,bam knight,0,4700,clear,155997,Classic,2026-11-06T03:40:24+00:00
+1164530,0,Zach Charbonnet,RB,SEA,5800,67,,False,,ARI @ SEA,,zach charbonnet,0,5800,clear,155997,Classic,2026-11-06T03:40:24+00:00
+1164736,0,Nick Kallerup,TE,SEA,2500,69,,False,,ARI @ SEA,,nick kallerup,0,2500,clear,155997,Classic,2026-11-06T03:40:24+00:00
+1164951,0,Graham Mertz,QB,HOU,4000,66,,False,,HOU @ LAC,,graham mertz,0,4000,clear,155997,Classic,2026-11-06T03:40:24+00:00
+1164979,0,Tre Tucker,WR,LV,5400,68,,False,,LV @ SF,,tre tucker,0,5400,clear,155997,Classic,2026-11-06T03:40:24+00:00
+1166235,0,Sincere McCormick,RB,SF,4000,67,,False,,LV @ SF,,sincere mccormick,0,4000,clear,155997,Classic,2026-11-06T03:40:24+00:00
+1166989,0,Kurtis Rourke,QB,SF,4000,66,,False,,LV @ SF,,kurtis rourke,0,4000,clear,155997,Classic,2026-11-06T03:40:24+00:00
+1168753,0,Patrick Herbert,TE,LAC,2500,69,,False,,HOU @ LAC,,patrick herbert,0,2500,clear,155997,Classic,2026-11-06T03:40:24+00:00
+1169263,0,Chandler Brayboy,WR,NE,3000,68,,False,,GB @ NE,,chandler brayboy,0,3000,clear,155997,Classic,2026-11-06T03:40:24+00:00
+1170921,0,Josh Kelly,WR,HOU,3000,68,,False,,HOU @ LAC,,josh kelly,0,3000,clear,155997,Classic,2026-11-06T03:40:24+00:00
+1172746,0,Isaiah Neyor,WR,GB,3000,68,,False,,GB @ NE,,isaiah neyor,0,3000,clear,155997,Classic,2026-11-06T03:40:24+00:00
+1173266,0,Evan Hull,RB,ARI,4000,67,,False,,ARI @ SEA,,evan hull,0,4000,clear,155997,Classic,2026-11-06T03:40:24+00:00
+1174682,0,Rhamondre Stevenson,RB,NE,6100,67,,False,,GB @ NE,,rhamondre stevenson,0,6100,clear,155997,Classic,2026-11-06T03:40:24+00:00
+1175182,0,Cade Stover,TE,HOU,2500,69,,False,,HOU @ LAC,,cade stover,0,2500,clear,155997,Classic,2026-11-06T03:40:24+00:00
+1175693,0,DeMario Douglas,WR,NE,4800,68,,False,,GB @ NE,,demario douglas,0,4800,clear,155997,Classic,2026-11-06T03:40:24+00:00
+1176730,0,Skyy Moore,WR,GB,3000,68,,False,,GB @ NE,,skyy moore,0,3000,clear,155997,Classic,2026-11-06T03:40:24+00:00
+1179790,0,Luke Musgrave,TE,GB,2500,69,,False,,GB @ NE,,luke musgrave,0,2500,clear,155997,Classic,2026-11-06T03:40:24+00:00
+1180294,0,Hayden Rucci,TE,LAC,2500,69,,False,,HOU @ LAC,,hayden rucci,0,2500,clear,155997,Classic,2026-11-06T03:40:24+00:00
+1180625,0,George Holani,RB,SEA,4300,67,,False,,ARI @ SEA,,george holani,0,4300,clear,155997,Classic,2026-11-06T03:40:24+00:00
+1181861,0,Jacob Cowing,WR,SF,3600,68,,False,,LV @ SF,,jacob cowing,0,3600,clear,155997,Classic,2026-11-06T03:40:24+00:00
+1181874,0,Tucker Kraft,TE,GB,5500,69,,False,,GB @ NE,,tucker kraft,0,5500,clear,155997,Classic,2026-11-06T03:40:24+00:00
+1182082,0,Terrell Jennings,RB,NE,4000,67,,False,,GB @ NE,,terrell jennings,0,4000,clear,155997,Classic,2026-11-06T03:40:24+00:00
+1184233,0,Coleman Owen,WR,GB,3000,68,,False,,GB @ NE,,coleman owen,0,3000,clear,155997,Classic,2026-11-06T03:40:24+00:00
+1213340,0,Carson Beck,QB,ARI,4000,66,,False,,ARI @ SEA,,carson beck,0,4000,clear,155997,Classic,2026-11-06T03:40:24+00:00
+1213362,0,Kayshon Boutte,WR,HOU,3400,68,,False,,HOU @ LAC,,kayshon boutte,0,3400,clear,155997,Classic,2026-11-06T03:40:24+00:00
+1213414,0,MarShawn Lloyd,RB,GB,4600,67,,False,,GB @ NE,,marshawn lloyd,0,4600,clear,155997,Classic,2026-11-06T03:40:24+00:00
+1213636,0,Xavier Hutchinson,WR,HOU,4000,68,,False,,HOU @ LAC,,xavier hutchinson,0,4000,clear,155997,Classic,2026-11-06T03:40:24+00:00
+1213730,0,Mark Redman,TE,GB,2500,69,,False,,GB @ NE,,mark redman,0,2500,clear,155997,Classic,2026-11-06T03:40:24+00:00
+1213865,0,Quentin Johnston,WR,LAC,4300,68,,False,,HOU @ LAC,,quentin johnston,0,4300,clear,155997,Classic,2026-11-06T03:40:24+00:00
+1213872,0,Savion Williams,WR,GB,3500,68,,False,,GB @ NE,,savion williams,0,3500,clear,155997,Classic,2026-11-06T03:40:24+00:00
+1213928,0,DJ Uiagalelei,QB,LAC,4000,66,,False,,HOU @ LAC,,dj uiagalelei,0,4000,clear,155997,Classic,2026-11-06T03:40:24+00:00
+1214084,0,C.J. Stroud,QB,HOU,5900,66,,False,,HOU @ LAC,,c j stroud,0,5900,clear,155997,Classic,2026-11-06T03:40:24+00:00
+1214087,0,Jaxon Smith-Njigba,WR,SEA,9300,68,,False,,ARI @ SEA,,jaxon smith njigba,0,9300,clear,155997,Classic,2026-11-06T03:40:24+00:00
+1214405,0,KeAndre Lambert-Smith,WR,LAC,3000,68,,False,,HOU @ LAC,,keandre lambert smith,0,3000,clear,155997,Classic,2026-11-06T03:40:24+00:00
+1214633,0,Tre' Harris,WR,LAC,4000,68,,False,,HOU @ LAC,,tre harris,0,4000,clear,155997,Classic,2026-11-06T03:40:24+00:00
+1214824,0,Kimani Vidal,RB,LAC,4700,67,,False,,HOU @ LAC,,kimani vidal,0,4700,clear,155997,Classic,2026-11-06T03:40:24+00:00
+1215658,0,Lan Larison,RB,NE,4000,67,,False,,GB @ NE,,lan larison,0,4000,clear,155997,Classic,2026-11-06T03:40:24+00:00
+1215772,0,Kaelon Black,RB,SF,5500,67,,False,,LV @ SF,,kaelon black,0,5500,clear,155997,Classic,2026-11-06T03:40:24+00:00
+1215974,0,Chris Collier,RB,LV,4000,67,,False,,LV @ SF,,chris collier,0,4000,clear,155997,Classic,2026-11-06T03:40:24+00:00
+1216288,0,Efton Chism III,WR,NE,3600,68,,False,,GB @ NE,,efton chism,0,3600,clear,155997,Classic,2026-11-06T03:40:24+00:00
+1218643,0,Ladd McConkey,WR,LAC,5500,68,,False,,HOU @ LAC,,ladd mcconkey,0,5500,clear,155997,Classic,2026-11-06T03:40:24+00:00
+1222789,0,Keaton Mitchell,RB,LAC,4200,67,,False,,HOU @ LAC,,keaton mitchell,0,4200,clear,155997,Classic,2026-11-06T03:40:24+00:00
+1222835,0,Jordan Watkins,WR,SF,3300,68,,False,,LV @ SF,,jordan watkins,0,3300,clear,155997,Classic,2026-11-06T03:40:24+00:00
+1223301,0,Jalen Brooks,WR,ARI,3000,68,,False,,ARI @ SEA,,jalen brooks,0,3000,clear,155997,Classic,2026-11-06T03:40:24+00:00
+1223393,0,Tory Horton,WR,SEA,3300,68,,False,,ARI @ SEA,,tory horton,0,3300,clear,155997,Classic,2026-11-06T03:40:24+00:00
+1223744,0,Rivaldo Fairweather,TE,ARI,2500,69,,False,,ARI @ SEA,,rivaldo fairweather,0,2500,clear,155997,Classic,2026-11-06T03:40:24+00:00
+1225702,0,Luke Grimm,WR,LAC,3000,68,,False,,HOU @ LAC,,luke grimm,0,3000,clear,155997,Classic,2026-11-06T03:40:24+00:00
+1227157,0,Kyle Williams,WR,NE,3500,68,,False,,GB @ NE,,kyle williams,0,3500,clear,155997,Classic,2026-11-06T03:40:24+00:00
+1228551,0,Drake Dabney,TE,GB,2500,69,,False,,GB @ NE,,drake dabney,0,2500,clear,155997,Classic,2026-11-06T03:40:24+00:00
+1229089,0,Malick Meiga,WR,SEA,3000,68,,False,,ARI @ SEA,,malick meiga,0,3000,clear,155997,Classic,2026-11-06T03:40:24+00:00
+1229489,0,Tip Reiman,TE,ARI,2500,69,,False,,ARI @ SEA,,tip reiman,0,2500,clear,155997,Classic,2026-11-06T03:40:24+00:00
+1229503,0,AJ Barner,TE,SEA,3800,69,,False,,ARI @ SEA,,aj barner,0,3800,clear,155997,Classic,2026-11-06T03:40:24+00:00
+1229749,0,Patrick Gurd,TE,LV,2500,69,,False,,LV @ SF,,patrick gurd,0,2500,clear,155997,Classic,2026-11-06T03:40:24+00:00
+1229846,0,Ricky White III,WR,SEA,3000,68,,False,,ARI @ SEA,,ricky white,0,3000,clear,155997,Classic,2026-11-06T03:40:24+00:00
+1229869,0,Montorie Foster Jr.,WR,SEA,3000,68,,False,,ARI @ SEA,,montorie foster,0,3000,clear,155997,Classic,2026-11-06T03:40:24+00:00
+1231652,0,Woody Marks,RB,HOU,5700,67,,False,,HOU @ LAC,,woody marks,0,5700,clear,155997,Classic,2026-11-06T03:40:24+00:00
+1232592,0,Michael Mayer,TE,LV,3400,69,,False,,LV @ SF,,michael mayer,0,3400,clear,155997,Classic,2026-11-06T03:40:24+00:00
+1242787,0,Cam Miller,QB,GB,4000,66,,False,,GB @ NE,,cam miller,0,4000,clear,155997,Classic,2026-11-06T03:40:24+00:00
+1248031,0,Trey Benson,RB,ARI,4000,67,,False,,ARI @ SEA,,trey benson,0,4000,clear,155997,Classic,2026-11-06T03:40:24+00:00
+1274492,0,Jayden Higgins,WR,HOU,3000,68,,False,,HOU @ LAC,,jayden higgins,0,3000,clear,155997,Classic,2026-11-06T03:40:24+00:00
+1285917,0,Brock Bowers,TE,LV,7900,69,,False,,LV @ SF,,brock bowers,0,7900,clear,155997,Classic,2026-11-06T03:40:24+00:00
+1285958,0,Robbie Ouzts,RB,SEA,4000,67,,False,,ARI @ SEA,,robbie ouzts,0,4000,clear,155997,Classic,2026-11-06T03:40:24+00:00
+1286046,0,Jack Bech,WR,LV,3000,68,,False,,LV @ SF,,jack bech,0,3000,clear,155997,Classic,2026-11-06T03:40:24+00:00
+1286050,0,Corey Kiner,RB,NE,4100,67,,False,,GB @ NE,,corey kiner,0,4100,clear,155997,Classic,2026-11-06T03:40:24+00:00
+1286164,0,Dont'e Thornton Jr.,WR,LV,3000,68,,False,,LV @ SF,,donte thornton,0,3000,clear,155997,Classic,2026-11-06T03:40:24+00:00
+1286370,0,Jaylin Noel,WR,HOU,3000,68,,False,,HOU @ LAC,,jaylin noel,0,3000,clear,155997,Classic,2026-11-06T03:40:24+00:00
+1286388,0,Behren Morton,QB,NE,4000,66,,False,,GB @ NE,,behren morton,0,4000,clear,155997,Classic,2026-11-06T03:40:24+00:00
+1286652,0,Lewis Bond,WR,HOU,3000,68,,False,,HOU @ LAC,,lewis bond,0,3000,clear,155997,Classic,2026-11-06T03:40:24+00:00
+1286803,0,Drake Maye,QB,NE,7000,66,,False,,GB @ NE,,drake maye,0,7000,clear,155997,Classic,2026-11-06T03:40:24+00:00
+1286818,0,De'Zhaun Stribling,WR,SF,3000,68,,False,,LV @ SF,,dezhaun stribling,0,3000,clear,155997,Classic,2026-11-06T03:40:24+00:00
+1286840,0,Elijah Arroyo,TE,SEA,2500,69,,False,,ARI @ SEA,,elijah arroyo,0,2500,clear,155997,Classic,2026-11-06T03:40:24+00:00
+1287810,0,Harrison Wallace III,WR,ARI,3000,68,,False,,ARI @ SEA,,harrison wallace,0,3000,clear,155997,Classic,2026-11-06T03:40:24+00:00
+1287828,0,Marvin Harrison Jr.,WR,HOU,4500,68,,False,,HOU @ LAC,,marvin harrison,0,4500,clear,155997,Classic,2026-11-06T03:40:24+00:00
+1287837,0,TreVeyon Henderson,RB,NE,4600,67,,False,,GB @ NE,,treveyon henderson,0,4600,clear,155997,Classic,2026-11-06T03:40:24+00:00
+1288045,0,Will Pauling,WR,SF,3000,68,,False,,LV @ SF,,will pauling,0,3000,clear,155997,Classic,2026-11-06T03:40:24+00:00
+1288074,0,Myles Montgomery,RB,NE,4000,67,,False,,GB @ NE,,myles montgomery,0,4000,clear,155997,Classic,2026-11-06T03:40:24+00:00
+1289220,0,Zaire Mitchell-Paden,TE,HOU,2500,69,,False,,HOU @ LAC,,zaire mitchell paden,0,2500,clear,155997,Classic,2026-11-06T03:40:24+00:00
+1289428,0,Mike Washington Jr.,RB,LV,5200,67,,False,,LV @ SF,,mike washington,0,5200,clear,155997,Classic,2026-11-06T03:40:24+00:00
+1290102,0,Jalen Milroe,QB,SEA,4000,66,,False,,ARI @ SEA,,jalen milroe,0,4000,clear,155997,Classic,2026-11-06T03:40:24+00:00
+1296464,0,Quincy Skinner Jr.,WR,GB,3000,68,,False,,GB @ NE,,quincy skinner,0,3000,clear,155997,Classic,2026-11-06T03:40:24+00:00
+1310628,0,Khalil Dinkins,TE,SF,2500,69,,False,,LV @ SF,,khalil dinkins,0,2500,clear,155997,Classic,2026-11-06T03:40:24+00:00
+1315586,0,Tejhaun Palmer,WR,LAC,3000,68,,False,,HOU @ LAC,,tejhaun palmer,0,3000,clear,155997,Classic,2026-11-06T03:40:24+00:00
+1317230,0,Roman Hemby,RB,LV,4000,67,,False,,LV @ SF,,roman hemby,0,4000,clear,155997,Classic,2026-11-06T03:40:24+00:00
+1321090,0,Tanner Arkin,TE,NE,2500,69,,False,,GB @ NE,,tanner arkin,0,2500,clear,155997,Classic,2026-11-06T03:40:24+00:00
+1322238,0,Daniel Sobkowicz,WR,HOU,3000,68,,False,,HOU @ LAC,,daniel sobkowicz,0,3000,clear,155997,Classic,2026-11-06T03:40:24+00:00
+1323916,0,J. Michael Sturdivant,WR,GB,3000,68,,False,,GB @ NE,,j michael sturdivant,0,3000,clear,155997,Classic,2026-11-06T03:40:24+00:00
+1325624,0,Oronde Gadsden II,TE,LAC,3300,69,,False,,HOU @ LAC,,oronde gadsden,0,3300,clear,155997,Classic,2026-11-06T03:40:24+00:00
+1332922,0,Amar Johnson,RB,LAC,4000,67,,False,,HOU @ LAC,,amar johnson,0,4000,clear,155997,Classic,2026-11-06T03:40:24+00:00
+1379267,0,Matthew Golden,WR,GB,7000,68,,False,,GB @ NE,,matthew golden,0,7000,clear,155997,Classic,2026-11-06T03:40:24+00:00
+1379646,0,Ashton Jeanty,RB,LV,5900,67,,False,,LV @ SF,,ashton jeanty,0,5900,clear,155997,Classic,2026-11-06T03:40:24+00:00
+1381902,0,Kaleb Johnson,RB,GB,4000,67,,False,,GB @ NE,,kaleb johnson,0,4000,clear,155997,Classic,2026-11-06T03:40:24+00:00
+1383791,0,Jadarian Price,RB,SEA,5300,67,,False,,ARI @ SEA,,jadarian price,0,5300,clear,155997,Classic,2026-11-06T03:40:24+00:00
+1384869,0,Dareke Young,WR,LV,3000,68,,False,,LV @ SF,,dareke young,0,3000,clear,155997,Classic,2026-11-06T03:40:24+00:00
+1390913,0,Wesley Grimes,WR,SF,3000,68,,False,,LV @ SF,,wesley grimes,0,3000,clear,155997,Classic,2026-11-06T03:40:24+00:00
+1390939,0,Reggie Virgil,WR,ARI,3700,68,,False,,ARI @ SEA,,reggie virgil,0,3700,clear,155997,Classic,2026-11-06T03:40:24+00:00
+1398511,0,Emmanuel Henderson Jr.,WR,SEA,3000,68,,False,,ARI @ SEA,,emmanuel henderson,0,3000,clear,155997,Classic,2026-11-06T03:40:24+00:00
+1398572,0,Omarion Hampton,RB,LAC,4800,67,,False,,HOU @ LAC,,omarion hampton,0,4800,clear,155997,Classic,2026-11-06T03:40:24+00:00
+1399132,0,Brenen Thompson,WR,LAC,3000,68,,False,,HOU @ LAC,,brenen thompson,0,3000,clear,155997,Classic,2026-11-06T03:40:24+00:00
+1400657,0,Jordan James,RB,SF,4000,67,,False,,LV @ SF,,jordan james,0,4000,clear,155997,Classic,2026-11-06T03:40:24+00:00
+1400786,0,Fernando Mendoza,QB,LV,4300,66,,False,,LV @ SF,,fernando mendoza,0,4300,clear,155997,Classic,2026-11-06T03:40:24+00:00
+1403969,0,Eli Raridon,TE,NE,3500,69,,False,,GB @ NE,,eli raridon,0,3500,clear,155997,Classic,2026-11-06T03:40:24+00:00
+1405857,0,Marlin Klein,TE,HOU,2500,69,,False,,HOU @ LAC,,marlin klein,0,2500,clear,155997,Classic,2026-11-06T03:40:24+00:00
+1408785,0,Joshua Pitsenberger,RB,HOU,4000,67,,False,,HOU @ LAC,,joshua pitsenberger,0,4000,clear,155997,Classic,2026-11-06T03:40:24+00:00
+1441191,0,Malik Benson,WR,LV,3000,68,,False,,LV @ SF,,malik benson,0,3000,clear,155997,Classic,2026-11-06T03:40:24+00:00
+1447759,0,Emanuel Wilson,RB,SEA,5000,67,,False,,ARI @ SEA,,emanuel wilson,0,5000,clear,155997,Classic,2026-11-06T03:40:24+00:00
+1451501,0,Jeremiyah Love,RB,ARI,5200,67,,False,,ARI @ SEA,,jeremiyah love,0,5200,clear,155997,Classic,2026-11-06T03:40:24+00:00
+1468632,0,Carter Runyon,TE,LV,2500,69,,False,,LV @ SF,,carter runyon,0,2500,clear,155997,Classic,2026-11-06T03:40:24+00:00
+1637701,0,Kyle Dixon,WR,NE,3000,68,,False,,GB @ NE,,kyle dixon,0,3000,clear,155997,Classic,2026-11-06T03:40:24+00:00
