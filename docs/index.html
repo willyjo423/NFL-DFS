@@ -94,6 +94,8 @@ b.warn{color:var(--warn);cursor:help}
 .lineup .stats{display:flex;gap:16px;flex-wrap:wrap;font-size:12.5px;
   color:var(--muted);font-variant-numeric:tabular-nums}
 .lineup .stats b{color:var(--ink)}
+.lineup .stats b.lev-up{color:var(--good)}
+.lineup .stats b.lev-dn{color:var(--warn)}
 .grid2{display:grid;grid-template-columns:repeat(auto-fit,minmax(330px,1fr));gap:14px}
 
 .note{border:1px solid var(--line);border-left:3px solid var(--warn);
@@ -120,15 +122,19 @@ footer{border-top:1px solid var(--line);padding-top:16px;font-size:12.5px;
       browser.</p>
   </header>
 
-  <!-- FOUR CONTROLS. Everything else is either decided for you now or has
+  <!-- FIVE CONTROLS. Everything else is either decided for you now or has
        been shown not to matter; the rest are parked under Advanced so the
        default view is the one that builds the sharpest lineup.
 
        REMOVED OUTRIGHT:
          Leverage      - was double-pricing ownership on top of an objective
                          that is now measuring it properly. Pinned to 0.
-         Order entries - only ever re-sorted the list AFTER selection, so no
-                         setting of it ever changed a lineup. Pinned to best.
+
+       MOVED, NOT REMOVED:
+         Order entries - only ever re-sorts the list AFTER selection, so no
+                         setting of it changes a lineup. It is back in the
+                         main panel as "Order entries by", because it is a
+                         reading aid, not a build input.
   -->
   <div class="panel controls">
     <div class="ctl"><label for="slate">Slate</label>
@@ -143,12 +149,18 @@ footer{border-top:1px solid var(--line);padding-top:16px;font-size:12.5px;
     <div class="ctl"><label for="field"
       title="THE REAL ENTRY COUNT OF THE CONTEST YOU ARE PLAYING. Not a preference - an input, and the most load-bearing one on the page. It sets the score bar the lineup aims at (top 1-in-field) and how hard shared ownership is penalised. Leaving it at 100,000 for a 5,000-entry contest aims twenty times too high and quietly turns the build contrarian.">Contest size</label>
       <input id="field" type="number" min="2" step="1000" value="100000"></div>
+    <div class="ctl"><label for="entryorder"
+      title="What order to LIST the entries in. It does not change which lineups were chosen or how they were scored — that is always win probability, divided by field overlap in a tournament. Chalkiest first puts the most negative mean leverage at the top: the lineups built from players the field will own more than the model rates them. Most contrarian first is the reverse.">Order entries by</label>
+      <select id="entryorder">
+        <option value="best" selected>Best first (win probability)</option>
+        <option value="chalk">Chalkiest first (most negative leverage)</option>
+        <option value="contrarian">Most contrarian first</option>
+      </select></div>
   </div>
 
-  <!-- Pinned, not removed: the code still reads them, so they keep their
-       ids and their values never change. -->
+  <!-- Pinned, not removed: the code still reads it, so it keeps its id and
+       its value never changes. -->
   <input type="hidden" id="levmode" value="0">
-  <input type="hidden" id="entryorder" value="best">
 
   <details id="advwrap" style="margin:10px 0">
     <summary style="cursor:pointer;font-weight:600;font-size:13px">
@@ -1600,8 +1612,9 @@ function render(chosen, meta) {
   // duplicates for a tournament - and nothing here changes that: this
   // reorders the SAME lineups for reading, so Entry 1 means "first in the
   // order you asked for" rather than "the best one" whenever the order is not
-  // the default. Each card already prints its own mean leverage, so the
-  // ordering is legible rather than something to take on trust.
+  // the default. Each card prints its own mean leverage, and a "rank #" chip
+  // shows where it actually placed, so the ordering is legible rather than
+  // something to take on trust.
   //
   // A SEPARATE ARRAY, and `chosen` is never reassigned. `LAST.chosen` is what
   // every repaint re-renders from, so sorting in place would overwrite the
@@ -1679,6 +1692,10 @@ function render(chosen, meta) {
     + "ignored on purpose: beating half the field is not a prize anyone splits."
     : "Ranked by how often the lineup reaches the tournament bar, divided by "
     + "how many other entries are expected to field the same six players.";
+  if (order !== "best") {
+    $("lineup-note").textContent += " Shown sorted by leverage — the "
+      + "rank # chip on each card is where it placed in that ranking.";
+  }
 
   LAST = { chosen, meta };
 
@@ -1719,6 +1736,7 @@ function render(chosen, meta) {
     }).join("");
     return `<div class="lineup">
       <h3>Entry ${n + 1}<span class="chip">${esc(meta.objective.toUpperCase())}</span>
+        ${order !== "best" ? `<span class="chip">rank #${chosen.indexOf(c) + 1}</span>` : ""}
         ${c.stack
           ? `<span class="chip">${esc(c.stack.team)} QB+${c.stack.size} · ${
               c.stack.oppKnown
@@ -1737,6 +1755,9 @@ function render(chosen, meta) {
         <span>mean <b>${fmt(c.mean)}</b></span>
         <span>floor <b>${fmt(c.floor)}</b></span>
         <span>ceiling <b>${fmt(c.ceiling)}</b></span>
+        <span title="Average leverage of the players in this lineup - what Order entries by sorts on.">leverage <b class="${
+          c.lev > 0.05 ? "lev-up" : c.lev < -0.05 ? "lev-dn" : ""}">${
+          (c.lev > 0 ? "+" : "") + c.lev.toFixed(2)}</b></span>
       </div>
       <div class="stats">
         <span>beats cash <b>${fmt(c.pc * 100)}%</b></span>
