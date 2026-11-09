@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-09T01:20:46+00:00",
+  "updated_at": "2026-11-09T22:52:29+00:00",
   "slates": [
     {
       "kind": "classic",
@@ -763,11 +763,23 @@
       "site": "dk",
       "draft_group": 156037,
       "label": "NFL $20K Flea Flicker [$5K to 1st] (Mon-Thu)",
-      "contests": 135,
+      "contests": 217,
       "starts": "2026-11-10 01:15:00+00:00",
       "file": "data/nfl/dk-classic-156037.json",
       "players": 89,
-      "generated_at": "2026-11-09T01:19:20+00:00"
+      "generated_at": "2026-11-09T22:51:54+00:00"
+    },
+    {
+      "kind": "classic",
+      "sport": "nfl",
+      "site": "dk",
+      "draft_group": 156416,
+      "label": "NFL $2.5M Fantasy Football Millionaire [$1M to 1st]",
+      "contests": 1452,
+      "starts": "2026-11-15 18:00:00+00:00",
+      "file": "data/nfl/dk-classic-156416.json",
+      "players": 417,
+      "generated_at": "2026-11-09T22:50:31+00:00"
     },
     {
       "kind": "showdown",
@@ -2035,20 +2047,14 @@
       "site": "dk",
       "draft_group": 156014,
       "label": "NFL Showdown $1.25M Monday Night Showdown [$300K to 1st] (BUF @ MIN)",
-      "contests": 1064,
+      "contests": 1211,
       "starts": "2026-11-10 01:15:00+00:00",
       "file": "data/nfl/dk-showdown-156014.json",
       "players": 40,
-      "generated_at": "2026-11-09T01:16:52+00:00"
+      "generated_at": "2026-11-09T22:51:12+00:00"
     }
   ],
   "failures": [
-    {
-      "kind": "classic",
-      "draft_group": 156416,
-      "label": "NFL $2.5M Fantasy Football Millionaire [$1M to 1st]",
-      "error": "DataUnavailable: draft group 156416 returned no players from either endpoint (lobby top-level keys: ['draftGroupAlerts', 'playerList', 'teamList'])"
-    },
     {
       "kind": "classic",
       "draft_group": 155989,
