@@ -1,0 +1,104 @@
+dk_player_id,draftable_id,name,position,team,salary,roster_slot,status,disabled,attributes,game,starts_utc,norm,flex_eligible,captain_salary,playing,draft_group,game_type,captured_at
+324,0,Bills,DST,BUF,3000,71,,False,,BUF @ MIN,,bills,0,3000,clear,156037,Classic,2026-11-09T23:44:19+00:00
+347,0,Vikings,DST,MIN,2700,71,,False,,BUF @ MIN,,vikings,0,2700,clear,156037,Classic,2026-11-09T23:44:19+00:00
+351,0,Giants,DST,NYG,2800,71,,False,,WAS @ NYG,,giants,0,2800,clear,156037,Classic,2026-11-09T23:44:19+00:00
+363,0,Commanders,DST,WAS,2500,71,,False,,WAS @ NYG,,commanders,0,2500,clear,156037,Classic,2026-11-09T23:44:19+00:00
+300580,0,Andrew DePaola,TE,MIN,2500,69,,False,,BUF @ MIN,,andrew depaola,0,2500,clear,156037,Classic,2026-11-09T23:44:19+00:00
+553024,0,Tyler Ott,TE,WAS,2500,69,,False,,WAS @ NYG,,tyler ott,0,2500,clear,156037,Classic,2026-11-09T23:44:19+00:00
+563293,0,Chris Manhertz,TE,NYG,2500,69,,False,,WAS @ NYG,,chris manhertz,0,2500,clear,156037,Classic,2026-11-09T23:44:19+00:00
+589984,0,Odell Beckham Jr.,WR,MIN,3000,68,,False,,BUF @ MIN,,odell beckham,0,3000,clear,156037,Classic,2026-11-09T23:44:19+00:00
+607843,0,Marcus Mariota,QB,WAS,4000,66,,False,,WAS @ NYG,,marcus mariota,0,4000,clear,156037,Classic,2026-11-09T23:44:19+00:00
+613866,0,Carson Wentz,QB,MIN,4500,66,,False,,BUF @ MIN,,carson wentz,0,4500,clear,156037,Classic,2026-11-09T23:44:19+00:00
+658389,0,Patrick Ricard,RB,NYG,4000,67,,False,,WAS @ NYG,,patrick ricard,0,4000,clear,156037,Classic,2026-11-09T23:44:19+00:00
+691536,0,Jameis Winston,QB,NYG,4300,66,,False,,WAS @ NYG,,jameis winston,0,4300,clear,156037,Classic,2026-11-09T23:44:19+00:00
+694041,0,Stefon Diggs,WR,WAS,5600,68,,False,,WAS @ NYG,,stefon diggs,0,5600,clear,156037,Classic,2026-11-09T23:44:19+00:00
+741314,0,Aaron Jones Sr.,RB,MIN,5900,67,,False,,BUF @ MIN,,aaron jones,0,5900,clear,156037,Classic,2026-11-09T23:44:19+00:00
+790004,0,Austin Ekeler,RB,WAS,4600,67,,False,,WAS @ NYG,,austin ekeler,0,4600,clear,156037,Classic,2026-11-09T23:44:19+00:00
+820866,0,Braxton Berrios,WR,NYG,3000,68,,False,,WAS @ NYG,,braxton berrios,0,3000,clear,156037,Classic,2026-11-09T23:44:19+00:00
+822350,0,Kyle Allen,QB,BUF,4000,66,,False,,BUF @ MIN,,kyle allen,0,4000,clear,156037,Classic,2026-11-09T23:44:19+00:00
+835861,0,Trent Sherfield Sr.,WR,BUF,3000,68,,False,,BUF @ MIN,,trent sherfield,0,3000,clear,156037,Classic,2026-11-09T23:44:19+00:00
+836116,0,Terry McLaurin,WR,WAS,3000,68,,False,,WAS @ NYG,,terry mclaurin,0,3000,clear,156037,Classic,2026-11-09T23:44:19+00:00
+837594,0,Jeremy McNichols,RB,WAS,4000,67,,False,,WAS @ NYG,,jeremy mcnichols,0,4000,clear,156037,Classic,2026-11-09T23:44:19+00:00
+867009,0,Jauan Jennings,WR,MIN,3300,68,,False,,BUF @ MIN,,jauan jennings,0,3300,clear,156037,Classic,2026-11-09T23:44:19+00:00
+868199,0,Josh Allen,QB,BUF,7400,66,,False,,BUF @ MIN,,josh allen,0,7400,clear,156037,Classic,2026-11-09T23:44:19+00:00
+877784,0,Ty Johnson,RB,BUF,4400,67,,False,,BUF @ MIN,,ty johnson,0,4400,clear,156037,Classic,2026-11-09T23:44:19+00:00
+877790,0,DJ Moore,WR,BUF,5900,68,,False,,BUF @ MIN,,dj moore,0,5900,clear,156037,Classic,2026-11-09T23:44:19+00:00
+879799,0,Kyler Murray,QB,MIN,5500,66,,False,,BUF @ MIN,,kyler murray,0,5500,clear,156037,Classic,2026-11-09T23:44:19+00:00
+881779,0,Josh Oliver,TE,MIN,2500,69,,False,,BUF @ MIN,,josh oliver,0,2500,clear,156037,Classic,2026-11-09T23:44:19+00:00
+884080,0,Van Jefferson,WR,WAS,3200,68,,False,,WAS @ NYG,,van jefferson,0,3200,clear,156037,Classic,2026-11-09T23:44:19+00:00
+884083,0,Dawson Knox,TE,BUF,2600,69,,False,,BUF @ MIN,,dawson knox,0,2600,clear,156037,Classic,2026-11-09T23:44:19+00:00
+910852,0,Greg Dortch,WR,BUF,3000,68,,False,,BUF @ MIN,,greg dortch,0,3000,clear,156037,Classic,2026-11-09T23:44:19+00:00
+911619,0,Shane Buechele,QB,BUF,4000,66,,False,,BUF @ MIN,,shane buechele,0,4000,clear,156037,Classic,2026-11-09T23:44:19+00:00
+912027,0,Darnell Mooney,WR,NYG,3500,68,,False,,WAS @ NYG,,darnell mooney,0,3500,clear,156037,Classic,2026-11-09T23:44:19+00:00
+916466,0,Devin Singletary,RB,NYG,5300,67,,False,,WAS @ NYG,,devin singletary,0,5300,clear,156037,Classic,2026-11-09T23:44:19+00:00
+923915,0,T.J. Hockenson,TE,MIN,4300,69,,False,,BUF @ MIN,,t j hockenson,0,4300,clear,156037,Classic,2026-11-09T23:44:19+00:00
+944038,0,John Bates,TE,WAS,2500,69,,False,,WAS @ NYG,,john bates,0,2500,clear,156037,Classic,2026-11-09T23:44:19+00:00
+973949,0,Tyrell Shavers,WR,BUF,3000,68,,False,,BUF @ MIN,,tyrell shavers,0,3000,clear,156037,Classic,2026-11-09T23:44:19+00:00
+976309,0,DeeJay Dallas,RB,MIN,4000,67,,False,,BUF @ MIN,,deejay dallas,0,4000,clear,156037,Classic,2026-11-09T23:44:19+00:00
+1049254,0,Jake Haener,QB,NYG,4000,66,,False,,WAS @ NYG,,jake haener,0,4000,clear,156037,Classic,2026-11-09T23:44:19+00:00
+1059612,0,Joshua Palmer,WR,BUF,3400,68,,False,,BUF @ MIN,,joshua palmer,0,3400,clear,156037,Classic,2026-11-09T23:44:19+00:00
+1062765,0,Calvin Austin III,WR,NYG,3000,68,,False,,WAS @ NYG,,calvin austin,0,3000,clear,156037,Classic,2026-11-09T23:44:19+00:00
+1067132,0,Charlie Jones,WR,NYG,3000,68,,False,,WAS @ NYG,,charlie jones,0,3000,clear,156037,Classic,2026-11-09T23:44:19+00:00
+1069535,0,Justin Jefferson,WR,MIN,6800,68,,False,,BUF @ MIN,,justin jefferson,0,6800,clear,156037,Classic,2026-11-09T23:44:19+00:00
+1106374,0,Chig Okonkwo,TE,WAS,3800,69,,False,,WAS @ NYG,,chig okonkwo,0,3800,clear,156037,Classic,2026-11-09T23:44:19+00:00
+1106382,0,Jeshaun Jones,WR,MIN,3000,68,,False,,BUF @ MIN,,jeshaun jones,0,3000,clear,156037,Classic,2026-11-09T23:44:19+00:00
+1107232,0,Colson Yankoff,TE,WAS,2500,69,,False,,WAS @ NYG,,colson yankoff,0,2500,clear,156037,Classic,2026-11-09T23:44:19+00:00
+1107536,0,Devin Culp,TE,MIN,2500,69,,False,,BUF @ MIN,,devin culp,0,2500,clear,156037,Classic,2026-11-09T23:44:19+00:00
+1107878,0,Dyami Brown,WR,WAS,3000,68,,False,,WAS @ NYG,,dyami brown,0,3000,clear,156037,Classic,2026-11-09T23:44:19+00:00
+1109708,0,Tyrone Tracy Jr.,RB,NYG,4000,67,,False,,WAS @ NYG,,tyrone tracy,0,4000,clear,156037,Classic,2026-11-09T23:44:19+00:00
+1109711,0,Sam Hartman,QB,WAS,4000,66,,False,,WAS @ NYG,,sam hartman,0,4000,clear,156037,Classic,2026-11-09T23:44:19+00:00
+1116001,0,Jordan Mason,RB,MIN,5400,67,,False,,BUF @ MIN,,jordan mason,0,5400,clear,156037,Classic,2026-11-09T23:44:19+00:00
+1121863,0,Jack Westover,TE,WAS,2500,69,,False,,WAS @ NYG,,jack westover,0,2500,clear,156037,Classic,2026-11-09T23:44:19+00:00
+1125111,0,Isaiah Likely,TE,NYG,5100,69,,False,,WAS @ NYG,,isaiah likely,0,5100,clear,156037,Classic,2026-11-09T23:44:19+00:00
+1130603,0,Khalil Shakir,WR,BUF,5300,68,,False,,BUF @ MIN,,khalil shakir,0,5300,clear,156037,Classic,2026-11-09T23:44:19+00:00
+1131012,0,James Cook III,RB,BUF,7400,67,,False,,BUF @ MIN,,james cook,0,7400,clear,156037,Classic,2026-11-09T23:44:19+00:00
+1135513,0,Dalton Kincaid,TE,BUF,5400,69,,False,,BUF @ MIN,,dalton kincaid,0,5400,clear,156037,Classic,2026-11-09T23:44:19+00:00
+1161228,0,Jayden Daniels,QB,WAS,5800,66,,False,,WAS @ NYG,,jayden daniels,0,5800,clear,156037,Classic,2026-11-09T23:44:19+00:00
+1161798,0,Eric Gray,RB,NYG,4000,67,,False,,WAS @ NYG,,eric gray,0,4000,clear,156037,Classic,2026-11-09T23:44:19+00:00
+1164846,0,Luke McCaffrey,WR,WAS,3000,68,,False,,WAS @ NYG,,luke mccaffrey,0,3000,clear,156037,Classic,2026-11-09T23:44:19+00:00
+1165229,0,Ray Davis,RB,BUF,4000,67,,False,,BUF @ MIN,,ray davis,0,4000,clear,156037,Classic,2026-11-09T23:44:19+00:00
+1167356,0,Craig Reynolds,RB,WAS,4000,67,,False,,WAS @ NYG,,craig reynolds,0,4000,clear,156037,Classic,2026-11-09T23:44:19+00:00
+1168410,0,Gunner Olszewski,WR,NYG,3000,68,,False,,WAS @ NYG,,gunner olszewski,0,3000,clear,156037,Classic,2026-11-09T23:44:19+00:00
+1169329,0,Max Brosmer,QB,MIN,4000,66,,False,,BUF @ MIN,,max brosmer,0,4000,clear,156037,Classic,2026-11-09T23:44:19+00:00
+1172024,0,Treylon Burks,WR,WAS,3600,68,,False,,WAS @ NYG,,treylon burks,0,3600,clear,156037,Classic,2026-11-09T23:44:19+00:00
+1180329,0,Dalen Cambre,WR,NYG,3000,68,,False,,WAS @ NYG,,dalen cambre,0,3000,clear,156037,Classic,2026-11-09T23:44:19+00:00
+1182649,0,Jackson Hawes,TE,BUF,2500,69,,False,,BUF @ MIN,,jackson hawes,0,2500,clear,156037,Classic,2026-11-09T23:44:19+00:00
+1191186,0,Jacory Croskey-Merritt,RB,WAS,4000,67,,False,,WAS @ NYG,,jacory croskey merritt,0,4000,clear,156037,Classic,2026-11-09T23:44:19+00:00
+1213388,0,Ja'Mori Maclin,WR,BUF,3000,68,,False,,BUF @ MIN,,jamori maclin,0,3000,clear,156037,Classic,2026-11-09T23:44:19+00:00
+1214250,0,Jordan Addison,WR,MIN,4800,68,,False,,BUF @ MIN,,jordan addison,0,4800,clear,156037,Classic,2026-11-09T23:44:19+00:00
+1214414,0,Theo Johnson,TE,NYG,2500,69,,False,,WAS @ NYG,,theo johnson,0,2500,clear,156037,Classic,2026-11-09T23:44:19+00:00
+1214689,0,Jaylin Lane,WR,WAS,3000,68,,False,,WAS @ NYG,,jaylin lane,0,3000,clear,156037,Classic,2026-11-09T23:44:19+00:00
+1215078,0,Stephen Gosnell,WR,BUF,3000,68,,False,,BUF @ MIN,,stephen gosnell,0,3000,clear,156037,Classic,2026-11-09T23:44:19+00:00
+1216808,0,Ben Yurosek,TE,MIN,2500,69,,False,,BUF @ MIN,,ben yurosek,0,2500,clear,156037,Classic,2026-11-09T23:44:19+00:00
+1222139,0,Dontae Fleming,WR,NYG,3000,68,,False,,WAS @ NYG,,dontae fleming,0,3000,clear,156037,Classic,2026-11-09T23:44:19+00:00
+1226344,0,Nick DeGennaro,WR,WAS,3000,68,,False,,WAS @ NYG,,nick degennaro,0,3000,clear,156037,Classic,2026-11-09T23:44:19+00:00
+1228728,0,Myles Price,WR,MIN,3000,68,,False,,BUF @ MIN,,myles price,0,3000,clear,156037,Classic,2026-11-09T23:44:19+00:00
+1228920,0,Ben Sinnott,TE,WAS,2500,69,,False,,WAS @ NYG,,ben sinnott,0,2500,clear,156037,Classic,2026-11-09T23:44:19+00:00
+1229343,0,Rachaad White,RB,WAS,5100,67,,False,,WAS @ NYG,,rachaad white,0,5100,clear,156037,Classic,2026-11-09T23:44:19+00:00
+1232892,0,Jalin Hyatt,WR,NYG,3000,68,,False,,WAS @ NYG,,jalin hyatt,0,3000,clear,156037,Classic,2026-11-09T23:44:19+00:00
+1233127,0,Frank Gore Jr.,RB,BUF,4000,67,,False,,BUF @ MIN,,frank gore,0,4000,clear,156037,Classic,2026-11-09T23:44:19+00:00
+1247543,0,Ben Mann,TE,NYG,2500,69,,False,,WAS @ NYG,,ben mann,0,2500,clear,156037,Classic,2026-11-09T23:44:19+00:00
+1280316,0,Cam Skattebo,RB,NYG,5600,67,,False,,WAS @ NYG,,cam skattebo,0,5600,clear,156037,Classic,2026-11-09T23:44:19+00:00
+1286059,0,Malik Nabers,WR,NYG,7100,68,,False,,WAS @ NYG,,malik nabers,0,7100,clear,156037,Classic,2026-11-09T23:44:19+00:00
+1286260,0,Jaxson Dart,QB,NYG,4000,66,,False,,WAS @ NYG,,jaxson dart,0,4000,clear,156037,Classic,2026-11-09T23:44:19+00:00
+1286422,0,Quentin Moore,TE,WAS,2500,69,,False,,WAS @ NYG,,quentin moore,0,2500,clear,156037,Classic,2026-11-09T23:44:19+00:00
+1286701,0,Gregory Desrosiers,RB,NYG,4100,67,,False,,WAS @ NYG,,gregory desrosiers,0,4100,clear,156037,Classic,2026-11-09T23:44:19+00:00
+1287258,0,Gavin Bartholomew,TE,MIN,2500,69,,False,,BUF @ MIN,,gavin bartholomew,0,2500,clear,156037,Classic,2026-11-09T23:44:19+00:00
+1287587,0,Tai Felton,WR,MIN,3000,68,,False,,BUF @ MIN,,tai felton,0,3000,clear,156037,Classic,2026-11-09T23:44:19+00:00
+1287599,0,J.J. McCarthy,QB,NYG,4800,66,,False,,WAS @ NYG,,j j mccarthy,0,4800,clear,156037,Classic,2026-11-09T23:44:19+00:00
+1287641,0,Phil Mafah,RB,NYG,4000,67,,False,,WAS @ NYG,,phil mafah,0,4000,clear,156037,Classic,2026-11-09T23:44:19+00:00
+1287655,0,Thomas Fidone II,TE,NYG,2500,69,,False,,WAS @ NYG,,thomas fidone,0,2500,clear,156037,Classic,2026-11-09T23:44:19+00:00
+1287925,0,Athan Kaliakmanis,QB,WAS,4000,66,,False,,WAS @ NYG,,athan kaliakmanis,0,4000,clear,156037,Classic,2026-11-09T23:44:19+00:00
+1293066,0,Devin Neal,RB,WAS,4000,67,,False,,WAS @ NYG,,devin neal,0,4000,clear,156037,Classic,2026-11-09T23:44:19+00:00
+1317287,0,Brock Lampe,RB,BUF,4000,67,,False,,BUF @ MIN,,brock lampe,0,4000,clear,156037,Classic,2026-11-09T23:44:19+00:00
+1319589,0,Malachi Fields,WR,NYG,3700,68,,False,,WAS @ NYG,,malachi fields,0,3700,clear,156037,Classic,2026-11-09T23:44:19+00:00
+1321260,0,Jaden Bradley,WR,WAS,3000,68,,False,,WAS @ NYG,,jaden bradley,0,3000,clear,156037,Classic,2026-11-09T23:44:19+00:00
+1322431,0,Keon Coleman,WR,BUF,4900,68,,False,,BUF @ MIN,,keon coleman,0,4900,clear,156037,Classic,2026-11-09T23:44:19+00:00
+1323906,0,Keleki Latu,TE,BUF,2500,69,,False,,BUF @ MIN,,keleki latu,0,2500,clear,156037,Classic,2026-11-09T23:44:19+00:00
+1325234,0,Skyler Bell,WR,BUF,3000,68,,False,,BUF @ MIN,,skyler bell,0,3000,clear,156037,Classic,2026-11-09T23:44:19+00:00
+1325562,0,Max Bredeson,RB,MIN,4000,67,,False,,BUF @ MIN,,max bredeson,0,4000,clear,156037,Classic,2026-11-09T23:44:19+00:00
+1378290,0,Antonio Williams,WR,WAS,4600,68,,False,,WAS @ NYG,,antonio williams,0,4600,clear,156037,Classic,2026-11-09T23:44:19+00:00
+1390910,0,Demond Claiborne,RB,MIN,4000,67,,False,,BUF @ MIN,,demond claiborne,0,4000,clear,156037,Classic,2026-11-09T23:44:19+00:00
+1396942,0,Dillon Bell,WR,MIN,3000,68,,False,,BUF @ MIN,,dillon bell,0,3000,clear,156037,Classic,2026-11-09T23:44:19+00:00
+1443998,0,Robert Henry Jr.,RB,WAS,4000,67,,False,,WAS @ NYG,,robert henry,0,4000,clear,156037,Classic,2026-11-09T23:44:19+00:00
+1665835,0,Grant Finley,RB,NYG,4000,67,,False,,WAS @ NYG,,grant finley,0,4000,clear,156037,Classic,2026-11-09T23:44:19+00:00
