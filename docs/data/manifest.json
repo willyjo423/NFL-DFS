@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-09T22:52:29+00:00",
+  "updated_at": "2026-11-10T03:57:26+00:00",
   "slates": [
     {
       "kind": "classic",
@@ -775,11 +775,23 @@
       "site": "dk",
       "draft_group": 156416,
       "label": "NFL $2.5M Fantasy Football Millionaire [$1M to 1st]",
-      "contests": 1452,
+      "contests": 1492,
       "starts": "2026-11-15 18:00:00+00:00",
       "file": "data/nfl/dk-classic-156416.json",
-      "players": 417,
-      "generated_at": "2026-11-09T22:50:31+00:00"
+      "players": 413,
+      "generated_at": "2026-11-10T03:53:54+00:00"
+    },
+    {
+      "kind": "classic",
+      "sport": "nfl",
+      "site": "dk",
+      "draft_group": 156415,
+      "label": "NFL $20K Thu-Mon Special [$5K to 1st] (Thu-Mon)",
+      "contests": 207,
+      "starts": "2026-11-13 01:15:00+00:00",
+      "file": "data/nfl/dk-classic-156415.json",
+      "players": 591,
+      "generated_at": "2026-11-10T03:56:48+00:00"
     },
     {
       "kind": "showdown",
@@ -2052,6 +2064,18 @@
       "file": "data/nfl/dk-showdown-156014.json",
       "players": 40,
       "generated_at": "2026-11-09T22:51:12+00:00"
+    },
+    {
+      "kind": "showdown",
+      "sport": "nfl",
+      "site": "dk",
+      "draft_group": 156421,
+      "label": "NFL Showdown $1.2M Thursday Night Showdown [$300K to 1st] (WAS @ NYG)",
+      "contests": 915,
+      "starts": "2026-11-13 01:15:00+00:00",
+      "file": "data/nfl/dk-showdown-156421.json",
+      "players": 49,
+      "generated_at": "2026-11-10T03:54:37+00:00"
     }
   ],
   "failures": [
