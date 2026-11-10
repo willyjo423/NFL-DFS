@@ -1,0 +1,44 @@
+{
+  "captured_at": "2026-11-10T04:47:41+00:00",
+  "day": "2026-11-10",
+  "slates": [
+    {
+      "draft_group": 156416,
+      "game_type": "Classic",
+      "players": 506,
+      "games": 10,
+      "salary_min": 2000,
+      "salary_max": 9300,
+      "starts": "2026-11-15 18:00:00+00:00",
+      "contests": 1492,
+      "file": "dg156416_0447.csv"
+    },
+    {
+      "draft_group": 156421,
+      "game_type": "Showdown Captain Mode",
+      "players": 59,
+      "games": 1,
+      "salary_min": 200,
+      "salary_max": 11000,
+      "starts": "2026-11-13 01:15:00+00:00",
+      "contests": 948,
+      "file": "dg156421_0447.csv"
+    },
+    {
+      "draft_group": 156415,
+      "game_type": "Classic",
+      "players": 718,
+      "games": 14,
+      "salary_min": 2000,
+      "salary_max": 9700,
+      "starts": "2026-11-13 01:15:00+00:00",
+      "contests": 207,
+      "file": "dg156415_0447.csv"
+    }
+  ],
+  "failed": {
+    "155989": "draft group 155989 returned no players from either endpoint (lobby top-level keys: ['draftGroupAlerts', 'playerList', 'teamList'])"
+  },
+  "contests_file": "contests_0447.csv",
+  "contests_kept": 3016
+}
