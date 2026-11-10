@@ -1,0 +1,53 @@
+dk_player_id,draftable_id,name,position,team,salary,roster_slot,status,disabled,attributes,game,starts_utc,norm,flex_eligible,captain_salary,playing,draft_group,game_type,captured_at
+325,0,Texans,DST,HOU,5800,512,,False,,HOU @ CLE,1970-01-01 00:29:54.765600+00:00,texans,0,5800,clear,156428,Showdown Captain Mode,2026-11-10T21:14:42+00:00
+329,0,Browns,DST,CLE,3400,512,,False,,HOU @ CLE,1970-01-01 00:29:54.765600+00:00,browns,0,3400,clear,156428,Showdown Captain Mode,2026-11-10T21:14:42+00:00
+556483,0,Michael Burton,RB,CLE,200,512,,False,,HOU @ CLE,1970-01-01 00:29:54.765600+00:00,michael burton,0,200,clear,156428,Showdown Captain Mode,2026-11-10T21:14:42+00:00
+691032,0,Ka'imi Fairbairn,K,HOU,5400,512,,False,,HOU @ CLE,1970-01-01 00:29:54.765600+00:00,kaimi fairbairn,0,5400,clear,156428,Showdown Captain Mode,2026-11-10T21:14:42+00:00
+703015,0,Dare Ogunbowale,RB,HOU,400,512,,False,,HOU @ CLE,1970-01-01 00:29:54.765600+00:00,dare ogunbowale,0,400,clear,156428,Showdown Captain Mode,2026-11-10T21:14:42+00:00
+828743,0,Deshaun Watson,QB,CLE,9000,512,,False,,HOU @ CLE,1970-01-01 00:29:54.765600+00:00,deshaun watson,0,9000,clear,156428,Showdown Captain Mode,2026-11-10T21:14:42+00:00
+830523,0,Dalton Schultz,TE,HOU,4000,512,,False,,HOU @ CLE,1970-01-01 00:29:54.765600+00:00,dalton schultz,0,4000,clear,156428,Showdown Captain Mode,2026-11-10T21:14:42+00:00
+865573,0,Foster Moreau,TE,HOU,1600,512,,False,,HOU @ CLE,1970-01-01 00:29:54.765600+00:00,foster moreau,0,1600,clear,156428,Showdown Captain Mode,2026-11-10T21:14:42+00:00
+946739,0,David Montgomery,RB,HOU,7800,512,,False,,HOU @ CLE,1970-01-01 00:29:54.765600+00:00,david montgomery,0,7800,clear,156428,Showdown Captain Mode,2026-11-10T21:14:42+00:00
+973935,0,Jerry Jeudy,WR,CLE,3000,512,,False,,HOU @ CLE,1970-01-01 00:29:54.765600+00:00,jerry jeudy,0,3000,clear,156428,Showdown Captain Mode,2026-11-10T21:14:42+00:00
+1060311,0,Davis Mills,QB,HOU,6000,512,,False,,HOU @ CLE,1970-01-01 00:29:54.765600+00:00,davis mills,0,6000,clear,156428,Showdown Captain Mode,2026-11-10T21:14:42+00:00
+1062546,0,Tylan Wallace,WR,CLE,2000,512,,False,,HOU @ CLE,1970-01-01 00:29:54.765600+00:00,tylan wallace,0,2000,clear,156428,Showdown Captain Mode,2026-11-10T21:14:42+00:00
+1066885,0,Andre Szmyt,K,CLE,4600,512,,False,,HOU @ CLE,1970-01-01 00:29:54.765600+00:00,andre szmyt,0,4600,clear,156428,Showdown Captain Mode,2026-11-10T21:14:42+00:00
+1074698,0,Nico Collins,WR,HOU,9800,512,,False,,HOU @ CLE,1970-01-01 00:29:54.765600+00:00,nico collins,0,9800,clear,156428,Showdown Captain Mode,2026-11-10T21:14:42+00:00
+1109731,0,Blake Whiteheart,TE,CLE,1200,512,,False,,HOU @ CLE,1970-01-01 00:29:54.765600+00:00,blake whiteheart,0,1200,clear,156428,Showdown Captain Mode,2026-11-10T21:14:42+00:00
+1113398,0,Bryce Oliver,WR,HOU,200,512,,False,,HOU @ CLE,1970-01-01 00:29:54.765600+00:00,bryce oliver,0,200,clear,156428,Showdown Captain Mode,2026-11-10T21:14:42+00:00
+1116817,0,Emari Demercado,RB,HOU,2800,512,,False,,HOU @ CLE,1970-01-01 00:29:54.765600+00:00,emari demercado,0,2800,clear,156428,Showdown Captain Mode,2026-11-10T21:14:42+00:00
+1121871,0,Brevin Jordan,TE,HOU,200,512,,False,,HOU @ CLE,1970-01-01 00:29:54.765600+00:00,brevin jordan,0,200,clear,156428,Showdown Captain Mode,2026-11-10T21:14:42+00:00
+1128222,0,Tank Dell,WR,HOU,4800,512,,False,,HOU @ CLE,1970-01-01 00:29:54.765600+00:00,tank dell,0,4800,clear,156428,Showdown Captain Mode,2026-11-10T21:14:42+00:00
+1128295,0,British Brooks,RB,HOU,200,512,,False,,HOU @ CLE,1970-01-01 00:29:54.765600+00:00,british brooks,0,200,clear,156428,Showdown Captain Mode,2026-11-10T21:14:42+00:00
+1130230,0,Hassan Haskins,RB,CLE,200,512,,False,,HOU @ CLE,1970-01-01 00:29:54.765600+00:00,hassan haskins,0,200,clear,156428,Showdown Captain Mode,2026-11-10T21:14:42+00:00
+1131017,0,John FitzPatrick,TE,CLE,200,512,,False,,HOU @ CLE,1970-01-01 00:29:54.765600+00:00,john fitzpatrick,0,200,clear,156428,Showdown Captain Mode,2026-11-10T21:14:42+00:00
+1164951,0,Graham Mertz,QB,HOU,6000,512,,False,,HOU @ CLE,1970-01-01 00:29:54.765600+00:00,graham mertz,0,6000,clear,156428,Showdown Captain Mode,2026-11-10T21:14:42+00:00
+1165333,0,Dillon Gabriel,QB,CLE,6000,512,,False,,HOU @ CLE,1970-01-01 00:29:54.765600+00:00,dillon gabriel,0,6000,clear,156428,Showdown Captain Mode,2026-11-10T21:14:42+00:00
+1170921,0,Josh Kelly,WR,HOU,200,512,,False,,HOU @ CLE,1970-01-01 00:29:54.765600+00:00,josh kelly,0,200,clear,156428,Showdown Captain Mode,2026-11-10T21:14:42+00:00
+1175182,0,Cade Stover,TE,HOU,600,512,,False,,HOU @ CLE,1970-01-01 00:29:54.765600+00:00,cade stover,0,600,clear,156428,Showdown Captain Mode,2026-11-10T21:14:42+00:00
+1213362,0,Kayshon Boutte,WR,HOU,4400,512,,False,,HOU @ CLE,1970-01-01 00:29:54.765600+00:00,kayshon boutte,0,4400,clear,156428,Showdown Captain Mode,2026-11-10T21:14:42+00:00
+1213636,0,Xavier Hutchinson,WR,HOU,5000,512,,False,,HOU @ CLE,1970-01-01 00:29:54.765600+00:00,xavier hutchinson,0,5000,clear,156428,Showdown Captain Mode,2026-11-10T21:14:42+00:00
+1214084,0,C.J. Stroud,QB,HOU,10000,512,,False,,HOU @ CLE,1970-01-01 00:29:54.765600+00:00,c j stroud,0,10000,clear,156428,Showdown Captain Mode,2026-11-10T21:14:42+00:00
+1215291,0,Malachi Corley,WR,CLE,800,512,,False,,HOU @ CLE,1970-01-01 00:29:54.765600+00:00,malachi corley,0,800,clear,156428,Showdown Captain Mode,2026-11-10T21:14:42+00:00
+1215379,0,Xavier Guillory,WR,CLE,200,512,,False,,HOU @ CLE,1970-01-01 00:29:54.765600+00:00,xavier guillory,0,200,clear,156428,Showdown Captain Mode,2026-11-10T21:14:42+00:00
+1229756,0,Joe Royer,TE,CLE,200,512,,False,,HOU @ CLE,1970-01-01 00:29:54.765600+00:00,joe royer,0,200,clear,156428,Showdown Captain Mode,2026-11-10T21:14:42+00:00
+1231652,0,Woody Marks,RB,HOU,8800,512,,False,,HOU @ CLE,1970-01-01 00:29:54.765600+00:00,woody marks,0,8800,clear,156428,Showdown Captain Mode,2026-11-10T21:14:42+00:00
+1271738,0,Jaleel McLaughlin,RB,CLE,2400,512,,False,,HOU @ CLE,1970-01-01 00:29:54.765600+00:00,jaleel mclaughlin,0,2400,clear,156428,Showdown Captain Mode,2026-11-10T21:14:42+00:00
+1272321,0,Shedeur Sanders,QB,CLE,8600,512,,False,,HOU @ CLE,1970-01-01 00:29:54.765600+00:00,shedeur sanders,0,8600,clear,156428,Showdown Captain Mode,2026-11-10T21:14:42+00:00
+1274492,0,Jayden Higgins,WR,HOU,200,512,,False,,HOU @ CLE,1970-01-01 00:29:54.765600+00:00,jayden higgins,0,200,clear,156428,Showdown Captain Mode,2026-11-10T21:14:42+00:00
+1285895,0,Raheim Sanders,RB,CLE,200,512,,False,,HOU @ CLE,1970-01-01 00:29:54.765600+00:00,raheim sanders,0,200,clear,156428,Showdown Captain Mode,2026-11-10T21:14:42+00:00
+1286370,0,Jaylin Noel,WR,HOU,200,512,,False,,HOU @ CLE,1970-01-01 00:29:54.765600+00:00,jaylin noel,0,200,clear,156428,Showdown Captain Mode,2026-11-10T21:14:42+00:00
+1286652,0,Lewis Bond,WR,HOU,200,512,,False,,HOU @ CLE,1970-01-01 00:29:54.765600+00:00,lewis bond,0,200,clear,156428,Showdown Captain Mode,2026-11-10T21:14:42+00:00
+1287828,0,Marvin Harrison Jr.,WR,HOU,5200,512,,False,,HOU @ CLE,1970-01-01 00:29:54.765600+00:00,marvin harrison,0,5200,clear,156428,Showdown Captain Mode,2026-11-10T21:14:42+00:00
+1288113,0,Taylen Green,QB,CLE,6000,512,,False,,HOU @ CLE,1970-01-01 00:29:54.765600+00:00,taylen green,0,6000,clear,156428,Showdown Captain Mode,2026-11-10T21:14:42+00:00
+1322238,0,Daniel Sobkowicz,WR,HOU,200,512,,False,,HOU @ CLE,1970-01-01 00:29:54.765600+00:00,daniel sobkowicz,0,200,clear,156428,Showdown Captain Mode,2026-11-10T21:14:42+00:00
+1322393,0,Jimmy Horn Jr.,WR,CLE,200,512,,False,,HOU @ CLE,1970-01-01 00:29:54.765600+00:00,jimmy horn,0,200,clear,156428,Showdown Captain Mode,2026-11-10T21:14:42+00:00
+1379904,0,Denzel Boston,WR,CLE,8200,512,,False,,HOU @ CLE,1970-01-01 00:29:54.765600+00:00,denzel boston,0,8200,clear,156428,Showdown Captain Mode,2026-11-10T21:14:42+00:00
+1383807,0,Quinshon Judkins,RB,CLE,8400,512,,False,,HOU @ CLE,1970-01-01 00:29:54.765600+00:00,quinshon judkins,0,8400,clear,156428,Showdown Captain Mode,2026-11-10T21:14:42+00:00
+1384626,0,Carsen Ryan,TE,CLE,200,512,,False,,HOU @ CLE,1970-01-01 00:29:54.765600+00:00,carsen ryan,0,200,clear,156428,Showdown Captain Mode,2026-11-10T21:14:42+00:00
+1394752,0,Harold Fannin Jr.,TE,CLE,7000,512,,False,,HOU @ CLE,1970-01-01 00:29:54.765600+00:00,harold fannin,0,7000,clear,156428,Showdown Captain Mode,2026-11-10T21:14:42+00:00
+1398503,0,Isaiah Bond,WR,CLE,1000,512,,False,,HOU @ CLE,1970-01-01 00:29:54.765600+00:00,isaiah bond,0,1000,clear,156428,Showdown Captain Mode,2026-11-10T21:14:42+00:00
+1399910,0,Dylan Sampson,RB,CLE,6400,512,,False,,HOU @ CLE,1970-01-01 00:29:54.765600+00:00,dylan sampson,0,6400,clear,156428,Showdown Captain Mode,2026-11-10T21:14:42+00:00
+1405857,0,Marlin Klein,TE,HOU,200,512,,False,,HOU @ CLE,1970-01-01 00:29:54.765600+00:00,marlin klein,0,200,clear,156428,Showdown Captain Mode,2026-11-10T21:14:42+00:00
+1408785,0,Joshua Pitsenberger,RB,HOU,200,512,,False,,HOU @ CLE,1970-01-01 00:29:54.765600+00:00,joshua pitsenberger,0,200,clear,156428,Showdown Captain Mode,2026-11-10T21:14:42+00:00
+1441576,0,KC Concepcion Jr.,WR,CLE,7200,512,,False,,HOU @ CLE,1970-01-01 00:29:54.765600+00:00,kc concepcion,0,7200,clear,156428,Showdown Captain Mode,2026-11-10T21:14:42+00:00

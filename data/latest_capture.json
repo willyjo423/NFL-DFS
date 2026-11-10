@@ -1,5 +1,5 @@
 {
-  "captured_at": "2026-11-10T04:47:41+00:00",
+  "captured_at": "2026-11-10T21:14:42+00:00",
   "day": "2026-11-10",
   "slates": [
     {
@@ -10,8 +10,8 @@
       "salary_min": 2000,
       "salary_max": 9300,
       "starts": "2026-11-15 18:00:00+00:00",
-      "contests": 1492,
-      "file": "dg156416_0447.csv"
+      "contests": 1524,
+      "file": "dg156416_2114.csv"
     },
     {
       "draft_group": 156421,
@@ -21,8 +21,19 @@
       "salary_min": 200,
       "salary_max": 11000,
       "starts": "2026-11-13 01:15:00+00:00",
-      "contests": 948,
-      "file": "dg156421_0447.csv"
+      "contests": 979,
+      "file": "dg156421_2114.csv"
+    },
+    {
+      "draft_group": 156417,
+      "game_type": "Classic",
+      "players": 350,
+      "games": 7,
+      "salary_min": 2000,
+      "salary_max": 9200,
+      "starts": "2026-11-15 18:00:00+00:00",
+      "contests": 386,
+      "file": "dg156417_2114.csv"
     },
     {
       "draft_group": 156415,
@@ -32,13 +43,112 @@
       "salary_min": 2000,
       "salary_max": 9700,
       "starts": "2026-11-13 01:15:00+00:00",
-      "contests": 207,
-      "file": "dg156415_0447.csv"
+      "contests": 227,
+      "file": "dg156415_2114.csv"
+    },
+    {
+      "draft_group": 156422,
+      "game_type": "Showdown Captain Mode",
+      "players": 50,
+      "games": 1,
+      "salary_min": 200,
+      "salary_max": 12400,
+      "starts": "2026-11-15 14:30:00+00:00",
+      "contests": 220,
+      "file": "dg156422_2114.csv"
+    },
+    {
+      "draft_group": 156418,
+      "game_type": "Classic",
+      "players": 611,
+      "games": 12,
+      "salary_min": 2000,
+      "salary_max": 9300,
+      "starts": "2026-11-15 18:00:00+00:00",
+      "contests": 191,
+      "file": "dg156418_2114.csv"
+    },
+    {
+      "draft_group": 156426,
+      "game_type": "Showdown Captain Mode",
+      "players": 58,
+      "games": 1,
+      "salary_min": 200,
+      "salary_max": 12200,
+      "starts": "2026-11-15 18:00:00+00:00",
+      "contests": 169,
+      "file": "dg156426_2114.csv"
+    },
+    {
+      "draft_group": 156429,
+      "game_type": "Showdown Captain Mode",
+      "players": 51,
+      "games": 1,
+      "salary_min": 200,
+      "salary_max": 10600,
+      "starts": "2026-11-15 18:00:00+00:00",
+      "contests": 129,
+      "file": "dg156429_2114.csv"
+    },
+    {
+      "draft_group": 156428,
+      "game_type": "Showdown Captain Mode",
+      "players": 52,
+      "games": 1,
+      "salary_min": 200,
+      "salary_max": 10000,
+      "starts": "2026-11-15 18:00:00+00:00",
+      "contests": 128,
+      "file": "dg156428_2114.csv"
+    },
+    {
+      "draft_group": 156427,
+      "game_type": "Showdown Captain Mode",
+      "players": 52,
+      "games": 1,
+      "salary_min": 200,
+      "salary_max": 10600,
+      "starts": "2026-11-15 18:00:00+00:00",
+      "contests": 128,
+      "file": "dg156427_2114.csv"
+    },
+    {
+      "draft_group": 156424,
+      "game_type": "Showdown Captain Mode",
+      "players": 50,
+      "games": 1,
+      "salary_min": 200,
+      "salary_max": 11400,
+      "starts": "2026-11-15 18:00:00+00:00",
+      "contests": 128,
+      "file": "dg156424_2114.csv"
+    },
+    {
+      "draft_group": 156425,
+      "game_type": "Showdown Captain Mode",
+      "players": 52,
+      "games": 1,
+      "salary_min": 200,
+      "salary_max": 10200,
+      "starts": "2026-11-15 18:00:00+00:00",
+      "contests": 128,
+      "file": "dg156425_2114.csv"
+    },
+    {
+      "draft_group": 156423,
+      "game_type": "Showdown Captain Mode",
+      "players": 51,
+      "games": 1,
+      "salary_min": 200,
+      "salary_max": 9800,
+      "starts": "2026-11-15 18:00:00+00:00",
+      "contests": 128,
+      "file": "dg156423_2114.csv"
     }
   ],
   "failed": {
     "155989": "draft group 155989 returned no players from either endpoint (lobby top-level keys: ['draftGroupAlerts', 'playerList', 'teamList'])"
   },
-  "contests_file": "contests_0447.csv",
-  "contests_kept": 3016
+  "contests_file": "contests_2114.csv",
+  "contests_kept": 5061
 }
