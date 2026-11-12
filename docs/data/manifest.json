@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-11T20:06:26+00:00",
+  "updated_at": "2026-11-12T02:48:53+00:00",
   "slates": [
     {
       "kind": "classic",
@@ -787,11 +787,11 @@
       "site": "dk",
       "draft_group": 156415,
       "label": "NFL $20K Thu-Mon Special [$5K to 1st] (Thu-Mon)",
-      "contests": 300,
+      "contests": 308,
       "starts": "2026-11-13 01:15:00+00:00",
       "file": "data/nfl/dk-classic-156415.json",
       "players": 622,
-      "generated_at": "2026-11-11T20:00:18+00:00"
+      "generated_at": "2026-11-12T02:40:07+00:00"
     },
     {
       "kind": "classic",
@@ -2095,11 +2095,11 @@
       "site": "dk",
       "draft_group": 156421,
       "label": "NFL Showdown $1.2M Thursday Night Showdown [$300K to 1st] (WAS @ NYG)",
-      "contests": 1065,
+      "contests": 1069,
       "starts": "2026-11-13 01:15:00+00:00",
       "file": "data/nfl/dk-showdown-156421.json",
       "players": 52,
-      "generated_at": "2026-11-11T19:58:00+00:00"
+      "generated_at": "2026-11-12T02:36:06+00:00"
     },
     {
       "kind": "showdown",
