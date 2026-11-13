@@ -1,0 +1,58 @@
+dk_player_id,draftable_id,name,position,team,salary,roster_slot,status,disabled,attributes,game,starts_utc,norm,flex_eligible,captain_salary,playing,draft_group,game_type,captured_at
+331,0,Cowboys,DST,DAL,3400,512,,False,,SF @ DAL,1970-01-01 00:29:54.777900+00:00,cowboys,0,3400,clear,156432,Showdown Captain Mode,2026-11-13T03:36:25+00:00
+359,0,49ers,DST,SF,4600,512,,False,,SF @ DAL,1970-01-01 00:29:54.777900+00:00,49ers,0,4600,clear,156432,Showdown Captain Mode,2026-11-13T03:36:25+00:00
+501150,0,Kyle Juszczyk,RB,SF,2400,512,,False,,SF @ DAL,1970-01-01 00:29:54.777900+00:00,kyle juszczyk,0,2400,clear,156432,Showdown Captain Mode,2026-11-13T03:36:25+00:00
+557210,0,Keenan Allen,WR,SF,5800,512,,False,,SF @ DAL,1970-01-01 00:29:54.777900+00:00,keenan allen,0,5800,clear,156432,Showdown Captain Mode,2026-11-13T03:36:25+00:00
+591816,0,Dak Prescott,QB,DAL,10000,512,,False,,SF @ DAL,1970-01-01 00:29:54.777900+00:00,dak prescott,0,10000,clear,156432,Showdown Captain Mode,2026-11-13T03:36:25+00:00
+593587,0,Mike Evans,WR,SF,8000,512,,False,,SF @ DAL,1970-01-01 00:29:54.777900+00:00,mike evans,0,8000,clear,156432,Showdown Captain Mode,2026-11-13T03:36:25+00:00
+607864,0,Brandin Cooks,WR,SF,3000,512,,False,,SF @ DAL,1970-01-01 00:29:54.777900+00:00,brandin cooks,0,3000,clear,156432,Showdown Captain Mode,2026-11-13T03:36:25+00:00
+727279,0,Demarcus Robinson,WR,SF,5400,512,,False,,SF @ DAL,1970-01-01 00:29:54.777900+00:00,demarcus robinson,0,5400,clear,156432,Showdown Captain Mode,2026-11-13T03:36:25+00:00
+733672,0,George Kittle,TE,SF,9000,512,,False,,SF @ DAL,1970-01-01 00:29:54.777900+00:00,george kittle,0,9000,clear,156432,Showdown Captain Mode,2026-11-13T03:36:25+00:00
+757521,0,KhaDarel Hodge,WR,SF,1000,512,,False,,SF @ DAL,1970-01-01 00:29:54.777900+00:00,khadarel hodge,0,1000,clear,156432,Showdown Captain Mode,2026-11-13T03:36:25+00:00
+830517,0,Christian McCaffrey,RB,SF,11400,512,,False,,SF @ DAL,1970-01-01 00:29:54.777900+00:00,christian mccaffrey,0,11400,clear,156432,Showdown Captain Mode,2026-11-13T03:36:25+00:00
+835749,0,Deebo Samuel Sr.,WR,SF,7000,512,,False,,SF @ DAL,1970-01-01 00:29:54.777900+00:00,deebo samuel,0,7000,clear,156432,Showdown Captain Mode,2026-11-13T03:36:25+00:00
+865801,0,Christian Kirk,WR,SF,200,512,,False,,SF @ DAL,1970-01-01 00:29:54.777900+00:00,christian kirk,0,200,clear,156432,Showdown Captain Mode,2026-11-13T03:36:25+00:00
+865958,0,KaVontae Turpin,WR,DAL,2200,512,,False,,SF @ DAL,1970-01-01 00:29:54.777900+00:00,kavontae turpin,0,2200,clear,156432,Showdown Captain Mode,2026-11-13T03:36:25+00:00
+910380,0,Kyle Trask,QB,DAL,6000,512,,False,,SF @ DAL,1970-01-01 00:29:54.777900+00:00,kyle trask,0,6000,clear,156432,Showdown Captain Mode,2026-11-13T03:36:25+00:00
+910383,0,Eddy Pineiro,K,SF,4800,512,,False,,SF @ DAL,1970-01-01 00:29:54.777900+00:00,eddy pineiro,0,4800,clear,156432,Showdown Captain Mode,2026-11-13T03:36:25+00:00
+911985,0,Jack Stoll,TE,SF,200,512,,False,,SF @ DAL,1970-01-01 00:29:54.777900+00:00,jack stoll,0,200,clear,156432,Showdown Captain Mode,2026-11-13T03:36:25+00:00
+946541,0,Luke Farrell,TE,SF,600,512,,False,,SF @ DAL,1970-01-01 00:29:54.777900+00:00,luke farrell,0,600,clear,156432,Showdown Captain Mode,2026-11-13T03:36:25+00:00
+973945,0,Mac Jones,QB,SF,6000,512,,False,,SF @ DAL,1970-01-01 00:29:54.777900+00:00,mac jones,0,6000,clear,156432,Showdown Captain Mode,2026-11-13T03:36:25+00:00
+975028,0,Malik Davis,RB,DAL,200,512,,False,,SF @ DAL,1970-01-01 00:29:54.777900+00:00,malik davis,0,200,clear,156432,Showdown Captain Mode,2026-11-13T03:36:25+00:00
+1059585,0,Princeton Fant,TE,DAL,200,512,,False,,SF @ DAL,1970-01-01 00:29:54.777900+00:00,princeton fant,0,200,clear,156432,Showdown Captain Mode,2026-11-13T03:36:25+00:00
+1062020,0,CeeDee Lamb,WR,DAL,11800,512,,False,,SF @ DAL,1970-01-01 00:29:54.777900+00:00,ceedee lamb,0,11800,clear,156432,Showdown Captain Mode,2026-11-13T03:36:25+00:00
+1065361,0,Jake Ferguson,TE,DAL,4200,512,,False,,SF @ DAL,1970-01-01 00:29:54.777900+00:00,jake ferguson,0,4200,clear,156432,Showdown Captain Mode,2026-11-13T03:36:25+00:00
+1068872,0,Jake Tonges,TE,SF,200,512,,False,,SF @ DAL,1970-01-01 00:29:54.777900+00:00,jake tonges,0,200,clear,156432,Showdown Captain Mode,2026-11-13T03:36:25+00:00
+1107034,0,Brandon Aiyuk,WR,SF,200,512,,False,,SF @ DAL,1970-01-01 00:29:54.777900+00:00,brandon aiyuk,0,200,clear,156432,Showdown Captain Mode,2026-11-13T03:36:25+00:00
+1107881,0,Javonte Williams,RB,DAL,10400,512,,False,,SF @ DAL,1970-01-01 00:29:54.777900+00:00,javonte williams,0,10400,clear,156432,Showdown Captain Mode,2026-11-13T03:36:25+00:00
+1108202,0,Brevyn Spann-Ford,TE,DAL,3200,512,,False,,SF @ DAL,1970-01-01 00:29:54.777900+00:00,brevyn spann ford,0,3200,clear,156432,Showdown Captain Mode,2026-11-13T03:36:25+00:00
+1121761,0,Brock Purdy,QB,SF,11000,512,,False,,SF @ DAL,1970-01-01 00:29:54.777900+00:00,brock purdy,0,11000,clear,156432,Showdown Captain Mode,2026-11-13T03:36:25+00:00
+1123712,0,James Mitchell,TE,DAL,200,512,,False,,SF @ DAL,1970-01-01 00:29:54.777900+00:00,james mitchell,0,200,clear,156432,Showdown Captain Mode,2026-11-13T03:36:25+00:00
+1125589,0,Brayden Willis,TE,SF,200,512,,False,,SF @ DAL,1970-01-01 00:29:54.777900+00:00,brayden willis,0,200,clear,156432,Showdown Captain Mode,2026-11-13T03:36:25+00:00
+1126338,0,Isaac Guerendo,RB,SF,200,512,,False,,SF @ DAL,1970-01-01 00:29:54.777900+00:00,isaac guerendo,0,200,clear,156432,Showdown Captain Mode,2026-11-13T03:36:25+00:00
+1128981,0,Jashaun Corbin,RB,DAL,2000,512,,False,,SF @ DAL,1970-01-01 00:29:54.777900+00:00,jashaun corbin,0,2000,clear,156432,Showdown Captain Mode,2026-11-13T03:36:25+00:00
+1130242,0,Luke Schoonmaker,TE,DAL,1600,512,,False,,SF @ DAL,1970-01-01 00:29:54.777900+00:00,luke schoonmaker,0,1600,clear,156432,Showdown Captain Mode,2026-11-13T03:36:25+00:00
+1130976,0,Hunter Luepke,RB,DAL,1400,512,,False,,SF @ DAL,1970-01-01 00:29:54.777900+00:00,hunter luepke,0,1400,clear,156432,Showdown Captain Mode,2026-11-13T03:36:25+00:00
+1161416,0,Ricky Pearsall,WR,SF,200,512,,False,,SF @ DAL,1970-01-01 00:29:54.777900+00:00,ricky pearsall,0,200,clear,156432,Showdown Captain Mode,2026-11-13T03:36:25+00:00
+1166235,0,Sincere McCormick,RB,SF,200,512,,False,,SF @ DAL,1970-01-01 00:29:54.777900+00:00,sincere mccormick,0,200,clear,156432,Showdown Captain Mode,2026-11-13T03:36:25+00:00
+1166989,0,Kurtis Rourke,QB,SF,6000,512,,False,,SF @ DAL,1970-01-01 00:29:54.777900+00:00,kurtis rourke,0,6000,clear,156432,Showdown Captain Mode,2026-11-13T03:36:25+00:00
+1168245,0,Sam Howell,QB,DAL,6000,512,,False,,SF @ DAL,1970-01-01 00:29:54.777900+00:00,sam howell,0,6000,clear,156432,Showdown Captain Mode,2026-11-13T03:36:25+00:00
+1168918,0,Tyler Goodson,RB,DAL,4000,512,,False,,SF @ DAL,1970-01-01 00:29:54.777900+00:00,tyler goodson,0,4000,clear,156432,Showdown Captain Mode,2026-11-13T03:36:25+00:00
+1172053,0,George Pickens,WR,DAL,8800,512,,False,,SF @ DAL,1970-01-01 00:29:54.777900+00:00,george pickens,0,8800,clear,156432,Showdown Captain Mode,2026-11-13T03:36:25+00:00
+1176782,0,Jonathan Mingo,WR,DAL,1800,512,,False,,SF @ DAL,1970-01-01 00:29:54.777900+00:00,jonathan mingo,0,1800,clear,156432,Showdown Captain Mode,2026-11-13T03:36:25+00:00
+1181861,0,Jacob Cowing,WR,SF,2800,512,,False,,SF @ DAL,1970-01-01 00:29:54.777900+00:00,jacob cowing,0,2800,clear,156432,Showdown Captain Mode,2026-11-13T03:36:25+00:00
+1213867,0,Kendre Miller,RB,DAL,2600,512,,False,,SF @ DAL,1970-01-01 00:29:54.777900+00:00,kendre miller,0,2600,clear,156432,Showdown Captain Mode,2026-11-13T03:36:25+00:00
+1214249,0,Israel Abanikanda,RB,DAL,1200,512,,False,,SF @ DAL,1970-01-01 00:29:54.777900+00:00,israel abanikanda,0,1200,clear,156432,Showdown Captain Mode,2026-11-13T03:36:25+00:00
+1215772,0,Kaelon Black,RB,SF,4400,512,,False,,SF @ DAL,1970-01-01 00:29:54.777900+00:00,kaelon black,0,4400,clear,156432,Showdown Captain Mode,2026-11-13T03:36:25+00:00
+1222614,0,Anthony Smith,WR,DAL,200,512,,False,,SF @ DAL,1970-01-01 00:29:54.777900+00:00,anthony smith,0,200,clear,156432,Showdown Captain Mode,2026-11-13T03:36:25+00:00
+1222835,0,Jordan Watkins,WR,SF,3800,512,,False,,SF @ DAL,1970-01-01 00:29:54.777900+00:00,jordan watkins,0,3800,clear,156432,Showdown Captain Mode,2026-11-13T03:36:25+00:00
+1286818,0,De'Zhaun Stribling,WR,SF,200,512,,False,,SF @ DAL,1970-01-01 00:29:54.777900+00:00,dezhaun stribling,0,200,clear,156432,Showdown Captain Mode,2026-11-13T03:36:25+00:00
+1288045,0,Will Pauling,WR,SF,200,512,,False,,SF @ DAL,1970-01-01 00:29:54.777900+00:00,will pauling,0,200,clear,156432,Showdown Captain Mode,2026-11-13T03:36:25+00:00
+1310628,0,Khalil Dinkins,TE,SF,200,512,,False,,SF @ DAL,1970-01-01 00:29:54.777900+00:00,khalil dinkins,0,200,clear,156432,Showdown Captain Mode,2026-11-13T03:36:25+00:00
+1323708,0,Michael Trigg,TE,DAL,200,512,,False,,SF @ DAL,1970-01-01 00:29:54.777900+00:00,michael trigg,0,200,clear,156432,Showdown Captain Mode,2026-11-13T03:36:25+00:00
+1379331,0,Jordan Hudson,WR,DAL,200,512,,False,,SF @ DAL,1970-01-01 00:29:54.777900+00:00,jordan hudson,0,200,clear,156432,Showdown Captain Mode,2026-11-13T03:36:25+00:00
+1389217,0,Camden Brown,WR,DAL,800,512,,False,,SF @ DAL,1970-01-01 00:29:54.777900+00:00,camden brown,0,800,clear,156432,Showdown Captain Mode,2026-11-13T03:36:25+00:00
+1390913,0,Wesley Grimes,WR,SF,200,512,,False,,SF @ DAL,1970-01-01 00:29:54.777900+00:00,wesley grimes,0,200,clear,156432,Showdown Captain Mode,2026-11-13T03:36:25+00:00
+1393832,0,Ryan Flournoy,WR,DAL,6800,512,,False,,SF @ DAL,1970-01-01 00:29:54.777900+00:00,ryan flournoy,0,6800,clear,156432,Showdown Captain Mode,2026-11-13T03:36:25+00:00
+1400657,0,Jordan James,RB,SF,400,512,,False,,SF @ DAL,1970-01-01 00:29:54.777900+00:00,jordan james,0,400,clear,156432,Showdown Captain Mode,2026-11-13T03:36:25+00:00
+1454349,0,Brandon Aubrey,K,DAL,5000,512,,False,,SF @ DAL,1970-01-01 00:29:54.777900+00:00,brandon aubrey,0,5000,clear,156432,Showdown Captain Mode,2026-11-13T03:36:25+00:00

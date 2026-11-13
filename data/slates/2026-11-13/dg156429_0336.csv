@@ -1,0 +1,52 @@
+dk_player_id,draftable_id,name,position,team,salary,roster_slot,status,disabled,attributes,game,starts_utc,norm,flex_eligible,captain_salary,playing,draft_group,game_type,captured_at
+336,0,Titans,DST,TEN,3000,512,,False,,JAX @ TEN,1970-01-01 00:29:54.765600+00:00,titans,0,3000,clear,156429,Showdown Captain Mode,2026-11-13T03:36:25+00:00
+365,0,Jaguars,DST,JAX,6400,512,,False,,JAX @ TEN,1970-01-01 00:29:54.765600+00:00,jaguars,0,6400,clear,156429,Showdown Captain Mode,2026-11-13T03:36:25+00:00
+590796,0,Ameer Abdullah,RB,JAX,2600,512,,False,,JAX @ TEN,1970-01-01 00:29:54.765600+00:00,ameer abdullah,0,2600,clear,156429,Showdown Captain Mode,2026-11-13T03:36:25+00:00
+728169,0,Mitchell Trubisky,QB,TEN,6000,512,,False,,JAX @ TEN,1970-01-01 00:29:54.765600+00:00,mitchell trubisky,0,6000,clear,156429,Showdown Captain Mode,2026-11-13T03:36:25+00:00
+748309,0,Nick Mullens,QB,JAX,6000,512,,False,,JAX @ TEN,1970-01-01 00:29:54.765600+00:00,nick mullens,0,6000,clear,156429,Showdown Captain Mode,2026-11-13T03:36:25+00:00
+836963,0,Joey Slye,K,TEN,5000,512,,False,,JAX @ TEN,1970-01-01 00:29:54.765600+00:00,joey slye,0,5000,clear,156429,Showdown Captain Mode,2026-11-13T03:36:25+00:00
+880151,0,Jakobi Meyers,WR,JAX,6200,512,,False,,JAX @ TEN,1970-01-01 00:29:54.765600+00:00,jakobi meyers,0,6200,clear,156429,Showdown Captain Mode,2026-11-13T03:36:25+00:00
+880398,0,Tony Pollard,RB,TEN,9000,512,,False,,JAX @ TEN,1970-01-01 00:29:54.765600+00:00,tony pollard,0,9000,clear,156429,Showdown Captain Mode,2026-11-13T03:36:25+00:00
+881058,0,K.J. Osborn,WR,TEN,200,512,,False,,JAX @ TEN,1970-01-01 00:29:54.765600+00:00,k j osborn,0,200,clear,156429,Showdown Captain Mode,2026-11-13T03:36:25+00:00
+884013,0,Calvin Ridley,WR,TEN,3400,512,,False,,JAX @ TEN,1970-01-01 00:29:54.765600+00:00,calvin ridley,0,3400,clear,156429,Showdown Captain Mode,2026-11-13T03:36:25+00:00
+921050,0,Kylen Granson,TE,TEN,200,512,,False,,JAX @ TEN,1970-01-01 00:29:54.765600+00:00,kylen granson,0,200,clear,156429,Showdown Captain Mode,2026-11-13T03:36:25+00:00
+976329,0,Michael Carter,RB,TEN,400,512,,False,,JAX @ TEN,1970-01-01 00:29:54.765600+00:00,michael carter,0,400,clear,156429,Showdown Captain Mode,2026-11-13T03:36:25+00:00
+976966,0,Hendon Hooker,QB,TEN,6000,512,,False,,JAX @ TEN,1970-01-01 00:29:54.765600+00:00,hendon hooker,0,6000,clear,156429,Showdown Captain Mode,2026-11-13T03:36:25+00:00
+1056660,0,Austin Trammell,WR,JAX,200,512,,False,,JAX @ TEN,1970-01-01 00:29:54.765600+00:00,austin trammell,0,200,clear,156429,Showdown Captain Mode,2026-11-13T03:36:25+00:00
+1056747,0,Tim Jones,WR,JAX,200,512,,False,,JAX @ TEN,1970-01-01 00:29:54.765600+00:00,tim jones,0,200,clear,156429,Showdown Captain Mode,2026-11-13T03:36:25+00:00
+1059680,0,Quintin Morris,TE,JAX,200,512,,False,,JAX @ TEN,1970-01-01 00:29:54.765600+00:00,quintin morris,0,200,clear,156429,Showdown Captain Mode,2026-11-13T03:36:25+00:00
+1110711,0,Trevor Lawrence,QB,JAX,10600,512,,False,,JAX @ TEN,1970-01-01 00:29:54.765600+00:00,trevor lawrence,0,10600,clear,156429,Showdown Captain Mode,2026-11-13T03:36:25+00:00
+1113381,0,Brenden Bates,TE,JAX,200,512,,False,,JAX @ TEN,1970-01-01 00:29:54.765600+00:00,brenden bates,0,200,clear,156429,Showdown Captain Mode,2026-11-13T03:36:25+00:00
+1113403,0,Chris Rodriguez Jr.,RB,JAX,6600,512,,False,,JAX @ TEN,1970-01-01 00:29:54.765600+00:00,chris rodriguez,0,6600,clear,156429,Showdown Captain Mode,2026-11-13T03:36:25+00:00
+1122035,0,Daniel Bellinger,TE,TEN,1200,512,,False,,JAX @ TEN,1970-01-01 00:29:54.765600+00:00,daniel bellinger,0,1200,clear,156429,Showdown Captain Mode,2026-11-13T03:36:25+00:00
+1123364,0,Joel Wilson,TE,TEN,200,512,,False,,JAX @ TEN,1970-01-01 00:29:54.765600+00:00,joel wilson,0,200,clear,156429,Showdown Captain Mode,2026-11-13T03:36:25+00:00
+1124199,0,David Martin-Robinson,TE,TEN,200,512,,False,,JAX @ TEN,1970-01-01 00:29:54.765600+00:00,david martin robinson,0,200,clear,156429,Showdown Captain Mode,2026-11-13T03:36:25+00:00
+1125846,0,Julius Chestnut,RB,TEN,200,512,,False,,JAX @ TEN,1970-01-01 00:29:54.765600+00:00,julius chestnut,0,200,clear,156429,Showdown Captain Mode,2026-11-13T03:36:25+00:00
+1164875,0,Wan'Dale Robinson,WR,TEN,7000,512,,False,,JAX @ TEN,1970-01-01 00:29:54.765600+00:00,wandale robinson,0,7000,clear,156429,Showdown Captain Mode,2026-11-13T03:36:25+00:00
+1164940,0,Brenton Strange,TE,JAX,5200,512,,False,,JAX @ TEN,1970-01-01 00:29:54.765600+00:00,brenton strange,0,5200,clear,156429,Showdown Captain Mode,2026-11-13T03:36:25+00:00
+1169430,0,Tyjae Spears,RB,TEN,4400,512,,False,,JAX @ TEN,1970-01-01 00:29:54.765600+00:00,tyjae spears,0,4400,clear,156429,Showdown Captain Mode,2026-11-13T03:36:25+00:00
+1214003,0,Nate Boerkircher,TE,JAX,1600,512,,False,,JAX @ TEN,1970-01-01 00:29:54.765600+00:00,nate boerkircher,0,1600,clear,156429,Showdown Captain Mode,2026-11-13T03:36:25+00:00
+1214183,0,Xavier Restrepo,WR,TEN,200,512,,False,,JAX @ TEN,1970-01-01 00:29:54.765600+00:00,xavier restrepo,0,200,clear,156429,Showdown Captain Mode,2026-11-13T03:36:25+00:00
+1215102,0,Chimere Dike,WR,TEN,2000,512,,False,,JAX @ TEN,1970-01-01 00:29:54.765600+00:00,chimere dike,0,2000,clear,156429,Showdown Captain Mode,2026-11-13T03:36:25+00:00
+1228631,0,Trebor Pena,WR,JAX,200,512,,False,,JAX @ TEN,1970-01-01 00:29:54.765600+00:00,trebor pena,0,200,clear,156429,Showdown Captain Mode,2026-11-13T03:36:25+00:00
+1228691,0,Cam Ward,QB,TEN,8800,512,,False,,JAX @ TEN,1970-01-01 00:29:54.765600+00:00,cam ward,0,8800,clear,156429,Showdown Captain Mode,2026-11-13T03:36:25+00:00
+1229074,0,Parker Washington,WR,JAX,9200,512,,False,,JAX @ TEN,1970-01-01 00:29:54.765600+00:00,parker washington,0,9200,clear,156429,Showdown Captain Mode,2026-11-13T03:36:25+00:00
+1229673,0,Kalel Mullings,RB,TEN,200,512,,False,,JAX @ TEN,1970-01-01 00:29:54.765600+00:00,kalel mullings,0,200,clear,156429,Showdown Captain Mode,2026-11-13T03:36:25+00:00
+1277947,0,J'Mari Taylor,RB,JAX,200,512,,False,,JAX @ TEN,1970-01-01 00:29:54.765600+00:00,jmari taylor,0,200,clear,156429,Showdown Captain Mode,2026-11-13T03:36:25+00:00
+1286064,0,Brian Thomas Jr.,WR,JAX,4600,512,,False,,JAX @ TEN,1970-01-01 00:29:54.765600+00:00,brian thomas,0,4600,clear,156429,Showdown Captain Mode,2026-11-13T03:36:25+00:00
+1286438,0,Gunnar Helm,TE,TEN,4000,512,,False,,JAX @ TEN,1970-01-01 00:29:54.765600+00:00,gunnar helm,0,4000,clear,156429,Showdown Captain Mode,2026-11-13T03:36:25+00:00
+1290109,0,Cam Little,K,JAX,5400,512,,False,,JAX @ TEN,1970-01-01 00:29:54.765600+00:00,cam little,0,5400,clear,156429,Showdown Captain Mode,2026-11-13T03:36:25+00:00
+1325475,0,Josh Cameron,WR,JAX,3200,512,,False,,JAX @ TEN,1970-01-01 00:29:54.765600+00:00,josh cameron,0,3200,clear,156429,Showdown Captain Mode,2026-11-13T03:36:25+00:00
+1327169,0,Bhayshul Tuten,RB,JAX,9600,512,,False,,JAX @ TEN,1970-01-01 00:29:54.765600+00:00,bhayshul tuten,0,9600,clear,156429,Showdown Captain Mode,2026-11-13T03:36:25+00:00
+1333868,0,Quinn Ewers,QB,JAX,6000,512,,False,,JAX @ TEN,1970-01-01 00:29:54.765600+00:00,quinn ewers,0,6000,clear,156429,Showdown Captain Mode,2026-11-13T03:36:25+00:00
+1378840,0,LeQuint Allen Jr.,RB,JAX,1000,512,,False,,JAX @ TEN,1970-01-01 00:29:54.765600+00:00,lequint allen,0,1000,clear,156429,Showdown Captain Mode,2026-11-13T03:36:25+00:00
+1379264,0,Nick Singleton,RB,TEN,1400,512,,False,,JAX @ TEN,1970-01-01 00:29:54.765600+00:00,nick singleton,0,1400,clear,156429,Showdown Captain Mode,2026-11-13T03:36:25+00:00
+1380368,0,Tanner Koziol,TE,JAX,600,512,,False,,JAX @ TEN,1970-01-01 00:29:54.765600+00:00,tanner koziol,0,600,clear,156429,Showdown Captain Mode,2026-11-13T03:36:25+00:00
+1381092,0,CJ Williams,WR,JAX,200,512,,False,,JAX @ TEN,1970-01-01 00:29:54.765600+00:00,cj williams,0,200,clear,156429,Showdown Captain Mode,2026-11-13T03:36:25+00:00
+1381307,0,Jaren Kanak,TE,TEN,200,512,,False,,JAX @ TEN,1970-01-01 00:29:54.765600+00:00,jaren kanak,0,200,clear,156429,Showdown Captain Mode,2026-11-13T03:36:25+00:00
+1395319,0,Elic Ayomanor,WR,TEN,3600,512,,False,,JAX @ TEN,1970-01-01 00:29:54.765600+00:00,elic ayomanor,0,3600,clear,156429,Showdown Captain Mode,2026-11-13T03:36:25+00:00
+1399275,0,Travis Hunter,WR,JAX,2400,512,,False,,JAX @ TEN,1970-01-01 00:29:54.765600+00:00,travis hunter,0,2400,clear,156429,Showdown Captain Mode,2026-11-13T03:36:25+00:00
+1407491,0,Tyren Montgomery,WR,TEN,200,512,,False,,JAX @ TEN,1970-01-01 00:29:54.765600+00:00,tyren montgomery,0,200,clear,156429,Showdown Captain Mode,2026-11-13T03:36:25+00:00
+1441839,0,Carnell Tate,WR,TEN,8000,512,,False,,JAX @ TEN,1970-01-01 00:29:54.765600+00:00,carnell tate,0,8000,clear,156429,Showdown Captain Mode,2026-11-13T03:36:25+00:00
+1448305,0,Joey Aguilar,QB,JAX,6000,512,,False,,JAX @ TEN,1970-01-01 00:29:54.765600+00:00,joey aguilar,0,6000,clear,156429,Showdown Captain Mode,2026-11-13T03:36:25+00:00
+1452585,0,Michael Wortham,WR,JAX,200,512,,False,,JAX @ TEN,1970-01-01 00:29:54.765600+00:00,michael wortham,0,200,clear,156429,Showdown Captain Mode,2026-11-13T03:36:25+00:00
