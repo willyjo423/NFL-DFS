@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-14T02:02:47+00:00",
+  "updated_at": "2026-11-14T18:46:25+00:00",
   "slates": [
     {
       "kind": "classic",
@@ -775,11 +775,11 @@
       "site": "dk",
       "draft_group": 156416,
       "label": "NFL $2.5M Fantasy Football Millionaire [$1M to 1st]",
-      "contests": 1801,
+      "contests": 1846,
       "starts": "2026-11-15 18:00:00+00:00",
       "file": "data/nfl/dk-classic-156416.json",
-      "players": 439,
-      "generated_at": "2026-11-14T01:54:36+00:00"
+      "players": 418,
+      "generated_at": "2026-11-14T18:38:29+00:00"
     },
     {
       "kind": "classic",
@@ -799,11 +799,11 @@
       "site": "dk",
       "draft_group": 156417,
       "label": "NFL $200K Early Only Rush [$50K to 1st] (Early Only)",
-      "contests": 478,
+      "contests": 486,
       "starts": "2026-11-15 18:00:00+00:00",
       "file": "data/nfl/dk-classic-156417.json",
-      "players": 304,
-      "generated_at": "2026-11-14T01:56:37+00:00"
+      "players": 289,
+      "generated_at": "2026-11-14T18:40:35+00:00"
     },
     {
       "kind": "classic",
@@ -811,11 +811,11 @@
       "site": "dk",
       "draft_group": 156418,
       "label": "NFL $20K Thunderdome [Must Fill] (Sun-Mon)",
-      "contests": 282,
+      "contests": 289,
       "starts": "2026-11-15 18:00:00+00:00",
       "file": "data/nfl/dk-classic-156418.json",
-      "players": 531,
-      "generated_at": "2026-11-14T01:59:19+00:00"
+      "players": 509,
+      "generated_at": "2026-11-14T18:43:23+00:00"
     },
     {
       "kind": "classic",
@@ -823,11 +823,11 @@
       "site": "dk",
       "draft_group": 156419,
       "label": "NFL $450K Afternoon Only Rush [$100K to 1st] (Afternoon Only)",
-      "contests": 470,
+      "contests": 471,
       "starts": "2026-11-15 21:05:00+00:00",
       "file": "data/nfl/dk-classic-156419.json",
-      "players": 135,
-      "generated_at": "2026-11-14T01:57:17+00:00"
+      "players": 129,
+      "generated_at": "2026-11-14T18:41:16+00:00"
     },
     {
       "kind": "classic",
@@ -835,11 +835,11 @@
       "site": "dk",
       "draft_group": 156420,
       "label": "NFL $40K Post Pattern [$10K to 1st] (Primetime)",
-      "contests": 231,
+      "contests": 233,
       "starts": "2026-11-16 01:20:00+00:00",
       "file": "data/nfl/dk-classic-156420.json",
-      "players": 90,
-      "generated_at": "2026-11-14T01:59:54+00:00"
+      "players": 89,
+      "generated_at": "2026-11-14T18:44:00+00:00"
     },
     {
       "kind": "showdown",
@@ -2131,11 +2131,11 @@
       "site": "dk",
       "draft_group": 156422,
       "label": "NFL Showdown $400K Showdown Special [$100K to 1st!] (NE vs DET)",
-      "contests": 290,
+      "contests": 343,
       "starts": "2026-11-15 14:30:00+00:00",
       "file": "data/nfl/dk-showdown-156422.json",
       "players": 40,
-      "generated_at": "2026-11-14T01:57:52+00:00"
+      "generated_at": "2026-11-14T18:41:52+00:00"
     },
     {
       "kind": "showdown",
@@ -2143,11 +2143,11 @@
       "site": "dk",
       "draft_group": 156426,
       "label": "NFL Showdown $60K Showdown Special [$20K to 1st] (KC @ ATL)",
-      "contests": 211,
+      "contests": 215,
       "starts": "2026-11-15 18:00:00+00:00",
       "file": "data/nfl/dk-showdown-156426.json",
-      "players": 44,
-      "generated_at": "2026-11-14T02:01:05+00:00"
+      "players": 43,
+      "generated_at": "2026-11-14T18:45:12+00:00"
     },
     {
       "kind": "showdown",
@@ -2179,11 +2179,11 @@
       "site": "dk",
       "draft_group": 156427,
       "label": "NFL Showdown $20K Thunderdome [Must Fill] (MIN @ GB)",
-      "contests": 167,
+      "contests": 172,
       "starts": "2026-11-15 18:00:00+00:00",
       "file": "data/nfl/dk-showdown-156427.json",
-      "players": 45,
-      "generated_at": "2026-11-13T02:24:17+00:00"
+      "players": 40,
+      "generated_at": "2026-11-14T18:45:49+00:00"
     },
     {
       "kind": "showdown",
@@ -2191,11 +2191,11 @@
       "site": "dk",
       "draft_group": 156424,
       "label": "NFL Showdown $20K Thunderdome [Must Fill] (BUF @ NYJ)",
-      "contests": 167,
+      "contests": 170,
       "starts": "2026-11-15 18:00:00+00:00",
       "file": "data/nfl/dk-showdown-156424.json",
       "players": 42,
-      "generated_at": "2026-11-14T02:01:39+00:00"
+      "generated_at": "2026-11-14T18:46:25+00:00"
     },
     {
       "kind": "showdown",
@@ -2215,11 +2215,11 @@
       "site": "dk",
       "draft_group": 156432,
       "label": "NFL $125K Showdown Special [$25K to 1st] (SF @ DAL)",
-      "contests": 219,
+      "contests": 220,
       "starts": "2026-11-15 21:25:00+00:00",
       "file": "data/nfl/dk-showdown-156432.json",
-      "players": 48,
-      "generated_at": "2026-11-14T02:00:29+00:00"
+      "players": 44,
+      "generated_at": "2026-11-14T18:44:36+00:00"
     },
     {
       "kind": "showdown",
@@ -2227,19 +2227,24 @@
       "site": "dk",
       "draft_group": 156433,
       "label": "NFL Showdown $1M Sunday Night Showdown [$250K to 1st] (PIT @ CIN)",
-      "contests": 1004,
+      "contests": 1007,
       "starts": "2026-11-16 01:20:00+00:00",
       "file": "data/nfl/dk-showdown-156433.json",
-      "players": 45,
-      "generated_at": "2026-11-14T01:55:10+00:00"
-    }
-  ],
-  "failures": [
+      "players": 44,
+      "generated_at": "2026-11-14T18:39:06+00:00"
+    },
     {
       "kind": "showdown",
+      "sport": "nfl",
+      "site": "dk",
       "draft_group": 156434,
       "label": "NFL Showdown $1.11M Monday Night Showdown [$250K to 1st] (LAC @ BAL)",
-      "error": "BoardUnfiltered: NO injury information reached this board (0/54 matched).\nEvery player would read as available, which is exactly how an inactive player gets into every lineup.\nA filter that is silently not filtering is worse than no filter, because it is trusted.\nFix the join, or pass --force to build a board that cannot see who is hurt."
+      "contests": 1003,
+      "starts": "2026-11-17 01:15:00+00:00",
+      "file": "data/nfl/dk-showdown-156434.json",
+      "players": 45,
+      "generated_at": "2026-11-14T18:39:42+00:00"
     }
-  ]
+  ],
+  "failures": []
 }
