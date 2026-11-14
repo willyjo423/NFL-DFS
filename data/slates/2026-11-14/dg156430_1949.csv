@@ -1,0 +1,54 @@
+dk_player_id,draftable_id,name,position,team,salary,roster_slot,status,disabled,attributes,game,starts_utc,norm,flex_eligible,captain_salary,playing,draft_group,game_type,captured_at
+341,0,Raiders,DST,LV,3400,512,,False,,SEA @ LV,1970-01-01 00:29:54.776700+00:00,raiders,0,3400,clear,156430,Showdown Captain Mode,2026-11-14T19:49:18+00:00
+361,0,Seahawks,DST,SEA,4400,512,,False,,SEA @ LV,1970-01-01 00:29:54.776700+00:00,seahawks,0,4400,clear,156430,Showdown Captain Mode,2026-11-14T19:49:18+00:00
+518088,0,Jason Myers,K,SEA,5000,512,,False,,SEA @ LV,1970-01-01 00:29:54.776700+00:00,jason myers,0,5000,clear,156430,Showdown Captain Mode,2026-11-14T19:49:18+00:00
+596417,0,Phillip Dorsett II,WR,LV,200,512,,False,,SEA @ LV,1970-01-01 00:29:54.776700+00:00,phillip dorsett,0,200,clear,156430,Showdown Captain Mode,2026-11-14T19:49:18+00:00
+694931,0,Eric Saubert,TE,SEA,1600,512,,False,,SEA @ LV,1970-01-01 00:29:54.776700+00:00,eric saubert,0,1600,clear,156430,Showdown Captain Mode,2026-11-14T19:49:18+00:00
+698227,0,Cooper Kupp,WR,SEA,5200,512,,False,,SEA @ LV,1970-01-01 00:29:54.776700+00:00,cooper kupp,0,5200,clear,156430,Showdown Captain Mode,2026-11-14T19:49:18+00:00
+880026,0,Sam Darnold,QB,SEA,9600,512,,False,,SEA @ LV,1970-01-01 00:29:54.776700+00:00,sam darnold,0,9600,clear,156430,Showdown Captain Mode,2026-11-14T19:49:18+00:00
+882345,0,Drew Lock,QB,SEA,9000,512,,False,,SEA @ LV,1970-01-01 00:29:54.776700+00:00,drew lock,0,9000,clear,156430,Showdown Captain Mode,2026-11-14T19:49:18+00:00
+883312,0,Irvin Charles,WR,SEA,200,512,,False,,SEA @ LV,1970-01-01 00:29:54.776700+00:00,irvin charles,0,200,clear,156430,Showdown Captain Mode,2026-11-14T19:49:18+00:00
+919304,0,Velus Jones Jr.,RB,SEA,200,512,,False,,SEA @ LV,1970-01-01 00:29:54.776700+00:00,velus jones,0,200,clear,156430,Showdown Captain Mode,2026-11-14T19:49:18+00:00
+923412,0,Rashid Shaheed,WR,SEA,6200,512,,False,,SEA @ LV,1970-01-01 00:29:54.776700+00:00,rashid shaheed,0,6200,clear,156430,Showdown Captain Mode,2026-11-14T19:49:18+00:00
+943093,0,Ian Thomas,TE,LV,600,512,,False,,SEA @ LV,1970-01-01 00:29:54.776700+00:00,ian thomas,0,600,clear,156430,Showdown Captain Mode,2026-11-14T19:49:18+00:00
+1049797,0,Owen Wright,RB,LV,200,512,,False,,SEA @ LV,1970-01-01 00:29:54.776700+00:00,owen wright,0,200,clear,156430,Showdown Captain Mode,2026-11-14T19:49:18+00:00
+1057457,0,Connor Heyward,RB,LV,200,512,,False,,SEA @ LV,1970-01-01 00:29:54.776700+00:00,connor heyward,0,200,clear,156430,Showdown Captain Mode,2026-11-14T19:49:18+00:00
+1057484,0,Cody White,WR,LV,1200,512,,False,,SEA @ LV,1970-01-01 00:29:54.776700+00:00,cody white,0,1200,clear,156430,Showdown Captain Mode,2026-11-14T19:49:18+00:00
+1064955,0,Brady Russell,RB,SEA,400,512,,False,,SEA @ LV,1970-01-01 00:29:54.776700+00:00,brady russell,0,400,clear,156430,Showdown Captain Mode,2026-11-14T19:49:18+00:00
+1066811,0,Aidan O'Connell,QB,LV,6000,512,,False,,SEA @ LV,1970-01-01 00:29:54.776700+00:00,aidan oconnell,0,6000,clear,156430,Showdown Captain Mode,2026-11-14T19:49:18+00:00
+1068998,0,Matt Gay,K,LV,4800,512,,False,,SEA @ LV,1970-01-01 00:29:54.776700+00:00,matt gay,0,4800,clear,156430,Showdown Captain Mode,2026-11-14T19:49:18+00:00
+1107584,0,Adrian Martinez,QB,SEA,6000,512,,False,,SEA @ LV,1970-01-01 00:29:54.776700+00:00,adrian martinez,0,6000,clear,156430,Showdown Captain Mode,2026-11-14T19:49:18+00:00
+1121050,0,Jake Bobo,WR,SEA,200,512,,False,,SEA @ LV,1970-01-01 00:29:54.776700+00:00,jake bobo,0,200,clear,156430,Showdown Captain Mode,2026-11-14T19:49:18+00:00
+1122182,0,Dylan Laube,RB,LV,2400,512,,False,,SEA @ LV,1970-01-01 00:29:54.776700+00:00,dylan laube,0,2400,clear,156430,Showdown Captain Mode,2026-11-14T19:49:18+00:00
+1126817,0,Jalen Nailor,WR,LV,3200,512,,False,,SEA @ LV,1970-01-01 00:29:54.776700+00:00,jalen nailor,0,3200,clear,156430,Showdown Captain Mode,2026-11-14T19:49:18+00:00
+1129452,0,Ben Sims,TE,SEA,200,512,,False,,SEA @ LV,1970-01-01 00:29:54.776700+00:00,ben sims,0,200,clear,156430,Showdown Captain Mode,2026-11-14T19:49:18+00:00
+1130833,0,Deven Thompkins,WR,LV,200,512,,False,,SEA @ LV,1970-01-01 00:29:54.776700+00:00,deven thompkins,0,200,clear,156430,Showdown Captain Mode,2026-11-14T19:49:18+00:00
+1164530,0,Zach Charbonnet,RB,SEA,8600,512,,False,,SEA @ LV,1970-01-01 00:29:54.776700+00:00,zach charbonnet,0,8600,clear,156430,Showdown Captain Mode,2026-11-14T19:49:18+00:00
+1164736,0,Nick Kallerup,TE,SEA,200,512,,False,,SEA @ LV,1970-01-01 00:29:54.776700+00:00,nick kallerup,0,200,clear,156430,Showdown Captain Mode,2026-11-14T19:49:18+00:00
+1164979,0,Tre Tucker,WR,LV,8000,512,,False,,SEA @ LV,1970-01-01 00:29:54.776700+00:00,tre tucker,0,8000,clear,156430,Showdown Captain Mode,2026-11-14T19:49:18+00:00
+1180625,0,George Holani,RB,SEA,1400,512,,False,,SEA @ LV,1970-01-01 00:29:54.776700+00:00,george holani,0,1400,clear,156430,Showdown Captain Mode,2026-11-14T19:49:18+00:00
+1214087,0,Jaxon Smith-Njigba,WR,SEA,12200,512,,False,,SEA @ LV,1970-01-01 00:29:54.776700+00:00,jaxon smith njigba,0,12200,clear,156430,Showdown Captain Mode,2026-11-14T19:49:18+00:00
+1215974,0,Chris Collier,RB,LV,200,512,,False,,SEA @ LV,1970-01-01 00:29:54.776700+00:00,chris collier,0,200,clear,156430,Showdown Captain Mode,2026-11-14T19:49:18+00:00
+1223393,0,Tory Horton,WR,SEA,3000,512,,False,,SEA @ LV,1970-01-01 00:29:54.776700+00:00,tory horton,0,3000,clear,156430,Showdown Captain Mode,2026-11-14T19:49:18+00:00
+1229503,0,AJ Barner,TE,SEA,5400,512,,False,,SEA @ LV,1970-01-01 00:29:54.776700+00:00,aj barner,0,5400,clear,156430,Showdown Captain Mode,2026-11-14T19:49:18+00:00
+1229749,0,Patrick Gurd,TE,LV,200,512,,False,,SEA @ LV,1970-01-01 00:29:54.776700+00:00,patrick gurd,0,200,clear,156430,Showdown Captain Mode,2026-11-14T19:49:18+00:00
+1229846,0,Ricky White III,WR,SEA,200,512,,False,,SEA @ LV,1970-01-01 00:29:54.776700+00:00,ricky white,0,200,clear,156430,Showdown Captain Mode,2026-11-14T19:49:18+00:00
+1229869,0,Montorie Foster Jr.,WR,SEA,200,512,,False,,SEA @ LV,1970-01-01 00:29:54.776700+00:00,montorie foster,0,200,clear,156430,Showdown Captain Mode,2026-11-14T19:49:18+00:00
+1232592,0,Michael Mayer,TE,LV,3600,512,,False,,SEA @ LV,1970-01-01 00:29:54.776700+00:00,michael mayer,0,3600,clear,156430,Showdown Captain Mode,2026-11-14T19:49:18+00:00
+1285917,0,Brock Bowers,TE,LV,10600,512,,False,,SEA @ LV,1970-01-01 00:29:54.776700+00:00,brock bowers,0,10600,clear,156430,Showdown Captain Mode,2026-11-14T19:49:18+00:00
+1285958,0,Robbie Ouzts,RB,SEA,200,512,,False,,SEA @ LV,1970-01-01 00:29:54.776700+00:00,robbie ouzts,0,200,clear,156430,Showdown Captain Mode,2026-11-14T19:49:18+00:00
+1286046,0,Jack Bech,WR,LV,2000,512,,False,,SEA @ LV,1970-01-01 00:29:54.776700+00:00,jack bech,0,2000,clear,156430,Showdown Captain Mode,2026-11-14T19:49:18+00:00
+1286164,0,Dont'e Thornton Jr.,WR,LV,200,512,,False,,SEA @ LV,1970-01-01 00:29:54.776700+00:00,donte thornton,0,200,clear,156430,Showdown Captain Mode,2026-11-14T19:49:18+00:00
+1286840,0,Elijah Arroyo,TE,SEA,200,512,,False,,SEA @ LV,1970-01-01 00:29:54.776700+00:00,elijah arroyo,0,200,clear,156430,Showdown Captain Mode,2026-11-14T19:49:18+00:00
+1289428,0,Mike Washington Jr.,RB,LV,6400,512,,False,,SEA @ LV,1970-01-01 00:29:54.776700+00:00,mike washington,0,6400,clear,156430,Showdown Captain Mode,2026-11-14T19:49:18+00:00
+1290102,0,Jalen Milroe,QB,SEA,6000,512,,False,,SEA @ LV,1970-01-01 00:29:54.776700+00:00,jalen milroe,0,6000,clear,156430,Showdown Captain Mode,2026-11-14T19:49:18+00:00
+1317230,0,Roman Hemby,RB,LV,200,512,,False,,SEA @ LV,1970-01-01 00:29:54.776700+00:00,roman hemby,0,200,clear,156430,Showdown Captain Mode,2026-11-14T19:49:18+00:00
+1379646,0,Ashton Jeanty,RB,LV,8400,512,,False,,SEA @ LV,1970-01-01 00:29:54.776700+00:00,ashton jeanty,0,8400,clear,156430,Showdown Captain Mode,2026-11-14T19:49:18+00:00
+1383791,0,Jadarian Price,RB,SEA,6600,512,,False,,SEA @ LV,1970-01-01 00:29:54.776700+00:00,jadarian price,0,6600,clear,156430,Showdown Captain Mode,2026-11-14T19:49:18+00:00
+1384869,0,Dareke Young,WR,LV,800,512,,False,,SEA @ LV,1970-01-01 00:29:54.776700+00:00,dareke young,0,800,clear,156430,Showdown Captain Mode,2026-11-14T19:49:18+00:00
+1398511,0,Emmanuel Henderson Jr.,WR,SEA,200,512,,False,,SEA @ LV,1970-01-01 00:29:54.776700+00:00,emmanuel henderson,0,200,clear,156430,Showdown Captain Mode,2026-11-14T19:49:18+00:00
+1400786,0,Fernando Mendoza,QB,LV,8800,512,,False,,SEA @ LV,1970-01-01 00:29:54.776700+00:00,fernando mendoza,0,8800,clear,156430,Showdown Captain Mode,2026-11-14T19:49:18+00:00
+1441191,0,Malik Benson,WR,LV,1000,512,,False,,SEA @ LV,1970-01-01 00:29:54.776700+00:00,malik benson,0,1000,clear,156430,Showdown Captain Mode,2026-11-14T19:49:18+00:00
+1447759,0,Emanuel Wilson,RB,SEA,2600,512,,False,,SEA @ LV,1970-01-01 00:29:54.776700+00:00,emanuel wilson,0,2600,clear,156430,Showdown Captain Mode,2026-11-14T19:49:18+00:00
+1456709,0,Kansei Matsuzawa,K,LV,4800,512,,False,,SEA @ LV,1970-01-01 00:29:54.776700+00:00,kansei matsuzawa,0,4800,clear,156430,Showdown Captain Mode,2026-11-14T19:49:18+00:00
+1468632,0,Carter Runyon,TE,LV,200,512,,False,,SEA @ LV,1970-01-01 00:29:54.776700+00:00,carter runyon,0,200,clear,156430,Showdown Captain Mode,2026-11-14T19:49:18+00:00

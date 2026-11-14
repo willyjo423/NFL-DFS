@@ -1,0 +1,103 @@
+dk_player_id,draftable_id,name,position,team,salary,roster_slot,status,disabled,attributes,game,starts_utc,norm,flex_eligible,captain_salary,playing,draft_group,game_type,captured_at
+327,0,Bengals,DST,CIN,3000,71,,False,,PIT @ CIN,,bengals,0,3000,clear,156420,Classic,2026-11-14T19:49:18+00:00
+356,0,Steelers,DST,PIT,2800,71,,False,,PIT @ CIN,,steelers,0,2800,clear,156420,Classic,2026-11-14T19:49:18+00:00
+357,0,Chargers,DST,LAC,2300,71,,False,,LAC @ BAL,,chargers,0,2300,clear,156420,Classic,2026-11-14T19:49:18+00:00
+366,0,Ravens,DST,BAL,3100,71,,False,,LAC @ BAL,,ravens,0,3100,clear,156420,Classic,2026-11-14T19:49:18+00:00
+213957,0,Aaron Rodgers,QB,PIT,5200,66,,False,,PIT @ CIN,,aaron rodgers,0,5200,clear,156420,Classic,2026-11-14T19:49:18+00:00
+216342,0,Joe Flacco,QB,CIN,4000,66,,False,,PIT @ CIN,,joe flacco,0,4000,clear,156420,Classic,2026-11-14T19:49:18+00:00
+606488,0,Nick Vannett,TE,BAL,2500,69,,False,,LAC @ BAL,,nick vannett,0,2500,clear,156420,Classic,2026-11-14T19:49:18+00:00
+606551,0,Chris Moore,WR,BAL,3000,68,,False,,LAC @ BAL,,chris moore,0,3000,clear,156420,Classic,2026-11-14T19:49:18+00:00
+607047,0,Jacoby Brissett,QB,BAL,5100,66,,False,,LAC @ BAL,,jacoby brissett,0,5100,clear,156420,Classic,2026-11-14T19:49:18+00:00
+660151,0,Robert Tonyan,TE,PIT,2500,69,,False,,PIT @ CIN,,robert tonyan,0,2500,clear,156420,Classic,2026-11-14T19:49:18+00:00
+732145,0,Derrick Henry,RB,BAL,6500,67,,False,,LAC @ BAL,,derrick henry,0,6500,clear,156420,Classic,2026-11-14T19:49:18+00:00
+742382,0,Marquez Valdes-Scantling,WR,PIT,3000,68,,False,,PIT @ CIN,,marquez valdes scantling,0,3000,clear,156420,Classic,2026-11-14T19:49:18+00:00
+749968,0,Durham Smythe,TE,BAL,2500,69,,False,,LAC @ BAL,,durham smythe,0,2500,clear,156420,Classic,2026-11-14T19:49:18+00:00
+820699,0,Mark Andrews,TE,BAL,3400,69,,False,,LAC @ BAL,,mark andrews,0,3400,clear,156420,Classic,2026-11-14T19:49:18+00:00
+820734,0,Samaje Perine,RB,CIN,4400,67,,False,,PIT @ CIN,,samaje perine,0,4400,clear,156420,Classic,2026-11-14T19:49:18+00:00
+823220,0,Mason Rudolph,QB,PIT,4000,66,,False,,PIT @ CIN,,mason rudolph,0,4000,clear,156420,Classic,2026-11-14T19:49:18+00:00
+832098,0,David Njoku,TE,LAC,2500,69,,False,,LAC @ BAL,,david njoku,0,2500,clear,156420,Classic,2026-11-14T19:49:18+00:00
+836152,0,Mike Gesicki,TE,CIN,3900,69,,False,,PIT @ CIN,,mike gesicki,0,3900,clear,156420,Classic,2026-11-14T19:49:18+00:00
+837824,0,Drew Sample,TE,CIN,2500,69,,False,,PIT @ CIN,,drew sample,0,2500,clear,156420,Classic,2026-11-14T19:49:18+00:00
+865844,0,Jake Browning,QB,LAC,4000,66,,False,,LAC @ BAL,,jake browning,0,4000,clear,156420,Classic,2026-11-14T19:49:18+00:00
+877745,0,Lamar Jackson,QB,BAL,4000,66,,False,,LAC @ BAL,,lamar jackson,0,4000,clear,156420,Classic,2026-11-14T19:49:18+00:00
+878785,0,Joe Burrow,QB,CIN,7200,66,,False,,PIT @ CIN,,joe burrow,0,7200,clear,156420,Classic,2026-11-14T19:49:18+00:00
+880322,0,Alec Ingold,RB,LAC,4000,67,,False,,LAC @ BAL,,alec ingold,0,4000,clear,156420,Classic,2026-11-14T19:49:18+00:00
+910562,0,Justin Herbert,QB,LAC,5000,66,,False,,LAC @ BAL,,justin herbert,0,5000,clear,156420,Classic,2026-11-14T19:49:18+00:00
+911348,0,Michael Pittman Jr.,WR,PIT,4400,68,,False,,PIT @ CIN,,michael pittman,0,4400,clear,156420,Classic,2026-11-14T19:49:18+00:00
+913163,0,Tyler Huntley,QB,BAL,4000,66,,False,,LAC @ BAL,,tyler huntley,0,4000,clear,156420,Classic,2026-11-14T19:49:18+00:00
+913829,0,Skylar Thompson,QB,BAL,4000,66,,False,,LAC @ BAL,,skylar thompson,0,4000,clear,156420,Classic,2026-11-14T19:49:18+00:00
+920944,0,Ben Skowronek,WR,PIT,3000,68,,False,,PIT @ CIN,,ben skowronek,0,3000,clear,156420,Classic,2026-11-14T19:49:18+00:00
+921460,0,Brandon Johnson,WR,PIT,3000,68,,False,,PIT @ CIN,,brandon johnson,0,3000,clear,156420,Classic,2026-11-14T19:49:18+00:00
+922484,0,Travis Homer,RB,PIT,4000,67,,False,,PIT @ CIN,,travis homer,0,4000,clear,156420,Classic,2026-11-14T19:49:18+00:00
+923109,0,Justice Hill,RB,BAL,4500,67,,False,,LAC @ BAL,,justice hill,0,4500,clear,156420,Classic,2026-11-14T19:49:18+00:00
+933480,0,Rico Dowdle,RB,PIT,5200,67,,False,,PIT @ CIN,,rico dowdle,0,5200,clear,156420,Classic,2026-11-14T19:49:18+00:00
+945633,0,DK Metcalf,WR,PIT,5400,68,,False,,PIT @ CIN,,dk metcalf,0,5400,clear,156420,Classic,2026-11-14T19:49:18+00:00
+975387,0,Isaiah Hodgins,WR,PIT,3000,68,,False,,PIT @ CIN,,isaiah hodgins,0,3000,clear,156420,Classic,2026-11-14T19:49:18+00:00
+978579,0,Tee Higgins,WR,CIN,7400,68,,False,,PIT @ CIN,,tee higgins,0,7400,clear,156420,Classic,2026-11-14T19:49:18+00:00
+1058648,0,Charlie Kolar,TE,LAC,2600,69,,False,,LAC @ BAL,,charlie kolar,0,2600,clear,156420,Classic,2026-11-14T19:49:18+00:00
+1059220,0,Brandon Smith,WR,PIT,3000,68,,False,,PIT @ CIN,,brandon smith,0,3000,clear,156420,Classic,2026-11-14T19:49:18+00:00
+1067089,0,Sean Clifford,QB,CIN,4000,66,,False,,PIT @ CIN,,sean clifford,0,4000,clear,156420,Classic,2026-11-14T19:49:18+00:00
+1108208,0,Rashod Bateman,WR,BAL,3100,68,,False,,LAC @ BAL,,rashod bateman,0,3100,clear,156420,Classic,2026-11-14T19:49:18+00:00
+1109979,0,Ja'Marr Chase,WR,CIN,8100,68,,False,,PIT @ CIN,,jamarr chase,0,8100,clear,156420,Classic,2026-11-14T19:49:18+00:00
+1113477,0,Derius Davis,WR,LAC,3000,68,,False,,LAC @ BAL,,derius davis,0,3000,clear,156420,Classic,2026-11-14T19:49:18+00:00
+1115394,0,Tanner Hudson,TE,CIN,2500,69,,False,,PIT @ CIN,,tanner hudson,0,2500,clear,156420,Classic,2026-11-14T19:49:18+00:00
+1116662,0,Pat Freiermuth,TE,PIT,3700,69,,False,,PIT @ CIN,,pat freiermuth,0,3700,clear,156420,Classic,2026-11-14T19:49:18+00:00
+1123379,0,Chase Brown,RB,CIN,6400,67,,False,,PIT @ CIN,,chase brown,0,6400,clear,156420,Classic,2026-11-14T19:49:18+00:00
+1124851,0,Andrei Iosivas,WR,CIN,3600,68,,False,,PIT @ CIN,,andrei iosivas,0,3600,clear,156420,Classic,2026-11-14T19:49:18+00:00
+1130595,0,Scott Matlock,RB,LAC,4000,67,,False,,LAC @ BAL,,scott matlock,0,4000,clear,156420,Classic,2026-11-14T19:49:18+00:00
+1130975,0,Trey Lance,QB,LAC,4500,66,,False,,LAC @ BAL,,trey lance,0,4500,clear,156420,Classic,2026-11-14T19:49:18+00:00
+1133320,0,Dohnte Meyers,WR,CIN,3400,68,,False,,PIT @ CIN,,dohnte meyers,0,3400,clear,156420,Classic,2026-11-14T19:49:18+00:00
+1161818,0,Kedon Slovis,QB,BAL,4000,66,,False,,LAC @ BAL,,kedon slovis,0,4000,clear,156420,Classic,2026-11-14T19:49:18+00:00
+1162602,0,Theo Wease Jr.,WR,LAC,3000,68,,False,,LAC @ BAL,,theo wease,0,3000,clear,156420,Classic,2026-11-14T19:49:18+00:00
+1164533,0,Erick All Jr.,TE,CIN,2500,69,,False,,PIT @ CIN,,erick all,0,2500,clear,156420,Classic,2026-11-14T19:49:18+00:00
+1166480,0,Lew Nichols,RB,PIT,4000,67,,False,,PIT @ CIN,,lew nichols,0,4000,clear,156420,Classic,2026-11-14T19:49:18+00:00
+1168753,0,Patrick Herbert,TE,LAC,2500,69,,False,,LAC @ BAL,,patrick herbert,0,2500,clear,156420,Classic,2026-11-14T19:49:18+00:00
+1169299,0,Joe Fagnano,QB,BAL,4100,66,,False,,LAC @ BAL,,joe fagnano,0,4100,clear,156420,Classic,2026-11-14T19:49:18+00:00
+1176443,0,Jaylen Warren,RB,PIT,6700,67,,False,,PIT @ CIN,,jaylen warren,0,6700,clear,156420,Classic,2026-11-14T19:49:18+00:00
+1177053,0,Zay Flowers,WR,BAL,7200,68,,False,,LAC @ BAL,,zay flowers,0,7200,clear,156420,Classic,2026-11-14T19:49:18+00:00
+1181739,0,William Wagner,TE,CIN,2500,69,,False,,PIT @ CIN,,william wagner,0,2500,clear,156420,Classic,2026-11-14T19:49:18+00:00
+1213345,0,Kendall Milton,RB,CIN,4000,67,,False,,PIT @ CIN,,kendall milton,0,4000,clear,156420,Classic,2026-11-14T19:49:18+00:00
+1213782,0,Will Howard,QB,PIT,4000,66,,False,,PIT @ CIN,,will howard,0,4000,clear,156420,Classic,2026-11-14T19:49:18+00:00
+1213865,0,Quentin Johnston,WR,LAC,4300,68,,False,,LAC @ BAL,,quentin johnston,0,4300,clear,156420,Classic,2026-11-14T19:49:18+00:00
+1213928,0,DJ Uiagalelei,QB,LAC,4500,66,,False,,LAC @ BAL,,dj uiagalelei,0,4500,clear,156420,Classic,2026-11-14T19:49:18+00:00
+1214242,0,Caden Prieskorn,TE,CIN,2500,69,,False,,PIT @ CIN,,caden prieskorn,0,2500,clear,156420,Classic,2026-11-14T19:49:18+00:00
+1214405,0,KeAndre Lambert-Smith,WR,LAC,3000,68,,False,,LAC @ BAL,,keandre lambert smith,0,3000,clear,156420,Classic,2026-11-14T19:49:18+00:00
+1214633,0,Tre' Harris,WR,LAC,3900,68,,False,,LAC @ BAL,,tre harris,0,3900,clear,156420,Classic,2026-11-14T19:49:18+00:00
+1214824,0,Kimani Vidal,RB,LAC,4500,67,,False,,LAC @ BAL,,kimani vidal,0,4500,clear,156420,Classic,2026-11-14T19:49:18+00:00
+1215305,0,Mitch Tinsley,WR,CIN,3000,68,,False,,PIT @ CIN,,mitch tinsley,0,3000,clear,156420,Classic,2026-11-14T19:49:18+00:00
+1218643,0,Ladd McConkey,WR,LAC,5500,68,,False,,LAC @ BAL,,ladd mcconkey,0,5500,clear,156420,Classic,2026-11-14T19:49:18+00:00
+1218658,0,Darnell Washington,TE,PIT,3200,69,,False,,PIT @ CIN,,darnell washington,0,3200,clear,156420,Classic,2026-11-14T19:49:18+00:00
+1222789,0,Keaton Mitchell,RB,LAC,4300,67,,False,,LAC @ BAL,,keaton mitchell,0,4300,clear,156420,Classic,2026-11-14T19:49:18+00:00
+1225702,0,Luke Grimm,WR,LAC,3000,68,,False,,LAC @ BAL,,luke grimm,0,3000,clear,156420,Classic,2026-11-14T19:49:18+00:00
+1228730,0,Tahj Brooks,RB,CIN,4000,67,,False,,PIT @ CIN,,tahj brooks,0,4000,clear,156420,Classic,2026-11-14T19:49:18+00:00
+1229055,0,Kentrel Bullock,RB,CIN,4000,67,,False,,PIT @ CIN,,kentrel bullock,0,4000,clear,156420,Classic,2026-11-14T19:49:18+00:00
+1229133,0,Rasheen Ali,RB,BAL,4000,67,,False,,LAC @ BAL,,rasheen ali,0,4000,clear,156420,Classic,2026-11-14T19:49:18+00:00
+1229669,0,Roman Wilson,WR,PIT,3000,68,,False,,PIT @ CIN,,roman wilson,0,3000,clear,156420,Classic,2026-11-14T19:49:18+00:00
+1229693,0,Matt Hibner,TE,BAL,2500,69,,False,,LAC @ BAL,,matt hibner,0,2500,clear,156420,Classic,2026-11-14T19:49:18+00:00
+1231033,0,LaJohntay Wester,WR,BAL,3000,68,,False,,LAC @ BAL,,lajohntay wester,0,3000,clear,156420,Classic,2026-11-14T19:49:18+00:00
+1232057,0,Ke'Shawn Williams,WR,CIN,3000,68,,False,,PIT @ CIN,,keshawn williams,0,3000,clear,156420,Classic,2026-11-14T19:49:18+00:00
+1244224,0,Riley Nowakowski,RB,PIT,4000,67,,False,,PIT @ CIN,,riley nowakowski,0,4000,clear,156420,Classic,2026-11-14T19:49:18+00:00
+1251513,0,Cam Grandy,TE,CIN,2500,69,,False,,PIT @ CIN,,cam grandy,0,2500,clear,156420,Classic,2026-11-14T19:49:18+00:00
+1277914,0,Devontez Walker,WR,BAL,3000,68,,False,,LAC @ BAL,,devontez walker,0,3000,clear,156420,Classic,2026-11-14T19:49:18+00:00
+1286282,0,Lake McRee,TE,PIT,2500,69,,False,,PIT @ CIN,,lake mcree,0,2500,clear,156420,Classic,2026-11-14T19:49:18+00:00
+1286662,0,Jordan Moore,WR,CIN,3000,68,,False,,PIT @ CIN,,jordan moore,0,3000,clear,156420,Classic,2026-11-14T19:49:18+00:00
+1315586,0,Tejhaun Palmer,WR,LAC,3000,68,,False,,LAC @ BAL,,tejhaun palmer,0,3000,clear,156420,Classic,2026-11-14T19:49:18+00:00
+1319948,0,Josh Cuevas,TE,BAL,2500,69,,False,,LAC @ BAL,,josh cuevas,0,2500,clear,156420,Classic,2026-11-14T19:49:18+00:00
+1323007,0,Gage Larvadain,WR,BAL,3000,68,,False,,LAC @ BAL,,gage larvadain,0,3000,clear,156420,Classic,2026-11-14T19:49:18+00:00
+1325624,0,Oronde Gadsden II,TE,LAC,3100,69,,False,,LAC @ BAL,,oronde gadsden,0,3100,clear,156420,Classic,2026-11-14T19:49:18+00:00
+1325830,0,Lucas Scott,RB,BAL,4000,67,,False,,LAC @ BAL,,lucas scott,0,4000,clear,156420,Classic,2026-11-14T19:49:18+00:00
+1332922,0,Amar Johnson,RB,LAC,4000,67,,False,,LAC @ BAL,,amar johnson,0,4000,clear,156420,Classic,2026-11-14T19:49:18+00:00
+1378284,0,Adam Randall,RB,BAL,4000,67,,False,,LAC @ BAL,,adam randall,0,4000,clear,156420,Classic,2026-11-14T19:49:18+00:00
+1379258,0,Drew Allar,QB,PIT,4000,66,,False,,PIT @ CIN,,drew allar,0,4000,clear,156420,Classic,2026-11-14T19:49:18+00:00
+1380613,0,Germie Bernard,WR,PIT,4900,68,,False,,PIT @ CIN,,germie bernard,0,4900,clear,156420,Classic,2026-11-14T19:49:18+00:00
+1383993,0,Kaden Wetjen,WR,PIT,3000,68,,False,,PIT @ CIN,,kaden wetjen,0,3000,clear,156420,Classic,2026-11-14T19:49:18+00:00
+1392584,0,Elijah Sarratt,WR,BAL,3000,68,,False,,LAC @ BAL,,elijah sarratt,0,3000,clear,156420,Classic,2026-11-14T19:49:18+00:00
+1395874,0,Eli Heidenreich,RB,PIT,4000,67,,False,,PIT @ CIN,,eli heidenreich,0,4000,clear,156420,Classic,2026-11-14T19:49:18+00:00
+1398572,0,Omarion Hampton,RB,LAC,4800,67,,False,,LAC @ BAL,,omarion hampton,0,4800,clear,156420,Classic,2026-11-14T19:49:18+00:00
+1399132,0,Brenen Thompson,WR,LAC,3000,68,,False,,LAC @ BAL,,brenen thompson,0,3000,clear,156420,Classic,2026-11-14T19:49:18+00:00
+1400852,0,Jack Endries,TE,CIN,2500,69,,False,,PIT @ CIN,,jack endries,0,2500,clear,156420,Classic,2026-11-14T19:49:18+00:00
+1402692,0,Noah Thomas,WR,CIN,3000,68,,False,,PIT @ CIN,,noah thomas,0,3000,clear,156420,Classic,2026-11-14T19:49:18+00:00
+1404295,0,Ty Pezza,TE,BAL,2500,69,,False,,LAC @ BAL,,ty pezza,0,2500,clear,156420,Classic,2026-11-14T19:49:18+00:00
+1406878,0,Colbie Young,WR,CIN,3000,68,,False,,PIT @ CIN,,colbie young,0,3000,clear,156420,Classic,2026-11-14T19:49:18+00:00
+1458888,0,Ja'Kobi Lane,WR,BAL,3300,68,,False,,LAC @ BAL,,jakobi lane,0,3300,clear,156420,Classic,2026-11-14T19:49:18+00:00
+1510975,0,Cole Burgess,WR,PIT,3000,68,,False,,PIT @ CIN,,cole burgess,0,3000,clear,156420,Classic,2026-11-14T19:49:18+00:00
