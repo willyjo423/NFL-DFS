@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-15T01:33:26+00:00",
+  "updated_at": "2026-11-15T19:17:58+00:00",
   "slates": [
     {
       "kind": "classic",
@@ -835,11 +835,11 @@
       "site": "dk",
       "draft_group": 156420,
       "label": "NFL $40K Post Pattern [$10K to 1st] (Primetime)",
-      "contests": 233,
+      "contests": 244,
       "starts": "2026-11-16 01:20:00+00:00",
       "file": "data/nfl/dk-classic-156420.json",
-      "players": 89,
-      "generated_at": "2026-11-15T01:30:41+00:00"
+      "players": 85,
+      "generated_at": "2026-11-15T19:15:37+00:00"
     },
     {
       "kind": "showdown",
@@ -2215,11 +2215,11 @@
       "site": "dk",
       "draft_group": 156432,
       "label": "NFL $125K Showdown Special [$25K to 1st] (SF @ DAL)",
-      "contests": 222,
+      "contests": 244,
       "starts": "2026-11-15 21:25:00+00:00",
       "file": "data/nfl/dk-showdown-156432.json",
-      "players": 44,
-      "generated_at": "2026-11-15T01:31:22+00:00"
+      "players": 42,
+      "generated_at": "2026-11-15T19:14:59+00:00"
     },
     {
       "kind": "showdown",
@@ -2227,11 +2227,11 @@
       "site": "dk",
       "draft_group": 156433,
       "label": "NFL Showdown $1M Sunday Night Showdown [$250K to 1st] (PIT @ CIN)",
-      "contests": 1012,
+      "contests": 1072,
       "starts": "2026-11-16 01:20:00+00:00",
       "file": "data/nfl/dk-showdown-156433.json",
-      "players": 44,
-      "generated_at": "2026-11-15T01:25:05+00:00"
+      "players": 43,
+      "generated_at": "2026-11-15T19:13:09+00:00"
     },
     {
       "kind": "showdown",
@@ -2239,12 +2239,55 @@
       "site": "dk",
       "draft_group": 156434,
       "label": "NFL Showdown $1.11M Monday Night Showdown [$250K to 1st] (LAC @ BAL)",
-      "contests": 1004,
+      "contests": 1014,
       "starts": "2026-11-17 01:15:00+00:00",
       "file": "data/nfl/dk-showdown-156434.json",
-      "players": 45,
-      "generated_at": "2026-11-15T01:25:45+00:00"
+      "players": 42,
+      "generated_at": "2026-11-15T19:13:47+00:00"
+    },
+    {
+      "kind": "showdown",
+      "sport": "nfl",
+      "site": "dk",
+      "draft_group": 156430,
+      "label": "NFL $10K Showdown Special [$2K to 1st] (SEA @ LV)",
+      "contests": 183,
+      "starts": "2026-11-15 21:05:00+00:00",
+      "file": "data/nfl/dk-showdown-156430.json",
+      "players": 43,
+      "generated_at": "2026-11-15T19:16:15+00:00"
+    },
+    {
+      "kind": "showdown",
+      "sport": "nfl",
+      "site": "dk",
+      "draft_group": 156431,
+      "label": "NFL $10K Showdown Special [$2K to 1st] (LAR @ ARI)",
+      "contests": 182,
+      "starts": "2026-11-15 21:05:00+00:00",
+      "file": "data/nfl/dk-showdown-156431.json",
+      "players": 41,
+      "generated_at": "2026-11-15T19:16:52+00:00"
     }
   ],
-  "failures": []
+  "failures": [
+    {
+      "kind": "classic",
+      "draft_group": 156419,
+      "label": "NFL $450K Afternoon Only Rush [$100K to 1st] (Afternoon Only)",
+      "error": "Infeasible: no legal lineup could be built from this pool"
+    },
+    {
+      "kind": "classic",
+      "draft_group": 156457,
+      "label": "NFL $20K Flea Flicker [$5K to 1st] (Mon-Thu)",
+      "error": "DataUnavailable: draft group 156457 returned no players from either endpoint (lobby top-level keys: ['draftGroupAlerts', 'playerList', 'teamList'])"
+    },
+    {
+      "kind": "classic",
+      "draft_group": 155989,
+      "label": "NFL $12M Ultimate Main Event Millionaire [$2.5M to 1st]",
+      "error": "DataUnavailable: draft group 155989 returned no players from either endpoint (lobby top-level keys: ['draftGroupAlerts', 'playerList', 'teamList'])"
+    }
+  ]
 }
