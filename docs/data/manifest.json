@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-16T01:29:36+00:00",
+  "updated_at": "2026-11-16T22:44:28+00:00",
   "slates": [
     {
       "kind": "classic",
@@ -847,11 +847,23 @@
       "site": "dk",
       "draft_group": 156457,
       "label": "NFL $20K Flea Flicker [$5K to 1st] (Mon-Thu)",
-      "contests": 137,
+      "contests": 196,
       "starts": "2026-11-17 01:15:00+00:00",
       "file": "data/nfl/dk-classic-156457.json",
       "players": 84,
-      "generated_at": "2026-11-16T01:28:40+00:00"
+      "generated_at": "2026-11-16T22:43:34+00:00"
+    },
+    {
+      "kind": "classic",
+      "sport": "nfl",
+      "site": "dk",
+      "draft_group": 156561,
+      "label": "NFL $2.5M Fantasy Football Millionaire [$1M to 1st]",
+      "contests": 1441,
+      "starts": "2026-11-22 18:00:00+00:00",
+      "file": "data/nfl/dk-classic-156561.json",
+      "players": 436,
+      "generated_at": "2026-11-16T22:42:32+00:00"
     },
     {
       "kind": "showdown",
@@ -2251,11 +2263,11 @@
       "site": "dk",
       "draft_group": 156434,
       "label": "NFL Showdown $1.11M Monday Night Showdown [$250K to 1st] (LAC @ BAL)",
-      "contests": 1046,
+      "contests": 1265,
       "starts": "2026-11-17 01:15:00+00:00",
       "file": "data/nfl/dk-showdown-156434.json",
       "players": 44,
-      "generated_at": "2026-11-16T01:28:08+00:00"
+      "generated_at": "2026-11-16T22:43:03+00:00"
     },
     {
       "kind": "showdown",
@@ -2285,9 +2297,9 @@
   "failures": [
     {
       "kind": "classic",
-      "draft_group": 156561,
-      "label": "NFL $2.5M Fantasy Football Millionaire [$1M to 1st]",
-      "error": "DataUnavailable: draft group 156561 returned no players from either endpoint (lobby top-level keys: ['draftGroupAlerts', 'playerList', 'teamList'])"
+      "draft_group": 156932,
+      "label": "NFL $2.5M Thanksgiving Millionaire [$1M to 1st] (Thu)",
+      "error": "DataUnavailable: draft group 156932 returned no players from either endpoint (lobby top-level keys: ['draftGroupAlerts', 'playerList', 'teamList'])"
     },
     {
       "kind": "classic",
