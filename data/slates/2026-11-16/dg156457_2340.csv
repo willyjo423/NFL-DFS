@@ -1,0 +1,100 @@
+dk_player_id,draftable_id,name,position,team,salary,roster_slot,status,disabled,attributes,game,starts_utc,norm,flex_eligible,captain_salary,playing,draft_group,game_type,captured_at
+325,0,Texans,DST,HOU,3700,71,,False,,IND @ HOU,,texans,0,3700,clear,156457,Classic,2026-11-16T23:40:52+00:00
+338,0,Colts,DST,IND,2100,71,,False,,IND @ HOU,,colts,0,2100,clear,156457,Classic,2026-11-16T23:40:52+00:00
+357,0,Chargers,DST,LAC,2300,71,,False,,LAC @ BAL,,chargers,0,2300,clear,156457,Classic,2026-11-16T23:40:52+00:00
+366,0,Ravens,DST,BAL,3100,71,,False,,LAC @ BAL,,ravens,0,3100,clear,156457,Classic,2026-11-16T23:40:52+00:00
+606488,0,Nick Vannett,TE,BAL,2500,69,,False,,LAC @ BAL,,nick vannett,0,2500,clear,156457,Classic,2026-11-16T23:40:52+00:00
+606551,0,Chris Moore,WR,BAL,3000,68,,False,,LAC @ BAL,,chris moore,0,3000,clear,156457,Classic,2026-11-16T23:40:52+00:00
+607047,0,Jacoby Brissett,QB,BAL,5100,66,,False,,LAC @ BAL,,jacoby brissett,0,5100,clear,156457,Classic,2026-11-16T23:40:52+00:00
+689689,0,Pharaoh Brown,TE,IND,2500,69,,False,,IND @ HOU,,pharaoh brown,0,2500,clear,156457,Classic,2026-11-16T23:40:52+00:00
+703015,0,Dare Ogunbowale,RB,HOU,4200,67,,False,,IND @ HOU,,dare ogunbowale,0,4200,clear,156457,Classic,2026-11-16T23:40:52+00:00
+712506,0,Mo Alie-Cox,TE,IND,2500,69,,False,,IND @ HOU,,mo alie cox,0,2500,clear,156457,Classic,2026-11-16T23:40:52+00:00
+732145,0,Derrick Henry,RB,BAL,6500,67,,False,,LAC @ BAL,,derrick henry,0,6500,clear,156457,Classic,2026-11-16T23:40:52+00:00
+748554,0,Laquon Treadwell,WR,IND,3500,68,,False,,IND @ HOU,,laquon treadwell,0,3500,clear,156457,Classic,2026-11-16T23:40:52+00:00
+749968,0,Durham Smythe,TE,BAL,2500,69,,False,,LAC @ BAL,,durham smythe,0,2500,clear,156457,Classic,2026-11-16T23:40:52+00:00
+820699,0,Mark Andrews,TE,BAL,3400,69,,False,,LAC @ BAL,,mark andrews,0,3400,clear,156457,Classic,2026-11-16T23:40:52+00:00
+830523,0,Dalton Schultz,TE,HOU,3700,69,,False,,IND @ HOU,,dalton schultz,0,3700,clear,156457,Classic,2026-11-16T23:40:52+00:00
+832098,0,David Njoku,TE,LAC,2500,69,,False,,LAC @ BAL,,david njoku,0,2500,clear,156457,Classic,2026-11-16T23:40:52+00:00
+865573,0,Foster Moreau,TE,HOU,2500,69,,False,,IND @ HOU,,foster moreau,0,2500,clear,156457,Classic,2026-11-16T23:40:52+00:00
+865844,0,Jake Browning,QB,LAC,4000,66,,False,,LAC @ BAL,,jake browning,0,4000,clear,156457,Classic,2026-11-16T23:40:52+00:00
+877745,0,Lamar Jackson,QB,BAL,4000,66,,False,,LAC @ BAL,,lamar jackson,0,4000,clear,156457,Classic,2026-11-16T23:40:52+00:00
+879981,0,Daniel Jones,QB,IND,4700,66,,False,,IND @ HOU,,daniel jones,0,4700,clear,156457,Classic,2026-11-16T23:40:52+00:00
+880322,0,Alec Ingold,RB,LAC,4000,67,,False,,LAC @ BAL,,alec ingold,0,4000,clear,156457,Classic,2026-11-16T23:40:52+00:00
+883259,0,Nick Westbrook-Ikhine,WR,IND,3000,68,,False,,IND @ HOU,,nick westbrook ikhine,0,3000,clear,156457,Classic,2026-11-16T23:40:52+00:00
+910562,0,Justin Herbert,QB,LAC,5000,66,,False,,LAC @ BAL,,justin herbert,0,5000,clear,156457,Classic,2026-11-16T23:40:52+00:00
+913163,0,Tyler Huntley,QB,BAL,4000,66,,False,,LAC @ BAL,,tyler huntley,0,4000,clear,156457,Classic,2026-11-16T23:40:52+00:00
+913829,0,Skylar Thompson,QB,BAL,4000,66,,False,,LAC @ BAL,,skylar thompson,0,4000,clear,156457,Classic,2026-11-16T23:40:52+00:00
+922026,0,Mecole Hardman Jr.,WR,IND,3000,68,,False,,IND @ HOU,,mecole hardman,0,3000,clear,156457,Classic,2026-11-16T23:40:52+00:00
+923109,0,Justice Hill,RB,BAL,4500,67,,False,,LAC @ BAL,,justice hill,0,4500,clear,156457,Classic,2026-11-16T23:40:52+00:00
+946739,0,David Montgomery,RB,HOU,5200,67,,False,,IND @ HOU,,david montgomery,0,5200,clear,156457,Classic,2026-11-16T23:40:52+00:00
+949134,0,Quez Watkins,WR,IND,3000,68,,False,,IND @ HOU,,quez watkins,0,3000,clear,156457,Classic,2026-11-16T23:40:52+00:00
+1058648,0,Charlie Kolar,TE,LAC,2600,69,,False,,LAC @ BAL,,charlie kolar,0,2600,clear,156457,Classic,2026-11-16T23:40:52+00:00
+1060311,0,Davis Mills,QB,HOU,4000,66,,False,,IND @ HOU,,davis mills,0,4000,clear,156457,Classic,2026-11-16T23:40:52+00:00
+1063397,0,D.J. Montgomery,WR,IND,3000,68,,False,,IND @ HOU,,d j montgomery,0,3000,clear,156457,Classic,2026-11-16T23:40:52+00:00
+1065406,0,Jonathan Taylor,RB,IND,7500,67,,False,,IND @ HOU,,jonathan taylor,0,7500,clear,156457,Classic,2026-11-16T23:40:52+00:00
+1074698,0,Nico Collins,WR,HOU,7000,68,,False,,IND @ HOU,,nico collins,0,7000,clear,156457,Classic,2026-11-16T23:40:52+00:00
+1107027,0,Alec Pierce,WR,IND,5000,68,,False,,IND @ HOU,,alec pierce,0,5000,clear,156457,Classic,2026-11-16T23:40:52+00:00
+1108208,0,Rashod Bateman,WR,BAL,3100,68,,False,,LAC @ BAL,,rashod bateman,0,3100,clear,156457,Classic,2026-11-16T23:40:52+00:00
+1113398,0,Bryce Oliver,WR,HOU,3000,68,,False,,IND @ HOU,,bryce oliver,0,3000,clear,156457,Classic,2026-11-16T23:40:52+00:00
+1113477,0,Derius Davis,WR,LAC,3000,68,,False,,LAC @ BAL,,derius davis,0,3000,clear,156457,Classic,2026-11-16T23:40:52+00:00
+1116817,0,Emari Demercado,RB,HOU,4700,67,,False,,IND @ HOU,,emari demercado,0,4700,clear,156457,Classic,2026-11-16T23:40:52+00:00
+1121871,0,Brevin Jordan,TE,HOU,2500,69,,False,,IND @ HOU,,brevin jordan,0,2500,clear,156457,Classic,2026-11-16T23:40:52+00:00
+1121873,0,Will Mallory,TE,IND,2500,69,,False,,IND @ HOU,,will mallory,0,2500,clear,156457,Classic,2026-11-16T23:40:52+00:00
+1127080,0,Nikko Remigio,WR,HOU,3000,68,,False,,IND @ HOU,,nikko remigio,0,3000,clear,156457,Classic,2026-11-16T23:40:52+00:00
+1128222,0,Tank Dell,WR,HOU,4400,68,,False,,IND @ HOU,,tank dell,0,4400,clear,156457,Classic,2026-11-16T23:40:52+00:00
+1128295,0,British Brooks,RB,HOU,4000,67,,False,,IND @ HOU,,british brooks,0,4000,clear,156457,Classic,2026-11-16T23:40:52+00:00
+1130595,0,Scott Matlock,RB,LAC,4000,67,,False,,LAC @ BAL,,scott matlock,0,4000,clear,156457,Classic,2026-11-16T23:40:52+00:00
+1130975,0,Trey Lance,QB,LAC,4000,66,,False,,LAC @ BAL,,trey lance,0,4000,clear,156457,Classic,2026-11-16T23:40:52+00:00
+1161661,0,Anthony Gould,WR,IND,3000,68,,False,,IND @ HOU,,anthony gould,0,3000,clear,156457,Classic,2026-11-16T23:40:52+00:00
+1161818,0,Kedon Slovis,QB,BAL,4000,66,,False,,LAC @ BAL,,kedon slovis,0,4000,clear,156457,Classic,2026-11-16T23:40:52+00:00
+1162602,0,Theo Wease Jr.,WR,LAC,3000,68,,False,,LAC @ BAL,,theo wease,0,3000,clear,156457,Classic,2026-11-16T23:40:52+00:00
+1164951,0,Graham Mertz,QB,HOU,4000,66,,False,,IND @ HOU,,graham mertz,0,4000,clear,156457,Classic,2026-11-16T23:40:52+00:00
+1166036,0,Ashton Dulin,WR,IND,3200,68,,False,,IND @ HOU,,ashton dulin,0,3200,clear,156457,Classic,2026-11-16T23:40:52+00:00
+1168753,0,Patrick Herbert,TE,LAC,2500,69,,False,,LAC @ BAL,,patrick herbert,0,2500,clear,156457,Classic,2026-11-16T23:40:52+00:00
+1169299,0,Joe Fagnano,QB,BAL,4100,66,,False,,LAC @ BAL,,joe fagnano,0,4100,clear,156457,Classic,2026-11-16T23:40:52+00:00
+1170921,0,Josh Kelly,WR,HOU,3000,68,,False,,IND @ HOU,,josh kelly,0,3000,clear,156457,Classic,2026-11-16T23:40:52+00:00
+1175182,0,Cade Stover,TE,HOU,2500,69,,False,,IND @ HOU,,cade stover,0,2500,clear,156457,Classic,2026-11-16T23:40:52+00:00
+1177053,0,Zay Flowers,WR,BAL,7200,68,,False,,LAC @ BAL,,zay flowers,0,7200,clear,156457,Classic,2026-11-16T23:40:52+00:00
+1212622,0,Carson Towt,TE,IND,2500,69,,False,,IND @ HOU,,carson towt,0,2500,clear,156457,Classic,2026-11-16T23:40:52+00:00
+1213362,0,Kayshon Boutte,WR,HOU,4000,68,,False,,IND @ HOU,,kayshon boutte,0,4000,clear,156457,Classic,2026-11-16T23:40:52+00:00
+1213636,0,Xavier Hutchinson,WR,HOU,4200,68,,False,,IND @ HOU,,xavier hutchinson,0,4200,clear,156457,Classic,2026-11-16T23:40:52+00:00
+1213794,0,Seth McGowan,RB,IND,5000,67,,False,,IND @ HOU,,seth mcgowan,0,5000,clear,156457,Classic,2026-11-16T23:40:52+00:00
+1213865,0,Quentin Johnston,WR,LAC,4300,68,,False,,LAC @ BAL,,quentin johnston,0,4300,clear,156457,Classic,2026-11-16T23:40:52+00:00
+1213928,0,DJ Uiagalelei,QB,LAC,4500,66,,False,,LAC @ BAL,,dj uiagalelei,0,4500,clear,156457,Classic,2026-11-16T23:40:52+00:00
+1214084,0,C.J. Stroud,QB,HOU,6000,66,,False,,IND @ HOU,,c j stroud,0,6000,clear,156457,Classic,2026-11-16T23:40:52+00:00
+1214405,0,KeAndre Lambert-Smith,WR,LAC,3000,68,,False,,LAC @ BAL,,keandre lambert smith,0,3000,clear,156457,Classic,2026-11-16T23:40:52+00:00
+1214633,0,Tre' Harris,WR,LAC,3900,68,,False,,LAC @ BAL,,tre harris,0,3900,clear,156457,Classic,2026-11-16T23:40:52+00:00
+1214824,0,Kimani Vidal,RB,LAC,4500,67,,False,,LAC @ BAL,,kimani vidal,0,4500,clear,156457,Classic,2026-11-16T23:40:52+00:00
+1215022,0,Anthony Richardson Sr.,QB,IND,4000,66,,False,,IND @ HOU,,anthony richardson,0,4000,clear,156457,Classic,2026-11-16T23:40:52+00:00
+1218643,0,Ladd McConkey,WR,LAC,5500,68,,False,,LAC @ BAL,,ladd mcconkey,0,5500,clear,156457,Classic,2026-11-16T23:40:52+00:00
+1222789,0,Keaton Mitchell,RB,LAC,4300,67,,False,,LAC @ BAL,,keaton mitchell,0,4300,clear,156457,Classic,2026-11-16T23:40:52+00:00
+1225702,0,Luke Grimm,WR,LAC,3000,68,,False,,LAC @ BAL,,luke grimm,0,3000,clear,156457,Classic,2026-11-16T23:40:52+00:00
+1229083,0,Tyler Warren,TE,IND,4700,69,,False,,IND @ HOU,,tyler warren,0,4700,clear,156457,Classic,2026-11-16T23:40:52+00:00
+1229133,0,Rasheen Ali,RB,BAL,4000,67,,False,,LAC @ BAL,,rasheen ali,0,4000,clear,156457,Classic,2026-11-16T23:40:52+00:00
+1229693,0,Matt Hibner,TE,BAL,2500,69,,False,,LAC @ BAL,,matt hibner,0,2500,clear,156457,Classic,2026-11-16T23:40:52+00:00
+1231033,0,LaJohntay Wester,WR,BAL,3000,68,,False,,LAC @ BAL,,lajohntay wester,0,3000,clear,156457,Classic,2026-11-16T23:40:52+00:00
+1231652,0,Woody Marks,RB,HOU,5700,67,,False,,IND @ HOU,,woody marks,0,5700,clear,156457,Classic,2026-11-16T23:40:52+00:00
+1271740,0,Drew Ogletree,TE,IND,2500,69,,False,,IND @ HOU,,drew ogletree,0,2500,clear,156457,Classic,2026-11-16T23:40:52+00:00
+1274492,0,Jayden Higgins,WR,HOU,3000,68,,False,,IND @ HOU,,jayden higgins,0,3000,clear,156457,Classic,2026-11-16T23:40:52+00:00
+1277914,0,Devontez Walker,WR,BAL,3000,68,,False,,LAC @ BAL,,devontez walker,0,3000,clear,156457,Classic,2026-11-16T23:40:52+00:00
+1286370,0,Jaylin Noel,WR,HOU,3000,68,,False,,IND @ HOU,,jaylin noel,0,3000,clear,156457,Classic,2026-11-16T23:40:52+00:00
+1286652,0,Lewis Bond,WR,HOU,3000,68,,False,,IND @ HOU,,lewis bond,0,3000,clear,156457,Classic,2026-11-16T23:40:52+00:00
+1287798,0,Deion Burks,WR,IND,3000,68,,False,,IND @ HOU,,deion burks,0,3000,clear,156457,Classic,2026-11-16T23:40:52+00:00
+1287828,0,Marvin Harrison Jr.,WR,HOU,4500,68,,False,,IND @ HOU,,marvin harrison,0,4500,clear,156457,Classic,2026-11-16T23:40:52+00:00
+1290165,0,Riley Leonard,QB,IND,4000,66,,False,,IND @ HOU,,riley leonard,0,4000,clear,156457,Classic,2026-11-16T23:40:52+00:00
+1303569,0,DJ Giddens,RB,IND,4000,67,,False,,IND @ HOU,,dj giddens,0,4000,clear,156457,Classic,2026-11-16T23:40:52+00:00
+1315586,0,Tejhaun Palmer,WR,LAC,3000,68,,False,,LAC @ BAL,,tejhaun palmer,0,3000,clear,156457,Classic,2026-11-16T23:40:52+00:00
+1319948,0,Josh Cuevas,TE,BAL,2500,69,,False,,LAC @ BAL,,josh cuevas,0,2500,clear,156457,Classic,2026-11-16T23:40:52+00:00
+1323007,0,Gage Larvadain,WR,BAL,3000,68,,False,,LAC @ BAL,,gage larvadain,0,3000,clear,156457,Classic,2026-11-16T23:40:52+00:00
+1325624,0,Oronde Gadsden II,TE,LAC,3100,69,,False,,LAC @ BAL,,oronde gadsden,0,3100,clear,156457,Classic,2026-11-16T23:40:52+00:00
+1325830,0,Lucas Scott,RB,BAL,4000,67,,False,,LAC @ BAL,,lucas scott,0,4000,clear,156457,Classic,2026-11-16T23:40:52+00:00
+1332922,0,Amar Johnson,RB,LAC,4000,67,,False,,LAC @ BAL,,amar johnson,0,4000,clear,156457,Classic,2026-11-16T23:40:52+00:00
+1378284,0,Adam Randall,RB,BAL,4000,67,,False,,LAC @ BAL,,adam randall,0,4000,clear,156457,Classic,2026-11-16T23:40:52+00:00
+1392584,0,Elijah Sarratt,WR,BAL,3000,68,,False,,LAC @ BAL,,elijah sarratt,0,3000,clear,156457,Classic,2026-11-16T23:40:52+00:00
+1398572,0,Omarion Hampton,RB,LAC,4800,67,,False,,LAC @ BAL,,omarion hampton,0,4800,clear,156457,Classic,2026-11-16T23:40:52+00:00
+1399132,0,Brenen Thompson,WR,LAC,3000,68,,False,,LAC @ BAL,,brenen thompson,0,3000,clear,156457,Classic,2026-11-16T23:40:52+00:00
+1404295,0,Ty Pezza,TE,BAL,2500,69,,False,,LAC @ BAL,,ty pezza,0,2500,clear,156457,Classic,2026-11-16T23:40:52+00:00
+1405857,0,Marlin Klein,TE,HOU,2500,69,,False,,IND @ HOU,,marlin klein,0,2500,clear,156457,Classic,2026-11-16T23:40:52+00:00
+1408785,0,Joshua Pitsenberger,RB,HOU,4000,67,,False,,IND @ HOU,,joshua pitsenberger,0,4000,clear,156457,Classic,2026-11-16T23:40:52+00:00
+1445256,0,Davon Booth,RB,IND,4000,67,,False,,IND @ HOU,,davon booth,0,4000,clear,156457,Classic,2026-11-16T23:40:52+00:00
+1458888,0,Ja'Kobi Lane,WR,BAL,3300,68,,False,,LAC @ BAL,,jakobi lane,0,3300,clear,156457,Classic,2026-11-16T23:40:52+00:00
