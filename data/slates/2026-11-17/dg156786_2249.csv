@@ -1,0 +1,55 @@
+dk_player_id,draftable_id,name,position,team,salary,roster_slot,status,disabled,attributes,game,starts_utc,norm,flex_eligible,captain_salary,playing,draft_group,game_type,captured_at
+326,0,Bears,DST,CHI,4400,512,,False,,NO @ CHI,1970-01-01 00:29:55.370400+00:00,bears,0,4400,clear,156786,Showdown Captain Mode,2026-11-17T22:49:35+00:00
+350,0,Saints,DST,NO,3200,512,,False,,NO @ CHI,1970-01-01 00:29:55.370400+00:00,saints,0,3200,clear,156786,Showdown Captain Mode,2026-11-17T22:49:35+00:00
+338280,0,Case Keenum,QB,CHI,6000,512,,False,,NO @ CHI,1970-01-01 00:29:55.370400+00:00,case keenum,0,6000,clear,156786,Showdown Captain Mode,2026-11-17T22:49:35+00:00
+546669,0,Cairo Santos,K,CHI,5000,512,,False,,NO @ CHI,1970-01-01 00:29:55.370400+00:00,cairo santos,0,5000,clear,156786,Showdown Captain Mode,2026-11-17T22:49:35+00:00
+606799,0,Zach Wood,TE,NO,200,512,,False,,NO @ CHI,1970-01-01 00:29:55.370400+00:00,zach wood,0,200,clear,156786,Showdown Captain Mode,2026-11-17T22:49:35+00:00
+692660,0,Kalif Raymond,WR,CHI,3800,512,,False,,NO @ CHI,1970-01-01 00:29:55.370400+00:00,kalif raymond,0,3800,clear,156786,Showdown Captain Mode,2026-11-17T22:49:35+00:00
+750846,0,Alvin Kamara,RB,NO,5400,512,,False,,NO @ CHI,1970-01-01 00:29:55.370400+00:00,alvin kamara,0,5400,clear,156786,Showdown Captain Mode,2026-11-17T22:49:35+00:00
+866578,0,Scotty Miller,WR,CHI,200,512,,False,,NO @ CHI,1970-01-01 00:29:55.370400+00:00,scotty miller,0,200,clear,156786,Showdown Captain Mode,2026-11-17T22:49:35+00:00
+881697,0,Stephen Carlson,TE,CHI,200,512,,False,,NO @ CHI,1970-01-01 00:29:55.370400+00:00,stephen carlson,0,200,clear,156786,Showdown Captain Mode,2026-11-17T22:49:35+00:00
+884609,0,Juwan Johnson,TE,NO,4800,512,,False,,NO @ CHI,1970-01-01 00:29:55.370400+00:00,juwan johnson,0,4800,clear,156786,Showdown Captain Mode,2026-11-17T22:49:35+00:00
+922451,0,Brittain Brown,RB,CHI,200,512,,False,,NO @ CHI,1970-01-01 00:29:55.370400+00:00,brittain brown,0,200,clear,156786,Showdown Captain Mode,2026-11-17T22:49:35+00:00
+923911,0,Noah Fant,TE,NO,2800,512,,False,,NO @ CHI,1970-01-01 00:29:55.370400+00:00,noah fant,0,2800,clear,156786,Showdown Captain Mode,2026-11-17T22:49:35+00:00
+978577,0,Travis Etienne Jr.,RB,NO,6400,512,,False,,NO @ CHI,1970-01-01 00:29:55.370400+00:00,travis etienne,0,6400,clear,156786,Showdown Captain Mode,2026-11-17T22:49:35+00:00
+1049246,0,Salvon Ahmed,RB,CHI,400,512,,False,,NO @ CHI,1970-01-01 00:29:55.370400+00:00,salvon ahmed,0,400,clear,156786,Showdown Captain Mode,2026-11-17T22:49:35+00:00
+1059576,0,Ty Chandler,RB,NO,200,512,,False,,NO @ CHI,1970-01-01 00:29:55.370400+00:00,ty chandler,0,200,clear,156786,Showdown Captain Mode,2026-11-17T22:49:35+00:00
+1066765,0,Cole Kmet,TE,CHI,200,512,,False,,NO @ CHI,1970-01-01 00:29:55.370400+00:00,cole kmet,0,200,clear,156786,Showdown Captain Mode,2026-11-17T22:49:35+00:00
+1067309,0,Zavier Scott,RB,CHI,200,512,,False,,NO @ CHI,1970-01-01 00:29:55.370400+00:00,zavier scott,0,200,clear,156786,Showdown Captain Mode,2026-11-17T22:49:35+00:00
+1069808,0,D'Andre Swift,RB,CHI,9800,512,,False,,NO @ CHI,1970-01-01 00:29:55.370400+00:00,dandre swift,0,9800,clear,156786,Showdown Captain Mode,2026-11-17T22:49:35+00:00
+1108052,0,Zach Wilson,QB,NO,6000,512,,False,,NO @ CHI,1970-01-01 00:29:55.370400+00:00,zach wilson,0,6000,clear,156786,Showdown Captain Mode,2026-11-17T22:49:35+00:00
+1110306,0,Tyler Shough,QB,NO,9600,512,,False,,NO @ CHI,1970-01-01 00:29:55.370400+00:00,tyler shough,0,9600,clear,156786,Showdown Captain Mode,2026-11-17T22:49:35+00:00
+1110697,0,Zamir White,RB,NO,200,512,,False,,NO @ CHI,1970-01-01 00:29:55.370400+00:00,zamir white,0,200,clear,156786,Showdown Captain Mode,2026-11-17T22:49:35+00:00
+1122592,0,Chris Olave,WR,NO,10200,512,,False,,NO @ CHI,1970-01-01 00:29:55.370400+00:00,chris olave,0,10200,clear,156786,Showdown Captain Mode,2026-11-17T22:49:35+00:00
+1124664,0,Cedric Tillman,WR,NO,200,512,,False,,NO @ CHI,1970-01-01 00:29:55.370400+00:00,cedric tillman,0,200,clear,156786,Showdown Captain Mode,2026-11-17T22:49:35+00:00
+1130004,0,Qadir Ismail,TE,CHI,200,512,,False,,NO @ CHI,1970-01-01 00:29:55.370400+00:00,qadir ismail,0,200,clear,156786,Showdown Captain Mode,2026-11-17T22:49:35+00:00
+1130526,0,Kevin Austin Jr.,WR,NO,800,512,,False,,NO @ CHI,1970-01-01 00:29:55.370400+00:00,kevin austin,0,800,clear,156786,Showdown Captain Mode,2026-11-17T22:49:35+00:00
+1163265,0,Roschon Johnson,RB,CHI,3400,512,,False,,NO @ CHI,1970-01-01 00:29:55.370400+00:00,roschon johnson,0,3400,clear,156786,Showdown Captain Mode,2026-11-17T22:49:35+00:00
+1164788,0,Devaughn Vele,WR,NO,6200,512,,False,,NO @ CHI,1970-01-01 00:29:55.370400+00:00,devaughn vele,0,6200,clear,156786,Showdown Captain Mode,2026-11-17T22:49:35+00:00
+1166045,0,Nikola Kalinic,TE,CHI,200,512,,False,,NO @ CHI,1970-01-01 00:29:55.370400+00:00,nikola kalinic,0,200,clear,156786,Showdown Captain Mode,2026-11-17T22:49:35+00:00
+1170916,0,Jalen Cropper,WR,NO,200,512,,False,,NO @ CHI,1970-01-01 00:29:55.370400+00:00,jalen cropper,0,200,clear,156786,Showdown Captain Mode,2026-11-17T22:49:35+00:00
+1172752,0,Treyton Welch,TE,NO,200,512,,False,,NO @ CHI,1970-01-01 00:29:55.370400+00:00,treyton welch,0,200,clear,156786,Showdown Captain Mode,2026-11-17T22:49:35+00:00
+1174752,0,Spencer Rattler,QB,NO,6000,512,,False,,NO @ CHI,1970-01-01 00:29:55.370400+00:00,spencer rattler,0,6000,clear,156786,Showdown Captain Mode,2026-11-17T22:49:35+00:00
+1182695,0,Mason Tipton,WR,NO,200,512,,False,,NO @ CHI,1970-01-01 00:29:55.370400+00:00,mason tipton,0,200,clear,156786,Showdown Captain Mode,2026-11-17T22:49:35+00:00
+1213727,0,Rome Odunze,WR,CHI,6600,512,,False,,NO @ CHI,1970-01-01 00:29:55.370400+00:00,rome odunze,0,6600,clear,156786,Showdown Captain Mode,2026-11-17T22:49:35+00:00
+1250886,0,Kyle Monangai,RB,CHI,5800,512,,False,,NO @ CHI,1970-01-01 00:29:55.370400+00:00,kyle monangai,0,5800,clear,156786,Showdown Captain Mode,2026-11-17T22:49:35+00:00
+1286173,0,Moliki Matavao,TE,NO,200,512,,False,,NO @ CHI,1970-01-01 00:29:55.370400+00:00,moliki matavao,0,200,clear,156786,Showdown Captain Mode,2026-11-17T22:49:35+00:00
+1286262,0,Miller Moss,QB,CHI,6000,512,,False,,NO @ CHI,1970-01-01 00:29:55.370400+00:00,miller moss,0,6000,clear,156786,Showdown Captain Mode,2026-11-17T22:49:35+00:00
+1286417,0,JP Richardson,WR,CHI,200,512,,False,,NO @ CHI,1970-01-01 00:29:55.370400+00:00,jp richardson,0,200,clear,156786,Showdown Captain Mode,2026-11-17T22:49:35+00:00
+1286445,0,Caleb Williams,QB,CHI,10600,512,,False,,NO @ CHI,1970-01-01 00:29:55.370400+00:00,caleb williams,0,10600,clear,156786,Showdown Captain Mode,2026-11-17T22:49:35+00:00
+1321291,0,Audric Estime,RB,NO,2400,512,,False,,NO @ CHI,1970-01-01 00:29:55.370400+00:00,audric estime,0,2400,clear,156786,Showdown Captain Mode,2026-11-17T22:49:35+00:00
+1324855,0,Matt Lauter,TE,NO,200,512,,False,,NO @ CHI,1970-01-01 00:29:55.370400+00:00,matt lauter,0,200,clear,156786,Showdown Captain Mode,2026-11-17T22:49:35+00:00
+1325016,0,Bryce Lance,WR,NO,2000,512,,False,,NO @ CHI,1970-01-01 00:29:55.370400+00:00,bryce lance,0,2000,clear,156786,Showdown Captain Mode,2026-11-17T22:49:35+00:00
+1377732,0,Luther Burden III,WR,CHI,9200,512,,False,,NO @ CHI,1970-01-01 00:29:55.370400+00:00,luther burden,0,9200,clear,156786,Showdown Captain Mode,2026-11-17T22:49:35+00:00
+1378156,0,Sam Roush,TE,CHI,1600,512,,False,,NO @ CHI,1970-01-01 00:29:55.370400+00:00,sam roush,0,1600,clear,156786,Showdown Captain Mode,2026-11-17T22:49:35+00:00
+1378821,0,Colston Loveland,TE,CHI,7000,512,,False,,NO @ CHI,1970-01-01 00:29:55.370400+00:00,colston loveland,0,7000,clear,156786,Showdown Captain Mode,2026-11-17T22:49:35+00:00
+1381105,0,Oscar Delp,TE,NO,600,512,,False,,NO @ CHI,1970-01-01 00:29:55.370400+00:00,oscar delp,0,600,clear,156786,Showdown Captain Mode,2026-11-17T22:49:35+00:00
+1386002,0,Kaden Davis,WR,CHI,200,512,,False,,NO @ CHI,1970-01-01 00:29:55.370400+00:00,kaden davis,0,200,clear,156786,Showdown Captain Mode,2026-11-17T22:49:35+00:00
+1394692,0,Jordyn Tyson,WR,NO,7200,512,,False,,NO @ CHI,1970-01-01 00:29:55.370400+00:00,jordyn tyson,0,7200,clear,156786,Showdown Captain Mode,2026-11-17T22:49:35+00:00
+1395681,0,CJ Donaldson,RB,NO,1400,512,,False,,NO @ CHI,1970-01-01 00:29:55.370400+00:00,cj donaldson,0,1400,clear,156786,Showdown Captain Mode,2026-11-17T22:49:35+00:00
+1395843,0,Barion Brown,WR,NO,1200,512,,False,,NO @ CHI,1970-01-01 00:29:55.370400+00:00,barion brown,0,1200,clear,156786,Showdown Captain Mode,2026-11-17T22:49:35+00:00
+1398153,0,Zavion Thomas,WR,CHI,2200,512,,False,,NO @ CHI,1970-01-01 00:29:55.370400+00:00,zavion thomas,0,2200,clear,156786,Showdown Captain Mode,2026-11-17T22:49:35+00:00
+1443955,0,Hayden Large,TE,CHI,200,512,,False,,NO @ CHI,1970-01-01 00:29:55.370400+00:00,hayden large,0,200,clear,156786,Showdown Captain Mode,2026-11-17T22:49:35+00:00
+1444140,0,Tyson Bagent,QB,CHI,6000,512,,False,,NO @ CHI,1970-01-01 00:29:55.370400+00:00,tyson bagent,0,6000,clear,156786,Showdown Captain Mode,2026-11-17T22:49:35+00:00
+1465213,0,Jahdae Walker,WR,CHI,1000,512,,False,,NO @ CHI,1970-01-01 00:29:55.370400+00:00,jahdae walker,0,1000,clear,156786,Showdown Captain Mode,2026-11-17T22:49:35+00:00
+1506548,0,Charlie Smyth,K,NO,4600,512,,False,,NO @ CHI,1970-01-01 00:29:55.370400+00:00,charlie smyth,0,4600,clear,156786,Showdown Captain Mode,2026-11-17T22:49:35+00:00
