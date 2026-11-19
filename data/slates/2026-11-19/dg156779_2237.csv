@@ -1,0 +1,112 @@
+dk_player_id,draftable_id,name,position,team,salary,roster_slot,status,disabled,attributes,game,starts_utc,norm,flex_eligible,captain_salary,playing,draft_group,game_type,captured_at
+327,0,Bengals,DST,CIN,3200,71,,False,,CIN @ WAS,,bengals,0,3200,clear,156779,Classic,2026-11-19T22:37:27+00:00
+347,0,Vikings,DST,MIN,2500,71,,False,,MIN @ SF,,vikings,0,2500,clear,156779,Classic,2026-11-19T22:37:27+00:00
+359,0,49ers,DST,SF,3000,71,,False,,MIN @ SF,,49ers,0,3000,clear,156779,Classic,2026-11-19T22:37:27+00:00
+363,0,Commanders,DST,WAS,2400,71,,False,,CIN @ WAS,,commanders,0,2400,clear,156779,Classic,2026-11-19T22:37:27+00:00
+216342,0,Joe Flacco,QB,CIN,4000,66,,False,,CIN @ WAS,,joe flacco,0,4000,clear,156779,Classic,2026-11-19T22:37:27+00:00
+300580,0,Andrew DePaola,TE,MIN,2500,69,,False,,MIN @ SF,,andrew depaola,0,2500,clear,156779,Classic,2026-11-19T22:37:27+00:00
+403308,0,Kirk Cousins,QB,MIN,5300,66,,False,,MIN @ SF,,kirk cousins,0,5300,clear,156779,Classic,2026-11-19T22:37:27+00:00
+501150,0,Kyle Juszczyk,RB,SF,4000,67,,False,,MIN @ SF,,kyle juszczyk,0,4000,clear,156779,Classic,2026-11-19T22:37:27+00:00
+553024,0,Tyler Ott,TE,WAS,2500,69,,False,,CIN @ WAS,,tyler ott,0,2500,clear,156779,Classic,2026-11-19T22:37:27+00:00
+557210,0,Keenan Allen,WR,SF,4600,68,,False,,MIN @ SF,,keenan allen,0,4600,clear,156779,Classic,2026-11-19T22:37:27+00:00
+589984,0,Odell Beckham Jr.,WR,MIN,3000,68,,False,,MIN @ SF,,odell beckham,0,3000,clear,156779,Classic,2026-11-19T22:37:27+00:00
+593587,0,Mike Evans,WR,SF,6000,68,,False,,MIN @ SF,,mike evans,0,6000,clear,156779,Classic,2026-11-19T22:37:27+00:00
+607843,0,Marcus Mariota,QB,WAS,4000,66,,False,,CIN @ WAS,,marcus mariota,0,4000,clear,156779,Classic,2026-11-19T22:37:27+00:00
+607864,0,Brandin Cooks,WR,SF,3400,68,,False,,MIN @ SF,,brandin cooks,0,3400,clear,156779,Classic,2026-11-19T22:37:27+00:00
+613866,0,Carson Wentz,QB,MIN,4000,66,,False,,MIN @ SF,,carson wentz,0,4000,clear,156779,Classic,2026-11-19T22:37:27+00:00
+694041,0,Stefon Diggs,WR,WAS,5800,68,,False,,CIN @ WAS,,stefon diggs,0,5800,clear,156779,Classic,2026-11-19T22:37:27+00:00
+727279,0,Demarcus Robinson,WR,SF,4100,68,,False,,MIN @ SF,,demarcus robinson,0,4100,clear,156779,Classic,2026-11-19T22:37:27+00:00
+733672,0,George Kittle,TE,SF,6300,69,,False,,MIN @ SF,,george kittle,0,6300,clear,156779,Classic,2026-11-19T22:37:27+00:00
+741314,0,Aaron Jones Sr.,RB,MIN,5300,67,,False,,MIN @ SF,,aaron jones,0,5300,clear,156779,Classic,2026-11-19T22:37:27+00:00
+757521,0,KhaDarel Hodge,WR,SF,3000,68,,False,,MIN @ SF,,khadarel hodge,0,3000,clear,156779,Classic,2026-11-19T22:37:27+00:00
+790004,0,Austin Ekeler,RB,WAS,4600,67,,False,,CIN @ WAS,,austin ekeler,0,4600,clear,156779,Classic,2026-11-19T22:37:27+00:00
+820734,0,Samaje Perine,RB,CIN,4400,67,,False,,CIN @ WAS,,samaje perine,0,4400,clear,156779,Classic,2026-11-19T22:37:27+00:00
+830517,0,Christian McCaffrey,RB,SF,8900,67,,False,,MIN @ SF,,christian mccaffrey,0,8900,clear,156779,Classic,2026-11-19T22:37:27+00:00
+835749,0,Deebo Samuel Sr.,WR,SF,5600,68,,False,,MIN @ SF,,deebo samuel,0,5600,clear,156779,Classic,2026-11-19T22:37:27+00:00
+836116,0,Terry McLaurin,WR,WAS,3000,68,,False,,CIN @ WAS,,terry mclaurin,0,3000,clear,156779,Classic,2026-11-19T22:37:27+00:00
+836152,0,Mike Gesicki,TE,CIN,3700,69,,False,,CIN @ WAS,,mike gesicki,0,3700,clear,156779,Classic,2026-11-19T22:37:27+00:00
+837594,0,Jeremy McNichols,RB,WAS,4000,67,,False,,CIN @ WAS,,jeremy mcnichols,0,4000,clear,156779,Classic,2026-11-19T22:37:27+00:00
+837824,0,Drew Sample,TE,CIN,2500,69,,False,,CIN @ WAS,,drew sample,0,2500,clear,156779,Classic,2026-11-19T22:37:27+00:00
+865801,0,Christian Kirk,WR,SF,3000,68,,False,,MIN @ SF,,christian kirk,0,3000,clear,156779,Classic,2026-11-19T22:37:27+00:00
+867009,0,Jauan Jennings,WR,MIN,3300,68,,False,,MIN @ SF,,jauan jennings,0,3300,clear,156779,Classic,2026-11-19T22:37:27+00:00
+878785,0,Joe Burrow,QB,CIN,7500,66,,False,,CIN @ WAS,,joe burrow,0,7500,clear,156779,Classic,2026-11-19T22:37:27+00:00
+879799,0,Kyler Murray,QB,MIN,4300,66,,False,,MIN @ SF,,kyler murray,0,4300,clear,156779,Classic,2026-11-19T22:37:27+00:00
+881779,0,Josh Oliver,TE,MIN,2500,69,,False,,MIN @ SF,,josh oliver,0,2500,clear,156779,Classic,2026-11-19T22:37:27+00:00
+884080,0,Van Jefferson,WR,WAS,3000,68,,False,,CIN @ WAS,,van jefferson,0,3000,clear,156779,Classic,2026-11-19T22:37:27+00:00
+911985,0,Jack Stoll,TE,SF,2500,69,,False,,MIN @ SF,,jack stoll,0,2500,clear,156779,Classic,2026-11-19T22:37:27+00:00
+923915,0,T.J. Hockenson,TE,MIN,4000,69,,False,,MIN @ SF,,t j hockenson,0,4000,clear,156779,Classic,2026-11-19T22:37:27+00:00
+926280,0,D'Wayne Eskridge,WR,MIN,3000,68,,False,,MIN @ SF,,dwayne eskridge,0,3000,clear,156779,Classic,2026-11-19T22:37:27+00:00
+944038,0,John Bates,TE,WAS,2500,69,,False,,CIN @ WAS,,john bates,0,2500,clear,156779,Classic,2026-11-19T22:37:27+00:00
+946541,0,Luke Farrell,TE,SF,2500,69,,False,,MIN @ SF,,luke farrell,0,2500,clear,156779,Classic,2026-11-19T22:37:27+00:00
+973945,0,Mac Jones,QB,SF,4000,66,,False,,MIN @ SF,,mac jones,0,4000,clear,156779,Classic,2026-11-19T22:37:27+00:00
+976309,0,DeeJay Dallas,RB,MIN,4000,67,,False,,MIN @ SF,,deejay dallas,0,4000,clear,156779,Classic,2026-11-19T22:37:27+00:00
+978579,0,Tee Higgins,WR,CIN,7600,68,,False,,CIN @ WAS,,tee higgins,0,7600,clear,156779,Classic,2026-11-19T22:37:27+00:00
+1067089,0,Sean Clifford,QB,CIN,4000,66,,False,,CIN @ WAS,,sean clifford,0,4000,clear,156779,Classic,2026-11-19T22:37:27+00:00
+1068872,0,Jake Tonges,TE,SF,2500,69,,False,,MIN @ SF,,jake tonges,0,2500,clear,156779,Classic,2026-11-19T22:37:27+00:00
+1069535,0,Justin Jefferson,WR,MIN,7300,68,,False,,MIN @ SF,,justin jefferson,0,7300,clear,156779,Classic,2026-11-19T22:37:27+00:00
+1106374,0,Chig Okonkwo,TE,WAS,3500,69,,False,,CIN @ WAS,,chig okonkwo,0,3500,clear,156779,Classic,2026-11-19T22:37:27+00:00
+1106382,0,Jeshaun Jones,WR,MIN,3000,68,,False,,MIN @ SF,,jeshaun jones,0,3000,clear,156779,Classic,2026-11-19T22:37:27+00:00
+1107034,0,Brandon Aiyuk,WR,SF,3000,68,,False,,MIN @ SF,,brandon aiyuk,0,3000,clear,156779,Classic,2026-11-19T22:37:27+00:00
+1107232,0,Colson Yankoff,TE,WAS,2500,69,,False,,CIN @ WAS,,colson yankoff,0,2500,clear,156779,Classic,2026-11-19T22:37:27+00:00
+1107536,0,Devin Culp,TE,MIN,2500,69,,False,,MIN @ SF,,devin culp,0,2500,clear,156779,Classic,2026-11-19T22:37:27+00:00
+1107878,0,Dyami Brown,WR,WAS,3000,68,,False,,CIN @ WAS,,dyami brown,0,3000,clear,156779,Classic,2026-11-19T22:37:27+00:00
+1109711,0,Sam Hartman,QB,WAS,4000,66,,False,,CIN @ WAS,,sam hartman,0,4000,clear,156779,Classic,2026-11-19T22:37:27+00:00
+1109979,0,Ja'Marr Chase,WR,CIN,8600,68,,False,,CIN @ WAS,,jamarr chase,0,8600,clear,156779,Classic,2026-11-19T22:37:27+00:00
+1115394,0,Tanner Hudson,TE,CIN,2500,69,,False,,CIN @ WAS,,tanner hudson,0,2500,clear,156779,Classic,2026-11-19T22:37:27+00:00
+1116001,0,Jordan Mason,RB,MIN,5200,67,,False,,MIN @ SF,,jordan mason,0,5200,clear,156779,Classic,2026-11-19T22:37:27+00:00
+1121761,0,Brock Purdy,QB,SF,6900,66,,False,,MIN @ SF,,brock purdy,0,6900,clear,156779,Classic,2026-11-19T22:37:27+00:00
+1121863,0,Jack Westover,TE,WAS,2500,69,,False,,CIN @ WAS,,jack westover,0,2500,clear,156779,Classic,2026-11-19T22:37:27+00:00
+1123379,0,Chase Brown,RB,CIN,6400,67,,False,,CIN @ WAS,,chase brown,0,6400,clear,156779,Classic,2026-11-19T22:37:27+00:00
+1124851,0,Andrei Iosivas,WR,CIN,3500,68,,False,,CIN @ WAS,,andrei iosivas,0,3500,clear,156779,Classic,2026-11-19T22:37:27+00:00
+1125589,0,Brayden Willis,TE,SF,2500,69,,False,,MIN @ SF,,brayden willis,0,2500,clear,156779,Classic,2026-11-19T22:37:27+00:00
+1126338,0,Isaac Guerendo,RB,SF,4000,67,,False,,MIN @ SF,,isaac guerendo,0,4000,clear,156779,Classic,2026-11-19T22:37:27+00:00
+1133320,0,Dohnte Meyers,WR,CIN,3600,68,,False,,CIN @ WAS,,dohnte meyers,0,3600,clear,156779,Classic,2026-11-19T22:37:27+00:00
+1161228,0,Jayden Daniels,QB,WAS,5900,66,,False,,CIN @ WAS,,jayden daniels,0,5900,clear,156779,Classic,2026-11-19T22:37:27+00:00
+1161416,0,Ricky Pearsall,WR,SF,3000,68,,False,,MIN @ SF,,ricky pearsall,0,3000,clear,156779,Classic,2026-11-19T22:37:27+00:00
+1164533,0,Erick All Jr.,TE,CIN,2500,69,,False,,CIN @ WAS,,erick all,0,2500,clear,156779,Classic,2026-11-19T22:37:27+00:00
+1164846,0,Luke McCaffrey,WR,WAS,3000,68,,False,,CIN @ WAS,,luke mccaffrey,0,3000,clear,156779,Classic,2026-11-19T22:37:27+00:00
+1166235,0,Sincere McCormick,RB,SF,4000,67,,False,,MIN @ SF,,sincere mccormick,0,4000,clear,156779,Classic,2026-11-19T22:37:27+00:00
+1166989,0,Kurtis Rourke,QB,SF,4000,66,,False,,MIN @ SF,,kurtis rourke,0,4000,clear,156779,Classic,2026-11-19T22:37:27+00:00
+1167356,0,Craig Reynolds,RB,WAS,4000,67,,False,,CIN @ WAS,,craig reynolds,0,4000,clear,156779,Classic,2026-11-19T22:37:27+00:00
+1169329,0,Max Brosmer,QB,MIN,4000,66,,False,,MIN @ SF,,max brosmer,0,4000,clear,156779,Classic,2026-11-19T22:37:27+00:00
+1172024,0,Treylon Burks,WR,WAS,3800,68,,False,,CIN @ WAS,,treylon burks,0,3800,clear,156779,Classic,2026-11-19T22:37:27+00:00
+1181739,0,William Wagner,TE,CIN,2500,69,,False,,CIN @ WAS,,william wagner,0,2500,clear,156779,Classic,2026-11-19T22:37:27+00:00
+1181861,0,Jacob Cowing,WR,SF,3000,68,,False,,MIN @ SF,,jacob cowing,0,3000,clear,156779,Classic,2026-11-19T22:37:27+00:00
+1191186,0,Jacory Croskey-Merritt,RB,WAS,4800,67,,False,,CIN @ WAS,,jacory croskey merritt,0,4800,clear,156779,Classic,2026-11-19T22:37:27+00:00
+1213345,0,Kendall Milton,RB,CIN,4000,67,,False,,CIN @ WAS,,kendall milton,0,4000,clear,156779,Classic,2026-11-19T22:37:27+00:00
+1214242,0,Caden Prieskorn,TE,CIN,2500,69,,False,,CIN @ WAS,,caden prieskorn,0,2500,clear,156779,Classic,2026-11-19T22:37:27+00:00
+1214250,0,Jordan Addison,WR,MIN,4300,68,,False,,MIN @ SF,,jordan addison,0,4300,clear,156779,Classic,2026-11-19T22:37:27+00:00
+1214689,0,Jaylin Lane,WR,WAS,3000,68,,False,,CIN @ WAS,,jaylin lane,0,3000,clear,156779,Classic,2026-11-19T22:37:27+00:00
+1215305,0,Mitch Tinsley,WR,CIN,3000,68,,False,,CIN @ WAS,,mitch tinsley,0,3000,clear,156779,Classic,2026-11-19T22:37:27+00:00
+1215772,0,Kaelon Black,RB,SF,4900,67,,False,,MIN @ SF,,kaelon black,0,4900,clear,156779,Classic,2026-11-19T22:37:27+00:00
+1216808,0,Ben Yurosek,TE,MIN,2500,69,,False,,MIN @ SF,,ben yurosek,0,2500,clear,156779,Classic,2026-11-19T22:37:27+00:00
+1222835,0,Jordan Watkins,WR,SF,3500,68,,False,,MIN @ SF,,jordan watkins,0,3500,clear,156779,Classic,2026-11-19T22:37:27+00:00
+1226344,0,Nick DeGennaro,WR,WAS,3000,68,,False,,CIN @ WAS,,nick degennaro,0,3000,clear,156779,Classic,2026-11-19T22:37:27+00:00
+1228728,0,Myles Price,WR,MIN,3100,68,,False,,MIN @ SF,,myles price,0,3100,clear,156779,Classic,2026-11-19T22:37:27+00:00
+1228730,0,Tahj Brooks,RB,CIN,4000,67,,False,,CIN @ WAS,,tahj brooks,0,4000,clear,156779,Classic,2026-11-19T22:37:27+00:00
+1228920,0,Ben Sinnott,TE,WAS,2500,69,,False,,CIN @ WAS,,ben sinnott,0,2500,clear,156779,Classic,2026-11-19T22:37:27+00:00
+1229055,0,Kentrel Bullock,RB,CIN,4000,67,,False,,CIN @ WAS,,kentrel bullock,0,4000,clear,156779,Classic,2026-11-19T22:37:27+00:00
+1229343,0,Rachaad White,RB,WAS,5100,67,,False,,CIN @ WAS,,rachaad white,0,5100,clear,156779,Classic,2026-11-19T22:37:27+00:00
+1232057,0,Ke'Shawn Williams,WR,CIN,3000,68,,False,,CIN @ WAS,,keshawn williams,0,3000,clear,156779,Classic,2026-11-19T22:37:27+00:00
+1251513,0,Cam Grandy,TE,CIN,2500,69,,False,,CIN @ WAS,,cam grandy,0,2500,clear,156779,Classic,2026-11-19T22:37:27+00:00
+1270459,0,Damon Bankston,RB,MIN,4000,67,,False,,MIN @ SF,,damon bankston,0,4000,clear,156779,Classic,2026-11-19T22:37:27+00:00
+1286422,0,Quentin Moore,TE,WAS,2500,69,,False,,CIN @ WAS,,quentin moore,0,2500,clear,156779,Classic,2026-11-19T22:37:27+00:00
+1286662,0,Jordan Moore,WR,CIN,3000,68,,False,,CIN @ WAS,,jordan moore,0,3000,clear,156779,Classic,2026-11-19T22:37:27+00:00
+1286818,0,De'Zhaun Stribling,WR,SF,3000,68,,False,,MIN @ SF,,dezhaun stribling,0,3000,clear,156779,Classic,2026-11-19T22:37:27+00:00
+1287258,0,Gavin Bartholomew,TE,MIN,3000,69,,False,,MIN @ SF,,gavin bartholomew,0,3000,clear,156779,Classic,2026-11-19T22:37:27+00:00
+1287587,0,Tai Felton,WR,MIN,3000,68,,False,,MIN @ SF,,tai felton,0,3000,clear,156779,Classic,2026-11-19T22:37:27+00:00
+1287925,0,Athan Kaliakmanis,QB,WAS,4000,66,,False,,CIN @ WAS,,athan kaliakmanis,0,4000,clear,156779,Classic,2026-11-19T22:37:27+00:00
+1288045,0,Will Pauling,WR,SF,3000,68,,False,,MIN @ SF,,will pauling,0,3000,clear,156779,Classic,2026-11-19T22:37:27+00:00
+1293066,0,Devin Neal,RB,WAS,4000,67,,False,,CIN @ WAS,,devin neal,0,4000,clear,156779,Classic,2026-11-19T22:37:27+00:00
+1310628,0,Khalil Dinkins,TE,SF,2500,69,,False,,MIN @ SF,,khalil dinkins,0,2500,clear,156779,Classic,2026-11-19T22:37:27+00:00
+1321260,0,Jaden Bradley,WR,WAS,3000,68,,False,,CIN @ WAS,,jaden bradley,0,3000,clear,156779,Classic,2026-11-19T22:37:27+00:00
+1325562,0,Max Bredeson,RB,MIN,4000,67,,False,,MIN @ SF,,max bredeson,0,4000,clear,156779,Classic,2026-11-19T22:37:27+00:00
+1378290,0,Antonio Williams,WR,WAS,4800,68,,False,,CIN @ WAS,,antonio williams,0,4800,clear,156779,Classic,2026-11-19T22:37:27+00:00
+1390910,0,Demond Claiborne,RB,MIN,4000,67,,False,,MIN @ SF,,demond claiborne,0,4000,clear,156779,Classic,2026-11-19T22:37:27+00:00
+1390913,0,Wesley Grimes,WR,SF,3000,68,,False,,MIN @ SF,,wesley grimes,0,3000,clear,156779,Classic,2026-11-19T22:37:27+00:00
+1396942,0,Dillon Bell,WR,MIN,3000,68,,False,,MIN @ SF,,dillon bell,0,3000,clear,156779,Classic,2026-11-19T22:37:27+00:00
+1400657,0,Jordan James,RB,SF,4000,67,,False,,MIN @ SF,,jordan james,0,4000,clear,156779,Classic,2026-11-19T22:37:27+00:00
+1400852,0,Jack Endries,TE,CIN,2500,69,,False,,CIN @ WAS,,jack endries,0,2500,clear,156779,Classic,2026-11-19T22:37:27+00:00
+1402692,0,Noah Thomas,WR,CIN,3000,68,,False,,CIN @ WAS,,noah thomas,0,3000,clear,156779,Classic,2026-11-19T22:37:27+00:00
+1406878,0,Colbie Young,WR,CIN,3000,68,,False,,CIN @ WAS,,colbie young,0,3000,clear,156779,Classic,2026-11-19T22:37:27+00:00
+1443998,0,Robert Henry Jr.,RB,WAS,4000,67,,False,,CIN @ WAS,,robert henry,0,4000,clear,156779,Classic,2026-11-19T22:37:27+00:00
