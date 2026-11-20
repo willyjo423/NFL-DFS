@@ -234,7 +234,7 @@ async function loadSlate(file) {
   $("posf").innerHTML = ["All", ...order].map(p => `<button data-p="${p}" class="${p === "All" ? "on" : ""}">${p}</button>`).join("");
   // Stacks: skaters (or hitters) per team in each pool lineup. Goalies and
   // pitchers are not part of a stack.
-  const single = new Set(["G", "P"]);
+  const single = new Set(["G", "P", "DST"]);
   (SLATE.lineups || []).forEach(L => {
     const c = {};
     L.p.forEach(i => { const q = SLATE.players[i]; if (!single.has(q.pos)) c[q.team] = (c[q.team] || 0) + 1; });
@@ -261,8 +261,11 @@ async function loadSlate(file) {
   $("stkby").querySelectorAll("option").forEach(o => o.disabled = o.value !== "team" && !hasLines);
   $("stkby").value = "team";
   // Hockey only: NBA also has a "G" slot, but it is a guard, not a goalie.
-  const canStack = SLATE.sport === "nhl";
+  const canStack = ["nhl", "nfl"].includes(SLATE.sport);
   document.querySelectorAll(".stackf").forEach(e => e.classList.toggle("hide", !canStack));
+  // Football stacks by team only; the line / power-play groupings are hockey's.
+  [...$("stkby").options].forEach(o => { o.hidden = SLATE.sport === "nfl" && o.value !== "team"; });
+  if (SLATE.sport === "nfl") $("stkby").value = "team";
   const teams = [...new Set(SLATE.players.filter(q => !single.has(q.pos)).map(q => q.team))].sort();
   $("stkteam").innerHTML = '<option value="">Any</option>' + teams.map(t => `<option>${esc(t)}</option>`).join("");
   $("stk").value = "0"; $("stk2").value = "0";
@@ -343,7 +346,7 @@ function drawLineups() {
   const k = $("sort").value;
   const s1 = +$("stk").value, s2 = +$("stk2").value, st = $("stkteam").value;
   const by = $("stkby").value;
-  const mpt = SPORT === "nhl" ? +$("mpt").value : 0;
+  const mpt = ["nhl", "nfl"].includes(SPORT) ? +$("mpt").value : 0;
   const G = L => (L.grp || {team: L.stk})[by] || [];
   let ok = pool.filter(L =>
     L.own >= lo && L.own <= hi &&
@@ -389,7 +392,7 @@ function drawLineups() {
 }
 
 function stackTag(L) {
-  if (SLATE.sport !== "nhl") return "";
+  if (!["nhl", "nfl"].includes(SLATE.sport)) return "";
   const g = L.grp || {team: L.stk || []};
   const bits = (g.team || []).filter(([, n]) => n >= 2).map(([t, n]) => esc(t) + " " + n)
     .concat((g.line || []).filter(([, n]) => n >= 2).map(([k, n]) => esc(k.replace("-", " ")) + "×" + n))
