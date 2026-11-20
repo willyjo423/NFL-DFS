@@ -21,8 +21,8 @@ import lineup_pool as LP
 
 log = logging.getLogger("board_v2")
 OUT = config.DOCS / "data" / "v2"
-FIELD = 3000
-RANK_SIMS = 20000
+FIELD = 5000
+RANK_SIMS = 30000   # same as the NHL board; 25-30k made the top-5 stable
 
 
 def _opp(team: str, game: str) -> str:
@@ -67,42 +67,79 @@ def players(pool: pd.DataFrame, own: pd.Series, chalk: list[str]) -> list[dict]:
     return out
 
 
-def _field(P: list[dict], roster: dict, size: int, rng) -> np.ndarray:
+def _field(P: list[dict], roster: dict, size: int, rng, adjust=None) -> np.ndarray:
     """Lineups drawn slot by slot with probability in proportion to ownership,
     legal on salary. Rough, but it rosters players about as often as our
     estimates, which is what the rates are measured against."""
     slots = roster["slots"]
     flexp = set(roster.get("flex_positions") or [])
     own = np.array([max(p["own"], 0.0) for p in P]) + 1e-5
+    if adjust is not None:
+        own = own * adjust
     sal = np.array([p["salary"] for p in P])
     pos = np.array([p["pos"] for p in P])
     ok = np.array([p["status"] != "out" for p in P])
     cap = roster.get("salary_cap", 50000)
     elig = {s: np.where(ok & ((pos == s) if s != "FLEX" else np.isin(pos, list(flexp))))[0]
             for s in set(slots)}
+    cheapest = int(sal[ok].min()) if ok.any() else 0
     out, tries = [], 0
     order = sorted(range(len(slots)), key=lambda k: slots[k] == "FLEX")
     while len(out) < size and tries < size * 40:
         tries += 1
         pick, spent = [], 0
-        for k in order:
+        for n_done, k in enumerate(order):
             c = elig[slots[k]]
             c = c[~np.isin(c, pick)]
+            left = len(order) - n_done - 1
+            c = c[sal[c] <= cap - spent - cheapest * left]
             if not len(c):
                 break
             w = own[c] / own[c].sum()
             j = int(rng.choice(c, p=w))
             pick.append(j)
             spent += sal[j]
-        if len(pick) == len(slots) and 0.94 * cap <= spent <= cap:
+        if len(pick) == len(slots) and 0.92 * cap <= spent <= cap:
             out.append(pick)
     return np.array(out, dtype=int)
+
+
+def calibrated_field(P, roster, rng):
+    """A field whose rostering matches the ownership estimates: sampling
+    lineups drawn by ownership, then raked (reweighted until the weighted
+    frequencies match the estimates - salary rules otherwise starve the
+    chalk: Gibbs came out at 33% against a 65% estimate) and redrawn. Same as the NBA/NHL sims."""
+    target = np.array([max(p["own"], 0.0) for p in P])
+    adjust = np.ones(len(P))
+    for _ in range(5):
+        F0 = _field(P, roster, 1500, rng, adjust)
+        if len(F0) < 300:
+            break
+        freq = np.bincount(F0.ravel(), minlength=len(P)) / len(F0)
+        adjust *= np.clip((target + 0.003) / (freq + 0.003), 0.25, 4.0) ** 0.8
+    F = _field(P, roster, FIELD, rng, adjust)
+    if len(F) < 300:
+        F = _field(P, roster, FIELD, rng)
+    if len(F) < 300:
+        return F
+    w = np.ones(len(F))
+    for _ in range(80):
+        freq = np.bincount(F.ravel(), weights=np.repeat(w, F.shape[1]), minlength=len(P)) / w.sum()
+        r = np.log(np.clip((target + 0.003) / (freq + 0.003), 0.2, 5.0))
+        w *= np.exp(r[F].mean(axis=1))
+        w = np.clip(w / w.mean(), 0.02, 50.0)
+    F = F[rng.choice(len(F), size=len(F), p=w / w.sum())]
+    freq = np.bincount(F.ravel(), minlength=len(P)) / len(F)
+    top = np.argsort(-target)[:12]
+    log.info("v2 field ownership vs estimate (top 12): mean |gap| %.1f pts",
+             float(np.abs(freq[top] - target[top]).mean() * 100))
+    return F
 
 
 def rank(lineups: list[dict], P: list[dict], roster: dict, draws: np.ndarray, rng) -> dict:
     sims = min(RANK_SIMS, draws.shape[1])
     D = draws[:, :sims]
-    F = _field(P, roster, FIELD, rng)
+    F = calibrated_field(P, roster, rng)
     if len(F) < 300:
         log.warning("v2: field too small (%d); lineups unranked", len(F))
         return {}
