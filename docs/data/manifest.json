@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-20T21:13:01+00:00",
+  "updated_at": "2026-11-20T23:14:09+00:00",
   "slates": [
     {
       "kind": "classic",
@@ -7,11 +7,11 @@
       "site": "dk",
       "draft_group": 156561,
       "label": "NFL $2.5M Fantasy Football Millionaire [$1M to 1st]",
-      "contests": 1738,
+      "contests": 1750,
       "starts": "2026-11-22 18:00:00+00:00",
       "file": "data/nfl/dk-classic-156561.json",
       "players": 317,
-      "generated_at": "2026-11-20T20:54:31+00:00"
+      "generated_at": "2026-11-20T22:59:01+00:00"
     },
     {
       "kind": "classic",
@@ -19,11 +19,11 @@
       "site": "dk",
       "draft_group": 156775,
       "label": "NFL $200K Early Only Rush [$50K to 1st] (Early Only)",
-      "contests": 462,
+      "contests": 463,
       "starts": "2026-11-22 18:00:00+00:00",
       "file": "data/nfl/dk-classic-156775.json",
       "players": 222,
-      "generated_at": "2026-11-20T21:00:12+00:00"
+      "generated_at": "2026-11-20T23:04:10+00:00"
     },
     {
       "kind": "classic",
@@ -31,11 +31,11 @@
       "site": "dk",
       "draft_group": 156776,
       "label": "NFL $20K Thunderdome [Must Fill] (Sun-Mon)",
-      "contests": 284,
+      "contests": 286,
       "starts": "2026-11-22 18:00:00+00:00",
       "file": "data/nfl/dk-classic-156776.json",
       "players": 383,
-      "generated_at": "2026-11-20T21:03:58+00:00"
+      "generated_at": "2026-11-20T23:06:56+00:00"
     },
     {
       "kind": "classic",
@@ -47,7 +47,7 @@
       "starts": "2026-11-22 21:05:00+00:00",
       "file": "data/nfl/dk-classic-156777.json",
       "players": 95,
-      "generated_at": "2026-11-20T20:58:26+00:00"
+      "generated_at": "2026-11-20T23:02:33+00:00"
     },
     {
       "kind": "classic",
@@ -55,11 +55,11 @@
       "site": "dk",
       "draft_group": 156779,
       "label": "NFL $40K Post Pattern [$10K to 1st] (Primetime)",
-      "contests": 224,
+      "contests": 225,
       "starts": "2026-11-23 01:20:00+00:00",
       "file": "data/nfl/dk-classic-156779.json",
       "players": 66,
-      "generated_at": "2026-11-20T21:07:42+00:00"
+      "generated_at": "2026-11-20T23:09:43+00:00"
     },
     {
       "kind": "classic",
@@ -67,11 +67,11 @@
       "site": "dk",
       "draft_group": 156778,
       "label": "NFL $30K Turbo Special [$10K to 1st] (Afternoon Turbo)",
-      "contests": 170,
+      "contests": 171,
       "starts": "2026-11-22 21:25:00+00:00",
       "file": "data/nfl/dk-classic-156778.json",
       "players": 63,
-      "generated_at": "2026-11-20T21:10:49+00:00"
+      "generated_at": "2026-11-20T23:12:23+00:00"
     },
     {
       "kind": "showdown",
@@ -83,7 +83,7 @@
       "starts": "2026-11-22 18:00:00+00:00",
       "file": "data/nfl/dk-showdown-156786.json",
       "players": 30,
-      "generated_at": "2026-11-20T21:10:00+00:00"
+      "generated_at": "2026-11-20T23:11:42+00:00"
     },
     {
       "kind": "showdown",
@@ -155,7 +155,7 @@
       "starts": "2026-11-22 18:00:00+00:00",
       "file": "data/nfl/dk-showdown-156782.json",
       "players": 35,
-      "generated_at": "2026-11-20T21:12:11+00:00"
+      "generated_at": "2026-11-20T23:13:31+00:00"
     },
     {
       "kind": "showdown",
@@ -167,7 +167,7 @@
       "starts": "2026-11-22 21:25:00+00:00",
       "file": "data/nfl/dk-showdown-156791.json",
       "players": 33,
-      "generated_at": "2026-11-20T21:09:10+00:00"
+      "generated_at": "2026-11-20T23:11:02+00:00"
     },
     {
       "kind": "showdown",
@@ -175,11 +175,11 @@
       "site": "dk",
       "draft_group": 156790,
       "label": "NFL Showdown $20K Thunderdome [Must Fill] (LV @ DEN)",
-      "contests": 166,
+      "contests": 167,
       "starts": "2026-11-22 21:25:00+00:00",
       "file": "data/nfl/dk-showdown-156790.json",
       "players": 30,
-      "generated_at": "2026-11-20T06:20:34+00:00"
+      "generated_at": "2026-11-20T23:14:09+00:00"
     },
     {
       "kind": "showdown",
@@ -191,7 +191,7 @@
       "starts": "2026-11-23 01:20:00+00:00",
       "file": "data/nfl/dk-showdown-156792.json",
       "players": 36,
-      "generated_at": "2026-11-20T20:57:34+00:00"
+      "generated_at": "2026-11-20T23:01:50+00:00"
     },
     {
       "kind": "showdown",
@@ -203,7 +203,7 @@
       "starts": "2026-11-24 01:15:00+00:00",
       "file": "data/nfl/dk-showdown-156793.json",
       "players": 30,
-      "generated_at": "2026-11-20T20:56:44+00:00"
+      "generated_at": "2026-11-20T23:01:07+00:00"
     }
   ],
   "failures": []
