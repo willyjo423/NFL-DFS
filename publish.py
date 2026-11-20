@@ -175,12 +175,16 @@ def slate_payload(draft_group: int, site: str, showdown: bool,
         "server_lineups": lineups,
         "correlation": corr.to_dict("records"),
         "props": {"source": "Bovada player props", "players": int(n_props)} if n_props else None,
+        "_v2": (pool, own, chalk, draws) if not showdown else None,
         "notes": {
             "ownership": "modelled from priors, not measured - DraftKings' "
                          "standings are behind a login",
             "graded": False,
         },
     }
+
+
+V2_ROWS: list[dict] = []
 
 
 def roster_name(roster: dict) -> str:
@@ -261,6 +265,13 @@ def run(kinds: list[str], site: str, sims: int, field_size: int,
         payload["label"] = label
         payload["contests"] = int(row.contests)
         payload["starts"] = str(getattr(row, "starts", "") or "")
+        v2 = payload.pop("_v2", None)
+        if v2 is not None:
+            try:
+                import board_v2
+                V2_ROWS.append(board_v2.write(payload, *v2))
+            except Exception as exc:                           # noqa: BLE001
+                log.warning("v2 board failed for %s (%s: %s)", dg, type(exc).__name__, str(exc)[:120])
 
         folder = OUT / payload["sport"]
         folder.mkdir(parents=True, exist_ok=True)
@@ -318,6 +329,11 @@ def main(argv=None) -> int:
         print("no slate starts within the window; nothing to do")
         return 0
 
+    try:
+        import board_v2
+        board_v2.manifest([r for r in V2_ROWS if r])
+    except Exception as exc:                                   # noqa: BLE001
+        log.warning("v2 manifest failed (%s)", exc)
     manifest = OUT / "manifest.json"
     prior = {}
     if manifest.exists():

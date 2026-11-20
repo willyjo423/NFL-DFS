@@ -1,0 +1,559 @@
+"""A pool of legal lineups per slate, spread across ownership, for the page to
+filter.
+
+This is how the serious optimisers work: build a few hundred good, distinct
+lineups once, then let the person narrow them - by total ownership, by
+projection, by who is in or out - instead of re-solving every time a slider
+moves. The page never has to run a solver, so it stays fast on a phone.
+
+How the spread is made
+----------------------
+Every lineup maximises one of several objectives:
+
+    median points  x (1 - lam * ownership)      lam in LAMBDAS
+    ceiling points x (1 - lam * ownership)
+
+lam = 0 is pure projection - the chalky, highest-median build. Larger lam
+pays for each point less the more of the field already owns that player, so
+the pool runs from the field's lineup to genuinely contrarian ones without
+anyone having to pick the contrarian players by hand. Within each objective
+lineups are forced apart (at most `len(slots) - MIN_UNIQUE` players shared
+with any lineup already in the pool).
+
+Rules come from the slate's own `roster` block, the same one the publishers
+write: position counts, flex eligibility, salary cap and floor, max players
+per team, min teams (NHL), max per game and min games (CFB), and no hitter
+against your own pitcher / no skater against your own goalie.
+
+Uses scipy's MILP (HiGHS), which is already a dependency, so this module has
+no new requirements.
+"""
+from __future__ import annotations
+
+import logging
+import math
+
+import numpy as np
+from scipy.optimize import Bounds, LinearConstraint, milp
+
+log = logging.getLogger(__name__)
+
+FLEX = {"UTIL", "FLEX", "SFLEX"}
+LAMBDAS = (0.0, 0.5, 1.0, 1.5, 2.5)
+PER_OBJECTIVE = 12          # lineups per objective; 2 x 5 x 12 = 120 max
+MIN_UNIQUE = 2              # players each new lineup must not share
+STACKED_PER_OBJECTIVE = 6   # hockey: 3 shapes x 3 lam x 6 = 54
+TEAM_STACKS = 10            # hockey: a 4-stack of each of the top 10 teams
+PER_TEAM_STACK = 3
+SWAP_GOALIES = 6            # hockey: likely starters swapped into the pool
+SWAP_PER_GOALIE = 6
+FORCED_PER_GOALIE = 4
+GOALIES = {"G"}
+PITCHERS = {"P", "SP", "RP"}
+
+
+def _rules(players: list[dict], roster: dict):
+    """Rows of (coefficients, lo, hi) for one slate's roster rules."""
+    n = len(players)
+    slots = list(roster["slots"])
+    pos = [str(p["pos"]) for p in players]
+    team = [str(p.get("team") or "") for p in players]
+    game = [str(p.get("game") or "") for p in players]
+    rows = []
+
+    def row(mask, lo, hi):
+        rows.append((np.asarray(mask, float), lo, hi))
+
+    need = {}
+    for s in slots:
+        if s not in FLEX:
+            need[s] = need.get(s, 0) + 1
+    n_flex = sum(1 for s in slots if s in FLEX)
+    flex_pos = set(roster.get("flex_positions") or [])
+    maxpos = roster.get("max_position") or {}
+
+    row(np.ones(n), len(slots), len(slots))
+    for p_, k in need.items():
+        mask = [x == p_ for x in pos]
+        if p_ in flex_pos and n_flex:
+            hi = min(k + n_flex, maxpos.get(p_, k + n_flex))
+            row(mask, k, hi)
+        else:
+            row(mask, k, k)
+    for p_, cap in maxpos.items():
+        row([x == p_ for x in pos], 0, cap)
+    # Nobody at a position the roster has no slot for.
+    unusable = [x not in need and x not in flex_pos for x in pos]
+    if any(unusable):
+        row(unusable, 0, 0)
+
+    sal = np.array([p["salary"] for p in players], float)
+    cap = float(roster.get("salary_cap", 50_000))
+    row(sal, 0, cap)
+
+    # Max per team counts hitters/skaters only, as DraftKings does.
+    mpt = roster.get("max_per_team")
+    if mpt:
+        for t in set(team):
+            row([tm == t and x not in PITCHERS | GOALIES
+                 for tm, x in zip(team, pos)], 0, mpt)
+    mpg = roster.get("max_per_game")
+    if mpg:
+        for g in set(game):
+            row([gm == g for gm in game], 0, mpg)
+
+    # Batter against your own pitcher, skater against your own goalie: one
+    # outcome bet in two directions. Off only if the roster says so.
+    if roster.get("no_hitter_vs_pitcher", True):
+        for i, p in enumerate(players):
+            if pos[i] in PITCHERS | GOALIES:
+                for j, q in enumerate(players):
+                    if (j != i and pos[j] not in PITCHERS | GOALIES
+                            and team[j] == str(p.get("opp") or "~")):
+                        m = np.zeros(n)
+                        m[i] = m[j] = 1
+                        row(m, 0, 1)
+    return rows, sal, cap
+
+
+SHORTLIST_PER_SLOT = 14
+
+
+def _shortlist(players, keep, roster):
+    """Players who could plausibly be in an optimal lineup under SOME
+    objective in the pool: the top few per position by median, by ceiling,
+    by value, and by median among the low-owned. Everyone else is dominated
+    at every lam. Cuts a 577-player hockey board to about 150 and the solve
+    time with it, without changing which lineups come out at the top."""
+    from collections import defaultdict
+    per = defaultdict(int)
+    for s in roster["slots"]:
+        if s not in FLEX:
+            per[s] += 1
+    flex_pos = set(roster.get("flex_positions") or [])
+    n_flex = sum(1 for s in roster["slots"] if s in FLEX)
+    by_pos = defaultdict(list)
+    for i in keep:
+        by_pos[str(players[i]["pos"])].append(i)
+    out = set()
+    for pos_, idx in by_pos.items():
+        k = SHORTLIST_PER_SLOT * (per.get(pos_, 0)
+                                  + (n_flex if pos_ in flex_pos else 0))
+        if k == 0:
+            continue
+        med = lambda i: players[i].get("proj", players[i]["med"])
+        keys = (med,
+                lambda i: players[i].get("ceil") or players[i]["med"],
+                lambda i: med(i) / players[i]["salary"],
+                lambda i: med(i) * (1 - min(players[i].get("own")
+                                                       or 0, 1)))
+        for key in keys:
+            out.update(sorted(idx, key=key, reverse=True)[:k])
+    return sorted(out)
+
+
+def build(players: list[dict], roster: dict, field_size: int = 100_000,
+          lambdas=LAMBDAS, per_objective: int = PER_OBJECTIVE,
+          time_limit: float = 1.0, stacks: bool | None = None
+          ) -> list[dict]:
+    """The pool. Each lineup: player indices into `players`, and totals."""
+    if not players or "CPT" in roster.get("slots", []):
+        return []
+    keep = [i for i, p in enumerate(players)
+            if (p.get("med") or 0) > 0 and p.get("salary")
+            and str(p.get("status") or "clear") not in ("out",)]
+    keep = _shortlist(players, keep, roster)
+    pl = [players[i] for i in keep]
+    n = len(pl)
+    rows, sal, cap = _rules(pl, roster)
+
+    # Distinct teams / games, with one helper binary per group.
+    pos = [str(p["pos"]) for p in pl]
+    extra = []          # (group values per player, minimum, excluded pos)
+    if roster.get("min_skater_teams"):
+        extra.append(("team", int(roster["min_skater_teams"]),
+                      GOALIES | PITCHERS))
+    if roster.get("min_games"):
+        extra.append(("game", int(roster["min_games"]), frozenset()))
+    helpers = []
+    for key, minimum, excl in extra:
+        for g in sorted({str(p.get(key) or "") for p in pl} - {""}):
+            helpers.append((key, g, excl, minimum))
+    m = n + len(helpers)
+
+    A, lo, hi = [], [], []
+    for mask, a, b in rows:
+        A.append(np.concatenate([mask, np.zeros(len(helpers))]))
+        lo.append(a)
+        hi.append(b)
+    # helper_g <= sum of eligible players in g ; sum helpers >= minimum
+    by_req = {}
+    for h, (key, g, excl, minimum) in enumerate(helpers):
+        r = np.zeros(m)
+        r[n + h] = 1
+        for i, p in enumerate(pl):
+            if str(p.get(key) or "") == g and pos[i] not in excl:
+                r[i] = -1
+        A.append(r)
+        lo.append(-np.inf)
+        hi.append(0)
+        by_req.setdefault((key, minimum), []).append(n + h)
+    for (key, minimum), idx in by_req.items():
+        r = np.zeros(m)
+        r[idx] = 1
+        A.append(r)
+        lo.append(minimum)
+        hi.append(np.inf)
+
+    # Stack binaries: for every team, p_t (primary stack) and q_t (secondary).
+    # Always present; only constrained when a stacked family asks for it.
+    skater = np.array([x not in GOALIES | PITCHERS for x in pos])
+    teams = sorted({str(p.get("team") or "") for p in pl} - {""})
+    tmask = {t: np.array([str(p.get("team")) == t for p in pl]) & skater
+             for t in teams}
+    m_base = m
+    m = m_base + 2 * len(teams)
+    A = [np.concatenate([r, np.zeros(m - len(r))]) for r in A]
+    for k_, t in enumerate(teams):
+        r = np.zeros(m)
+        r[m_base + k_] = 1
+        r[m_base + len(teams) + k_] = 1
+        A.append(r)              # a team is at most one of primary/secondary
+        lo.append(0)
+        hi.append(1)
+
+    floor = float(roster.get("min_salary_pct") or 0) * cap
+    # The calibrated expectation where the publisher added one (see
+    # projection_calibration.py); the model median otherwise.
+    med = np.array([p.get("proj", p["med"]) for p in pl], float)
+    # A ceiling is "if he plays". A goalie who is 40% to start has 40% of his
+    # upside, not all of it - without this, ceiling and stack lineups kept
+    # picking an unconfirmed $6,900 backup (NSH, 2026-11-17).
+    ceil = np.array([(p.get("ceil") or p["med"]) * min(float(p.get("pp") or 1.0), 1.0)
+                     for p in pl], float)
+    own = np.clip(np.array([p.get("own") or 0 for p in pl], float), 0, 1)
+
+    pool, seen = [], []
+    size = len(roster["slots"])
+
+    def solve(obj, use_floor=True, stack=None):
+        AA, LL, HH = list(A), list(lo), list(hi)
+        if stack and stack[0] == "force":
+            r = np.zeros(m)
+            r[stack[1]] = 1
+            AA.append(r)
+            LL.append(1)
+            HH.append(1)
+            stack = None
+        if stack and stack[0] == "team":
+            _, t, k = stack
+            r = np.zeros(m)
+            r[:n] = tmask[t]
+            AA.append(r)
+            LL.append(k)
+            HH.append(np.inf)
+        elif stack and stack[0] != "groups":
+            k1, k2 = stack
+            for off, k in ((0, k1), (len(teams), k2)):
+                if not k:
+                    continue
+                for k_, t in enumerate(teams):
+                    r = np.zeros(m)          # skaters of t >= k * flag_t
+                    r[:n] = tmask[t]
+                    r[m_base + off + k_] = -k
+                    AA.append(r)
+                    LL.append(0)
+                    HH.append(np.inf)
+                r = np.zeros(m)
+                r[m_base + off: m_base + off + len(teams)] = 1
+                AA.append(r)
+                LL.append(1)
+                HH.append(np.inf)
+        if stack and stack[0] == "groups":
+            # Group stacks with their own binaries, appended for this solve
+            # only: each requirement is (groups, k) = "at least k players from
+            # ONE of these groups"; two requirements over the same groups
+            # must be met by DIFFERENT groups (e.g. two different lines).
+            reqs = stack[1]
+            extra = sum(len(g) for g, _ in reqs)
+            AA = [np.concatenate([r, np.zeros(extra)]) for r in AA]
+            mm = m + extra
+            col = m
+            cols_by = {}
+            for gi, (groups, k) in enumerate(reqs):
+                idx = []
+                for name, mask in groups.items():
+                    # A group is one mask ("k of these") or a list of
+                    # (mask, k) parts that must ALL hold together, e.g. a
+                    # full line AND a defenceman from the same team.
+                    parts = mask if isinstance(mask, list) else [(mask, k)]
+                    for sub, kk in parts:
+                        r = np.zeros(mm)
+                        r[:n] = sub
+                        r[col] = -kk
+                        AA.append(r)
+                        LL.append(0)
+                        HH.append(np.inf)
+                    idx.append(col)
+                    cols_by.setdefault(id(groups), {}).setdefault(name, []).append(col)
+                    col += 1
+                r = np.zeros(mm)
+                r[idx] = 1
+                AA.append(r)
+                LL.append(1)
+                HH.append(np.inf)
+            for per_name in cols_by.values():
+                for cs in per_name.values():
+                    if len(cs) > 1:
+                        r = np.zeros(mm)
+                        r[cs] = 1
+                        AA.append(r)
+                        LL.append(0)
+                        HH.append(1)
+        else:
+            mm = m
+        AA = [r if len(r) == mm else np.concatenate([r, np.zeros(mm - len(r))])
+              for r in AA]
+        if use_floor and floor > 0:
+            r = np.zeros(mm)
+            r[:n] = sal
+            AA.append(r)
+            LL.append(floor)
+            HH.append(np.inf)
+        for chosen in seen:
+            r = np.zeros(mm)
+            r[chosen] = 1
+            AA.append(r)
+            LL.append(0)
+            HH.append(size - MIN_UNIQUE)
+        c = np.zeros(mm)
+        c[:n] = -obj
+        res = milp(c, constraints=LinearConstraint(np.array(AA), LL, HH),
+                   integrality=np.ones(mm), bounds=Bounds(0, 1),
+                   options={"time_limit": time_limit, "disp": False})
+        if res.x is None:
+            return None
+        pick = [i for i in range(n) if res.x[i] > 0.5]
+        # A solve stopped at its time limit can hand back a point that is not
+        # a whole lineup (one 8-man NHL lineup reached the board, 2026-11-19).
+        return pick if len(pick) == size else None
+
+    families = []
+    for base_name, base in (("median", med), ("ceiling", ceil)):
+        for lam in lambdas:
+            families.append((f"{base_name} lam={lam}", base, lam, None,
+                             per_objective))
+    # Football: a quarterback with his own pass catchers is the correlation
+    # that wins tournaments, and the most common bring-back is one skill
+    # player from the other side of the same game.
+    if "QB" in roster.get("slots", []) and stacks is not False:
+        qb = {}
+        for i, p in enumerate(pl):
+            t = str(p.get("team"))
+            qb.setdefault(t, {"qb": np.zeros(n, bool), "rec": np.zeros(n, bool),
+                              "opp": str(p.get("opp") or "")})
+            if str(p["pos"]) == "QB":
+                qb[t]["qb"][i] = True
+            elif str(p["pos"]) in ("WR", "TE", "RB"):
+                qb[t]["rec"][i] = True
+        skill = {t: v["rec"] for t, v in qb.items()}
+        stack2 = {f"{t} QB+2": [(v["qb"], 1), (v["rec"], 2)]
+                  for t, v in qb.items() if v["qb"].any() and v["rec"].sum() >= 2}
+        bring = {f"{t} QB+2+1": [(v["qb"], 1), (v["rec"], 2), (skill[v["opp"]], 1)]
+                 for t, v in qb.items()
+                 if v["qb"].any() and v["rec"].sum() >= 2 and v["opp"] in skill}
+        if stack2:
+            for lam in (0.0, 1.0, 2.0):
+                families.append((f"qb stack lam={lam}", med, lam,
+                                 ("groups", [(stack2, 3)]), STACKED_PER_OBJECTIVE))
+                if bring:
+                    families.append((f"qb stack+bringback lam={lam}", med, lam,
+                                     ("groups", [(bring, 4)]), STACKED_PER_OBJECTIVE))
+    if stacks is None:
+        stacks = "G" in roster.get("slots", [])     # hockey stacks by default
+    if stacks and len(teams) >= 3:
+        # Generic team stacks across the ownership range: 4-3, 4-2, 3-3.
+        for shape in ((4, 3), (4, 2), (3, 3)):
+            for lam in (0.0, 1.0, 2.0):
+                families.append((f"stack {shape[0]}-{shape[1]} lam={lam}",
+                                 ceil, lam, shape, STACKED_PER_OBJECTIVE))
+        # A 4-man stack of each of the likeliest teams, so a page filter for
+        # one team always has something to show. Teams ranked by the
+        # ceiling of their best four skaters.
+        def strength(t):
+            return float(np.sort(ceil[tmask[t]])[-4:].sum())
+        for t in sorted(teams, key=strength, reverse=True)[:TEAM_STACKS]:
+            if tmask[t].sum() >= 4:
+                families.append((f"team {t} lam=0.0", ceil, 0.0,
+                                 ("team", t, 4), PER_TEAM_STACK))
+
+        # Line and power-play stacks, where the slate carries them (see
+        # nhl_lines.py). Linemates score together - a goal is a goal and up
+        # to two assists on the same line - which a team stack only
+        # approximates.
+        lines = {}
+        units = {}
+        for i, p in enumerate(pl):
+            lg = str(p.get("lg") or "")
+            if lg and "-L" in lg and lg.split("-L")[-1] in ("1", "2"):
+                lines.setdefault(lg, np.zeros(n, bool))[i] = True
+            if p.get("ppu") == 1:
+                units.setdefault(f"{p.get('team')}-PP1", np.zeros(n, bool))[i] = True
+        lines = {k: v for k, v in lines.items() if v.sum() >= 3}
+        units = {k: v for k, v in units.items() if v.sum() >= 3}
+        if lines:
+            for lam in (0.0, 1.0, 2.0):
+                families.append((f"line 3 lam={lam}", ceil, lam,
+                                 ("groups", [(lines, 3)]), STACKED_PER_OBJECTIVE))
+                families.append((f"line 3+2 lam={lam}", ceil, lam,
+                                 ("groups", [(lines, 3), (lines, 2)]),
+                                 STACKED_PER_OBJECTIVE))
+        if units:
+            for lam in (0.0, 1.0, 2.0):
+                families.append((f"pp1 3 lam={lam}", ceil, lam,
+                                 ("groups", [(units, 3)]), STACKED_PER_OBJECTIVE))
+        # The full-line stack: all three forwards of a line AND a defenceman
+        # from the same team, usually the pair that shares their ice. The
+        # shape that won the 2026-11-17 slate (MIN L1 + Faber), and the one
+        # a "same line" filter could only approximate.
+        dmask = {}
+        for i, p in enumerate(pl):
+            if str(p.get("pos")) == "D":
+                dmask.setdefault(str(p.get("team")), np.zeros(n, bool))[i] = True
+        lined = {}
+        for lg, m3 in lines.items():
+            t = lg.split("-L")[0]
+            if m3.sum() >= 3 and t in dmask:
+                lined[lg + "+D"] = [(m3, 3), (dmask[t], 1)]
+        if lined:
+            for lam in (0.0, 1.0, 2.0):
+                families.append((f"line+D lam={lam}", ceil, lam,
+                                 ("groups", [(lined, 4)]), STACKED_PER_OBJECTIVE))
+                if units:
+                    families.append((f"line+D pp1 3 lam={lam}", ceil, lam,
+                                     ("groups", [(lined, 4), (units, 3)]),
+                                     STACKED_PER_OBJECTIVE))
+
+    floor_ok = True
+    for name, base, lam, stack, count in families:
+            obj = base * (1.0 - lam * own)
+            for _ in range(count):
+                pick = solve(obj, floor_ok, stack)
+                if pick is None and floor_ok:
+                    floor_ok = False
+                    log.info("lineup pool: salary floor $%d unreachable "
+                             "with diversity rules - dropped", floor)
+                    pick = solve(obj, False, stack)
+                if pick is None:
+                    break
+                seen.append(pick)
+                o = own[pick]
+                pool.append({
+                    "p": [keep[i] for i in pick],
+                    "proj": round(float(med[pick].sum()), 2),
+                    "ceil": round(float(ceil[pick].sum()), 2),
+                    "sal": int(sal[pick].sum()),
+                    "own": round(float(100 * o.sum()), 1),
+                    # Expected copies of this exact lineup in the field, if
+                    # entries were independent. Rough, but the right order of
+                    # magnitude, and it ranks lineups correctly.
+                    "dup": round(float(field_size * math.prod(
+                        max(x, 1e-4) for x in o)), 4),
+                    "src": name,
+                })
+    if "G" in roster.get("slots", []) and pool and stacks:
+        # (Not for the single optimal re-solves the chalk check runs 40 times.)
+        # A likely starter the families never picked (his opponent's skaters
+        # fill the optimal lineups) gets a few lineups solved around him.
+        used = {i for L in pool for i in L["p"]}
+        top_g = sorted((j for j, p in enumerate(pl) if str(p["pos"]) in GOALIES
+                        and float(p.get("pp") or 1.0) >= 0.5),
+                       key=lambda j: -med[j])[:SWAP_GOALIES]
+        for j in top_g:
+            if keep[j] in used:
+                continue
+            for _ in range(FORCED_PER_GOALIE):
+                pick = solve(med, floor_ok, ("force", j))
+                if pick is None:
+                    break
+                seen.append(pick)
+                o = own[pick]
+                pool.append({
+                    "p": [keep[i] for i in pick],
+                    "proj": round(float(med[pick].sum()), 2),
+                    "ceil": round(float(ceil[pick].sum()), 2),
+                    "sal": int(sal[pick].sum()),
+                    "own": round(float(100 * o.sum()), 1),
+                    "dup": round(float(field_size * math.prod(max(x, 1e-4) for x in o)), 4),
+                    "src": f"goalie {pl[j]['name']}"})
+        _goalie_swaps(pool, players, keep, pl, med, ceil, own, cap, field_size)
+    log.info("lineup pool: %d lineups, ownership %.0f%%-%.0f%%, projection "
+             "%.1f-%.1f", len(pool),
+             min((x["own"] for x in pool), default=0),
+             max((x["own"] for x in pool), default=0),
+             min((x["proj"] for x in pool), default=0),
+             max((x["proj"] for x in pool), default=0))
+    return pool
+
+
+def _goalie_swaps(pool, players, keep, pl, med, ceil, own, cap, field_size):
+    """Put each of the best-projected likely starters into the best pool
+    lineups he fits (no skater from the team he faces, salary under the cap).
+
+    2026-11-18: Jacob Fowler was the top-projected goalie, but he faced the
+    Devils, whose skaters filled every optimal lineup, so not one of 282 pool
+    lineups had him. He scored 17.2; the goalies the pool did use scored 7-8.
+    Swapping goalies into existing lineups is nearly free, where solving new
+    goalie-anchored lineups doubled the build time."""
+    at = {k: j for j, k in enumerate(keep)}
+    goalies = sorted((j for j, p in enumerate(pl) if str(p["pos"]) in GOALIES
+                      and float(p.get("pp") or 1.0) >= 0.5),
+                     key=lambda j: -med[j])[:SWAP_GOALIES]
+    base = sorted(pool, key=lambda L: -L["proj"])[:60]
+    have = {tuple(sorted(L["p"])) for L in pool}
+    for gj in goalies:
+        g = keep[gj]
+        opp = str(pl[gj].get("opp") or "~")
+        added = 0
+        for L in base:
+            cur = [i for i in L["p"] if str(players[i]["pos"]) in GOALIES]
+            if not cur or cur[0] == g:
+                continue
+            new = [i for i in L["p"] if i != cur[0]] + [g]
+            if any(str(players[i].get("team")) == opp for i in new if i != g):
+                continue
+            idx = [at[i] for i in new]
+            salary = int(sum(int(players[i]["salary"]) for i in new))
+            if salary > cap or tuple(sorted(new)) in have:
+                continue
+            have.add(tuple(sorted(new)))
+            o = own[idx]
+            pool.append({
+                "p": new, "proj": round(float(med[idx].sum()), 2),
+                "ceil": round(float(ceil[idx].sum()), 2), "sal": salary,
+                "own": round(float(100 * o.sum()), 1),
+                "dup": round(float(field_size * math.prod(max(x, 1e-4) for x in o)), 4),
+                "src": f"goalie swap {pl[gj]['name']}"})
+            added += 1
+            if added >= SWAP_PER_GOALIE:
+                break
+
+
+def safe_build(payload: dict) -> list[dict]:
+    """For the publishers: a pool, or an empty list and a log line. A pool
+    failure must never cost the slate itself."""
+    try:
+        return build(payload["players"], payload["roster"],
+                     int(payload.get("field_size") or 100_000))
+    except Exception as exc:                                   # noqa: BLE001
+        log.warning("lineup pool for draft group %s failed (%s) - slate "
+                    "published without one", payload.get("draft_group"), exc)
+        return []
+
+
+def optimal_lineup(players: list[dict], roster: dict) -> list[int] | None:
+    """The single best-projected legal lineup (no stacks, no ownership
+    penalty) - what the chalk check re-solves on jiggled projections."""
+    pool = build(players, roster, lambdas=(0.0,), per_objective=1, stacks=False)
+    best = next((L for L in pool if L["src"].startswith("median")), None)
+    return best["p"] if best else None
