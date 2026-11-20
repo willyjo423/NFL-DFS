@@ -1928,8 +1928,11 @@ function drawBoard() {
           : `Projected ${fmt(p.med)} points, and this slate carries no `
             + `playing-time evidence.`)}">⚠</b>`
       : "";
+    const chalk = p.chalk ? ' <span class="pill q" title="Mega-chalk: in most optimal lineups the field can build">CHALK</span>' : "";
+    const pr = (p.props != null && p.model != null && Math.abs(p.props - p.model) >= Math.max(3, 0.2 * p.model))
+      ? ` <span class="pill" title="Bovada props ${fmt(p.props)} vs model ${fmt(p.model)} (projection blends them)">props ${fmt(p.props)} / model ${fmt(p.model)}</span>` : "";
     return `<tr class="${cls}">
-      <td class="l">${esc(p.name)}${q}${warn}</td><td class="l">${esc(p.pos)}</td>
+      <td class="l">${esc(p.name)}${q}${chalk}${warn}${pr}</td><td class="l">${esc(p.pos)}</td>
       <td class="l">${esc(p.team)}</td><td>${money(p.salary)}</td>
       <td>${fmt(p.med)}</td><td>${fmt(p.ceil)}</td><td>${fmt(per, 2)}</td>
       <td>${fmt(p.own * 100)}%</td><td>${fmt(p.lev, 2)}</td>
