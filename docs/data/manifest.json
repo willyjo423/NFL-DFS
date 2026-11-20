@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-19T21:20:34+00:00",
+  "updated_at": "2026-11-20T02:52:28+00:00",
   "slates": [
     {
       "kind": "classic",
@@ -859,11 +859,11 @@
       "site": "dk",
       "draft_group": 156561,
       "label": "NFL $2.5M Fantasy Football Millionaire [$1M to 1st]",
-      "contests": 1695,
+      "contests": 1701,
       "starts": "2026-11-22 18:00:00+00:00",
       "file": "data/nfl/dk-classic-156561.json",
-      "players": 457,
-      "generated_at": "2026-11-19T21:08:22+00:00"
+      "players": 455,
+      "generated_at": "2026-11-20T02:43:36+00:00"
     },
     {
       "kind": "classic",
@@ -882,12 +882,12 @@
       "sport": "nfl",
       "site": "dk",
       "draft_group": 156775,
-      "label": "NFL $120K Wildcat [$30K to 1st] (Early Only)",
-      "contests": 455,
+      "label": "NFL $200K Early Only Rush [$50K to 1st] (Early Only)",
+      "contests": 457,
       "starts": "2026-11-22 18:00:00+00:00",
       "file": "data/nfl/dk-classic-156775.json",
-      "players": 320,
-      "generated_at": "2026-11-19T21:10:28+00:00"
+      "players": 319,
+      "generated_at": "2026-11-20T02:45:45+00:00"
     },
     {
       "kind": "classic",
@@ -898,8 +898,8 @@
       "contests": 280,
       "starts": "2026-11-22 18:00:00+00:00",
       "file": "data/nfl/dk-classic-156776.json",
-      "players": 554,
-      "generated_at": "2026-11-19T21:15:57+00:00"
+      "players": 552,
+      "generated_at": "2026-11-20T02:48:04+00:00"
     },
     {
       "kind": "classic",
@@ -907,11 +907,23 @@
       "site": "dk",
       "draft_group": 156777,
       "label": "NFL $400K Afternoon Only Rush [$100K to 1st!] (Afternoon Only)",
-      "contests": 433,
+      "contests": 434,
       "starts": "2026-11-22 21:05:00+00:00",
       "file": "data/nfl/dk-classic-156777.json",
-      "players": 136,
-      "generated_at": "2026-11-19T21:11:20+00:00"
+      "players": 135,
+      "generated_at": "2026-11-20T02:46:27+00:00"
+    },
+    {
+      "kind": "classic",
+      "sport": "nfl",
+      "site": "dk",
+      "draft_group": 156779,
+      "label": "NFL $40K Post Pattern [$10K to 1st] (Primetime)",
+      "contests": 186,
+      "starts": "2026-11-23 01:20:00+00:00",
+      "file": "data/nfl/dk-classic-156779.json",
+      "players": 97,
+      "generated_at": "2026-11-20T02:49:58+00:00"
     },
     {
       "kind": "showdown",
@@ -2363,7 +2375,7 @@
       "starts": "2026-11-22 18:00:00+00:00",
       "file": "data/nfl/dk-showdown-156786.json",
       "players": 46,
-      "generated_at": "2026-11-19T21:17:29+00:00"
+      "generated_at": "2026-11-20T02:49:19+00:00"
     },
     {
       "kind": "showdown",
@@ -2375,7 +2387,7 @@
       "starts": "2026-11-22 18:00:00+00:00",
       "file": "data/nfl/dk-showdown-156784.json",
       "players": 46,
-      "generated_at": "2026-11-19T21:19:02+00:00"
+      "generated_at": "2026-11-20T02:51:13+00:00"
     },
     {
       "kind": "showdown",
@@ -2383,11 +2395,11 @@
       "site": "dk",
       "draft_group": 156788,
       "label": "NFL Showdown $20K Thunderdome [Must Fill] (PIT @ PHI)",
-      "contests": 129,
+      "contests": 166,
       "starts": "2026-11-22 18:00:00+00:00",
       "file": "data/nfl/dk-showdown-156788.json",
-      "players": 48,
-      "generated_at": "2026-11-18T03:21:30+00:00"
+      "players": 49,
+      "generated_at": "2026-11-20T02:52:28+00:00"
     },
     {
       "kind": "showdown",
@@ -2435,7 +2447,7 @@
       "starts": "2026-11-22 18:00:00+00:00",
       "file": "data/nfl/dk-showdown-156782.json",
       "players": 54,
-      "generated_at": "2026-11-19T21:18:15+00:00"
+      "generated_at": "2026-11-20T02:50:35+00:00"
     },
     {
       "kind": "showdown",
@@ -2446,8 +2458,8 @@
       "contests": 222,
       "starts": "2026-11-22 21:25:00+00:00",
       "file": "data/nfl/dk-showdown-156791.json",
-      "players": 46,
-      "generated_at": "2026-11-19T21:16:43+00:00"
+      "players": 45,
+      "generated_at": "2026-11-20T02:48:42+00:00"
     },
     {
       "kind": "showdown",
@@ -2459,8 +2471,27 @@
       "starts": "2026-11-22 21:25:00+00:00",
       "file": "data/nfl/dk-showdown-156790.json",
       "players": 45,
-      "generated_at": "2026-11-19T21:20:34+00:00"
+      "generated_at": "2026-11-20T02:51:50+00:00"
+    },
+    {
+      "kind": "showdown",
+      "sport": "nfl",
+      "site": "dk",
+      "draft_group": 156792,
+      "label": "NFL Showdown $1M Sunday Night Showdown [$250K to 1st] (MIN vs SF)",
+      "contests": 891,
+      "starts": "2026-11-23 01:20:00+00:00",
+      "file": "data/nfl/dk-showdown-156792.json",
+      "players": 49,
+      "generated_at": "2026-11-20T02:44:46+00:00"
     }
   ],
-  "failures": []
+  "failures": [
+    {
+      "kind": "showdown",
+      "draft_group": 156793,
+      "label": "NFL Showdown $1.2M Monday Night Showdown [$300K to 1st] (CIN @ WAS)",
+      "error": "BoardUnfiltered: NO injury information reached this board (0/57 matched).\nEvery player would read as available, which is exactly how an inactive player gets into every lineup.\nA filter that is silently not filtering is worse than no filter, because it is trusted.\nFix the join, or pass --force to build a board that cannot see who is hurt."
+    }
+  ]
 }
