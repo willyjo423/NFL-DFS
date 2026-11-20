@@ -1,0 +1,50 @@
+name: Weekly grade
+
+# Scores the past week's lock-time classic boards against the stat lines and
+# keeps a running record in docs/data/grades/nfl. The props weight learns
+# from it (props_weight.py). Dispatched Tuesday and Wednesday mornings by the
+# slate clock, since nflverse's stat lines land early in the week.
+
+on:
+  workflow_dispatch:
+    inputs:
+      since:
+        description: "Grade boards from this date (YYYY-MM-DD; blank = last 8 days)"
+        required: false
+
+permissions:
+  contents: write
+
+concurrency:
+  group: weekly-grade
+  cancel-in-progress: false
+
+jobs:
+  grade:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - run: pip install -q -r requirements.txt
+      - name: Grade
+        run: |
+          set -o pipefail
+          ARGS=""
+          [ -n "${{ inputs.since }}" ] && ARGS="--since ${{ inputs.since }}"
+          python grade_lock.py $ARGS | tee grade.md
+          cat grade.md >> "$GITHUB_STEP_SUMMARY"
+      - name: Commit
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A docs/data/grades
+          git diff --cached --quiet && { echo "nothing new"; exit 0; }
+          git commit -m "Grades: $(date -u +%Y-%m-%d)"
+          for i in 1 2 3 4 5; do
+            git pull --rebase -X ours origin main && git push && exit 0
+            sleep $((i * 8))
+          done
+          exit 1

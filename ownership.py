@@ -463,3 +463,57 @@ if __name__ == "__main__":  # pragma: no cover
     print("missing from the published board entirely:")
     for who, own in MISSING_FROM_BOARD.items():
         print(f"   {who:<16}{100*own:5.1f}% owned")
+
+
+# ------------------------------------------------------------ mega-chalk
+CHALK_DRAWS = 40
+CHALK_NOISE = 0.15
+CHALK_START = 0.5
+CHALK_SLOPE = 0.6
+CHALK_FLAG = 0.30
+
+
+def chalk_adjust(pool: pd.DataFrame, own: pd.Series, roster: dict,
+                 seed: int = 7) -> tuple[pd.Series, list[str]]:
+    """Catch the player the whole field will play.
+
+    A softmax over appeal spreads ownership; the real field piles onto the
+    one or two values every optimizer finds. So the best lineup is re-solved
+    on jittered projections (each player's median times a 15% lognormal) and
+    a player in at least half of those optimal lineups gets an ownership
+    floor of 0.6 x that share, the rest of his position scaled down to keep
+    the total. The same catcher runs on the NBA, NHL and CFB boards; it exists
+    so a 57%-owned player is never shown at 20%.
+    """
+    import optimise as O
+    rng = np.random.default_rng(seed)
+    med = pd.to_numeric(pool["median"], errors="coerce").fillna(0).to_numpy(float)
+    hits = np.zeros(len(pool))
+    done = 0
+    for _ in range(CHALK_DRAWS):
+        obj = med * np.exp(rng.normal(0, CHALK_NOISE, len(med)) - CHALK_NOISE ** 2 / 2)
+        try:
+            rows, _cap = O.solve_one(pool, roster, obj, [], len(roster["slots"]) - 1)
+        except Exception:                                      # noqa: BLE001
+            continue
+        hits[rows] += 1
+        done += 1
+    out = own.copy()
+    flagged = []
+    if not done:
+        return out, flagged
+    freq = hits / done
+    pos = pool["position"].astype(str).to_numpy()
+    for i in np.where(freq >= CHALK_START)[0]:
+        floor = CHALK_SLOPE * freq[i]
+        cur = float(out.iloc[i])
+        if floor <= cur:
+            continue
+        same = (pos == pos[i]) & (np.arange(len(pos)) != i)
+        rest = float(out[same].sum())
+        if rest > 0:
+            out[same] = out[same] * max(0.0, (rest - (floor - cur))) / rest
+        out.iloc[i] = floor
+    for i in np.where(out.to_numpy() >= CHALK_FLAG)[0]:
+        flagged.append(str(pool.iloc[i]["name"]))
+    return out, flagged

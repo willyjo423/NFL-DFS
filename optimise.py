@@ -156,6 +156,11 @@ def solve_one(pool: pd.DataFrame, roster: dict, objective: np.ndarray,
                 if c[i].value() and c[i].value() > 0.5]
         cap = caps[0] if caps else None
         rows = rows + ([cap] if cap is not None else [])
+    if len(rows) != len(roster["slots"]):
+        # A solve can stop on a point that is not a whole lineup; one such
+        # 8-man lineup reached an NHL board (2026-11-19). Never pass one on.
+        raise Infeasible(f"solver returned {len(rows)} players for "
+                         f"{len(roster['slots'])} slots")
     return sorted(rows), cap
 
 
@@ -256,8 +261,9 @@ def build(pool: pd.DataFrame, roster: dict, draws: np.ndarray,
     max_overlap = (size - 1 if entries == 1 else max(1, size - 3)) \
         if max_overlap is None else max_overlap
 
-    line_cash = S.cash_line(draws, roster)
-    line_gpp = _gpp_line(draws, roster)
+    o = own.to_numpy(dtype=float) if own is not None else None
+    line_cash = S.cash_line(draws, roster, own=o)
+    line_gpp = _gpp_line(draws, roster, own=o)
     log.info("cash line %.1f, tournament line %.1f (top %.2f%% of a rough "
              "random field)", line_cash, line_gpp,
              100 * config.GPP_TARGET_FRACTION)
@@ -306,7 +312,7 @@ def build(pool: pd.DataFrame, roster: dict, draws: np.ndarray,
     return pd.concat(frames, ignore_index=True)
 
 
-def _gpp_line(draws: np.ndarray, roster: dict) -> float:
+def _gpp_line(draws: np.ndarray, roster: dict, own=None) -> float:
     """What it takes to reach the top of a tournament, roughly.
 
     Estimated the same way as the cash line and with the same honest caveat: a
@@ -315,7 +321,7 @@ def _gpp_line(draws: np.ndarray, roster: dict) -> float:
     uniformly too low still ranks them correctly - which is why an approximate
     line is worth having and an assumed one is not.
     """
-    return S.cash_line(draws, roster,
+    return S.cash_line(draws, roster, own=own, trials=20000,
                        fraction=config.GPP_TARGET_FRACTION)
 
 

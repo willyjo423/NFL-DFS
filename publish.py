@@ -53,8 +53,44 @@ def slate_payload(draft_group: int, site: str, showdown: bool,
     out = P.run(draft_group, site=site,
                 captain_multiplier=roster.get("captain_multiplier"))
     pool = out["players"].reset_index(drop=True)
+    qcols = [f"q{int(q * 100)}" for q in config.QUANTILES]
+
+    # Bovada player props, blended over the model (see nfl_props.py).
+    try:
+        import nfl_props
+        n_props = nfl_props.apply(pool, qcols)
+    except Exception as exc:                                   # noqa: BLE001
+        log.warning("props unavailable (%s)", str(exc)[:100])
+        n_props = 0
+        pool["model"] = np.nan
+        pool["props"] = np.nan
+
+    # Out of the rotation (project.mark_rotation): no props, and his team has
+    # played STALE_GAMES+ games this season without him.
+    pool["news"] = ""
+    if "team_games_missed" in pool.columns:
+        import project as PR
+        stale = (pd.to_numeric(pool["team_games_missed"], errors="coerce") >= PR.STALE_GAMES) \
+            & pool["props"].isna()
+        for i in pool.index[stale]:
+            pool.at[i, "playing"] = "out"
+            if "p_play" in pool.columns:
+                pool.at[i, "p_play"] = 0.0
+            pool.at[i, "news"] = (f"no game in his team's last "
+                                  f"{int(pool.at[i, 'team_games_missed'])} - not projected")
+        if stale.any():
+            log.info("not in the rotation, not projected: %s",
+                     ", ".join(pool.loc[stale, "name"].astype(str).head(15)))
+        pool = pool[~stale].reset_index(drop=True)
 
     own = OWN.project(pool, roster)
+    chalk = []
+    try:
+        own, chalk = OWN.chalk_adjust(pool, own, roster)
+        if chalk:
+            log.info("chalk: %s", ", ".join(chalk))
+    except Exception as exc:                                   # noqa: BLE001
+        log.warning("chalk check failed (%s)", str(exc)[:80])
     pool["ownership"] = own.round(4)
     pool["leverage"] = OWN.leverage(pool, own)
 
@@ -78,7 +114,6 @@ def slate_payload(draft_group: int, site: str, showdown: bool,
             "duplicates": round(float(built["duplicates"].iloc[0]), 2),
         }
 
-    qcols = [f"q{int(q * 100)}" for q in config.QUANTILES]
     players = []
     for r in pool.itertuples(index=False):
         players.append({
@@ -105,6 +140,14 @@ def slate_payload(draft_group: int, site: str, showdown: bool,
                           r, "p_play", None) else None),
             "mean": round(float(getattr(r, "mean", r.median)), ROUND),
             "inj": str(getattr(r, "injury_status", "") or ""),
+            "model": (round(float(r.model), 2) if getattr(r, "model", None) == getattr(r, "model", None)
+                      and getattr(r, "model", None) is not None else None),
+            "props": (round(float(r.props), 2) if getattr(r, "props", None) == getattr(r, "props", None)
+                      and getattr(r, "props", None) is not None else None),
+            "sgp": (int(r.season_games) if getattr(r, "season_games", None) == getattr(r, "season_games", None)
+                   and getattr(r, "season_games", None) is not None else None),
+            "chalk": str(r.name) in chalk,
+            "news": str(getattr(r, "news", "") or "") or None,
         })
 
     # The loadings, so the browser can rebuild the same correlation. This is
@@ -131,6 +174,7 @@ def slate_payload(draft_group: int, site: str, showdown: bool,
         "players": players,
         "server_lineups": lineups,
         "correlation": corr.to_dict("records"),
+        "props": {"source": "Bovada player props", "players": int(n_props)} if n_props else None,
         "notes": {
             "ownership": "modelled from priors, not measured - DraftKings' "
                          "standings are behind a login",
@@ -144,7 +188,8 @@ def roster_name(roster: dict) -> str:
 
 
 def run(kinds: list[str], site: str, sims: int, field_size: int,
-        max_slates: int = 12, min_contests: int = 1) -> list[dict]:
+        max_slates: int = 12, min_contests: int = 1,
+        soon: int | None = None) -> list[dict]:
     """Build EVERY live slate we have roster rules for, not one per kind.
 
     The first version took the busiest Classic and the busiest Showdown and
@@ -173,6 +218,13 @@ def run(kinds: list[str], site: str, sims: int, field_size: int,
         return []
 
     wanted = {k.lower() for k in kinds} if kinds else set()
+    if soon:
+        # Lock-time run: only slates starting within `soon` minutes, so it
+        # finishes in minutes rather than rebuilding all twelve.
+        now = pd.Timestamp.now(tz="UTC")
+        st = pd.to_datetime(table["starts"], utc=True, errors="coerce")
+        table = table[(st > now) & (st <= now + pd.Timedelta(minutes=soon))]
+        log.info("lock-time run: %d slate(s) start within %d minutes", len(table), soon)
     written, skipped = [], []
     built = 0
     for row in table.itertuples(index=False):
@@ -214,6 +266,15 @@ def run(kinds: list[str], site: str, sims: int, field_size: int,
         folder.mkdir(parents=True, exist_ok=True)
         path = folder / f"{site}-{kind}-{dg}.json"
         path.write_text(json.dumps(payload, separators=(",", ":")))
+        # The last version written before a slate starts is its lock board;
+        # the weekly grade reads it from here.
+        try:
+            day = str(pd.Timestamp(payload["starts"]).tz_convert("America/New_York").date())
+            arch = OUT / "archive" / payload["sport"] / day
+            arch.mkdir(parents=True, exist_ok=True)
+            (arch / path.name).write_text(path.read_text())
+        except Exception as exc:                               # noqa: BLE001
+            log.warning("archive skipped (%s)", str(exc)[:60])
         built += 1
         log.info("wrote %s (%.0f KB, %d players)", path,
                  path.stat().st_size / 1024, len(payload["players"]))
@@ -242,6 +303,8 @@ def main(argv=None) -> int:
                    help="blank means every kind we have roster rules for")
     p.add_argument("--sims", type=int, default=config.SIMS_GPP)
     p.add_argument("--field", type=int, default=100_000)
+    p.add_argument("--soon", type=int, default=None,
+                   help="only slates starting within N minutes (lock runs)")
     p.add_argument("--max-slates", type=int, default=12,
                    help="how many slates to build; each is a full fit plus "
                         "50k correlated draws, so this is a time budget")
@@ -250,7 +313,10 @@ def main(argv=None) -> int:
 
     OUT.mkdir(parents=True, exist_ok=True)
     written = run(args.kinds, args.site, args.sims, args.field,
-                  max_slates=args.max_slates)
+                  max_slates=args.max_slates, soon=args.soon)
+    if args.soon and not written:
+        print("no slate starts within the window; nothing to do")
+        return 0
 
     manifest = OUT / "manifest.json"
     prior = {}
@@ -262,10 +328,24 @@ def main(argv=None) -> int:
 
     # Keep yesterday's entries for sports not built in this run, so a football
     # publish does not silently delete basketball from the page.
-    slates = {s["file"]: s for s in prior.get("slates", []) if "file" in s}
+    # Started slates leave the dropdown (the manifest had grown to 207 rows,
+    # back to September): kept for 12 hours after their start, then dropped.
+    cutoff = pd.Timestamp.now(tz="UTC") - pd.Timedelta(hours=12)
+
+    def live(sl):
+        try:
+            return pd.Timestamp(sl.get("starts")).tz_convert("UTC") > cutoff
+        except Exception:                                      # noqa: BLE001
+            return False
+    slates = {s["file"]: s for s in prior.get("slates", [])
+              if "file" in s and live(s)}
     for s in written:
         if "file" in s:
             slates[s["file"]] = s
+    keep = {(config.DOCS / f).resolve() for f in slates}
+    for f in (OUT / "nfl").glob("*.json"):
+        if f.resolve() not in keep:
+            f.unlink()
 
     manifest.write_text(json.dumps({
         "updated_at": datetime.now(timezone.utc).isoformat(timespec="seconds"),
