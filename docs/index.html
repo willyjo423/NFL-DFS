@@ -98,22 +98,22 @@ a{color:var(--acc)}
         <div class="f"><label>Min total own %</label><input id="ownmin" type="number" min="0" step="5" placeholder="none"></div>
         <div class="f"><label>Max total own %</label><input id="ownmax" type="number" min="0" step="5" placeholder="none"></div>
         <div class="f"><label>Max exposure %</label><input id="expo" type="number" min="1" max="100" step="5" value="60"></div>
-        <div class="f stackf"><label>Stack by</label>
+        <div class="f stackf" id="f-stkby"><label>Stack by</label>
           <select id="stkby" style="width:100%">
             <option value="team">Team</option><option value="line">Same line</option>
             <option value="pp">Same PP1 unit</option>
             <option value="lined">Full line + D</option></select></div>
-        <div class="f stackf"><label>Stack</label>
+        <div class="f stackf"><label id="l-stk">Stack</label>
           <select id="stk" style="width:100%">
             <option value="0">Any</option><option value="2">2+ one team</option>
             <option value="3">3+ one team</option><option value="4">4+ one team</option>
             <option value="5">5+ one team</option></select></div>
-        <div class="f stackf"><label>Second stack</label>
+        <div class="f stackf"><label id="l-stk2">Second stack</label>
           <select id="stk2" style="width:100%">
             <option value="0">Any</option><option value="2">2+</option><option value="3">3+</option></select></div>
-        <div class="f stackf"><label>Stack team</label>
+        <div class="f stackf"><label id="l-stkteam">Stack team</label>
           <select id="stkteam" style="width:100%"><option value="">Any</option></select></div>
-        <div class="f stackf"><label>Max per team</label>
+        <div class="f stackf" id="f-mpt"><label>Max per team</label>
           <select id="mpt" style="width:100%">
             <option value="0">Any</option><option value="3">3 (cash)</option>
             <option value="4">4</option></select></div>
@@ -263,12 +263,37 @@ async function loadSlate(file) {
   // Hockey only: NBA also has a "G" slot, but it is a guard, not a goalie.
   const canStack = ["nhl", "nfl"].includes(SLATE.sport);
   document.querySelectorAll(".stackf").forEach(e => e.classList.toggle("hide", !canStack));
-  // Football stacks by team only; the line / power-play groupings are hockey's.
-  [...$("stkby").options].forEach(o => { o.hidden = SLATE.sport === "nfl" && o.value !== "team"; });
-  if (SLATE.sport === "nfl") $("stkby").value = "team";
-  const teams = [...new Set(SLATE.players.filter(q => !single.has(q.pos)).map(q => q.team))].sort();
+  // FOOTBALL STACKS ARE BUILT AROUND THE QUARTERBACK, not hockey lines.
+  // Per lineup: how many of the QB's own pass catchers (WR/TE) are with him,
+  // and how many skill players from the team he faces (the bring-back).
+  const nfl = SLATE.sport === "nfl";
+  if (nfl) {
+    (SLATE.lineups || []).forEach(L => {
+      const P = SLATE.players, qb = L.p.map(i => P[i]).find(q => q.pos === "QB");
+      L.qbteam = qb ? qb.team : "";
+      L.qbs = qb ? L.p.filter(i => P[i] !== qb && P[i].team === qb.team && (P[i].pos === "WR" || P[i].pos === "TE")).length : 0;
+      L.bb = qb ? L.p.filter(i => P[i].team === qb.opp && ["RB", "WR", "TE"].includes(P[i].pos)).length : 0;
+    });
+  }
+  $("f-stkby").classList.toggle("hide", nfl || !canStack);
+  $("f-mpt").classList.toggle("hide", nfl || !canStack);
+  $("l-stk").textContent = nfl ? "QB stack" : "Stack";
+  $("l-stk2").textContent = nfl ? "Bring-back" : "Second stack";
+  $("l-stkteam").textContent = nfl ? "QB team" : "Stack team";
+  $("stk").innerHTML = nfl
+    ? '<option value="0">Any</option><option value="1">QB + 1</option><option value="2">QB + 2</option><option value="3">QB + 3</option>'
+    : '<option value="0">Any</option><option value="2">2+ one team</option><option value="3">3+ one team</option><option value="4">4+ one team</option><option value="5">5+ one team</option>';
+  $("stk2").innerHTML = nfl
+    ? '<option value="0">Any</option><option value="1">1+ opponent</option><option value="2">2+ opponents</option>'
+    : '<option value="0">Any</option><option value="2">2+</option><option value="3">3+</option>';
+  const teams = nfl
+    ? [...new Set(SLATE.players.filter(q => q.pos === "QB").map(q => q.team))].sort()
+    : [...new Set(SLATE.players.filter(q => !single.has(q.pos)).map(q => q.team))].sort();
   $("stkteam").innerHTML = '<option value="">Any</option>' + teams.map(t => `<option>${esc(t)}</option>`).join("");
-  $("stk").value = "0"; $("stk2").value = "0";
+  // NFL default: the quarterback with at least one of his own pass catchers.
+  // Nearly every large-field winner is built that way; a bring-back is
+  // common but optional. Hockey/others: no default stack.
+  $("stk").value = nfl ? "1" : "0"; $("stk2").value = "0";
   const hasSim = (SLATE.lineups || []).some(L => L.top1 != null);
   $("sort").querySelectorAll("option").forEach(o => { if (["top1", "cash"].includes(o.value)) o.disabled = !hasSim; });
   $("sort").value = hasSim ? "cash" : "proj";
@@ -348,12 +373,14 @@ function drawLineups() {
   const by = $("stkby").value;
   const mpt = ["nhl", "nfl"].includes(SPORT) ? +$("mpt").value : 0;
   const G = L => (L.grp || {team: L.stk})[by] || [];
+  const nfl = SPORT === "nfl";
   let ok = pool.filter(L =>
     L.own >= lo && L.own <= hi &&
+    (nfl ? ((!s1 || L.qbs >= s1) && (!s2 || L.bb >= s2) && (!st || L.qbteam === st)) : (
     (!mpt || ((L.stk || [])[0] || [, 0])[1] <= mpt) &&
     (!s1 || (G(L)[0] || [, 0])[1] >= s1) &&
     (!s2 || (G(L)[1] || [, 0])[1] >= s2) &&
-    (!st || G(L).some(([k, c]) => (k === st || k.startsWith(st + "-")) && c >= Math.max(s1, 2))) &&
+    (!st || G(L).some(([k, c]) => (k === st || k.startsWith(st + "-")) && c >= Math.max(s1, 2))))) &&
     [...LOCK].every(i => L.p.includes(i)) &&
     !L.p.some(i => EXCL.has(i)));
   ok.sort((a, b) => k === "ownhi" ? b.own - a.own
@@ -392,7 +419,9 @@ function drawLineups() {
 }
 
 function stackTag(L) {
-  if (!["nhl", "nfl"].includes(SLATE.sport)) return "";
+  if (SLATE.sport === "nfl")
+    return L.qbteam ? `<span class="stk">${esc(L.qbteam)} QB + ${L.qbs}${L.bb ? " · bring-back " + L.bb : ""}</span>` : "";
+  if (SLATE.sport !== "nhl") return "";
   const g = L.grp || {team: L.stk || []};
   const bits = (g.team || []).filter(([, n]) => n >= 2).map(([t, n]) => esc(t) + " " + n)
     .concat((g.line || []).filter(([, n]) => n >= 2).map(([k, n]) => esc(k.replace("-", " ")) + "×" + n))
