@@ -1,0 +1,71 @@
+{
+ "updated_at": "2026-11-20T16:00:32+00:00",
+ "slates": [
+  {
+   "sport": "nfl",
+   "site": "dk",
+   "kind": "classic",
+   "label": "NFL $20K Thunderdome [Must Fill] (Sun-Mon)",
+   "draft_group": 156776,
+   "file": "data/v2/nfl_dk_classic_156776.json",
+   "starts": "2026-11-22 18:00:00+00:00",
+   "players": 383,
+   "generated_at": "2026-11-20T15:55:48+00:00"
+  },
+  {
+   "sport": "nfl",
+   "site": "dk",
+   "kind": "classic",
+   "label": "NFL $2.5M Fantasy Football Millionaire [$1M to 1st]",
+   "draft_group": 156561,
+   "file": "data/v2/nfl_dk_classic_156561.json",
+   "starts": "2026-11-22 18:00:00+00:00",
+   "players": 317,
+   "generated_at": "2026-11-20T15:51:07+00:00"
+  },
+  {
+   "sport": "nfl",
+   "site": "dk",
+   "kind": "classic",
+   "label": "NFL $200K Early Only Rush [$50K to 1st] (Early Only)",
+   "draft_group": 156775,
+   "file": "data/v2/nfl_dk_classic_156775.json",
+   "starts": "2026-11-22 18:00:00+00:00",
+   "players": 222,
+   "generated_at": "2026-11-20T15:54:13+00:00"
+  },
+  {
+   "sport": "nfl",
+   "site": "dk",
+   "kind": "classic",
+   "label": "NFL $400K Afternoon Only Rush [$100K to 1st!] (Afternoon Only)",
+   "draft_group": 156777,
+   "file": "data/v2/nfl_dk_classic_156777.json",
+   "starts": "2026-11-22 21:05:00+00:00",
+   "players": 95,
+   "generated_at": "2026-11-20T15:53:17+00:00"
+  },
+  {
+   "sport": "nfl",
+   "site": "dk",
+   "kind": "classic",
+   "label": "NFL $30K Turbo Special [$10K to 1st] (Afternoon Turbo)",
+   "draft_group": 156778,
+   "file": "data/v2/nfl_dk_classic_156778.json",
+   "starts": "2026-11-22 21:25:00+00:00",
+   "players": 63,
+   "generated_at": "2026-11-20T15:59:12+00:00"
+  },
+  {
+   "sport": "nfl",
+   "site": "dk",
+   "kind": "classic",
+   "label": "NFL $40K Post Pattern [$10K to 1st] (Primetime)",
+   "draft_group": 156779,
+   "file": "data/v2/nfl_dk_classic_156779.json",
+   "starts": "2026-11-23 01:20:00+00:00",
+   "players": 66,
+   "generated_at": "2026-11-20T15:57:46+00:00"
+  }
+ ]
+}
