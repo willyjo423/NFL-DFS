@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-20T16:24:16+00:00",
+  "updated_at": "2026-11-20T17:36:42+00:00",
   "slates": [
     {
       "kind": "classic",
@@ -7,23 +7,23 @@
       "site": "dk",
       "draft_group": 156561,
       "label": "NFL $2.5M Fantasy Football Millionaire [$1M to 1st]",
-      "contests": 1717,
+      "contests": 1721,
       "starts": "2026-11-22 18:00:00+00:00",
       "file": "data/nfl/dk-classic-156561.json",
       "players": 317,
-      "generated_at": "2026-11-20T16:14:14+00:00"
+      "generated_at": "2026-11-20T17:19:14+00:00"
     },
     {
       "kind": "classic",
       "sport": "nfl",
       "site": "dk",
       "draft_group": 156775,
-      "label": "NFL $200K Early Only Rush [$50K to 1st] (Early Only)",
+      "label": "NFL $120K Wildcat [$30K to 1st] (Early Only)",
       "contests": 460,
       "starts": "2026-11-22 18:00:00+00:00",
       "file": "data/nfl/dk-classic-156775.json",
       "players": 222,
-      "generated_at": "2026-11-20T16:17:34+00:00"
+      "generated_at": "2026-11-20T17:24:47+00:00"
     },
     {
       "kind": "classic",
@@ -31,11 +31,11 @@
       "site": "dk",
       "draft_group": 156776,
       "label": "NFL $20K Thunderdome [Must Fill] (Sun-Mon)",
-      "contests": 280,
+      "contests": 281,
       "starts": "2026-11-22 18:00:00+00:00",
       "file": "data/nfl/dk-classic-156776.json",
       "players": 383,
-      "generated_at": "2026-11-20T16:19:15+00:00"
+      "generated_at": "2026-11-20T17:27:55+00:00"
     },
     {
       "kind": "classic",
@@ -47,7 +47,7 @@
       "starts": "2026-11-22 21:05:00+00:00",
       "file": "data/nfl/dk-classic-156777.json",
       "players": 95,
-      "generated_at": "2026-11-20T16:16:36+00:00"
+      "generated_at": "2026-11-20T17:22:59+00:00"
     },
     {
       "kind": "classic",
@@ -59,7 +59,7 @@
       "starts": "2026-11-23 01:20:00+00:00",
       "file": "data/nfl/dk-classic-156779.json",
       "players": 66,
-      "generated_at": "2026-11-20T16:21:32+00:00"
+      "generated_at": "2026-11-20T17:32:21+00:00"
     },
     {
       "kind": "classic",
@@ -71,7 +71,7 @@
       "starts": "2026-11-22 21:25:00+00:00",
       "file": "data/nfl/dk-classic-156778.json",
       "players": 63,
-      "generated_at": "2026-11-20T16:22:55+00:00"
+      "generated_at": "2026-11-20T17:34:33+00:00"
     },
     {
       "kind": "showdown",
@@ -83,7 +83,7 @@
       "starts": "2026-11-22 18:00:00+00:00",
       "file": "data/nfl/dk-showdown-156786.json",
       "players": 30,
-      "generated_at": "2026-11-20T16:22:25+00:00"
+      "generated_at": "2026-11-20T17:33:44+00:00"
     },
     {
       "kind": "showdown",
@@ -95,7 +95,7 @@
       "starts": "2026-11-22 18:00:00+00:00",
       "file": "data/nfl/dk-showdown-156784.json",
       "players": 32,
-      "generated_at": "2026-11-20T16:24:16+00:00"
+      "generated_at": "2026-11-20T17:36:42+00:00"
     },
     {
       "kind": "showdown",
@@ -155,7 +155,7 @@
       "starts": "2026-11-22 18:00:00+00:00",
       "file": "data/nfl/dk-showdown-156782.json",
       "players": 35,
-      "generated_at": "2026-11-20T16:23:44+00:00"
+      "generated_at": "2026-11-20T17:35:53+00:00"
     },
     {
       "kind": "showdown",
@@ -167,7 +167,7 @@
       "starts": "2026-11-22 21:25:00+00:00",
       "file": "data/nfl/dk-showdown-156791.json",
       "players": 33,
-      "generated_at": "2026-11-20T16:21:01+00:00"
+      "generated_at": "2026-11-20T17:31:31+00:00"
     },
     {
       "kind": "showdown",
@@ -187,11 +187,11 @@
       "site": "dk",
       "draft_group": 156792,
       "label": "NFL Showdown $1M Sunday Night Showdown [$250K to 1st] (MIN vs SF)",
-      "contests": 965,
+      "contests": 966,
       "starts": "2026-11-23 01:20:00+00:00",
       "file": "data/nfl/dk-showdown-156792.json",
       "players": 36,
-      "generated_at": "2026-11-20T16:16:03+00:00"
+      "generated_at": "2026-11-20T17:22:08+00:00"
     },
     {
       "kind": "showdown",
@@ -203,7 +203,7 @@
       "starts": "2026-11-24 01:15:00+00:00",
       "file": "data/nfl/dk-showdown-156793.json",
       "players": 30,
-      "generated_at": "2026-11-20T16:15:33+00:00"
+      "generated_at": "2026-11-20T17:21:19+00:00"
     }
   ],
   "failures": []

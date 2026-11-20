@@ -1,5 +1,5 @@
 {
- "updated_at": "2026-11-20T16:24:16+00:00",
+ "updated_at": "2026-11-20T17:36:42+00:00",
  "slates": [
   {
    "sport": "nfl",
@@ -10,7 +10,7 @@
    "file": "data/v2/nfl_dk_classic_156776.json",
    "starts": "2026-11-22 18:00:00+00:00",
    "players": 383,
-   "generated_at": "2026-11-20T16:19:15+00:00"
+   "generated_at": "2026-11-20T17:27:55+00:00"
   },
   {
    "sport": "nfl",
@@ -21,18 +21,18 @@
    "file": "data/v2/nfl_dk_classic_156561.json",
    "starts": "2026-11-22 18:00:00+00:00",
    "players": 317,
-   "generated_at": "2026-11-20T16:14:14+00:00"
+   "generated_at": "2026-11-20T17:19:14+00:00"
   },
   {
    "sport": "nfl",
    "site": "dk",
    "kind": "classic",
-   "label": "NFL $200K Early Only Rush [$50K to 1st] (Early Only)",
+   "label": "NFL $120K Wildcat [$30K to 1st] (Early Only)",
    "draft_group": 156775,
    "file": "data/v2/nfl_dk_classic_156775.json",
    "starts": "2026-11-22 18:00:00+00:00",
    "players": 222,
-   "generated_at": "2026-11-20T16:17:34+00:00"
+   "generated_at": "2026-11-20T17:24:47+00:00"
   },
   {
    "sport": "nfl",
@@ -43,7 +43,7 @@
    "file": "data/v2/nfl_dk_classic_156777.json",
    "starts": "2026-11-22 21:05:00+00:00",
    "players": 95,
-   "generated_at": "2026-11-20T16:16:36+00:00"
+   "generated_at": "2026-11-20T17:22:59+00:00"
   },
   {
    "sport": "nfl",
@@ -54,7 +54,7 @@
    "file": "data/v2/nfl_dk_classic_156778.json",
    "starts": "2026-11-22 21:25:00+00:00",
    "players": 63,
-   "generated_at": "2026-11-20T16:22:55+00:00"
+   "generated_at": "2026-11-20T17:34:33+00:00"
   },
   {
    "sport": "nfl",
@@ -65,7 +65,7 @@
    "file": "data/v2/nfl_dk_classic_156779.json",
    "starts": "2026-11-23 01:20:00+00:00",
    "players": 66,
-   "generated_at": "2026-11-20T16:21:32+00:00"
+   "generated_at": "2026-11-20T17:32:21+00:00"
   }
  ]
 }
