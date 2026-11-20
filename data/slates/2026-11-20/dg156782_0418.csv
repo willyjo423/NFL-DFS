@@ -1,0 +1,66 @@
+dk_player_id,draftable_id,name,position,team,salary,roster_slot,status,disabled,attributes,game,starts_utc,norm,flex_eligible,captain_salary,playing,draft_group,game_type,captured_at
+339,0,Chiefs,DST,KC,6400,512,,False,,ARI @ KC,1970-01-01 00:29:55.370400+00:00,chiefs,0,6400,clear,156782,Showdown Captain Mode,2026-11-20T04:18:46+00:00
+355,0,Cardinals,DST,ARI,3000,512,,False,,ARI @ KC,1970-01-01 00:29:55.370400+00:00,cardinals,0,3000,clear,156782,Showdown Captain Mode,2026-11-20T04:18:46+00:00
+273278,0,Josh Johnson,QB,ARI,6000,512,,False,,ARI @ KC,1970-01-01 00:29:55.370400+00:00,josh johnson,0,6000,clear,156782,Showdown Captain Mode,2026-11-20T04:18:46+00:00
+448132,0,Justin Tucker,K,KC,5000,512,,False,,ARI @ KC,1970-01-01 00:29:55.370400+00:00,justin tucker,0,5000,clear,156782,Showdown Captain Mode,2026-11-20T04:18:46+00:00
+448240,0,Travis Kelce,TE,KC,7200,512,,False,,ARI @ KC,1970-01-01 00:29:55.370400+00:00,travis kelce,0,7200,clear,156782,Showdown Captain Mode,2026-11-20T04:18:46+00:00
+472623,0,James Winchester,TE,KC,200,512,,False,,ARI @ KC,1970-01-01 00:29:55.370400+00:00,james winchester,0,200,clear,156782,Showdown Captain Mode,2026-11-20T04:18:46+00:00
+596417,0,Phillip Dorsett II,WR,ARI,200,512,,False,,ARI @ KC,1970-01-01 00:29:55.370400+00:00,phillip dorsett,0,200,clear,156782,Showdown Captain Mode,2026-11-20T04:18:46+00:00
+742390,0,James Conner,RB,ARI,4200,512,,False,,ARI @ KC,1970-01-01 00:29:55.370400+00:00,james conner,0,4200,clear,156782,Showdown Captain Mode,2026-11-20T04:18:46+00:00
+746491,0,Zay Jones,WR,ARI,200,512,,False,,ARI @ KC,1970-01-01 00:29:55.370400+00:00,zay jones,0,200,clear,156782,Showdown Captain Mode,2026-11-20T04:18:46+00:00
+748560,0,Harrison Butker,K,KC,5000,512,,False,,ARI @ KC,1970-01-01 00:29:55.370400+00:00,harrison butker,0,5000,clear,156782,Showdown Captain Mode,2026-11-20T04:18:46+00:00
+754412,0,Kendrick Bourne,WR,ARI,200,512,,False,,ARI @ KC,1970-01-01 00:29:55.370400+00:00,kendrick bourne,0,200,clear,156782,Showdown Captain Mode,2026-11-20T04:18:46+00:00
+832220,0,Justin Watson,WR,KC,800,512,,False,,ARI @ KC,1970-01-01 00:29:55.370400+00:00,justin watson,0,800,clear,156782,Showdown Captain Mode,2026-11-20T04:18:46+00:00
+839031,0,Patrick Mahomes,QB,KC,10600,512,,False,,ARI @ KC,1970-01-01 00:29:55.370400+00:00,patrick mahomes,0,10600,clear,156782,Showdown Captain Mode,2026-11-20T04:18:46+00:00
+867303,0,Gardner Minshew II,QB,ARI,6000,512,,False,,ARI @ KC,1970-01-01 00:29:55.370400+00:00,gardner minshew,0,6000,clear,156782,Showdown Captain Mode,2026-11-20T04:18:46+00:00
+877913,0,James Proche II,WR,ARI,200,512,,False,,ARI @ KC,1970-01-01 00:29:55.370400+00:00,james proche,0,200,clear,156782,Showdown Captain Mode,2026-11-20T04:18:46+00:00
+920756,0,Devin Duvernay,WR,ARI,2000,512,,False,,ARI @ KC,1970-01-01 00:29:55.370400+00:00,devin duvernay,0,2000,clear,156782,Showdown Captain Mode,2026-11-20T04:18:46+00:00
+1056981,0,Noah Gray,TE,KC,2200,512,,False,,ARI @ KC,1970-01-01 00:29:55.370400+00:00,noah gray,0,2200,clear,156782,Showdown Captain Mode,2026-11-20T04:18:46+00:00
+1060550,0,Hunter Long,TE,ARI,1200,512,,False,,ARI @ KC,1970-01-01 00:29:55.370400+00:00,hunter long,0,1200,clear,156782,Showdown Captain Mode,2026-11-20T04:18:46+00:00
+1108161,0,Trey McBride,TE,ARI,9600,512,,False,,ARI @ KC,1970-01-01 00:29:55.370400+00:00,trey mcbride,0,9600,clear,156782,Showdown Captain Mode,2026-11-20T04:18:46+00:00
+1108526,0,Thomas Odukoya,TE,KC,200,512,,False,,ARI @ KC,1970-01-01 00:29:55.370400+00:00,thomas odukoya,0,200,clear,156782,Showdown Captain Mode,2026-11-20T04:18:46+00:00
+1108545,0,Chad Ryland,K,ARI,4800,512,,False,,ARI @ KC,1970-01-01 00:29:55.370400+00:00,chad ryland,0,4800,clear,156782,Showdown Captain Mode,2026-11-20T04:18:46+00:00
+1110301,0,Tyquan Thornton,WR,KC,200,512,,False,,ARI @ KC,1970-01-01 00:29:55.370400+00:00,tyquan thornton,0,200,clear,156782,Showdown Captain Mode,2026-11-20T04:18:46+00:00
+1110681,0,Justin Fields,QB,KC,6000,512,,False,,ARI @ KC,1970-01-01 00:29:55.370400+00:00,justin fields,0,6000,clear,156782,Showdown Captain Mode,2026-11-20T04:18:46+00:00
+1112357,0,Shawn Bowman,TE,ARI,200,512,,False,,ARI @ KC,1970-01-01 00:29:55.370400+00:00,shawn bowman,0,200,clear,156782,Showdown Captain Mode,2026-11-20T04:18:46+00:00
+1114364,0,Shedrick Jackson,WR,ARI,200,512,,False,,ARI @ KC,1970-01-01 00:29:55.370400+00:00,shedrick jackson,0,200,clear,156782,Showdown Captain Mode,2026-11-20T04:18:46+00:00
+1123496,0,Simi Fehoko,WR,ARI,3200,512,,False,,ARI @ KC,1970-01-01 00:29:55.370400+00:00,simi fehoko,0,3200,clear,156782,Showdown Captain Mode,2026-11-20T04:18:46+00:00
+1123529,0,Michael Wilson,WR,ARI,200,512,,False,,ARI @ KC,1970-01-01 00:29:55.370400+00:00,michael wilson,0,200,clear,156782,Showdown Captain Mode,2026-11-20T04:18:46+00:00
+1125737,0,Jerome Ford,RB,ARI,200,512,,False,,ARI @ KC,1970-01-01 00:29:55.370400+00:00,jerome ford,0,200,clear,156782,Showdown Captain Mode,2026-11-20T04:18:46+00:00
+1128538,0,Teagan Quitoriano,TE,ARI,200,512,,False,,ARI @ KC,1970-01-01 00:29:55.370400+00:00,teagan quitoriano,0,200,clear,156782,Showdown Captain Mode,2026-11-20T04:18:46+00:00
+1130213,0,Ronnie Bell,WR,ARI,200,512,,False,,ARI @ KC,1970-01-01 00:29:55.370400+00:00,ronnie bell,0,200,clear,156782,Showdown Captain Mode,2026-11-20T04:18:46+00:00
+1130245,0,Ben VanSumeren,RB,KC,200,512,,False,,ARI @ KC,1970-01-01 00:29:55.370400+00:00,ben vansumeren,0,200,clear,156782,Showdown Captain Mode,2026-11-20T04:18:46+00:00
+1131017,0,John FitzPatrick,TE,KC,200,512,,False,,ARI @ KC,1970-01-01 00:29:55.370400+00:00,john fitzpatrick,0,200,clear,156782,Showdown Captain Mode,2026-11-20T04:18:46+00:00
+1131198,0,Tyler Allgeier,RB,ARI,6800,512,,False,,ARI @ KC,1970-01-01 00:29:55.370400+00:00,tyler allgeier,0,6800,clear,156782,Showdown Captain Mode,2026-11-20T04:18:46+00:00
+1161853,0,Elijah Higgins,TE,ARI,1600,512,,False,,ARI @ KC,1970-01-01 00:29:55.370400+00:00,elijah higgins,0,1600,clear,156782,Showdown Captain Mode,2026-11-20T04:18:46+00:00
+1163272,0,Jared Wiley,TE,KC,200,512,,False,,ARI @ KC,1970-01-01 00:29:55.370400+00:00,jared wiley,0,200,clear,156782,Showdown Captain Mode,2026-11-20T04:18:46+00:00
+1163866,0,Bam Knight,RB,ARI,5400,512,,False,,ARI @ KC,1970-01-01 00:29:55.370400+00:00,bam knight,0,5400,clear,156782,Showdown Captain Mode,2026-11-20T04:18:46+00:00
+1164402,0,Kenneth Walker III,RB,KC,12000,512,,False,,ARI @ KC,1970-01-01 00:29:55.370400+00:00,kenneth walker,0,12000,clear,156782,Showdown Captain Mode,2026-11-20T04:18:46+00:00
+1172080,0,Bub Means,WR,ARI,200,512,,False,,ARI @ KC,1970-01-01 00:29:55.370400+00:00,bub means,0,200,clear,156782,Showdown Captain Mode,2026-11-20T04:18:46+00:00
+1173266,0,Evan Hull,RB,ARI,200,512,,False,,ARI @ KC,1970-01-01 00:29:55.370400+00:00,evan hull,0,200,clear,156782,Showdown Captain Mode,2026-11-20T04:18:46+00:00
+1173538,0,Rashee Rice,WR,KC,9200,512,,False,,ARI @ KC,1970-01-01 00:29:55.370400+00:00,rashee rice,0,9200,clear,156782,Showdown Captain Mode,2026-11-20T04:18:46+00:00
+1213340,0,Carson Beck,QB,ARI,8600,512,,False,,ARI @ KC,1970-01-01 00:29:55.370400+00:00,carson beck,0,8600,clear,156782,Showdown Captain Mode,2026-11-20T04:18:46+00:00
+1213442,0,Jimmy Holiday,WR,KC,200,512,,False,,ARI @ KC,1970-01-01 00:29:55.370400+00:00,jimmy holiday,0,200,clear,156782,Showdown Captain Mode,2026-11-20T04:18:46+00:00
+1214132,0,Nate Carter,RB,KC,400,512,,False,,ARI @ KC,1970-01-01 00:29:55.370400+00:00,nate carter,0,400,clear,156782,Showdown Captain Mode,2026-11-20T04:18:46+00:00
+1215077,0,Josh Downs,WR,KC,8200,512,,False,,ARI @ KC,1970-01-01 00:29:55.370400+00:00,josh downs,0,8200,clear,156782,Showdown Captain Mode,2026-11-20T04:18:46+00:00
+1216769,0,EJ Smith,RB,KC,200,512,,False,,ARI @ KC,1970-01-01 00:29:55.370400+00:00,ej smith,0,200,clear,156782,Showdown Captain Mode,2026-11-20T04:18:46+00:00
+1223301,0,Jalen Brooks,WR,ARI,200,512,,False,,ARI @ KC,1970-01-01 00:29:55.370400+00:00,jalen brooks,0,200,clear,156782,Showdown Captain Mode,2026-11-20T04:18:46+00:00
+1229489,0,Tip Reiman,TE,ARI,200,512,,False,,ARI @ KC,1970-01-01 00:29:55.370400+00:00,tip reiman,0,200,clear,156782,Showdown Captain Mode,2026-11-20T04:18:46+00:00
+1248031,0,Trey Benson,RB,ARI,200,512,,False,,ARI @ KC,1970-01-01 00:29:55.370400+00:00,trey benson,0,200,clear,156782,Showdown Captain Mode,2026-11-20T04:18:46+00:00
+1286037,0,Garrett Nussmeier,QB,KC,6000,512,,False,,ARI @ KC,1970-01-01 00:29:55.370400+00:00,garrett nussmeier,0,6000,clear,156782,Showdown Captain Mode,2026-11-20T04:18:46+00:00
+1287639,0,Jake Briningstool,TE,KC,600,512,,False,,ARI @ KC,1970-01-01 00:29:55.370400+00:00,jake briningstool,0,600,clear,156782,Showdown Captain Mode,2026-11-20T04:18:46+00:00
+1287810,0,Harrison Wallace III,WR,ARI,1000,512,,False,,ARI @ KC,1970-01-01 00:29:55.370400+00:00,harrison wallace,0,1000,clear,156782,Showdown Captain Mode,2026-11-20T04:18:46+00:00
+1288387,0,John Michael Gyllenborg,TE,KC,200,512,,False,,ARI @ KC,1970-01-01 00:29:55.370400+00:00,john michael gyllenborg,0,200,clear,156782,Showdown Captain Mode,2026-11-20T04:18:46+00:00
+1313668,0,Brashard Smith,RB,KC,4400,512,,False,,ARI @ KC,1970-01-01 00:29:55.370400+00:00,brashard smith,0,4400,clear,156782,Showdown Captain Mode,2026-11-20T04:18:46+00:00
+1326638,0,Xavier Worthy,WR,KC,5200,512,,False,,ARI @ KC,1970-01-01 00:29:55.370400+00:00,xavier worthy,0,5200,clear,156782,Showdown Captain Mode,2026-11-20T04:18:46+00:00
+1339352,0,Jeff Caldwell,WR,KC,200,512,,False,,ARI @ KC,1970-01-01 00:29:55.370400+00:00,jeff caldwell,0,200,clear,156782,Showdown Captain Mode,2026-11-20T04:18:46+00:00
+1377757,0,Jaydn Ott,RB,KC,1400,512,,False,,ARI @ KC,1970-01-01 00:29:55.370400+00:00,jaydn ott,0,1400,clear,156782,Showdown Captain Mode,2026-11-20T04:18:46+00:00
+1379251,0,Emmett Johnson,RB,KC,9000,512,,False,,ARI @ KC,1970-01-01 00:29:55.370400+00:00,emmett johnson,0,9000,clear,156782,Showdown Captain Mode,2026-11-20T04:18:46+00:00
+1379261,0,Omari Evans,WR,KC,200,512,,False,,ARI @ KC,1970-01-01 00:29:55.370400+00:00,omari evans,0,200,clear,156782,Showdown Captain Mode,2026-11-20T04:18:46+00:00
+1382670,0,Cyrus Allen,WR,KC,4000,512,,False,,ARI @ KC,1970-01-01 00:29:55.370400+00:00,cyrus allen,0,4000,clear,156782,Showdown Captain Mode,2026-11-20T04:18:46+00:00
+1390939,0,Reggie Virgil,WR,ARI,3600,512,,False,,ARI @ KC,1970-01-01 00:29:55.370400+00:00,reggie virgil,0,3600,clear,156782,Showdown Captain Mode,2026-11-20T04:18:46+00:00
+1403491,0,Jalen Royals,WR,KC,2400,512,,False,,ARI @ KC,1970-01-01 00:29:55.370400+00:00,jalen royals,0,2400,clear,156782,Showdown Captain Mode,2026-11-20T04:18:46+00:00
+1405106,0,Andrew Armstrong,WR,KC,2800,512,,False,,ARI @ KC,1970-01-01 00:29:55.370400+00:00,andrew armstrong,0,2800,clear,156782,Showdown Captain Mode,2026-11-20T04:18:46+00:00
+1445267,0,Jacob De Jesus,WR,KC,200,512,,False,,ARI @ KC,1970-01-01 00:29:55.370400+00:00,jacob de jesus,0,200,clear,156782,Showdown Captain Mode,2026-11-20T04:18:46+00:00
+1448305,0,Joey Aguilar,QB,ARI,6000,512,,False,,ARI @ KC,1970-01-01 00:29:55.370400+00:00,joey aguilar,0,6000,clear,156782,Showdown Captain Mode,2026-11-20T04:18:46+00:00
+1451501,0,Jeremiyah Love,RB,ARI,200,512,,False,,ARI @ KC,1970-01-01 00:29:55.370400+00:00,jeremiyah love,0,200,clear,156782,Showdown Captain Mode,2026-11-20T04:18:46+00:00

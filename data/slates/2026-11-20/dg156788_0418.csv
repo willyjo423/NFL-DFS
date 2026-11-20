@@ -1,0 +1,56 @@
+dk_player_id,draftable_id,name,position,team,salary,roster_slot,status,disabled,attributes,game,starts_utc,norm,flex_eligible,captain_salary,playing,draft_group,game_type,captured_at
+354,0,Eagles,DST,PHI,3600,512,,False,,PIT @ PHI,1970-01-01 00:29:55.370400+00:00,eagles,0,3600,clear,156788,Showdown Captain Mode,2026-11-20T04:18:46+00:00
+356,0,Steelers,DST,PIT,4400,512,,False,,PIT @ PHI,1970-01-01 00:29:55.370400+00:00,steelers,0,4400,clear,156788,Showdown Captain Mode,2026-11-20T04:18:46+00:00
+213957,0,Aaron Rodgers,QB,PIT,9400,512,,False,,PIT @ PHI,1970-01-01 00:29:55.370400+00:00,aaron rodgers,0,9400,clear,156788,Showdown Captain Mode,2026-11-20T04:18:46+00:00
+503177,0,Zach Ertz,TE,PHI,2600,512,,False,,PIT @ PHI,1970-01-01 00:29:55.370400+00:00,zach ertz,0,2600,clear,156788,Showdown Captain Mode,2026-11-20T04:18:46+00:00
+504436,0,Chris Boswell,K,PIT,5200,512,,False,,PIT @ PHI,1970-01-01 00:29:55.370400+00:00,chris boswell,0,5200,clear,156788,Showdown Captain Mode,2026-11-20T04:18:46+00:00
+660151,0,Robert Tonyan,TE,PIT,200,512,,False,,PIT @ PHI,1970-01-01 00:29:55.370400+00:00,robert tonyan,0,200,clear,156788,Showdown Captain Mode,2026-11-20T04:18:46+00:00
+740704,0,Johnny Mundt,TE,PHI,600,512,,False,,PIT @ PHI,1970-01-01 00:29:55.370400+00:00,johnny mundt,0,600,clear,156788,Showdown Captain Mode,2026-11-20T04:18:46+00:00
+742382,0,Marquez Valdes-Scantling,WR,PIT,1200,512,,False,,PIT @ PHI,1970-01-01 00:29:55.370400+00:00,marquez valdes scantling,0,1200,clear,156788,Showdown Captain Mode,2026-11-20T04:18:46+00:00
+746154,0,Jake Elliott,K,PHI,5000,512,,False,,PIT @ PHI,1970-01-01 00:29:55.370400+00:00,jake elliott,0,5000,clear,156788,Showdown Captain Mode,2026-11-20T04:18:46+00:00
+791365,0,Dallas Goedert,TE,PHI,6600,512,,False,,PIT @ PHI,1970-01-01 00:29:55.370400+00:00,dallas goedert,0,6600,clear,156788,Showdown Captain Mode,2026-11-20T04:18:46+00:00
+823220,0,Mason Rudolph,QB,PIT,6000,512,,False,,PIT @ PHI,1970-01-01 00:29:55.370400+00:00,mason rudolph,0,6000,clear,156788,Showdown Captain Mode,2026-11-20T04:18:46+00:00
+882718,0,Britain Covey,WR,PHI,200,512,,False,,PIT @ PHI,1970-01-01 00:29:55.370400+00:00,britain covey,0,200,clear,156788,Showdown Captain Mode,2026-11-20T04:18:46+00:00
+883302,0,Saquon Barkley,RB,PHI,9600,512,,False,,PIT @ PHI,1970-01-01 00:29:55.370400+00:00,saquon barkley,0,9600,clear,156788,Showdown Captain Mode,2026-11-20T04:18:46+00:00
+911348,0,Michael Pittman Jr.,WR,PIT,5400,512,,False,,PIT @ PHI,1970-01-01 00:29:55.370400+00:00,michael pittman,0,5400,clear,156788,Showdown Captain Mode,2026-11-20T04:18:46+00:00
+913271,0,Jalen Hurts,QB,PHI,6000,512,,False,,PIT @ PHI,1970-01-01 00:29:55.370400+00:00,jalen hurts,0,6000,clear,156788,Showdown Captain Mode,2026-11-20T04:18:46+00:00
+920944,0,Ben Skowronek,WR,PIT,2000,512,,False,,PIT @ PHI,1970-01-01 00:29:55.370400+00:00,ben skowronek,0,2000,clear,156788,Showdown Captain Mode,2026-11-20T04:18:46+00:00
+921460,0,Brandon Johnson,WR,PIT,200,512,,False,,PIT @ PHI,1970-01-01 00:29:55.370400+00:00,brandon johnson,0,200,clear,156788,Showdown Captain Mode,2026-11-20T04:18:46+00:00
+922484,0,Travis Homer,RB,PIT,400,512,,False,,PIT @ PHI,1970-01-01 00:29:55.370400+00:00,travis homer,0,400,clear,156788,Showdown Captain Mode,2026-11-20T04:18:46+00:00
+933480,0,Rico Dowdle,RB,PIT,6200,512,,False,,PIT @ PHI,1970-01-01 00:29:55.370400+00:00,rico dowdle,0,6200,clear,156788,Showdown Captain Mode,2026-11-20T04:18:46+00:00
+945633,0,DK Metcalf,WR,PIT,8400,512,,False,,PIT @ PHI,1970-01-01 00:29:55.370400+00:00,dk metcalf,0,8400,clear,156788,Showdown Captain Mode,2026-11-20T04:18:46+00:00
+975387,0,Isaiah Hodgins,WR,PIT,200,512,,False,,PIT @ PHI,1970-01-01 00:29:55.370400+00:00,isaiah hodgins,0,200,clear,156788,Showdown Captain Mode,2026-11-20T04:18:46+00:00
+976221,0,Grant Calcaterra,TE,PHI,200,512,,False,,PIT @ PHI,1970-01-01 00:29:55.370400+00:00,grant calcaterra,0,200,clear,156788,Showdown Captain Mode,2026-11-20T04:18:46+00:00
+1050833,0,Elijah Mitchell,RB,PHI,2400,512,,False,,PIT @ PHI,1970-01-01 00:29:55.370400+00:00,elijah mitchell,0,2400,clear,156788,Showdown Captain Mode,2026-11-20T04:18:46+00:00
+1059220,0,Brandon Smith,WR,PIT,1000,512,,False,,PIT @ PHI,1970-01-01 00:29:55.370400+00:00,brandon smith,0,1000,clear,156788,Showdown Captain Mode,2026-11-20T04:18:46+00:00
+1060262,0,DeVonta Smith,WR,PHI,10000,512,,False,,PIT @ PHI,1970-01-01 00:29:55.370400+00:00,devonta smith,0,10000,clear,156788,Showdown Captain Mode,2026-11-20T04:18:46+00:00
+1112338,0,Joe Milton III,QB,PHI,8800,512,,False,,PIT @ PHI,1970-01-01 00:29:55.370400+00:00,joe milton,0,8800,clear,156788,Showdown Captain Mode,2026-11-20T04:18:46+00:00
+1116662,0,Pat Freiermuth,TE,PIT,4800,512,,False,,PIT @ PHI,1970-01-01 00:29:55.370400+00:00,pat freiermuth,0,4800,clear,156788,Showdown Captain Mode,2026-11-20T04:18:46+00:00
+1120915,0,Erik Ezukanma,WR,PHI,200,512,,False,,PIT @ PHI,1970-01-01 00:29:55.370400+00:00,erik ezukanma,0,200,clear,156788,Showdown Captain Mode,2026-11-20T04:18:46+00:00
+1123521,0,Tanner McKee,QB,PHI,8000,512,,False,,PIT @ PHI,1970-01-01 00:29:55.370400+00:00,tanner mckee,0,8000,clear,156788,Showdown Captain Mode,2026-11-20T04:18:46+00:00
+1128783,0,Elijah Moore,WR,PHI,800,512,,False,,PIT @ PHI,1970-01-01 00:29:55.370400+00:00,elijah moore,0,800,clear,156788,Showdown Captain Mode,2026-11-20T04:18:46+00:00
+1166480,0,Lew Nichols,RB,PIT,1400,512,,False,,PIT @ PHI,1970-01-01 00:29:55.370400+00:00,lew nichols,0,1400,clear,156788,Showdown Captain Mode,2026-11-20T04:18:46+00:00
+1172428,0,Dontayvion Wicks,WR,PHI,4200,512,,False,,PIT @ PHI,1970-01-01 00:29:55.370400+00:00,dontayvion wicks,0,4200,clear,156788,Showdown Captain Mode,2026-11-20T04:18:46+00:00
+1176443,0,Jaylen Warren,RB,PIT,10200,512,,False,,PIT @ PHI,1970-01-01 00:29:55.370400+00:00,jaylen warren,0,10200,clear,156788,Showdown Captain Mode,2026-11-20T04:18:46+00:00
+1180294,0,Hayden Rucci,TE,PHI,200,512,,False,,PIT @ PHI,1970-01-01 00:29:55.370400+00:00,hayden rucci,0,200,clear,156788,Showdown Captain Mode,2026-11-20T04:18:46+00:00
+1213486,0,Johnny Wilson,WR,PHI,200,512,,False,,PIT @ PHI,1970-01-01 00:29:55.370400+00:00,johnny wilson,0,200,clear,156788,Showdown Captain Mode,2026-11-20T04:18:46+00:00
+1213782,0,Will Howard,QB,PIT,6000,512,,False,,PIT @ PHI,1970-01-01 00:29:55.370400+00:00,will howard,0,6000,clear,156788,Showdown Captain Mode,2026-11-20T04:18:46+00:00
+1215035,0,Tank Bigsby,RB,PHI,5600,512,,False,,PIT @ PHI,1970-01-01 00:29:55.370400+00:00,tank bigsby,0,5600,clear,156788,Showdown Captain Mode,2026-11-20T04:18:46+00:00
+1217021,0,Max Hurleman,WR,PIT,200,512,,False,,PIT @ PHI,1970-01-01 00:29:55.370400+00:00,max hurleman,0,200,clear,156788,Showdown Captain Mode,2026-11-20T04:18:46+00:00
+1218658,0,Darnell Washington,TE,PIT,3800,512,,False,,PIT @ PHI,1970-01-01 00:29:55.370400+00:00,darnell washington,0,3800,clear,156788,Showdown Captain Mode,2026-11-20T04:18:46+00:00
+1223318,0,Darius Cooper,WR,PHI,3200,512,,False,,PIT @ PHI,1970-01-01 00:29:55.370400+00:00,darius cooper,0,3200,clear,156788,Showdown Captain Mode,2026-11-20T04:18:46+00:00
+1225703,0,Quentin Skinner,WR,PHI,200,512,,False,,PIT @ PHI,1970-01-01 00:29:55.370400+00:00,quentin skinner,0,200,clear,156788,Showdown Captain Mode,2026-11-20T04:18:46+00:00
+1229669,0,Roman Wilson,WR,PIT,4000,512,,False,,PIT @ PHI,1970-01-01 00:29:55.370400+00:00,roman wilson,0,4000,clear,156788,Showdown Captain Mode,2026-11-20T04:18:46+00:00
+1244224,0,Riley Nowakowski,RB,PIT,200,512,,False,,PIT @ PHI,1970-01-01 00:29:55.370400+00:00,riley nowakowski,0,200,clear,156788,Showdown Captain Mode,2026-11-20T04:18:46+00:00
+1286065,0,Eli Stowers,TE,PHI,1600,512,,False,,PIT @ PHI,1970-01-01 00:29:55.370400+00:00,eli stowers,0,1600,clear,156788,Showdown Captain Mode,2026-11-20T04:18:46+00:00
+1286282,0,Lake McRee,TE,PIT,200,512,,False,,PIT @ PHI,1970-01-01 00:29:55.370400+00:00,lake mcree,0,200,clear,156788,Showdown Captain Mode,2026-11-20T04:18:46+00:00
+1287636,0,Will Shipley,RB,PHI,3000,512,,False,,PIT @ PHI,1970-01-01 00:29:55.370400+00:00,will shipley,0,3000,clear,156788,Showdown Captain Mode,2026-11-20T04:18:46+00:00
+1322662,0,Rocco Underwood,TE,PHI,200,512,,False,,PIT @ PHI,1970-01-01 00:29:55.370400+00:00,rocco underwood,0,200,clear,156788,Showdown Captain Mode,2026-11-20T04:18:46+00:00
+1324976,0,Cole Payton,QB,PHI,6000,512,,False,,PIT @ PHI,1970-01-01 00:29:55.370400+00:00,cole payton,0,6000,clear,156788,Showdown Captain Mode,2026-11-20T04:18:46+00:00
+1378898,0,Jaydon Blue,RB,PHI,200,512,,False,,PIT @ PHI,1970-01-01 00:29:55.370400+00:00,jaydon blue,0,200,clear,156788,Showdown Captain Mode,2026-11-20T04:18:46+00:00
+1379258,0,Drew Allar,QB,PIT,6000,512,,False,,PIT @ PHI,1970-01-01 00:29:55.370400+00:00,drew allar,0,6000,clear,156788,Showdown Captain Mode,2026-11-20T04:18:46+00:00
+1380613,0,Germie Bernard,WR,PIT,7400,512,,False,,PIT @ PHI,1970-01-01 00:29:55.370400+00:00,germie bernard,0,7400,clear,156788,Showdown Captain Mode,2026-11-20T04:18:46+00:00
+1383993,0,Kaden Wetjen,WR,PIT,200,512,,False,,PIT @ PHI,1970-01-01 00:29:55.370400+00:00,kaden wetjen,0,200,clear,156788,Showdown Captain Mode,2026-11-20T04:18:46+00:00
+1395874,0,Eli Heidenreich,RB,PIT,200,512,,False,,PIT @ PHI,1970-01-01 00:29:55.370400+00:00,eli heidenreich,0,200,clear,156788,Showdown Captain Mode,2026-11-20T04:18:46+00:00
+1441120,0,Makai Lemon,WR,PHI,7000,512,,False,,PIT @ PHI,1970-01-01 00:29:55.370400+00:00,makai lemon,0,7000,clear,156788,Showdown Captain Mode,2026-11-20T04:18:46+00:00
+1510975,0,Cole Burgess,WR,PIT,200,512,,False,,PIT @ PHI,1970-01-01 00:29:55.370400+00:00,cole burgess,0,200,clear,156788,Showdown Captain Mode,2026-11-20T04:18:46+00:00

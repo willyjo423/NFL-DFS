@@ -1,0 +1,56 @@
+dk_player_id,draftable_id,name,position,team,salary,roster_slot,status,disabled,attributes,game,starts_utc,norm,flex_eligible,captain_salary,playing,draft_group,game_type,captured_at
+364,0,Panthers,DST,CAR,4000,512,,False,,BAL @ CAR,1970-01-01 00:29:55.370400+00:00,panthers,0,4000,clear,156785,Showdown Captain Mode,2026-11-20T04:18:46+00:00
+366,0,Ravens,DST,BAL,3800,512,,False,,BAL @ CAR,1970-01-01 00:29:55.370400+00:00,ravens,0,3800,clear,156785,Showdown Captain Mode,2026-11-20T04:18:46+00:00
+600191,0,Darren Waller,TE,CAR,5400,512,,False,,BAL @ CAR,1970-01-01 00:29:55.370400+00:00,darren waller,0,5400,clear,156785,Showdown Captain Mode,2026-11-20T04:18:46+00:00
+606488,0,Nick Vannett,TE,BAL,200,512,,False,,BAL @ CAR,1970-01-01 00:29:55.370400+00:00,nick vannett,0,200,clear,156785,Showdown Captain Mode,2026-11-20T04:18:46+00:00
+606551,0,Chris Moore,WR,BAL,1000,512,,False,,BAL @ CAR,1970-01-01 00:29:55.370400+00:00,chris moore,0,1000,clear,156785,Showdown Captain Mode,2026-11-20T04:18:46+00:00
+607047,0,Jacoby Brissett,QB,BAL,9000,512,,False,,BAL @ CAR,1970-01-01 00:29:55.370400+00:00,jacoby brissett,0,9000,clear,156785,Showdown Captain Mode,2026-11-20T04:18:46+00:00
+732145,0,Derrick Henry,RB,BAL,9600,512,,False,,BAL @ CAR,1970-01-01 00:29:55.370400+00:00,derrick henry,0,9600,clear,156785,Showdown Captain Mode,2026-11-20T04:18:46+00:00
+749968,0,Durham Smythe,TE,BAL,200,512,,False,,BAL @ CAR,1970-01-01 00:29:55.370400+00:00,durham smythe,0,200,clear,156785,Showdown Captain Mode,2026-11-20T04:18:46+00:00
+820699,0,Mark Andrews,TE,BAL,6400,512,,False,,BAL @ CAR,1970-01-01 00:29:55.370400+00:00,mark andrews,0,6400,clear,156785,Showdown Captain Mode,2026-11-20T04:18:46+00:00
+877745,0,Lamar Jackson,QB,BAL,6000,512,,False,,BAL @ CAR,1970-01-01 00:29:55.370400+00:00,lamar jackson,0,6000,clear,156785,Showdown Captain Mode,2026-11-20T04:18:46+00:00
+910377,0,Feleipe Franks,TE,CAR,200,512,,False,,BAL @ CAR,1970-01-01 00:29:55.370400+00:00,feleipe franks,0,200,clear,156785,Showdown Captain Mode,2026-11-20T04:18:46+00:00
+913163,0,Tyler Huntley,QB,BAL,6000,512,,False,,BAL @ CAR,1970-01-01 00:29:55.370400+00:00,tyler huntley,0,6000,clear,156785,Showdown Captain Mode,2026-11-20T04:18:46+00:00
+913829,0,Skylar Thompson,QB,BAL,6000,512,,False,,BAL @ CAR,1970-01-01 00:29:55.370400+00:00,skylar thompson,0,6000,clear,156785,Showdown Captain Mode,2026-11-20T04:18:46+00:00
+923109,0,Justice Hill,RB,BAL,5600,512,,False,,BAL @ CAR,1970-01-01 00:29:55.370400+00:00,justice hill,0,5600,clear,156785,Showdown Captain Mode,2026-11-20T04:18:46+00:00
+976924,0,Kenny Pickett,QB,CAR,6000,512,,False,,BAL @ CAR,1970-01-01 00:29:55.370400+00:00,kenny pickett,0,6000,clear,156785,Showdown Captain Mode,2026-11-20T04:18:46+00:00
+1049915,0,David Moore,WR,CAR,200,512,,False,,BAL @ CAR,1970-01-01 00:29:55.370400+00:00,david moore,0,200,clear,156785,Showdown Captain Mode,2026-11-20T04:18:46+00:00
+1060545,0,AJ Dillon,RB,CAR,1400,512,,False,,BAL @ CAR,1970-01-01 00:29:55.370400+00:00,aj dillon,0,1400,clear,156785,Showdown Captain Mode,2026-11-20T04:18:46+00:00
+1062047,0,Chuba Hubbard,RB,CAR,10600,512,,False,,BAL @ CAR,1970-01-01 00:29:55.370400+00:00,chuba hubbard,0,10600,clear,156785,Showdown Captain Mode,2026-11-20T04:18:46+00:00
+1065025,0,Riley Patterson,K,BAL,4800,512,,False,,BAL @ CAR,1970-01-01 00:29:55.370400+00:00,riley patterson,0,4800,clear,156785,Showdown Captain Mode,2026-11-20T04:18:46+00:00
+1108208,0,Rashod Bateman,WR,BAL,3200,512,,False,,BAL @ CAR,1970-01-01 00:29:55.370400+00:00,rashod bateman,0,3200,clear,156785,Showdown Captain Mode,2026-11-20T04:18:46+00:00
+1123525,0,Brycen Tremayne,WR,CAR,1800,512,,False,,BAL @ CAR,1970-01-01 00:29:55.370400+00:00,brycen tremayne,0,1800,clear,156785,Showdown Captain Mode,2026-11-20T04:18:46+00:00
+1130555,0,Tommy Tremble,TE,CAR,3000,512,,False,,BAL @ CAR,1970-01-01 00:29:55.370400+00:00,tommy tremble,0,3000,clear,156785,Showdown Captain Mode,2026-11-20T04:18:46+00:00
+1160348,0,John Metchie III,WR,CAR,3400,512,,False,,BAL @ CAR,1970-01-01 00:29:55.370400+00:00,john metchie,0,3400,clear,156785,Showdown Captain Mode,2026-11-20T04:18:46+00:00
+1161818,0,Kedon Slovis,QB,BAL,6000,512,,False,,BAL @ CAR,1970-01-01 00:29:55.370400+00:00,kedon slovis,0,6000,clear,156785,Showdown Captain Mode,2026-11-20T04:18:46+00:00
+1166335,0,Joshua Simon,TE,CAR,200,512,,False,,BAL @ CAR,1970-01-01 00:29:55.370400+00:00,joshua simon,0,200,clear,156785,Showdown Captain Mode,2026-11-20T04:18:46+00:00
+1169299,0,Joe Fagnano,QB,BAL,6000,512,,False,,BAL @ CAR,1970-01-01 00:29:55.370400+00:00,joe fagnano,0,6000,clear,156785,Showdown Captain Mode,2026-11-20T04:18:46+00:00
+1176373,0,Ryan Fitzgerald,K,CAR,5000,512,,False,,BAL @ CAR,1970-01-01 00:29:55.370400+00:00,ryan fitzgerald,0,5000,clear,156785,Showdown Captain Mode,2026-11-20T04:18:46+00:00
+1176431,0,Casey Washington,WR,CAR,200,512,,False,,BAL @ CAR,1970-01-01 00:29:55.370400+00:00,casey washington,0,200,clear,156785,Showdown Captain Mode,2026-11-20T04:18:46+00:00
+1177053,0,Zay Flowers,WR,BAL,10400,512,,False,,BAL @ CAR,1970-01-01 00:29:55.370400+00:00,zay flowers,0,10400,clear,156785,Showdown Captain Mode,2026-11-20T04:18:46+00:00
+1180321,0,Xavier Legette,WR,CAR,2800,512,,False,,BAL @ CAR,1970-01-01 00:29:55.370400+00:00,xavier legette,0,2800,clear,156785,Showdown Captain Mode,2026-11-20T04:18:46+00:00
+1213257,0,Bryce Young,QB,CAR,9800,512,,False,,BAL @ CAR,1970-01-01 00:29:55.370400+00:00,bryce young,0,9800,clear,156785,Showdown Captain Mode,2026-11-20T04:18:46+00:00
+1213389,0,Harrison Mevis,K,BAL,4800,512,,False,,BAL @ CAR,1970-01-01 00:29:55.370400+00:00,harrison mevis,0,4800,clear,156785,Showdown Captain Mode,2026-11-20T04:18:46+00:00
+1214289,0,Ahmani Marshall,RB,CAR,200,512,,False,,BAL @ CAR,1970-01-01 00:29:55.370400+00:00,ahmani marshall,0,200,clear,156785,Showdown Captain Mode,2026-11-20T04:18:46+00:00
+1214336,0,Haynes King,QB,CAR,6000,512,,False,,BAL @ CAR,1970-01-01 00:29:55.370400+00:00,haynes king,0,6000,clear,156785,Showdown Captain Mode,2026-11-20T04:18:46+00:00
+1218753,0,Jalen Coker,WR,CAR,8400,512,,False,,BAL @ CAR,1970-01-01 00:29:55.370400+00:00,jalen coker,0,8400,clear,156785,Showdown Captain Mode,2026-11-20T04:18:46+00:00
+1229133,0,Rasheen Ali,RB,BAL,200,512,,False,,BAL @ CAR,1970-01-01 00:29:55.370400+00:00,rasheen ali,0,200,clear,156785,Showdown Captain Mode,2026-11-20T04:18:46+00:00
+1229693,0,Matt Hibner,TE,BAL,600,512,,False,,BAL @ CAR,1970-01-01 00:29:55.370400+00:00,matt hibner,0,600,clear,156785,Showdown Captain Mode,2026-11-20T04:18:46+00:00
+1231033,0,LaJohntay Wester,WR,BAL,200,512,,False,,BAL @ CAR,1970-01-01 00:29:55.370400+00:00,lajohntay wester,0,200,clear,156785,Showdown Captain Mode,2026-11-20T04:18:46+00:00
+1239342,0,Tyler Loop,K,BAL,4800,512,,False,,BAL @ CAR,1970-01-01 00:29:55.370400+00:00,tyler loop,0,4800,clear,156785,Showdown Captain Mode,2026-11-20T04:18:46+00:00
+1277914,0,Devontez Walker,WR,BAL,1200,512,,False,,BAL @ CAR,1970-01-01 00:29:55.370400+00:00,devontez walker,0,1200,clear,156785,Showdown Captain Mode,2026-11-20T04:18:46+00:00
+1287778,0,Anthony Tyus III,RB,CAR,400,512,,False,,BAL @ CAR,1970-01-01 00:29:55.370400+00:00,anthony tyus,0,400,clear,156785,Showdown Captain Mode,2026-11-20T04:18:46+00:00
+1289471,0,Mitchell Evans,TE,CAR,1600,512,,False,,BAL @ CAR,1970-01-01 00:29:55.370400+00:00,mitchell evans,0,1600,clear,156785,Showdown Captain Mode,2026-11-20T04:18:46+00:00
+1319948,0,Josh Cuevas,TE,BAL,2400,512,,False,,BAL @ CAR,1970-01-01 00:29:55.370400+00:00,josh cuevas,0,2400,clear,156785,Showdown Captain Mode,2026-11-20T04:18:46+00:00
+1322612,0,Ja'seem Reed,WR,CAR,200,512,,False,,BAL @ CAR,1970-01-01 00:29:55.370400+00:00,jaseem reed,0,200,clear,156785,Showdown Captain Mode,2026-11-20T04:18:46+00:00
+1323007,0,Gage Larvadain,WR,BAL,200,512,,False,,BAL @ CAR,1970-01-01 00:29:55.370400+00:00,gage larvadain,0,200,clear,156785,Showdown Captain Mode,2026-11-20T04:18:46+00:00
+1325830,0,Lucas Scott,RB,BAL,200,512,,False,,BAL @ CAR,1970-01-01 00:29:55.370400+00:00,lucas scott,0,200,clear,156785,Showdown Captain Mode,2026-11-20T04:18:46+00:00
+1326601,0,Jonathon Brooks,RB,CAR,4600,512,,False,,BAL @ CAR,1970-01-01 00:29:55.370400+00:00,jonathon brooks,0,4600,clear,156785,Showdown Captain Mode,2026-11-20T04:18:46+00:00
+1326628,0,Ja'Tavion Sanders,TE,CAR,200,512,,False,,BAL @ CAR,1970-01-01 00:29:55.370400+00:00,jatavion sanders,0,200,clear,156785,Showdown Captain Mode,2026-11-20T04:18:46+00:00
+1378284,0,Adam Randall,RB,BAL,200,512,,False,,BAL @ CAR,1970-01-01 00:29:55.370400+00:00,adam randall,0,200,clear,156785,Showdown Captain Mode,2026-11-20T04:18:46+00:00
+1380576,0,Tetairoa McMillan,WR,CAR,9400,512,,False,,BAL @ CAR,1970-01-01 00:29:55.370400+00:00,tetairoa mcmillan,0,9400,clear,156785,Showdown Captain Mode,2026-11-20T04:18:46+00:00
+1392584,0,Elijah Sarratt,WR,BAL,800,512,,False,,BAL @ CAR,1970-01-01 00:29:55.370400+00:00,elijah sarratt,0,800,clear,156785,Showdown Captain Mode,2026-11-20T04:18:46+00:00
+1394803,0,Trevor Etienne,RB,CAR,2000,512,,False,,BAL @ CAR,1970-01-01 00:29:55.370400+00:00,trevor etienne,0,2000,clear,156785,Showdown Captain Mode,2026-11-20T04:18:46+00:00
+1400788,0,Chris Brazzell II,WR,CAR,200,512,,False,,BAL @ CAR,1970-01-01 00:29:55.370400+00:00,chris brazzell,0,200,clear,156785,Showdown Captain Mode,2026-11-20T04:18:46+00:00
+1404295,0,Ty Pezza,TE,BAL,200,512,,False,,BAL @ CAR,1970-01-01 00:29:55.370400+00:00,ty pezza,0,200,clear,156785,Showdown Captain Mode,2026-11-20T04:18:46+00:00
+1458888,0,Ja'Kobi Lane,WR,BAL,4400,512,,False,,BAL @ CAR,1970-01-01 00:29:55.370400+00:00,jakobi lane,0,4400,clear,156785,Showdown Captain Mode,2026-11-20T04:18:46+00:00
