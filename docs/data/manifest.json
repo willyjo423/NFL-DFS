@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-20T06:10:45+00:00",
+  "updated_at": "2026-11-20T06:20:34+00:00",
   "slates": [
     {
       "kind": "classic",
@@ -10,8 +10,8 @@
       "contests": 1702,
       "starts": "2026-11-22 18:00:00+00:00",
       "file": "data/nfl/dk-classic-156561.json",
-      "players": 315,
-      "generated_at": "2026-11-20T05:59:11+00:00"
+      "players": 317,
+      "generated_at": "2026-11-20T06:13:26+00:00"
     },
     {
       "kind": "classic",
@@ -34,8 +34,8 @@
       "contests": 459,
       "starts": "2026-11-22 18:00:00+00:00",
       "file": "data/nfl/dk-classic-156775.json",
-      "players": 220,
-      "generated_at": "2026-11-20T06:02:53+00:00"
+      "players": 222,
+      "generated_at": "2026-11-20T06:15:48+00:00"
     },
     {
       "kind": "classic",
@@ -46,8 +46,8 @@
       "contests": 280,
       "starts": "2026-11-22 18:00:00+00:00",
       "file": "data/nfl/dk-classic-156776.json",
-      "players": 379,
-      "generated_at": "2026-11-20T06:04:53+00:00"
+      "players": 383,
+      "generated_at": "2026-11-20T06:16:53+00:00"
     },
     {
       "kind": "classic",
@@ -59,7 +59,7 @@
       "starts": "2026-11-22 21:05:00+00:00",
       "file": "data/nfl/dk-classic-156777.json",
       "players": 95,
-      "generated_at": "2026-11-20T06:01:37+00:00"
+      "generated_at": "2026-11-20T06:15:03+00:00"
     },
     {
       "kind": "classic",
@@ -70,8 +70,8 @@
       "contests": 186,
       "starts": "2026-11-23 01:20:00+00:00",
       "file": "data/nfl/dk-classic-156779.json",
-      "players": 64,
-      "generated_at": "2026-11-20T06:07:25+00:00"
+      "players": 66,
+      "generated_at": "2026-11-20T06:18:28+00:00"
     },
     {
       "kind": "showdown",
@@ -94,8 +94,8 @@
       "contests": 207,
       "starts": "2026-11-22 18:00:00+00:00",
       "file": "data/nfl/dk-showdown-156786.json",
-      "players": 29,
-      "generated_at": "2026-11-20T06:06:34+00:00"
+      "players": 30,
+      "generated_at": "2026-11-20T06:17:57+00:00"
     },
     {
       "kind": "showdown",
@@ -107,7 +107,7 @@
       "starts": "2026-11-22 18:00:00+00:00",
       "file": "data/nfl/dk-showdown-156784.json",
       "players": 32,
-      "generated_at": "2026-11-20T06:09:06+00:00"
+      "generated_at": "2026-11-20T06:19:31+00:00"
     },
     {
       "kind": "showdown",
@@ -118,8 +118,8 @@
       "contests": 166,
       "starts": "2026-11-22 18:00:00+00:00",
       "file": "data/nfl/dk-showdown-156788.json",
-      "players": 32,
-      "generated_at": "2026-11-20T06:09:56+00:00"
+      "players": 33,
+      "generated_at": "2026-11-20T06:20:03+00:00"
     },
     {
       "kind": "showdown",
@@ -167,7 +167,7 @@
       "starts": "2026-11-22 18:00:00+00:00",
       "file": "data/nfl/dk-showdown-156782.json",
       "players": 35,
-      "generated_at": "2026-11-20T06:08:15+00:00"
+      "generated_at": "2026-11-20T06:18:59+00:00"
     },
     {
       "kind": "showdown",
@@ -179,7 +179,7 @@
       "starts": "2026-11-22 21:25:00+00:00",
       "file": "data/nfl/dk-showdown-156791.json",
       "players": 33,
-      "generated_at": "2026-11-20T06:05:44+00:00"
+      "generated_at": "2026-11-20T06:17:26+00:00"
     },
     {
       "kind": "showdown",
@@ -191,7 +191,7 @@
       "starts": "2026-11-22 21:25:00+00:00",
       "file": "data/nfl/dk-showdown-156790.json",
       "players": 30,
-      "generated_at": "2026-11-20T06:10:45+00:00"
+      "generated_at": "2026-11-20T06:20:34+00:00"
     },
     {
       "kind": "showdown",
@@ -202,8 +202,8 @@
       "contests": 891,
       "starts": "2026-11-23 01:20:00+00:00",
       "file": "data/nfl/dk-showdown-156792.json",
-      "players": 35,
-      "generated_at": "2026-11-20T06:00:44+00:00"
+      "players": 36,
+      "generated_at": "2026-11-20T06:14:30+00:00"
     }
   ],
   "failures": [
