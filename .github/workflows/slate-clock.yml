@@ -1,0 +1,112 @@
+name: Slate clock
+
+# GitHub's own scheduler can run hours late (2026-11-18 it ran ~8.5h behind
+# and fired no publish at all on DFS-ALLSPORTS). This job keeps its own clock
+# and dispatches the NFL publishes - full rebuilds through the day and
+# lock-time runs (soon=N, only the slate about to start) after inactives are
+# announced ~90 minutes before kickoff - plus the props pulls and the weekly
+# grade. It runs back to back, handing over to a fresh run before the 6-hour
+# job limit, so nothing waits on GitHub's cron. The crons in publish.yml stay
+# as a second line.
+
+on:
+  workflow_dispatch: {}
+  schedule:
+    - cron: "17 14 * * *"     # ~9am ET restart, if the chain ever breaks
+
+permissions:
+  actions: write
+  contents: read
+
+concurrency:
+  group: slate-clock
+  cancel-in-progress: false
+
+jobs:
+  clock:
+    runs-on: ubuntu-latest
+    timeout-minutes: 355
+    steps:
+      - name: Dispatch on time
+        env:
+          GH_TOKEN: ${{ github.token }}
+          REPO: ${{ github.repository }}
+        run: |
+          python3 - <<'PY'
+          import os, subprocess, time
+          from datetime import datetime, timedelta
+          from zoneinfo import ZoneInfo
+          ET = ZoneInfo("America/New_York")
+          MON, THU, SAT, SUN = 0, 3, 5, 6
+          # (days, "HH:MM", workflow, soon minutes or None). Eastern time.
+          # Lock runs come after inactives (~90 min before kickoff).
+          PLAN = [
+              (range(7), "10:05", "publish.yml", None),
+              (range(7), "16:05", "publish.yml", None),
+              ((THU,), "14:00", "publish.yml", None),
+              ((THU,), "18:30", "publish.yml", None),
+              ((THU,), "19:45", "publish.yml", 40),       # 8:15pm kickoff
+              ((SAT,), "12:00", "publish.yml", None),
+              ((SAT,), "15:55", "publish.yml", 45),       # late-season Saturdays
+              ((SAT,), "19:40", "publish.yml", 45),
+              ((SUN,), "08:00", "publish.yml", None),
+              ((SUN,), "10:45", "publish.yml", None),
+              ((SUN,), "11:50", "publish.yml", 75),       # 1:00pm kickoffs
+              ((SUN,), "15:10", "publish.yml", 80),       # 4:05 / 4:25
+              ((SUN,), "19:35", "publish.yml", 50),       # 8:20 SNF
+              ((MON,), "14:00", "publish.yml", None),
+              ((MON,), "19:35", "publish.yml", 45),       # 8:15 MNF
+              (range(7), "11:00", "props-fetch.yml", None),
+              ((THU,), "18:45", "props-fetch.yml", None),
+              ((THU,), "19:35", "props-fetch.yml", None),
+              ((SAT,), "15:40", "props-fetch.yml", None),
+              ((SUN,), "08:30", "props-fetch.yml", None),
+              ((SUN,), "11:35", "props-fetch.yml", None),
+              ((SUN,), "14:55", "props-fetch.yml", None),
+              ((SUN,), "19:20", "props-fetch.yml", None),
+              ((MON,), "19:20", "props-fetch.yml", None),
+              ((1, 2), "09:30", "weekly-grade.yml", None),   # Tue, Wed
+          ]
+          SEASON = (9, 10, 11, 12, 1, 2)
+
+          def fire(wf, soon=None):
+              extra = ["-f", f"inputs[soon]={soon}"] if soon else []
+              r = subprocess.run(["gh", "api", "-X", "POST",
+                                  f"repos/{os.environ['REPO']}/actions/workflows/{wf}/dispatches",
+                                  "-f", "ref=main"] + extra, capture_output=True, text=True)
+              print(datetime.now(ET).strftime("%a %H:%M"), "dispatch", wf, soon or "",
+                    "ok" if r.returncode == 0 else r.stderr[:200], flush=True)
+
+          start = time.time()
+          now = datetime.now(ET)
+          todo = []
+          for day in (now.date(), now.date() + timedelta(days=1)):
+              if day.month not in SEASON:
+                  continue
+              for days, hm, wf, soon in PLAN:
+                  if day.weekday() in days:
+                      h, m = map(int, hm.split(":"))
+                      todo.append((datetime(day.year, day.month, day.day, h, m, tzinfo=ET), wf, soon))
+          todo.sort(key=lambda t: t[0])
+          # Catch up once: the latest missed full rebuild, if recent.
+          past = [t for t in todo if t[0] <= now and t[1] == "publish.yml" and not t[2]]
+          if past and now - past[-1][0] < timedelta(hours=3):
+              fire("publish.yml")
+          todo = [t for t in todo if t[0] > now]
+          if not todo:
+              print("off-season: nothing to dispatch; the daily cron restarts the clock")
+          while todo:
+              nxt = todo[0][0]
+              wait = (nxt - datetime.now(ET)).total_seconds()
+              if time.time() - start + max(wait, 0) > 340 * 60:
+                  left = 340 * 60 - (time.time() - start)
+                  if left > 0:
+                      time.sleep(left)
+                  print("handing over to a fresh clock run", flush=True)
+                  fire("slate-clock.yml")
+                  break
+              if wait > 0:
+                  time.sleep(wait)
+              at, wf, soon = todo.pop(0)
+              fire(wf, soon)
+          PY

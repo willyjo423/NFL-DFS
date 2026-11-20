@@ -131,6 +131,9 @@ def correlation_report(players: pd.DataFrame, draws: np.ndarray,
     return out.rename(columns={"correlation": "assumed"})
 
 
+MODEL_SCENARIO = 0.15      # per team per simulation; ~1 - the props weight
+
+
 def simulate(players: pd.DataFrame, quantiles: list[float], n: int,
              priors: dict | None = None,
              rng: np.random.Generator | None = None,
@@ -160,6 +163,22 @@ def simulate(players: pd.DataFrame, quantiles: list[float], n: int,
     for i in range(len(players)):
         out[i] = _quantile_curve(zq, grid[i], z[i])
     np.clip(out, 0.0, None, out=out)
+
+    # THE BOOKS OR OUR MODEL, PER TEAM. Projections lean ~85% on the props,
+    # but when the two disagree about a team they tend to be wrong together
+    # (NBA 2026-11-19: the books had Portland's stack 8-11 points low each and
+    # it won). In MODEL_SCENARIO of simulations, per team, the model's own
+    # number is the truth for that whole team. Same as the NBA/NHL boards.
+    if MODEL_SCENARIO > 0 and "model" in players.columns and "cond_mean" in players.columns:
+        model = pd.to_numeric(players["model"], errors="coerce").to_numpy(float)
+        cond = pd.to_numeric(players["cond_mean"], errors="coerce").to_numpy(float)
+        ratio = np.where(np.isfinite(model) & (cond > 0), model / np.where(cond > 0, cond, 1), 1.0)
+        if np.any(np.abs(ratio - 1) > 0.02):
+            teams = players["team"].astype(str).to_numpy()
+            names = sorted(set(teams))
+            ti = np.array([names.index(t) for t in teams])
+            flip = rng.random((len(names), n)) < MODEL_SCENARIO
+            out = np.where(flip[ti], out * ratio[:, None], out)
 
     # The availability gate, applied AFTER the correlated draw.
     #
@@ -275,7 +294,8 @@ def lineup_scores(draws: np.ndarray, rows: list[int],
 def cash_line(draws: np.ndarray, roster: dict,
               fraction: float | None = None,
               trials: int = 2000,
-              rng: np.random.Generator | None = None) -> float:
+              rng: np.random.Generator | None = None,
+              own: np.ndarray | None = None) -> float:
     """The score a cash lineup has to beat, estimated from the slate itself.
 
     Rather than assume a number, build a crowd of legal-ish random lineups,
@@ -291,7 +311,14 @@ def cash_line(draws: np.ndarray, roster: dict,
     if n_players < size:
         raise ValueError("fewer players than roster slots")
 
-    picks = np.array([rng.choice(n_players, size=size, replace=False)
+    # With ownership, the crowd rosters players as often as our ownership
+    # estimates say the real field will - a uniformly random crowd is far
+    # softer than any real contest and makes every lineup look like a winner.
+    w = None
+    if own is not None:
+        w = np.clip(np.nan_to_num(np.asarray(own, dtype=float)), 0, None) + 1e-4
+        w = w / w.sum()
+    picks = np.array([rng.choice(n_players, size=size, replace=False, p=w)
                       for _ in range(trials)])
     sims = rng.integers(0, n_sims, size=trials)
     totals = draws[picks, sims[:, None]].sum(axis=1)

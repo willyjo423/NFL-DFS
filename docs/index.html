@@ -789,10 +789,18 @@ function simulate(players, sims, plan, zq) {
   const G = new Float64Array(plan.nGames), T = new Float64Array(plan.nTeams);
   const comp = new Float64Array(n);
   const curves = players.map(p => p.q);
+  // THE BOOKS OR OUR MODEL, PER TEAM. When the props and the model disagree
+  // about a team they tend to be wrong together, so in MODEL_SCENARIO of the
+  // simulations the model's own number is the truth for that whole team.
+  const MODEL_SCENARIO = 0.15;
+  const ratio = players.map(p => (p.model && p.props && p.mean)
+    ? Number(p.model) / Math.max(Number(p.mean) / Math.max(Number(p.pplay) || 1, 0.05), 0.01) : 1);
+  const flip = new Uint8Array(plan.nTeams);
 
   for (let s = 0; s < sims; s++) {
     for (let k = 0; k < G.length; k++) G[k] = randn();
     for (let k = 0; k < T.length; k++) T[k] = randn();
+    for (let k = 0; k < flip.length; k++) flip[k] = Math.random() < MODEL_SCENARIO ? 1 : 0;
 
     // Competition, done properly: within each team-and-position group draw one
     // normal per member and subtract the mean OF THOSE DRAWS. That is what
@@ -818,7 +826,8 @@ function simulate(players, sims, plan, zq) {
               + plan.tl[i] * T[plan.ti[i]]
               + comp[i]
               + Math.sqrt(plan.idio[i]) * randn();
-      out[i * sims + s] = curveAt(zq, curves[i], z);
+      const v = curveAt(zq, curves[i], z);
+      out[i * sims + s] = flip[plan.ti[i]] && ratio[i] !== 1 ? v * ratio[i] : v;
     }
   }
   return out;
@@ -1318,12 +1327,30 @@ function build() {
     // just the maximum of a small sample. At 1,500, index 1,498 of 1,500 IS
     // very nearly the max, so the old top-0.1% bar was as much noise as
     // threshold - and every lineup was being ranked against it.
+    // The crowd rosters players as often as our ownership estimates say the
+    // real field will. A uniformly random crowd is far softer than a real
+    // contest: it made every lineup look like a winner and over-rewarded
+    // fades (the same fix as the NBA/NHL boards, 2026-11-19).
+    const ownW = players.map(q => Math.max(Number(q.own) || 0, 0) + 1e-4);
+    const ownCum = [];
+    ownW.reduce((a, w, i) => (ownCum[i] = a + w), 0);
+    const ownTot = ownCum[ownCum.length - 1] || 1;
+    const pickOwned = () => {
+      const r = Math.random() * ownTot;
+      let lo = 0, hi = ownCum.length - 1;
+      while (lo < hi) { const m = (lo + hi) >> 1; if (ownCum[m] < r) lo = m + 1; else hi = m; }
+      return lo;
+    };
     const rough = [];
     for (let t = 0; t < 20000; t++) {
       let tot = 0;
+      const used = new Set();
+      const s = Math.floor(Math.random() * sims);
       for (let k = 0; k < roster.slots.length; k++) {
-        const i = Math.floor(Math.random() * players.length);
-        tot += draws[i * sims + Math.floor(Math.random() * sims)];
+        let i = pickOwned(), guard = 0;
+        while (used.has(i) && guard++ < 20) i = pickOwned();
+        used.add(i);
+        tot += draws[i * sims + s];
       }
       rough.push(tot);
     }

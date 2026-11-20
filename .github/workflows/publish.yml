@@ -14,12 +14,17 @@ on:
         description: "Contest size, for the duplication estimate"
         required: false
         default: "100000"
+      soon:
+        description: "Only slates starting within N minutes (lock-time runs)"
+        required: false
 
 permissions:
   contents: write
 
 concurrency:
-  group: publish
+  # Lock-time runs (soon=N) get their own lane so they never queue behind a
+  # full rebuild (DFS-ALLSPORTS, 2026-11-19).
+  group: publish-${{ inputs.soon && 'lock' || 'full' }}
   cancel-in-progress: false
 
 jobs:
@@ -49,6 +54,7 @@ jobs:
           # cost three publish rounds on 2026-09-18.
           python test_ownership.py
           python test_injury_week.py
+          python test_nfl_props.py
 
       - name: Build the slate files
         id: build
@@ -57,6 +63,7 @@ jobs:
           ARGS=""
           if [ -n "${{ inputs.sims }}" ]; then ARGS="$ARGS --sims ${{ inputs.sims }}"; fi
           if [ -n "${{ inputs.field }}" ]; then ARGS="$ARGS --field ${{ inputs.field }}"; fi
+          if [ -n "${{ inputs.soon }}" ]; then ARGS="$ARGS --soon ${{ inputs.soon }}"; fi
           echo "EFFECTIVE ARGS: $ARGS"
           python publish.py $ARGS | tee publish.txt
 
@@ -82,8 +89,11 @@ jobs:
           git add -f docs/
           git diff --staged --quiet && echo "nothing changed" && exit 0
           git commit -m "Slates: $(date -u +%Y-%m-%d\ %H:%M)"
-          git pull --rebase --autostash origin main || true
-          git push
+          for i in 1 2 3 4 5; do
+            git pull --rebase -X ours --autostash origin main && git push && exit 0
+            sleep $((i * 8))
+          done
+          exit 1
 
       - name: Keep the log
         if: always()

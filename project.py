@@ -36,6 +36,7 @@ import logging
 import sys
 from datetime import datetime, timezone
 
+import numpy as np
 import pandas as pd
 
 import config
@@ -184,6 +185,33 @@ def refresh_market(latest: pd.DataFrame,
                     "be projected without game context rather than with a "
                     "stale one")
     return out
+
+
+STALE_GAMES = 3
+
+
+def mark_rotation(known: pd.DataFrame, weeks: pd.DataFrame) -> pd.DataFrame:
+    """Adds `team_games_missed` (team games this season since the player's
+    last appearance, all of them if he has none) and `season_games`."""
+    season = int(weeks["season"].max())
+    cur = weeks[weeks["season"] == season]
+    team_weeks = {t: sorted(g["week"].unique()) for t, g in cur.groupby("team")}
+    last = cur.groupby("player_id")["week"].max()
+    games = cur.groupby("player_id")["week"].nunique()
+    missed, played = [], []
+    for r in known.itertuples(index=False):
+        pid = getattr(r, "player_id", None)
+        tw = team_weeks.get(str(getattr(r, "team", "")), [])
+        if pid is None or pid != pid or str(getattr(r, "position", "")) not in config.SKILL_POSITIONS:
+            missed.append(np.nan); played.append(np.nan); continue
+        if pid in last.index:
+            missed.append(sum(1 for w in tw if w > last[pid]))
+            played.append(int(games[pid]))
+        else:
+            missed.append(len(tw)); played.append(0)
+    known["team_games_missed"] = missed
+    known["season_games"] = played
+    return known
 
 
 def history_columns(latest: pd.DataFrame) -> list[str]:
@@ -549,6 +577,16 @@ def run(draft_group: int, site: str = "dk",
                                     on="name", how="inner")
             known = pd.concat([known, merged_dst], ignore_index=True)
             log.info("added %d defences to the pool", len(merged_dst))
+
+    # OUT OF THE ROTATION. A player whose team has played STALE_GAMES or more
+    # games this season since his last appearance (practice squad, healthy
+    # scratch, a long absence nobody listed) is projected off old games. The
+    # same guard runs on the NBA, NHL and CFB boards. Marked here, acted on in
+    # publish.py, where a player the books still post props on is kept.
+    try:
+        known = mark_rotation(known, weeks)
+    except Exception as exc:                                   # noqa: BLE001
+        log.warning("rotation check skipped (%s)", str(exc)[:80])
 
     known["value"] = (known["median"] / (known["salary"] / 1000.0)).round(2)
     known["ceiling_value"] = (known["ceiling"]

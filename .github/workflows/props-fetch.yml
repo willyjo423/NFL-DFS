@@ -1,0 +1,58 @@
+name: Props fetch
+
+# Pulls Bovada's NFL player props on its own and commits the day's file under
+# docs/data/props/nfl, so a publish whose own pull comes back empty (it
+# happens) still has the latest lines. Dispatched by the slate clock.
+
+on:
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+concurrency:
+  group: props-fetch
+  cancel-in-progress: false
+
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - run: pip install -q -r requirements.txt
+      - name: Fetch
+        run: |
+          python3 - <<'PY'
+          import logging, time
+          logging.basicConfig(level=logging.INFO)
+          import nfl_props as P
+          got = {}
+          for i in range(4):
+              try:
+                  got = P.fetch()
+              except Exception as e:
+                  print("error", e)
+              print("try", i, len(got))
+              if got:
+                  break
+              time.sleep(20 * (i + 1))
+          if got:
+              P.fetch = lambda g=got: g
+              P.load()
+          PY
+      - name: Commit
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A docs/data/props
+          git diff --cached --quiet && { echo "nothing new"; exit 0; }
+          git commit -m "Props: $(date -u +%Y-%m-%d\ %H:%M)"
+          for i in 1 2 3 4 5; do
+            git pull --rebase -X ours origin main && git push && exit 0
+            sleep $((i * 8))
+          done
+          exit 1
