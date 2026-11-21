@@ -1,5 +1,5 @@
 {
- "updated_at": "2026-11-20T23:14:09+00:00",
+ "updated_at": "2026-11-21T03:07:17+00:00",
  "slates": [
   {
    "sport": "nfl",
@@ -9,8 +9,8 @@
    "draft_group": 156776,
    "file": "data/v2/nfl_dk_classic_156776.json",
    "starts": "2026-11-22 18:00:00+00:00",
-   "players": 383,
-   "generated_at": "2026-11-20T23:06:56+00:00"
+   "players": 384,
+   "generated_at": "2026-11-21T03:01:19+00:00"
   },
   {
    "sport": "nfl",
@@ -21,7 +21,7 @@
    "file": "data/v2/nfl_dk_classic_156561.json",
    "starts": "2026-11-22 18:00:00+00:00",
    "players": 317,
-   "generated_at": "2026-11-20T22:59:01+00:00"
+   "generated_at": "2026-11-21T02:54:55+00:00"
   },
   {
    "sport": "nfl",
@@ -32,7 +32,7 @@
    "file": "data/v2/nfl_dk_classic_156775.json",
    "starts": "2026-11-22 18:00:00+00:00",
    "players": 222,
-   "generated_at": "2026-11-20T23:04:10+00:00"
+   "generated_at": "2026-11-21T02:59:08+00:00"
   },
   {
    "sport": "nfl",
@@ -43,7 +43,7 @@
    "file": "data/v2/nfl_dk_classic_156777.json",
    "starts": "2026-11-22 21:05:00+00:00",
    "players": 95,
-   "generated_at": "2026-11-20T23:02:33+00:00"
+   "generated_at": "2026-11-21T02:57:50+00:00"
   },
   {
    "sport": "nfl",
@@ -54,7 +54,7 @@
    "file": "data/v2/nfl_dk_classic_156778.json",
    "starts": "2026-11-22 21:25:00+00:00",
    "players": 63,
-   "generated_at": "2026-11-20T23:12:23+00:00"
+   "generated_at": "2026-11-21T03:05:42+00:00"
   },
   {
    "sport": "nfl",
@@ -64,8 +64,8 @@
    "draft_group": 156779,
    "file": "data/v2/nfl_dk_classic_156779.json",
    "starts": "2026-11-23 01:20:00+00:00",
-   "players": 66,
-   "generated_at": "2026-11-20T23:09:43+00:00"
+   "players": 67,
+   "generated_at": "2026-11-21T03:03:19+00:00"
   }
  ]
 }
